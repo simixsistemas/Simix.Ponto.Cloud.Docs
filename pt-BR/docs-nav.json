@@ -1,0 +1,30 @@
+{
+  "items":[
+    {
+      "text":"Dicas",
+      "path":"Dicas.md"
+    },
+    {
+      "text": "Cadastros",
+      "items": [
+        {
+          "text": "Empresa",
+          "path": "Cadastros/Empresa.md"
+        },
+        {
+          "text": "Estabelecimentos",
+          "path": "Cadastros/Estabelecimentos.md"
+        }
+      ]
+    },
+    {
+      "text": "Aplicativos",
+      "items": [
+        {          
+          "text": "Atalhos",
+          "path": "Apps/Index.md"          
+        }
+      ]
+    }
+  ]
+}
