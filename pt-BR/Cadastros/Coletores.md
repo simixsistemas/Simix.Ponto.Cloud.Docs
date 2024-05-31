@@ -1,163 +1,161 @@
 # Coletores
 
-### CdColetor
+### Código do coletor
 <!-- CdColetor -->
 
-### Nome
+### Nome do coletor
 <!-- Nome -->
 
-### Porta
+### Porta da rede, cadastrada no coletor
 <!-- Porta -->
 
-### Ativo
+### Validação se coletor esta ativo
 <!-- Ativo -->
 
-### Monitorar
+### Monitorar coletor
 <!-- Monitorar -->
 
-### TpComunicacao
+### Tipo de comunicação do coletor
 <!-- TpComunicacao -->
 
-### Endereco
+### Endereco do coletor
 <!-- Endereco -->
 
-### EnderecoMascara
+### Máscara de rede do coletor
 <!-- EnderecoMascara -->
 
-### EnderecoRecursivo
+### Verificação se máscara é recursiva
 <!-- EnderecoRecursivo -->
 
-### ImportarTpDisp
+### Importar o tipo de dispositivo
 <!-- ImportarTpDisp -->
 
-### CdEstab
+### CCódigo do estabelecimento, associado ao coletor
 <!-- CdEstab -->
 
-### CdLayout
+### CCódigo do layout, associado ao coletor
 <!-- CdLayout -->
 
-### CdMarca
+### Marca do coletor
 <!-- CdMarca -->
 
-### DtUltSincOk
+### Data de ultima sincronização do coletor
 <!-- DtUltSincOk -->
 
-### DtUltSincCompleta
+### Data de ultima sincronização completa do coletor
 <!-- DtUltSincCompleta -->
 
-### DtInst
+### Data de instalação do coletor
 <!-- DtInst -->
 
-### Serial
+### Serial do coletor
 <!-- Serial -->
 
-### UltimosArquivos
+### Últimos arquivos
 <!-- UltimosArquivos -->
 
-### DtAlter
+### Data de alteração do cadasto
 <!-- DtAlter -->
 
-### CriarFuncionarios
+### Opção de criar funcionários
 <!-- CriarFuncionarios -->
 
-### SuportaSincCompleta
+### Suportar a sincronização completa
 <!-- SuportaSincCompleta -->
 
-### Senha
+### Senha do coletar
 <!-- Senha -->
 
-### UltNSR
+### Último NSR do coletor
 <!-- UltNSR -->
 
-### FirmwareVersao
+### Firmware da versão
 <!-- FirmwareVersao -->
 
-### FormatoCracha
+### Formato do cracha
 <!-- FormatoCracha -->
 
-### UltNSRFixo
+### Último NSR fixo
 <!-- UltNSRFixo -->
 
-### CatracaTpAciona
+### Verifica o tipo de acionador da catraca
 <!-- CatracaTpAciona -->
 
-### CatracaTempoAciona
+### Verifica o tempo para acionar a catraca
 <!-- CatracaTempoAciona -->
 
-### CatracaTempoEspera
+### Verifica o tempo de espera da catraca
 <!-- CatracaTempoEspera -->
 
-### CatracaLibEnt
+### Liberar entrada da catraca
 <!-- CatracaLibEnt -->
 
-### CatracaLibSai
+### Liberar saida da catraca
 <!-- CatracaLibSai -->
 
-### CatracaSentido
+### Verifica o sentido da catraca
 <!-- CatracaSentido -->
 
-### ControlarRefeicoes
+### Controla as refeições
 <!-- ControlarRefeicoes -->
 
-### ExcluirDepoisImportar
+### Excluir depois de importar
 <!-- ExcluirDepoisImportar -->
 
-### ImportarSoAlter
+### Importar só alterados
 <!-- ImportarSoAlter -->
 
-### OrigemDadosEmp
+### Origem dos dados da empresa
 <!-- OrigemDadosEmp -->
 
-### IgnorarDigitaisSinc
+### Ignorar digitais já sincronizadas
 <!-- IgnorarDigitaisSinc -->
 
-### CdEstabRel
+### Código do estabelecimento no relógio
 <!-- CdEstabRel -->
 
-### TpConvCdCracha
+### Tipo de conversão do crachá
 <!-- TpConvCdCracha -->
 
-### GerarAFD
+### Gerar o AFD
 <!-- GerarAFD -->
 
-### TamanhoBobina
+### Tamanho da bobina
 <!-- TamanhoBobina -->
 
-### TamanhoTicket
+### Tamanho do ticket
 <!-- TamanhoTicket -->
 
-### TipoReg
+### Tipo do registro
 <!-- TipoReg -->
 
 ### Login
 <!-- Login -->
 
-### DtUltReg
+### Data do último registro
 <!-- DtUltReg -->
 
-### UltMsg
+### última mensagem
 <!-- UltMsg -->
 
-### ColOk
+### Valida a importação
 <!-- ColOk -->
 
-### UltCom
+### última comunicação
 <!-- UltCom -->
 
-### SalvarGPS
+### Salvar o GPS ao sincronizar
 <!-- SalvarGPS -->
 
-### TpCdRegistro
+### Tipo do registro
 <!-- TpCdRegistro -->
 
-### TipoREP
+### Tipo do REP
 <!-- TipoREP -->
 
-### NuvemId
-<!-- NuvemId -->
 
-### TpTurnoPreferencial
+### Tipo do turno preferencial
 <!-- TpTurnoPreferencial -->
 
-### GerarComprovante
+### Opção para verificar se deve gerar o comprovante
 <!-- GerarComprovante -->
