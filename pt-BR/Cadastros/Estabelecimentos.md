@@ -1,92 +1,71 @@
-# Estab
+# Estabelecimento
 
 ### Código do estabelecimento
-CdEstab
-
+<!-- CdEstab -->
 
 ### Nome
-Nome
-
+<!-- Nome -->
 
 ### Endereço
-Endereco
-
+<!-- Endereco -->
 
 ### CNPJ
-CNPJ
-
+<!-- CNPJ -->
 
 ### Código da cidade
-CdCidade
-
+<!-- CdCidade -->
 
 ### Código do horário padrão para o cadastro de funcionários
-CdHorarioPadrao
-
+<!-- CdHorarioPadrao -->
 
 ### Código do grupo de ações padrão para o cadastro de funcionários
-CdGrupoAcoesPadrao
-
+<!-- CdGrupoAcoesPadrao -->
 
 ### Código na folha de pagamento
-CdFolhaPag
-
+<!-- CdFolhaPag -->
 
 ### Email
-Email
-
+<!-- Email -->
 
 ### Telefone
-Telefone
-
+<!-- Telefone -->
 
 ### Data da instalação
-DtInst
-
+<!-- DtInst -->
 
 ### Código do funcionário inicial
-CdFuncIni
-
+<!-- CdFuncIni -->
 
 ### Código do funcionário final
-CdFuncFim
-
+<!-- CdFuncFim -->
 
 ### Ativo?
-Ativo
+<!-- Ativo -->
 
 
 ### CEI
-CEI
-
+<!-- CEI -->
 
 ### Responsável
-Responsavel
-
+<!-- Responsavel -->
 
 ### Código do grupo
-CdEstabGrupo
-
+<!-- CdEstabGrupo -->
 
 ### CPF
-CPFResponsavel
-
+<!-- CPFResponsavel -->
 
 ### Endereço IP
-EnderecoIP
-
+<!-- EnderecoIP -->
 
 ### Dia de inicio alternativo do cartão
-DiaIniAlternativo
-
+<!-- DiaIniAlternativo -->
 
 ### Configuração de banco de horas
-CdBHConfig
-
+<!-- CdBHConfig -->
 
 ### Sigla
-Sigla
-
+<!-- Sigla -->
 
 ### Código Externo
-CdExterno
+<!-- CdExterno -->
