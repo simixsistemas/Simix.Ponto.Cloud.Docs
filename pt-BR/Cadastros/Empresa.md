@@ -1,52 +1,43 @@
 # Empresa
 
-### Nome
+### Nome da empresa
 <!-- Nome -->
 
-### Endereco
+### Endereco da emrpesa
 <!-- Endereco -->
 
-### Bairro
+### Bairro da empresa
 <!-- Bairro -->
 
-### Cidade
+### Cidade da empresa
 <!-- Cidade -->
 
-### CNPJ
+### CNPJ da empresa
 <!-- CNPJ -->
 
-### CdHorarioModelo
+### Código do horário modelo, associado a empresa
 <!-- CdHorarioModelo -->
 
-### CdHorarioPadrao
+### Código do horário padrão, associado a empresa
 <!-- CdHorarioPadrao -->
 
-### CdGrupoAcoesPadrao
+### Código do grupo de ações, associado a empresa
 <!-- CdGrupoAcoesPadrao -->
 
-### RowId
-<!-- RowId -->
-
-### Telefone
+### Telefone da empresa
 <!-- Telefone -->
 
-### Email
+### Email da empresa
 <!-- Email -->
 
-### EmailContab
+### Email da contabilidade
 <!-- EmailContab -->
 
-### DtInst
+### Data de instalação do programa, criação da empresa
 <!-- DtInst -->
 
-### CdEstabPadrao
+### Código do estabelecimento, associado a empresa
 <!-- CdEstabPadrao -->
 
-### LogoImg
+### Logotipo da marca da empresa
 <!-- LogoImg -->
-
-### NuvemId
-<!-- NuvemId -->
-
-### EnviadoNuvem
-<!-- EnviadoNuvem -->
