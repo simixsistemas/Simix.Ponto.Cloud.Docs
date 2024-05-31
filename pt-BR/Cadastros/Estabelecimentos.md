@@ -1,4 +1,4 @@
-# Estabelecimento
+# Estabelecimentos
 
 ### Código do estabelecimento
 <!-- CdEstab -->
