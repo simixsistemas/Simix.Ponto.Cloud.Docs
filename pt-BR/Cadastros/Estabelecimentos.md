@@ -69,3 +69,9 @@
 
 ### Código Externo
 <!-- CdExterno -->
+
+### Observacções
+<!-- Obs -->
+
+### Código conveção coletiva
+<!-- CdConvencaoColetiva -->
