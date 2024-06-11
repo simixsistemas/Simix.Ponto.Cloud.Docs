@@ -1,6 +1,6 @@
 # Cargos
 
-### Código Externo
+### Código do cargo
 <!-- CdCargo -->
 
 ### Descrição
