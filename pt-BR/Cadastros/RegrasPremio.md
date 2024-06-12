@@ -6,7 +6,7 @@
 ### Nome da regra de prêmio
 <!-- Nome -->
 
-### Verifica se regra esta ativa
+### Verifica se regra está ativa
 <!-- Ativo -->
 
 ### Valor da regra
@@ -18,7 +18,7 @@
 ### Mês final da regra
 <!-- AnoMesFim -->
 
-### Verifica se o valor da regra sera proporcional
+### Verifica se o valor da regra será proporcional
 <!-- EValorProporcional -->
 
 ### Informa o valor proporcional
@@ -29,3 +29,6 @@
 
 ### Verifica se prêmio exibirá no espelho do ponto
 <!-- ExibirRlPonto -->
+
+### Referências
+> Megaguia: Regras prêmio assiduidade ⌚#PcPonto (https://simix.movidesk.com/kb/pt-br/article/418137/exemplos-regras-premio?ticketId=&q=)
