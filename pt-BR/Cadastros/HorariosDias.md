@@ -1,4 +1,4 @@
-# Regras de inconsistências
+# Horários por dia
 
 ### Código do horário por dia
 <!-- CdHorarioDia -->
