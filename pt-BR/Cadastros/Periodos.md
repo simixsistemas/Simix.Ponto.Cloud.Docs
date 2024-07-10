@@ -9,10 +9,10 @@
 ### Descrição do dia de inicio naquele período
 <!-- DiaInicio -->
 
-### Data da ultima alteração
+### Data da última alteração
 <!-- DtAlter -->
 
-### Data do ultimo processamento
+### Data do último processamento
 <!-- DtCalc -->
 
 ### Descrição da situação do período (liberado ou bloqueado)
