@@ -2,6 +2,7 @@
 
 ### Código do usuário 
 <!-- CdUsuario -->
+
 ### Nome 
 <!-- Nome -->
 
@@ -38,17 +39,8 @@
 ### Liberar só o cadastro de digitais para a tela de funcionários
 <!-- LiberarSoCadDigitais -->
 
-### FiltroFunc 
-<!-- FiltroFunc -->
-
-### FiltroFuncXml 
-<!-- FiltroFuncXml -->
-
 ### Descrição do filtro 
 <!-- FiltroFuncDesc -->
-
-### FiltroFuncAtivo 
-<!-- FiltroFuncAtivo -->
 
 ### Computador 
 <!-- Computador -->
@@ -71,9 +63,6 @@
 ### Código de setor 
 <!-- CdSetor -->
 
-### FiltrarSetor 
-<!-- FiltrarSetor -->
-
 ### Permitir afastamentos 
 <!-- PermitirInserirAfastaWeb -->
 
@@ -82,12 +71,3 @@
 
 ### Permitir editar situação do período 
 <!-- PermitirSituacaoPeriodo -->
-
-### FiltroFuncCdSetor 
-<!-- FiltroFuncCdSetor -->
-
-### FiltroFuncCdDepa 
-<!-- FiltroFuncCdDepa -->
-
-### FiltroFuncCdEstab 
-<!-- FiltroFuncCdEstab -->
