@@ -57,9 +57,6 @@
 ### Grupo de Estabelecimento
 <!-- CdEstabGrupo -->
 
-### Senha Temporaria 
-<!-- SenhaTemporaria -->
-
 ### Código de setor 
 <!-- CdSetor -->
 
