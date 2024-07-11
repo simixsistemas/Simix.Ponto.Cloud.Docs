@@ -6,7 +6,7 @@
 ### Nome do contrato
 <!-- Nome -->
 
-### Verifica se esta ativo
+### Verifica se está ativo
 <!-- Ativo -->
 
 ### Observação
