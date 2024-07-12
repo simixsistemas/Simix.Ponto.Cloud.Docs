@@ -57,8 +57,8 @@
 ### Código do Setor
 <!-- CdSetor -->
 
-### Código do Secao
-<!--     CdSecao -->
+### Código do Seção
+<!-- CdSecao -->
 
 ### Notificar
 <!-- Notificar -->
