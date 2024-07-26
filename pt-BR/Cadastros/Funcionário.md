@@ -1,16 +1,59 @@
-# Funcionarios/FuncMes
+# Cadastro Funcionarios
 
+## Principal
 ### Código do funcionário
 <!-- CdFunc -->
 
 ### Mês do cadastro
 <!-- AnoMes -->
 
+### Nome do funcionário
+<!-- Nome -->
+
+### Pronuncia do nome do funcionário
+<!-- Pronuncia -->
+
+### Data de nascimento
+<!-- DtNasc -->
+
+### Sexo
+<!-- Sexo -->
+
+### CPF
+<!-- CPF -->
+
+### PIS
+<!-- PIS -->
+
+### Matricula do funcionário
+<!-- Matricula -->
+
+### Carteira de trabalho do funcionário
+<!-- Carteira -->
+
+### Data de admissao
+<!-- DtAdmissao -->
+
+### Data de demissao
+<!-- DtDemissao -->
+
 ### Código do horário
 <!-- CdHorario -->
 
+### Tipo Mensalista, Horista ou Estagiário
+<!-- Tipo -->
+
 ### Código do Cargo
 <!-- CdCargo -->
+
+### Código do grupo de ações
+<!-- CdGrupoAcoes -->
+
+### Código do estabelecimento
+<!-- CdEstab -->
+
+### Código do estabelecimento atual
+<!-- CdEstabAtualMes -->
 
 ### Código do Departamento
 <!-- CdDepa -->
@@ -21,95 +64,33 @@
 ### Código da Seção
 <!-- CdSecao -->
 
-### Código do estabelecimento
-<!-- CdEstab -->
+### Código da folha de pagamento
+<!-- CdFolhaPag -->
 
-### Tipo Mensalista, Horista ou Estagiário
-<!-- Tipo -->
-
-### Valor salário
-<!-- VlrSalario -->
-
-### Valor hora
-<!-- VlrHora -->
-
-### Código do estabelecimento atual
-<!-- CdEstabAtualMes -->
-
-### Nome do funcionário
-<!-- Nome -->
-
-### Pronuncia do nome do funcionário
-<!-- Pronuncia -->
-
-### Matricula do funcionário
-<!-- Matricula -->
-
-### Carteira do funcionário
-<!-- Carteira -->
-
-### Data de admissao
-<!-- DtAdmissao -->
-
-### Data de demissao
-<!-- DtDemissao -->
-
-### Data de nascimento
-<!-- DtNasc -->
-
-### Sexo
-<!-- Sexo -->
+### Código contrato
+<!-- CdContrato -->
 
 ### Código de registro
 <!-- CdRegistro -->
 
-### Código da folha de pagamento
-<!-- CdFolhaPag -->
-
-### Código do grupo de ações
-<!-- CdGrupoAcoes -->
-
-### Permitir teclado ao registrar
-<!-- PermitirTeclado -->
+### Código externo do funcionário
+<!-- CdFuncExterno -->
 
 ### Permitir registro web
 <!-- PermitirRegWeb -->
 
-### Email
-<!-- Email -->
+### Permitir registro por barras
+<!-- PermitirRegBarras -->
 
-### Telefone
-<!-- Telefone -->
+### Permitir registro RFID
+<!-- PermitirRegRfid -->
 
-### Senha para registro no coletor
-<!-- ColetorSenha -->
+### Permitir registro por teclado quando tiver usando a biometria
+<!-- PermitirTeclado -->
 
-### Privilégio no coletor
-<!-- ColetorPrivilegio -->
-
-### Observação
-<!-- Obs -->
-
-### Nível de escolaridade
-<!-- EscolaridadeNivel -->
-
-### Situação de escolaridade
-<!-- EscolaridadeSituacao -->
-
-### Estado civil
-<!-- EstadoCivil -->
-
-### CPF
-<!-- CPF -->
-
-### RG
-<!-- RG -->
-
+## Complementar
 ### CEP
 <!-- CEP -->
-
-### Bairro
-<!-- CdBairro -->
 
 ### Endereço
 <!-- Endereco -->
@@ -117,41 +98,63 @@
 ### Endereço completo
 <!-- EnderecoCompl -->
 
-### Rotinas para ignorar no cálculo
-<!-- IdRotinasCalcIgnorar -->
+### Bairro
+<!-- CdBairro -->
 
-### Código externo do funcionário
-<!-- CdFuncExterno -->
+### Cidade
+<!-- CdCidade -->
 
-### Observação no txt
-<!-- ObsTxt -->
+### Senha para registro no coletor
+<!-- ColetorSenha -->
 
-### Numero armário
-<!-- NumeroArmario -->
-
-### Senha
-<!-- Senha -->
-
-### PIS
-<!-- PIS -->
-
-### Permitir registro por barras
-<!-- PermitirRegBarras -->
-
-### Login
-<!-- Login -->
+### Privilégio no coletor
+<!-- ColetorPrivilegio -->
 
 ### Estabelecimento do funcionário no coletor
 <!-- ColetorFuncEstab -->
 
-### Senha temporária
-<!-- SenhaTemporaria -->
+### Quantidade de digitais cadastradas no banco de dados
+<!-- Digitais -->
 
-### Código contrato
-<!-- CdContrato -->
+### Rotinas do cálculo a serem ignoradas
+<!-- IdRotinasCalcIgnorar -->
+
+### Observação no txt
+<!-- ObsTxt -->
+
+### Email
+<!-- Email -->
+
+### Telefone
+<!-- Telefone -->
+
+### RG
+<!-- RG -->
+
+### Estado civil
+<!-- EstadoCivil -->
+
+### Situação de escolaridade
+<!-- EscolaridadeSituacao -->
+
+### Nível de escolaridade
+<!-- EscolaridadeNivel -->
+
+### Valor salário
+<!-- VlrSalario -->
+
+### Valor hora
+<!-- VlrHora -->
 
 ### Código externo
 <!-- CdExterno -->
 
-### Permitir registro RFID
-<!-- PermitirRegRfid -->
+### Numero armário
+<!-- NumeroArmario -->
+
+## Mobile/WEB
+### Login
+<!-- Login -->
+
+### Senha
+<!-- Senha -->
