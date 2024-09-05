@@ -3,13 +3,13 @@
 ### Código do Funcionário
 <!-- CdFunc -->
 
-### Data inicial
+### Data Inicial
 <!-- DtIni -->
 
-### Data final
+### Data Final
 <!-- DtFim -->
 
-### Ano/Mês
+### Ano Mês
 <!-- AnoMes -->
 
 ### Horas Previstas (Decimal)
