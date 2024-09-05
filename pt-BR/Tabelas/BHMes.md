@@ -1,121 +1,121 @@
 # BHMes
 
-### CdFunc
+### Código do Funcionário
 <!-- CdFunc -->
 
-### DtIni
+### Data de Inicio
 <!-- DtIni -->
 
-### DtFim
+### Data de Fim
 <!-- DtFim -->
 
-### AnoMes
+### Ano/Mês
 <!-- AnoMes -->
 
-### HrPrevDec
+### Horas Previstas Decimal
 <!-- HrPrevDec -->
 
-### HrSaldoDec
+### Horas Saldo Decimal
 <!-- HrSaldoDec -->
 
-### DtAlter
+### Data de Alteração
 <!-- DtAlter -->
 
-### HrExtras1Dec
+### Horas Extras 1 Decimal
 <!-- HrExtras1Dec -->
 
-### HrExtras1Perc
+### Horas Extras 1 Percentual
 <!-- HrExtras1Perc -->
 
-### HrExtras1BHDec
+### Horas Extras 1 BH Decimal
 <!-- HrExtras1BHDec -->
 
-### HrSaldoBHDec
+### Horas Saldo BH Dec
 <!-- HrSaldoBHDec -->
 
-### UsarPercCompBH
+### Usar Percentual Compensação BH
 <!-- UsarPercCompBH -->
 
-### TpCompensaBH
+### Tipo Compensação BH
 <!-- TpCompensaBH -->
 
-### HrExtras2Dec
+### Horas Extras 2 Decimal
 <!-- HrExtras2Dec -->
 
-### HrExtras2Perc
+### Horas Extras 2 Percentual
 <!-- HrExtras2Perc -->
 
-### HrExtras2BHDec
+### Horas Extras 2 BH Decimal
 <!-- HrExtras2BHDec -->
 
-### HrExtras3Dec
+### Horas Extras 3 Decimal
 <!-- HrExtras3Dec -->
 
-### HrExtras3Perc
+### Horas Extras 3 Percentual
 <!-- HrExtras3Perc -->
 
-### HrExtras3BHDec
+### Horas Extras 3 BH Decimal
 <!-- HrExtras3BHDec -->
 
-### TransferirExtrasBH
+### Transferir Extras BH
 <!-- TransferirExtrasBH -->
 
-### PercBHOriginal
+### Percentual BH Original
 <!-- PercBHOriginal -->
 
-### HrExtras1NotDec
+### Horas Extras 1 Noturno Decimal
 <!-- HrExtras1NotDec -->
 
-### HrExtras1NotPerc
+### Horas Extras 1 Noturno Percentual
 <!-- HrExtras1NotPerc -->
 
-### HrExtras1BHNotDec
+### Horas Extras 1 BH Noturno Decimal
 <!-- HrExtras1BHNotDec -->
 
-### HrExtras2NotDec
+### Horas Extras 2 Noturno Decimal
 <!-- HrExtras2NotDec -->
 
-### HrExtras2NotPerc
+### Horas Extras 2 Noturno Percentual
 <!-- HrExtras2NotPerc -->
 
-### HrExtras2BHNotDec
+### Horas Extras 2 BH Noturno Decimal
 <!-- HrExtras2BHNotDec -->
 
-### HrExtras3NotDec
+### Horas Extras 3 Noturno Decimal
 <!-- HrExtras3NotDec -->
 
-### HrExtras3NotPerc
+### Horas Extras 3 Noturno Percentual
 <!-- HrExtras3NotPerc -->
 
-### HrExtras3BHNotDec
+### Horas Extras 3 BH Noturno Decimal
 <!-- HrExtras3BHNotDec -->
 
-### HrExtras1DiuDec
+### Horas Extras 1 Diurno Decimal
 <!-- HrExtras1DiuDec -->
 
-### HrExtras2DiuDec
+### Horas Extras 2 Diurno Decimal
 <!-- HrExtras2DiuDec -->
 
-### HrExtras3DiuDec
+### Horas Extras 3 Diurno Decimal
 <!-- HrExtras3DiuDec -->
 
-### HrExtras1DiuPerc
+### Horas Extras 1 Diurno Percentual
 <!-- HrExtras1DiuPerc -->
 
-### HrExtras2DiuPerc
+### Horas Extras 2 Diurno Percentual
 <!-- HrExtras2DiuPerc -->
 
-### HrExtras3DiuPerc
+### Horas Extras 3 Diurno Percentual
 <!-- HrExtras3DiuPerc -->
 
-### HrExtras1BHDiuDec
+### Horas Extras 1 BH Diurno Decimal
 <!-- HrExtras1BHDiuDec -->
 
-### HrExtras2BHDiuDec
+### Horas Extras 2 BH Diurno Decimal
 <!-- HrExtras2BHDiuDec -->
 
-### HrExtras3BHDiuDec
+### Horas Extras 3 BH Diurno Decimal
 <!-- HrExtras3BHDiuDec -->
 
-### CompatibilidadeCalc
+### Compatibilidade de Cálculo
 <!-- CompatibilidadeCalc -->
