@@ -1,27 +1,36 @@
 {
-  "items":[
+  "items": [
     {
       "text": "Aplicativos",
       "items": [
-        {          
+        {
           "text": "Atalhos",
-          "path": "Apps/Index.md"          
+          "path": "Apps/Index.md"
         }
       ]
     },
     {
-      "text":"Atualizações",
-      "path":"Atualizacoes"
+      "text": "Atualizações",
+      "path": "Atualizacoes"
+    },
+    {
+      "text": "Implantação",
+      "items": [
+        {
+          "text": "Guia de Implantação de Banco e Importação de Funcionários",
+          "path": "Implantacao.md"
+        }
+      ]
     },
     {
       "text": "Migração",
       "items": [
-        {          
+        {
           "text": "Migrando do PcPonto",
-          "path": "Migracao.md"          
+          "path": "Migracao.md"
         }
       ]
-    }, 
+    },
     {
       "text": "Cadastros",
       "items": [
@@ -179,6 +188,10 @@
           "path": "PcPontoWeb/AfastaPend.md"
         },
         {
+          "text": "CIDs",
+          "path": "PcPontoWeb/CIDs.md"
+        },
+        {
           "text": "ConfigWeb",
           "path": "PcPontoWeb/ConfigWeb.md"
         },
@@ -240,6 +253,10 @@
           "path": "Tabelas/FuncVRsMesQtd.md"
         },
         {
+          "text": "FuncVTs",
+          "path": "Tabelas/FuncVTs.md"
+        },
+        {
           "text": "Grupos",
           "path": "Tabelas/Grupos.md"
         },
@@ -268,6 +285,10 @@
           "path": "Tabelas/PontoCalcDia.md"
         },
         {
+          "text": "PontoCalcDiaTurno",
+          "path": "Tabelas/PontoCalcDiaTurno.md"
+        },
+        {
           "text": "PontoCalcIncons",
           "path": "Tabelas/PontoCalcIncons.md"
         },
@@ -290,13 +311,12 @@
       ]
     },
     {
-      "text":"Checklist-Implantação",
-      "path":"Checklist-Implantacao.md"
+      "text": "Checklist-Implantação",
+      "path": "Checklist-Implantacao.md"
     },
     {
-      "text":"Dicas",
-      "path":"Dicas.md"
+      "text": "Dicas",
+      "path": "Dicas.md"
     }
-    
   ]
 }
