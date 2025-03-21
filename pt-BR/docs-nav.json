@@ -14,6 +14,15 @@
       "path":"Atualizacoes"
     },
     {
+      "text": "Migração",
+      "items": [
+        {          
+          "text": "Migrando do PcPonto",
+          "path": "Migracao.md"          
+        }
+      ]
+    }, 
+    {
       "text": "Cadastros",
       "items": [
         {
