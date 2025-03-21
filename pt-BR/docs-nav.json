@@ -25,6 +25,15 @@
           "path": "Apps/Index.md"          
         }
       ]
+    },
+    {
+      "text": "Migração",
+      "items": [
+        {          
+          "text": "Migrando do PcPonto",
+          "path": "Migracao.md"          
+        }
+      ]
     }
   ]
 }
