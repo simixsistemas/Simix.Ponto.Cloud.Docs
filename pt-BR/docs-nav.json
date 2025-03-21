@@ -1,23 +1,6 @@
 {
   "items":[
     {
-      "text":"Dicas",
-      "path":"Dicas.md"
-    },
-    {
-      "text": "Cadastros",
-      "items": [
-        {
-          "text": "Empresa",
-          "path": "Cadastros/Empresa.md"
-        },
-        {
-          "text": "Estabelecimentos",
-          "path": "Cadastros/Estabelecimentos.md"
-        }
-      ]
-    },
-    {
       "text": "Aplicativos",
       "items": [
         {          
@@ -27,6 +10,10 @@
       ]
     },
     {
+      "text":"Atualizações",
+      "path":"Atualizacoes"
+    },
+    {
       "text": "Migração",
       "items": [
         {          
@@ -34,6 +21,282 @@
           "path": "Migracao.md"          
         }
       ]
+    }, 
+    {
+      "text": "Cadastros",
+      "items": [
+        {
+          "text": "Afastamentos",
+          "path": "Cadastros/Afastamentos.md"
+        },
+        {
+          "text": "Bairros",
+          "path": "Cadastros/Bairros.md"
+        },
+        {
+          "text": "BHConfig",
+          "path": "Cadastros/BHConfig.md"
+        },
+        {
+          "text": "BHLancamentos",
+          "path": "Cadastros/BHLancamentos.md"
+        },
+        {
+          "text": "CamposCustomizavel",
+          "path": "Cadastros/CamposCustomizavel.md"
+        },
+        {
+          "text": "Cargos",
+          "path": "Cadastros/Cargos.md"
+        },
+        {
+          "text": "Cidades",
+          "path": "Cadastros/Cidades.md"
+        },
+        {
+          "text": "Coletores",
+          "path": "Cadastros/Coletores.md"
+        },
+        {
+          "text": "Config",
+          "path": "Cadastros/Config.md"
+        },
+        {
+          "text": "ConsultaBhTotais",
+          "path": "Cadastros/ConsultaBhTotais.md"
+        },
+        {
+          "text": "Contratos",
+          "path": "Cadastros/Contratos.md"
+        },
+        {
+          "text": "Departamentos",
+          "path": "Cadastros/Departamentos.md"
+        },
+        {
+          "text": "Empresa",
+          "path": "Cadastros/Empresa.md"
+        },
+        {
+          "text": "Estabelecimentos",
+          "path": "Cadastros/Estabelecimentos.md"
+        },
+        {
+          "text": "EstabGrupos",
+          "path": "Cadastros/EstabGrupos.md"
+        },
+        {
+          "text": "Feriados",
+          "path": "Cadastros/Feriados.md"
+        },
+        {
+          "text": "FuncDocumentos",
+          "path": "Cadastros/FuncDocumentos.md"
+        },
+        {
+          "text": "Funcionário",
+          "path": "Cadastros/Funcionário.md"
+        },
+        {
+          "text": "HorarioPorPeriodo",
+          "path": "Cadastros/HorarioPorPeriodo.md"
+        },
+        {
+          "text": "Horarios",
+          "path": "Cadastros/Horarios.md"
+        },
+        {
+          "text": "HorariosDias",
+          "path": "Cadastros/HorariosDias.md"
+        },
+        {
+          "text": "HorariosLayouts",
+          "path": "Cadastros/HorariosLayouts.md"
+        },
+        {
+          "text": "LayoutFolhaPag",
+          "path": "Cadastros/LayoutFolhaPag.md"
+        },
+        {
+          "text": "MobileConfigs",
+          "path": "Cadastros/MobileConfigs.md"
+        },
+        {
+          "text": "Motivos",
+          "path": "Cadastros/Motivos.md"
+        },
+        {
+          "text": "Periodos",
+          "path": "Cadastros/Periodos.md"
+        },
+        {
+          "text": "PontoSituacoes",
+          "path": "Cadastros/PontoSituacoes.md"
+        },
+        {
+          "text": "RegrasInconsistencias",
+          "path": "Cadastros/RegrasInconsistencias.md"
+        },
+        {
+          "text": "RegrasPremio",
+          "path": "Cadastros/RegrasPremio.md"
+        },
+        {
+          "text": "Secoes",
+          "path": "Cadastros/Secoes.md"
+        },
+        {
+          "text": "Setores",
+          "path": "Cadastros/Setores.md"
+        },
+        {
+          "text": "TurnosEspeciais",
+          "path": "Cadastros/TurnosEspeciais.md"
+        },
+        {
+          "text": "UFs",
+          "path": "Cadastros/UFs.md"
+        },
+        {
+          "text": "Usuarios",
+          "path": "Cadastros/Usuarios.md"
+        },
+        {
+          "text": "VRs",
+          "path": "Cadastros/VRs.md"
+        },
+        {
+          "text": "VTs",
+          "path": "Cadastros/VTs.md"
+        }
+      ]
+    },
+    {
+      "text": "PcPontoWeb",
+      "items": [
+        {
+          "text": "AfastaPend",
+          "path": "PcPontoWeb/AfastaPend.md"
+        },
+        {
+          "text": "ConfigWeb",
+          "path": "PcPontoWeb/ConfigWeb.md"
+        },
+        {
+          "text": "EscalasPeriodos",
+          "path": "PcPontoWeb/EscalasPeriodos.md"
+        },
+        {
+          "text": "Medicos",
+          "path": "PcPontoWeb/Medicos.md"
+        },
+        {
+          "text": "PontoPed",
+          "path": "PcPontoWeb/PontoPed.md"
+        },
+        {
+          "text": "TiposMotivos",
+          "path": "PcPontoWeb/TiposMotivos.md"
+        }
+      ]
+    },
+    {
+      "text": "Tabelas",
+      "items": [
+        {
+          "text": "BHMes",
+          "path": "Tabelas/BHMes.md"
+        },
+        {
+          "text": "BHMesEP",
+          "path": "Tabelas/BHMesEP.md"
+        },
+        {
+          "text": "ColetoresConfig",
+          "path": "Tabelas/ColetoresConfig.md"
+        },
+        {
+          "text": "ColetoresImp",
+          "path": "Tabelas/ColetoresImp.md"
+        },
+        {
+          "text": "EspelhoPontos",
+          "path": "Tabelas/EspelhoPontos.md"
+        },
+        {
+          "text": "FuncVRs",
+          "path": "Tabelas/FuncVRs.md"
+        },
+        {
+          "text": "FuncVRsMesDias",
+          "path": "Tabelas/FuncVRsMesDias.md"
+        },
+        {
+          "text": "FuncVRsMesLog",
+          "path": "Tabelas/FuncVRsMesLog.md"
+        },
+        {
+          "text": "FuncVRsMesQtd",
+          "path": "Tabelas/FuncVRsMesQtd.md"
+        },
+        {
+          "text": "Grupos",
+          "path": "Tabelas/Grupos.md"
+        },
+        {
+          "text": "Implantacoes",
+          "path": "Tabelas/Implantacoes.md"
+        },
+        {
+          "text": "Notificacoes",
+          "path": "Tabelas/Notificacoes.md"
+        },
+        {
+          "text": "PeriodoAtual",
+          "path": "Tabelas/PeriodoAtual.md"
+        },
+        {
+          "text": "Ponto",
+          "path": "Tabelas/Ponto.md"
+        },
+        {
+          "text": "PontoCalc",
+          "path": "Tabelas/PontoCalc.md"
+        },
+        {
+          "text": "PontoCalcDia",
+          "path": "Tabelas/PontoCalcDia.md"
+        },
+        {
+          "text": "PontoCalcIncons",
+          "path": "Tabelas/PontoCalcIncons.md"
+        },
+        {
+          "text": "PontoCalcTot",
+          "path": "Tabelas/PontoCalcTot.md"
+        },
+        {
+          "text": "PontoGPS",
+          "path": "Tabelas/PontoGPS.md"
+        },
+        {
+          "text": "PontoLog",
+          "path": "Tabelas/PontoLog.md"
+        },
+        {
+          "text": "PontoTurnosEsp",
+          "path": "Tabelas/PontoTurnosEsp.md"
+        }
+      ]
+    },
+    {
+      "text":"Checklist-Implantação",
+      "path":"Checklist-Implantacao.md"
+    },
+    {
+      "text":"Dicas",
+      "path":"Dicas.md"
     }
+    
   ]
 }

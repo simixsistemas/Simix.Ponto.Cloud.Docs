@@ -15,13 +15,13 @@
 ### CNPJ da empresa
 <!-- CNPJ -->
 
-### Código do horário modelo, associado a empresa
+### CÃ³digo do horÃ¡rio modelo, associado a empresa
 <!-- CdHorarioModelo -->
 
-### Código do horário padrão, associado a empresa
+### CÃ³digo do horÃ¡rio padrÃ£o, associado a empresa
 <!-- CdHorarioPadrao -->
 
-### Código do grupo de ações, associado a empresa
+### CÃ³digo do grupo de aÃ§Ãµes, associado a empresa
 <!-- CdGrupoAcoesPadrao -->
 
 ### Telefone da empresa
@@ -33,10 +33,10 @@
 ### Email da contabilidade
 <!-- EmailContab -->
 
-### Data de instalação do programa, criação da empresa
+### Data de instalaÃ§Ã£o do programa, criaÃ§Ã£o da empresa
 <!-- DtInst -->
 
-### Código do estabelecimento, associado a empresa
+### CÃ³digo do estabelecimento, associado a empresa
 <!-- CdEstabPadrao -->
 
 ### Logotipo da marca da empresa
