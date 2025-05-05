@@ -10,7 +10,7 @@ Código para identificação do coletor.
 Selecione a empresa a qual o REP que será cadastrado pertence
 
 ### Nome do coletor
-Informe um descrição para o coletor. (Exemplo: Matriz, Filial 1, Filial2)
+Informe uma descrição para o coletor. (Exemplo: Matriz, Filial 1, Filial2)
 
 ### Codigo do estabelecimento, associado ao coletor
 Selecione o estabelecimento para vincular ao coletor.
