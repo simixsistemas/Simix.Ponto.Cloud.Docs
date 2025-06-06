@@ -1,161 +1,167 @@
 # Coletores
 
-### C�digo do coletor
-<!-- CdColetor -->
+### Validação se coletor está ativo
+Ativa ou inativa o coletor.
+
+### Código do coletor
+Código para identificação do coletor.
+
+### Empresa Nome
+Selecione a empresa a qual o REP que será cadastrado pertence
 
 ### Nome do coletor
-<!-- Nome -->
+Informe uma descrição para o coletor. (Exemplo: Matriz, Filial 1, Filial2)
 
-### Porta da rede, cadastrada no coletor
-<!-- Porta -->
-
-### Valida��o se coletor esta ativo
-<!-- Ativo -->
-
-### Monitorar coletor
-<!-- Monitorar -->
-
-### Tipo de comunica��o do coletor
-<!-- TpComunicacao -->
-
-### Endereco do coletor
-<!-- Endereco -->
-
-### M�scara de rede do coletor
-<!-- EnderecoMascara -->
-
-### Verifica��o se m�scara � recursiva
-<!-- EnderecoRecursivo -->
-
-### Importar o tipo de dispositivo
-<!-- ImportarTpDisp -->
-
-### CC�digo do estabelecimento, associado ao coletor
-<!-- CdEstab -->
-
-### CC�digo do layout, associado ao coletor
-<!-- CdLayout -->
+### Código do estabelecimento, associado ao coletor
+Selecione o estabelecimento para vincular ao coletor.
 
 ### Marca do coletor
-<!-- CdMarca -->
+Selecione o fabricante do equipamento. (Exemplo: “Control ID”)
 
-### Data de ultima sincroniza��o do coletor
-<!-- DtUltSincOk -->
+### Tipo de comunicação do coletor
+Selecione o tipo comunicação no campo com este nome. Mais usados são “REDE” e “AFD”.
 
-### Data de ultima sincroniza��o completa do coletor
-<!-- DtUltSincCompleta -->
+### Porta da rede, cadastrada no coletor
+Porta que será utilizada na comunicação com o computador. (Cada equipamento tem sua porta padrão).
 
-### Data de instala��o do coletor
-<!-- DtInst -->
+### Endereço do coletor
+Rede: Deve ser inserido o ip do REP ou end. ddns (Exemplo: pontoteste01.ddns.net)
+
+AFD: Deve ser inserido o caminho onde será salvo o arquivo para importação. (Exemplo: Caminho: C:\PcPonto\Temp).
+
+### Senha do coletor
+Alguns equipamentos são necessários ser informado sua senha.
+
+### Login do coletor
+Alguns equipamentos são necessários ser informado seu login.
+
+### Monitorar coletor
+Opção para caso queira monitorar o coletor em questão. (Ex: Catraca)
+
+### Máscara de rede do coletor
+Opção para coletores que necessitam inserir máscara para comunicação.
+
+### Verificação se máscara é recursiva
+Opção para verificar se a máscara é recursiva referente a comunicação do coletor.
+
+### Importar o tipo de dispositivo
+Opção para caso deseja importar o tipo de dispositivo.
+
+### Código do layout, associado ao coletor
+Opção para caso queira cadastrar o layout de leitura do coletor.
+
+### Data de última sincronização do coletor
+Informação referente a data da ultima sincronização do coletor.
+
+### Data de última sincronização completa do coletor
+Informação referente a data da ultima sincronização completa do coletor.
+
+### Data de instalação do coletor
+Informação referente a data de instalação do coletor cadastrado.
 
 ### Serial do coletor
-<!-- Serial -->
+Informativo do número do serial do equipamento sincronizado/cadastrado.
 
-### �ltimos arquivos
-<!-- UltimosArquivos -->
+### Últimos arquivos
+Informativo referente aos últimos arquivos importados.
 
-### Data de altera��o do cadasto
-<!-- DtAlter -->
+### Data de alteração do cadasto
+Data da última alteração do cadastro do coletor.
 
-### Op��o de criar funcion�rios
-<!-- CriarFuncionarios -->
+### Opção de criar funcionários
+Opção para criar funcionários.
 
-### Suportar a sincroniza��o completa
-<!-- SuportaSincCompleta -->
+### Suportar a sincronização completa
+Informativo se o coletor suporta sincronização completa dos dados.
 
-### Senha do coletar
-<!-- Senha -->
+### Último NSR do coletor
+Informativo referente ao último número sequencial de registro que foi importado.
 
-### �ltimo NSR do coletor
-<!-- UltNSR -->
+### Firmware da versÃo
+Opção para selecionar caso o coletor/catraca tenha um firmware especifico para sincronizar.
 
-### Firmware da vers�o
-<!-- FirmwareVersao -->
+### Formato do crachá
+Opção para selecionar o tipo do formato do crachá.
 
-### Formato do cracha
-<!-- FormatoCracha -->
+### Último NSR fixo
+Opção para marcar como fixo o ultimo NSR que o coletor possui em seu cadastro.
 
-### �ltimo NSR fixo
-<!-- UltNSRFixo -->
-
-### Verifica o tipo de acionador da catraca
-<!-- CatracaTpAciona -->
-
-### Verifica o tempo para acionar a catraca
-<!-- CatracaTempoAciona -->
-
-### Verifica o tempo de espera da catraca
-<!-- CatracaTempoEspera -->
-
-### Liberar entrada da catraca
-<!-- CatracaLibEnt -->
-
-### Liberar saida da catraca
-<!-- CatracaLibSai -->
-
-### Verifica o sentido da catraca
-<!-- CatracaSentido -->
-
-### Controla as refei��es
-<!-- ControlarRefeicoes -->
+### Controla as refeições
+Opção para caso deseja controlar refeições com REP/Catraca.
 
 ### Excluir depois de importar
-<!-- ExcluirDepoisImportar -->
+Opção para selecionar caso deseja excluir arquivos depois de importar os dados.
 
-### Importar s� alterados
-<!-- ImportarSoAlter -->
+### Importar só alterados
+Opção para selecionar caso deseja importar apenas arquivos alterados.
 
 ### Origem dos dados da empresa
-<!-- OrigemDadosEmp -->
+Opção para selecionar o tipo de origem dos dados da empresa. (Exemplo: Padrão, Empresa, Estabelecimento)
 
-### Ignorar digitais j� sincronizadas
-<!-- IgnorarDigitaisSinc -->
+### Ignorar digitais já sincronizadas
+Opção para caso deseja ignorar digitais já sincronizadas no REP.
 
-### C�digo do estabelecimento no rel�gio
-<!-- CdEstabRel -->
+### Código do estabelecimento no relógio
+Opção para caso haja estabelecimento relacionados a este REP.
 
-### Tipo de convers�o do crach�
-<!-- TpConvCdCracha -->
+### Tipo de conversão do crachá
+Opção para selecionar o tipo de conversão que o crachá.
 
 ### Gerar o AFD
-<!-- GerarAFD -->
+Opção para selecionar caso deseja que gere arquivo AFD.
 
 ### Tamanho da bobina
-<!-- TamanhoBobina -->
+Informativo sobre o tamanho da bobina do REP.
 
 ### Tamanho do ticket
-<!-- TamanhoTicket -->
+Informativo sobre o tamanho do ticket do REP.
 
 ### Tipo do registro
-<!-- TipoReg -->
+Informativo sobre o tipo de registro.
 
-### Login
-<!-- Login -->
+### Data do último registro
+Informativo sobre a data do último registro.
 
-### Data do �ltimo registro
-<!-- DtUltReg -->
+### Última mensagem
+Informativo da última mensagem de comunicação do REP.
 
-### �ltima mensagem
-<!-- UltMsg -->
+### Valida a importação
+Informativo sobre se é válido a importação do REP.
 
-### Valida a importa��o
-<!-- ColOk -->
-
-### �ltima comunica��o
-<!-- UltCom -->
+### Última comunicação
+Informativo sobre a última conexão com o REP.
 
 ### Salvar o GPS ao sincronizar
-<!-- SalvarGPS -->
+Opção para salvar o GPS ao sincronizar.
 
 ### Tipo do registro
-<!-- TpCdRegistro -->
+Opção para selecionar o tipo do formato de cracha. (Exemplo: Rfid, Hexadecimal, Wiegand)
 
 ### Tipo do REP
-<!-- TipoREP -->
-
+Opção para selecionar o tipo de REP. (Exemplo: REP-A (REP Alternativo), REP-C (REP Convencional/Tradicional), REP-P (REP Programa/Software))
 
 ### Tipo do turno preferencial
-<!-- TpTurnoPreferencial -->
+Opção para selecionar o tipo de turno preferencial. (Exemplo: Forçar ponto, forçar livre, forçar inverso)
 
-### Op��o para verificar se deve gerar o comprovante
-<!-- GerarComprovante -->
+### Gerar o comprovante
+Opção para verificar se deve gerar comprovante de registro.
+
+# Catraca
+
+### Verifica o tipo de acionador da catraca
+Opção para selecionar o tipo de acionamento da catraca. (Exemplo: Relógio simples sem acionamento, fechadura sem sensor, fechadura com sensor)
+
+### Verifica o tempo para acionar a catraca
+Opção para inserir o tempo de acionamento da catraca.
+
+### Verifica o tempo de espera da catraca
+Opção para inserir o tempo de espera da catraca.
+
+### Liberar entrada da catraca
+Opção para liberar a entrada da catraca com opções. (Exemplo: Libera, Bloqueia, Consulta lista, Consulta lista e senha, Consulta lista e digital)
+
+### Liberar saida da catraca
+Opção para liberar a saida da catraca com opções. (Exemplo: Libera, Bloqueia, Consulta lista, Consulta lista e senha, Consulta lista e digital)
+
+### Verifica o sentido da catraca
+Opção para verificar o sentido de giro do braço da catraca. (Exemplo: Sentido horário, sentido anti-horário)
