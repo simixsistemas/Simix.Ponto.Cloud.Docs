@@ -150,23 +150,6 @@ Palavras-chave: salvar banco de horas, configuração concluída
 
 ---
 
-## Como associar o banco de horas ao quadro de horários
-
-Após criar o banco de horas, é necessário associá-lo ao **Quadro de Horários** utilizado pelos colaboradores.
-
-Essa associação garante que as regras do banco de horas sejam aplicadas corretamente durante a Gestão de Ponto.
-
-### 1. Acesse o quadro de horários
-
-No menu do **Símix Ponto**, acesse **Quadro de Horários**.  
-Selecione um quadro existente ou clique em **Novo** para criar um novo.
-
-Na tela do quadro de horários, localize o campo **Banco de horas** e selecione o banco criado anteriormente.
-
-Palavras-chave: associar banco de horas, quadro de horários símix
-
----
-
 ## Dúvidas frequentes sobre banco de horas no Símix Ponto
 
 ### O que acontece se eu marcar transferência de crédito e débito?
