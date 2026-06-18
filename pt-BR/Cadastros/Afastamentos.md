@@ -1,91 +1,194 @@
-# Afastamento
+# Como cadastrar novos afastamentos no Símix Ponto
 
-### Sigla do afastamento
-<!-- Sigla -->
+## Objetivo
 
-### Descrição do afastamento
-<!-- Descricao -->
+Neste artigo, você aprenderá como **cadastrar novos tipos de afastamentos no Símix Ponto**, definindo corretamente a ação de cada afastamento para garantir que ausências justificadas, benefícios e direitos dos colaboradores sejam tratados de forma adequada na Gestão de Ponto e na folha de pagamento.
 
-### Verifica ação de Descontar, Não descontar e Ignorar
-<!-- Acao -->
+Palavras-chave: cadastro de afastamentos símix, tipos de afastamento, gestão de ponto
 
-### Verifica se afastamento esta ativo
-<!-- Ativo -->
+---
 
-### Opção para afastamento não compensar as horas
-<!-- NaoCompensar -->
+## Pré-requisitos
 
-### Opção para horas do afastamnento contabilizar como não justificadas
-<!-- NaoJustificado -->
+Antes de iniciar o cadastro de **novos afastamentos no Símix Ponto**, verifique se você possui:
 
-### Horário padrão ao usar afastamento
-<!-- HrPadrao -->
+• Acesso ao sistema **Símix Ponto**  
+• Permissão para acessar o menu de **Cadastros de Afastamentos**  
+• Informações do afastamento, como **Sigla**, **Descrição** e **Tipo de ação**  
 
-### Código da folha de pagamento
-<!-- CdFolhaPag -->
+Palavras-chave: acesso símix ponto, permissões de cadastro, afastamentos
 
-### Opção para totalizar as horas do afastamento
-<!-- Totalizar -->
+---
 
-### Seleciona cor ao utilizar afastamento
-<!-- Cor -->
+## O que são afastamentos no Símix Ponto
 
-### Seleciona a tecla de atalho para utilizar afastamento
-<!-- TeclaAtalho -->
+Os **afastamentos** no Símix Ponto são utilizados para diferenciar **ausências justificadas** de **faltas**, garantindo que:
 
-### Opção para descontar caso seja feriado
-<!-- DescFeriados -->
+• O controle de jornada reflita a realidade do contrato de trabalho  
+• A Gestão de Ponto seja calculada corretamente  
+• A folha de pagamento receba informações coerentes sobre horas, descontos e benefícios  
 
-### Opção para bloquear registros, caso tenha este afastamento
-<!-- BloquearReg -->
+Cada afastamento possui uma **ação**, que define como o sistema deve tratar as horas daquele período.
 
-### Data de alteração do afastamento
-<!-- DtAlter -->
+Palavras-chave: afastamento colaborador, ausência justificada, gestão de ponto símix
 
-### Opção de abater as extras úteis sem compensação
-<!-- EDUAbaterSemComp -->
+---
 
-### Deixar afastamento disponível na Web
-<!-- DisponivelWeb -->
+## Passo a passo para cadastrar novos afastamentos no Símix Ponto
 
-### Obrigar anexo ao utilizar afastamento na Web
-<!-- ObrigarAnexo -->
+### 1. Acesse o menu de Afastamentos
 
-### Deixar afastamento como favorito
-<!-- Favorito -->
+Na tela inicial do **Símix Ponto**, clique em **Principal**.  
+Em seguida, clique em **Cadastros**.  
+Selecione a opção **Afastamentos**.
 
-### Permitir horário ao utilizar afastamento na Web
-<!-- PermitirHorario -->
+Esse caminho leva você à tela onde é possível visualizar, editar ou criar novos afastamentos.
 
-### Filtrar estabelecimento que terá afastamento
-<!-- FiltroEstabs -->
+Caminho textual completo:  
+**Menu Principal > Cadastros > Afastamentos**
 
-### Número minímo de dias de intervalo para utilizar afastamento
-<!-- DiasMinIntervalo -->
+Palavras-chave: menu afastamentos, cadastros símix ponto
 
-### Descontar horas normais
-<!-- DescHrNormais -->
+---
 
-### Agrupar afastamento
-<!-- Agrupar -->
+### 2. Inicie o cadastro de um novo afastamento
 
-### Tipo de afastamento
-<!-- Tipo -->
+Na tela de Afastamentos, clique no botão **+ Novo**.
 
-### Formato que as horas totais do afastamento será
-<!-- TotalizarFormato -->
+O sistema abrirá o formulário de cadastro do novo afastamento.
 
-### Não descontar vale refeição
-<!-- NaoDescontarVR -->
+Palavras-chave: novo afastamento, criar afastamento símix
 
-### Ignorar escala caso tenha afastamento
-<!-- IgnorarEscalasAfasta -->
+---
 
-### Tipo de desconto DSR
-<!-- TpDescontoDSR -->
+### 3. Preencha as informações do afastamento
 
-### Não descontar vale transporte
-<!-- NaoDescontarVT -->
+No formulário de cadastro, preencha os campos conforme descrito abaixo:
 
-### Formato que sera exportado na folha de pagamento
-<!-- FolhaFormato -->
+• **Sigla**  
+Informe uma identificação curta para o afastamento.  
+Exemplo: *LicAmam*.
+
+• **Descrição**  
+Informe o nome completo do afastamento.  
+Essa descrição será exibida no **Cartão de Ponto** do colaborador.  
+Exemplo: *Licença Amamentação*.
+
+Palavras-chave: sigla afastamento, descrição afastamento
+
+---
+
+### 4. Defina o tipo de ação do afastamento
+
+Selecione o **Tipo de ação** que define como o afastamento será tratado pelo sistema.
+
+As opções disponíveis são:
+
+• **Descontar**  
+• **Não descontar**  
+• **Ignorar**
+
+A escolha correta da ação é essencial para garantir o cálculo correto da Gestão de Ponto.
+
+Palavras-chave: tipo de ação afastamento, cálculo de ponto
+
+---
+
+### 5. Salve o cadastro do afastamento
+
+Após preencher todas as informações e definir a ação:
+
+Clique em **Salvar**.
+
+O novo afastamento ficará disponível para utilização na Manutenção de Ponto e nos cartões dos colaboradores.
+
+Palavras-chave: salvar afastamento, cadastro concluído símix
+
+---
+
+## Entendendo as ações de afastamento no Símix Ponto
+
+A seguir, veja em detalhes como cada **tipo de ação** funciona no sistema.
+
+### Ação: Descontar
+
+A opção **Descontar** é utilizada quando o afastamento deve gerar desconto de horas.
+
+Exemplos de uso:
+
+• Folga compensada  
+• Situações em que o afastamento deve ser compensado com **horas extras** ou **banco de horas**
+
+Configurações complementares da ação **Descontar**:
+
+• **Não compensar**  
+Impede a compensação de horas.  
+Exemplo: suspensão disciplinar.
+
+• **Não justificado**  
+Utilize esta opção para descontar também o **DSR (Descanso Semanal Remunerado)**.
+
+• **Descontar feriados**  
+Quando ativo, o sistema desconta o feriado se o afastamento for lançado nesse dia.
+
+• **Abater extras úteis sem compensação**  
+Quando ativo, permite compensar horas extras que normalmente não seriam compensadas conforme o quadro de horários.
+
+Palavras-chave: afastamento descontar, desconto de horas, banco de horas
+
+---
+
+### Ação: Não descontar
+
+A opção **Não descontar** é utilizada quando o afastamento **não deve gerar desconto** de horas.
+
+Exemplos de uso:
+
+• Atestados médicos  
+• Abonos  
+• Licenças com remuneração
+
+Comportamento padrão:
+
+• O sistema considera as horas como **trabalhadas** nos totais da Manutenção de Ponto
+
+Configurações adicionais:
+
+• **Descontar horas normais**  
+Quando ativado, as horas não são consideradas como normais nos totais do ponto.
+
+• **Horas padrão**  
+Utilizado quando existe um tempo fixo que não deve ser descontado.  
+Exemplo: Licença Amamentação, onde por padrão **1 hora** não é descontada.
+
+Palavras-chave: afastamento não descontar, abono símix, atestado médico
+
+---
+
+### Ação: Ignorar
+
+A opção **Ignorar** é utilizada quando o afastamento **não deve computar horas** nem previstas, nem trabalhadas.
+
+Comportamento do sistema:
+
+• Não considera horas previstas no dia  
+• Não gera saldo positivo ou negativo  
+
+Exemplos de uso:
+
+• Suspensão contratual  
+• Afastamento sindical  
+• INSS  
+• Licença sem remuneração  
+
+Palavras-chave: afastamento ignorar, suspensão contratual, inss símix
+
+---
+
+## Navegação e acessibilidade
+
+Todo o processo de cadastro de **novos afastamentos no Símix Ponto** pode ser realizado seguindo o caminho:
+
+**Menu Principal > Cadastros > Afastamentos > + Novo**
+
+Palavras-chave: navegação símix ponto, acessibilidade cadastros
