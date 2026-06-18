@@ -1,607 +1,266 @@
-# Horarios
+# Como cadastrar e utilizar Quadros de Horários no Símix Ponto
 
-### Código do horário 
-<!-- CdHorario -->
+## Objetivo
 
-### Descrição 
-<!--  Descricao -->
+Neste artigo, você aprenderá como **cadastrar, configurar e utilizar Quadros de Horários no Símix Ponto**, definindo jornadas de trabalho, regras de compensação, horas extras, banco de horas, tolerâncias e DSR, garantindo uma Gestão de Ponto correta e alinhada à legislação trabalhista.
 
-### Domingo: Trabalha?
-<!--  Dom -->
+Palavras-chave: quadro de horários símix, jornada de trabalho, gestão de ponto
 
-### Domingo: Entrada do 1º turno 
-<!--  DomT1E -->
+---
 
-### Domingo: Saída do 1º turno 
-<!--  DomT1S -->
+## Pré-requisitos
 
-### Domingo: Entrada do 2º turno 
-<!--  DomT2E -->
+Antes de iniciar o cadastro de **Quadros de Horários no Símix Ponto**, verifique se você possui:
 
-### Domingo: Saída do 2º turno 
-<!--  DomT2S -->
+• Jornadas previstas definidas (dias e horários de trabalho)  
+• Regras trabalhistas definidas (compensação, banco de horas, adicionais, DSR)  
+• Permissão de acesso para cadastrar ou editar quadros de horários  
+• Horários e afastamentos previamente cadastrados no sistema  
 
-### Segunda-feira: Trabalha? 
-<!--  Seg -->
+Palavras-chave: acesso símix ponto, permissões cadastros, regras de jornada
 
-### Segunda-feira: Entrada do 1º turno 
-<!--  SegT1E -->
+---
 
-### Segunda-feira: Saída do 1º turno
- <!--  SegT1S -->
+## O que é um Quadro de Horários no Símix Ponto
 
-### Segunda-feira: Entrada do 2º turno
- <!--  SegT2E -->
+O **Quadro de Horários** é o cadastro que define **como o sistema deve interpretar a jornada do colaborador**.
 
-### Segunda-feira: Saída do 2º turno 
-<!--  SegT2S -->
+É nele que você configura:
 
-### Terça-feira: Trabalha? 
-<!--  Ter -->
+• Horários previstos de trabalho  
+• Regras de compensação de faltas e horas extras  
+• Banco de horas  
+• Percentuais de horas extras  
+• Tolerâncias de marcação  
+• Regras de DSR e feriados  
 
-### Terça-feira: Entrada do 1º turno 
-<!--  TerT1E -->
+Cada colaborador deve estar vinculado a um quadro de horários para que o cálculo do ponto funcione corretamente.
 
-### Terça-feira: Saída do 1º turno
- <!--  TerT1S -->
+Palavras-chave: quadro de horários, jornada símix, cálculo de ponto
 
-### Terça-feira: Entrada do 2º turno
- <!--  TerT2E -->
+---
 
-### Terça-feira: Saída do 2º turno 
-<!--  TerT2S -->
+## Passo a passo para cadastrar um Quadro de Horários no Símix Ponto
 
-### Quarta-feira: Trabalha? 
-<!--  Qua -->
+### 1. Acesse o cadastro de Quadros de Horários
 
-### Quarta-feira: Entrada do 1º turno
- <!--  QuaT1E -->
+No menu principal do **Símix Ponto**, clique em **Cadastros**.  
+Em seguida, selecione **Horários**.
 
-### Quarta-feira: Saída do 1º turno
- <!--  QuaT1S -->
+Na tela de Quadros de Horários:
 
-### Quarta-feira: Entrada do 2º turno
- <!--  QuaT2E -->
+• Utilize o filtro para visualizar quadros **Ativos** ou **Inativos**  
+• Clique em **Novo**, no canto superior direito, para criar um novo quadro  
 
-### Quarta-feira: Saída do 2º turno
- <!--  QuaT2S -->
+Caminho textual completo:  
+**Menu Principal > Cadastros > Horários**
 
-### Quinta-feira: Trabalha?
- <!--  Qui -->
+Palavras-chave: cadastros símix, quadros de horários
 
-### Quinta-feira: Entrada do 1º turno
- <!--  QuiT1E -->
+---
 
-### Quinta-feira: Saída do 1º turno
- <!--  QuiT1S -->
+## Guia Geral – Definição da jornada de trabalho
 
-### Quinta-feira: Entrada do 2º turno
- <!--  QuiT2E -->
+Na guia **Geral**, você define a **jornada base** do colaborador.
 
-### Quinta-feira: Saída do 2º turno 
-<!--  QuiT2S -->
+### 2. Configure os horários da semana
 
-### Sexta-feira: Trabalha?
- <!--  Sex -->
+• Preencha os horários de **entrada**, **intervalos** e **saída** da **segunda-feira**  
+• Utilize a opção **Copiar horários** para replicar a jornada:
+  - De segunda a sexta, ou  
+  - De segunda a sábado  
+• Caso exista jornada aos domingos, o preenchimento deve ser feito **manualmente**  
 
-### Sexta-feira: Entrada do 1º turno
- <!--  SexT1E -->
+Mesmo após copiar os horários, você pode **ajustar dias individualmente**, sem impactar os demais.
 
-### Sexta-feira: Saída do 1º turno
- <!--  SexT1S -->
+Palavras-chave: jornada semanal, copiar horários, escala símix
 
-### Sexta-feira: Entrada do 2º turno
- <!--  SexT2E -->
+---
 
-### Sexta-feira: Saída do 2º turno 
-<!--  SexT2S -->
+### 3. Configure a descrição da jornada
 
-### Sábado: Trabalha?
-<!--  Sab -->
+Utilize o ícone de **Lâmpada** para:
 
-### Sábado: Entrada do 1º turno
-<!--  SabT1E -->
+• Gerar automaticamente a descrição da jornada, ou  
+• Personalizar o texto exibido no sistema  
 
-### Sábado: Saída do 1º turno
-<!--  SabT1S -->
+Exemplo de descrição:  
+“De segunda a sexta, das 08:00 às 12:00 e das 13:00 às 18:00.”
 
-### Sábado: Entrada do 2º turno
-<!--  SabT2E -->
+Palavras-chave: descrição de jornada, quadro de horários
 
-### Sábado: Saída do 2º turno 
-<!--  SabT2S -->
+---
 
-### Lanche no 1º turno?
-<!--  LancheT1 -->
+## Guia Cálculos – Compensação, faltas e verificações
 
-### Lanche no 2º turno? 
-<!--  LancheT2 -->
+A guia **Cálculos** define como o Símix Ponto tratará **faltas, horas extras e compensações**.
 
-### Lanche no 3º turno?
-<!--  LancheT3 -->
+### 4. Escolha o modelo de compensação
 
-### Horas de lanche 
-<!--  HrLanche -->
+#### Sem compensação
+• Horas acima do previsto geram **horas extras**  
+• Horas abaixo geram **faltas**  
+• Pode haver extras e faltas no mesmo dia  
 
-### Horas do repouso remunerado 
-<!--  HrRep -->
+#### Compensação no dia
+• Compensa faltas e extras **no mesmo dia**  
+• Garante o cumprimento da carga diária  
 
-### Horas de tolerância 
-<!--  HrTolerancia -->
+#### Compensação no dia e mês (Banco de Horas)
+• Compensa faltas e extras ao longo do mês  
+• Gera saldo positivo ou negativo de banco de horas  
 
-### Horas de tolerância por dia? 
-<!--  ToleranciaPorDia -->
+#### Faltas sem compensação
+• Faltas são descontadas diretamente em folha  
+• Utilizado quando não se deseja compensação  
 
-### Horas de domingos e feriados trabalhados 
-<!--  HrDomingo -->
+Palavras-chave: compensação símix, banco de horas, faltas
 
-### Descontar horas faltas em domingos e feriados trabalhados 
-<!--  DescHrDomingo -->
+---
 
-### Ignorar horas extras em domingos e feriados trabalhados 
-<!--  IgnorarExtrasHrDomingo -->
+### 5. Opções adicionais de cálculo
 
-### Mínimo de horas de intervalo 
-<!--  MinHrIntervalo -->
+• **Considerar em dias com afastamento**  
+Faltas em dias de afastamento são tratadas como sem compensação  
 
-### Máximo de horas de intervalo 
-<!--  MaxHrIntervalo -->
+• **Considerar em dias parciais**  
+Faltas parciais são descontadas diretamente em folha  
 
-### Usuários para a autorização de intervalo 
-<!--  UsuHrIntervalo -->
+Palavras-chave: afastamento, faltas parciais
 
-### Máximo de horas de tolerância 
-<!--  MaxHrTolerancia -->
+---
 
-### Usuários para autorização de tolerância 
-<!--  UsuHrTolerancia -->
+### 6. Verificações adicionais
 
-### Mínimo de horas seguidas 
-<!--  MinHrSeguidas -->
+• **Verificar turno quebrado**  
+Evita criação indevida de terceiro turno  
 
-### Máximo de horas seguidas 
-<!--  MaxHrSeguidas -->
+• **Verificar intervalo variável**  
+Reconhece intervalos fora do horário previsto  
 
-### Usuários para a autorização de horas seguidas 
-<!--  UsuHrSeguidas -->
+Palavras-chave: turno quebrado, intervalo variável
 
-### Mínimo de horas diárias 
-<!--  MinHrDia -->
+---
 
-### Máximo de horas diárias 
-<!--  MaxHrDia -->
+## Guia Extras 1 – Horas extras e adicionais
 
-### Usuários para autorização de máximo de horas diárias 
-<!--  UsuHrDia -->
+### 7. Configure faixas de horas extras
 
-### Usuários para autorização quando trabalhado em dia com afastamento 
-<!--  UsuTrabAfasta -->
+Você pode configurar percentuais diferentes para:
 
-### Mínimo de horas de lanche 
-<!--  MinHrLanche -->
+• **Dias Úteis**  
+• **Dias Úteis Não Previstos**  
+• **Dias Não Úteis** (domingos e feriados)
 
-### Máximo de horas de lanche
-<!--  MaxHrLanche -->
+Exemplo em Dias Úteis:  
+• Faixa 1: 50% até 02:00  
+• Faixa 2: 100% acima de 02:00  
 
-### Usuários para autorização de máximo de lanche 
-<!--  UsuHrLanche -->
+Marque qual faixa será usada para **compensação de banco de horas**.
 
-### Horário máximo para a entrada 
-<!--  MaxHrEnt -->
+Palavras-chave: horas extras símix, percentuais extras
 
-### Horário máximo para a saída 
-<!--  MaxHrSai -->
+---
 
-### Usuários para autorização de horário mínimo/máximo para a entrada/saída 
-<!--  UsuHrEntSai -->
+### 8. Configure o Adicional Noturno
 
-###  Pegar1HorarioBranco 
-<!--  Pegar1HorarioBranco -->
+• Ative a opção **Adicional Noturno**  
+• Informe o período (ex.: 22:00 às 05:00)  
+• Utilize o ícone de **Lâmpada** para aplicar o redutor legal  
 
-###  ConsiderarManha 
-<!--  ConsiderarManha -->
+Palavras-chave: adicional noturno, jornada noturna
 
-###  HrConsiderarManha 
-<!--  HrConsiderarManha -->
+---
 
-### 1º turno: Descrição 
-<!--  DescT1 -->
+## Guia Extras 2 – Regras avançadas
 
-### 1º turno: Mensagem de entrada 
-<!--  DescT1MsgEnt -->
+Nesta guia você configura:
 
-### 1º turno: Mensagem de saída 
-<!--  DescT1MsgSai -->
+• Abatimento de extras úteis e não úteis  
+• Transferência de extras noturnas entre faixas  
+• Agrupamento de faixas no espelho de ponto  
 
-### 2º turno: Descrição 
-<!--  DescT2 -->
+Essas opções refinam como o saldo será exibido e compensado.
 
-### 2º turno: Mensagem de entrada 
-<!--  DescT2MsgEnt -->
+Palavras-chave: extras avançado, agrupamento de extras
 
-### 2º turno: Mensagem de saída 
-<!--  DescT2MsgSai -->
+---
 
-### 3º turno: Descrição 
-<!--  DescT3 -->
+## Guia Banco de Horas
 
-### 3º turno: Mensagem de entrada 
-<!--  DescT3MsgEnt -->
+### 9. Ative e configure o Banco de Horas
 
-### 3º turno: Mensagem de saída 
-<!--  DescT3MsgSai -->
+• Marque **Banco de horas** para habilitar  
+• Defina se utilizará percentuais na compensação  
+• Configure como o saldo será tratado entre faixas  
 
-### Tipo de extras (Dia, Mês) 
-<!--  TipoExtras -->
+O Banco de Horas permite controle mensal de saldo positivo e negativo.
 
-### Descontar repouso remunerado em caso de falta não justificada? 
-<!--  DescRepRem -->
+Palavras-chave: banco de horas símix, saldo de horas
 
-### Descontar repouso remunerado em caso de falta não justificada dentro do mês? 
-<!--  DescRepRemDentroMes -->
+---
 
-### Tipo de desconto do repouso remunerado em caso de falta parcial não justificada 
-<!--  TpDescRepRemFaltaParc -->
+## Guia Tolerância
 
-### Horas a considerar meio período para o tipo de desconto do repouso remunerado em caso de falta parcial não justificada 
-<!--  HrMPDescRepRem -->
+### 10. Configure tolerâncias de marcação
 
-### Exibir a manutenção em caso de autorizações? 
-<!--  ExibManuAutor -->
+Você pode configurar:
 
-### Adicional noturno? 
-<!--  AdNoturno -->
+• **Tolerância por dia**  
+• **Tolerância por turno**  
+• **Tolerância por dia ou turno**  
+• **Tolerância por dia e turno**
 
-### Hora inicial do adicional noturno 
-<!--  AdNoturnoInicio -->
+A tolerância evita gerar extras ou faltas por pequenas variações de horário.
 
-### Hora final do adicional noturno 
-<!--  AdNoturnoFim -->
+Palavras-chave: tolerância de ponto, atrasos e adiantamentos
 
-### Hora do adicional noturno 
-<!--  AdNoturnoHora -->
+---
 
-### Tipo de compensação (Sem compensação, Dia, Dia e mês) 
-<!--  TpCompensa -->
+## Guia DSR – Descanso Semanal Remunerado
 
-### Feriados como extras úteis? 
-<!--  FeriadosComoEU -->
+### 11. Configure regras de DSR
 
-### Hora de fim do dia 
-<!--  HrFimDia -->
+Nesta guia você define:
 
-### Hora de início do dia 
-<!--  HrInicioDia -->
+• Dia de DSR  
+• Desconto de DSR por falta  
+• Tratamento de feriados  
+• Condições para direito ao repouso  
 
-### Dia do descanso semanal remunerado 
-<!--  DiaDSR -->
+Essas regras garantem o cálculo correto do DSR conforme a jornada.
 
-### Extras em compensação (Não úteis, Úteis) 
-<!--  ExtrasEmCompensa -->
+Palavras-chave: dsr símix, descanso semanal remunerado
 
-### Almoço? 
-<!--  Almoco -->
+---
 
-### Considerar horas previstas para horistas? 
-<!--  ConsiderarHrPrevHoristas -->
+## Dúvidas frequentes
 
-### Tocar sirene neste horário? 
-<!--  Sirene -->
+### O quadro não aplicou compensação
+Verifique:
+• Configuração da guia **Cálculos**  
+• Vínculo do colaborador ao quadro correto  
 
-### Horas adicionais a tocar sirene 
-<!--  SireneHorarios -->
+### Percentuais de extras não aparecem
+Confira se existem faixas configuradas na guia **Extras 1**.
 
-### Tem autorizações? 
-<!--  Autorizacoes -->
+### DSR não está sendo gerado
+Revise:
+• Dia de DSR  
+• Horas previstas  
+• Condições de repouso remunerado  
 
-### Horas previstas semanais 
-<!--  HrPrevSemanais -->
+Palavras-chave: erro quadro de horários, dúvidas símix
 
-### Faltas sem compensação? 
-<!--  FaltasSemCompensa -->
+---
 
-### Descontar lanche das horas previstas? 
-<!--  DescLancheHrPrev -->
+## Navegação e acessibilidade
 
-### Banco de horas? 
-<!--  BancoHoras -->
+Todo o processo de cadastro e configuração de **Quadros de Horários no Símix Ponto** pode ser realizado seguindo o caminho:
 
-### Ignorar lanche nos feriados? 
-<!--  IgnorarLancheFeriados -->
+**Menu Principal > Cadastros > Horários**
 
-### Data de alteração 
-<!-- DtAlter -->
+Todos os menus, guias, campos e opções foram descritos em texto, garantindo acessibilidade para leitores de tela, mecanismos de busca e sistemas de inteligência artificial.
 
-### Ativo? 
-<!--  Ativo -->
-
-### Horário mínimo para a entrada 
-<!--  MinHrEnt -->
-
-### Horário mínimo para a saída 
-<!--  MinHrSai -->
-
-### Usuários para autorização de falta anterior 
-<!--  UsuFaltaAnterior -->
-
-### Separar extras noturnas? 
-<!--  SepararExtrasNoturnas -->
-
-### Separar extras noturnas com hora reduzida? 
-<!--  SepararExtrasNoturnasHrReduzida -->
-
-### Separar extras entre dia útil e dia não útil (00:00)? 
-<!--  SepararExtrasEntreDUDNU -->
-
-### Ignorar feriados com data de troca? 
-<!--  IgnorarFeriadosDtTroca -->
-
-### Extras dias úteis: Abater as sem compensação?
-<!--  EDUAbaterSemComp -->
-
-### Horas de tolerância do adicional noturno 
-<!--  AdNoturnoHrTolerancia -->
-
-### Considerar tolerância em data de troca? 
-<!--  ConsiderarToleranciaDtTroca -->
-
-### Código da escala 
-<!--  CdEscala -->
-
-### Sugerir escala? 
-<!--  SugerirEscala -->
-
-### Ignorar autorizações em dias não úteis? 
-<!--  IgnorarAutorDNU -->
-
-### Considerar extras no lanche? 
-<!--  ConsiderarExtrasLanche -->
-
-### Extras dias não úteis: Abater as sem compensação? 
-<!--  EDNUAbaterSemComp -->
-
-### Ignorar feriados? 
-<!--  IgnorarFeriados -->
-
-### Horas de lanche a partir da entrada
-<!--  HrLancheApartirEnt -->
-
-### Lanche pré-assinalado 
-<!--  LanchePreAssinalado -->
-
-### Considerar faltas sem compensação em dias com afastamentos? 
-<!--  FaltasSemCompensaAfasta -->
-
-###  Intervalo pré-assinalado 
-<!--  IntervaloPreAssinalado -->
-
-### Horas de tolerância (antes da entrada do 1º turno) 
-<!--  HrToleranciaT1EA -->
-
-### Horas de tolerância (depois da entrada do 1º turno) 
-<!--  HrToleranciaT1ED -->
-
-### Horas de tolerância (antes da saída do 1º turno) 
-<!--  HrToleranciaT1SA -->
-
-### Horas de tolerância (depois da saída do 1º turno) 
-<!--  HrToleranciaT1SD -->
-
-### Horas de tolerância (antes da entrada do 2º turno) 
-<!--  HrToleranciaT2EA -->
-
-### Horas de tolerância (depois da entrada do 2º turno) 
-<!--  HrToleranciaT2ED -->
-
-### Horas de tolerância (antes da saída do 2º turno) 
-<!--  HrToleranciaT2SA -->
-
-### Horas de tolerância (depois da saída do 2º turno) 
-<!--  HrToleranciaT2SD -->
-
-### Horas de tolerância (antes da entrada do intervalo) 
-<!--  HrToleranciaIntervaloA -->
-
-### Horas de tolerância (depois da saída do intervalo) 
-<!--  HrToleranciaIntervaloD -->
-
-### Tipo de média do repouso remunerado para o horista 
-<!--  TpMediaRepRemHorista -->
-
-### Ignorar autorizações em dias com troca? 
-<!--  IgnorarAutorDtTroca -->
-
-### Tipo de condição para o repouso remunerado 
-<!--  TpCondicaoRepRem -->
-
-### Tipo de condição para separar extras entre dia útil e dia não útil (00:00)? 
-<!--  SepararExtrasEntreDUDNUTpCondicao -->
-
-### Usuários para autorização do registro em outro estabelecimento 
-<!--  UsuRegOutroEstab -->
-
-### Código do cargo 
-<!--  CdCargo -->
-
-### Código do departamento 
-<!--  CdDepa -->
-
-### Código do setor 
-<!--  CdSetor -->
-
-### Código da seção 
-<!--  CdSecao -->
-
-### Código do estabelecimento 
-<!--  CdEstab -->
-
-### Horário máximo para a entrada 
-<!--  MaxHrEntIntervalo -->
-
-### Horário máximo para a saída 
-<!--  MaxHrSaiIntervalo -->
-
-### Horário mínimo para a entrada 
-<!--  MinHrEntIntervalo -->
-
-### Horário mínimo para a saída 
-<!--  MinHrSaiIntervalo -->
-
-### Usuários para autorização de horário mínimo/máximo para a entrada/saída 
-<!--  HrEntSaiRelativo -->
-
-### Considerar faltas sem compensação em dias parciais? 
-<!--  FaltasSemCompensaParcial -->
-
-### Transferir extras noturnas para próxima faixa 
-<!--  TransfExtrasNotProxFaixa -->
-
-### Agrupar faixas de extras 
-<!--  AgruparFaixasExtras -->
-
-### Considerar tolerância em adicional noturno 
-<!--  ConsiderarToleranciaAdNoturno -->
-
-### Verificar turno quebrado (Sem compensação) 
-<!--  VerificarTurnoQuebradoSemComp -->
-
-### Código do layout 
-<!--  CdLayout -->
-
-### Transferir extras para extras de espera 
-<!--  TransfExtrasParaExtrasEspera -->
-
-### Ignorar feriados (Desc DSR) 
-<!--  IgnorarFeriadosDescRepRem -->
-
-### Separar reflexo de extras noturnas 
-<!--  SepararExtrasNoturnasReflexo -->
-
-### Transferir extras de espera em dias não úteis 
-<!--  TransfExtrasEspNaoUtil -->
-
-### Observação específica para o espelho do ponto 
-<!--  ObsRlPonto -->
-
-### Considerar extras de espera sem adicional noturno 
-<!--  ConsiderarExtrasEsperaSemAdNoturno -->
-
-###  MinHrDescDiaAnt 
-<!--  MinHrDescDiaAnt -->
-
-###  MaxHrDescDiaAnt 
-<!--  MaxHrDescDiaAnt -->
-
-### Hora de início do almoco 
-<!--  HrAlmocoIni -->
-
-### Hora de início do janta  
-<!--  HrJantaIni -->
-
-###  HrFeriado 
-<!--  HrFeriado -->
-
-### Verificar intervalo variável 
-<!--  IntervaloVariavelSemComp -->
-
-### Considerar horas de jornada sem marcações do tipo espera 
-<!--  ConsiderarJornadaSemTipoEspera -->
-
-### Considerar preferência para horas extras de espera 
-<!--  ConsiderarPrefExtrasEspera -->
-
-### Transferir extras para extras normais 
-<!--  TransfExtrasparaExtrasNormal -->
-
-### Considerar horas de jornada sem extras de espera
-<!--  ConsiderarJornadaSemExtrasEspera -->
-
-### Máximo de dias (DSR)
-<!--  DescRepRemMaxDias -->
-
-### Separar extras noturnas sem separar as faixas 
-<!--  SepararExtrasNoturnasSemFaixas -->
-
-### Banco de horas para extras noturnas 
-<!--  AdNoturnoBH -->
-
-### Tipo de compensação BH 
-<!--  TpCompensaBH -->
-
-### Utilizar Percentual Comp. BH (Hrs. Negativas) 
-<!--  UsarPercCompBH -->
-
-###  MaxAcessoEnt 
-<!--  MaxAcessoEnt -->
-
-###  MaxAcessoSai 
-<!--  MaxAcessoSai -->
-
-###  MaxAcessoEntIntervalo 
-<!--  MaxAcessoEntIntervalo -->
-
-###  MaxAcessoSaiIntervalo 
-<!--  MaxAcessoSaiIntervalo -->
-
-### Considerar horário por dia em feriados" 
-<!--  ConsiderarHorarioDiaFer -->
-
-### Considerar adicional noturno em intervalos 
-<!--  ConsiderarIntervaloAdNoturno -->
-
-### Transferir extras BH para BH original 
-<!--  TransferirExtrasBH -->
-
-### Utilizar percentual de extras no saldo diário 
-<!--  UsarPercExtrasSaldo -->
-
-###  UsarPercExtrasApenasNot 
-<!--  UsarPercExtrasApenasNot -->
-
-### Utilizar percentual em 
-<!--  UsarPercNot -->
-
-### Considerar em rep. rem. 
-<!--  ConsiderarToleranciaRepRem -->
-
-### Dia e turno (Tolerância) 
-<!--  ToleranciaPorDiaTurno -->
-
-###  CdHorarioOrigem 
-<!--  CdHorarioOrigem -->
-
-### Considerar em ext. not. (Tolerância) 
-<!--  ConsiderarToleranciaExtraNot -->
-
-### Horas de intervalo intrajornada 
-<!--  HrIntervaloIntrajornada -->
-
-### Considerar tolêrancia no intervalo (Motorista) 
-<!--  HrTolerIntrajornada -->
-
-###  CdEscalaEspecial 
-<!--  CdEscalaEspecial -->
-
-### Descontar feriado (falta na semana) (DSR) 
-<!--  DescRepRemFerNaSemana -->
-
-### Considerar afastamentos (Tolerância)
-<!--  ConsiderarToleranciaAfasta -->
-
-### Descontar feriado (semana integral com faltas) (DSR)
-<!--  DescRepRemFerSemanaIntegral -->
-
-### Banco de horas para extras noturnas (1º faixa) 
-<!--  AdNoturnoBH1Faixa -->
-
-###  ExtrasAposXHrs 
-<!--  ExtrasAposXHrs -->
-
-###  ConsiderarExtrasAposXHrs 
-<!--  ConsiderarExtrasAposXHrs -->
-
-### Usar hora reduzida nas horas previstas (Adicional noturno)
-<!--  UsarHrReduzidaHrPrev -->
-
-### Usar hora reduzida nas horas trabalhadas (Adicional noturno) 
-<!--  UsarHrReduzidaHrTrab -->
+Palavras-chave: navegação símix ponto, acessibilidade quadros
+``
