@@ -90,10 +90,8 @@ Palavras-chave: contato empresa, e-mail contábil Símix, exportação folha
 
 • **Data de Instalação**: Informe a data de instalação da empresa. Campo opcional.  
 • **Estabelecimento Padrão**: Define qual estabelecimento será automaticamente atribuído ao cadastrar novos colaboradores.  
-• **Logo**: Permite anexar a logomarca da empresa.  
-Para inserir a logo, clique no ícone de **lupa** e selecione a imagem desejada.
 
-Palavras-chave: configurações empresa, estabelecimento padrão Símix, logo empresa
+Palavras-chave: configurações empresa, estabelecimento padrão Símix
 
 ---
 

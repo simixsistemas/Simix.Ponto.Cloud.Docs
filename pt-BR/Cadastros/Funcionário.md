@@ -1,160 +1,196 @@
-# Cadastro Funcionarios
+# Como cadastrar colaboradores no Símix Ponto
 
-## Principal
-### Código do funcionário
-<!-- CdFunc -->
+## Objetivo
 
-### Mês do cadastro
-<!-- AnoMes -->
+Neste artigo, você aprenderá como **cadastrar colaboradores no Símix Ponto**, garantindo que os dados estejam corretamente preenchidos para o registro de ponto, integração com relógios e comunicação com a folha de pagamento.
 
-### Nome do funcionário
-<!-- Nome -->
+Palavras-chave: cadastro de colaborador símix, colaborador símix ponto, gestão de ponto
 
-### Pronuncia do nome do funcionário
-<!-- Pronuncia -->
+---
 
-### Data de nascimento
-<!-- DtNasc -->
+## Pré-requisitos
 
-### Sexo
-<!-- Sexo -->
+Antes de iniciar o cadastro de colaboradores no **Símix Ponto**, verifique se você possui:
 
-### CPF
-<!-- CPF -->
+• Acesso ao sistema **Símix Ponto** com permissão para cadastro  
+• Informações do colaborador, como **CPF**, **PIS**, **data de admissão**, **cargo** e demais dados cadastrais  
+• Código da folha de pagamento, caso sua empresa utilize integração  
 
-### PIS
-<!-- PIS -->
+Palavras-chave: acesso símix ponto, permissões de cadastro, integração folha
 
-### Matricula do funcionário
-<!-- Matricula -->
+---
 
-### Carteira de trabalho do funcionário
-<!-- Carteira -->
+## Passo a passo para cadastrar colaboradores no Símix Ponto
 
-### Data de admissao
-<!-- DtAdmissao -->
+### 1. Acesse o menu de cadastro de colaboradores
 
-### Data de demissao
-<!-- DtDemissao -->
+No **Símix Ponto**, acesse o menu **Cadastros > Colaboradores**.  
+Em seguida, clique em **Novo** para iniciar o cadastro de um colaborador.
 
-### Código do horário
-<!-- CdHorario -->
+Ao clicar em **Novo**, o sistema gera automaticamente um **código sequencial** para identificar o colaborador.
 
-### Tipo Mensalista, Horista ou Estagiário
-<!-- Tipo -->
+**Importante:**  
+Não recomendamos alterar esse código posteriormente, pois ele é utilizado para registro de ponto e integrações.
 
-### Código do Cargo
-<!-- CdCargo -->
+**Dica:**  
+Se a sua empresa utiliza o mesmo código da folha de pagamento, você pode digitar esse código diretamente nos campos **Código** e **Código da folha**, sem clicar em **Novo**.  
+Caso o código já esteja em uso, ele não poderá ser reaproveitado.
 
-### Código do grupo de ações
-<!-- CdGrupoAcoes -->
+Palavras-chave: cadastros símix, colaboradores símix, código do colaborador
 
-### Código do estabelecimento
-<!-- CdEstab -->
+---
 
-### Código do estabelecimento atual
-<!-- CdEstabAtualMes -->
+### 2. Preencha a Guia Principal
 
-### Código do Departamento
-<!-- CdDepa -->
+A **Guia Principal** reúne os dados obrigatórios para identificação do colaborador e funcionamento correto da Gestão de Ponto.
 
-### Código do Setor
-<!-- CdSetor -->
+Preencha com atenção os seguintes campos:
 
-### Código da Seção
-<!-- CdSecao -->
+• **Código**  
+Identificação única do colaborador no Símix Ponto. Utilizado no registro de ponto e integrações.
 
-### Código da folha de pagamento
-<!-- CdFolhaPag -->
+• **Nome**  
+Nome que será exibido no espelho do cartão de ponto e nos relatórios.
 
-### Código contrato
-<!-- CdContrato -->
+• **Gênero**  
+Informação utilizada para identificação interna, relatórios e atendimento a requisitos legais.
 
-### Código de registro
-<!-- CdRegistro -->
+• **CPF**  
+Obrigatório para atendimento à **Portaria 671** e para uso da plataforma em registros e consultas.
 
-### Código externo do funcionário
-<!-- CdFuncExterno -->
+• **PIS**  
+Obrigatório para atendimento à **Portaria 1510**, quando utilizado equipamento compatível.
 
-### Permitir registro web
-<!-- PermitirRegWeb -->
+• **Código na folha**  
+Código utilizado no sistema de folha de pagamento.
 
-### Permitir registro por barras
-<!-- PermitirRegBarras -->
+• **Data de admissão**  
+Define o início da contagem do cartão de ponto, controle de tempo de empresa e vínculos contratuais.
 
-### Permitir registro RFID
-<!-- PermitirRegRfid -->
+• **Cargo, nível de cargo, Departamento, Setor e Seção**  
+Utilizados para filtros, relatórios e organização da estrutura da empresa.
 
-### Permitir registro por teclado quando tiver usando a biometria
-<!-- PermitirTeclado -->
+• **Tipo**  
+Selecione se o colaborador é **Mensalista**, **Horista** ou **Estagiário**.
 
-## Complementar
-### CEP
-<!-- CEP -->
+• **Horário**  
+Selecione um **Quadro de Horários** previamente cadastrado.
 
-### Endereço
-<!-- Endereco -->
+• **Estabelecimento**  
+Define a unidade onde o colaborador está alocado.
 
-### Endereço completo
-<!-- EnderecoCompl -->
+Palavras-chave: guia principal colaborador, dados obrigatórios símix, quadro de horários
 
-### Bairro
-<!-- CdBairro -->
+---
 
-### Cidade
-<!-- CdCidade -->
+### 3. Preencha os campos não essenciais (opcional)
 
-### Senha para registro no coletor
-<!-- ColetorSenha -->
+Os campos abaixo não são obrigatórios, mas enriquecem o cadastro:
 
-### Privilégio no coletor
-<!-- ColetorPrivilegio -->
+• **Matrícula**  
+• **Carteira de Trabalho**  
+• **Data de nascimento**  
+Utilizada, por exemplo, na listagem de aniversariantes do sistema.
 
-### Estabelecimento do funcionário no coletor
-<!-- ColetorFuncEstab -->
+Palavras-chave: dados complementares colaborador, cadastro completo símix
 
-### Quantidade de digitais cadastradas no banco de dados
-<!-- Digitais -->
+---
 
-### Rotinas do cálculo a serem ignoradas
-<!-- IdRotinasCalcIgnorar -->
+### 4. Preencha a seção Documentos
 
-### Observação no txt
-<!-- ObsTxt -->
+Nesta seção, você pode registrar informações adicionais do colaborador:
 
-### Email
-<!-- Email -->
+• **Código externo**  
+Utilizado para integração com outros sistemas.
 
-### Telefone
-<!-- Telefone -->
+• **Contrato**  
+Permite o cálculo automático de término de contratos.
 
-### RG
-<!-- RG -->
+• **RG**  
+Documento complementar para relatórios internos.
 
-### Estado civil
-<!-- EstadoCivil -->
+• **Nome social**  
+Substitui o nome civil em telas, sistemas e aplicativos.
 
-### Situação de escolaridade
-<!-- EscolaridadeSituacao -->
+• **Pronúncia**  
+Registra a forma correta de pronunciar o nome do colaborador.
 
-### Nível de escolaridade
-<!-- EscolaridadeNivel -->
+Palavras-chave: documentos colaborador, nome social símix
 
-### Valor salário
-<!-- VlrSalario -->
+---
 
-### Valor hora
-<!-- VlrHora -->
+### 5. Preencha a seção Complementar
 
-### Código externo
-<!-- CdExterno -->
+Na seção **Complementar**, informe dados adicionais de contato e perfil:
 
-### Numero armário
-<!-- NumeroArmario -->
+• **Pronúncia**  
+Forma correta de pronunciar o nome do colaborador.
 
-## Mobile/WEB
-### Login
-<!-- Login -->
+• **E-mail** e **E-mail alternativo**  
+Utilizados para comunicação.
 
-### Senha
-<!-- Senha -->
+• **Telefone**  
+Número de contato do colaborador.
+
+• **Valor salário**  
+Salário mensal do colaborador.
+
+• **Valor hora**  
+Valor pago por hora trabalhada.
+
+• **Estado civil**  
+• **Escolaridade** e **Situação da escolaridade**  
+• **Número do armário** (se aplicável)  
+• **Observações**  
+Campo livre para anotações internas.
+
+Palavras-chave: dados complementares símix, contato colaborador
+
+---
+
+### 6. Preencha a seção Endereço
+
+A seção **Endereço** funciona como base de dados pessoais do colaborador e é importante para controles como vale-transporte e informações oficiais, como **eSocial**.
+
+Preencha os campos abaixo:
+
+• **CEP**  
+Ao informar o CEP corretamente, o sistema pode sugerir dados automaticamente.
+
+• **Endereço**  
+Informe rua, avenida ou logradouro.
+
+• **Complemento**  
+Bloco, número, sala ou outras referências.
+
+• **Bairro**  
+Digite ou selecione utilizando a **lupa**.
+
+• **Cidade**  
+Digite ou selecione utilizando a **lupa**.
+
+Palavras-chave: endereço colaborador, dados pessoais símix
+
+---
+
+### 7. Salve o cadastro do colaborador
+
+Após revisar todas as informações preenchidas:
+
+Clique em **Salvar** para concluir o cadastro.
+
+O colaborador ficará disponível para **registro de ponto**, **manutenções**, **relatórios** e integrações do Símix Ponto.
+
+Palavras-chave: salvar colaborador, cadastro concluído símix
+
+---
+
+## Navegação e acessibilidade
+
+Todo o processo de cadastro de **colaboradores no Símix Ponto** pode ser realizado seguindo o caminho:
+
+**Menu Principal > Cadastros > Colaboradores > Novo**
+
+Todos os campos, menus e opções foram descritos em texto, garantindo acessibilidade para leitores de tela, mecanismos de busca e sistemas de inteligência artificial.
+
+Palavras-chave: navegação símix ponto, acessibilidade cadastro
