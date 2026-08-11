@@ -47,11 +47,11 @@
           "path": "Cadastros/BHConfig.md"
         },
         {
-          "text": "BHLancamentos",
+          "text": "Lançamentos de Banco de Horas",
           "path": "Cadastros/BHLancamentos.md"
         },
         {
-          "text": "CamposCustomizavel",
+          "text": "Campos Customizáveis",
           "path": "Cadastros/CamposCustomizavel.md"
         },
         {
@@ -67,11 +67,11 @@
           "path": "Cadastros/Coletores.md"
         },
         {
-          "text": "Config",
+          "text": "Configurações Geral",
           "path": "Cadastros/Config.md"
         },
         {
-          "text": "ConsultaBhTotais",
+          "text": "Consulta Totais do Banco de Horas",
           "path": "Cadastros/ConsultaBhTotais.md"
         },
         {
@@ -91,7 +91,7 @@
           "path": "Cadastros/Estabelecimentos.md"
         },
         {
-          "text": "EstabGrupos",
+          "text": "Grupos de Estabelecimentos",
           "path": "Cadastros/EstabGrupos.md"
         },
         {
@@ -99,35 +99,35 @@
           "path": "Cadastros/Feriados.md"
         },
         {
-          "text": "FuncDocumentos",
+          "text": "Colaboradores Documentos",
           "path": "Cadastros/FuncDocumentos.md"
         },
         {
-          "text": "Funcionário",
+          "text": "Colaboradores",
           "path": "Cadastros/Funcionário.md"
         },
         {
-          "text": "HorarioPorPeriodo",
+          "text": "Horários por Período",
           "path": "Cadastros/HorarioPorPeriodo.md"
         },
         {
-          "text": "Horarios",
+          "text": "Horários",
           "path": "Cadastros/Horarios.md"
         },
         {
-          "text": "HorariosDias",
+          "text": "Horários por Dia",
           "path": "Cadastros/HorariosDias.md"
         },
         {
-          "text": "HorariosLayouts",
+          "text": "Layout de Horários",
           "path": "Cadastros/HorariosLayouts.md"
         },
         {
-          "text": "LayoutFolhaPag",
+          "text": "Layouts da Folha de Pagamento",
           "path": "Cadastros/LayoutFolhaPag.md"
         },
         {
-          "text": "MobileConfigs",
+          "text": "Configurações para o App",
           "path": "Cadastros/MobileConfigs.md"
         },
         {
@@ -135,23 +135,23 @@
           "path": "Cadastros/Motivos.md"
         },
         {
-          "text": "Periodos",
+          "text": "Períodos",
           "path": "Cadastros/Periodos.md"
         },
         {
-          "text": "PontoSituacoes",
+          "text": "Ponto Situacões",
           "path": "Cadastros/PontoSituacoes.md"
         },
         {
-          "text": "RegrasInconsistencias",
+          "text": "Regras de Inconsistências",
           "path": "Cadastros/RegrasInconsistencias.md"
         },
         {
-          "text": "RegrasPremio",
+          "text": "Regras de Prêmio",
           "path": "Cadastros/RegrasPremio.md"
         },
         {
-          "text": "Secoes",
+          "text": "Secões",
           "path": "Cadastros/Secoes.md"
         },
         {
@@ -159,7 +159,7 @@
           "path": "Cadastros/Setores.md"
         },
         {
-          "text": "TurnosEspeciais",
+          "text": "Turnos Especiais",
           "path": "Cadastros/TurnosEspeciais.md"
         },
         {
@@ -167,15 +167,15 @@
           "path": "Cadastros/UFs.md"
         },
         {
-          "text": "Usuarios",
+          "text": "Usuários",
           "path": "Cadastros/Usuarios.md"
         },
         {
-          "text": "VRs",
+          "text": "Vale Refeição",
           "path": "Cadastros/VRs.md"
         },
         {
-          "text": "VTs",
+          "text": "Vale Transporte",
           "path": "Cadastros/VTs.md"
         }
       ]
