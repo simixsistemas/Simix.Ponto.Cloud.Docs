@@ -11,7 +11,62 @@
     },
     {
       "text": "Atualizações",
-      "path": "Atualizacoes/2025.md"
+      "items": [
+        {
+          "text": "Novidades",
+          "path": "Atualizacoes/Novidades.md"
+        },
+        {
+          "text": "2026",
+          "items": [
+            {
+              "text": "Agosto",
+              "path": "Atualizacoes/2026/2026-08.md"
+            },
+            {
+              "text": "Julho",
+              "path": "Atualizacoes/2026/2026-07.md"
+            },
+            {
+              "text": "Junho",
+              "path": "Atualizacoes/2026/2026-06.md"
+            },
+            {
+              "text": "Maio",
+              "path": "Atualizacoes/2026/2026-05.md"
+            },
+            {
+              "text": "Abril",
+              "path": "Atualizacoes/2026/2026-04.md"
+            },
+            {
+              "text": "Março",
+              "path": "Atualizacoes/2026/2026-03.md"
+            },
+            {
+              "text": "Fevereiro",
+              "path": "Atualizacoes/2026/2026-02.md"
+            },
+            {
+              "text": "Janeiro",
+              "path": "Atualizacoes/2026/2026-01.md"
+            }
+          ]
+        },
+        {
+          "text": "2025",
+          "items": [
+            {
+              "text": "Dezembro",
+              "path": "Atualizacoes/2025/2025-12.md"
+            },
+            {
+              "text": "Novembro",
+              "path": "Atualizacoes/2025/2025-11.md"
+            }
+          ]
+        }
+      ]
     },
     {
       "text": "Implantação",
