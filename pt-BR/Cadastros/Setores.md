@@ -3,7 +3,7 @@
 ## Objetivo
 Neste artigo, você aprenderá como cadastrar um setor no Símix Ponto. Esse cadastro é essencial para organizar a estrutura da empresa, facilitar o vínculo de colaboradores e otimizar a Gestão de Ponto no sistema.
 
-Palavras-chave: cadastro de setor, setores Símix Ponto, estrutura organizacional, gestão de ponto por setor.
+<!-- Palavras-chave: cadastro de setor, setores Símix Ponto, estrutura organizacional, gestão de ponto por setor. -->
 
 ---
 
@@ -14,7 +14,7 @@ Antes de iniciar o cadastro de setor no Símix Ponto, verifique se você possui:
 • Permissão para acessar o menu **Cadastros** no Símix Ponto.  
 • Estrutura básica da empresa previamente configurada no sistema.
 
-Palavras-chave: acesso Símix Ponto, permissões de cadastro, configuração inicial Símix.
+<!-- Palavras-chave: acesso Símix Ponto, permissões de cadastro, configuração inicial Símix. -->
 
 ---
 
