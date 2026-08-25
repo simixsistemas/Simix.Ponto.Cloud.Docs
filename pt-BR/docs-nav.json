@@ -18,7 +18,11 @@
       "items": [
         {
           "text": "Guia de Implantação de Banco e Importação de Funcionários",
-          "path": "Implantacao.md"
+          "path": "Implantacao.md"  
+        },  
+        {
+          "text": "Como Configurar Horário Padrão e Horário Modelo",
+          "path": "ConfigurarHrPadraoModelo.md"
         }
       ]
     },
