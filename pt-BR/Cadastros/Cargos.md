@@ -3,7 +3,7 @@
 ## Objetivo
 Neste artigo, você aprenderá como cadastrar um cargo no Símix Ponto. Esse cadastro é essencial para organizar corretamente as funções dos colaboradores, facilitar a gestão de ponto e automatizar vínculos como quadro de horários e envio para os coletores.
 
-Palavras-chave: cadastro de cargo Símix Ponto, cargos, função do colaborador, CBO, gestão de ponto
+<!--Palavras-chave: cadastro de cargo Símix Ponto, cargos, função do colaborador, CBO, gestão de ponto-->
 
 ---
 
@@ -14,7 +14,7 @@ Antes de iniciar o cadastro de cargo no Símix Ponto, verifique se você possui:
 • Permissão de administrador ou perfil com acesso aos cadastros  
 • Conhecimento prévio da função ou cargo que será criado  
 
-Palavras-chave: acesso Símix Ponto, permissão administrador, pré-requisitos cadastro
+<!--Palavras-chave: acesso Símix Ponto, permissão administrador, pré-requisitos cadastro-->
 
 ---
 
@@ -24,7 +24,7 @@ Palavras-chave: acesso Símix Ponto, permissão administrador, pré-requisitos c
 Acesse o sistema Símix Ponto e, no menu principal, clique em **Cadastros** e depois em **Cargos**.  
 Essa ação exibirá a lista completa de cargos já cadastrados no sistema.
 
-Palavras-chave: menu cargos Símix Ponto, cadastros, lista de cargos
+<!--Palavras-chave: menu cargos Símix Ponto, cadastros, lista de cargos-->
 
 ---
 
@@ -32,7 +32,7 @@ Palavras-chave: menu cargos Símix Ponto, cadastros, lista de cargos
 Na tela de listagem de cargos do Símix Ponto, clique no botão **Novo** para criar um novo cargo.  
 Se preferir, você também pode editar um cargo existente clicando no **ícone de lápis**, ou excluir um cargo utilizando a **seta ao lado do lápis**.
 
-Palavras-chave: novo cargo, editar cargo, excluir cargo, gestão de cargos
+<!--Palavras-chave: novo cargo, editar cargo, excluir cargo, gestão de cargos-->
 
 ---
 
@@ -49,7 +49,7 @@ Cargos inativos não aparecem para vinculação.
 **CBO (opcional)**  
 Informe o código da **Classificação Brasileira de Ocupações (CBO)**, que normalmente possui 6 dígitos e identifica oficialmente a profissão no mercado de trabalho brasileiro.
 
-Palavras-chave: descrição do cargo, cargo ativo, CBO, classificação brasileira de ocupações
+<!--Palavras-chave: descrição do cargo, cargo ativo, CBO, classificação brasileira de ocupações-->
 
 ---
 
@@ -64,7 +64,7 @@ Dessa forma, ao selecionar esse cargo no cadastro do colaborador, o quadro de ho
 **Enviar Todos Coletores**  
 Ative esta opção para que, ao vincular o cargo a um colaborador, as informações sejam enviadas automaticamente para todos os relógios de ponto (coletores).
 
-Palavras-chave: engrenagem cargo, horário padrão, enviar coletores, automação Símix Ponto
+<!--Palavras-chave: engrenagem cargo, horário padrão, enviar coletores, automação Símix Ponto-->
 
 ---
 
@@ -72,7 +72,7 @@ Palavras-chave: engrenagem cargo, horário padrão, enviar coletores, automaçã
 Após preencher todos os campos desejados, clique em **Salvar** para concluir o cadastro do cargo no Símix Ponto.  
 O cargo ficará disponível imediatamente para uso no cadastro de colaboradores, conforme as opções definidas.
 
-Palavras-chave: salvar cargo, finalizar cadastro, cargo disponível
+<!--Palavras-chave: salvar cargo, finalizar cadastro, cargo disponível-->
 
 ---
 
@@ -89,5 +89,4 @@ Os ícones exibidos na tela representam:
 
 Todas as informações visuais presentes na tela foram descritas em texto para garantir acessibilidade, leitura por leitores de tela e correta interpretação por sistemas de inteligência artificial.
 
-Palavras-chave: navegação Símix Ponto, acessibilidade, caminho do menu, ícones do sistema
-``
+<!--Palavras-chave: navegação Símix Ponto, acessibilidade, caminho do menu, ícones do sistema-->
