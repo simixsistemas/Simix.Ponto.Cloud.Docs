@@ -1,455 +1,162 @@
-# 16/08/2026
+# 02/09/2026
 
-##  Melhorias/ajustes
-## Ajuste na gravação do campo de BH na faixa 2 das extras úteis
+## Melhorias na Sincronização
 
-- Ajuste na gravação do campo de banco de horas na faixa 2 na tabela das HorariosFExtras que não estava gravando.
-- Adicionado o checkbox para o BH da faixa 2 de dias não úteis que tinha a possibilidade no pcponto antigo.
-- Ajustes para aprovar uma requisição de pendencia (ponto e afasta) ao criar uma nova solicitação.
-- Ajuste erro de null ao criar uma pendencia de ponto.
-- Realizado ajuste de exibição dos comprovantes, quando selecionado o mesmo dia de data inicial e final.
+- Corrigido o erro de *Connection timed out* na sincronização com equipamentos que usam HTTPS: o sistema agora detecta o protocolo correto antes de se comunicar.
+- O erro em um coletor não interrompe mais a sincronização dos demais coletores da empresa; a falha fica registrada no próprio coletor e a varredura continua.
+- Situação do coletor mais detalhada, diferenciando erro de conexão e erro de dados, com registro dos logs de sincronização.
+- Novo monitor interno para a equipe Símix acompanhar a situação dos coletores de todos os clientes e agir de forma proativa.
+- Diversos ajustes gerais na sincronização e no agente.
 
-##  Melhorias de UI
+## Histórico de geração de Espelhos e Folha ✨
 
-- Ajustados os atalhos do sistema para não bloquear os atalhos padrão do navegador, como `Ctrl + F`, `Ctrl + R`, `Ctrl + S`, entre outros.
-- Substituído o período inicial/final do Calcular Dados pelo componente `SmxMonthRange`.
-- Ajustado o popup de data da `Consulta Diária` para fechar corretamente.
-- Ao gerar novamente o `Espelho Ponto`, o `Calcular Dados` é executado.
-- Ajustada a geração de novos códigos para permitir cadastros simultâneos.
+As gerações do Espelho Ponto e da exportação da Folha de Pagamento agora ficam registradas, com consulta de quem gerou e acesso aos arquivos.
 
-## Regras premio - Horas extras/Turno horas de lanche
+- **Espelho Ponto**: novo submenu **Histórico** em cada card, com as gerações realizadas, o responsável e os links dos arquivos.
+- **Exportação da Folha**: novo ícone de **Histórico** ao lado do título, permitindo consultar gerações anteriores e recarregar uma sessão específica.
+- Ajustes na geração do Espelho Ponto durante a exportação da folha.
 
-- Realizado o tratamento para identificar o turno na regra de Horas lanche.
-- Adicionado a opção de Horas Extras nas regras de premio dias.
-Aplicado a regra para a verificação de dois contratos em registros vindos do ControlIDFace.
+- Histórico do Espelho:
+![image](imagens/cloud_pr2392_imagem1.png)
+![image](imagens/cloud_pr2392_imagem2.png)
 
-### Demonstração
-![image](imagens/cloud_pr2301_imagem1.png)
-![image](imagens/cloud_pr2301_imagem2.png)
+- Histórico da Folha:
+![image](imagens/cloud_pr2392_imagem3.png)
 
+- Geração da folha:
+![image](imagens/cloud_pr2392_imagem4.png)
 
-## Filtros para Consulta Diária ✨
+## Banco de horas e afastamentos ✨
 
-- Realizado adição de filtro do tipo trabalhado (Todos, Extras ou Afastado)
-- Realizado adição de filtro do tipo de dispositivo (Todos, Coletor, Celular, Web, Manutenção ou Manutenção Funcionário)
-- Realizado ação de filtro do tipo de local (Todos, Empresa, Home Office, Sobreaviso, Cliente, Viagem e Outros)
+- Nova opção de tipo **Banco de horas** no cadastro de afastamentos: as horas do afastamento passam a compor o saldo do banco de horas do colaborador.
+- O saldo do afastamento do tipo BH entra no cálculo do saldo atual do banco de horas, com o desconto/acréscimo aplicado corretamente e o saldo atual calculado somente até o período selecionado.
+- Novo campo de **horas de saldo de BH (atual)** nos totais da manutenção.
+- Nas faltas sem compensação, o afastamento separado passa a ser ignorado.
 
-### Demonstração
-- Filtro Afastado
-![image](imagens/cloud_pr2298_imagem1.png)
+![image](imagens/cloud_pr2316_imagem1.png)
 
-- Filtro Extras
-![image](imagens/cloud_pr2298_imagem2.png)
+- Saldo do afastamento tipo BH compondo o banco de horas:
 
-- Filtro com dispositivo e Local
-![image](imagens/cloud_pr2298_imagem3.png)
+![image](imagens/calc_pr456_imagem1.png)
 
+- Saldo de BH (atual) nos totais da manutenção:
 
-## Tarefa Gerar arquivos fiscais ✨
+![image](imagens/calc_pr464_imagem1.png)
+![image](imagens/calc_pr464_imagem2.png)
 
-- Criado a tarefa `TarefaGerarArquivosFiscais`.
-- Ajustada a página `ArquivosFiscais` para herdar de `TarefaPageBase` e exibir o progresso da geração.
-- Corrigido o processo de compactação no `CalcManager`, onde a geração de arquivos ZIP contendo todos os tipos incluía apenas o último arquivo.
+## Pendências com seleção de turno (layout Livre/Motoristas) ✨
 
-### Demonstração
-- Gerar arquivos fiscais  
-![image](imagens/cloud_pr2296_imagem1.png)
+Para empresas com layout do tipo **Livre ou Motoristas**, as pendências de ponto agora solicitam o tipo do turno do colaborador.
 
-## Ajustes na Exportação da folha
+- Ao criar a solicitação, o turno é informado e aplicado corretamente após a aprovação.
+- Ajustes também na importação de registros de motoristas.
 
-- Adicionado o filtro por **Setor** e reorganizados os filtros de **Cargo**, **Departamento** e **Setor** no menu `Mais Filtros`.
-- Ajustada a geração de nomes únicos para os arquivos temporários, utilizando o `Id` desde a geração da Calc e repassando-o para a DLL.
+- Antes da solicitação:
+![image](imagens/cloud_pr2345_imagem1.png)
+- Solicitação com turno:
+![image](imagens/cloud_pr2345_imagem2.png)
+- Após a aprovação:
+![image](imagens/cloud_pr2345_imagem3.png)
+- Testado em layout comum:
+![image](imagens/cloud_pr2345_imagem4.png)
+- Teste do cálculo:
+![image](imagens/calc_pr465_imagem1.png)
 
-### Demonstração
-- Nomes únicos
-![image](imagens/cloud_pr2293_imagem1.png)
+## Dois contratos — validação mais completa
 
+Melhorias no tratamento de colaboradores com dois contratos no mesmo dia.
 
-## Formato das horas para o Espelho ✨
-- Nova opção para seleção do formato das horas no menu avançado da geração do `Espelho Ponto`:
-  - `Horas`: gera os totais no formato atual de horas.
-  - `Decimais`: gera os totais no formato decimal. Ex.: `8,0`.
-  - `Horas e decimais`: gera os totais nos dois formatos. Ex.: `08:00 (8,0)`.
+- Registros que excedem as horas previstas de um contrato são direcionados automaticamente para o contrato que possui as horas previstas, gerando as horas extras corretamente.
+- Validação mais robusta dos horários realizados fora das previstas do quadro de horários.
+- Tratamento correto dos dois contratos também ao **reimportar** os registros.
 
-## Ajustes gerais - 03/08/2026 ♻ [#2278](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2278)
+## Coletores/AFD
 
-### Objetivo
+- Novos filtros por **estabelecimento, grupo de estabelecimentos e estabelecimentos relacionados** ao enviar colaboradores para os coletores.
+- Coletor sem estabelecimento no cadastro passa a receber todos os colaboradores, mesmo com as opções de filtro marcadas nas configurações.
 
-Fix: [#2259](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2259)
+![image](imagens/cloud_pr2350_imagem3.png)
+- **Detecção automática do layout do AFD** (Portaria 671 ou 1.510): não é mais necessário escolher o modelo do arquivo manualmente.
 
-- Ajustado a sincronização de multicoletores e o layout dos cards para não sobrepor um ao outro.
-Melhorias no layout das regras de premios: melhor visualização das regras dos dias e mascara para pr&ncher as horas
+![image](imagens/cloud_pr2372_imagem1.png)
 
+- Importação do TXT no novo layout:
 
-## Ajustes gerais no Espelho
+![image](imagens/cloud_pr2362_imagem1.png)
 
-- Geração do `Espelho Ponto` pela Manutenção passou a ser executada via tarefas.
-- Cálculo de dados realizado sempre durante a geração do `Espelho Ponto`.
-- Tratamento do modo de cálculo adicionado ao cálculo de dados, com base na versão anterior do código.
-- Definido o cálculo dos períodos anterior, atual e futuro durante a geração do `Espelho Ponto`.
+## Espelho Ponto e Folha de Pagamento
 
-## Ajustes e filtro global Consulta diária
+- **Download de todos os espelhos**: novo filtro por grupo de estabelecimentos e botão para **cancelar** o download.
+- O **e-mail da contabilidade** na folha agora pode ser editado, apagado ou restaurado para o padrão.
+- Nova **API de integração** para consulta dos espelhos de ponto, retornando o código, o nome do colaborador e o link do PDF — com os mesmos filtros da tela (período, colaborador, situação, estabelecimento etc.).
+- A exportação da folha não gera novamente os espelhos, agilizando o fechamento.
+- A assinatura do Espelho Ponto passou a ser armazenada de forma otimizada, mantendo a compatibilidade com as assinaturas existentes.
 
-- Realizado ajustes ao salvar as propriedades do espelho ponto após assinar
-- Realizado ajuste para visualizar a consulta do ponto quando colaborador e configuração de apenas visualizar o ponto.
-- Realizado ajuste de ocultar o filtro da página consulta diária quando o mesmo filtro estiver configurado no filtro global.
-- Realizado ajuste da pendencia ao criar um novo pela página
+- Download:
 
-### Demonstração
-- Filtro global oculta campo de filtro na consulta diária 
-![image](imagens/cloud_pr2268_imagem1.png)
+![image](imagens/cloud_pr2335_imagem1.png)
 
+- Cancelar:
 
-## Filtrar estab enviar colaboradores
+![image](imagens/cloud_pr2335_imagem2.png)
 
-- Ajustado o envio dos colaboradores para o equipamento ponto, filtrando pelo estabelecimento para realizar o envio.
-- Nova opção de excluir cadastros do equipamento ponto,
-- Testado sincronizar múltiplos coletores e funcionou corretamente.
+- Espelho Ponto (assinatura):
 
-### Demonstração
-![image](imagens/cloud_pr2263_imagem1.png)
-![image](imagens/cloud_pr2263_imagem2.png)
+![image](imagens/cloud_pr2427_imagem3.png)
 
+## Manutenção em lote
 
-##  Ajustes/melhorias nos dashboards e tarefas
+- Novos filtros de **Departamento, Setor e Seção**.
+- Maior segurança: será exibido alerta caso não selecionado filtro ou for aplicado a muitos colaborados
 
-- Tratamento para sempre exibir o menu gerencial para usuários admin e para usuários que possuem a permissão `Acessar Dashboards Gerenciais`.
-- Dashboards sempre exibem para usuários Símix.
-- Nova permissão: `Acessar Dashboards Gerenciais`.
-- Ajustes tarefas:
-  - Criado o comando SQL para aumentar o tamanho da coluna `Apelido`.
-  - Tratamento para passar EmpresaInfo como vazio, nas tarefas.
+![image](imagens/cloud_pr2383_imagem1.png)
 
-## Opção de horas trabalhadas sem horas de intrajornada
+## Relatórios e dashboards
 
-### Objetivo
-https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2249
+- Novo widget de **Absenteísmo por dia**: filtre um período e veja o absenteísmo, as horas de faltas e as horas previstas dos colaboradores.
+- Mais opções na visão de BI de turnover por departamento, conforme solicitações de clientes.
+- Nova opção de Expressão nos campos, para consultas avançadas (por exemplo, percentual com agrupamento)
 
-### Alterações
-- Opção para as horas de intrajornada não serem subtraídas das horas trabalhadas. 
+![image](imagens/rx_pr136_imagem1.png)
 
-### Demonstração
-- Campo na guia extras 2 do quadro de horários.
-![image](imagens/cloud_pr2251_imagem1.png)
+## Melhorias de interface
 
+- **Filtro global**: as páginas agora avisam quando nenhum dado é encontrado por causa do filtro global, e o ícone indica visualmente quando há filtros aplicados.
+- **Importação AFD**: exibição do progresso, execução de múltiplas importações em abas diferentes e botão para cancelar.
+- Campos de documento aceitam colar números com caracteres especiais, que são removidos automaticamente.
+- Os chips dos campos de pesquisa ficaram clicáveis, levando direto ao cadastro do item.
+- Períodos de meses informados em ordem invertida são corrigidos automaticamente.
 
+- Aviso de filtro global sem resultados:
+![image](imagens/cloud_pr2411_imagem1.png)
 
-## Visão para o Espelho do ponto.✨ [#2248](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2248)
+- Filtro global desativado:
+![image](imagens/cloud_pr2411_imagem2.png)
+- Filtro global ativo:
+![image](imagens/cloud_pr2411_imagem3.png)
 
-### Objetivo
+## Desempenho e infraestrutura
 
-Fix: [#2239](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2239)
+- **Fotos e arquivos mais rápidos**: armazenamento migrado para o Brasil, com links diretos e cache configurado.
+- Otimizações gerais de desempenho: consultas mais eficientes, cache e paralelismo em pontos críticos e novos índices no banco.
+- **Processamento facial** mais eficiente, priorizando os registros com foto vinculada, com exibição da mensagem de erro na tela de consultas.
+- Atualização dos bancos dos clientes mais rápida.
+- Nova tela interna de **Features** para a equipe Símix habilitar recursos e modos de funcionamento por cliente.
+- Verificações automáticas de saúde do sistema após cada atualização e ampliação da cobertura de testes automatizados em todos os projetos.
+- Conclusão da unificação da importação de registros, padronizando o processamento vindo de coletores, arquivos e importações.
 
-### PR's referências
-- [Visão para o Espelho do ponto.✨ RX](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/128)
+- Consulta facial:
+![image](imagens/cloud_pr2427_imagem2.png)
 
-### Alterações
-- **Geração do Espelho Ponto:** adicionado o ícone de visões para permitir ocultar campos ou utilizar a visualização padrão.
-- Adicionada a possibilidade de ocultar os seguintes campos no Espelho Ponto:
-  - `Horário padrão` (Cabeçalho)
-  - `Dias de faltas` (Totais)
-  - `Lançamentos de BH` (Totais)
-  - `Horas de repouso remunerado` (Totais)
-  - `Dias de repouso remunerado` (Totais)
-- Adicionada a função seed para criação da visão padrão via `DbMigrator` e criada a função SQL para execução manual.
+- Verificação de saúde do sistema:
+![image](imagens/cloud_pr2344_imagem1.png)
 
-### Demonstração
-- Espelho ponto modal.
-![image](imagens/cloud_pr2248_imagem1.png)
+## Outras melhorias e ajustes
 
-- Seleção de visão.
-![image](imagens/cloud_pr2248_imagem2.png)
-
-- Edição visão.
-![image](imagens/cloud_pr2248_imagem3.png)
-
-- Espelho Ponto.
-![image](imagens/cloud_pr2248_imagem4.png)
-
-
-##  Modo para o Calcular dados.✨ [#2245](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2245)
-
-### Objetivo
-
-Fix: [#2041](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2041)
-
-### Alterações
-- Adicionados dois modos de cálculo de dados na geração do Espelho Ponto:
-  - **Automático:** calcula apenas os períodos com `Atualizar = 1`, alterando o valor para `0` após a execução e respeitando os filtros aplicados.
-  - **Todos:** executa o cálculo padrão de todos os períodos, respeitando os filtros aplicados.
-
-## Registro e Sincronização pelo serviço
-
-- Processa o registro na tarefa
-- Processa a sincronização na tarefa, por padrão
-
-## Múltiplos códigos da folha - Campos customizáveis
-
-- Adicionado os múltiplos do código na folha, opção de adicionar uma regra para o código da folha filtrando pelo estabelecimento ou pelo grupo do estabelecimento, sendo assim ao exportar caso tenha uma regra, será utilizado o código cadastrado na regra.
-
-### Demonstração
-![image](imagens/cloud_pr2237_imagem1.png)
-
-
-# Atualizacao - Sem_Iteracao 🎉
-
-### **Esta atualizacao atende a tickets de clientes**
-
-# Documentacao 📝
-
-## Regras premio - Horas extras/Turno horas de lanche ♻ [#454](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/454)
-
-### Objetivo
-
-Fix: [#2266](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2266)
-
-### Alterações
-- Realizado o tratamento para identificar o turno na regra de Horas lanche.
-- Adicionado a opção de Horas Extras nas regras de premio dias.
-
-### Demonstração
-![image](imagens/calc_pr454_imagem1.png)
-![image](imagens/calc_pr454_imagem2.png)
-
-
-## Regras de prêmio na tabela.✨ [#453](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/453)
-
-### Objetivo
-
-Fix: [#2288](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2288)
-
-### PR's referências
- - [Ajustes na Exportação da folha.♻](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2293)
- 
-### Alterações
-- Adicionada a propriedade `ExportacaoId`para geração de nomes únicos nos arquivos exportados.
-- Adicionado o tratamento para inclusão das regras de prêmio na tabela HTML da exportação da folha.
-
-### Demonstração
-![image](imagens/calc_pr453_imagem1.png)
-
-
-## Ajuste na soma do sobreaviso na PontoCalcPonto [#452](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/452)
-
-### Objetivo
-
-### Alterações
-- Alterado local onde acumula sobreaviso na pontocalcponto
-
-## Sincronização - Verificar dois contratos [#451](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/451)
-
-### Objetivo
-
-- 2 contratos não esta designando corretamente os registros.
-
-### Alterações
-- Realizado ajustes na verificação dos dois contratos quando sincronizado o coletor, estava validando apenas se fosse feito uma reimportação, agora esta verificando corretamente ao importar o registro ao sincronizar o coletor.
-- Criado novos testes para verificar estes casos.
-
-## Ajuste na importação de registros Web 🐛 [#450](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/450)
-
-### Objetivo
-
-Evitar problemas de entrar os registros no layout inverso.
-
-### Alterações
-
-- Agora dá prioridade para o layout atual sempre, como todos suportam as sigla do turno
-- Alterado para usar sempre o TurnosEx em vez do TurnosEspeciais
-- Tratamento para o tipo de dispositivo
-
-## Otimização ao carregar/atualizar totais ✨ [#449](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/449)
-
-### Objetivo
-
-Otimizar/ajustar o Calcular para que faça todos os totais em uma etapa ao carregar. Pela Manutenção estava executando duas vezes sempre, por causa do BH.
-
-### Alterações
-
-- Alterado para fazer nessa ordem ao carregar: Atualizar todas das propriedades de totais, Carregar o BH, Atualizar a coleção de Totais. Assim fica tudo atualizado somente com uma chamada.
-- Ajustes de descrições duplicadas nas Extras BH
-- Mais informações para o DebuggerDisplay das classes
-
-## Ajuste no formato da data do arquivo AEJ [#448](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/448)
-
-### Objetivo
-https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2250
-
-### Alterações
-- Ajuste no formato da data do tipo de registro 07 no arquivo AEJ
-
-## Regra para buscar turno de extra de intrajornada [#447](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/447)
-
-### Objetivo
-https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2249
-
-### Alterações
-- Ajuste na função que vai verificar qual turno está mais próximo do intervalo real e realizar a soma das extras de intrajornada.
-- Calculo da opção que exclui as horas de intrajornada no saldo de horas trabalhadas
-
-### Demonstração
-- Testes de alguns dias sem subtrair intrajornada do saldo de horas trabalhadas e com nova regra.
-![image](imagens/calc_pr447_imagem1.png)
-- Testes com quadro de horário com intervalo na meia noite.
-![image](imagens/calc_pr447_imagem2.png)
-
-
-
-## Ajuste reimportar comprovantes ♻ [#446](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/446)
-
-### Objetivo
-
-![image](imagens/calc_pr446_imagem1.png)
-
-### Alterações
-- Ajustado a reimportação dos registros exibidos na tela de comprovantes.
-
-### Demonstração
-![image](imagens/calc_pr446_imagem2.png)
-
-
-## Múltiplos códigos da folha - Campos customizáveis♻ [#445](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/445)
-
-### Objetivo
-
-Fix: [#2187](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2187)
-
-### Alterações
-- Adicionado os múltiplos do código na folha, opção de adicionar uma regra para o código da folha filtrando pelo estabelecimento ou pelo grupo do estabelecimento, sendo assim ao exportar caso tenha uma regra, será utilizado o código cadastrado na regra.
-
-### Demonstração
-![image](imagens/calc_pr445_imagem1.png)
-
-
-
-# Atualizacao - Sem_Iteracao 🎉
-
-### **Esta atualizacao atende a tickets de clientes**
-
-# Documentacao 📝
-
-## Filtrar estab. ao enviar colab. para coletor/ Opção excluir colab. coletor ✨ [#18](https://github.com/simixsistemas/Simix.Ponto.Integracoes/pull/18)
-
-### Objetivo
-
-Fix: [#2215](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2215)
-
-### Alterações
-- Ajustado o envio dos colaboradores para o equipamento ponto, filtrando pelo estabelecimento para realizar o envio.
-- Nova opção de excluir cadastros do equipamento ponto,
-- Testado sincronizar múltiplos coletores e funcionou corretamente.
-
-### Demonstração
-![image](imagens/integracoes_pr18_imagem1.png)
-![image](imagens/integracoes_pr18_imagem2.png)
-
-
-
-# Atualizacao - Sem_Iteracao 🎉
-
-### **Esta atualizacao atende a tickets de clientes**
-
-# Documentacao 📝
-
-## Ajustes filtro de período.♻ [#132](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/132)
-
-### Objetivo
-
-Fix: [2287](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2287)
-
-### PR's referências
-- [Melhorias de UI.♻](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2303)
-### Alterações
-- Adicionadas setas de navegação nos dashboards para facilitar a troca de mês.
-
-### Demonstração
-- Filtro.
-![image](imagens/rx_pr132_imagem1.png)
-
-
-## Formatação de horas no Espelho.♻ [#131](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/131)
-
-### Objetivo
-
-Fix: [#2281](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2281)
-
-### PR's referências
-- [Formato das horas para o Espelho.✨](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2283)
-
-### Alterações
-- Nova propriedade `TotalFormat `.
-- Tratamento de formatação horas para decimais no espelho ponto.
-
-### Demonstração
-- Decimais.
-![image](imagens/rx_pr131_imagem1.png)
-
-- Horas e decimais.
-![image](imagens/rx_pr131_imagem2.png)
-
-
-## Melhorias para os dashboards.♻ [#130](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/130)
-
-### Objetivo
-
-Fix: [#2260](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2260)
-
-### PR's Referências
-[Ajustes gerais.♻- #2271
-](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2271)
-
-### Alterações
-- Ajustes nos widget Tabelas: 
-  - Não forçar a formatos ao editar, apenas ao criar o widget.
-  - Configuração do hover: Destacar as linhas selecionadas.
-- Ajustes na exportação excel:
-  - Agora exporta os grupos com os totais.
-  - Ajustado para ignorar ícones de registros.
-
-### Demonstração
-- Não forçar formato ao editar.
-![image](imagens/rx_pr130_imagem1.png)
-
-- Destacar linhas selecionar.
-![image](imagens/rx_pr130_imagem2.png)
-
-- Filtros no modo expandido.
-![image](imagens/rx_pr130_imagem3.png)
-![image](imagens/rx_pr130_imagem4.png)
-
-- Exportar excel grupos.
-![image](imagens/rx_pr130_imagem5.png)
-
-
-## Melhorias nas permissões dos Dashboards e tratamentos.♻ [#129](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/129)
-
-### Objetivo
-
-Fix: [#2240](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2240)
-Fix2: [#2257](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2257)
-
-### PR's referências
-- [Ajustes/melhorias nos dashboards e tarefas.♻](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2258)
-
-### Alterações
-- Inativação dos menus: Novo, copiar e colar. Caso não tenha permissão da loja.
-- Tratamento de erro no ficha cadastral.
-
-### Demonstração
-- Tratamento.
-![image](imagens/rx_pr129_imagem1.png)
-
-
-
-## Visão para o Espelho do ponto.✨ [#128](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/128)
-
-### Objetivo
-
-Fix: [#2239](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2239)
-
-### PR's referências
-- [Visão para o Espelho do ponto.✨ Simix Ponto](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2248)
-
-### Alterações
-- Nova propriedade para receber os campos ocultados.
-- Tratamento na geração do espelho ponto para ocultar os campos.
+- **VTs e VRs**: corrigida a duplicação de valores ao clicar mais de uma vez em salvar e o erro ao calcular quantidade total igual a zero.
+- **Pendências**: ao alterar o estabelecimento/departamento/setor do colaborador, as pendências do período são atualizadas automaticamente — somente as ainda pendentes; o histórico das aprovadas e reprovadas é mantido.
+- **Regras de inconsistência**: correção na verificação quando utilizada a opção de validar horas de intervalo.
+- **Regras de prêmio**: correção na verificação do total de manutenções com parâmetro.
+- Revisão dos cálculos para desconsiderar dados já excluídos.
+- Ajustada a página Espelho Ponto para utilizar a permissão correta.
+- Correções de estabilidade nos dashboards.
