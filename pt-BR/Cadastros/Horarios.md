@@ -52,8 +52,6 @@ Na tela de Quadros de Horários:
 • Utilize o filtro para visualizar quadros **Ativos** ou **Inativos**  
 • Clique em **Novo**, no canto superior direito, para criar um novo quadro  
 
-Caminho textual completo:  
-**Menu Principal > Cadastros > Horários**
 
 Palavras-chave: cadastros símix, quadros de horários
 
@@ -112,7 +110,9 @@ A guia **Cálculos** define como o Símix Ponto tratará **faltas, horas extras 
 
 #### Faltas sem compensação
 • Faltas são descontadas diretamente em folha  
-• Utilizado quando não se deseja compensação  
+• Utilizado quando não se deseja compensação
+• Útil quando você deseja separar, no espelho de ponto as faltas parciais das faltas integrais
+
 
 Palavras-chave: compensação símix, banco de horas, faltas
 
@@ -124,13 +124,17 @@ Palavras-chave: compensação símix, banco de horas, faltas
 Faltas em dias de afastamento são tratadas como sem compensação  
 
 • **Considerar em dias parciais**  
-Faltas parciais são descontadas diretamente em folha  
+Faltas parciais são descontadas diretamente em folha, em vez de serem compensadas com horas extras.
+No espelho de ponto, o sistema unifica o total de “horas falta sem compensação”.   
 
 Palavras-chave: afastamento, faltas parciais
 
 ---
 
 ### 6. Verificações adicionais
+
+• **Sem verificação**  
+O sistema não faz verificações adicionais
 
 • **Verificar turno quebrado**  
 Evita criação indevida de terceiro turno  
