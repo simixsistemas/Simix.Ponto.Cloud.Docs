@@ -4,7 +4,7 @@
 
 Neste artigo, você aprenderá como **configurar o banco de horas no Símix Ponto**, definindo períodos, avisos e regras de transferência de saldo, garantindo uma Gestão de Ponto organizada e alinhada às rotinas do Departamento Pessoal.
 
-Palavras-chave: banco de horas símix, configuração banco de horas, gestão de ponto
+<!--Palavras-chave: banco de horas símix, configuração banco de horas, gestão de ponto-->
 
 ---
 
@@ -17,7 +17,7 @@ Antes de iniciar a configuração do **Banco de Horas no Símix Ponto**, verifiq
 • Quadro de horários previamente cadastrado  
 • Conhecimento das regras internas de banco de horas da empresa  
 
-Palavras-chave: acesso símix ponto, permissões banco de horas, quadro de horários
+<!--Palavras-chave: acesso símix ponto, permissões banco de horas, quadro de horários-->
 
 ---
 
@@ -30,7 +30,7 @@ Em seguida, clique em **Configurações** para acessar a tela de gerenciamento d
 
 Esse caminho leva você à área onde são criadas e mantidas as regras de banco de horas.
 
-Palavras-chave: menu BH, configurações banco de horas símix
+<!--Palavras-chave: menu BH, configurações banco de horas símix-->
 
 ---
 
@@ -40,7 +40,7 @@ Na tela de configurações do banco de horas, clique em **Novo**, localizado no 
 
 O sistema abrirá a tela para preenchimento das informações do novo banco de horas.
 
-Palavras-chave: novo banco de horas, criar banco símix
+<!--Palavras-chave: novo banco de horas, criar banco símix-->
 
 ---
 
@@ -54,7 +54,7 @@ No campo **Descrição**, informe um nome que facilite a identificação do banc
 
 Exemplo: *BH 6 meses – 2026*.
 
-Palavras-chave: descrição banco de horas, identificação banco símix
+<!--Palavras-chave: descrição banco de horas, identificação banco símix-->
 
 ---
 
@@ -64,7 +64,7 @@ No campo **Tempo de duração do banco**, defina a quantidade de meses que comp�
 
 Exemplo: *6 meses*.
 
-Palavras-chave: duração banco de horas, ciclo banco símix
+<!--Palavras-chave: duração banco de horas, ciclo banco símix-->
 
 ---
 
@@ -75,7 +75,7 @@ Em **Início para a geração do banco**, selecione o mês em que o sistema deve
 Exemplo: *Janeiro*.  
 A partir desse mês, o Símix Ponto passa a acumular as horas no banco.
 
-Palavras-chave: início banco de horas, geração de saldo banco
+<!--Palavras-chave: início banco de horas, geração de saldo banco-->
 
 ---
 
@@ -85,7 +85,7 @@ No campo **Dias de antecedência para aviso**, informe com quantos dias de antec
 
 Esse aviso ajuda no planejamento de fechamento e compensações.
 
-Palavras-chave: aviso banco de horas, alerta encerramento ciclo
+<!--Palavras-chave: aviso banco de horas, alerta encerramento ciclo-->
 
 ---
 
@@ -95,7 +95,7 @@ Em **Limite mínimo de saldos**, informe a quantidade de horas que, ao ser ating
 
 Essa configuração auxilia no acompanhamento preventivo do banco de horas.
 
-Palavras-chave: limite mínimo banco de horas, alerta saldo crítico
+<!--Palavras-chave: limite mínimo banco de horas, alerta saldo crítico-->
 
 ---
 
@@ -117,7 +117,7 @@ Se nenhuma das opções de transferência for marcada, o sistema irá:
 • Descontar o saldo negativo em folha  
 • Pagar o saldo positivo como horas extras  
 
-Palavras-chave: transferência banco de horas, crédito e débito símix
+<!--Palavras-chave: transferência banco de horas, crédito e débito símix-->
 
 ---
 
@@ -136,7 +136,7 @@ Início em janeiro e término em junho para todos os funcionários.
 
 Se a opção de banco fixo não for marcada, cada colaborador terá um ciclo próprio, calculado com base na sua data de admissão.
 
-Palavras-chave: banco de horas fixo, banco por admissão
+<!--Palavras-chave: banco de horas fixo, banco por admissão-->
 
 ---
 
@@ -146,7 +146,7 @@ Após preencher todos os campos do cadastro, clique em **Salvar**.
 
 O banco de horas configurado será exibido na lista e poderá ser utilizado nos quadros de horários.
 
-Palavras-chave: salvar banco de horas, configuração concluída
+<!--Palavras-chave: salvar banco de horas, configuração concluída-->
 
 ---
 
@@ -156,7 +156,7 @@ Palavras-chave: salvar banco de horas, configuração concluída
 
 O sistema irá transferir qualquer saldo, seja positivo ou negativo, para o próximo ciclo do banco de horas.
 
-Palavras-chave: transferência total banco de horas
+<!--Palavras-chave: transferência total banco de horas-->
 
 ---
 
@@ -165,7 +165,7 @@ Palavras-chave: transferência total banco de horas
 Sim.  
 A alteração é permitida desde que **nenhum fechamento** tenha sido realizado no período configurado.
 
-Palavras-chave: editar banco de horas, alteração banco símix
+<!--Palavras-chave: editar banco de horas, alteração banco símix-->
 
 ---
 
@@ -174,7 +174,7 @@ Palavras-chave: editar banco de horas, alteração banco símix
 • Se o banco de horas for **fixo**, o colaborador entra no ciclo vigente.  
 • Se o banco **não for fixo**, o ciclo será definido com base na data de admissão.
 
-Palavras-chave: banco de horas admissão, ciclo colaborador
+<!--Palavras-chave: banco de horas admissão, ciclo colaborador-->
 
 ---
 
@@ -190,4 +190,4 @@ A associação ao quadro de horários segue o caminho:
 
 Todos os menus, campos, botões e opções foram descritos em texto, garantindo acessibilidade para leitores de tela, mecanismos de busca e sistemas de inteligência artificial.
 
-Palavras-chave: navegação símix ponto, acessibilidade banco de horas
+<!--Palavras-chave: navegação símix ponto, acessibilidade banco de horas-->

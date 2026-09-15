@@ -4,7 +4,7 @@
 
 Neste artigo, você aprenderá como **cadastrar colaboradores no Símix Ponto**, garantindo que os dados estejam corretamente preenchidos para o registro de ponto, integração com relógios e comunicação com a folha de pagamento.
 
-Palavras-chave: cadastro de colaborador símix, colaborador símix ponto, gestão de ponto
+<!--Palavras-chave: cadastro de colaborador símix, colaborador símix ponto, gestão de ponto-->
 
 ---
 
@@ -16,7 +16,7 @@ Antes de iniciar o cadastro de colaboradores no **Símix Ponto**, verifique se v
 • Informações do colaborador, como **CPF**, **PIS**, **data de admissão**, **cargo** e demais dados cadastrais  
 • Código da folha de pagamento, caso sua empresa utilize integração  
 
-Palavras-chave: acesso símix ponto, permissões de cadastro, integração folha
+<!--Palavras-chave: acesso símix ponto, permissões de cadastro, integração folha-->
 
 ---
 
@@ -36,7 +36,7 @@ Não recomendamos alterar esse código posteriormente, pois ele é utilizado par
 Se a sua empresa utiliza o mesmo código da folha de pagamento, você pode digitar esse código diretamente nos campos **Código** e **Código da folha**, sem clicar em **Novo**.  
 Caso o código já esteja em uso, ele não poderá ser reaproveitado.
 
-Palavras-chave: cadastros símix, colaboradores símix, código do colaborador
+<!--Palavras-chave: cadastros símix, colaboradores símix, código do colaborador-->
 
 ---
 
@@ -79,7 +79,7 @@ Selecione um **Quadro de Horários** previamente cadastrado.
 • **Estabelecimento**  
 Define a unidade onde o colaborador está alocado.
 
-Palavras-chave: guia principal colaborador, dados obrigatórios símix, quadro de horários
+<!--Palavras-chave: guia principal colaborador, dados obrigatórios símix, quadro de horários-->
 
 ---
 
@@ -92,7 +92,7 @@ Os campos abaixo não são obrigatórios, mas enriquecem o cadastro:
 • **Data de nascimento**  
 Utilizada, por exemplo, na listagem de aniversariantes do sistema.
 
-Palavras-chave: dados complementares colaborador, cadastro completo símix
+<!--Palavras-chave: dados complementares colaborador, cadastro completo símix-->
 
 ---
 
@@ -115,7 +115,7 @@ Substitui o nome civil em telas, sistemas e aplicativos.
 • **Pronúncia**  
 Registra a forma correta de pronunciar o nome do colaborador.
 
-Palavras-chave: documentos colaborador, nome social símix
+<!--Palavras-chave: documentos colaborador, nome social símix-->
 
 ---
 
@@ -144,7 +144,7 @@ Valor pago por hora trabalhada.
 • **Observações**  
 Campo livre para anotações internas.
 
-Palavras-chave: dados complementares símix, contato colaborador
+<!--Palavras-chave: dados complementares símix, contato colaborador-->
 
 ---
 
@@ -169,7 +169,7 @@ Digite ou selecione utilizando a **lupa**.
 • **Cidade**  
 Digite ou selecione utilizando a **lupa**.
 
-Palavras-chave: endereço colaborador, dados pessoais símix
+<!--Palavras-chave: endereço colaborador, dados pessoais símix-->
 
 ---
 
@@ -181,7 +181,7 @@ Clique em **Salvar** para concluir o cadastro.
 
 O colaborador ficará disponível para **registro de ponto**, **manutenções**, **relatórios** e integrações do Símix Ponto.
 
-Palavras-chave: salvar colaborador, cadastro concluído símix
+<!--Palavras-chave: salvar colaborador, cadastro concluído símix-->
 
 ---
 
@@ -193,4 +193,4 @@ Todo o processo de cadastro de **colaboradores no Símix Ponto** pode ser realiz
 
 Todos os campos, menus e opções foram descritos em texto, garantindo acessibilidade para leitores de tela, mecanismos de busca e sistemas de inteligência artificial.
 
-Palavras-chave: navegação símix ponto, acessibilidade cadastro
+<!--Palavras-chave: navegação símix ponto, acessibilidade cadastro-->

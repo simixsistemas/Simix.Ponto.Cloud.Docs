@@ -3,7 +3,7 @@
 ## Objetivo
 Neste artigo, você aprenderá como cadastrar um setor no Símix Ponto. Esse cadastro é essencial para organizar a estrutura da empresa, facilitar o vínculo de colaboradores e otimizar a Gestão de Ponto no sistema.
 
-Palavras-chave: cadastro de setor, setores Símix Ponto, estrutura organizacional, gestão de ponto por setor.
+<!--Palavras-chave: cadastro de setor, setores Símix Ponto, estrutura organizacional, gestão de ponto por setor.-->
 
 ---
 
@@ -14,7 +14,7 @@ Antes de iniciar o cadastro de setor no Símix Ponto, verifique se você possui:
 • Permissão para acessar o menu **Cadastros** no Símix Ponto.  
 • Estrutura básica da empresa previamente configurada no sistema.
 
-Palavras-chave: acesso Símix Ponto, permissões de cadastro, configuração inicial Símix.
+<!--Palavras-chave: acesso Símix Ponto, permissões de cadastro, configuração inicial Símix.-->
 
 ---
 
@@ -26,7 +26,7 @@ Em seguida, clique em **Mais Cadastros** e depois em **Setores**.
 
 Ao acessar essa tela do Símix Ponto, você visualizará a lista de setores já cadastrados na empresa.
 
-Palavras-chave: menu cadastros Símix, cadastro de setores, onde cadastrar setor.
+<!--Palavras-chave: menu cadastros Símix, cadastro de setores, onde cadastrar setor.-->
 
 ---
 
@@ -38,7 +38,7 @@ Para excluir um setor, clique na **seta ao lado do ícone de lápis** e selecion
 
 Atenção: setores que estejam vinculados a colaboradores ativos podem não permitir exclusão no Símix Ponto.
 
-Palavras-chave: novo setor, editar setor Símix, excluir setor Símix.
+<!--Palavras-chave: novo setor, editar setor Símix, excluir setor Símix.-->
 
 ---
 
@@ -57,7 +57,7 @@ Se essa opção estiver desmarcada, o setor não aparecerá nas listas de seleç
 Selecione um quadro de horários para definir um horário padrão do setor.  
 Quando um colaborador for vinculado a esse setor, o Símix Ponto sugerirá automaticamente esse quadro de horários, reduzindo ajustes manuais.
 
-Palavras-chave: descrição do setor, setor ativo, horário padrão por setor.
+<!--Palavras-chave: descrição do setor, setor ativo, horário padrão por setor.-->
 
 ---
 
@@ -65,7 +65,7 @@ Palavras-chave: descrição do setor, setor ativo, horário padrão por setor.
 Após preencher todos os campos do cadastro de setor no Símix Ponto, revise as informações com atenção.  
 Em seguida, clique em **Salvar** para concluir o cadastro.
 
-Palavras-chave: salvar setor, concluir cadastro de setor.
+<!--Palavras-chave: salvar setor, concluir cadastro de setor.-->
 
 ---
 
@@ -83,7 +83,7 @@ As ações disponíveis nessa tela do Símix Ponto são:
 
 Todo o conteúdo visual da tela pode ser compreendido apenas pela descrição textual, garantindo acessibilidade e leitura por leitores de tela e sistemas de IA.
 
-Palavras-chave: navegação Símix Ponto, acessibilidade cadastro, menu setores Símix.
+<!--Palavras-chave: navegação Símix Ponto, acessibilidade cadastro, menu setores Símix.-->
 
 ---
 
@@ -98,14 +98,14 @@ Uma empresa pode cadastrar setores no Símix Ponto como:
 
 Essa organização facilita a emissão de relatórios, aplicação de filtros e a Gestão de Ponto por área.
 
-Palavras-chave: setores por área, organização empresarial, relatórios por setor.
+<!--Palavras-chave: setores por área, organização empresarial, relatórios por setor.-->
 
 ---
 
 ### Exemplo 2: Aplicação automática de horários
 Ao definir um **horário padrão** para o setor *Produção*, sempre que um novo colaborador for vinculado a esse setor no Símix Ponto, o quadro de horários será sugerido automaticamente, reduzindo erros operacionais.
 
-Palavras-chave: horário automático, quadro de horários por setor.
+<!--Palavras-chave: horário automático, quadro de horários por setor.-->
 
 ---
 
@@ -113,7 +113,7 @@ Palavras-chave: horário automático, quadro de horários por setor.
 Quando um setor não for mais utilizado, você pode editar o cadastro de setor no Símix Ponto e desmarcar a opção **Ativo?**.  
 Dessa forma, o setor deixa de aparecer nos cadastros, mas permanece registrado para fins históricos e auditoria.
 
-Palavras-chave: desativar setor, setor inativo, histórico organizacional.
+<!--Palavras-chave: desativar setor, setor inativo, histórico organizacional.-->
 
 ---
 
@@ -122,4 +122,4 @@ O cadastro de setores no Símix Ponto é fundamental para manter a estrutura org
 Recomendamos revisar periodicamente os setores ativos para garantir consistência nos cadastros.  
 Se você utilizar horários padrão por setor, verifique se os quadros de horários estão corretamente configurados antes de aplicá-los.
 
-Palavras-chave: boas práticas Símix Ponto, revisão de setores, gestão de ponto eficiente.
+<!--Palavras-chave: boas práticas Símix Ponto, revisão de setores, gestão de ponto eficiente.-->
