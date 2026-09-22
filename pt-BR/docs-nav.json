@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "text": "Início",
+      "items": [
+        {
+          "text": "Módulo Colaborador",
+          "path": "Inicial/modulo-colaborador-simix-ponto.md"
+        },
+        {
+          "text": "Como recuperar sua senha",
+          "path": "Inicial/como-recuperar-senha-simix-ponto.md"
+        }
+      ]
+    },
+    {
       "text": "Aplicativos",
       "items": [
         {
