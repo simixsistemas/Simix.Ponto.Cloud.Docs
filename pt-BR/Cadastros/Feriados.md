@@ -8,17 +8,17 @@ Cadastrar feriados locais na Gestão de Ponto para que o sistema considere corre
 
 1. Acesse **Cadastros > Mais Cadastros > Ponto > Feriados**.
 
-![alt text](Img1.png)
+![alt text](img/Img1.png)
 
 2. Na tela de **Feriados**, clique em **Novo**.
-![alt text](img2.png)
+![alt text](img/img2.png)
 
 3. Na guia **Geral**, preencha os campos:
    - **Data**: informe a data do feriado.
    - **Nome do Feriado**: informe a descrição ou nome do feriado.
    - **Variável**: marque esta opção se o feriado muda de data a cada ano, como Carnaval ou Páscoa.
 
-   ![alt text](img3.png)
+   ![alt text](img/img3.png)
 
 4. Acesse a guia **Cidade**.
 
@@ -27,7 +27,7 @@ Cadastrar feriados locais na Gestão de Ponto para que o sistema considere corre
    **Observação:** Se a empresa possuir apenas um estabelecimento ou não utilizar a separação por cidades, o preenchimento desta guia não é obrigatório.
 
 6. Utilize o campo **UF** somente para feriados aplicáveis a um estado inteiro.
-![alt text](img4.png)
+![alt text](img/img4.png)
 
 7. Clique em **Salvar** para concluir o cadastro.
 
@@ -67,7 +67,7 @@ Se a cidade não estiver disponível para seleção, revise os cadastros relacio
 
 Não. Cadastre apenas os feriados locais ou específicos da sua região que não estejam contemplados automaticamente pelo sistema.
 
-![alt text](img6.png)
+![alt text](img/img6.png)
 ### Posso cadastrar mais de um feriado para a mesma cidade?
 
 Sim. É possível cadastrar quantos feriados forem necessários para uma mesma localidade.
@@ -84,11 +84,11 @@ Se o colaborador tiver trabalhado, será gerado um saldo positivo de horas extra
 
 Caso não tenha trabalhado, o dia será considerado uma folga DSR sem gerar saldos negativos.
 
-![alt text](img7.png)
+![alt text](img/img7.png)
 
 ### Como localizo os feriados dos outros anos?
 
 Ao lado do botão **Importar Feriados** existe o campo **Ano**.
 
 Altere o ano desejado nesse campo para visualizar os feriados cadastrados em outros períodos.
-![alt text](img9.png)
+![alt text](img/img9.png)
