@@ -4,7 +4,7 @@
 
 Neste artigo, você aprenderá como cadastrar e editar uma empresa no **Símix Ponto**, garantindo que os dados da organização estejam corretos e atualizados para uma gestão de ponto eficiente e integrada.
 
-Palavras-chave: cadastro de empresa Símix, empresa no Símix Ponto, gestão de ponto empresas
+<!--Palavras-chave: cadastro de empresa Símix, empresa no Símix Ponto, gestão de ponto empresas-->
 
 ---
 
@@ -16,7 +16,7 @@ Antes de iniciar o cadastro de empresa no **Símix Ponto**, verifique se você p
 • Dados básicos da empresa, como razão social, CNPJ e endereço  
 • Acesso ao sistema **Símix Ponto** pelo navegador ou aplicativo desktop  
 
-Palavras-chave: permissão Símix, acesso Cadastros, pré-requisitos Símix Ponto
+<!--Palavras-chave: permissão Símix, acesso Cadastros, pré-requisitos Símix Ponto-->
 
 ---
 
@@ -29,7 +29,7 @@ Em seguida, selecione a opção **Mais cadastros** para visualizar todos os agru
 
 Esse caminho garante acesso completo aos cadastros organizacionais do sistema.
 
-Palavras-chave: menu Cadastros Símix, mais cadastros Símix Ponto
+<!--Palavras-chave: menu Cadastros Símix, mais cadastros Símix Ponto-->
 
 ---
 
@@ -40,7 +40,7 @@ Clique na opção **Empresa** para acessar a tela de cadastro de empresas do **S
 
 Nessa tela, você poderá visualizar empresas já cadastradas, criar um novo registro ou editar informações existentes.
 
-Palavras-chave: cadastro de empresa, organização Símix, empresa Símix Ponto
+<!--Palavras-chave: cadastro de empresa, organização Símix, empresa Símix Ponto-->
 
 ---
 
@@ -52,7 +52,7 @@ Para editar uma empresa já cadastrada, clique no ícone de **lápis**, localiza
 
 Ao abrir o cadastro, o sistema exibirá todos os campos disponíveis para preenchimento ou atualização.
 
-Palavras-chave: novo cadastro empresa, editar empresa Símix, botão novo Símix
+<!--Palavras-chave: novo cadastro empresa, editar empresa Símix, botão novo Símix-->
 
 ---
 
@@ -71,7 +71,7 @@ A seguir, veja a descrição completa dos campos disponíveis na tela de cadastr
 • **PIS**: Campo opcional para o PIS do responsável.  
 • **Tipo Pessoa**: Selecione se a empresa é **Pessoa Física (CPF)** ou **Pessoa Jurídica (CNPJ)**.
 
-Palavras-chave: dados da empresa, CNPJ Símix, tipo pessoa Símix
+<!--Palavras-chave: dados da empresa, CNPJ Símix, tipo pessoa Símix-->
 
 ---
 
@@ -82,7 +82,7 @@ Palavras-chave: dados da empresa, CNPJ Símix, tipo pessoa Símix
 • **E-mail Contábil**: Informe o e-mail da contabilidade.  
 Esse endereço é utilizado para o envio da exportação da folha, por isso é fundamental mantê-lo atualizado.
 
-Palavras-chave: contato empresa, e-mail contábil Símix, exportação folha
+<!--Palavras-chave: contato empresa, e-mail contábil Símix, exportação folha-->
 
 ---
 
@@ -91,7 +91,7 @@ Palavras-chave: contato empresa, e-mail contábil Símix, exportação folha
 • **Data de Instalação**: Informe a data de instalação da empresa. Campo opcional.  
 • **Estabelecimento Padrão**: Define qual estabelecimento será automaticamente atribuído ao cadastrar novos colaboradores.  
 
-Palavras-chave: configurações empresa, estabelecimento padrão Símix
+<!--Palavras-chave: configurações empresa, estabelecimento padrão Símix-->
 
 ---
 
@@ -102,7 +102,7 @@ Palavras-chave: configurações empresa, estabelecimento padrão Símix
 
 Essas configurações ajudam a padronizar a gestão de ponto desde o início.
 
-Palavras-chave: horário modelo Símix, horário padrão colaboradores, gestão de horários
+<!--Palavras-chave: horário modelo Símix, horário padrão colaboradores, gestão de horários-->
 
 ---
 
@@ -110,7 +110,7 @@ Palavras-chave: horário modelo Símix, horário padrão colaboradores, gestão 
 
 • **Observações**: Utilize este campo para registrar informações importantes ou anotações relevantes sobre a empresa.
 
-Palavras-chave: observações empresa, anotações Símix Ponto
+<!--Palavras-chave: observações empresa, anotações Símix Ponto-->
 
 ---
 
@@ -120,5 +120,5 @@ Todo o processo de cadastro de empresa no **Símix Ponto** pode ser realizado se
 
 **Menu Superior > Cadastros > Mais cadastros > Organização > Empresa**
 
-Palavras-chave: navegação Símix Ponto, acessibilidade sistema, caminho cadastro empresa
+<!--Palavras-chave: navegação Símix Ponto, acessibilidade sistema, caminho cadastro empresa-->
 ``

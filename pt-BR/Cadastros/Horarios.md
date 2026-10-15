@@ -4,7 +4,7 @@
 
 Neste artigo, você aprenderá como **cadastrar, configurar e utilizar Quadros de Horários no Símix Ponto**, definindo jornadas de trabalho, regras de compensação, horas extras, banco de horas, tolerâncias e DSR, garantindo uma Gestão de Ponto correta e alinhada à legislação trabalhista.
 
-Palavras-chave: quadro de horários símix, jornada de trabalho, gestão de ponto
+<!--Palavras-chave: quadro de horários símix, jornada de trabalho, gestão de ponto-->
 
 ---
 
@@ -17,7 +17,7 @@ Antes de iniciar o cadastro de **Quadros de Horários no Símix Ponto**, verifiq
 • Permissão de acesso para cadastrar ou editar quadros de horários  
 • Horários e afastamentos previamente cadastrados no sistema  
 
-Palavras-chave: acesso símix ponto, permissões cadastros, regras de jornada
+<!--Palavras-chave: acesso símix ponto, permissões cadastros, regras de jornada-->
 
 ---
 
@@ -36,7 +36,7 @@ O **Quadro de Horários** é o cadastro que define **como o sistema deve interpr
 
 Cada colaborador deve estar vinculado a um quadro de horários para que o cálculo do ponto funcione corretamente.
 
-Palavras-chave: quadro de horários, jornada símix, cálculo de ponto
+<!--Palavras-chave: quadro de horários, jornada símix, cálculo de ponto-->
 
 ---
 
@@ -55,7 +55,7 @@ Na tela de Quadros de Horários:
 Caminho textual completo:  
 **Menu Principal > Cadastros > Horários**
 
-Palavras-chave: cadastros símix, quadros de horários
+<!--Palavras-chave: cadastros símix, quadros de horários-->
 
 ---
 
@@ -73,7 +73,7 @@ Na guia **Geral**, você define a **jornada base** do colaborador.
 
 Mesmo após copiar os horários, você pode **ajustar dias individualmente**, sem impactar os demais.
 
-Palavras-chave: jornada semanal, copiar horários, escala símix
+<!--Palavras-chave: jornada semanal, copiar horários, escala símix-->
 
 ---
 
@@ -87,7 +87,7 @@ Utilize o ícone de **Lâmpada** para:
 Exemplo de descrição:  
 “De segunda a sexta, das 08:00 às 12:00 e das 13:00 às 18:00.”
 
-Palavras-chave: descrição de jornada, quadro de horários
+<!--Palavras-chave: descrição de jornada, quadro de horários-->
 
 ---
 
@@ -114,7 +114,7 @@ A guia **Cálculos** define como o Símix Ponto tratará **faltas, horas extras 
 • Faltas são descontadas diretamente em folha  
 • Utilizado quando não se deseja compensação  
 
-Palavras-chave: compensação símix, banco de horas, faltas
+<!--Palavras-chave: compensação símix, banco de horas, faltas-->
 
 ---
 
@@ -126,7 +126,7 @@ Faltas em dias de afastamento são tratadas como sem compensação
 • **Considerar em dias parciais**  
 Faltas parciais são descontadas diretamente em folha  
 
-Palavras-chave: afastamento, faltas parciais
+<!--Palavras-chave: afastamento, faltas parciais-->
 
 ---
 
@@ -138,7 +138,7 @@ Evita criação indevida de terceiro turno
 • **Verificar intervalo variável**  
 Reconhece intervalos fora do horário previsto  
 
-Palavras-chave: turno quebrado, intervalo variável
+<!--Palavras-chave: turno quebrado, intervalo variável-->
 
 ---
 
@@ -158,7 +158,7 @@ Exemplo em Dias Úteis:
 
 Marque qual faixa será usada para **compensação de banco de horas**.
 
-Palavras-chave: horas extras símix, percentuais extras
+<!--Palavras-chave: horas extras símix, percentuais extras-->
 
 ---
 
@@ -168,7 +168,7 @@ Palavras-chave: horas extras símix, percentuais extras
 • Informe o período (ex.: 22:00 às 05:00)  
 • Utilize o ícone de **Lâmpada** para aplicar o redutor legal  
 
-Palavras-chave: adicional noturno, jornada noturna
+<!--Palavras-chave: adicional noturno, jornada noturna-->
 
 ---
 
@@ -182,7 +182,7 @@ Nesta guia você configura:
 
 Essas opções refinam como o saldo será exibido e compensado.
 
-Palavras-chave: extras avançado, agrupamento de extras
+<!--Palavras-chave: extras avançado, agrupamento de extras-->
 
 ---
 
@@ -196,7 +196,7 @@ Palavras-chave: extras avançado, agrupamento de extras
 
 O Banco de Horas permite controle mensal de saldo positivo e negativo.
 
-Palavras-chave: banco de horas símix, saldo de horas
+<!--Palavras-chave: banco de horas símix, saldo de horas-->
 
 ---
 
@@ -213,7 +213,7 @@ Você pode configurar:
 
 A tolerância evita gerar extras ou faltas por pequenas variações de horário.
 
-Palavras-chave: tolerância de ponto, atrasos e adiantamentos
+<!--Palavras-chave: tolerância de ponto, atrasos e adiantamentos-->
 
 ---
 
@@ -230,7 +230,7 @@ Nesta guia você define:
 
 Essas regras garantem o cálculo correto do DSR conforme a jornada.
 
-Palavras-chave: dsr símix, descanso semanal remunerado
+<!--Palavras-chave: dsr símix, descanso semanal remunerado-->
 
 ---
 
@@ -250,7 +250,7 @@ Revise:
 • Horas previstas  
 • Condições de repouso remunerado  
 
-Palavras-chave: erro quadro de horários, dúvidas símix
+<!--Palavras-chave: erro quadro de horários, dúvidas símix-->
 
 ---
 
@@ -262,5 +262,4 @@ Todo o processo de cadastro e configuração de **Quadros de Horários no Símix
 
 Todos os menus, guias, campos e opções foram descritos em texto, garantindo acessibilidade para leitores de tela, mecanismos de busca e sistemas de inteligência artificial.
 
-Palavras-chave: navegação símix ponto, acessibilidade quadros
-``
+<!--Palavras-chave: navegação símix ponto, acessibilidade quadros-->

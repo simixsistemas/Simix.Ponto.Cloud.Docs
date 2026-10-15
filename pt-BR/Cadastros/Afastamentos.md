@@ -4,7 +4,7 @@
 
 Neste artigo, você aprenderá como **cadastrar novos tipos de afastamentos no Símix Ponto**, definindo corretamente a ação de cada afastamento para garantir que ausências justificadas, benefícios e direitos dos colaboradores sejam tratados de forma adequada na Gestão de Ponto e na folha de pagamento.
 
-Palavras-chave: cadastro de afastamentos símix, tipos de afastamento, gestão de ponto
+<!--Palavras-chave: cadastro de afastamentos símix, tipos de afastamento, gestão de ponto-->
 
 ---
 
@@ -16,7 +16,7 @@ Antes de iniciar o cadastro de **novos afastamentos no Símix Ponto**, verifique
 • Permissão para acessar o menu de **Cadastros de Afastamentos**  
 • Informações do afastamento, como **Sigla**, **Descrição** e **Tipo de ação**  
 
-Palavras-chave: acesso símix ponto, permissões de cadastro, afastamentos
+<!--Palavras-chave: acesso símix ponto, permissões de cadastro, afastamentos-->
 
 ---
 
@@ -30,7 +30,7 @@ Os **afastamentos** no Símix Ponto são utilizados para diferenciar **ausência
 
 Cada afastamento possui uma **ação**, que define como o sistema deve tratar as horas daquele período.
 
-Palavras-chave: afastamento colaborador, ausência justificada, gestão de ponto símix
+<!--Palavras-chave: afastamento colaborador, ausência justificada, gestão de ponto símix-->
 
 ---
 
@@ -47,7 +47,7 @@ Esse caminho leva você à tela onde é possível visualizar, editar ou criar no
 Caminho textual completo:  
 **Menu Principal > Cadastros > Afastamentos**
 
-Palavras-chave: menu afastamentos, cadastros símix ponto
+<!--Palavras-chave: menu afastamentos, cadastros símix ponto-->
 
 ---
 
@@ -57,7 +57,7 @@ Na tela de Afastamentos, clique no botão **+ Novo**.
 
 O sistema abrirá o formulário de cadastro do novo afastamento.
 
-Palavras-chave: novo afastamento, criar afastamento símix
+<!--Palavras-chave: novo afastamento, criar afastamento símix-->
 
 ---
 
@@ -74,7 +74,7 @@ Informe o nome completo do afastamento.
 Essa descrição será exibida no **Cartão de Ponto** do colaborador.  
 Exemplo: *Licença Amamentação*.
 
-Palavras-chave: sigla afastamento, descrição afastamento
+<!--Palavras-chave: sigla afastamento, descrição afastamento-->
 
 ---
 
@@ -90,7 +90,7 @@ As opções disponíveis são:
 
 A escolha correta da ação é essencial para garantir o cálculo correto da Gestão de Ponto.
 
-Palavras-chave: tipo de ação afastamento, cálculo de ponto
+<!--Palavras-chave: tipo de ação afastamento, cálculo de ponto-->
 
 ---
 
@@ -102,7 +102,7 @@ Clique em **Salvar**.
 
 O novo afastamento ficará disponível para utilização na Manutenção de Ponto e nos cartões dos colaboradores.
 
-Palavras-chave: salvar afastamento, cadastro concluído símix
+<!--Palavras-chave: salvar afastamento, cadastro concluído símix-->
 
 ---
 
@@ -134,7 +134,7 @@ Quando ativo, o sistema desconta o feriado se o afastamento for lançado nesse d
 • **Abater extras úteis sem compensação**  
 Quando ativo, permite compensar horas extras que normalmente não seriam compensadas conforme o quadro de horários.
 
-Palavras-chave: afastamento descontar, desconto de horas, banco de horas
+<!--Palavras-chave: afastamento descontar, desconto de horas, banco de horas-->
 
 ---
 
@@ -161,7 +161,7 @@ Quando ativado, as horas não são consideradas como normais nos totais do ponto
 Utilizado quando existe um tempo fixo que não deve ser descontado.  
 Exemplo: Licença Amamentação, onde por padrão **1 hora** não é descontada.
 
-Palavras-chave: afastamento não descontar, abono símix, atestado médico
+<!--Palavras-chave: afastamento não descontar, abono símix, atestado médico-->
 
 ---
 
@@ -181,7 +181,7 @@ Exemplos de uso:
 • INSS  
 • Licença sem remuneração  
 
-Palavras-chave: afastamento ignorar, suspensão contratual, inss símix
+<!--Palavras-chave: afastamento ignorar, suspensão contratual, inss símix-->
 
 ---
 
@@ -191,4 +191,4 @@ Todo o processo de cadastro de **novos afastamentos no Símix Ponto** pode ser r
 
 **Menu Principal > Cadastros > Afastamentos > + Novo**
 
-Palavras-chave: navegação símix ponto, acessibilidade cadastros
+<!--Palavras-chave: navegação símix ponto, acessibilidade cadastros-->

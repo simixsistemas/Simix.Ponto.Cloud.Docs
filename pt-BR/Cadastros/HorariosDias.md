@@ -4,7 +4,7 @@
 
 Neste artigo, você aprenderá como **cadastrar, editar e configurar um Horário por Dia no Símix Ponto**, garantindo que jornadas específicas sejam interpretadas corretamente pela Gestão de Ponto, inclusive em cenários de virada de dia, sobreaviso e regras diferenciadas de horas extras.
 
-Palavras-chave: horário por dia símix, cadastro de horário diário, jornada específica, gestão de ponto
+<!--Palavras-chave: horário por dia símix, cadastro de horário diário, jornada específica, gestão de ponto-->
 
 ---
 
@@ -16,7 +16,7 @@ Antes de iniciar o cadastro de **Horário por Dia no Símix Ponto**, verifique s
 • Permissão para acessar o menu **Cadastros**  
 • Definição prévia das regras de jornada que deseja aplicar  
 
-Palavras-chave: acesso símix ponto, permissões de cadastros, regras de jornada
+<!--Palavras-chave: acesso símix ponto, permissões de cadastros, regras de jornada-->
 
 ---
 
@@ -33,7 +33,7 @@ Esse caminho leva você à tela onde é possível **visualizar, editar ou criar 
 Caminho textual completo:  
 **Menu Principal > Cadastros > Mais cadastros > Horários por Dia**
 
-Palavras-chave: menu cadastros símix, horários por dia, navegação símix ponto
+<!--Palavras-chave: menu cadastros símix, horários por dia, navegação símix ponto-->
 
 ---
 
@@ -47,7 +47,7 @@ ou clique diretamente no **nome do horário**, na coluna **Descrição**.
 
 O **Símix Ponto** abrirá o cadastro para edição.
 
-Palavras-chave: editar horário por dia, manutenção de horários símix
+<!--Palavras-chave: editar horário por dia, manutenção de horários símix-->
 
 ---
 
@@ -59,7 +59,7 @@ Clique no botão **+ Novo**, localizado no canto superior direito da tela.
 
 O sistema abrirá o **formulário de cadastro do Horário por Dia**.
 
-Palavras-chave: novo horário por dia, criar horário símix
+<!--Palavras-chave: novo horário por dia, criar horário símix-->
 
 ---
 
@@ -79,7 +79,7 @@ Campo opcional.
 • **Descrição**  
 Informe um nome claro e objetivo para o Horário por Dia.
 
-Palavras-chave: descrição do horário, identificação de jornada
+<!--Palavras-chave: descrição do horário, identificação de jornada-->
 
 ---
 
@@ -97,7 +97,7 @@ Define o horário como favorito, facilitando a seleção em escalas e manutenç�
 • **Horário Padrão**  
 Quando ativo, o sistema utiliza o horário previsto do colaborador, mantendo o expediente conforme o quadro de horários.
 
-Palavras-chave: dsr símix, sobreaviso, horário padrão
+<!--Palavras-chave: dsr símix, sobreaviso, horário padrão-->
 
 ---
 
@@ -127,7 +127,7 @@ Permite alterar o horário de início ou fim do dia definido no quadro de horár
 • **Ignorar horas faltas**  
 Quando ativo, o sistema **não gera faltas** caso o colaborador trabalhe menos do que o previsto.
 
-Palavras-chave: virada de dia, jornada noturna, ignorar faltas
+<!--Palavras-chave: virada de dia, jornada noturna, ignorar faltas-->
 
 ---
 
@@ -140,7 +140,7 @@ Configure faixas de horas extras diferentes das definidas no quadro de horários
 
 Essa configuração é útil para dias com regras excepcionais.
 
-Palavras-chave: horas extras por dia, faixas de extras símix
+<!--Palavras-chave: horas extras por dia, faixas de extras símix-->
 
 ---
 
@@ -160,7 +160,7 @@ Ative esta opção para que o sistema utilize as regras de horas extras definida
 • **Mais de 24h seguidas**  
 Utilize esta opção para jornadas que ultrapassem **24 horas contínuas**.
 
-Palavras-chave: bloqueio mobile, horas extras avançado, jornada extensa
+<!--Palavras-chave: bloqueio mobile, horas extras avançado, jornada extensa-->
 
 ---
 
@@ -173,7 +173,7 @@ Clique em **Salvar** para concluir o cadastro.
 
 O Horário por Dia ficará disponível para uso em **escalas**, **quadros de horários** e **manutenções de ponto**.
 
-Palavras-chave: salvar horário por dia, cadastro concluído símix
+<!--Palavras-chave: salvar horário por dia, cadastro concluído símix-->
 
 ---
 
@@ -183,4 +183,4 @@ Todo o processo de cadastro de **Horário por Dia no Símix Ponto** pode ser rea
 
 **Menu Principal > Cadastros > Mais cadastros > Horários por Dia**
 
-Palavras-chave: navegação símix ponto, acessibilidade horários
+<!--Palavras-chave: navegação símix ponto, acessibilidade horários-->
