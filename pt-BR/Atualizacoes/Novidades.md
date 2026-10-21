@@ -1,2688 +1,2206 @@
-# 15/10/2026
-
-## Resumo
-
-- 📂 Módulo Documentos: documentos gerais, dos colaboradores, comprovante de assinatura, importação de contracheques em lote e categorias restritas
-- 🏠 Novo Início: sugestões de implantação e rotinas, calendário e acesso dos gerentes
-- 📱 Sistema no celular: layout responsivo em todas as telas
-- 🛠️ Solução de problemas na Manutenção e nos Coletores (marcações fora do cartão, outro layout, CPF em dois cadastros, AFD)
-- 📂 Painel de Ações rápidas
-- 🎓 Treinamentos: vídeos, documentos e 29 demonstrações guiadas num lugar só
-- 📍 Registro web com localização, raio, autorização de dispositivos e filtros dos botões
-- 🔔 Alertas de registro no app: aviso antes, lembrete depois e jornada em andamento
-- 🏦 Consulta geral de banco de horas e quitação de saldo
-- 🔁 Escalas: trocas e afastamentos direto no cartão e relatório de escalas para imprimir
-- 🔎 Pesquisa de campos e cópia avançada nos cadastros
-- 🧮 Lançamentos de cálculo: criar, substituir, somar ou diminuir qualquer total do mês
-- 🩺 Consulta de atestados
-- 🗺️ Mapa dos registros nas consultas e na Manutenção
-- ✅ Campos obrigatórios e valores padrão no cadastro de colaboradores
-- 💡 Explicação de cada total da Manutenção conforme o quadro de horário
-- 🧾 Calculadora de horas com linhas editáveis
-- 🖨️ Imprimir as tabelas dos dashboards (com extras por percentual)
-- ⏭️ Anterior e próximo nos cadastros
-- 🔐 Modelos prontos de permissão e perfil DP
-- 🔢 Troca de código do colaborador
-- 🪪 Histórico de evolução de cargo e efetivação ao salvar o colaborador
-- 🔑 Formato do login (CPF, nome.sobrenome, e-mail)
-- 📦 Packs na loja de dashboards
-- 🎧 Equipe Símix: tela de Atendimento no admin
-- 🎥 Equipe Símix: botão de suporte e gravação de treinamentos
-- 🚨 Equipe Símix: painel de inconsistências dos clientes no admin
+# 21/10/2026
 
-#### ♻️ Melhorias
+## 🐛 Tratamento do erro ao carregar empresas no /admin sem login [#3090](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3090)
 
-- 🔽 Filtro global: mais campos, igual/diferente, filtro do usuário e filtros salvos por tela
-- 🔒 Bloqueio de períodos automático, Situação Portal, prazos de solicitação/aprovação e bloquear/liberar em massa
-- 🗓️ Período escolhido lembrado entre as telas
-- 📆 Intervalo de datas na Manutenção
-- ⚠️ Inconsistências: grupo e cor das regras, na Manutenção e no Monitor, e tela carregando mais rápido
-- 📄 Espelho do ponto: faixas de extras, cores dos turnos, justificativas e ícone do afastamento
-- 📤 Exportar para folha: visualizar, baixar em zip e formato ddMMyyyy
-- 🌙 Sobreaviso: escalas gravadas, explicação no cartão e solicitação pelo portal
-- 📋 Manutenção em lote com novo layout
-- 🎨 Visual: cadastros mais limpos, barra das listas padronizada e telas de conta e de erro no visual do sistema
-- 💬 Feedbacks: anexos, print automático da tela e aviso de resposta nas notificações
-- 📝 Logs dos cadastros legíveis e auditoria das regras de prêmio e de inconsistências
-- 🏢 Empresa e estabelecimento com CEP
-- 📑 Contratos: edição completa, intermitente e duplicar
-- ⏱️ Horário: descontar DSR na data original do feriado, BH nas extras de dias não previstos e "considerar extras após"
-- 🧾 NSR no comprovante das marcações do aplicativo
-- 🗂️ Código na folha do colaborador como principal
-- 👁️ Permissão específica para ver salário
-- 📈 Extras diurnas e noturnas nos totais para os dashboards
+### Objetivo
 
-#### 🧪 Recursos Beta (precisam ser ativados)
-- 🏖️ Módulo de férias: saldo por período aquisitivo, painel e importação do histórico
-- 💰 Módulo de adiantamento salarial: pedido pelo portal, análise de margem e envio à folha
+Corrigir o aviso "Erro ao carregar empresas: Exception of type 'Volo.Abp.Authorization.AbpAuthorizationException' was thrown." ao abrir https://admin.simixponto-beta.app/admin sem estar logado.
 
+### Alterações
+- 🐛 A barra do topo não busca mais a lista de empresas antes do login. O aviso de erro aparecia no `/admin` para quem ainda não tinha entrado, porque a lista passou a exigir login. O menu de empresas já só aparece para quem está logado, então nada muda para o usuário.
 
-## Módulo Documentos ✨
+### Demonstração
 
-Novo módulo **Documentos** no menu (ao lado de App/VTs/VRs), também acessível por **Principal › Espelho do ponto › Documentos**.
+Testado no local: sem login, o `/admin` mostra só o botão Login, sem o aviso. Logado, o `/admin` e o `/inicio` abrem normalmente e a lista de empresas continua carregando.
 
-### Documentos da empresa e dos colaboradores
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- **Documentos gerais** da empresa (convenções, políticas, manuais): envio de vários arquivos de uma vez, organizados por categoria, com edição, troca do arquivo e exclusão.
-- **Documentos dos colaboradores**: todos em uma tela só, com pesquisa, filtros por colaborador, categoria e ano, e a contagem de pendentes, assinados e recusados.
-- **Comprovante de assinatura eletrônica**: ativado na categoria, é gerado ao assinar com o documento, a forma e o momento da assinatura, a origem, o IP e o hash do arquivo. Pelo aplicativo, inclui também a localização.
-- O comprovante pode ser consultado e baixado em PDF pela lista do RH, pela tela do colaborador e pela página de assinatura. No painel do colaborador, clicar no selo **Assinado** abre o comprovante.
-- O documento abre na própria tela, sem abrir outra aba.
-- O botão **Enviar** lista os arquivos para conferir categoria, período e observação antes de subir.
-- Documento sem categoria passa a aparecer para o colaborador no portal e no aplicativo.
-- Excluir um documento remove também o arquivo e o comprovante.
-- O comprovante, que contém dados pessoais de quem assinou, só fica acessível a quem administra documentos ou ao próprio colaborador.
-- Card em Novidades com demonstração guiada pelas duas telas, o envio e o comprovante.
 
-> **Atenção (integrações externas):** assinar, recusar, listar documentos e obter o comprovante pela API passam a aceitar o colaborador identificado por código, matrícula ou login.
+## 🐛 Migração de Processos em banco sem a tabela [#3087](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3087)
 
-- Documentos gerais da empresa agrupados por categoria:
+### Objetivo
 
-![image](imagens/cloud_pr2658_imagem1.png)
+A atualização do banco parava com o erro `relation "ProcessoLayouts" does not exist` em bancos sem a tabela de Processos, como os bancos espelho mais antigos.
 
-- Envio com os arquivos listados para conferência antes de enviar:
+### Alterações
+- 🐛 A atualização dos campos de Processos não falha mais quando a tabela não existe. A tabela e as colunas novas são criadas logo depois, pelos scripts que rodam em todo banco.
 
-![image](imagens/cloud_pr2658_imagem2.png)
+### Demonstração
 
-- Documentos de todos os colaboradores com filtros e contagem por situação:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2658_imagem3.png)
 
-- Documento aberto na própria tela, com o comprovante ao lado:
+## ♻ Janela de cadastro sem permissão declarada não derruba o deploy [#3086](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3086)
 
-![image](imagens/cloud_pr2658_imagem4.png)
+### Objetivo
 
-- Comprovante de assinatura com hash, IP e localização:
+Evitar que o deploy falhe quando uma janela de cadastro não declara a permissão (como aconteceu com o cadastro de dicas: simixsistemas/Simix.Ponto.Cloud#3083).
 
-![image](imagens/cloud_pr2658_imagem5.png)
+### Alterações
+- ♻ Janela de cadastro sem permissão declarada continua liberada, como já funcionava na tela, e deixa de falhar no teste que roda no deploy
+- ♻ Quando a permissão é declarada, o teste continua conferindo se o nome existe e tem as ações de incluir e alterar
 
-- Comprovante em PDF:
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3083
 
-![image](imagens/cloud_pr2658_imagem6.png)
+### Demonstração
 
-- Selo Assinado abrindo o comprovante no painel do colaborador (dados pessoais borrados):
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2769_imagem4.png)
 
-- Anúncio do módulo na tela de Novidades:
+## 🐛 Resumo da Manutenção formatado no Teams, com opção de print [#3084](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3084)
 
-![image](imagens/cloud_pr2658_imagem7.png)
+### Objetivo
 
-- Demonstração guiada do módulo:
+Colar o resumo da Manutenção no Teams com os links e o negrito funcionando — hoje aparecem os `[...](...)` e `**...**` do Markdown — e poder mandar junto o print da tela.
 
-![image](imagens/cloud_pr2658_imagem8.png)
+### Alterações
+- 🐛 O resumo é copiado formatado: no Teams e no e-mail o título e o nome do colaborador viram links, empresa e totais saem em negrito e os totais em lista
+- ✨ Botão de compartilhar dividido (sem borda, como os outros da barra): o clique copia **HTML com print** (o resumo + a imagem da tela como ela está) e a seta escolhe outro formato:
+  - **HTML com print**
+  - **HTML**: só o resumo formatado
+  - **Texto simples**: para campos sem formatação, com os links por extenso (Manutenção e Colaborador em linhas próprias)
+- ♻ Os avisos de "copiado" na tela não entram no print (vale também para o print do Feedback)
 
-### Importar documentos dos colaboradores em lote
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3006
 
-Agora é possível enviar vários PDFs de uma vez (contracheques, informes e outros documentos), e o sistema separa cada página para o colaborador certo.
+### Demonstração
 
-- Novo botão **Importar em lote** em **Documentos dos colaboradores**: escolha a categoria, a competência e vários PDFs na mesma janela.
-- Cada página é anexada ao colaborador identificado pelo CPF (com ou sem pontuação); sem CPF, vale o nome completo.
-- Relatórios com vários colaboradores por página, como o extrato mensal, são recortados: cada um recebe o cabeçalho da página e só o seu bloco. Dados de outros colaboradores e totais do departamento são apagados do arquivo, não apenas escondidos.
-- Se não for possível separar com segurança, a página não é anexada a ninguém e aparece como "Vários colaboradores".
-- Resumo final por arquivo, página e colaborador, com a situação (Importado, Não encontrado, Vários colaboradores, Já importado ou Erro) e filtro por situação.
-- Importar o mesmo arquivo de novo não duplica documentos.
-- Aceita PDFs de até 20 MB cada, até 50 arquivos por vez.
-- Roda em segundo plano, com o progresso no monitor de tarefas: dá para fechar a janela.
+![image](imagens/cloud_pr3084_imagem1.png)
+Botão de compartilhar com a seta dos formatos, ao lado da Calculadora.
 
-- Importação de um extrato mensal, uma ficha e um recibo, do envio ao resumo:
+![image](imagens/cloud_pr3084_imagem2.png)
+A seta abre os três formatos; o clique no ícone copia o primeiro.
 
-![image](imagens/cloud_pr2792_imagem1.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- A janela abre na própria tela de documentos dos colaboradores:
 
-![image](imagens/cloud_pr2792_imagem2.png)
+## 🐛 Permissão no cadastro de dicas [#3083](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3083)
 
-- Extrato com três colaboradores por página virando um documento para cada um; páginas de resumo e quem não está no cadastro aparecem como não encontrados:
+### Objetivo
 
-![image](imagens/cloud_pr2792_imagem3.png)
+Corrigir o deploy do beta, que falhou no teste de permissões dos diálogos depois do cadastro de dicas (simixsistemas/Simix.Ponto.Cloud#3066).
 
-- Documentos gerados do extrato (valores borrados): só o cabeçalho e o bloco do colaborador:
+### Alterações
+- 🐛 A janela de cadastro de dicas passa a respeitar a permissão de Dicas: sem permissão de inclusão ou alteração, abre só para consulta, como os outros cadastros
 
-![image](imagens/cloud_pr2792_imagem4.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3066
 
-- Documentos importados na categoria e competência escolhidas:
+### Demonstração
 
-![image](imagens/cloud_pr2792_imagem5.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Novidade do módulo de documentos com o passo a passo da importação:
 
-![image](imagens/cloud_pr2792_imagem6.png)
+## ✨ Melhorias de feedbacks: comentários no painel, áudio, previsão de entrega e reenvio do aviso [#3081](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3081)
 
-- O "Me mostre" apresentando a janela de importação:
+### Objetivo
 
-![image](imagens/cloud_pr2792_imagem7.png)
+Fix: [#2867](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2867)
 
-### Documentos restritos por categoria
+### Alterações
+- ✨ Painel de feedbacks (administração): a seta da linha abre ali mesmo a descrição, os anexos e os comentários, com a caixa para comentar (inclusive comentário interno)
+- ✨ Painel de feedbacks (administração): clicar no título abre o feedback completo numa janela, sem sair da lista; o botão das ações continua abrindo em nova aba
+- ✨ Detalhe do feedback: botão "Notificar cliente", que reenvia o aviso do status atual pela mesma janela do salvar status (quem recebe, comentário, link e prazo)
+- ✨ Ao mudar para Em análise, Planejado ou Em desenvolvimento, a janela pede a previsão de entrega. Ela aparece no aviso do cliente, no card do painel do cliente e no detalhe; concluído e recusado ficam sem prazo
+- ✨ Aviso do feedback no sino do cliente: os comentários já vêm abertos para responder, junto das reações e da previsão de entrega
+- ✨ Envio de feedback: botão "Gravar áudio" ao lado de "Anexar arquivo". O áudio entra como anexo (até 1 MB, uns 5 minutos), dá para ouvir antes de enviar e toca direto no painel, no detalhe e nos cards. Também aceita anexar áudio pronto (WhatsApp, mp3, m4a, wav)
 
-Documentos sensíveis, como contracheques, agora podem ter acesso restrito a perfis específicos do RH.
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#2871
 
-- Nas categorias de documentos, um **cadeado** marca a categoria como **restrita** e define quais perfis podem abrir os documentos dela. Sem nenhum perfil marcado, ninguém abre pelas telas do RH, nem o administrador.
-- Categoria nova com nome de contracheque, holerite, recibo de pagamento ou informe de rendimentos já nasce restrita (dá para liberar no cadeado).
-- As categorias de contracheque existentes passam a ser restritas, sem nenhum perfil marcado: cada empresa escolhe quem pode abrir.
-- Documento restrito aparece com cadeado no lugar de **Ver** e **Abrir em outra aba** nas listas, na edição e no painel do colaborador. Ao clicar no cadeado, o sistema informa quem pode abrir.
-- Quem não pode abrir continua vendo de quem é o documento, o período, a situação da assinatura e o comprovante.
-- O colaborador sempre abre os próprios documentos, no portal, no aplicativo e nas telas do RH.
+### Demonstração
 
-- Categoria com o cadeado de restrição:
+![image](imagens/cloud_pr3081_imagem1.png)
+Comentários e anexos abertos embaixo da linha, com o áudio enviado pelo cliente.
 
-![image](imagens/cloud_pr2842_imagem1.png)
+![image](imagens/cloud_pr3081_imagem2.png)
+Detalhe completo numa janela, com "Notificar cliente" e a previsão de entrega.
 
-- Categoria "Contracheques" restrita e sem perfil marcado: ninguém abre:
+![image](imagens/cloud_pr3081_imagem3.png)
+Reenvio do aviso: status atual, previsão de entrega, quem recebe, comentário e link.
 
-![image](imagens/cloud_pr2842_imagem2.png)
+![image](imagens/cloud_pr3081_imagem4.png)
+O cliente vê a previsão de entrega no card e ouve o áudio anexado.
 
-- Documento sem categoria abre normalmente; os contracheques ficam com o cadeado:
+![image](imagens/cloud_pr3081_imagem5.png)
+Áudio gravado pelo microfone, com a prévia antes de enviar.
 
-![image](imagens/cloud_pr2842_imagem3.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Com o perfil do usuário marcado na categoria, os contracheques voltam a abrir:
 
-![image](imagens/cloud_pr2842_imagem4.png)
+## ✨ Testes de UI da Manutenção: Próximo e impressão do espelho [#3080](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3080)
 
-- O colaborador abre o próprio contracheque; os dos colegas continuam trancados:
+### Objetivo
 
-![image](imagens/cloud_pr2842_imagem5.png)
+Testes automáticos da tela de Manutenção para evitar que voltem dois problemas: o erro "Filtro de consulta inválido" ao entrar na lista (corrigido em simixsistemas/Simix.Ponto.Cloud#3067) e a impressão do espelho.
 
-- Na edição, o arquivo aparece como restrito, mas dá para substituí-lo:
+### Alterações
+- ✨ Teste da navegação: abre a lista da Manutenção, confere que o filtro "Cidade do estabelecimento" lista as cidades, abre um colaborador e avança com o botão Próximo duas vezes, sem nenhum erro na tela
+- ✨ Teste da impressão: gera o espelho de ponto pelo botão Imprimir e confere que a nova guia abre um PDF válido
+- Conferido que o teste da navegação falha quando a correção do #3067 é desfeita e volta a passar com ela
 
-![image](imagens/cloud_pr2842_imagem6.png)
+### Demonstração
 
-## Novo filtro global e filtros salvos por tela ✨
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-O filtro global foi reestruturado, ganhou novos campos e passa a valer em todo o sistema. Além disso, cada tela agora permite salvar filtros e marcá-los como favoritos.
 
-- Novos campos no filtro global (barra do topo e cadastro do usuário): grupo de estabelecimentos, centro de custo, tipo de turno, tags do estabelecimento e tags do colaborador.
-- Cada campo aceita **igual** ou **diferente** (ex.: todos os estabelecimentos, menos X e Y).
-- O filtro fixo do usuário vale em todas as consultas e dashboards, inclusive na lotação e no recorte de cadastros das opções da barra de filtros dos dashboards.
-- Com filtro global preenchido, os campos de escolha e os filtros dos dashboards mostram só o que pertence ao filtro (estabelecimentos, departamentos, setores, centros de custo, colaboradores...).
-- **Escalas de sobreaviso** seguem o filtro global; as escalas de quem está fora continuam gravadas.
-- Tarefas como **Calcular dados**, **Arquivos fiscais**, **Reimportação**, **Exportação da folha** e geração de espelhos processam só os colaboradores do filtro de quem disparou, e a tela avisa qual filtro vale.
-- Botão de filtro nas telas **Manutenção**, **Consulta diária**, **Inconsistências**, **Exportação da folha**, **Colaboradores** e **Horários**, com os campos em um painel e um contador do que está preenchido.
-- **Filtros salvos por tela**: salvar, carregar, alterar, excluir e compartilhar com todos os usuários. Os favoritos viram botões ao lado do filtro (um clique aplica, outro tira).
-- **Tags** no cadastro de estabelecimentos.
-- Ao abrir um colaborador pela Manutenção, o Anterior/Próximo e a lista lateral seguem o filtro da lista. A lista de colaboradores dentro da Manutenção também respeita o filtro global e acompanha o mês exibido.
-- A consulta de inconsistências aplica o filtro global com mais de um estabelecimento ou departamento, e com setor e seção; escolher um departamento na tela soma ao do filtro global, em vez de substituí-lo.
-- A Exportação da folha mostra o filtro com os nomes, em vez dos códigos.
-- Campos numéricos voltam a ficar vazios ao limpar filtros.
-- Nova página de novidade **Filtro global**, explicando o funil do topo, o botão **Filtros** de cada tela e o filtro definido no cadastro de usuários.
+## ✨ Escala home office: quadro por dia da semana e lista por colaborador [#3077](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3077)
 
-- Filtro global com os campos novos e o departamento como "diferente de":
+### Objetivo
 
-![image](imagens/cloud_pr2908_imagem1.png)
+Fix: [#3059](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3059)
 
-- Botão de filtro da tela de Colaboradores, com os campos em um painel:
+### Alterações
+- ✨ Nova tela **Escalas > Home office**, com os dias de home office de cada colaborador. Os dias vêm da escala prevista do cadastro do colaborador; quando ele não tem, vale a escala do quadro de horário
+- ✨ Visão **Quadro**: uma coluna por dia da semana (Segunda a Sexta; Sábado e Domingo só aparecem se alguém tiver home office neles) e a coluna "Não faz home office". Arrastar o colaborador para outro dia troca aquele dia, e arrastar para "Não faz home office" tira todos
+- ✨ Visão **Lista**: uma linha por colaborador, com departamento, setor, os dias da semana e a escala. Clicar no dia liga ou desliga o home office
+- ✨ A alteração vale do mês escolhido em diante. A tela usa uma escala que já tenha exatamente aqueles dias de home office, ou cria uma nova (ex.: "Home office Ter")
+- ✨ A tela segue o mês e o filtro global da barra do topo e tem pesquisa por colaborador, departamento ou setor
+- ✨ Colaborador com escala que tem horários por dia aparece com cadeado e é alterado pelo cadastro
+- 🐛 A escala com dias sem local definido (comum nos bancos vindos do sistema antigo) dava erro ao abrir e agora abre normalmente
 
-![image](imagens/cloud_pr2908_imagem2.png)
+### Demonstração
 
-- Salvar o filtro como favorito:
+![image](imagens/cloud_pr3077_imagem1.png)
+Quadro por dia da semana. O colaborador com a escala "Seg e Qui" aparece na Segunda e na Quinta.
 
-![image](imagens/cloud_pr2908_imagem3.png)
+![image](imagens/cloud_pr3077_imagem2.png)
+Lista por colaborador: um clique na Terça grava o home office desse dia.
 
-- O favorito ao lado do filtro: um clique aplica, outro tira:
+![image](imagens/cloud_pr3077_imagem3.png)
+Arrastando o colaborador da Terça para a Quarta. A tela reaproveitou a escala "Qua" já cadastrada.
 
-![image](imagens/cloud_pr2908_imagem4.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Filtro salvo ativo no painel e a lista de filtros salvos da tela:
 
-![image](imagens/cloud_pr2908_imagem5.png)
+## 🐛 Ajustes nos testes do deploy: colunas de prazo dos Períodos e proxy da lista de clientes [#3076](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3076)
 
-- Com filtro global de departamento, o campo só oferece o departamento do filtro:
+### Objetivo
 
-![image](imagens/cloud_pr2908_imagem6.png)
+Fix: deploy (beta) da dev parado nos testes — [run 39477513842](https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/39477513842/job/118817199660)
 
-- Calcular dados avisa qual filtro vale e lista só os colaboradores dele:
+### Alterações
+- 🐛 Na lista de Períodos, as colunas "Solicitações até" e "Aprovações até" da visão Padrão voltam a aparecer (tinham ficado fora da lista de colunas da tela depois do merge de duas alterações)
+- 🐛 A lista de clientes usada pelo teste de saúde do sistema passa a constar nos proxies do navegador, como os demais métodos disponíveis pela API
 
-![image](imagens/cloud_pr2908_imagem7.png)
+### PR's referências
 
-- Exportação da folha com o filtro escrito por nome:
+### Demonstração
 
-![image](imagens/cloud_pr2908_imagem8.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Tags no cadastro de estabelecimento:
 
-![image](imagens/cloud_pr2908_imagem9.png)
+## 🐛 Importação de marcações de desligados e validação de hora no horário [#3075](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3075)
 
-- Escalas de sobreaviso só com os estabelecimentos e colaboradores do filtro:
+### Objetivo
 
-![image](imagens/cloud_pr2908_imagem10.png)
+Erros do log de tarefas de 20/10 (`/admin/tarefalogs`) na BlitzTransportes e na CSCTur.
 
-- No dashboard, o filtro de departamentos só oferece o do filtro global:
+### Alterações
+- 🐛 Marcação do aplicativo de colaborador já desligado deixa de ficar como "Colaborador não encontrado". A marcação feita antes da demissão é importada normalmente (na Blitz, marcações de abril chegaram em outubro, depois da demissão). A feita depois da demissão é salva como Inativa, com o motivo.
+- 🐛 O horário com hora inválida num dia (ex.: `2030]`) não é mais salvo: o sistema avisa qual dia e qual campo corrigir. Na CSCTur, essa hora impedia o cartão de carregar para todos os colaboradores do horário.
+- 🐛 A consulta de comprovantes mostra as situações Inativo, Inválido e Duplicado, que antes apareciam sem texto. Passando o mouse, aparece o motivo.
 
-![image](imagens/cloud_pr2908_imagem11.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Calc#536
 
-- Lista de Manutenções com filtro global por estabelecimento:
+### Demonstração
 
-![image](imagens/cloud_pr2687_imagem1.png)
+![image](imagens/cloud_pr3075_imagem1.png)
+Horário já gravado com `1300]` na 2ª entrada de quinta: ao salvar, o sistema aponta o campo.
 
-- Dentro da manutenção, a lista de colaboradores mostra os mesmos colaboradores:
+![image](imagens/cloud_pr3075_imagem2.png)
+Digitando `1330]` no quadro de horário.
 
-![image](imagens/cloud_pr2687_imagem2.png)
+![image](imagens/cloud_pr3075_imagem3.png)
+Ao sair do campo, a hora inválida não fica gravada (correção da Calc).
 
-- Novidade do filtro global:
+![image](imagens/cloud_pr3075_imagem4.png)
+Duas marcações do aplicativo de um colaborador demitido em 22/09: uma de 15/09 e outra de 29/09.
 
-![image](imagens/cloud_pr2962_imagem3.png)
+![image](imagens/cloud_pr3075_imagem5.png)
+Reprocessadas: a de 15/09 foi importada, e a de 29/09 ficou Inativa, com o motivo.
 
-## Lançamentos de cálculo ✨
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-Os lançamentos de cálculo foram refeitos e agora podem criar, substituir, somar ou diminuir os totais do mês, com atalho direto na Manutenção.
 
-- Cadastro refeito: colaborador pela pesquisa, mês/ano, campo do cálculo (ou nome livre), conteúdo em horas ou número, percentual, evento na folha, ativo e observação.
-- Nova opção **Ação**:
-  - **Novo**: cria um total com o nome e o conteúdo informados, sem trocar um total já gerado pelo cálculo;
-  - **Substituir**: troca o valor calculado pelo informado;
-  - **Somar** / **Diminuir**: horas são somadas como horas (10:00 + 02:30 = 12:30) e números como números (2 + 1 = 3).
-- Se o total não aparece no cálculo (ex.: sem adicional noturno no mês), o lançamento cria o total a partir do zero. O valor lançado vale também quando o total vem do layout de totais do horário.
-- Dois lançamentos no mesmo campo e com o mesmo percentual (ex.: um Somar e um Diminuir) agora entram os dois; antes o segundo era descartado.
-- Novo menu **Ponto › Calcular dados › Lançamentos**.
-- Atalho na **Manutenção** (menu de cálculo da grade de totais) para inserir um lançamento já com o colaborador e o mês, recalculando ao gravar, ou abrir a lista.
-- Nos **Totais** da Manutenção, o total alterado por um lançamento ganha um asterisco; ao passar o mouse, aparece o que o lançamento fez. O botão **...** do total abre **Editar lançamento** e **Explicação**, e o mês é recalculado ao gravar. No modo somente leitura fica só o asterisco.
-- Totais criados por lançamento mostram o nome do campo (ex.: "Horas extras") em vez do nome técnico.
-- Exemplos prontos no lançamento novo: **Somar 1 desconto DSR**, **Mais uma hora extra** e **Valor de desconto**. Um clique preenche ação, campo, conteúdo e observação.
-- Os modelos de permissão Manutenção e Fechamento passam a incluir os lançamentos de cálculo.
+## 🐛 Filtro do layout da folha migrado do PcPonto [#3074](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3074)
 
-- Atalho na Manutenção para inserir lançamento ou abrir a lista:
+### Objetivo
 
-![image](imagens/cloud_pr2878_imagem1.png)
+Fix: [#3064](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3064)
 
-- Lançamento aberto pelo atalho, com a nova opção Ação:
+### Alterações
+- 🐛 Layouts de folha migrados do PcPonto com filtro de colaboradores (ex.: "Data de demissão igual a branco") têm o filtro corrigido no banco e voltam a exportar. O filtro continua valendo como no PcPonto: os demitidos do período ficam de fora do arquivo
+- 🐛 Layouts de novas implantações já chegam com o filtro corrigido
+- Filtros que já estão no padrão do sistema não são alterados
 
-![image](imagens/cloud_pr2878_imagem2.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Calc#535
+- simixsistemas/Simix.Ponto.Migracao#37
 
-- Menu Ponto › Calcular dados › Lançamentos e a lista:
+### Demonstração
 
-![image](imagens/cloud_pr2878_imagem3.png)
+Backup da Sasset de 20/10/2026, layout **SuperSassetMetaAssessoria**:
 
-- Antes, sem lançamentos:
+| | Filtro gravado |
+|---|---|
+| Antes | `((Funcionarios.DtDemissao IS NULL OR Funcionarios.DtDemissao='00:00:00'))` |
+| Depois | `(("VFuncionarios"."DtDemissao" IS NULL OR "VFuncionarios"."DtDemissao"='0001-01-01 00:00:00'))` |
 
-![image](imagens/cloud_pr2878_imagem4.png)
+- Rodar o ajuste de novo não altera mais nada, e os layouts do Indio (filtro já no padrão, `"Tipo" <> 'E'`) não são tocados
+- Com o filtro corrigido, a exportação do período 09/2026 gera os arquivos: as 154 linhas dos colaboradores ativos são idênticas às da exportação sem filtro, e só ficam de fora os 9 demitidos de setembro, como no PcPonto
+- 15 casos de conversão conferidos (filtro da Sasset, padrão do Cloud, campos de estabelecimento/cargo/grupo, colchetes, funções, subconsulta, filtro vazio), cada um também convertido duas vezes com o mesmo resultado
 
-- Depois: totais substituídos, somados, diminuídos e um total novo:
 
-![image](imagens/cloud_pr2878_imagem5.png)
+## ✨ Turnos especiais: trocar sigla e bloquear exclusão de sigla em uso [#3072](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3072)
 
-- Totais calculados, sem lançamentos:
+### Objetivo
 
-![image](imagens/calc_pr519_imagem1.png)
+Evitar marcações com sigla de turno especial que não existe mais no cadastro. Na Águia, as siglas do layout Motorista foram trocadas por siglas novas, e as marcações de abril ao início de julho ficaram com as antigas: os dias apareciam sem fim de jornada ("?") e pareciam duplicados.
 
-- Com um lançamento de cada ação (horas previstas substituídas, saldo e dias de faltas somados, faltas diminuídas e um total novo):
+### Alterações
+- ✨ Botão **Trocar sigla** no cadastro de turnos especiais, como no de afastamentos. A troca atualiza a sigla nas marcações, nos registros de ponto, no início/fim do dia dos layouts de horário, nas ações de layout e nas escalas especiais, e marca os meses afetados para recálculo
+- ✨ Sigla em uso não pode mais ser excluída: o sistema avisa onde ela está sendo usada e orienta a desmarcar "Ativo" ou usar a troca
+- 🐛 Depois de criada, a sigla só muda pelo botão de troca. Antes, editar o texto da sigla no cadastro deixava as marcações com a sigla antiga
+- A troca recusa uma sigla que já existe
 
-![image](imagens/calc_pr519_imagem2.png)
+### Demonstração
 
-- Totais da Manutenção com asterisco e o menu "..." com Editar lançamento e Explicação:
+![image](imagens/cloud_pr3072_imagem1.png)
+Excluir uma sigla com marcações e registros mostra onde ela é usada.
 
-![image](imagens/cloud_pr2940_imagem1.png)
+![image](imagens/cloud_pr3072_imagem2.png)
+Na edição, a sigla fica bloqueada e o botão ao lado abre a troca.
 
-- Lançamento novo com os exemplos no topo:
+![image](imagens/cloud_pr3072_imagem3.png)
+Informando a nova sigla.
 
-![image](imagens/cloud_pr2940_imagem2.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Campos preenchidos depois de clicar em "Somar 1 desconto DSR":
 
-![image](imagens/cloud_pr2940_imagem3.png)
+## ✨ Opção na visão do espelho para ocultar os ícones das marcações [#3070](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3070)
 
-- Editar lançamento aberto pelo "..." do total de horas extras:
+### Objetivo
 
-![image](imagens/cloud_pr2940_imagem4.png)
+Fix: [#3071](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3071)
 
-- Card na página de novidades:
+Permitir gerar o espelho do cartão ponto com as marcações sem os ícones de local e de tipo de dispositivo, escolhendo isso na visão do espelho.
 
-![image](imagens/cloud_pr2940_imagem5.png)
+### Alterações
+- ✨ Nova opção na visão do espelho: **Ícones de local e dispositivo (Marcações)**. Em **Nunca**, o espelho sai só com os horários, sem os ícones de local (home office, cliente, viagem…) e de dispositivo (coletor, celular, web, digital, catraca, importação, alteração manual, pré-assinalada…)
+- O divisor entre os turnos, o ícone de lanche e as siglas continuam aparecendo
+- Visões já existentes e o espelho gerado pela Manutenção continuam com os ícones, como hoje
 
-## Consulta geral e quitação de saldo de banco de horas ✨
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3068
+- simixsistemas/Simix.Ponto.Cloud#3053
 
-Nova tela para ver todos os períodos de banco de horas e os colaboradores de cada um, com as ferramentas do período aplicadas só a quem você escolher, incluindo a quitação de saldo em lote.
+### Demonstração
 
-### Consulta geral de banco de horas
+Edição da visão do espelho com a nova opção dos ícones das marcações.
 
-- Nova tela **Consulta geral** no menu **BH**: períodos com datas, situação, quantidade de colaboradores, horas previstas e saldo somado; ordenação por período, quantidade, previstas ou saldo.
-- Filtro para ver só os períodos **em andamento**, os que **já passaram** ou os **futuros**.
-- Ao escolher um período, os colaboradores aparecem no painel ao lado, com busca, ordenação e atalho para o banco de horas de cada um. Saldos nas mesmas cores das outras telas.
-- Exclusão do banco de horas dos colaboradores selecionados, no menu **"..."** (inclui saldos mensais e transferências; período bloqueado não permite excluir).
-- **Alterar período final** e **Ajustar dia de início** passam a valer só para os colaboradores selecionados (sem seleção, valem para o período inteiro); na tela de detalhe, só para aquele colaborador.
-- Correção: alterar o período final gravava o primeiro dia do mês como data final e não removia os meses excedentes ao reduzir o período.
-- Correção: ajustar o dia de início gravava as datas no mês errado e não recalculava a partir do primeiro mês alterado.
-- Card nas Novidades com demonstração guiada (**Me mostre**).
+![image](imagens/cloud_pr3070_imagem1.png)
 
-- Consulta geral com os períodos em andamento ordenados pelo saldo:
+Marcações do espelho como saem hoje (opção em Padrão), com os ícones de coletor e o lápis da alteração manual no 10/09.
 
-![image](imagens/cloud_pr2661_imagem1.png)
+![image](imagens/cloud_pr3070_imagem2.png)
 
-- Colaboradores do período no painel ao lado, com 2 selecionados:
+Com a opção em Nunca: só os horários, mantendo o divisor entre os turnos.
 
-![image](imagens/cloud_pr2661_imagem2.png)
+![image](imagens/cloud_pr3070_imagem3.png)
 
-- Exclusão do banco de horas no menu "...":
 
-![image](imagens/cloud_pr2661_imagem3.png)
+## ✨🐛 Visibilidade dos campos nas visões e totais do espelho gerado pela Manutenção [#3068](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3068)
 
-- Alteração do período final aplicada só aos selecionados:
+### Objetivo
 
-![image](imagens/cloud_pr2661_imagem4.png)
+Fix: [#3069](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3069)
 
-- Card da nova tela nas Novidades, com a demonstração guiada:
+O espelho de ponto gerado pela Manutenção saía sem "Horas extras" e "Horas faltas" nos totais (caso da Super Ramos: colaboradora 931 em 09/2026), enquanto o gerado pela tela de espelhos mostrava. A Manutenção mandava ao espelho a visão da grade, e a visão "Padrão" da grade oculta as colunas de extras e faltas. Junto, as visões ganham a escolha de quando cada campo aparece.
 
-![image](imagens/cloud_pr2661_imagem5.png)
+### Alterações
+- 🐛 O espelho gerado pela Manutenção volta a mostrar todos os totais (Horas extras, Horas faltas…); o espelho só considera as visões de espelho
+- ✨ Na edição das visões (Manutenção, Espelho e Monitor de registros), cada campo tem as opções **Padrão**, **Sempre**, **Nunca** e **Se preenchido** no lugar da caixa de marcação
+- ✨ **Se preenchido**: na Manutenção a coluna aparece quando algum dia do período tem o valor; no Monitor, quando algum colaborador da lista tem; no espelho, o total sai quando está vazio ou zerado
+- ♻ A visão "Padrão" da Manutenção deixa de ocultar colunas; as já criadas são corrigidas na atualização do banco, se ninguém as alterou
 
-### Quitação de saldo
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3053
 
-- Na **Consulta geral de banco de horas**, o menu **Ferramentas do período** ganhou **Quitar saldo positivo** e **Quitar saldo negativo**, para os colaboradores selecionados.
-- Cada colaborador recebe um lançamento de banco de horas com o saldo de sinal contrário, deixando o saldo do período em **00:00**. O saldo é recalculado antes de quitar, garantindo que a quitação parta do saldo real.
-- Quem não tem saldo do tipo escolhido fica como está; o resumo mostra quantos foram quitados, o total de horas e os que tiveram problema.
-- A data do lançamento vem preenchida e pode ser alterada dentro do período; período bloqueado não permite quitar.
-- Nova opção **Desfazer quitação**, que devolve o saldo anterior (lançamentos manuais comuns não entram).
-- Quitar e desfazer rodam em segundo plano e exigem permissão de edição do banco de horas e de lançamentos.
+### Demonstração
 
-- As novas opções no menu de ferramentas do período:
+Totais do espelho gerado pela Manutenção, antes: sem "Horas extras" e "Horas faltas".
 
-![image](imagens/cloud_pr2876_imagem1.png)
+![image](imagens/cloud_pr3068_imagem1.png)
 
-- Resumo antes de confirmar, com quantidade, total de horas e data:
+Depois: os mesmos totais do cartão, com "Horas extras 26:11" e "Horas faltas 00:00".
 
-![image](imagens/cloud_pr2876_imagem2.png)
+![image](imagens/cloud_pr3068_imagem2.png)
 
-- Resultado da quitação:
+Edição da visão: cada campo com Padrão, Sempre, Nunca ou Se preenchido.
 
-![image](imagens/cloud_pr2876_imagem3.png)
+![image](imagens/cloud_pr3068_imagem3.png)
 
-- Colaboradores quitados com saldo em 00:00:
+Manutenção na visão "Padrão", agora com as colunas de Extras, Faltas, Ad. Noturno e as demais.
 
-![image](imagens/cloud_pr2876_imagem4.png)
+![image](imagens/cloud_pr3068_imagem4.png)
 
-- Desfazer: só as quitações dos colaboradores selecionados:
 
-![image](imagens/cloud_pr2876_imagem5.png)
+## 🐛 Erro 'Filtro de consulta inválido' na lista da Manutenção [#3067](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3067)
 
-- O saldo volta ao que era antes:
+### Objetivo
 
-![image](imagens/cloud_pr2876_imagem6.png)
+Ao entrar na lista da Manutenção aparecia o erro "Filtro de consulta inválido". O campo "Cidade do estabelecimento" do botão de filtro lista só as cidades que têm estabelecimento, e a proteção das consultas dos campos de seleção (simixsistemas/Simix.Ponto.Cloud#3041) passou a recusar esse filtro.
 
-## Prazos, bloqueio e Situação Portal nos períodos ✨
+### Alterações
+- 🐛 A lista da Manutenção abre sem o erro "Filtro de consulta inválido", e o campo "Cidade do estabelecimento" do filtro volta a listar as cidades com estabelecimento
+- A proteção das consultas continua igual para os filtros enviados pelas telas: só é aceito, além deles, o filtro de cidades definido pelo próprio sistema
 
-Os períodos ganharam prazos para o colaborador solicitar e para o gestor aprovar, bloqueio automático, uma situação separada para o portal e um atalho para bloquear ou liberar vários meses de uma vez.
+### Demonstração
 
-### Prazos de solicitação e aprovação
 
-- Novos campos **Solicitações até** e **Aprovações até** no cadastro do período, com data e hora.
-- Depois do prazo de solicitação, o colaborador não consegue mais solicitar ajustes e afastamentos do período pelo portal.
-- Período de estabelecimento com prazo em branco segue o prazo do período geral.
-- Aviso com os prazos no painel do colaborador e no painel das pendências: amarelo perto do prazo e vermelho depois dele. O prazo de aprovação é apenas informativo.
+## ✨ Cadastro de dicas no painel admin e card Dica no Início [#3066](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3066)
 
-- Cadastro do período com os prazos de solicitação e de aprovação:
+### Objetivo
 
-![image](imagens/cloud_pr2903_imagem1.png)
+Cadastrar dicas no painel admin e mostrá-las num card próprio no Início de todos os clientes.
 
-- Painel das pendências com os prazos de solicitação e de aprovação:
+### Alterações
+- ✨ Novo cadastro de Dicas no painel admin (Principal → Dicas), só para a equipe Símix: título, texto, link, ícone, ordem, período em que aparece e permissão opcional
+- ✨ Novo card Dica no Início, acima do Calendário: mostra uma dica por vez e, com mais de uma valendo, cada dia começa por uma diferente e as setas mostram as outras
+- ✨ O link pode ser uma tela do sistema ou um endereço externo, que abre em nova guia; sem link, a dica é só o texto
+- ✨ Com a permissão preenchida, só quem tem acesso àquela parte do sistema vê a dica
+- ✨ Sem nenhuma dica valendo, o card não aparece
+- ✨ A alteração no cadastro aparece na hora, sem publicar o sistema
 
-![image](imagens/cloud_pr2903_imagem2.png)
+### PR's referências
 
-- Painel do colaborador com o prazo de solicitação encerrado:
+### Demonstração
 
-![image](imagens/cloud_pr2903_imagem3.png)
+![image](imagens/cloud_pr3066_imagem1.png)
+Lista de dicas no painel admin, com a dica criada no teste.
 
-### Bloqueio automático
+![image](imagens/cloud_pr3066_imagem2.png)
+Card Dica no Início, acima do Calendário, com duas dicas valendo (1 de 2) e link externo.
 
-- Os períodos passam a ser bloqueados automaticamente após o prazo de **Bloquear período após** (em dias, contados do fim do período), na gestão e no portal do colaborador.
-- Nova data e hora de **Bloqueio automático** no cadastro do período: preenchida, o período é bloqueado nesse momento; vazia, vale o prazo das Configurações.
-- Aviso com 2 dias de antecedência no painel inicial ("Em X dias o período será bloqueado"), com os botões **Bloquear agora** e **Adiar/alterar**.
-- Ao bloquear, é enviada uma notificação pelos **Alertas** (rotina "Períodos", evento "Bloqueado"), já configurada para os perfis admin e DP.
-- Liberar manualmente um período bloqueado não faz ele ser bloqueado de novo na rodada seguinte.
-- Nova página de novidade **Bloqueio de períodos**, com o prazo nas Configurações, a data própria de cada período, o aviso, o que fica travado e os prazos do portal.
+![image](imagens/cloud_pr3066_imagem3.png)
+A seta passa para a outra dica, que abre uma tela do sistema.
 
-- Novidade do bloqueio de períodos:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2962_imagem4.png)
 
-### Situação Portal
 
-Agora é possível bloquear os lançamentos feitos pelo colaborador no portal sem fechar o período para o RH.
+## 🐛 Lista de tenants sem login para a verificação de Health Checks [#3065](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3065)
 
-- Os períodos ganham a **Situação Portal**, na lista e no cadastro: libera ou bloqueia os lançamentos de horários e afastamentos feitos pelo colaborador no portal.
-- Com a Situação Portal bloqueada, o colaborador vê um aviso e a solicitação não é criada.
-- O bloqueio automático de períodos (sugestão de períodos em aberto e assistente de fechamento) bloqueia também o portal; desbloquear pelo assistente não reabre o portal.
-- Na atualização, cada período recebe a Situação Portal igual à sua Situação atual.
+### Objetivo
 
-- Situação Portal na lista de períodos (período bloqueado só para o portal):
+Fix: verificação de Health Checks do CI falhando com "Falha ao obter a lista de tenants… HTTP 302" ([execução](https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/39417370975/job/118609560575#step:3:18))
 
-![image](imagens/cloud_pr2779_imagem1.png)
+### Alterações
+- 🐛 A lista de tenants usada pela verificação de Health Checks volta a responder sem login (ela devolve só os nomes dos tenants, que já são os subdomínios). Desde a revisão de autorização dos AppServices, a rota tinha saído da API e a verificação parava antes de testar qualquer tenant
 
-- Campo no cadastro do período:
+### PR's referências
 
-![image](imagens/cloud_pr2779_imagem2.png)
+### Demonstração
 
-- Colaborador tentando lançar horário e afastamento pelo portal nesse período:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2779_imagem3.png)
 
-![image](imagens/cloud_pr2779_imagem4.png)
+## 🐛 Cadastros somente consulta para usuários sem permissão de alterar [#3063](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3063)
 
-### Bloquear ou liberar vários períodos de uma vez
+### Objetivo
 
-- Novo atalho **Bloquear/Liberar períodos** na lista de **Períodos**, na gestão e no portal.
-- **Bloquear períodos**: bloqueia todos os períodos anteriores ao mês escolhido. **Liberar períodos**: libera todos os períodos a partir do mês escolhido (inclusive).
-- O diálogo já abre com o mês selecionado na lista, permite filtrar por estabelecimentos (vazio = todos) e incluir o período geral.
-- Antes de gravar, mostra quantos e quais períodos serão alterados; só entram os que realmente mudam de situação.
-- Ao liberar um período cuja data de bloqueio automático já passou, essa data é limpa, para ele não ser bloqueado de novo em seguida.
-- As alterações dos períodos passam a ficar registradas no histórico do cadastro.
+Fix: [#3058](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3058)
 
-- Atalho na barra da lista de Períodos:
+### Alterações
+- 🐛 Usuário sem permissão para alterar um cadastro agora o abre **só para consulta**, em **todos os cadastros** (colaborador, cargos, horários, afastamentos, setores...): aviso no topo, todos os campos, grades e botões travados e apenas o botão **Fechar** — antes a tela deixava alterar tudo e só dava erro ao salvar
+- 🐛 A regra é a mesma do servidor: sem permissão de editar, o registro existente abre para consulta; sem permissão de incluir, o registro novo também
+- 🐛 No cadastro do colaborador também ficam travados a troca de foto, o trocar código e os atalhos para as configurações gerais; a ajuda dos campos, Treinamentos e a navegação entre registros continuam funcionando (sem perguntar se quer salvar)
+- 🐛 Guias do cadastro do colaborador que o usuário não tem permissão de consultar (Customizável, Familiares, VT, VR, Pagamento, Histórico, Contatos) e o quadro de tags não aparecem mais — antes mostravam erro de autorização
+- ♻ Quem tem permissão de alterar continua com os cadastros como antes
 
-![image](imagens/cloud_pr2969_imagem1.png)
+### Demonstração
 
-- Diálogo com o mês, o filtro de estabelecimentos e a prévia dos períodos alterados:
+![image](imagens/cloud_pr3063_imagem1.png)
+Usuário "Manutencao" (role "Gestor Somente Consulta") abrindo o cadastro pela Manutenção: aviso de somente consulta, campos travados, só o botão Fechar e apenas as guias que ele pode consultar.
 
-![image](imagens/cloud_pr2969_imagem2.png)
+![image](imagens/cloud_pr3063_imagem2.png)
+O mesmo comportamento em outro cadastro: usuário com consulta de Cargos, mas sem permissão de editar.
 
-## Escalas: trocas e afastamentos direto no cartão e relatório de escalas ✨
 
-### Trocas/Afastamentos
+## ✨ Ações rápidas: escolher os equipamentos do envio e opção de ignorar coletor [#3060](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3060)
 
-Agora é possível fazer trocas de folga e lançar afastamentos na grade de escalas sem precisar criar um plano: o **Salvar** grava direto no cartão de ponto.
+### Objetivo
 
-- Novo menu **Escalas > Trocas/Afastamentos**, com a mesma grade do planejamento. O menu **Escalas > Planejamento** continua igual.
-- Seleção do mês com opção de **intervalo de datas**, que pode passar do fim do mês.
-- Filtro pelo **estabelecimento atual** do colaborador (ou pelo do filtro global, quando preenchido).
-- Ao trocar de mês, de página ou sair com alterações não gravadas, a tela pergunta se grava, descarta ou cancela.
-- Acesso para quem tem a permissão de **aprovar o planejamento de escala**; as alterações ficam registradas no log como "Manutenção de escala".
-- **Horas no afastamento**: o editor do dia ganhou o campo Horas, já preenchido com as horas padrão do cadastro do afastamento.
-- **Troca de folga** mais clara: ícone de troca, dia trocado dentro de um círculo e o texto **Folga** no dia de descanso, na grade e na impressão.
-- **Sugestões no painel lateral** para o dia selecionado: trocar pelo domingo anterior ou pelo próximo, e inserir o último afastamento ou horário usado.
-- **Manutenção**: nova opção da visão para **ocultar a sigla do turno especial** (ex.: REG) nas marcações da listagem; a sigla continua no dia, no espelho e na edição.
+Fix: [Feedback — Colocar como primeira sugestão o relógio 1](https://simixponto.app/feedbacks/3a2466a1-eb96-a876-7880-114bc8e61fb9)
 
-- Acesso pelo menu Escalas > Trocas/Afastamentos:
+### Alterações
+- ✨ Nas ações rápidas do colaborador, cada equipamento agora tem uma caixa de marcação. Todos vêm marcados e o envio vai só para os marcados. O resultado do envio aparece ao lado de cada equipamento
+- ✨ Nova opção no cadastro de coletores (aba Avançado): **Ignorar nas ações rápidas do colaborador**. O equipamento marcado deixa de aparecer nessa janela, e a sincronização e o envio de cadastros pela tela de coletores continuam iguais
 
-![image](imagens/cloud_pr2920_imagem1.png)
+### Demonstração
 
-- Trocas/Afastamentos com as sugestões do dia no painel lateral:
+![image](imagens/cloud_pr3060_imagem1.png)
+Ações rápidas com dois equipamentos desmarcados: o botão envia para os 4 marcados.
 
-![image](imagens/cloud_pr2920_imagem2.png)
+![image](imagens/cloud_pr3060_imagem2.png)
+Coletor marcado para ser ignorado. Ele não aparece mais na lista das ações rápidas (imagem acima).
 
-- Troca pelo próximo domingo: o dia vira Folga e o domingo recebe a jornada:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2920_imagem3.png)
 
-- Afastamento com horas e sugestão do último afastamento usado:
+## 🐛 Geração do espelho de ponto com totais no rodapé [#3053](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3053)
 
-![image](imagens/cloud_pr2920_imagem4.png)
+### Objetivo
 
-- Intervalo de datas na seleção do mês:
+A geração do espelho de ponto falhava com "Erro ao carregar dados do espelho: Nenhum handler registrado para OnGetData", tanto pela Manutenção do cartão quanto pela tela de espelhos. Acontece com os layouts de espelho que têm totais no rodapé e começou com a alteração de segurança das consultas (simixsistemas/Simix.Ponto.Cloud#3041).
 
-![image](imagens/cloud_pr2920_imagem5.png)
+### Alterações
+- 🐛 O espelho de ponto volta a ser gerado com os totais do rodapé, na Manutenção do cartão, na tela de espelhos e na geração em lote
 
-![image](imagens/cloud_pr2920_imagem6.png)
+### Demonstração
 
-- Aviso de alterações não gravadas ao trocar o mês:
 
-![image](imagens/cloud_pr2920_imagem7.png)
+## ✨🐛 Ajustes no Painel e editor de campos compacto [#3052](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3052)
 
-- Impressão com Folga e o dia trocado no círculo:
+### Objetivo
 
-![image](imagens/cloud_pr2920_imagem8.png)
+Fix: [#3044](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3044)
 
-- Manutenção: opção da visão para ocultar a sigla do turno especial:
+### Alterações
+- 🐛 O Painel volta a mostrar os dashboards de quem tem um layout grande: o que o navegador guarda deixou de derrubar a conexão (era o "Erro ao carregar dashboard: A task was canceled." do feedback), e a loja volta a adicionar dashboards e widgets
+- 🐛 O layout do Painel volta a ser salvo quando a tela roda direto no navegador (WebAssembly): com o layout grande, a gravação não chegava ao servidor ("Erro ao salvar layout do dashboard: Failed to fetch")
+- ✨ Configuração dos campos dos widgets e dos relatórios mais simples e compacta (vem do PR da RX)
 
-![image](imagens/cloud_pr2920_imagem9.png)
+### PR's referências
+- simixsistemas/DevShare.RX.Cloud#163 (publicar o pacote antes do release deste)
 
-- Antes e depois, no mesmo dia:
+### Demonstração
 
-![image](imagens/cloud_pr2920_imagem10.png)
+Testado com o backup do demo-comercial2, o banco do feedback, cujo layout do Painel tem 33.294 bytes na mensagem (o limite é 32.768):
 
-![image](imagens/cloud_pr2920_imagem11.png)
+- Antes: o Painel não abria, a conexão caía ("The maximum message size of 32768B was exceeded") e, depois de 1 minuto, aparecia o mesmo erro do print do feedback; a loja não adicionava
+- Agora: os 17 widgets abrem, a loja adiciona e as alterações no editor de campos são gravadas, no modo Server e no WebAssembly
+- As 86 telas do menu foram abertas em sequência sem queda de conexão nem erro de leitura do navegador
 
-### Relatório de Escalas
 
-O planejamento de escalas agora pode ser impresso ou salvo em PDF, no mesmo modelo do PcPonto.
+## ✨ Módulo de Trilha do conhecimento [#3051](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3051)
 
-- Novo botão **Imprimir** na barra do planejamento de escalas: abre o relatório numa nova guia. Alterações não salvas são salvas antes, para o relatório sair igual à tela.
-- Um colaborador por linha (nome e cargo), um dia por coluna e a coluna de **assinatura** no fim; domingos e feriados destacados.
-- Cada dia mostra o mesmo que a grade: o afastamento ou a sigla do horário com a cor do cadastro e, quando a escala não define nada, as horas que o colaborador já cumpre.
-- Dia reprovado sai com o que vale no cartão; dias antes da admissão ou depois da demissão saem como "Inativo".
-- Cabeçalho com razão social, CNPJ, período por extenso, nome do planejamento e situação, repetido em todas as páginas, e "Página N de M" no rodapé.
-- Impressão em A4 paisagem pelo navegador (também dá para salvar em PDF). No fim: total de colaboradores, legenda das siglas e feriados do período.
-- Abre rápido mesmo em planejamentos grandes (462 colaboradores em pouco mais de 1 segundo).
+### Objetivo
 
-- Botão novo na barra da escala, ao lado da ajuda:
+Fix: [#2937](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2937)
 
-![image](imagens/cloud_pr2812_imagem1.png)
+### Alterações
+- ✨ Nova tela **Minhas trilhas** (`/trilhas`): trilhas do conhecimento para aprender o sistema no seu ritmo, com "Continuar de onde parou" e as guias Em andamento, Obrigatórias, Disponíveis e Concluídas
+- ✨ Cada trilha tem etapas e itens (vídeo, documento, demonstração guiada e texto) e guarda o progresso de cada pessoa: o percentual, o item onde parou e a data de conclusão
+- ✨ A demonstração guiada abre a tela certa e, ao terminar, conclui o item sozinha. O vídeo do YouTube conclui com 90% assistido e volta do ponto em que a pessoa parou
+- ✨ Três trilhas prontas da Símix: **Primeiros passos**, **Fechamento do mês** e **Banco de horas**, montadas com as demonstrações guiadas que já existem
+- ✨ Trilhas da empresa em **Módulos › Trilhas**: criar, montar as etapas (inclusive com itens do catálogo Símix), publicar, duplicar uma trilha da Símix e atribuir a colaboradores ou usuários. Gravar não muda a trilha para quem está fazendo; só o Publicar muda
+- ✨ Catálogo Símix em `/admin/trilhas`, com o mesmo editor
+- ✨ Portal do colaborador ganha o item **Trilhas**, com o número de obrigatórias pendentes, e um card no painel
+- ✨ A página de Treinamentos ganha a faixa "Suas trilhas". O Início ganha o card do próximo passo, e o botão de treinamentos de cada tela destaca o próximo passo da trilha quando ele é daquela tela
+- Esta é a primeira fase da definição. Questionário, prazos e reciclagem, inscrição automática, acompanhamento, certificado, pontos e conquistas ficam para as próximas
+- Perfis **DP** já existentes nos clientes não recebem sozinhos as permissões novas de Trilhas: é preciso conceder em Permissões
 
-- Relatório aberto numa nova guia, com o botão Imprimir no topo:
+### Demonstração
 
-![image](imagens/cloud_pr2812_imagem2.png)
+![image](imagens/cloud_pr3051_imagem1.png)
+Minhas trilhas com as três trilhas iniciais da Símix.
 
-- Primeira página impressa (A4 paisagem), com férias, folgas, atestado, domingos e feriado destacados:
+![image](imagens/cloud_pr3051_imagem2.png)
+Visão da trilha: etapas, itens e o progresso ao lado.
 
-![image](imagens/cloud_pr2812_imagem3.png)
+![image](imagens/cloud_pr3051_imagem3.png)
+Item de demonstração guiada concluído pelo fim da demonstração, com o índice da trilha.
 
-- Última página, com o total de colaboradores, a legenda das siglas e os feriados do período:
+![image](imagens/cloud_pr3051_imagem4.png)
+Vídeo do YouTube dentro da trilha, com o percentual assistido.
 
-![image](imagens/cloud_pr2812_imagem4.png)
+![image](imagens/cloud_pr3051_imagem5.png)
+Faixa "Suas trilhas" na página de Treinamentos.
 
-## Sobreaviso: solicitação pelo portal e cálculo corrigido ✨
+![image](imagens/cloud_pr3051_imagem6.png)
+Catálogo de trilhas da Símix em /admin/trilhas.
 
-O colaborador passa a pedir sobreaviso pelo portal para os dias trabalhados na folga, com aprovação do gestor/RH, e o cálculo das horas de sobreaviso foi corrigido.
 
-### Solicitação de sobreaviso pelo portal
+## ✨ Isento de registro no cadastro do colaborador [#3050](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3050)
 
-- Nova opção no Portal, **Permitir solicitação de sobreaviso**, desligada por padrão.
-- Com a opção ligada, o painel do colaborador mostra os dias trabalhados na folga (DSR, feriado ou dia sem horas previstas) com o botão **Solicitar sobreaviso**.
-- Na consulta do ponto do colaborador, cada dia ganhou o menu **...** com **Solicitar sobreaviso**.
-- O pedido segue o mesmo fluxo da solicitação de horário: aguarda aprovação conforme o tipo de aprovação configurado e só altera o dia depois de aprovado.
-- O pedido respeita o bloqueio do período no portal e o prazo de solicitação; depois disso, só a gestão altera o sobreaviso.
-- O painel de pendências ganhou o tipo **Sobreaviso**, com guia própria quando há pedidos em aberto.
+### Objetivo
 
-- Painel do colaborador com os dias trabalhados na folga e os pedidos aguardando aprovação:
+Fix: [#3045](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3045)
 
-![image](imagens/cloud_pr2925_imagem3.png)
+### Alterações
+- ✨ Nova opção **Isento de registro** na aba Registro do cadastro do colaborador, com data de início e data de fim (fim vazio = isento por tempo indeterminado)
+- ✨ Nos dias do período o cálculo não conta falta, horas faltantes nem atraso, e não gera inconsistência; marcações e horas extras continuam valendo
+- ✨ Na Manutenção, o dia isento mostra um ícone ao lado da data e "Isento de registro" no afastamento
+- Data de fim sem início, ou anterior ao início, é recusada ao salvar
 
-- Consulta do ponto com dia aprovado, pedidos pendentes e o menu "..." para solicitar:
+### PR's referências
+- simixsistemas/Simix.Ponto.Calc#533
 
-![image](imagens/cloud_pr2925_imagem4.png)
+### Demonstração
 
-- Painel de pendências com os pedidos de sobreaviso:
+![image](imagens/cloud_pr3050_imagem1.png)
+Isenção de 24/09 a 25/09: os dois dias com marcação faltando passam de -02:46 e -08:00 para 00:00, com o ícone e "Isento de registro" no afastamento.
 
-![image](imagens/cloud_pr2925_imagem5.png)
+![image](imagens/cloud_pr3050_imagem2.png)
+A opção na aba Registro do cadastro, com as datas de início e fim.
 
-### Cálculo e escalas de sobreaviso
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- As horas em espera do sobreaviso passam a descontar só o que foi trabalhado **dentro** do horário do sobreaviso. Antes, a jornada normal também era descontada (ex.: dia com 8h de trabalho e sobreaviso de 12h à noite resultava em 4h de espera em vez de 12h).
-- Sobreaviso que passa da meia-noite (ex.: 18:00 às 06:00) e sobreaviso de 24h são considerados corretamente. A espera não fica mais negativa, e o total do período não dobra mais a cada recálculo na manutenção.
-- Os colaboradores escalados no **Sobreaviso** agora ficam gravados; antes a escala podia "sumir" depois do recálculo, mesmo com a mensagem de sucesso. O que não puder ser gravado aparece na tela.
-- Cada colaborador aparece no painel do próprio estabelecimento, e ao escolher dias de um estabelecimento a lista mostra só os colaboradores dele. O botão **Salvar** avisa quando há alterações pendentes.
-- Nova explicação das **Horas de sobreaviso** no menu **...** dos totais da Manutenção: mostra a faixa configurada no quadro de horário do colaborador, avisa quando ela não está preenchida, indica se os dias de sobreaviso usam horário próprio ou o horário normal do dia e faz a conta com os números do período.
 
-- Sobreaviso das 17:00 às 05:00 em dois dias, totalizando 22:53 de espera (pela regra anterior seriam 16:00):
+## ✨ Sincronização do iDClass e iDFace exclui os colaboradores desligados do equipamento [#3049](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3049)
 
-![image](imagens/calc_pr512_imagem1.png)
+### Objetivo
 
-- Escala de sobreaviso salva em 01/09 e 05/09, mantida no painel do estabelecimento após recarregar:
+Fix: [#3043](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3043)
 
-![image](imagens/cloud_pr2853_imagem1.png)
+Os colaboradores desligados continuavam cadastrados nos coletores e precisavam ser excluídos manualmente do equipamento.
 
-- Sobreaviso previsto das 09:00 às 18:00, com chamado de 3:15 no sábado, resultando em 05:45 de sobreaviso:
+### Alterações
+- ✨ Ao sincronizar um coletor **iDClass** ou **iDFace** (Control iD), o sistema exclui do equipamento os colaboradores já desligados — vale para a sincronização automática e para a feita pela tela, com o coletor ligado direto ou pelo agente local
+- Continuam no equipamento: quem não tem cadastro no sistema (ex.: administrador do relógio), quem foi recontratado com o mesmo CPF/PIS e quem tem a demissão marcada para hoje ou uma data futura
+- O log do coletor mostra quais colaboradores foram excluídos; se a exclusão falhar, a sincronização das marcações segue normalmente e o motivo vai para o log
+- Os demais modelos de coletor não mudam
 
-![image](imagens/cloud_pr2809_imagem1.png)
+### Demonstração
 
-### Card e demonstração guiada
+Sem prints: o único equipamento Control iD acessível é de produção, de cliente, e a demonstração excluiria usuários dele. O comportamento está coberto por testes com o equipamento simulado (iDClass, iDClass 671, iDFace, outro modelo e pelo agente local): 29 testes de sincronização de coletores aprovados.
 
-- Novo card do **Sobreaviso** na página **Novidades**: quando o dia é de sobreaviso, as opções do quadro de horário e o resultado na manutenção, com um exemplo de conta.
-- **Me mostre** do Sobreaviso: percorre o quadro de horário (guia Controles), a tela de escalas de sobreaviso e a manutenção do colaborador, apontando o dia de sobreaviso e a explicação das **Horas de sobreaviso**.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Card na página Novidades, com as opções do quadro de horário, o dia de sobreaviso e a explicação do total:
 
-![image](imagens/cloud_pr2836_imagem1.png)
+## 🐛 Deploy (dev): proxies gerados só depois que o dev roda a versão publicada [#3046](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3046)
 
-- Último passo do Me mostre, apontando a explicação das Horas de sobreaviso nos Totais:
+### Objetivo
 
-![image](imagens/cloud_pr2836_imagem2.png)
+Corrigir o [Deploy (dev)](https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/39178450877), que seguiu falhando na geração dos proxies depois do simixsistemas/Simix.Ponto.Cloud#3042.
 
-## Intervalo de datas na Manutenção ✨
+### Alterações
+- 🐛 A geração automática dos proxies do navegador espera o dev rodar a versão que acabou de ser publicada: logo depois do deploy a versão anterior ainda respondia, e os proxies saíam do código antigo e não compilavam
+- ✨ O sistema informa, num endereço de verificação, qual execução do deploy gerou a versão no ar
+- ♻ Proxies do navegador atualizados com as rotinas que passaram a ser só do servidor
 
-Agora é possível trabalhar na Manutenção com um intervalo de datas que passa do mês, por exemplo para tratar os primeiros dias do mês seguinte sem trocar de tela.
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3042
 
-- Novo botão de **intervalo de datas** ao lado do mês: abre o período do cartão (ex.: 01/07/2026 → 31/07/2026) e permite estendê-lo (ex.: até 10/08/2026), mostrando todos esses dias na grade.
-- O intervalo continua ativo ao passar para o próximo colaborador; o mesmo botão volta para o mês.
-- Com o intervalo ativo, a tela avisa que os totais exibidos são do intervalo.
-- Ao salvar, só as marcações são gravadas; totais, prêmios e demais dados de cada mês com dia alterado são recalculados como mês inteiro.
-- Se um mês com dia alterado estiver bloqueado, nada é gravado. Um mês fechado que aparece só para consulta não impede o salvar.
-- O intervalo carrega exatamente os dias pedidos, mesmo quando o dia de início do cartão mudou de um mês para o outro.
-- Solicitações pendentes também aparecem nos dias do intervalo que passam do mês.
-- O intervalo vale só na Manutenção; as demais telas continuam por mês.
-- Correção: em período bloqueado, a conferência agora acontece antes de gravar. Antes, o aviso aparecia, mas as alterações dos dias já tinham sido gravadas.
-- Card na página de **Novidades** com o passo a passo e a demonstração guiada (**Me mostre**).
+### Demonstração
 
-- Botão novo ao lado do mês:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2859_imagem1.png)
 
-- Seletor aberto com o período do cartão, mostrando dois meses:
+## 🐛 Ajustes no deploy do dev após a auditoria de segurança [#3042](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3042)
 
-![image](imagens/cloud_pr2859_imagem2.png)
+### Objetivo
 
-- Intervalo de 01/07 a 10/08, com o aviso sobre os totais:
+Corrigir o [Deploy (dev)](https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/39170708135) quebrado depois da auditoria de segurança dos AppServices (simixsistemas/Simix.Ponto.Cloud#3041).
 
-![image](imagens/cloud_pr2859_imagem3.png)
+### Alterações
+- 🐛 A geração automática dos proxies do navegador depois do deploy volta a compilar: as rotinas que passaram a ser só do servidor deixam de ser exigidas no navegador
+- 🐛 Salvar um colaborador volta a enfileirar o cálculo dos meses também quando a tela roda no navegador
+- 🐛 A espera antes dos testes de UI (dev e beta) confere a disponibilidade pelo health check do host e do tenant de testes, já que a lista de tenants passou a pedir login
 
-- Dias de agosto no fim da grade:
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3041
 
-![image](imagens/cloud_pr2859_imagem4.png)
+### Demonstração
 
-- Mês seguinte bloqueado com dia alterado: o salvar é recusado sem gravar nada:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2859_imagem5.png)
 
-- No modo compacto:
+## 🐛 Segurança: permissões e acesso aos dados em todas as operações [#3041](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3041)
 
-![image](imagens/cloud_pr2859_imagem6.png)
+### Objetivo
 
-- Card nas Novidades:
+Revisão de segurança do acesso aos dados pelo sistema: cada operação passa a conferir quem está pedindo e o que essa pessoa pode ver ou alterar.
 
-![image](imagens/cloud_pr2859_imagem7.png)
+### Alterações
+- 🐛 Toda operação do sistema exige login, e as que gravam ou mostram dados de outras pessoas exigem a permissão da tela correspondente
+- 🐛 No portal, o colaborador vê e altera só os próprios dados: cartão, marcações, espelhos, assinaturas, cadastro, notificações e solicitações
+- 🐛 Solicitações feitas pelo colaborador ficam sempre pendentes até a aprovação da gestão (ou da aprovação automática, quando configurada)
+- 🐛 Usuários, perfis de acesso, troca de senha e vínculo com colaborador só podem ser alterados por quem tem a permissão de usuários
+- 🐛 Consultas dos dashboards, relatórios e listas de escolha só leem dados, sempre do próprio cliente
+- 🐛 As senhas guardadas nas configurações não aparecem mais na tela; salvar as configurações mantém as senhas gravadas
+- 🐛 Anexos aceitam só imagem, PDF e JSON
+- ♻ Rotinas automáticas (cálculo, escalas, espelhos, folha, migração) continuam funcionando sem usuário logado
+- ♻ Teste automático que impede publicar operação nova sem regra de acesso
 
-## Solução de problemas na Manutenção e nos Coletores ✨
+### Demonstração
 
-Novo assistente que ajuda a descobrir por que marcações não aparecem no cartão e como resolver.
+Testado no ambiente local (Release, banco espelho de cliente), entrando como colaborador e como gestor:
+- 41 conferências de acesso pela API, todas como esperado (anônimo, colaborador, gestor, conta de serviço)
+- Portal do colaborador (painel, registros, comprovantes, pendências, espelhos, consulta do ponto) e telas da gestão (painel, colaboradores, pendências, espelhos, horários, manutenção, gerar escalas, configurações) sem erro
 
-- **Manutenção**: novo botão **Solução de problemas** na barra de ferramentas.
-- Mostra as marcações do colaborador que não aparecem no cartão, com a situação e o motivo de cada uma (ex.: marcação em dia de férias com "Bloquear registro"). Quando o motivo deixou de existir, aparece o botão para reimportar só os dias dessas marcações; quando o afastamento continua lançado, a tela explica que é preciso corrigi-lo antes. Marcações pendentes aparecem como aguardando processamento.
-- Quando há marcações em outro layout (Ponto, Livre ou Motorista) em dias vazios no layout atual, sugere **reimportar** esses dias.
-- Mostra de quais coletores vieram as marcações do colaborador, com a situação de cada um, e sugere **sincronizar de novo**, abrindo o painel de coletores com o coletor e a data inicial já preenchidos.
-- Avisa quando outro cadastro tem o mesmo CPF ou PIS: mostra qual deles recebe as marcações, quantas recebeu no período, um botão para abrir o cartão dele e como resolver.
-- Lista os arquivos AFD do período com o atalho **Visualizar AFD**, já filtrado pelo colaborador e pelas datas do cartão.
-- **Coletores**: novo item **Solução de problemas** no menu do card, com o diagnóstico (última importação correta, última marcação recebida, erros de hoje) e as causas prováveis.
-- Etapas para resolver: testar o ping, acessar o WebServer e, se nada resolver, enviar feedback já com o diagnóstico preenchido. Para equipamentos Control iD sem resposta, a primeira sugestão é fechar o WebServer aberto no navegador, pois o equipamento atende poucas conexões ao mesmo tempo.
-- Card na página de **Novidades** com o passo a passo e o **Me mostre**, que vai da lista da Manutenção até o cartão do colaborador e segue para o painel de coletores. Também disponível no botão **Treinamentos** da Manutenção.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Botão na barra da manutenção, ao lado da lista de colaboradores:
 
-![image](imagens/cloud_pr2706_imagem1.png)
+## ♻ Ajustes visuais no painel Início [#3040](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3040)
 
-- Sugestões da manutenção: marcação em outro layout num dia vazio e o coletor de origem:
+### Objetivo
 
-![image](imagens/cloud_pr2706_imagem2.png)
+Deixar o painel Início mais enxuto e alinhado com o resto da tela.
 
-- "Sincronizar desde" abre o painel de coletores com a sincronização já preenchida:
+### Alterações
+- ♻ Os cards do Início ocupam a mesma largura do menu, sem a margem extra nas laterais e no topo
+- ♻ Os botões Implantação e Rotinas do card de Sugestões ficaram menores
+- ♻ No Calendário, só aparecem os tipos (aniversários, tempo de casa, contratos, feriados) que têm eventos no período
 
-![image](imagens/cloud_pr2706_imagem3.png)
+### Demonstração
 
-- Solução de problemas do coletor, com diagnóstico, causas prováveis e etapas:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2706_imagem4.png)
 
-- Marcações em dias de férias que ficaram fora do cartão, com a explicação:
+## ✨ Calcular dados com vários colaboradores ao mesmo tempo (Calc 12.8) [#3039](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3039)
 
-![image](imagens/cloud_pr2753_imagem1.png)
+### Objetivo
 
-- Com o bloqueio retirado, a tela oferece reimportar os dias:
+Fase 5c da migração da Calc para async e performance: o Cloud passa a usar a Calc 12.8, que calcula vários colaboradores ao mesmo tempo.
 
-![image](imagens/cloud_pr2753_imagem2.png)
+### Alterações
+- ✨ O "Calcular dados" pode calcular vários colaboradores ao mesmo tempo. Com 4 de uma vez, um mês de 141 cartões caiu de 14,8 s para 4,2 s, e o que foi gravado é idêntico ao do cálculo um a um
+- ♻ Desligado por padrão (`Calc:GrauParalelismo` = 1). Acima de 1, vale para os clientes; o banco do host continua um a um
+- ♻ O número de cálculos simultâneos é reduzido sozinho quando não caberia nas conexões disponíveis com o banco
+- ♻ Reimportar registros e a exportação do cálculo continuam um colaborador por vez
 
-- Outro cadastro com o mesmo CPF recebendo as marcações:
+### PR's referências
+simixsistemas/Simix.Ponto.Calc#528
 
-![image](imagens/cloud_pr2944_imagem1.png)
+### Demonstração
+Mesmo mês (09/2026) em duas cópias do `barcellos-local`, uma com 1 e outra com 4 ao mesmo tempo, pelo mesmo callback do Cloud:
 
-- O card na página de Novidades:
+| Tabela | 1 por vez | 4 ao mesmo tempo |
+|---|---:|---:|
+| PontoCalc | 1.206 | 1.206 (iguais) |
+| PontoCalcDia | 36.956 | 36.956 (iguais) |
+| PontoCalcTot | 7.466 | 7.466 (iguais) |
+| PontoCalcIncons | 13.948 | 13.948 (iguais) |
+| PontoCalcPremio | 1.266 | 1.266 (iguais) |
+| FuncMes / Periodos | 3.502 / 46 | 3.502 / 46 (iguais, sem duplicatas) |
+| Tempo | 14,8 s | 4,2 s |
 
-![image](imagens/cloud_pr2770_imagem1.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- O botão Abrir mostra como usar antes de abrir a Manutenção:
 
-![image](imagens/cloud_pr2770_imagem2.png)
+## ✨ Colunas das listas declaradas em cada tela [#3038](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3038)
 
-- Me mostre aberto a partir do card, com o passo a passo ao lado:
+### Objetivo
 
-![image](imagens/cloud_pr2814_imagem1.png)
+Cada lista do sistema passa a dizer como cada coluna dela aparece (foto, tags, situação colorida, data, horas…). Antes, todo esse conhecimento ficava misturado num único componente para as 82 listas. Proposta e desenho: [Colunas declaradas do SmxDataView](https://claude.ai/artifact/SKHdfJnYbyRXwH51emmRVE)
 
-- O assistente aponta o botão de suporte da barra da grade:
+### Alterações
+- ✨ As 82 listas declaram as próprias colunas; tela nova escolhe o tipo de cada coluna em vez de depender do nome do campo
+- ✨ Situação com cor em Clientes, Dispositivos e nas pendências de ponto e de afastamento (aguardando, aprovado, reprovado)
+- ✨ Cada usuário salva visões em qualquer lista: escolhe o nome, as colunas e a ordem, e decide se ela é só dele ou fica disponível para todos os usuários. Pode editar ou excluir depois, e a lista abre na última visão usada
+- ✨ Colaboradores ganhou a visão **Contrato** (admissão, demissão, mês, horário e motorista)
+- ✨ Foto da lista carrega só quando aparece na tela e amplia ao passar o mouse, sem abrir balão por linha
+- ♻ Listas mais leves no navegador: cada célula sai como HTML simples, sem um componente por célula
+- 🐛 "Ofuscar dados" borra o que é dado pessoal (nome, e-mail, CPF, PIS, RG, login, cargo, estabelecimento); antes CPF, PIS e RG ficavam legíveis e contagens como "Qtd. de colaboradores" eram borradas
+- 🐛 No celular, o "Ofuscar dados" não borra mais o nome da coluna no cartão
+- 🐛 Clientes: o link da documentação abre o endereço certo (antes abria o link do cliente)
+- 🐛 Saíram das visões colunas que nunca tinham valor: Nome social, E-mail alternativo e Telefone em Colaboradores, e "QtdTotalDesc" nas listas de VR
+- ♻ Teste que falha quando uma lista mostra um campo sem declarar a coluna dele
 
-![image](imagens/cloud_pr2814_imagem2.png)
+### Demonstração
 
-- Janela com as marcações que não entraram no cartão e o motivo de cada uma:
+Fotos trocadas por um avatar genérico (as dos bancos locais não existem no storage) e "Ofuscar dados" ligado em todos os prints.
 
-![image](imagens/cloud_pr2814_imagem3.png)
+![image](imagens/cloud_pr3038_imagem1.png)
+Colaboradores na visão Padrão, com nome, cargo, estabelecimento e foto borrados pelo "Ofuscar dados".
 
-- Quadro dos coletores de onde vieram as marcações:
+![image](imagens/cloud_pr3038_imagem2.png)
+A foto amplia ao passar o mouse.
 
-![image](imagens/cloud_pr2814_imagem4.png)
+![image](imagens/cloud_pr3038_imagem3.png)
+Visão nova Contrato: datas, mês no formato MM/aaaa e caixa do motorista centralizada.
 
-- Demonstração no painel de coletores, apontando o menu do card:
+![image](imagens/cloud_pr3038_imagem4.png)
+Situação dos dispositivos com cor; o último login agora é borrado.
 
-![image](imagens/cloud_pr2814_imagem5.png)
+![image](imagens/cloud_pr3038_imagem5.png)
+Pendências de ponto com a situação colorida e o tipo de ocorrência por extenso.
 
-## Registro web: localização, raio e dispositivos ✨
+![image](imagens/cloud_pr3038_imagem6.png)
+Feriados com a data e o dia da semana.
 
-O registro de ponto pelo navegador agora pode conferir o local e o dispositivo do colaborador e respeita os filtros do layout de botões, como já acontece no aplicativo.
+![image](imagens/cloud_pr3038_imagem7.png)
+No celular, o nome de cada coluna continua legível com o "Ofuscar dados" ligado.
 
-- A **Configuração Web** ganhou a seção **Registro web: local e dispositivo**: conferir o local por endereço IP ou por geolocalização, **raio máximo** em metros e **Autorizar novos dispositivos**.
-- O local é comparado com o estabelecimento do colaborador. O **Raio máximo** do cadastro do colaborador (Sempre/Nunca) prevalece sobre a configuração, e ações de registro marcadas para ignorar o raio (home office, externo) não são conferidas.
-- Com a geolocalização ligada, a tela de registro pede a localização ao navegador e avisa que o local é conferido.
-- Com **Autorizar novos dispositivos** desmarcado, cada navegador novo entra como pendente em **Dispositivos** e só registra depois de autorizado pelo RH.
-- Nova situação **Bloqueado**: a marcação recusada fica guardada (horário, localização, distância, IP, dispositivo e motivo), sem comprovante e sem entrar no cartão. As consultas de comprovantes mostram a marcação bloqueada com o motivo.
-- Nova aba **Endereços IP** no cadastro do estabelecimento: aceita IP, faixa (200.10.5.0/24) ou prefixo (200.10.5.*). Ao trocar o IP, o anterior fica no histórico e pode ser desativado com uma observação. Os IPs já informados nos estabelecimentos entram automaticamente na lista.
-- Nada muda para quem não configurar: o padrão é não conferir o local e autorizar novos dispositivos.
-- **Filtros dos botões**: o registro web passa a respeitar o horário inicial, o horário final e os dias da semana do **layout de botões**. Os botões continuam na tela e, fora do permitido, o clique mostra o motivo (ex.: "Registro não permitido depois das 10:00."). Faixas que passam da meia-noite valem de um dia para o outro.
-- Com layout de botões, não é mais possível registrar sem escolher um dos botões.
-- Correção: no cadastro do layout, a opção "Segunda a sexta" aparecia como "Segunda a sábado".
+![image](imagens/cloud_pr3038_imagem8.png)
+O menu de visões com os grupos Compartilhadas e Minhas visões e as opções Nova, Editar e Excluir.
 
-- Seção nova na Configuração Web:
+![image](imagens/cloud_pr3038_imagem9.png)
+Criando uma visão disponível para todos os usuários.
 
-![image](imagens/cloud_pr2837_imagem1.png)
+![image](imagens/cloud_pr3038_imagem10.png)
+Criando uma visão: nome, colunas marcadas e ordem (Cargo levado para o início, Foto e Alteração desmarcadas).
 
-- Lista de endereços IP do estabelecimento, com uma faixa incluída e o IP anterior desativado:
+![image](imagens/cloud_pr3038_imagem11.png)
+A lista com a visão salva aplicada; ao recarregar a página ela continua selecionada.
 
-![image](imagens/cloud_pr2837_imagem2.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Endereço inválido não pode ser incluído:
 
-![image](imagens/cloud_pr2837_imagem3.png)
 
-- Registro fora do raio permitido:
 
-![image](imagens/cloud_pr2837_imagem4.png)
+## 🐛 Clique em Entrar dos testes de UI aguenta o app frio no deploy dev [#3037](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3037)
 
-- Registro de um navegador ainda não autorizado:
+### Objetivo
 
-![image](imagens/cloud_pr2837_imagem5.png)
+Fix: [Deploy (dev) 39073644666](https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/39073644666/job/117521840409#step:7:208)
 
-- Marcações bloqueadas na consulta de comprovantes do colaborador:
+### Alterações
+- 🐛 Os testes de navegação não falham mais no login quando são os primeiros a rodar depois do deploy no dev. Depois de clicar em "Entrar", o teste esperava só 30 s a tela inicial responder, e com o app frio ela demora mais. Agora todo o login usa o limite de 3 minutos.
 
-![image](imagens/cloud_pr2837_imagem6.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#2946
+- simixsistemas/Simix.Ponto.Cloud#2948
 
-- Filtros no cadastro do layout (Presencial das 07:50 às 18:00 de segunda a sábado, Home Office até as 10:00 e Serviço externo só no domingo):
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2855_imagem1.png)
 
-- Home Office depois das 10:00:
+## 🐛 Scripts e estilos gerais atualizados no navegador após cada atualização [#3036](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3036)
 
-![image](imagens/cloud_pr2855_imagem2.png)
+### Objetivo
 
-- Serviço externo numa terça-feira:
+Depois de uma atualização do sistema, as telas continuavam usando os scripts e estilos gerais da versão anterior, guardados no cache do navegador e do Cloudflare. Em 16/10 a Manutenção parou de abrir ("An error has occurred") porque dependia de um script novo que nunca chegava ao navegador.
 
-![image](imagens/cloud_pr2855_imagem3.png)
+### Alterações
+- 🐛 A cada atualização que muda os scripts ou estilos gerais, o endereço deles muda junto, e o navegador baixa a versão nova na próxima abertura do sistema
+- ♻ Sem atualização desses arquivos, o endereço continua o mesmo e o cache segue valendo (nada é baixado de novo à toa)
 
-## Mapa dos registros ✨
 
-Agora é possível ver no mapa onde cada registro de ponto com localização foi feito.
+## ♻ Migrar ABP 10.7 e MudBlazor 9.11 [#3035](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3035)
 
-- **Consulta diária**, **Registros** e **Monitor de registros** ganham o botão de mapa, que abre ao lado da lista com divisória ajustável.
-- Pins numerados na ordem do dia e com uma cor por colaborador; ao clicar, aparecem nome, horário, dispositivo, endereço e precisão.
-- Consulta diária: mostra os colaboradores da página; **Ver no mapa** no menu de cada colaborador mostra só ele.
-- Registros: mostra todo o resultado da pesquisa. Monitor: acompanha a atualização em tempo real.
-- **Manutenção**: atalho **Ver no mapa** no dia e botão **Mapa** na barra, com todos os dias do período (aparecem só quando há marcação com endereço).
-- Mostra até 1.000 registros e avisa quantos ficaram de fora.
-- A janela de localização do registro usa o mesmo mapa.
-- Com **Ofuscar dados** ligado, nome e endereço no balão ficam borrados.
-- Card na página de Novidades com o passo a passo.
+### Objetivo
 
-- Consulta diária: abrindo o mapa, vendo um registro e filtrando um colaborador:
+Fix: [#3034](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3034)
 
-![image](imagens/cloud_pr2751_imagem1.png)
+### Alterações
+- ♻ ABP 10.6 → 10.7 em todos os projetos, com os pacotes do ASP.NET Core na versão que ele pede (10.0.11)
+- ♻ MudBlazor 9.9 → 9.11 (e MudBlazor.Markdown 9.10): só correções e telas mais leves, sem mudança de uso
+- ♻ Bibliotecas das páginas de login, Minha conta e Documentação na versão 10.7 (jQuery 4). Sem elas, o login deixaria de abrir depois da publicação
+- ♻ Ajustes pedidos pelo guia do ABP: cadastro de usuários adaptado e proteção contra requisições forjadas aplicada na ordem recomendada
+- ♻ Banco: colunas novas do módulo de IA do ABP, aplicadas pela atualização do banco e pelo script de ajustes
+- 🐛 Pacotes de criptografia do .NET na versão corrigida dos alertas de segurança de 13/10
+- 🐛 Opções de tela que estavam sendo ignoradas desde atualizações anteriores do MudBlazor voltam a funcionar: Importação e Importar dados de colaboradores abrem na aba do Excel e mantêm a aba escolhida, os botões Salvar das configurações e Testar do coletor mostram que estão processando, as categorias na escolha de dashboard vêm abertas, os botões de ícone mostram a dica ao passar o mouse e os campos compactos e espaçamentos ficam como foram desenhados
+- ♻ Publicações (dev, beta, worker e manual) instalando o ABP CLI 10.7
 
-- Manutenção: mapa do dia e mapa de todo o período:
+### PR's referências
+- simixsistemas/DevShare.RX.Cloud#162
 
-![image](imagens/cloud_pr2751_imagem2.png)
+### Demonstração
+Importação abrindo na aba do Excel, com o espaçamento dos painéis aplicado:
 
-- Registros com localização da pesquisa:
+![image](imagens/cloud_pr3035_imagem1.png)
 
-![image](imagens/cloud_pr2751_imagem3.png)
+Login com jQuery 4: a validação acontece no navegador ao enviar vazio:
 
-- Monitor de registros com o mapa ao lado:
+![image](imagens/cloud_pr3035_imagem2.png)
 
-![image](imagens/cloud_pr2751_imagem4.png)
 
-- Localização de um registro com o novo mapa:
+## ✨ Melhorias no filtro global: horário e cidade do estabelecimento [#3033](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3033)
 
-![image](imagens/cloud_pr2751_imagem5.png)
+### Objetivo
 
-## Alertas de registro no aplicativo ✨
+Filtrar os colaboradores pelo **horário** e pela **cidade do estabelecimento** no filtro global, e deixar claro que os campos de vários itens aceitam mais de um.
 
-O aplicativo passa a avisar o colaborador sobre a próxima marcação e a lembrá-lo quando ela não foi feita, conforme regras configuráveis.
+Fix: [#3026](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3026)
 
-- Novo cadastro **Alertas de registro** (menu **App** e tela **Cadastros**), que define:
-  - se o app mostra a jornada em andamento;
-  - quantos minutos antes avisa da próxima marcação;
-  - quantos minutos depois lembra, se a marcação não foi feita;
-  - o tempo do botão "Lembrar em" da notificação;
-  - se o celular vibra.
-- Todo cliente já vem com a regra **Padrão**: avisa 1 min antes, lembra 10 min depois, botão "Lembrar em 15 min", jornada e vibração ligadas.
-- Regra geral em **Configurações do app** e regra própria no cadastro do colaborador (aba **Registro > App**). Vale a do colaborador; sem ela, a geral; sem as duas, a Padrão.
-- Os avisos são agendados no próprio celular, com base nos horários da semana do colaborador.
+Relacionado: [#2891](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2891)
 
-- Cadastro das regras, no menu App:
+### Alterações
+- ✨ Novo campo **Horário** no filtro global: ficam só os colaboradores com o horário escolhido no mês
+- ✨ Novo campo **Cidade do estabelecimento**: ficam os colaboradores dos estabelecimentos das cidades escolhidas, e a lista de cidades traz só as que têm estabelecimento cadastrado
+- ✨ Os dois campos valem no filtro da barra do topo, no filtro do cadastro do usuário, no botão de filtro das telas (Colaboradores, Manutenção, Consulta diária, Inconsistências, Folha…), nos atalhos e nos painéis
+- ✨ Com o filtro de horário ativo, a escolha de horário nos cadastros mostra só os horários do filtro, como já acontece com departamento e setor. O filtro de cidade não limita a escolha de cidade no endereço do colaborador nem nos feriados
+- ✨ Campos que aceitam vários itens (estabelecimentos, departamentos, colaboradores…, no filtro global e em telas como a Manutenção em lote): os escolhidos aparecem dentro do próprio campo e a lupa abre a lista com pesquisa e uma caixa de marcar em cada item. A lista fica aberta enquanto se marca e fecha com um clique fora ou com Esc
+- 🐛 O ícone de alguns cadastros, como Horários, aparecia como o ícone padrão
+- 🐛 O item escolhido num filtro de vários itens (estabelecimento, departamento, cidade…) às vezes aparecia duas vezes ao reabrir o filtro ou recarregar a página
 
-![image](imagens/cloud_pr2910_imagem1.png)
+### Demonstração
 
-- Regra aberta, com a ajuda de cada campo:
+Os campos novos no filtro global; a lista de cidades traz só as 6 que têm estabelecimento:
 
-![image](imagens/cloud_pr2910_imagem2.png)
+![image](imagens/cloud_pr3033_imagem1.png)
 
-- Regra geral em Configurações do app > Exibição e Notificações:
+Com a cidade Bom Principio, a lista de colaboradores fica com os 13 de lá:
 
-![image](imagens/cloud_pr2910_imagem3.png)
+![image](imagens/cloud_pr3033_imagem2.png)
 
-- Regra própria do colaborador, na aba Registro do cadastro:
+Cidade e horário juntos:
 
-![image](imagens/cloud_pr2910_imagem4.png)
+![image](imagens/cloud_pr3033_imagem3.png)
 
-## Espelho do ponto: cores dos turnos, justificativas e faixas de extras ✨
+![image](imagens/cloud_pr3033_imagem4.png)
 
-O espelho do ponto ficou mais informativo e mais legível, priorizando a página em retrato.
+Campos de vários itens: os escolhidos ficam dentro do campo e a lista tem caixa de marcar:
 
-- Marcações de cada turno na cor do tipo de turno (Condução, Refeição, Coleta…).
-- Justificativas das marcações numa linha menor abaixo do dia, agrupadas pelo texto. Quando a mesma justificativa vale para todas as marcações do dia, aparece só o texto.
-- Afastamento com o ícone e a cor do cadastro.
-- **Espelho de motoristas**: o resumido mantém Início/Fim e ganha as justificativas e o afastamento colorido; o completo ganha as cores e as justificativas.
-- **Manutenção**: a linha de resumo do dia mostra cada turno na cor do tipo de turno.
-- Nova opção **Faixas de extras (Dias)** na visão do espelho: a coluna Extras vira uma coluna por percentual (Ext. 50%, Ext. 100%…), só com as faixas que o colaborador teve no mês. Sem a opção, continua a coluna única.
-- O espelho fica em retrato sempre que cabe: primeiro com a letra normal, depois reduzindo um pouco; a paisagem fica só para último caso. As marcações usam mais da largura da página, e a entrada e a saída de um turno não ficam mais em linhas separadas.
-- Correções: os totais do rodapé não ficam mais sobre a assinatura, observações longas não passam da margem, nenhum dia ou cabeçalho do colaborador fica de fora quando o espelho não cabe na página, e o espelho de motoristas completo (paisagem) volta a mostrar os últimos dias do mês.
-- Dias calculados antes desta versão mostram as novidades após recalcular o período.
-- Card da novidade na página de Novidades.
+![image](imagens/cloud_pr3033_imagem5.png)
 
-- Espelho de ponto com as cores dos turnos:
+O mesmo campo na Manutenção em lote:
 
-![image](imagens/cloud_pr2873_imagem1.png)
+![image](imagens/cloud_pr3033_imagem6.png)
 
-- Turnos na cor do cadastro, justificativas abaixo das marcações e Atestado com ícone e cor:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2873_imagem2.png)
 
-![image](imagens/rx_pr155_imagem1.png)
 
-- Justificativa abaixo das marcações e folgas com o ícone e a cor do cadastro:
 
-![image](imagens/cloud_pr2873_imagem3.png)
+## ✨ Pesquisa global encontra todas as telas do menu [#3032](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3032)
 
-- Espelho de motoristas resumido com justificativas e afastamento colorido:
+### Objetivo
 
-![image](imagens/cloud_pr2873_imagem4.png)
+Fix: [#3027](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3027)
 
-- Espelho de motoristas completo com horários coloridos por turno e justificativas:
+### Alterações
+- ✨ A pesquisa (Ctrl+Espaço) encontra todas as telas do menu, inclusive as que faltavam: Painel, Mural de notas, Férias, Documentos, Planejamento e Trocas das escalas, Alertas, Treinamentos, Consulta de atestados, Monitor, Consulta geral do banco de horas, Feedbacks e outras. Tela nova no menu já aparece na pesquisa
+- ✨ A pesquisa considera também a descrição e os sinônimos de cada tela, sem diferenciar acentos e maiúsculas ("ferias" acha Férias, "dashboard" acha o Painel, "calcular vts" acha o cálculo de VTs)
+- ✨ Cada resultado mostra a descrição e o grupo do menu: o Painel do início e o de Férias aparecem separados
+- ♻ Só aparecem as telas que o usuário pode abrir, pelas mesmas regras do menu (permissão, módulo contratado e licença)
+- ♻ Quando o nome da tela bate, ela vem antes dos registros; a tela achada só pela descrição fica depois, para não atrapalhar quem procura um colaborador
+- ♻ Ao criar um atalho de "Tela ou comando" no Início, a lista é a mesma da pesquisa.
+- 🐛 "Painel/Dashboard" abria a tela inicial em vez do Painel, os ícones das telas não apareciam nos resultados e a Manutenção aparecia três vezes
+- 🐛 Saiu da pesquisa o item "Cálculos", que levava a uma tela que não existe mais
 
-![image](imagens/cloud_pr2873_imagem5.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3028
 
-![image](imagens/cloud_pr2873_imagem6.png)
+### Demonstração
 
-![image](imagens/rx_pr155_imagem2.png)
+![image](imagens/cloud_pr3032_imagem1.png)
+"atestados" traz a Consulta de atestados primeiro, e as outras telas que falam de atestados logo abaixo.
 
-- Espelho de motoristas completo indo até o fim do mês (antes e depois):
+![image](imagens/cloud_pr3032_imagem2.png)
+"férias" traz as telas do módulo Férias (com o módulo ligado), depois o cadastro de Afastamentos e o afastamento Férias.
 
-![image](imagens/cloud_pr2873_imagem7.png)
+![image](imagens/cloud_pr3032_imagem3.png)
+"painel" separa o Painel do início do Painel de Férias pelo grupo, cada um com a sua descrição.
 
-![image](imagens/rx_pr155_imagem3.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/rx_pr155_imagem4.png)
 
-- A opção Faixas de extras no editor da visão do espelho:
 
-![image](imagens/cloud_pr2752_imagem1.png)
+## 🐛 Carregar o CSS próprio dos componentes das telas [#3031](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3031)
 
-- Espelho com as colunas Ext. 50% e Ext. 100%:
+### Objetivo
 
-![image](imagens/cloud_pr2752_imagem2.png)
+Fazer valer o visual próprio de alguns componentes das telas, que nunca estava sendo carregado.
 
-![image](imagens/rx_pr149_imagem7.png)
+### Alterações
+- 🐛 O CSS próprio dos componentes do sistema (arquivos `.razor.css`) não era carregado em nenhuma tela. Passa a ser, em todos os modos de carregamento
+- 🐛 Manutenção: os dois grupos de botões de filtro voltam a ter moldura, e os filtros não escolhidos ficam apagados
+- 🐛 Página de links (`/links`): título, ícones das plataformas e cartões com o visual que foi desenhado para ela
+- ♻ Os layouts vazio e de foco e o aviso de reconexão também têm CSS próprio, mas nada muda neles hoje (o aviso de reconexão não está em uso)
 
-- Card nas Novidades:
+### Demonstração
 
-![image](imagens/cloud_pr2752_imagem3.png)
+Filtros da Manutenção, antes:
+![image](imagens/cloud_pr3031_imagem1.png)
 
-- Mês com 16 dias de 6 marcações. Antes saía em paisagem, com a letra reduzida:
+Depois, com a moldura e os filtros não escolhidos apagados:
+![image](imagens/cloud_pr3031_imagem2.png)
 
-![image](imagens/rx_pr149_imagem1.png)
+Página de links, antes (a onda divisória saía preta):
+![image](imagens/cloud_pr3031_imagem3.png)
 
-- Agora fica em retrato, com a letra normal:
+Depois:
+![image](imagens/cloud_pr3031_imagem4.png)
 
-![image](imagens/rx_pr149_imagem2.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Dias com três turnos: antes o último turno quebrava no meio; agora cada dia fica numa linha:
 
-![image](imagens/rx_pr149_imagem3.png)
 
-![image](imagens/rx_pr149_imagem4.png)
+## ✨ Melhorias nos totais da Manutenção [#3030](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3030)
 
-- Observações longas e oito linhas de totais: antes ia para paisagem com letra bem pequena; agora fica em retrato, dentro da largura e com os totais acima da assinatura:
+### Objetivo
 
-![image](imagens/rx_pr149_imagem5.png)
+Totais da Manutenção mais fáceis de conferir: duas colunas na ordem do layout, destaque pela relevância, marcador, categoria e código da folha, horas em decimais, e um cadastro do layout de totais refeito, mais simples de montar.
 
-![image](imagens/rx_pr149_imagem6.png)
+### Alterações
+- ✨ Totais em duas colunas, na coluna e na ordem do layout de totais do horário
+- ✨ Total de relevância alta sobe para o topo e fica em negrito; o informativo fica apagado. A opção "Destacar relevância" liga e desliga
+- ✨ Um botão só à esquerda de cada total: mostra o marcador e abre o menu com a troca de marcador, a Explicação, a edição dos lançamentos e Copiar. Trocar o marcador muda só o ícone e vale para os próximos colaboradores, no mesmo navegador
+- ✨ Opções "Exibir categoria e código da folha" e "Horas em decimais", que ficam guardadas no navegador
+- ✨ No celular a barra dos totais some e os totais aparecem inteiros, numa coluna
+- ✨ Nas opções dos totais, "Editar layout de totais" abre o layout do horário do colaborador (sem layout, abre o horário para escolher um); ao gravar, a tela recalcula
+- ✨ Cadastro do layout de totais refeito:
+  - totais em cartões nas colunas (Coluna 1, 2, 3…), arrastados para ordenar ou trocar de coluna, com "Nova coluna"
+  - painel do total escolhido com a explicação do campo, relevância, marcador, quando mostrar e o nome na tela
+  - prévia de como os totais ficam na Manutenção
+  - quantos horários usam o layout
+  - "Adicionar totais" pelo catálogo, com pesquisa, assuntos, aviso de "já no layout" e vários de uma vez
+  - os campos que o cálculo ainda não usa ficam recolhidos
+- 🐛 Layout de totais: incluir um total padrão (ex.: Horas previstas) criava uma segunda linha repetida na Manutenção, em vez de alterar a que já existe
+- 🐛 Layout de totais: a Ação de cada item não era gravada (o combo mostrava a mesma em todas as linhas)
+- 🐛 Layout de totais: gravar o layout apagava as condições dos itens
+- 🐛 Layout de totais: trocar a ordem ou a coluna de um item criava outro e deixava o antigo
+- 🐛 Layout de totais: desmarcar "Ativo" sumia com o item da tela, sem como reativar
 
-## Novo painel Início ✨
+Antes de publicar: rodar a migração do banco (colunas novas do layout de totais) e publicar a Calc.
 
-A página **Início** foi refeita para mostrar, logo ao entrar, o que precisa de atenção, os próximos eventos e a ajuda disponível. O sistema (e o atalho **Gestão** da barra do topo) passa a abrir por padrão no Início, em vez do Painel.
+### PR's referências
+- simixsistemas/Simix.Ponto.Calc#532
 
-- **Sugestões** à esquerda, **Ajuda e novidades** logo abaixo e **Calendário** à direita; o Início abre direto nos cards.
-- **Sugestões** alterna entre **Implantação** e **Rotinas**: abre em Implantação nos primeiros 7 dias da instalação (ou enquanto houver passos pendentes) e depois em Rotinas; a lista aberta aparece destacada no seletor.
-- **Implantação**: Empresa, Estabelecimento, Horários, Colaboradores, Enviar acessos e Baixar apps, com a situação de cada passo e a barra de progresso. Clicar num passo (ou no botão dele, como "Configurar", "Abrir", "Ver") abre o assistente numa janela.
-- **Acesso dos gerentes**: novo passo da Implantação, exibido quando existe algum cargo que começa com "Gerente". Abre uma janela com os cargos de gerente (com a permissão padrão, que pode ser escolhida ali mesmo) e os gerentes (nome, cargo, e-mail, estabelecimento e se já têm acesso). **Enviar acesso** manda por e-mail o link de registro para quem não tem usuário, ou o endereço e o usuário para quem já tem, que passa a ter a permissão do cargo. Os grupos Admin e Suporte não aparecem como opção, e o gerente sem e-mail tem o botão **Abrir cadastro** para completar o e-mail.
-- **Rotinas**: solicitações aguardando aprovação (marcações, ajustes e afastamentos, com as etapas na aprovação dupla), colaboradores com inconsistências no mês (os cinco que mais precisam de manutenção) e sugestões do sistema, como períodos em aberto. Tudo respeita o filtro global.
-- **Calendário**: aniversários, tempo de casa, vencimentos de contrato e feriados de qualquer mês, com foto, filtro global, filtro por tipo e acesso ao painel do colaborador ou à lista de feriados com um clique.
-- **Ajuda e novidades**: os três treinamentos mais recentes, as três últimas novidades, documentação, suporte remoto e o botão de falar com o suporte.
-- Os antigos widgets de tutoriais e de ajuda foram substituídos pelo card novo; o feedback continua no botão da barra do topo.
-- Card **Novo Início** na página de Novidades, com o **Me mostre** em versão curta, normal e detalhada.
+### Demonstração
 
-- Sugestões em Rotinas, com o Calendário à direita e Ajuda e novidades abaixo:
+![image](imagens/cloud_pr3030_imagem1.png)
+O círculo à esquerda do total abre o menu: marcador, Explicação e Copiar.
 
-![image](imagens/cloud_pr2787_imagem1.png)
+![image](imagens/cloud_pr3030_imagem2.png)
+Cadastro do layout: colunas numeradas com arrastar, painel do total escolhido e prévia da Manutenção.
 
-- Sugestões em Implantação, com a situação de cada passo e a barra de progresso:
+![image](imagens/cloud_pr3030_imagem3.png)
+No celular a barra some e os totais aparecem inteiros, numa coluna.
 
-![image](imagens/cloud_pr2787_imagem2.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Passo pendente aberto no assistente:
 
-![image](imagens/cloud_pr2787_imagem3.png)
+## ✨ Nova tela de processos: cards, ações e execução em lote [#3029](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3029)
 
-- Calendário com 90 dias e filtro por tipo:
+### Objetivo
 
-![image](imagens/cloud_pr2787_imagem4.png)
+Fix: [#1104](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/1104)
 
-- O Início abre direto nos cards:
+### Alterações
+- ✨ Tela de processos em cards, com pesquisa, filtro por rotina e por tags, favoritos primeiro, duplicar e excluir
+- ✨ Cadastro do processo com descrição, ícone, tags, favorito e rotinas (Manutenção e/ou Em lote); o código do processo saiu
+- ✨ Editor de ações: escolhe onde o processo age (dia, turno ou marcação), o que altera (ex.: local da marcação, afastamento, horário do dia) e em quais casos (ex.: só nos dias trabalhados), com um resumo em uma frase de cada ação
+- ✨ Execução em lote: período (até 12 meses) e filtro de colaboradores, com opção de simular antes de gravar; roda em segundo plano, aparece no monitor de tarefas e pode ser cancelada
+- ✨ Resultado com os dias alterados (antes e depois) e atalho para a manutenção de cada cartão
+- ✨ Menu Processos de volta na barra da manutenção: aplica o processo no cartão aberto e deixa os dias marcados para conferir e salvar
+- ✨ Nova permissão "Executar" nos processos, para quem pode gravar em lote
+- ♻ Removidos a execução antiga e os componentes de processo que não eram usados
 
-![image](imagens/cloud_pr2817_imagem1.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Calc#531
 
-- O botão "Ver" do passo Baixar apps abre a janela do passo:
+### Demonstração
 
-![image](imagens/cloud_pr2817_imagem2.png)
+Lista de processos em cards, com as rotinas e o botão de executar.
+![image](imagens/cloud_pr3029_imagem1.png)
 
-- Calendário do mês com aniversários, tempo de casa e feriados:
+Cadastro: ação que marca como home office as marcações dos turnos trabalhados.
+![image](imagens/cloud_pr3029_imagem2.png)
 
-![image](imagens/cloud_pr2817_imagem3.png)
+Simulação em lote: um dia mudaria, com o antes e o depois da marcação.
+![image](imagens/cloud_pr3029_imagem3.png)
 
-- Em dezembro a grade já traz o feriado de 1º de janeiro:
+Menu Processos na barra da manutenção.
+![image](imagens/cloud_pr3029_imagem4.png)
 
-![image](imagens/cloud_pr2817_imagem4.png)
+Processo aplicado no cartão aberto: o dia ganha o ícone de home office e fica para salvar.
+![image](imagens/cloud_pr3029_imagem5.png)
 
-- Empresa instalada há poucos dias: o card abre em Implantação:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2885_imagem1.png)
 
-- Depois dos 7 dias, abre em Rotinas, com a lista aberta destacada:
+## ✨ Melhorias de UI na AppBar e foto do usuário [#3028](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3028)
 
-![image](imagens/cloud_pr2885_imagem2.png)
+### Objetivo
 
-- Permissão padrão dos cargos de gerente e lista dos gerentes para enviar o acesso:
+Fix: [#3027](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3027)
 
-![image](imagens/cloud_pr2846_imagem1.png)
+### Alterações
+- ♻ Os atalhos ao lado do logo ficaram menores, sem contorno próprio e sem passar da altura da barra. Gestão ganhou o ícone de casa e entrou o atalho do Calendário. O atalho Gestão da área do colaborador segue o mesmo visual
+- ✨ O avatar do topo mostra a foto do usuário. Quem já tinha foto no cadastro de colaborador recebe essa foto uma vez, na atualização; sem foto, continua a inicial do nome
+- ✨ "Alterar foto" no menu do avatar e "Sua foto" em Minha conta, por arquivo ou pela webcam. A foto vale só para o usuário: a do cadastro do colaborador não muda
+- ♻ O painel do botão de configurações da barra virou "Preferências", mais estreito, com ícone e explicação em Ofuscar dados e Som nas notificações. A engrenagem ao lado do som abre a tela de alertas (para quem pode configurar alertas). Com Ofuscar dados ligado, a foto do avatar também fica borrada
+- ♻ O item "Configurações" do avatar virou "Minha conta" (senha e foto). "Configurações" fica só para a aba do sistema
+- ♻ Todos os ícones da barra do topo mostram o nome ao passar o mouse (a pesquisa mostra também o atalho Ctrl+Espaço)
+- ✨ Voltou a escolha da forma de exibir o menu (Normal, Compacto ou Escondido), no canto das abas. A escolha agora fica salva no usuário e vale em qualquer navegador
+- ✨ Os botões do menu mostram a descrição ao parar o mouse em cima; botão com cadeado mostra o motivo
+- ♻ No celular e em telas estreitas, a borda das faixas que rolam para o lado (abas, botões do menu e ferramentas da barra) esmaece quando há mais itens
+- ♻ Os botões de VTs e VRs ganharam ícones próprios (lote, calcular, do colaborador, manutenção)
+- ♻ O atalho do Admin saiu da barra e foi para a seção Suporte Símix das Preferências, junto do novo atalho Recursos (só a equipe Símix vê)
+- ♻ O botão de tela cheia saiu da barra do topo; continua na Manutenção
+- ✨ Estrela de Favoritos nos atalhos ao lado do logo, com os atalhos de um grupo (telas, comandos, registros, dashboards e widgets). Na primeira vez ela pede o grupo, ou cria um, e a escolha fica salva no usuário
+- ✨ Pela estrela dá para criar, editar e excluir atalhos e renomear, compartilhar e excluir grupos (os atalhos saíram do Início)
 
-- Acesso dos gerentes sem Admin e Suporte e com o botão "Abrir cadastro":
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3032
 
-![image](imagens/cloud_pr2903_imagem4.png)
+### Demonstração
 
-- Card do novo Início, com os botões Abrir e Me mostre:
+![image](imagens/cloud_pr3028_imagem1.png)
+Antes: quatro atalhos grandes, o último é o Admin, e o botão de tela cheia ao lado do sino.
 
-![image](imagens/cloud_pr2801_imagem1.png)
+![image](imagens/cloud_pr3028_imagem2.png)
+Depois: Home, Colaborador, Gerencial e Calendário menores logo depois do logo, avatar com foto (ilustração de teste), sem Admin e sem tela cheia.
 
-- O Abrir explica como usar o Início em cinco passos:
+![image](imagens/cloud_pr3028_imagem3.png)
+A estrela de Favoritos depois do Calendário.
 
-![image](imagens/cloud_pr2801_imagem2.png)
+![image](imagens/cloud_pr3028_imagem4.png)
+Na primeira vez a estrela pede o grupo de atalhos, ou cria um novo.
 
-- A demonstração no Início, apontando os passos da implantação:
+![image](imagens/cloud_pr3028_imagem5.png)
+Os atalhos do grupo escolhido; editar e excluir aparecem ao passar o mouse.
 
-![image](imagens/cloud_pr2801_imagem4.png)
+![image](imagens/cloud_pr3028_imagem6.png)
+Menu do avatar com a foto, Alterar foto e Minha conta.
 
-## Treinamentos ✨
+![image](imagens/cloud_pr3028_imagem7.png)
+Troca da foto por arquivo ou webcam, só no usuário.
 
-Todos os vídeos tutoriais e demonstrações guiadas agora ficam reunidos em um só lugar, e a base de conhecimento virou demonstrações conduzidas pelo assistente na própria tela.
+![image](imagens/cloud_pr3028_imagem8.png)
+Seção "Sua foto" em Minha conta (sem foto, aparece a inicial).
 
-- Nova página **Treinamentos**, com os vídeos e as demonstrações guiadas em cards, pesquisa e filtro por tipo e assunto. Está em **Início ▸ Treinamentos**, no menu de Ajuda e no menu do colaborador (o colaborador vê os treinamentos das telas dele).
-- Botão **Treinamentos** nas telas, no lugar do antigo "Dúvidas?": mostra os vídeos e demonstrações daquela tela, e a demonstração começa ali mesmo. O botão só aparece nas telas que têm algum treinamento.
-- Os artigos da base de conhecimento viraram 29 demonstrações guiadas: cadastro de colaborador, cargo, setor, empresa, contrato, observação, afastamento, escala, coletor, quadro de horários, horários (por dia, por período, padrão e modelo), gerar escalas, banco de horas, permissões, manutenção de registros e lançamentos, manutenção em lote, filtros globais, exportar para folha, espelho do ponto, importar AFD, duplo contrato, registre-se, recuperar senha, registrar no app e instalar o app. Assuntos fora do sistema viram roteiros narrados.
-- Novas demonstrações **Conhecer o módulo do colaborador**, **Cadastrar um feriado local** e **Montar um layout de ações**.
-- Tutoriais com o novo campo **Tipo**: **Vídeo** abre no player da tela; **Documento** aceita qualquer link (artigo, página da documentação...) e abre em nova guia. Novo filtro **Documentos** na página de Treinamentos.
-- A **pesquisa global** encontra os treinamentos, com a etiqueta "Vídeo" ou "Demonstração": a demonstração começa na própria tela e o vídeo abre já tocando.
-- No módulo do colaborador, o botão de Treinamentos fica no canto do menu e abre uma janela com os treinamentos do colaborador. O botão **Treinamentos** da página de **Registro**, que não abria nada, agora leva aos treinamentos do portal do colaborador.
-- Janela do vídeo: arrastar não trava, a janela não sai da tela e lembra a posição; nova barra com Play/Pause, tempo, progresso, som, velocidade e tela cheia.
-- O assistente abre as telas pelo menu, como a pessoa faria, inclusive os submenus. Ao terminar uma demonstração, ela não recomeça mais sozinha ao recarregar a tela, e o destaque fica sobre o item certo mesmo com a página rolada ou dentro de quadros com rolagem própria.
-- Card de novidade dos Treinamentos.
+![image](imagens/cloud_pr3028_imagem9.png)
+Antes: painel largo e opções sem explicação.
 
-- Página de Treinamentos com vídeos, demonstrações, pesquisa e filtros:
+![image](imagens/cloud_pr3028_imagem10.png)
+Depois: Preferências com ícone e descrição em cada opção, engrenagem para configurar as notificações e Admin e Recursos no Suporte Símix.
 
-![image](imagens/cloud_pr2692_imagem1.png)
+![image](imagens/cloud_pr3028_imagem11.png)
+A escolha da forma de exibir o menu de volta, salva no usuário.
 
-- Botão Treinamentos na lista de Colaboradores, mostrando só os treinamentos daquela tela:
+![image](imagens/cloud_pr3028_imagem12.png)
+Descrição do botão ao parar o mouse em cima.
 
-![image](imagens/cloud_pr2692_imagem2.png)
+![image](imagens/cloud_pr3028_imagem13.png)
+No celular, as abas e os botões do menu esmaecem na borda quando há mais itens para o lado.
 
-- No cadastro de afastamento, o botão Treinamentos substituiu o "Dúvidas?":
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2692_imagem3.png)
 
-- Demonstração "Conhecer o módulo do colaborador" apontando o Registro no menu:
 
-![image](imagens/cloud_pr2692_imagem4.png)
 
-- Página de Treinamentos com os artigos migrados:
 
-![image](imagens/cloud_pr2734_imagem1.png)
+## ♻ Ajustes no calendário do Início e nos prazos dos períodos [#3024](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3024)
 
-- Assistente conduzindo o cadastro de cargo:
+### Objetivo
 
-![image](imagens/cloud_pr2734_imagem2.png)
+Fix: [#3019](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3019)
 
-- Quadro de horários explicado guia a guia:
+### Alterações
+- 🐛 Calendário do Início: cada colaborador aparece uma vez só
+- 🐛 Calendário do Início: feriados exibidos são só os cadastrados nas datas do período mostrado (feriados de outros anos não se repetem mais)
+- ✨ Calendário do Início acompanha o mês do filtro global: no mês atual mostra os próximos 15 (ou 90) dias a partir de hoje; em outro mês, a partir do dia 1 dele
+- 🐛 Cadastros com código repetido (cargo, departamento, setor, seção, horário e estabelecimento) e cargos, departamentos, setores e seções com código zero recebem um código novo na atualização. Com isso o colaborador deixa de aparecer repetido nas telas que listam os colaboradores do mês (era a causa do Leonardo aparecer quatro vezes no calendário)
+- ♻ Períodos: o texto do bloqueio automático fica ao lado da hora, mantendo os campos alinhados
+- ✨ Configurações do portal: novos campos **Solicitações até o dia** e **Aprovações até o dia**. O prazo cai nesse dia do mês de cada período, às 23:59, e vale para todos os períodos sem data própria, inclusive os criados depois. A data informada no período continua valendo só para ele
+- ✨ Lista de períodos mostra o prazo que vale para cada período, marcado como "(herdado)" quando vem do período geral ou das Configurações do portal
 
-![image](imagens/cloud_pr2734_imagem3.png)
+### Demonstração
 
-- Cadastro do tutorial com o tipo Documento:
+![image](imagens/cloud_pr3024_imagem1.png)
 
-![image](imagens/cloud_pr2923_imagem1.png)
+Calendário do Início no backup em que o mesmo colaborador aparecia quatro vezes: agora cada aniversariante aparece uma vez (nomes borrados).
 
-- Página de Treinamentos filtrada por documentos, com o botão Abrir:
+![image](imagens/cloud_pr3024_imagem2.png)
 
-![image](imagens/cloud_pr2923_imagem2.png)
+Configuração Web com os prazos do portal: solicitações até o dia 7 e aprovações até o dia 9.
 
-- Página de Registro com o botão Treinamentos:
+![image](imagens/cloud_pr3024_imagem3.png)
 
-![image](imagens/cloud_pr2923_imagem3.png)
+Períodos de 02/2027: o geral e o do estabelecimento 1 não têm data e seguem a configuração (07/02 e 09/02, às 23:59, "herdado"); o do estabelecimento 3 mantém a data própria.
 
-- Treinamentos do colaborador, abertos pela página de Registro:
+![image](imagens/cloud_pr3024_imagem4.png)
 
-![image](imagens/cloud_pr2923_imagem4.png)
+Período do estabelecimento 1 com os prazos em branco: a tela mostra a data que vale para ele.
 
-- Treinamentos na pesquisa global:
 
-![image](imagens/cloud_pr2887_imagem1.png)
+## 🐛 Histórico de alterações dos cadastros [#3023](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3023)
 
-- Vídeo escolhido na pesquisa abrindo na página de Treinamentos:
+### Objetivo
 
-![image](imagens/cloud_pr2887_imagem2.png)
+Fix: [#3022](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3022)
 
-- Botão de Treinamentos no menu do colaborador e a janela de treinamentos:
+### Alterações
+- 🐛 O histórico de alterações dos cadastros (botão de logs da janela de edição) passa a registrar o que é salvo pelas telas. Até agora, boa parte das gravações feitas pela tela não ficava registrada, nem quem alterou nem o que mudou — por isso o estabelecimento não mostrava nada.
+- ✨ Todos os cadastros com tela passam a guardar o histórico campo a campo, com quem alterou e quando: estabelecimentos, cargos, níveis de cargo, departamentos, setores, seções, grupos, centros de custo, empresas, feriados, afastamentos, escalas, motivos, médicos, coletores, banco de horas, VT, VR, cidades, entre outros. Antes eram só colaborador, horários, regras e mais alguns.
+- 🐛 Salvar um colaborador não marca mais o cargo, o estabelecimento e o horário dele como alterados. Era por isso que cadastros que ninguém abriu apareciam com data e usuário de última alteração.
+- ♻ Senhas (da configuração, do e-mail, do registro de ponto, temporária e do coletor) não vão mais para o histórico.
+- ♻ O título do histórico mostra o código e a descrição do cadastro no lugar do identificador interno.
 
-![image](imagens/cloud_pr2887_imagem3.png)
+### Demonstração
 
-- Janela do vídeo com a nova barra de controles:
+![image](imagens/cloud_pr3023_imagem1.png)
+Cargo inativado e reativado pela tela: o histórico mostra cada mudança do campo Ativo, com data e usuário.
 
-![image](imagens/cloud_pr2713_imagem4.png)
 
-- Demonstração guiada de Feriados:
+## ✨ Login nome.sobrenome sugere outro sobrenome quando já existe [#3020](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3020)
 
-![image](imagens/cloud_pr2713_imagem5.png)
+### Objetivo
 
-- Card de novidade dos Treinamentos:
+Fix: [#2810](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2810)
 
-![image](imagens/cloud_pr2713_imagem6.png)
+### Alterações
+- ✨ Com o formato do login **nome.sobrenome**, quando o login sugerido já pertence a outro usuário, o sistema tenta os outros sobrenomes do colaborador (do penúltimo ao segundo). Exemplo para "Maria Souza Lima Silva": maria.silva → maria.lima → maria.souza
+- ✨ Se todos os sobrenomes já estiverem em uso, o login recebe um número: maria.silva2, maria.silva3…
+- ✨ Vale para o usuário novo em Colaborador > Gerenciar usuário e para o registro de novo usuário na tela de login (quando o campo usuário fica em branco)
+- Os formatos CPF e E-mail continuam como antes. Login repetido segue barrado ao salvar
 
-- Com a página rolada, o destaque cai corretamente no botão Início do menu:
+### Demonstração
 
-![image](imagens/cloud_pr2801_imagem3.png)
+![image](imagens/cloud_pr3020_imagem1.png)
+Colaborador "Maria Souza Lima Silva" com maria.silva já em uso: a sugestão passa para maria.lima (nome fictício, aplicado só para o teste no banco local).
 
-## Modelos prontos de permissões e perfil DP ✨
+![image](imagens/cloud_pr3020_imagem2.png)
+Com maria.silva, maria.lima e maria.souza em uso, a sugestão vira maria.silva2.
 
-Configurar permissões ficou bem mais simples: modelos prontos marcam ou desmarcam de uma vez as permissões de uma parte do sistema.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- **Mínimo**: só o essencial para o sistema funcionar e a consulta dos colaboradores com as abas do cadastro.
-- **Departamento pessoal**: tudo, menos usuários e permissões, logs, lixeira, backups, processos, arquivos importados e fiscais, etiquetas, ferramentas de suporte e configurações técnicas de cálculo, coletores e integrações.
-- **Cadastros essenciais**: cadastro completo dos colaboradores e dos quadros de horários.
-- **Todos os cadastros**: todos os cadastros da tela Cadastros.
-- **Manutenção**: manutenção do ponto (inclusive em lote), justificativa de extras, pendências, observações e lançamentos no banco de horas, além das consultas relacionadas.
-- **Fechamento**: cálculo, espelho do ponto, exportação para a folha, períodos (inclusive fechar e bloquear), ajustes do ponto e banco de horas.
-- **Somente consulta**: retira criar, editar e excluir de todas as permissões, menos das configurações gerais.
-- Mínimo e Departamento pessoal recomeçam o perfil do zero; os demais somam ao que já está marcado e, clicados de novo, desmarcam só o que é deles.
-- Cada modelo mostra se está ligado, parcial ou desligado; a tela avisa quantas permissões mudaram, e nada é gravado até clicar em **Salvar**.
-- Novo item **Aplicar modelo** no menu de cada perfil, que abre as permissões já com o modelo escolhido para revisar.
-- Todo cliente passa a ter o perfil **DP**, pronto com o modelo Departamento pessoal. Quem já tinha um perfil DP mantém o seu, e as permissões podem ser ajustadas livremente.
-- Nova permissão **Ver salário e valor hora** (em Colaboradores): sem ela, salário, valor hora e adicionais fixos ficam ocultos no cadastro do colaborador, e os valores já gravados são mantidos ao salvar. O administrador e os modelos que incluem Colaboradores já recebem a permissão.
 
-- Item "Aplicar modelo" no menu de cada perfil, com o perfil DP já criado:
+## ✨ Me mostre nos lançamentos de cálculo [#3016](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3016)
 
-![image](imagens/cloud_pr2686_imagem1.png)
+### Objetivo
 
-- Permissões do perfil DP com o modelo Departamento pessoal ligado:
+Fix: [#2932](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2932)
 
-![image](imagens/cloud_pr2686_imagem2.png)
+### Alterações
+- ✨ O card "Lançamentos de cálculo" da página de Novidades ganhou o botão **Me mostre**: o assistente abre a tela de lançamentos, mostra os exemplos prontos, escolhe "Mais uma hora extra" e explica a ação, o campo e o conteúdo, parando no Salvar
+- ✨ A demonstração continua na Manutenção do colaborador: o atalho da calculadora dos Totais, o asterisco do total ajustado e o "..." com Editar lançamento
+- ✨ A mesma demonstração aparece no botão Treinamentos das telas de Lançamentos e da Manutenção
 
-- Modelo "Somente consulta" aplicado, com o aviso do que mudou antes de salvar:
+### Demonstração
 
-![image](imagens/cloud_pr2686_imagem3.png)
+Os exemplos prontos no topo da janela:
 
-- Card na página de Novidades com o que cada modelo traz:
+![image](imagens/cloud_pr3016_imagem1.png)
 
-![image](imagens/cloud_pr2686_imagem4.png)
+Depois de escolher "Mais uma hora extra", a ação fica em Somar:
 
-## Sistema adaptado para o celular ✨
+![image](imagens/cloud_pr3016_imagem2.png)
 
-O Símix Ponto Cloud agora funciona no celular: barra superior, menu e telas cabem na largura da tela, sem rolagem lateral. No computador, as telas continuam iguais.
+O campo do total que o lançamento ajusta:
 
-- Listas mostram cada registro como um cartão com borda, as ações no topo e o nome de cada campo; filtros, pesquisa e botões quebram linha.
-- Cadastros abrem do tamanho da tela, com os campos em uma coluna e as abas no topo.
-- **Consulta diária** com cartão próprio: colaborador e ações no topo, horas previstas, trabalhadas e saldo lado a lado, e só os campos preenchidos. Na barra ficam a data e a pesquisa, e os demais filtros vão para o botão **Filtros**.
-- **Painel** com os widgets um embaixo do outro; os atalhos Gestão, Colaborador, Gerencial e Admin ficam no menu do usuário.
-- **Manutenção do ponto**: dados do colaborador e totais empilhados, e a grade de marcações rola para o lado.
-- Modo escuro: textos que sumiam no fundo escuro voltam a aparecer e as linhas alternadas das tabelas ficam discretas.
-- Carregamento mais leve: cada página baixa menos arquivos e o sistema no navegador fica cerca de 1 MB menor.
+![image](imagens/cloud_pr3016_imagem3.png)
 
-- Colaboradores no celular, antes e depois:
+Na Manutenção, o atalho da calculadora dos Totais:
 
-![image](imagens/cloud_pr2709_imagem1.png)
+![image](imagens/cloud_pr3016_imagem4.png)
 
-![image](imagens/cloud_pr2709_imagem2.png)
+O asterisco no total alterado pelo lançamento:
 
-- Consulta diária no celular, antes e depois:
+![image](imagens/cloud_pr3016_imagem5.png)
 
-![image](imagens/cloud_pr2709_imagem3.png)
+O "..." do total, com Editar lançamento e Explicação:
 
-![image](imagens/cloud_pr2709_imagem4.png)
+![image](imagens/cloud_pr3016_imagem6.png)
 
-- Cadastro do colaborador no celular, em uma coluna e com as abas no topo:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2709_imagem5.png)
 
-- Painel com os widgets empilhados e menu do usuário com os atalhos dos módulos:
+## ♻ Ajustes na Manutenção, barra do topo, notificações e consultas [#3013](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3013)
 
-![image](imagens/cloud_pr2709_imagem6.png)
+### Objetivo
 
-![image](imagens/cloud_pr2709_imagem7.png)
+Ajustes de usabilidade na Manutenção, na barra do topo, nas notificações e nas consultas.
 
-- Manutenção do ponto no celular, antes e depois:
+### Alterações
+- ✨ O botão Voltar da Manutenção volta para a tela de onde ela foi aberta (ex.: Colaboradores), mesmo depois de navegar entre colaboradores pelo Anterior/Próximo; aberta direto (link, nova guia), vai para a lista da Manutenção
+- 🐛 A escolha "Ao clicar no nome do colaborador" não ficava gravada em alguns bancos, e a pergunta voltava a cada clique
+- ✨ Ao abrir a Manutenção pelo nome do colaborador aparece uma barra de carregamento no topo, logo no clique
+- ♻ As opções do Suporte Símix (Beta/Oficial, ferramentas e treinamentos) foram para dentro do botão de Configurações; na barra do topo fica só o cronômetro durante a gravação
+- ♻ Consulta diária: os filtros Trabalhado, Dispositivo e Local ficam direto na barra, fora do botão de filtro
+- ♻ Filtro global: novos ícones para estabelecimento, grupo de estabelecimentos e tipo de turno
+- ♻ Manutenção: ícone de notas sem cor, no canto inferior direito do quadro do colaborador; filtros da barra selecionados com contorno; totais copiados como "Descrição = conteúdo"; resumo para compartilhar sem o horário e sem linhas em branco
+- ♻ Consulta de inconsistências: cards centralizados
+- ♻ Notificações: abrem abaixo do sino, sem borda dupla, com cabeçalho mostrando as não lidas, e o excluir em contorno e na cor normal
 
-![image](imagens/cloud_pr2709_imagem8.png)
+### Demonstração
 
-![image](imagens/cloud_pr2709_imagem9.png)
+![image](imagens/cloud_pr3013_imagem1.png)
+Novos ícones do filtro global (estabelecimento, grupo de estabelecimentos e tipo de turno).
 
-- Modo escuro na manutenção, com as linhas alternadas discretas:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2709_imagem10.png)
 
-![image](imagens/cloud_pr2709_imagem11.png)
+## Visão Global: erro do servidor não derruba as telas [#3011](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3011)
 
-- No computador, a tela continua como era:
+### Problema
+O workflow **Testar UI (beta)** falhou depois do deploy de `2e49c231a` ([run 38859296956](https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/38859296956/job/116837688213)): `Novo_Horario` e `Calcular_Dados` pararam na barra de erro do Blazor, e `Novo_Funcionarios` estourou o timeout esperando o botão "Novo".
 
-![image](imagens/cloud_pr2709_imagem12.png)
+O `SmxConfigGlobalButton` fica no AppBar, então aparece em todas as telas, e carrega a visão Global no `OnAfterRenderAsync`. O `VisaoGlobalService` só tratava falha de conexão. No beta o `GetGlobalAsync` dá erro no servidor (provavelmente porque o banco ainda não tem a coluna `VisaoLayouts.UsuarioId`: o deploy beta não roda o DbMigrator), e essa exceção virava erro não tratado na tela.
 
-## Cadastros: navegação entre registros, pesquisa de campos e cópia avançada ✨
+### Mudança
+- `VisaoGlobalService`: qualquer falha na leitura vira aviso no log, e a tela segue sem a preferência (do mesmo jeito que já acontecia com falha de conexão).
+- `SmxConfigGlobalButton`: se gravar a escolha do clique no nome falhar, aparece um aviso no snackbar e as outras configurações são gravadas mesmo assim.
 
-### Barra de navegação
+### Pendente
+- Migrar os bancos de produção/beta (coluna `VisaoLayouts.UsuarioId`, tabelas `AtalhoLayouts` e `ManutencaoLoteLog`). Enquanto isso não for feito, a visão Global e o filtro de visões do `GridPonto` continuam falhando, agora sem derrubar a tela.
+- Rodar de novo o **Testar UI (beta)** depois do deploy.
 
-Como no PcPonto, agora dá para passar de um registro para outro sem voltar para a lista.
+Compilação do `Simix.Ponto.Blazor.Client` ok; testes de UI não rodados localmente.
 
-- Barra no rodapé dos cadastros com primeiro, anterior, próximo e último registro, e a posição (ex.: 3 de 29).
-- Percorre a lista de onde o cadastro foi aberto, respeitando pesquisa, filtro global, filtros da tela e ordem.
-- Com alterações não salvas, pergunta se deseja salvar antes de trocar de registro (Sim, Não ou Cancelar); **Ctrl + clique** na seta salva sem perguntar.
-- O próximo registro abre na mesma guia em que o usuário estava, sem piscar. Se um registro não abrir, a barra continua disponível para passar ao próximo.
-- A barra não aparece quando há um registro só.
-- Card na página de Novidades com o passo a passo.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Navegando pelos horários:
+## ✨ Atalhos no painel inicial [#3009](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3009)
 
-![image](imagens/cloud_pr2775_imagem1.png)
+### Objetivo
 
-- Pergunta antes de trocar de registro com alteração não salva:
+Atalhos no painel inicial: cada usuário monta grupos de atalhos para o que usa todo dia (telas, comandos, registros, dashboards e widgets), com recorte de colaboradores opcional.
 
-![image](imagens/cloud_pr2775_imagem2.png)
+### Alterações
+- ✨ Card de atalhos no Início, acima do Calendário: mostra um grupo por vez, escolhido no topo do card, e a escolha fica salva no aparelho
+- ✨ Grupos do usuário e grupos disponíveis para todos; cada atalho tem ícone, cor, nome, descrição e o recorte de colaboradores que usa
+- ✨ Tipos de atalho: link (tela do sistema ou endereço externo), tela/comando da pesquisa global, registro (qualquer colaborador, horário, cargo… achado pela pesquisa, abre direto no cadastro dele), dashboard e widget de dashboard
+- ✨ Widget abre num popup no próprio Início, com Nova guia, Imprimir e Exportar Excel
+- ✨ O recorte do atalho soma ao filtro do sistema, que não muda. Consulta diária, Férias, Inconsistências, Manutenção, Colaboradores e Exportar folha abrem já filtradas pelo link
+- ✨ "Criar atalho" (pino) no cabeçalho dos widgets do Painel e dos dashboards gerenciais; o dashboard abre pelo atalho sem trocar o que estava selecionado
+- ✨ Organizar: arrastar para mudar a ordem; grupos podem ser renomeados e compartilhados com todos
+- ✨ Atalho cujo destino foi excluído aparece como indisponível, com o motivo; sem permissão para a tela, o atalho não aparece
 
-- No celular, a barra se ajusta junto com os botões do rodapé:
+### PR's referências
+- simixsistemas/DevShare.RX.Cloud#161
 
-![image](imagens/cloud_pr2775_imagem3.png)
+### Demonstração
 
-- Card da novidade:
+![image](imagens/cloud_pr3009_imagem1.png)
 
-![image](imagens/cloud_pr2775_imagem4.png)
+![image](imagens/cloud_pr3009_imagem2.png)
 
-- Troca de registro pela barra de navegação, sem piscar:
+![image](imagens/cloud_pr3009_imagem3.png)
 
-![image](imagens/cloud_pr2872_imagem12.png)
+![image](imagens/cloud_pr3009_imagem4.png)
 
-- Cadastro com um registro só, sem a barra de navegação:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2872_imagem13.png)
 
-### Pesquisa de campos e cópia avançada
+## ✨ Clique no nome do colaborador abre a manutenção ou o cadastro, à escolha do usuário [#3008](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3008)
 
-- **Pesquisa de campos**: ao digitar, a janela de cadastro mostra só os campos que batem com o texto (pelo nome ou pelo valor, sem diferenciar acentos e maiúsculas) e esconde as guias e quadros sem resultado; **Esc** fecha a pesquisa.
-- **Cópia avançada**: marque os campos, clique em **Copiar N campo(s)**, escolha os registros de destino (com pesquisa e marcar todos) e os valores da tela são gravados neles. Código e campos desabilitados não podem ser copiados.
-- Campos de escolher numa lista (Escala, Cargo, Estabelecimento, Departamento…) também podem ser copiados.
-- Cópia de listas inteiras: faixas de extras e horários da semana no quadro de horário, vale-transporte e vale-refeição no colaborador, condições do mês e dos dias na regra de prêmio.
-- No quadro de horário, quando a cópia muda o cálculo, o sistema pergunta uma vez a partir de qual mês a configuração vale.
-- A lista de destinos mostra só registros ativos, e os campos marcados ficam destacados.
-- Correções: colaboradores repetidos na lista de destinos, dados pessoais (CPF, endereço...) que não eram copiados e nome da regra de prêmio na lista de destinos.
-- Card de Novidades com demonstração guiada da pesquisa e da cópia avançada.
+### Objetivo
 
-- Pesquisa "tolera" no cadastro de Horários, exibindo só as guias com campos de tolerância:
+Deixar o usuário escolher o que acontece ao clicar no nome do colaborador na lista de Colaboradores: abrir a manutenção (novo padrão) ou o cadastro (como era antes).
 
-![image](imagens/cloud_pr2675_imagem1.png)
+### Alterações
+- ✨ Na primeira vez que clica no nome, o usuário escolhe entre abrir a manutenção na mesma janela (novo padrão), abrir a manutenção em nova janela ou abrir o cadastro. A escolha já é executada e fica guardada
+- ✨ A própria janela de escolha explica como mudar depois: botão **Configurações** da barra do topo, em **Ao clicar no nome do colaborador** (menu com as opções e a de voltar a perguntar)
+- ✨ Com a manutenção escolhida, o nome vira um link comum: Ctrl+clique e "abrir em nova guia" funcionam
+- O lápis da linha continua abrindo o cadastro, e as outras listas não mudam
+- ✨ A escolha fica salva no usuário (visão "Global" dele no servidor): vale em qualquer computador ou navegador, e cada usuário escolhe a sua
+- ♻ A preferência é lida uma vez por aba e guardada no navegador enquanto a aba estiver aberta, sem consultar o servidor a cada tela
 
-- Modo de cópia avançada, com a marcação em cada campo e a quantidade no botão:
+### Demonstração
 
-![image](imagens/cloud_pr2675_imagem2.png)
+Primeiro clique no nome:
 
-- Escolha dos registros que vão receber os valores:
+![image](imagens/cloud_pr3008_imagem1.png)
 
-![image](imagens/cloud_pr2675_imagem3.png)
+Para mudar depois, no menu do botão Configurações:
 
-- Pesquisa de campos mostrando só a guia Lanche:
+![image](imagens/cloud_pr3008_imagem2.png)
 
-![image](imagens/cloud_pr2872_imagem1.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Cópia avançada no quadro de horário, com a pergunta de a partir de quando vale:
 
-![image](imagens/cloud_pr2872_imagem2.png)
 
-- Lista de faixas de extras marcada e destacada:
 
-![image](imagens/cloud_pr2872_imagem3.png)
+## ✨ Melhorias no Mural de notas [#3007](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3007)
 
-- Campo de escolher numa lista (Escala) marcado:
+### Objetivo
 
-![image](imagens/cloud_pr2872_imagem4.png)
+Melhorias no Mural de notas pedidas na apresentação.
 
-- Lista de destinos só com os horários ativos:
+### Alterações
+- ✨ Clicar no nome da categoria recolhe ou expande as notas dela; as categorias recolhidas continuam assim na próxima vez que o mural for aberto no mesmo aparelho
+- ✨ Ao editar uma nota, a caixa de texto acompanha o tamanho do conteúdo, em vez de ficar presa em 4 linhas com rolagem
+- ✨ O painel Início mostra as notas ativas em miniatura, abaixo do Calendário; clicar numa delas abre o mural. O card só aparece para quem tem acesso ao mural e quando há nota ativa
+- 🐛 Na edição, os botões Cancelar e Salvar passam para a linha de baixo quando a nota é estreita, em vez de ficarem cortados
 
-![image](imagens/cloud_pr2872_imagem5.png)
+### PR's referências
 
-- Pergunta de "a partir de quando", feita uma vez para todos os destinos:
+### Demonstração
 
-![image](imagens/cloud_pr2872_imagem6.png)
+![image](imagens/cloud_pr3007_imagem1.png)
+Categoria "Avisos" recolhida pelo clique no cabeçalho.
 
-- Regra de prêmio: destinos com o nome da regra, copiando as condições:
+![image](imagens/cloud_pr3007_imagem2.png)
+A caixa de edição cresce com o texto (20 linhas).
 
-![image](imagens/cloud_pr2872_imagem7.png)
+![image](imagens/cloud_pr3007_imagem3.png)
+Notas ativas em miniatura no painel Início, abaixo do Calendário.
 
-- Botão no ? do campo do quadro de horário:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2872_imagem8.png)
 
-- Uso da opção por outros clientes (banco de horas):
+## ✨ Compartilhar resumo da Manutenção [#3006](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3006)
 
-![image](imagens/cloud_pr2872_imagem9.png)
+### Objetivo
 
-- Horas no formato hh:mm:
+Compartilhar a Manutenção de um colaborador com um clique: resumo pronto para colar no Teams, chamado ou e-mail, com os links.
 
-![image](imagens/cloud_pr2872_imagem10.png)
+### Alterações
+- ✨ Novo botão **Copiar resumo para compartilhar** na barra da Manutenção, ao lado da Calculadora
+- ✨ O resumo é copiado em Markdown com links: Manutenção do mês, colaborador (abre o cadastro), empresa (tenant), horário (abre o cadastro) e os principais totais — os mesmos que aparecem no modo compacto
 
-- Opção "Padrão" não conta como opção usada:
+Exemplo do texto copiado:
 
-![image](imagens/cloud_pr2872_imagem11.png)
+```
+[Manutenção 10/2026](https://smx.simixponto.app/manutencao/{id}/202610) de [MARIA DA SILVA](https://smx.simixponto.app/colaboradores/{id}) em **smx**
 
-- Card de Novidades:
+Horário: [08:00-17:48 SEG-SEX](https://smx.simixponto.app/horarios/{id})
 
-![image](imagens/cloud_pr2872_imagem14.png)
+Principais totais:
+- Horas trab.: **176:00**
+- H.Extras 50%: **12:30**
+```
 
-## Packs de dashboards na loja ✨
+### PR's referências
 
-Pacotes prontos por cenário (Motorista, Supermercado, Conferências, Gerencial...) que montam dashboards completos com um clique.
+### Demonstração
 
-- Os tipos da loja viram filtros no topo da tela: **Dashboards**, **Widgets** e o novo **Packs**, com a contagem de cada um.
-- Ao instalar um pack, cada grupo dele vira um dashboard gerencial já montado com os itens escolhidos.
-- Quem ainda não tem dashboard gerencial ganhou um atalho para a loja na própria tela vazia.
-- Instalar de novo um pack já instalado avisa antes de criar cópias.
-- Item retirado da loja não impede a instalação: o grupo entra com o restante e o aviso diz o que faltou.
-- Falha ao carregar o catálogo da loja mostra a mensagem do erro sem derrubar a tela.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Cadastro do pack, com os grupos como no Gerencial e os itens em cards com prévia:
 
-![image](imagens/cloud_pr2667_imagem1.png)
+## ✨ Aviso especial de feedback: status, comentário e link [#3004](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3004)
 
-- Loja com os packs junto dos demais itens e filtro por tipo:
+### Objetivo
 
-![image](imagens/cloud_pr2667_imagem2.png)
+Destacar para o usuário quando a equipe da Símix conclui, muda o status ou responde o feedback que ele enviou, deixando a Símix decidir quando avisar.
 
-- Os tipos agora ficam no topo da loja, com a contagem de cada um:
+### Alterações
+- ✨ Ao salvar o status de um feedback no painel administrativo, abre uma janela para escolher se avisa no sino, com um comentário e um link opcionais
+- ✨ Na mesma janela dá para escolher o cliente e quem recebe o aviso: o autor vem marcado e dá para adicionar outros usuários
+- ♻ Mudar o status não avisa mais o autor automaticamente
+- ✨ Quando há aviso de feedback, o sino ganha uma estrela animada além do contador
+- ✨ O aviso aparece em destaque na lista do sino e, ao chegar, fica mais tempo na tela com o botão "Ver"
+- ✨ Abrir o aviso mostra o comentário da Símix, o botão do link (quando informado) e o feedback com as opções de reagir, comentar e abrir; se foi concluído, solta confete
+- ✨ "Abrir feedback" leva ao painel de feedbacks com ele no topo, em destaque e com os comentários abertos
 
-![image](imagens/rx_pr147_imagem1.png)
+### Demonstração
 
-- Depois de instalar, cada grupo virou um dashboard gerencial:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2667_imagem3.png)
 
-## Consulta de atestados ✨
+## 🐛 Ajustes na versão da Calc para os turnos informativos [#3002](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3002)
 
-Nova tela para conferir todos os atestados do período, com ou sem documento anexado, e anexar o atestado direto pela Manutenção.
+### Objetivo
 
-- Novo menu **Manutenção > Consulta de atestados**, com os dias em que o colaborador tem afastamento do tipo Atestado.
-- Filtros de data (abre no período atual), estabelecimento, departamento e setor, respeitando o filtro global, e pesquisa por nome.
-- Filtros rápidos: com anexo / sem anexo / todos e integral / parcial / todos.
-- Cada card mostra a imagem do atestado, o colaborador, a data e as horas, com atalhos para abrir a Manutenção do período e baixar o anexo.
-- **Anexar atestado** direto pela **Manutenção** (coluna do afastamento) e pela Consulta de atestados, nos dias sem anexo. Aceita PDF ou imagem de até 10 MB, para quem pode editar o ponto. Na Manutenção, anexo em PDF aparece como ícone (antes aparecia uma imagem quebrada).
-- Card na página de Novidades com o **Me mostre** e botão **Treinamentos** na própria tela.
+Fix: [#2935](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2935)
 
-- Tela aberta no período atual, com o menu na Manutenção:
+### Alterações
+- 🐛 O deploy do beta voltou a compilar: a versão publicada da biblioteca de cálculo passa a ser a que já tem os turnos informativos (12.7). A falha está em https://github.com/simixsistemas/Simix.Ponto.Cloud/actions/runs/38820245889
 
-![image](imagens/cloud_pr2743_imagem1.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#2968
+- simixsistemas/Simix.Ponto.Calc#526
 
-- Filtro "Parcial": só os atestados com horas informadas:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2743_imagem2.png)
 
-- Consulta de atestados com a opção Anexar nos dias sem anexo:
+## ✨ Melhorias no Atendimento do painel admin [#3000](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/3000)
 
-![image](imagens/cloud_pr2779_imagem7.png)
+### Objetivo
 
-- Botão de anexar ao lado do afastamento na Manutenção:
+Fix: [#2985](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2985)
 
-![image](imagens/cloud_pr2779_imagem8.png)
+### Alterações
+- ✨ Clicar no cliente abre um painel lateral com os dados dele, sem sair da lista: situação, porte, última atividade, data de criação, observação interna completa e links para o ambiente e a documentação
+- ✨ A lista de usuários (que antes abria numa janela) fica no painel, com a mesma pesquisa e o mesmo "entrar como" o usuário numa nova aba
+- ✨ Últimos feedbacks do cliente no painel, com tipo, situação, autor, data, comentários e votos; o título abre o feedback numa nova aba
+- ✨ Coletores do cliente com a situação de cada um, a última comunicação e o destaque de "sem sincronizar há mais de 3 dias", como no monitor de coletores
+- ♻ Layout: a linha inteira do cliente é clicável e fica destacada; com o painel aberto a lista mostra só as colunas principais, e a divisória entre os dois pode ser arrastada. Cada lado rola sozinho; no celular a lista e o painel ficam um embaixo do outro
 
-- Card na página de Novidades, com os botões Abrir, Me mostre e Feedback:
+### Demonstração
 
-![image](imagens/cloud_pr2796_imagem1.png)
+![image](imagens/cloud_pr3000_imagem1.png)
+Cliente selecionado: dados no topo, usuários, últimos feedbacks e coletores (nomes e títulos borrados).
 
-- O botão Treinamentos da tela de atestados mostra a demonstração:
+![image](imagens/cloud_pr3000_imagem2.png)
+Usuários do cliente no painel, com pesquisa e paginação; clicar no nome entra como ele numa nova aba (dados pessoais borrados).
 
-![image](imagens/cloud_pr2796_imagem2.png)
 
-- A demonstração explicando o card de um dia de atestado:
+## 🐛 Erro de período não encontrado ao aprovar pendências [#2999](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2999)
 
-![image](imagens/cloud_pr2796_imagem3.png)
+### Objetivo
 
-- Atalhos do card: Manutenção do período e Anexar (ou baixar o anexo):
+Fix: [#2997](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2997)
 
-![image](imagens/cloud_pr2796_imagem4.png)
+### Alterações
+- 🐛 Aprovar pendências de marcação, ajuste ou afastamento não dá mais "Período não encontrado" quando o cartão de ponto começa depois do dia 1. O sistema considerava o mês do calendário da data, e não o período a que ela pertence: na Peracchi, em que o cartão começa no dia 26, o dia 26/09 é do período 10/2026, mas era procurado o 09/2026
+- 🐛 Na aprovação de várias pendências de uma vez, datas do mesmo mês do calendário que pertencem a períodos diferentes (por exemplo, 25/09 e 26/09 com o cartão começando no dia 26) passam a ter cada período conferido. Antes, o segundo era pulado e podia ser aprovado num período bloqueado
+- ♻ Quando o estabelecimento não tem período próprio, vale o período geral, como no restante do sistema
+- ♻ As mensagens mostram o período como 10/2026, e não 202610
+- ♻ Testes automáticos cobrem os dias de início do cartão antes e depois do meio do mês, a virada do ano e a aprovação em lote
 
-## Manutenção do ponto
+### Demonstração
 
-### Máquina do tempo mais completa
+Banco da Peracchi restaurado localmente (cartão começa no dia 26). No período 10, duas marcações de 26/09 aguardando aprovação. Antes da correção, esse era o caso que dava "Período 202609 não encontrado":
 
-- Mostra todas as marcações incluídas e retiradas, inclusive as de lanche; marcações que só mudaram de posição no dia não aparecem mais como alteração.
-- Clicar no chip desfaz a alteração na tela e clicar de novo refaz; **Salvar** grava.
-- Dá para desfazer marcação, afastamento (junto com as horas gravadas na mesma vez), horas de afastamento, observação e data de troca. Turno especial, horário, almoço, janta e situação ficam só para consulta.
-- O chip aparece riscado sempre que o dia voltou a ficar como antes, inclusive depois de salvar ou reabrir a tela.
-- Se o dia mudou depois da alteração, aparece um aviso em vez de aplicar; em dia com Férias, o aviso orienta a desfazer o afastamento antes das marcações.
-- A opção **Máquina do tempo** voltou ao menu **Ferramentas**, e os botões **Inserir** e **Ferramentas** mostram o nome ao passar o mouse.
+![image](imagens/cloud_pr2999_imagem1.png)
 
-- Ferramentas → Máquina do tempo:
+Com a correção, "Aprovar 2" aprova as duas e as batidas entram no dia 26/09 do período 10/2026:
 
-![image](imagens/cloud_pr2950_imagem1.png)
+![image](imagens/cloud_pr2999_imagem2.png)
 
-- Dia com férias lançadas e duas marcações retiradas na mesma gravação:
 
-![image](imagens/cloud_pr2950_imagem2.png)
+## 🐛 Código do estabelecimento nas sugestões da implantação [#2998](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2998)
 
-- Depois de desfazer: as marcações voltam e os chips ficam riscados:
+### Objetivo
 
-![image](imagens/cloud_pr2950_imagem3.png)
+Fix: [#2988](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2988)
 
-- Afastamento com as horas num chip só, antes e depois de desfazer:
+### Alterações
+- 🐛 A janela do passo **Estabelecimento** nas sugestões da implantação (tela Início) agora tem o campo **Código**: para um estabelecimento novo ele já vem preenchido com o próximo código livre (dá para trocar); para o estabelecimento que já existe ele aparece só para consulta
+- 🐛 Salvar pela janela não dá mais o erro pedindo o código do estabelecimento
+- 🐛 Salvar pela janela do estabelecimento ou da empresa altera só os campos que a janela mostra — antes, os demais dados do cadastro (sigla, CEP, situação ativo etc.) eram apagados
+- 🐛 Passo **Horários** das sugestões: criar um horário com **Extras 50%/100%** marcado derrubava a tela e o horário ficava sem as faixas de horas extras. Agora as faixas são gravadas junto, com as mesmas permissões do cadastro de horários (o mesmo valia para as faixas do horário por dia)
+- 🐛 Se a criação do horário falhar, a janela mostra um aviso em vez de travar a tela — e, se o horário chegou a ser criado sem as faixas, o aviso diz o código dele
+- ♻ Teste automático que acusa qualquer tela/serviço que exija uma permissão inexistente (era a causa do erro dos Horários)
 
-![image](imagens/cloud_pr2950_imagem4.png)
+### Demonstração
 
-![image](imagens/cloud_pr2950_imagem5.png)
+Estabelecimento novo: o código vem sugerido e pode ser alterado.
 
-### Explicação dos totais
+![image](imagens/cloud_pr2998_imagem1.png)
 
-- Menu **...** ao lado de cada total da **Manutenção** com a explicação de como ele é calculado, mostrada (e lida em voz alta) pelo assistente, com a conta principal.
-- A explicação considera o quadro de horário do colaborador: mostra as regras que valem para ele (compensação, desconto de DSR, repouso remunerado, adicional noturno, faltas sem compensação, extras noturnas...) e se ele é mensalista, horista ou estagiário. Um mesmo total pode ter mais de uma explicação, conforme as opções ligadas no horário.
-- Repouso remunerado, desconto do repouso, saldo, horas previstas, adicional noturno e sobreaviso passaram a ter o botão de explicação.
+Estabelecimento existente (código 2, mesmo caso do feedback): o código aparece para consulta e o restante do cadastro é mantido ao salvar.
 
-- Horas de repouso remunerado geradas conforme o horário do colaborador:
+![image](imagens/cloud_pr2998_imagem2.png)
 
-![image](imagens/cloud_pr2776_imagem1.png)
+Depois de salvar, o passo fica concluído.
 
-- Desconto do repouso remunerado com as opções ligadas no horário:
+![image](imagens/cloud_pr2998_imagem3.png)
 
-![image](imagens/cloud_pr2776_imagem2.png)
+Horários, antes da correção: com Extras 50% marcado, a tela travava ao criar. Depois da correção o horário é criado com as faixas de 50% e 100%.
 
-- Saldo com compensação no dia e mês:
+![image](imagens/cloud_pr2998_imagem4.png)
 
-![image](imagens/cloud_pr2776_imagem3.png)
 
-### Inconsistências na Manutenção e no Monitor de registros
+## ✨ Histórico e novo layout da Manutenção em lote [#2996](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2996)
 
-- **Manutenção**: as inconsistências do dia voltaram a aparecer abaixo das marcações, em etiquetas na cor da regra (regras com "Exibir manutenção"), e o filtro **Inconsistências** da barra voltou a funcionar.
-- Nova opção **Inconsistências** na barra da Manutenção para mostrar ou ocultar; desmarcada, a tela fica mais leve.
-- **Monitor de registros**: exclamação dentro do turno em que a inconsistência aconteceu, com a lista ao passar o mouse, e novo botão **Visão**, com as colunas Km, Previsto e Afastamento (ocultas por padrão).
-- O dia de hoje não mostra inconsistências, pois só os dias que já passaram são verificados.
+### Objetivo
 
-- Monitor: a exclamação no turno da inconsistência:
+Registrar cada execução da manutenção em lote, para consultar depois o que foi lançado, por quem e com quais filtros, e reorganizar a tela no padrão das telas de processamento.
 
-![image](imagens/cloud_pr2882_imagem1.png)
+### Alterações
+- ✨ Toda execução da manutenção em lote fica registrada: quem executou, quando, os filtros usados (com os nomes de cargo, quadro de horário, estabelecimento etc.), o que foi aplicado e quantos colaboradores e dias foram alterados, inclusive quando dá erro
+- ✨ Histórico das execuções, com pesquisa: cada execução abre a lista dos dias alterados, com o valor antes e depois e o link para a manutenção do colaborador
+- ✨ Nova tela: configuração do lote no painel à esquerda; à direita, os números do lote, a prévia e as últimas execuções
+- ✨ A prévia se atualiza sozinha ao mudar os filtros, sem o passo Executar → Voltar
+- ✨ O botão Aplicar mostra quantos dias serão alterados, pede confirmação e só libera com a alteração preenchida (remover afastamento continua possível com "Dias com afastamento: Sim")
+- ♻ Filtros de estabelecimento, departamento, setor e seção ficam recolhidos, com a contagem dos que estão em uso
+- ♻ Demonstração guiada da tela atualizada para o novo fluxo (os passos alterados usam a voz do navegador até a locução ser regravada)
 
-- Criando uma visão com as três colunas:
+### PR's referências
 
-![image](imagens/cloud_pr2882_imagem2.png)
+### Demonstração
 
-- Colunas da visão com os afastamentos do dia:
+![image](imagens/cloud_pr2996_imagem1.png)
+Período, dias trabalhados e previstos e o Abono escolhidos: a prévia e os números se atualizam sozinhos e o botão já mostra quantos dias serão alterados.
 
-![image](imagens/cloud_pr2882_imagem3.png)
+![image](imagens/cloud_pr2996_imagem2.png)
+Aplicar pede confirmação com o resumo do que será feito.
 
-- Km de um colaborador com quilometragem lançada:
+![image](imagens/cloud_pr2996_imagem3.png)
+Histórico com usuário, filtros e resultado de cada execução, e os dias alterados com o antes e depois.
 
-![image](imagens/cloud_pr2882_imagem4.png)
 
-- Manutenção com as inconsistências de cada dia:
+## 🐛 Troca de código do colaborador atômica [#2995](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2995)
 
-![image](imagens/cloud_pr2882_imagem5.png)
+### Objetivo
 
-- Com a opção desmarcada, as inconsistências ficam ocultas:
+Fix: [#2993](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2993)
 
-![image](imagens/cloud_pr2882_imagem6.png)
+### Alterações
+- 🐛 Trocar o código do colaborador agora é tudo ou nada: o código muda em todas as tabelas ou em nenhuma. Antes o cadastro podia ficar com o código novo enquanto os dados mensais ficavam no antigo, e o colaborador sumia da Manutenção e da lista de Colaboradores
+- 🐛 Se a troca falhar, a tela avisa que o código não foi trocado, qual código continua valendo e o motivo (inclusive em qual tabela parou)
+- 🐛 A troca passa a encontrar as tabelas do colaborador em todos os bancos, inclusive nos migrados do PcPonto, e aguarda mais tempo nos bancos grandes
+- 🐛 Os descontos de adiantamento também passam a acompanhar o código novo
+- 🐛 Espelho do ponto filtrado por estabelecimento: nos clientes migrados do PcPonto, os dados mensais vinham sem o vínculo com o estabelecimento, cargo e horário, e o espelho só encontrava quem já tinha sido salvo na tela. No Boi Gordo, o espelho de setembro do estabelecimento de Loanda gerava 4 colaboradores; agora gera todos os 57 ativos no período (o 58º foi desligado em 14/09). A migração passa a gravar esse vínculo direto (PR da migração); para os clientes já migrados, ele é refeito na publicação
+- ♻ Novo teste automático, executado no deploy do beta: uma falha no meio da troca precisa desfazer também o código do cadastro
+- ♻ A colaboradora da Facta (22070 → 22190) já foi corrigida em produção por script, e voltou a aparecer nas listas
 
-- Filtro "Inconsistências" mostrando só os dias com inconsistência:
+### PR's referências
+- simixsistemas/Simix.Ponto.Migracao#36
 
-![image](imagens/cloud_pr2882_imagem7.png)
+### Demonstração
 
-### Lista ao lado da grade, calculadora e chat do suporte
 
-- A lista de colaboradores abre ao lado da grade, com largura ajustável, sem recarregar o cartão. Ao trocar de colaborador com alterações não salvas, o sistema pergunta se deseja salvar.
-- Barra do topo da Manutenção com **Colaboradores**, calculadora, treinamentos, feedback e tela cheia; novo ícone para o modo compacto.
-- Botão de chat com o suporte na barra superior, com nome e e-mail já preenchidos.
-- Janelas flutuantes abrem no canto inferior direito, se empilham, se movem sem atraso e não ficam mais abertas escondidas depois de fechadas.
-- **Calculadora**:
-  - **Enter** adiciona a expressão como nova linha, abaixo das anteriores;
-  - cada linha pode ser editada inteira (lápis ou duplo clique) ou por partes: clique no número para editar, no sinal para trocar entre + - * /; ao remover um número, o sinal que o liga à conta sai junto;
-  - menu com Copiar, Colar, Limpar, Carregar, Salvar e Salvar como: as fórmulas ficam salvas com nome e a tela de origem. Copiar gera o texto com cada conta e o resultado, e ao colar cada linha volta como uma conta;
-  - aceita horas com mais de dois dígitos, como os totais do mês (ex.: 176:00 - 71:44 = 104:16), e mostra números com até duas casas decimais (3500 / 220 = 15,91).
+## ✨ Tipo de horário especial na manutenção do app [#2994](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2994)
 
-- Lista de colaboradores ao lado da grade:
+### Objetivo
 
-![image](imagens/cloud_pr2721_imagem1.png)
+Fix: [#2984](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2984)
 
-- Confirmação ao trocar de colaborador com alterações não salvas:
+### Alterações
+- ✨ A solicitação de marcação feita pelo aplicativo guarda o tipo de horário especial escolhido pelo motorista (Fim de jornada, Início condução...). Ao aprovar, a marcação entra no cartão com esse tipo, como já acontece na manutenção do site
 
-![image](imagens/cloud_pr2721_imagem2.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud.Client#30
+- simixsistemas/Simix.Ponto.App#504
 
-- Duas calculadoras empilhadas no canto inferior direito:
+### Demonstração
+Motorista pedindo pelo aplicativo a marcação que faltou (18:30) como "Fim Jornada":
 
-![image](imagens/cloud_pr2721_imagem3.png)
+![image](imagens/cloud_pr2994_imagem1.png)
 
-- Página da calculadora com o histórico e a expressão fixa embaixo:
+Depois de enviar, o pedido aparece aguardando aprovação com o tipo escolhido:
 
-![image](imagens/cloud_pr2721_imagem4.png)
+![image](imagens/cloud_pr2994_imagem2.png)
 
-- Linhas com sinal trocado, número editado e uma expressão inválida marcada:
 
-![image](imagens/cloud_pr2718_imagem1.png)
 
-- Fórmulas salvas, com pesquisa, filtro por tela de origem e exclusão:
+## 🐛 Colaborador duplicado ao clicar duas vezes em Salvar [#2992](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2992)
 
-![image](imagens/cloud_pr2718_imagem2.png)
+### Objetivo
 
-- Calculadora, treinamentos e tela cheia na barra da Manutenção:
+Ao cadastrar um novo colaborador, ele estava ficando duplicado na lista de colaboradores e na manutenção. Então ajustamos.
 
-![image](imagens/cloud_pr2718_imagem3.png)
+### Alterações
+- 🐛 O botão Salvar dos cadastros fica desabilitado ("Salvando...") logo no primeiro clique. Antes isso só acontecia depois das conferências feitas no servidor (código e CPF do colaborador), e um segundo clique nesse intervalo gravava o colaborador de novo
+- Se a gravação não passar nas conferências ou der erro, o botão volta a ficar disponível
 
-### Data de troca e pré-assinalado
+### Demonstração
 
-- Ao mudar a data de troca, os botões e o calendário da data de troca ficam desligados enquanto a nova data é preparada; um **Salvar** clicado nesse meio-tempo espera e grava a troca junto.
-- Quando a nova data de troca cai em um quadro de horário por período com intervalo pré-assinalado, o dia segue essa regra: o intervalo marcado passa a pré-assinalado (P) ou pode ser inserido. Se depois a data de troca for removida, as marcas P continuam no dia.
-- Marca pré-assinalada alterada à mão na Manutenção é respeitada no recálculo do dia.
+Duplo clique no Salvar: o segundo clique já encontra o botão desabilitado.
+![image](imagens/cloud_pr2992_imagem1.png)
 
-- Antes: troca para fora do cartão em dia coberto por quadro por período, com marcações Web:
+Depois do duplo clique, o colaborador aparece uma única vez na lista.
+![image](imagens/cloud_pr2992_imagem2.png)
 
-![image](imagens/cloud_pr2939_imagem1.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Agora: as marcações do intervalo passam a pré-assinaladas (P), com os mesmos totais:
 
-![image](imagens/cloud_pr2939_imagem2.png)
+## ✨ Ignorar coletores AFD na sincronização e melhorar layout dos avisos [#2991](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2991)
 
-- Depois de salvar, o dia mostra a referência da nova data e o mesmo total:
+### Objetivo
 
-![image](imagens/cloud_pr2939_imagem3.png)
+Fix: [#2986](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2986)
 
-- Depois de remover a troca e salvar, as marcas P continuam:
+### Alterações
+- ✨ Coletores AFD não entram mais na sincronização: ficam de fora do "Sincronizar todos", da sincronização dos selecionados e não mostram mais o botão Sincronizar no card nem no menu
+- 🐛 O card do coletor AFD mostra o chip "AFD" no lugar do "Atenção" com o erro "Invalid URI: Invalid port specified"
+- ✨ Avisos da sincronização em uma lista vertical com rolagem, um aviso por linha (antes cada aviso virava uma coluna estreita e a janela rolava para o lado)
+- ✨ A orientação que se repetia em todos os avisos ("confira o cadastro do colaborador ou remova o usuário do relógio") aparece uma vez só, acima da lista, e há um botão para copiar os avisos
 
-![image](imagens/cloud_pr2939_imagem4.png)
+### Demonstração
 
-- Data de troca antes da admissão: a célula fica vazia e nada é gravado:
+Card do coletor AFD com o chip "AFD" e sem o botão Sincronizar, ao lado de coletores de rede:
+![image](imagens/cloud_pr2991_imagem1.png)
 
-![image](imagens/cloud_pr2939_imagem5.png)
+Menu do coletor AFD sem a opção Sincronizar:
+![image](imagens/cloud_pr2991_imagem2.png)
 
-### Outros ajustes na Manutenção
+Sincronizando o coletor AFD selecionado: ele é ignorado, sem erro:
+![image](imagens/cloud_pr2991_imagem3.png)
 
-- Ao clicar em um dia, a espera caiu de cerca de 2,5 s para 0,5 s, e a tela não acumula mais memória a cada dia aberto. Com justificativa obrigatória, o dia seguinte abre no primeiro clique (antes era preciso clicar duas vezes); a justificativa continua sendo cobrada ao salvar.
-- O tipo de compensação escolhido no dia ("Sem compensação" ou "Forçar BH") passa a ser salvo, inclusive ao retirá-lo, e a coluna **Compensação** mostra o tipo salvo (antes só aparecia durante a edição). Dias sem marcações (falta, folga) passam a gravar compensação, observação e situação, e dias não alterados não geram mais registro no histórico a cada salvar.
-- Colaborador cadastrado com admissão em mês futuro aparece na Manutenção do mês da admissão logo após salvar, sem precisar rodar **Calcular dados**, respeitando o dia de início do período.
-- Ao aprovar uma solicitação de **Desconsiderar** marcação, o dia é reordenado: as marcações seguintes sobem e não ficam mais posições vazias. No layout **Motorista**, a atividade anterior passa a terminar onde terminava a removida.
-- A observação do dia passa a aceitar até 150 caracteres (antes 100), também na Manutenção em lote.
+Novo layout dos avisos (exemplo com avisos de CPF/PIS não encontrado):
+![image](imagens/cloud_pr2991_imagem4.png)
 
-- Menu de tipo de local carregado no primeiro clique:
 
-![image](imagens/cloud_pr2930_imagem1.png)
+## ♻ Ajustes no cadastro de colaborador, painel Início, cálculo e AEJ [#2990](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2990)
 
-- Painel de informação da marcação carregado só quando aberto:
+### Objetivo
 
-![image](imagens/cloud_pr2930_imagem2.png)
+Fix: [#2987](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2987)
 
-- Coluna Compensação com os tipos escolhidos depois de salvar e reabrir a tela:
+### Alterações
+- 🐛 Cadastro de colaborador novo abre com horário, estabelecimento, cargo, departamento, setor e seção vazios — em bancos com cadastro de código 0 (Smx) ele já vinha preenchido com "0" e era salvo assim
+- 🐛 Colaborador lotado em estabelecimento inativo volta a ter o mês calculado: o cálculo de dados só passava pelos estabelecimentos ativos, e o colaborador sumia da Manutenção (Madeireira São Jorge)
+- 🐛 Arquivos fiscais: período com mais de um mês gera um AEJ por mês (antes vinha um arquivo só, com o nome do primeiro mês)
+- ✨ Arquivos fiscais: cada AEJ vai com o arquivo de assinatura (.p7s), assinado com o certificado digital configurado no ambiente; sem certificado (ou com ele vencido), a tela avisa
+- ♻ Início: as Sugestões ficam guardadas por 10 minutos para cada usuário, com "Atualizado às" no rodapé; o botão Atualizar busca os números na hora
+- ♻ Início: o Calendário abre nos próximos 15 dias e só busca os 90 dias quando a pessoa amplia
 
-![image](imagens/cloud_pr2690_imagem1.png)
+### Demonstração
 
-![image](imagens/calc_pr498_imagem1.png)
+![image](imagens/cloud_pr2990_imagem1.png)
+No banco Smx, horário e estabelecimento não vêm mais preenchidos com o código 0.
 
-- Colaborador cadastrado em setembro com admissão em 01/10, já calculado na Manutenção de outubro:
+![image](imagens/cloud_pr2990_imagem2.png)
+Sugestões com "Atualizado às" no rodapé e Calendário nos próximos 15 dias.
 
-![image](imagens/cloud_pr2785_imagem1.png)
 
-## Manutenção em lote
+## 🐛 Impedir mês do colaborador e período repetidos no banco [#2989](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2989)
 
-- Novo layout: filtros agrupados em Período, Quais dias e Colaboradores, e um único tipo de alteração por lote (afastamento, horário, data de troca, observação, observação interna ou local previsto), com uma explicação curta de cada um.
-- Aviso ao lado do **Executar** de que ele mostra a prévia dos dias e colaboradores afetados, sem gravar nada.
-- Novos filtros por **Cargo** e por **Quadro de horário**, combináveis com os demais.
-- Os dias com afastamento ficam de fora, a menos que a opção seja marcada (com aviso de que o afastamento será apagado).
-- Correção: ao executar, somente os colaboradores exibidos na pré-visualização recebem a alteração. Antes, com filtro por estabelecimento, departamento, setor ou seção (sem escolher colaboradores), o lançamento ia para todos os colaboradores do período.
+### Objetivo
 
-- Filtros agrupados, tipo de alteração único e aviso da prévia:
+Fix: [#x](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/x)
 
-![image](imagens/cloud_pr2947_imagem1.png)
+Impedir que o mesmo mês de um colaborador (e o mesmo período) seja gravado duas vezes no banco. Isso prepara o cálculo mensal para rodar vários colaboradores ao mesmo tempo, sem que dois cálculos criem a mesma linha.
 
-- Ao trocar o tipo, os campos mudam conforme a escolha:
+### Alterações
 
-![image](imagens/cloud_pr2947_imagem2.png)
+- 🐛 Linhas repetidas do mês do colaborador, do mês por centro de custo e do período são removidas na atualização do banco. De cada grupo repetido fica uma só: a primeira cadastrada, que é a mesma que o cálculo já usa. Nos bancos locais, só um tenant tinha repetição (na tabela de centro de custo, com linhas idênticas); os outros 84 não tinham nenhuma.
+- ✨ O banco passa a não aceitar de novo o mesmo mês do colaborador, o mesmo mês por centro de custo nem o mesmo período (mesmo mês e mesmo estabelecimento, contando "sem estabelecimento" como um só). Registros excluídos não contam.
+- ✨ Ao cadastrar um período que já existe, ou ao mudar o mês ou o estabelecimento de um período para os de outro que já existe, o sistema avisa com uma mensagem clara ("Já existe o período 10/2026 (estab. 2).") em vez de um erro genérico. Alterar outros dados de um período continua livre, mesmo em bancos que ainda tenham períodos repetidos antigos.
+- ♻ A atualização do banco espera no máximo 10 segundos para conseguir reservar as tabelas. Se houver cálculo gravando naquela hora, ela desiste sem alterar nada e tenta de novo na próxima execução. O banco que já tinha uma regra equivalente não recebe uma segunda.
+- ♻ Durante a atualização do banco, cada comando pode levar até 600 segundos (antes 30), porque a limpeza num tenant grande pode passar de 30 segundos.
 
-- Filtrando por cargo e quadro de horário:
+### PR's referências
 
-![image](imagens/cloud_pr2962_imagem2.png)
+- simixsistemas/Simix.Ponto.Calc#528
 
-## Cálculo, banco de horas e períodos
+### Demonstração
 
-### Mudança do dia de início dos períodos
+A única mudança visível é a mensagem ao tentar cadastrar um período repetido, no lugar do erro genérico.
 
-A mudança do dia de início dos períodos, que antes dava erro sempre que o banco de horas precisava de ajuste, agora é salva e ajusta o banco de horas automaticamente. A operação é exclusiva do suporte Símix, como no sistema desktop.
+> 📎 arrastar aqui: print da mensagem "Já existe o período…" ao cadastrar um período repetido
 
-- Os períodos do mês escolhido em diante recebem o novo dia, e os anteriores recebem o dia anterior informado.
-- O banco de horas é ajustado a partir do mês anterior ao escolhido e recalculado em segundo plano, alguns segundos depois de salvar.
-- Repetir a mesma mudança não altera mais nada; se o ajuste falhar no meio, a tela pede para repetir a operação, que completa o ajuste.
-- Acesso restrito: é preciso ter a nova permissão **Ferramentas > Mudar o dia de início dos períodos** e ser do suporte Símix. Novo item em **Avançado > Suporte > Dia de início do período** e card na tela de **Suporte**.
-- Validações do desktop: dias de 1 a 28, o dia 15 não é aceito como dia novo, dia anterior obrigatório, dia atual exibido na tela e mês padrão igual ao mês atual do cartão. Antes de salvar, uma confirmação explica o que vai acontecer.
-- Limites mantidos do desktop: colaboradores demitidos ficam com os saldos antigos, no mês atual o saldo conta até ontem e os cartões dos meses alterados não são recalculados.
-- No mês da troca do dia de início, o saldo do banco de horas na Manutenção volta a considerar os lançamentos dos meses anteriores.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Exemplo de mudança para o dia 21 a partir de 10/2026, com ajuste do banco de horas desde 09/2026:
 
-![image](imagens/cloud_pr2976_imagem1.png)
+## ✨ Melhorias gerais no registro, painel de filtros e ações rápidas [#2979](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2979)
 
-- Card em Suporte, visível para o suporte Símix com a permissão:
+### Objetivo
 
-![image](imagens/cloud_pr2976_imagem2.png)
+Melhorias gerais no registro de ponto, no painel de filtros das telas e nas Ações rápidas do colaborador.
 
-- Tela com o dia de início atual e o mês atual do cartão já preenchido:
+### Alterações
+- ✨ Depois de registrar o ponto pela web, aparece uma animação de confirmação acima da mensagem "Registro às HH:mm" (só quando o registro dá certo; quem prefere menos movimento no sistema vê direto o símbolo final)
+- ♻ Painel de filtros: cada campo ganhou o ícone do seu cadastro, para achar o campo mais rápido
+- ♻ Painel de filtros: o botão igual/diferente ficou do mesmo tamanho do campo e alinhado com ele
+- ♻ Painel de filtros: menos espaço em branco abaixo do título "Filtros"
+- ♻ Painel de filtros: "Tipo de turno" passou a ser o último campo
+- ♻ Mais espaço entre o botão de filtro e o controle anterior na barra das telas
+- ♻ Ações rápidas: "Adicionar outro colaborador" e "Feedback" ficaram no mesmo estilo e menores, em uma linha só
+- ♻ Manutenção: o check "Inconsistências" vem desmarcado para quem nunca mexeu nele (quem marcou continua com a escolha salva)
+- ♻ Ações rápidas: os equipamentos oferecidos para o colaborador agora são os ativos sem estabelecimento ou do mesmo estabelecimento dele (verificação mais simples e mais rápida)
 
-![image](imagens/cloud_pr2976_imagem3.png)
+### Demonstração
 
-- O dia 15 é recusado como dia novo:
+![image](imagens/cloud_pr2979_imagem1.png)
+Registro feito: a animação começa com o anel e desenha o símbolo de confirmação.
 
-![image](imagens/cloud_pr2976_imagem4.png)
+![image](imagens/cloud_pr2979_imagem2.png)
+Fim da animação, acima da mensagem do registro.
 
-- Dias acima de 28 são recusados:
+![image](imagens/cloud_pr2979_imagem3.png)
+Painel de filtros com ícone por campo, botão igual/diferente alinhado (um deles como "diferente"), tipo de turno por último e o botão de filtro afastado do botão anterior.
 
-![image](imagens/cloud_pr2976_imagem5.png)
+![image](imagens/cloud_pr2979_imagem4.png)
+Ações rápidas depois da admissão: "Adicionar outro colaborador" e "Feedback" no mesmo estilo, menores.
 
-- O dia anterior é obrigatório:
+![image](imagens/cloud_pr2979_imagem5.png)
+Manutenção aberta pela primeira vez: "Inconsistências" desmarcado.
 
-![image](imagens/cloud_pr2976_imagem6.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Confirmação explicando o que será alterado:
 
-![image](imagens/cloud_pr2976_imagem7.png)
 
-- Aviso após salvar, com a tela recarregada no novo dia:
 
-![image](imagens/cloud_pr2976_imagem8.png)
+## ✨ Melhorias nas Ações rápidas do colaborador [#2977](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2977)
 
-- Recálculo do banco de horas em segundo plano no monitor de tarefas (beta):
+### Objetivo
 
-![image](imagens/cloud_pr2976_imagem9.png)
+Melhorias na janela de Ações rápidas do colaborador (admissão e desligamento).
 
-- Sem a permissão, o card não aparece:
+### Alterações
+- ✨ O topo mostra o motivo, "Admissão de Fulano" ou "Desligamento de Fulano", em cor normal
+- ✨ Novo botão Feedback, que abre o mesmo formulário de feedback do sistema
+- ✨ "Enviar para equipamento" lista só os equipamentos que aceitam o colaborador, pela mesma regra do envio (estabelecimento, grupo, cargo). Os nomes aparecem abaixo do botão, e a mensagem "colaborador não pertence ao estabelecimento do coletor" deixa de aparecer
+- ♻ Ícone novo no envio ao equipamento; sai o botão "Abrir todos os documentos do colaborador"
+- 🐛 Imprimir espelhos no desligamento agora gera os meses da admissão ao desligamento e abre direto, num PDF só, como a ficha cadastral
+- ♻ Na consulta da manutenção, o nome do colaborador abre a Manutenção na mesma janela
 
-![image](imagens/cloud_pr2976_imagem10.png)
+### Demonstração
 
-- Acesso direto à tela sem permissão: nada é mostrado nem gravado:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2976_imagem11.png)
 
-### Horários e regras de cálculo
+## ✨ Novo layout de turnos Informativo na Manutenção [#2968](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2968)
 
-- **Considerar extras após as** (horário por dia): a opção vem antes do horário, que só é liberado com a opção marcada e passa a ser obrigatório. Uma dica explica a regra: o que for trabalhado depois do horário vira extra, mesmo sem completar as horas previstas, e o que faltou antes dele fica como falta. A regra passa a valer também nos quadros que separam as extras noturnas (ex.: 3h previstas, extras após as 12:00 e trabalho das 10:00 às 16:00 resultam em 04:00 de extras e 01:00 de falta).
-- Nova opção **Descontar DSR em data de feriado original** na guia **DSR** do horário: o feriado trocado para outro dia só é descontado se houver falta na semana da data original do feriado, e não na semana em que a folga é gozada. As demais regras do desconto continuam valendo para a semana original, inclusive na virada do mês. A explicação do total "Horas desconto rep.rem." mostra a regra. Desligada por padrão.
-- Na guia **Extras 1**, as faixas 1 e 2 de **Dias úteis não previstos** ganharam a opção **BH** para lançar essas extras no banco de horas. A indicação "(BH)" ao lado das extras só aparece quando o quadro de horário usa banco de horas.
-- Os totais do mês passam a separar as horas extras de cada percentual em **diurnas** e **noturnas**, inclusive percentuais sem coluna própria (ex.: 101%). O total de extras do mês continua o mesmo; para meses já calculados, a separação aparece depois de recalcular.
+### Objetivo
 
-- A opção "Considerar extras após as" no cadastro de horário por dia:
+Fix: [#2935](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2935)
 
-![image](imagens/cloud_pr2961_imagem1.png)
+### Alterações
+- ✨ Na Manutenção do cartão, o menu de layout (Ponto/Livre/Motorista) ganhou o item **Informativo**, que marca e desmarca a exibição das marcações informativas (catraca, rastreador, logs) numa linha abaixo das marcações de cada dia, para conferir com o que foi registrado
+- ✨ A linha do informativo pode ser editada como o layout Livre (entrada e saída por turno, adicionar turno), sem pedir justificativa e sem gerar inconsistências; o que é alterado nela não muda o cálculo do dia
+- ✨ Cadastro do coletor: novo turno preferencial "Gravar como informativo", que leva as marcações do equipamento só para a linha do informativo
+- ♻ Conferências, contagem de dispositivos, refeições e o monitor de registros deixam o informativo de fora, para não somar como jornada
+- ♻ Solução de problemas da Manutenção não sugere reimportar as marcações do informativo
 
-- A dica do campo:
+### PR's referências
+- simixsistemas/Simix.Ponto.Calc#526
 
-![image](imagens/cloud_pr2961_imagem2.png)
+### Demonstração
 
-- Resultado na manutenção (3h previstas, extras após as 12:00, trabalho das 10:00 às 16:00): 04:00 de extras e 01:00 de falta:
+Menu de layout da Manutenção com o novo item **Informativo**, que liga a linha abaixo das marcações de cada dia:
 
-![image](imagens/cloud_pr2961_imagem3.png)
+![image](imagens/cloud_pr2968_imagem1.png)
 
-![image](imagens/calc_pr524_imagem1.png)
+Manutenção com o informativo ligado: a linha aparece abaixo das marcações do dia. No dia 02/09 a marcação veio de um coletor "Gravar como informativo", e o `?` indica a saída que falta. No domingo 06/09 o informativo não gera inconsistência. Totais e saldos do dia continuam iguais:
 
-- A opção no quadro Desconto DSR do horário:
+![image](imagens/cloud_pr2968_imagem2.png)
 
-![image](imagens/cloud_pr2890_imagem1.png)
+Edição do dia: a seção Informativo funciona como o layout Livre, com entrada e saída por turno e o **+** para adicionar turno, sem justificativa:
 
-- Feriado trocado com falta na semana: o desconto passa a considerar só o domingo, e a explicação traz a regra:
+![image](imagens/cloud_pr2968_imagem3.png)
 
-![image](imagens/cloud_pr2890_imagem2.png)
+Cadastro do coletor (aba Avançado): nova opção **Gravar como informativo** no turno preferencial:
 
-- Faixas 1 e 2 de "Dias úteis não previstos" com a opção BH:
+![image](imagens/cloud_pr2968_imagem4.png)
 
-![image](imagens/cloud_pr2799_imagem1.png)
+Ajuda do campo explicando a opção:
 
-- Com o banco de horas desligado no horário, as extras aparecem sem "(BH)":
+![image](imagens/cloud_pr2968_imagem5.png)
 
-![image](imagens/cloud_pr2799_imagem2.png)
 
-![image](imagens/calc_pr509_imagem1.png)
+## ✨ Totais do filtro e notas do colaborador na Manutenção [#2965](https://github.com/simixsistemas/Simix.Ponto.Cloud/pull/2965)
 
-### Prêmios
+### Objetivo
 
-- Os motivos de perda dos prêmios ficaram mais claros: mostram o nome do campo como aparece na tela, o que o colaborador realmente fez e o limite da regra (ex.: "Dias de faltas: 2 (máximo 0)", "Horas de faltas: 00:36 (máximo 00:30)").
-- Horas em HH:mm (antes "29,333333333333332"); datas, listas de códigos e siglas de afastamento também ficam legíveis.
-- Só a condição que fez o colaborador perder o prêmio vira motivo, sem "Fora dos critérios" extras. O motivo já gravado só muda quando o mês for recalculado.
+Fix: [#2957](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2957)
 
-- Antes: nome interno do campo e motivo de horas sem valor:
+### Alterações
+- ✨ Notas do colaborador de volta na Manutenção: ícone ao lado do mês, com a quantidade de notas. A nota é gravada no mural de notas, na nova opção "Manutenção", e fica só para aquele colaborador; ao abrir o colaborador de novo, as notas voltam
+- ✨ Notas do mural que valem para mais pessoas aparecem só para leitura (excluir pela Manutenção não apaga a nota de todos). O ícone aparece para quem tem a permissão do mural de notas
+- 🐛 Totais do filtro selecionado: Duplicar e Remover voltaram a aparecer no menu "Mais" e funcionam; a cópia duplicada fica marcada como "Manter"
+- 🐛 Totais do filtro: Copiar copia o filtro, os totais e a observação do grupo; o botão da seção copia todos os grupos, um por linha
+- ♻ Totais do filtro: removidos os botões "+" que não faziam nada
+- 🐛 Grade de Totais: Copiar copia os totais visíveis (respeita a pesquisa), prontos para colar em planilha; removido o menu que só tinha um Copiar sem função
 
-![image](imagens/calc_pr511_imagem1.png)
+### Demonstração
 
-- Depois do recálculo: descrição do campo, valor realizado e limite:
+Notas do colaborador, gravadas no mural com a rotina Manutenção:
 
-![image](imagens/calc_pr511_imagem2.png)
+![image](imagens/cloud_pr2965_imagem1.png)
 
-- Antes: horas em decimal e nomes internos dos campos:
+Totais do filtro com um grupo mantido (Seg a Sex, com observação) e o filtro atual (Sáb e Dom):
 
-![image](imagens/calc_pr511_imagem3.png)
+![image](imagens/cloud_pr2965_imagem2.png)
 
-- Depois do recálculo: horas em HH:mm e siglas de afastamento consideradas:
+Menu "Mais" do grupo com Duplicar e Remover:
 
-![image](imagens/calc_pr511_imagem4.png)
+![image](imagens/cloud_pr2965_imagem3.png)
 
-### Outros ajustes no cálculo
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Reimportar registros não trava mais a Manutenção quando um turno termina exatamente no horário em que começa o adicional noturno, e o dia passa a apurar o adicional corretamente.
-- Na exportação da folha e no cálculo de dados, cada colaborador passa a usar o período do próprio estabelecimento: a troca do dia de início vale só para os estabelecimentos que trocaram. Um período excluído na tela de **Períodos** deixa de valer no cálculo (antes podia gerar faltas em dias do mês seguinte).
-- Ao replicar os dados mensais de um colaborador para os meses seguintes, o cálculo vai no máximo até o mês seguinte ao atual; antes podia levar horas calculando meses futuros vindos da migração.
-- Dia com situação lançada na Manutenção (ex.: "EXTRA") não interrompe mais o **Calcular dados** dos demais colaboradores, e a situação marcada para totalizar conta um dia por ocorrência.
-- O saldo que o colaborador vê no painel e na consulta do ponto passa a ser o mesmo da Manutenção, respeitando **Considerar período atual até** (antes o dia de hoje podia entrar como falta). Saldos já gravados se corrigem no próximo cálculo automático.
-- Ao salvar o colaborador, o estabelecimento atual do cadastro passa a ser gravado, como no PcPonto, e é usado pelo cálculo quando o mês não tem estabelecimento atual.
 
-- Reimportação do dia na Manutenção, com as opções padrão:
 
-![image](imagens/calc_pr499_imagem1.png)
+# Atualizacao - Sem_Iteracao 🎉
 
-- Antes: a tela ficava travada em "Reimportando registros..." com os botões desabilitados:
+### **Esta atualizacao atende a tickets de clientes**
 
-![image](imagens/calc_pr499_imagem2.png)
+# Documentacao 📝
 
-- Depois: a reimportação termina e mostra o aviso "1 dia(s) alterado(s)":
+## 🐛 Campo de hora recusa texto fora do formato HH:MM [#536](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/536)
 
-![image](imagens/calc_pr499_imagem3.png)
+### Objetivo
 
-- Colaboradores com situação lançada no dia agora calculados normalmente:
+Erros do log de tarefas de 20/10 (`/admin/tarefalogs`): na CSCTur, um horário gravado com `2030]` na 2ª entrada de quinta impedia o cartão de carregar ("Erro ao subtrair horas") para todos os colaboradores do horário.
 
-![image](imagens/calc_pr525_imagem1.png)
+### Alterações
+- 🐛 O campo de hora do quadro de horário e da Manutenção só aceita hora no formato HH:MM. Antes, qualquer texto de 5 caracteres era aceito (`2030]`, `20300`, `20:75`); agora o campo fica vazio.
 
-![image](imagens/calc_pr525_imagem2.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3075
 
-- Manutenção do RH considerando até ontem e a consulta do ponto do colaborador com o mesmo saldo:
+### Demonstração
 
-![image](imagens/cloud_pr2758_imagem1.png)
+![image](imagens/calc_pr536_imagem1.png)
+Digitando `1330]` na 2ª entrada de quinta.
 
-![image](imagens/cloud_pr2758_imagem2.png)
+![image](imagens/calc_pr536_imagem2.png)
+Ao sair do campo, a hora inválida não fica gravada.
 
-## Inconsistências, assistente e pendências
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-### Assistente de fechamento renovado
 
-O assistente de fechamento ganhou visual novo e passa a mostrar os mesmos números da consulta de inconsistências.
 
-- Etapas numeradas, a etapa atual destacada e indicadores clicáveis (verdes quando zerados, atestados em vermelho), com atalhos num card ao lado.
-- As inconsistências do assistente abrem a mesma tabela da consulta de inconsistências, com os mesmos números, respeitando os filtros do assistente e o filtro global. O botão de abrir da linha leva à **Manutenção** já filtrada só com quem tem inconsistência.
-- Novo chip **Registros faltantes** em **Assistente > Fechamento > Manutenções**, que abre a lista desses dias. Os chips de inconsistências mostram o total do mês (antes, no máximo 20).
-- O botão **Sincronizar** abre direto a sincronização dos coletores, e sai o aviso fixo "Todos comunicando". No ícone de sincronização da barra do topo, o título do cartão **Coletores** abre a sincronização e o resumo abre o painel de coletores.
-- **Gerar espelhos** volta a abrir a tela de espelhos com a janela de geração no período escolhido.
+## 🐛 Ajustes na exportação da folha de pagamento [#535](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/535)
 
-- Assistente de fechamento no visual novo:
+### Objetivo
 
-![image](imagens/cloud_pr2885_imagem3.png)
+Fix: [#3064](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3064)
 
-- Inconsistências do assistente na mesma tabela da consulta:
+### Alterações
+- 🐛 Estabelecimento sem código de folha preenchido não impede mais a exportação
+- 🐛 Layout com campo fixo em branco não dá mais erro ao exportar
+- 🐛 PIS/CPF em campo numérico inteiro sai completo, sem erro
+- O filtro de colaboradores dos layouts migrados do PcPonto passou a ser corrigido no banco (PRs abaixo), sem conversão a cada exportação
 
-![image](imagens/cloud_pr2885_imagem4.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3074
+- simixsistemas/Simix.Ponto.Migracao#37
 
-- Manutenção aberta pelo assistente, só com os colaboradores com inconsistência:
+### Demonstração
 
-![image](imagens/cloud_pr2885_imagem5.png)
+Regressão em 12 bancos locais (até 8 layouts por banco, último período calculado), comparando o TXT gerado antes e depois, com o filtro da Sasset já corrigido pelo ajuste do Cloud:
 
-- Cartão Coletores: o título abre a sincronização e o resumo abre o painel:
+| Resultado | Exportações |
+|---|---:|
+| Arquivo idêntico ao de antes | 19 |
+| Antes com erro, agora exporta | 11 |
+| Erro de ambiente (banco local sem a view, igual antes) | 1 |
 
-![image](imagens/cloud_pr2885_imagem6.png)
+As 11 que passaram a exportar: Sasset (filtro do PcPonto corrigido no banco), Indio (campo fixo em branco + PIS) e 9 layouts de dois bancos de teste com estabelecimento sem código de folha.
 
-![image](imagens/cloud_pr2885_imagem7.png)
 
-- Chip "Registros faltantes" ao lado das inconsistências, com o total do mês:
+## 🐛 Extras do feriado trabalhado à noite [#534](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/534)
 
-![image](imagens/cloud_pr2815_imagem4.png)
+### Objetivo
 
-- Lista aberta pelo chip, com os dias com marcação faltando:
+Feriado trabalhado à noite gerava como hora extra todas as horas noturnas trabalhadas, mesmo quando o horário prevê horas no feriado. Caso relatado na Barcellos: colaborador do horário noturno trabalhou 8:58 no feriado de 07/09, com 7:20 previstas, e o cartão mostrava 4:58 de extras em vez de 1:38.
 
-![image](imagens/cloud_pr2815_imagem5.png)
+Acontece em horários com "Feriados como data de troca" e horas de domingo/feriado preenchidas (ex.: 07:20), quando o feriado é trabalhado sem data de troca.
 
-- Gerar espelhos pelo assistente abrindo a tela de espelhos:
+### Alterações
+- 🐛 Só o que passa das horas de domingo/feriado vira hora extra. No exemplo: 1:38 em vez de 4:58 no dia 07/09 e 1:29 em vez de 5:00 no dia 14/09
+- 🐛 Quem trabalha no feriado até as horas de domingo/feriado não fica mais com horas extras noturnas
+- 🐛 Com a opção "Ignorar extras das horas de domingo", as horas noturnas também deixam de virar extra
+- O adicional noturno não muda, e quem trabalha de dia no feriado continua com o mesmo cálculo
 
-![image](imagens/cloud_pr2871_imagem3.png)
+### Demonstração
 
-### Consulta de inconsistências
+Antes: 07/09 com +04:58 e 14/09 com +05:00, e 9:58 de extras noturnas no mês (4:00 a 50% e 5:58 a 100%).
 
-- Cada inconsistência aparece na cor configurada na regra, inclusive no quadro de dias do mês e nos cards de tipos (cores trazidas do sistema antigo também são reconhecidas).
-- Novo filtro por **Grupo** (Leve, Moderada, Grave): no dia, mostra só os dias com inconsistência do grupo; no mês, só os colaboradores com inconsistência do grupo.
-- A consulta mostra a descrição real de cada inconsistência do dia (ex.: "Horas de atraso 00:12") no lugar do nome da regra; quando a mesma regra ocorre mais de uma vez no dia, cada ocorrência aparece com o seu valor. "Comprovantes do dia" mostra os comprovantes do dia da linha.
-- O filtro **Registros faltantes** mostra só os dias com marcação sem par (entrada sem saída), incluindo lanche incompleto; faltas, feriados e afastamentos sem marcação ficam de fora.
-- O botão de logs no cadastro das **Regras de inconsistência** voltou a abrir o histórico sem erro.
-- A tela de Inconsistências volta a carregar em menos de 1 segundo (antes podia levar de 11 a 20 segundos por consulta).
+![image](imagens/calc_pr534_imagem1.png)
 
-- Por mês, cada tipo na cor da regra:
+Depois: 07/09 com +01:38 e 14/09 com +01:29, e 3:07 de extras noturnas a 50% no mês.
 
-![image](imagens/cloud_pr2739_imagem1.png)
+![image](imagens/calc_pr534_imagem2.png)
 
-- Por mês filtrado pelo grupo Grave:
 
-![image](imagens/cloud_pr2739_imagem2.png)
+## ✨ Colaborador isento de registro no cálculo [#533](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/533)
 
-- Quadro com os dias do mês na cor da regra:
+### Objetivo
 
-![image](imagens/cloud_pr2739_imagem3.png)
+Fix: [#3045](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3045)
 
-- Consulta do dia com os nomes na cor da regra:
+### Alterações
+- ✨ Colaborador com período de isenção de registro (data de início e, opcionalmente, de fim no cadastro): nos dias do período o cálculo não conta falta, horas faltantes nem atraso, e o desconto de DSR por falta deixa de acontecer
+- ✨ Os dias isentos não geram inconsistência; as que já existiam para esses dias são apagadas no próximo cálculo
+- ✨ Marcações e horas extras continuam valendo para quem registrar mesmo isento
+- ✨ O dia isento aparece como "Isento de registro" no afastamento
+- Banco ainda sem as colunas novas calcula como antes
 
-![image](imagens/cloud_pr2739_imagem4.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3050
 
-- Consulta do dia filtrada pelo grupo Grave:
+### Demonstração
 
-![image](imagens/cloud_pr2739_imagem5.png)
+Testes novos em `IsentoRegistro` (banco facta-local): dia sem marcações vira falta e inconsistência sem a isenção, e deixa de ser com ela; fora do período o cálculo é o de sempre.
 
-- Logs da regra "Abaixo de 11h de descanso" abrindo sem erro:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2794_imagem1.png)
 
-- Consulta com a descrição de cada inconsistência do dia:
+## ✨ Marcador, relevância e categoria nos totais [#532](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/532)
 
-![image](imagens/cloud_pr2794_imagem2.png)
+### Objetivo
 
-### Regras de inconsistência no cálculo
+Totais da Manutenção mais fáceis de conferir: marcador e relevância configuráveis no layout de totais do horário, e categoria e código da folha em cada total.
 
-- Feriado não trabalhado deixa de aparecer como "0 Feriados seguidos"; a regra "Feriados seguidos trabalhados" passa a exigir Qtd Min. ou Qtd Max.
-- Interjornada no horário noturno: a madrugada passa a contar no dia em que foi registrada.
-- Horários com intervalo atravessando a meia-noite (ex.: 20:00–22:00 e 02:00–07:30) mantêm as marcações nos turnos certos, sem gerar atrasos indevidos. A primeira marcação do dia não cai mais na saída de um turno quando o colaborador chega mais de 1h atrasado.
-- Dias já gravados com turnos deslocados precisam ser reimportados pela manutenção; a interjornada se corrige recalculando.
-- O **Monitor de registros** volta a mostrar cada inconsistência no turno em que aconteceu; os dias já calculados se acertam ao serem recalculados.
+### Alterações
+- ✨ Cada total tem um marcador (vermelho, azul ou verde), configurado no layout de totais do horário
+- ✨ A relevância do total (Informativo, Normal, Alta) também pode ser definida no layout; vazio mantém a do cálculo
+- ✨ Os totais calculados passam a informar a categoria (trabalhadas, saldo, extras, faltas, prêmio, afastamento…) e, nos prêmios e campos customizados, o código da folha
+- 🐛 Item do layout com visibilidade "Nunca" voltava a aparecer quando vinha depois de um item visível
+- 🐛 Total criado pelo layout não respeitava a ordem nem a visibilidade definidas nele
 
-### Pendências e dashboards
+Depende das colunas novas do layout de totais (migration do PR do Cloud): o banco precisa ser migrado antes desta versão da Calc entrar em uso.
 
-- O widget **Registros faltantes** do gerencial mostra todo dia com marcação faltando, mesmo quando há outra inconsistência no mesmo dia.
-- O painel de **Pendências** mostra a foto do colaborador (ou as iniciais), respeitando o "Ofuscar dados", e as solicitações do mesmo período das listas de Manutenção do ponto e de afastamentos.
-- Aprovar marcação voltou a funcionar em bancos criados recentemente. A observação da solicitação de afastamento passa a ser salva, e ao reprovar uma solicitação fica registrado quem reprovou.
-- Na Manutenção do ponto, a quantidade no rodapé da lista considera só o período escolhido.
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3030
 
-- Antes: só aparecia o dia de falta:
+### Demonstração
 
-![image](imagens/cloud_pr2902_imagem1.png)
+As telas estão no PR do Cloud.
 
-- Depois: os dias com marcação faltando aparecem, com as outras inconsistências na mesma descrição:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2902_imagem2.png)
 
-- Foto do colaborador no painel de Pendências:
+## ✨ Processos: condições das ações, layout por tipo e vários meses [#531](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/531)
 
-![image](imagens/cloud_pr2887_imagem4.png)
+### Objetivo
 
-## Espelho Ponto e Folha de Pagamento
+Fix: [simixsistemas/Simix.Ponto.Cloud#1104](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/1104)
 
-### Exportação para a folha
+### Alterações
+- 🐛 As condições das ações do processo passam a ser conferidas antes de alterar o dia, o turno ou a marcação (antes a ação alterava tudo, sem olhar as condições)
+- 🐛 O layout salvo do processo volta com o tipo de cada ação (dia, turno ou marcação); antes a ação lida do layout não fazia nada
+- ✨ Valores digitados na tela (texto, número com vírgula, data, sim/não) são convertidos para o campo certo do cartão
+- ✨ Execução por mais de um mês (período inicial e final) e aviso quando o processo para no limite de dias ou de cartões
+- 🐛 O limite de cartões alterados usava o limite de dias; ação inativa não é mais executada
+- ♻ Filtro de colaboradores por lista e texto com aspas escapadas
+- ♻ A ação de marcação só age sobre marcações existentes
 
-- **Baixar todos (.zip)**: todos os arquivos gerados na exportação num arquivo só.
-- **Visualizar**: abre os arquivos numa nova página, um por guia (tabela, txt, pdf e html); cada arquivo da lista também pode ser visualizado sozinho. Quando o layout separa os arquivos por estabelecimento, a guia mostra o código do estabelecimento.
-- Com colaboradores filtrados e a opção **Incluir espelhos de ponto (PDF)**, os espelhos são gerados só para os colaboradores escolhidos, e a exportação termina bem mais rápido.
-- A lista de colaboradores segue o **período escolhido na tela**, e não mais o mês de hoje: aparecem os ativos e os demitidos a partir do mês anterior ao período. Não é mais preciso remover a data de demissão para conseguir exportar.
-- O PDF de espelhos da exportação não traz mais colaboradores demitidos, mesmo que o espelho tenha sido gerado antes de lançar a demissão.
-- As datas de falta voltam a sair no arquivo, uma linha por data, quando o campo **Data de Falta** ou **Data de Falta (Total de dias)** está no layout como evento; campos de data com código de evento não são mais enviados em duplicidade.
-- Novo formato **ddMMyyyy** (ex.: 01092026) para campos de data, de período e das datas de falta/afastamento no layout.
-- Sessão aberta pelo histórico: download, zip e envio por e-mail do PDF dos espelhos voltaram a funcionar.
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3029
 
-- Arquivos abertos numa nova página, uma guia por arquivo:
+### Demonstração
 
-![image](imagens/cloud_pr2742_imagem1.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Botões na lista de arquivos gerados:
 
-![image](imagens/cloud_pr2742_imagem2.png)
+## ✨🐛 Regra de intervalo pelo registro e regras excluídas fora do cálculo [#530](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/530)
 
-- Guia da tabela, uma coluna por campo do layout:
+### Objetivo
 
-![image](imagens/cloud_pr2742_imagem3.png)
+> 📎 arrastar aqui: relato.png (relato do suporte: "Regra de inconsistência HrIntervalo - Barcellos")
 
-- Guia do txt enviado para o sistema da folha:
+### Alterações
+- ✨ Regra de **Horas de intervalo** com a opção "Usar o intervalo registrado": mede o intervalo entre a saída de um turno e a entrada do seguinte, mesmo fora do intervalo previsto no horário, e respeita o filtro de turnos. Sem a opção, o cálculo continua igual.
+- 🐛 Regras de inconsistência excluídas deixam de ser verificadas no cálculo (antes continuavam gerando inconsistências depois de excluídas).
 
-![image](imagens/cloud_pr2742_imagem4.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3005
 
-- Guia de PDF no visualizador do navegador:
+### Demonstração
 
-![image](imagens/cloud_pr2742_imagem5.png)
+![image](imagens/calc_pr530_imagem1.png)
+Barcellos (banco local) recalculado com a opção ligada: os intervalos feitos fora do previsto passam a aparecer.
 
-- Guia do html, com o txt formatado linha a linha:
 
-![image](imagens/cloud_pr2742_imagem6.png)
 
-- Exportação filtrando um colaborador, com espelhos em PDF:
 
-![image](imagens/cloud_pr2769_imagem3.png)
+## 🐛 Faixas de extras do horário por dia no total do mês [#529](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/529)
 
-- Período de setembro: os demitidos em agosto e setembro aparecem na busca:
+### Objetivo
 
-![image](imagens/cloud_pr2816_imagem1.png)
+Horas extras de uma faixa que só existe no horário por dia (ex.: 150% no feriado) apareciam no dia e na manutenção, mas ficavam de fora do total do mês.
 
-- Período de novembro: os mesmos colaboradores já não aparecem:
+### Alterações
+- 🐛 O total de extras do mês passa a incluir as faixas configuradas só no horário por dia: elas entram nas extras por percentual do mês, no total de horas extras e na consulta de extras por percentual (`VPontoCalcExtras`). Caso da Sulgraffmed: colaborador com 08:58 a 150% no feriado de 07/09/2026 tinha 34:22 de extras no mês, e agora tem 43:20 (com a faixa de 150%)
+- Teste com o cartão desse caso, conferindo que as horas da faixa no dia chegam ao total do mês
 
-![image](imagens/cloud_pr2816_imagem2.png)
+### Demonstração
 
-- Antes: o PDF incluía o espelho de um colaborador já demitido, com falta em todos os dias:
+Dashboard gerencial de extras da Sulgraffmed em 09/2026, depois do recálculo: os colaboradores que trabalharam no feriado de 07/09 passam a ter a faixa de 150% no total do mês.
 
-![image](imagens/cloud_pr2756_imagem1.png)
+![image](imagens/calc_pr529_imagem1.png)
 
-- Depois: só os espelhos dos colaboradores ativos:
+Conferência por dia de um desses colaboradores: as 08:58 a 150% do dia 07/09 são as mesmas que agora aparecem no mês.
 
-![image](imagens/cloud_pr2756_imagem2.png)
+![image](imagens/calc_pr529_imagem2.png)
 
-- Antes: na exportação só saíam os demais eventos, sem nenhuma linha de falta:
 
-![image](imagens/calc_pr505_imagem1.png)
+## Fase 5b: pré-carga da coleção, gravação do cache em lote e cálculo em paralelo [#528](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/528)
 
-- Depois: cada colaborador passa a ter uma linha do evento de falta por data:
+`async-fase5b` → `dev` (base: `dev` `e900da6`, 12.7.3) · lib `12.7.3` → `12.8.0`
 
-![image](imagens/calc_pr505_imagem2.png)
+### Objetivo
 
-- Campo do tipo Período com o formato ddMMyyyy:
+Fase 5b do design em `docs/superpowers/specs/2026-09-12-async-e-performance-design.md` (seções 4.6, 5 e 6): tirar da coleção (`PontoCalcs`) os comandos SQL repetidos por funcionário e a espera de I/O, sem mudar nenhum resultado de cálculo. Depois da 5a (CPU do cálculo), o `medir` com banco local mostrava 41 a 48 comandos SQL por funcionário numa coleção (`Ponto`, `FuncMes`, `FuncHorarios`, `Periodos` e outros lidos uma vez por cartão), 101 comandos soltos no `SalvarCache` de um cartão e um laço estritamente sequencial.
 
-![image](imagens/cloud_pr2738_imagem1.png)
+Entram P8 (pré-carga por coleção, só da carga principal), P8b (`SalvarCache` em lote, uma transação por cartão), o desempate por `Id` nas consultas por cartão, as inserções tolerantes ao índice único e P9 (`PontoCalcs.GrauParalelismo`). Nenhuma API pública é removida, nenhum golden master é regravado, e o padrão é `GrauParalelismo = 1` (comportamento sequencial de sempre).
 
-### Espelhos
+### O que mudou por item
 
-- Data e hora da última geração do período em destaque no cabeçalho do **Espelho de ponto**.
-- Envio de espelhos por e-mail mais seguro: cada e-mail é registrado no momento do envio, evitando que uma falha no meio faça o envio se repetir para todos; espelho assinado ou já enviado não recebe o e-mail de novo; o envio não sai mais sem espelhos escolhidos.
-- O portal do colaborador não mostra mais os botões **Gerar** e **Enviar** para quem tem perfil de gestão (ali a lista é só dos próprios espelhos); gerar e enviar continuam na tela **Espelho do ponto**.
-- O histórico de e-mails ganhou a coluna **Enviado por**.
+| Item | Resumo | Commits |
+|---|---|---|
+| Medição (T1) | `medir` ganha `--paralelismo` e `--salvar-cache`, e conta os comandos por `DepoisCarregarCartaoAsync` (um por cartão). Versão 12.8.0 e plano da fase | `b0a32ef` |
+| Desempate por `Id` | `Id` no fim do `ORDER BY` das consultas por cartão de `Ponto`, `PontoTurnosEsp`, `FuncHorarios`, `PontoCalcLanc` e centros de custo, para a pré-carga (que lê todos os funcionários numa consulta) devolver a mesma ordem. Só muda o resultado quando há empate; nos 4 bancos de golden (kern, smx, recitires2, villatrentin), nenhum empate cai no mês de um golden | `16c4b65` |
+| P8: pré-carga (`PrecargaPeriodo`) | Montada pela coleção em **blocos de 50 funcionários** (constante), 12 consultas por bloco com `= ANY(ids)`: `Ponto` da janela e `Ponto` com as saídas (11 dias anteriores), `PontoTurnosEsp` da janela e com as saídas (11 dias anteriores), `FuncHorarios`, `PontoCalcLanc`, `FuncMes`, `FuncMesCC` (existência e linhas), `FuncionariosCC` (campos personalizados), `VFuncionarios` e `PontoCalcDia` da janela (de onde saem as inconsistências do dia anterior); mais 2 leituras de `SchemaCampos` pelo memo da conexão. `Periodos` não é consulta em lote: são memos da coleção. Imutável depois de montada, ordem sempre vinda do SQL (nenhuma ordenação em memória: `uuid` e collation 1252 ordenam diferente no .NET). Cada acessor só serve com a mesma conexão (ou do conjunto da coleção), no recorte, dentro da janela e com a tabela não descartada; senão devolve `Nothing` e o cartão roda a consulta de hoje. **Qualquer escrita descarta a tabela** (`InvalidarCachePorComando`), e o rollback descarta tudo. Vale com `ModoEvento` verdadeiro e falso (com verdadeiro, a pré-carga é solta ao fim do laço de `CarregarAsync`; com falso, no `Terminar`, porque o consumidor ainda percorre os cartões); não monta em `MaisDeUmMes`, fora do Postgres nem em `ManutencaoLoteAsync` | `ef90144`, `307cdf6`, `5eb0625`, `238f1f7` |
+| P8b: `SalvarCache` em lote | `SalvarCacheLote`: leitura dos `Id` existentes num comando, `DELETE` de inconsistências e totais, `UPDATE … FROM (VALUES …)` e `INSERT` de várias linhas em `PontoCalcDia`, `PontoCalcIncons`, `PontoCalc`, `PontoCalcPremio` e `PontoCalcTot`, **numa transação por cartão** (se já há transação do chamador, usa a dele; o rollback é assíncrono, fora do `Catch`). Func 12 de `meta-local`, 07/2026: `SalvarCache` de **101 para 4 comandos** (pior caso, com tudo misturado: 12); `Carregar` 55. O caminho por linha antigo continua no código | `42f8a7a`, `454f9c8` |
+| Inserções tolerantes | `InserirSeNaoExisteAsync` trata a violação de índice único (23505) como "já existe" em `FazInsertAnoMesAsync` (`FuncMes` e `FuncMesCC`) e no `INSERT` de `Periodos`, com `SAVEPOINT` quando há transação aberta (a transação não é abortada) e releitura. A lib funciona com ou sem o índice único, que chega pelo Cloud (PR do Cloud) | `31b71ac` |
+| P9: paralelismo | `PontoCalcs.GrauParalelismo` (padrão 1). Um produtor lê o `rcFunc` e entrega os cartões por um `Channel` limitado a N workers, cada um com **a sua conexão**, o seu `PontoLog` e o seu recordset de uma linha. Totais acumulados por worker e somados no fim (`Decimal`, exato); cancelamento e 1ª falha param os cartões que ainda não começaram, esperam os que começaram e sobem a exceção original. A pré-carga serve o conjunto de conexões da coleção, com descarte global e thread-safe, e cada bloco é solto quando o último cartão dele termina. O 1º bloco tem no máximo 3·N funcionários, para os workers começarem logo. Só vale com `ModoEvento = True`, sem assinante síncrono dos eventos por cartão, em conexão Postgres sem transação aberta e com `ConnectionString` não vazia (a conexão pode estar fechada ou abrir por comando, como no Cloud); senão roda sequencial. Corrigido na revisão: o memo por conexão é invalidado em todas as conexões da coleção, e uma segunda coleção na mesma conexão descarta a pré-carga da anterior | `eaa5928`, `17daa64` |
 
-- Última geração do período em destaque no espelho de ponto:
+### Números medidos (antes → depois, na mesma máquina e no mesmo dia, 2026-10-15)
 
-![image](imagens/cloud_pr2947_imagem3.png)
+Base `e900da6` (worktree temporária) e HEAD `17daa64`, 3 rodadas intercaladas, mediana; builds `--no-incremental`, Debug e Debug com `-p:Optimize=true`. Sem `--paralelismo`, o depois roda com `GrauParalelismo = 1`. A tabela completa (com mínimo e máximo, o mesmo processo e o paralelismo em Debug e otimizado) está na seção 2.4 do spec, "Depois da fase 5b".
 
-- Portal do colaborador com perfil de gestão: só os próprios espelhos, sem os botões de gerar e enviar:
+| Cenário | Debug | Otimizado |
+|---|---|---|
+| `medir smx-local 07/2026` (38 func.), tempo | 2,17 s (57 ms/func) → **1,57 s (41)** | 2,37 s (62) → **1,49 s (39)** |
+| idem, comandos | 1.566 (41,2/func) → **402 (10,6/func)** | idem |
+| idem `--sem-cache` | 2,25 s → **1,57 s** | 2,13 s → **1,48 s** |
+| kern `"CdFunc" <= 300` (48 func.), tempo | 3,62 s (75 ms/func) → **2,21 s (46)** | 3,35 s (70) → **2,30 s (48)** |
+| idem, comandos | 2.300 (47,9/func) → **308 (6,4/func)** | idem |
+| kern `"CdFunc" <= 1000` (126 func.), tempo | 9,04 s (72 ms/func) → **6,11 s (48)** | 9,07 s (72) → **7,01 s (56)** |
+| idem, comandos | 5.205 (41,3/func) → **747 (5,9/func)** | idem |
+| `medir 2 kern-local 06/2026 --repetir 3`, #1 / #3 | 487 → 507 ms / 63 → 62 ms | 497 → 501 ms / 60 → 60 ms |
+| idem, comandos | 62 / 33 / 33, **sem mudança** (a pré-carga é da coleção) | idem |
+| `SalvarCache`, meta func 12 (comandos) | 101 → **4** | |
 
-![image](imagens/cloud_pr2839_imagem1.png)
+Paralelismo (só no código final; razão contra o N = 1 do mesmo build):
 
-- Histórico de e-mails com a coluna "Enviado por":
+| Recorte | Processo novo, N = 2 / 4 / 8 (Debug) | Mesmo processo (`--repetir 4`), N = 2 / 4 / 8 (Debug) |
+|---|---|---|
+| kern ≤ 300 | 1,46× / **1,90×** / 1,70× | 2,04× / **3,89×** / 3,60× |
+| smx | 1,35× / 1,66× / 1,58× | 2,51× / 3,36× / 3,29× |
 
-![image](imagens/cloud_pr2839_imagem2.png)
+No build otimizado: kern ≤ 300, processo novo 1,61× / 2,06× / 2,08× e mesmo processo 1,66× / 3,48× / 3,91×.
 
-## Coletores (equipamentos de ponto)
+- **A meta de 2,5× com N = 4 em kern ≤ 300** é julgada num processo de longa duração (o caso do Cloud/Hangfire): 3,9× em Debug e 3,5× no otimizado. Num processo novo fica em 1,9× a 2,1×, porque cerca de 340 ms de preparo serial (JIT, primeiras conexões físicas, geração de `FuncMes`, `rcFunc` e cadastros) não paralelizam. Com GC de servidor, a Tarefa 7 mediu 2,1× (processo novo) e 3,7× (mesmo processo).
+- **Comandos com N > 1:** sobem alguns (memo por conexão frio em cada worker e uma montagem a mais do 1º bloco), para N = 2 / 4 / 8 (Debug). Processo novo: +33 / +58 / +116 em kern ≤ 300 e +29 / +62 / +103 em smx. Mesmo processo: +26 / +36 / +53 em kern ≤ 300 e +29 / +39 / +46 em smx.
+- **O ganho em tempo é menor que o em comandos**, porque o banco local tem latência ≈ 0 e o tempo já é quase todo CPU. Com banco remoto, cada comando a menos economiza uma ida e volta (estimativa para smx: 1.164 comandos a menos em 38 funcionários, ≈ 31 ms por funcionário a cada 1 ms de latência).
 
-- **Control iD**: ao enviar os cadastros, o cartão RFID vai junto para os colaboradores com **Permitir registro por RFID**, com o código convertido pela mesma regra do sistema antigo em todos os formatos de crachá (Rfid Control ID, Hexa Control ID, Wiegand, Hexadecimal ou padrão). Vale também para coletores sincronizados pelo agente local. Colaborador que já está no equipamento tem o cadastro atualizado, e quando o equipamento recusa o cadastro o motivo aparece na mensagem.
-- **Baixar AFD** (Coletor > Ferramentas) pede a data inicial: sem data, baixa o arquivo completo; com data, só as marcações a partir desse dia.
-- **Visualizador AFD**: filtro por faixa de horário em todos os dias (ex.: 02:00 a 05:00 para ver marcações de madrugada, inclusive faixas que atravessam a meia-noite) e download do arquivo completo ou só dos registros filtrados.
-- Menu de sincronização com atalho direto para **Importar AFD**.
-- Avisos comuns da sincronização (coletor sem conexão, PIS/CPF não encontrado, marcações inválidas) aparecem em amarelo, como aviso, e não mais em vermelho. O coletor com problema mostra "Atenção" no painel e nos logs, e a sincronização em que o coletor não respondeu termina como "concluída com avisos".
-- Coletor que responde na rede mas não aceita a conexão (por exemplo, com o site do equipamento aberto no navegador) mostra a orientação para tentar novamente em alguns minutos, em vez de um erro técnico.
-- Sincronizar pelo site não falha mais logo depois de o sistema ser iniciado, e quando o coletor não conecta a janela mostra o erro em vez de "Sincronização concluída com sucesso". Depois de uma falha de conexão, a sincronização seguinte não tenta mais o protocolo errado (HTTP/HTTPS).
-- **Agente local**: a sincronização em segundo plano não acusa mais "O agente não está conectado ao servidor" quando o agente está conectado; a mensagem de agente desconectado orienta a verificar se o serviço do agente está em execução.
-- Botão de "olho" para ver a senha do coletor no cadastro e no assistente, só para administradores.
+**Ressalva sobre a máquina.** Não estava ociosa: Visual Studio e VS Code abertos (ociosos), carga de CPU de cerca de 1 % antes de medir, nenhum `dotnet test` durante o `medir`. Os números absolutos valem para este dia e esta máquina; as medianas das 3 rodadas ficam a poucos por cento do mínimo e do máximo, exceto onde o intervalo está indicado no spec.
 
-- Menu do coletor em Ferramentas > Baixar AFD:
+### Como foi verificado
 
-![image](imagens/cloud_pr2731_imagem1.png)
+- **Golden masters** (kern ≤ 300, smx, recitires2, villatrentin, mais `CopiasGolden`, `MdHoraOraculo`, `MemoTotaisTurnos`, `ComparacaoOrdinal` e `Maiusculas`) com **diff zero** em todas as tarefas. Nunca rodei com `GOLDEN_ATUALIZAR`. Com a pré-carga ligada e com N = 1, 2, 4 e 8 (kern ≤ 300 e smx), blocos de 7 funcionários (6 trocas de bloco), `ModoEvento` falso, cancelamento, falha de um cartão e `MaisDeUmMes` iguais ao sequencial.
+- **Paridade de linhas** (`ParidadePrecargaTeste`): cada consulta da pré-carga contra a consulta por cartão (mesmo SQL, mesma conexão), por funcionário, comparando contagem, nomes e ordem das colunas, e o tipo .NET e o valor de cada célula. smx 41 func. / 7.204 linhas, kern ≤ 300 49 / 6.918, recitires2 80 / 14.573, villatrentin 34 / 2.793: **0 diferenças**. Mais `FuncMes`, `FuncMesCC`, campos personalizados, `VFuncionarios`, `Periodos` e inconsistências: 0 diferenças, e `FuncMesCC` com 0 `INSERT` e 0 consulta de origem.
+- **Paridade de gravação do `SalvarCache`** (`SalvarCacheLoteTeste`): o lote grava as mesmas linhas que o caminho por linha nas 5 tabelas, nos estados "como está", "sem linhas" e "misturado", em meta func 12 e nos 41 cartões de smx; duplicata atualiza a de menor `Id`; falha no meio (no último comando e no `UPDATE` dos dias) não grava nada do cartão; usa a transação do chamador.
+- **Paridade de gravação com N > 1, em cópias descartáveis** (`GravacaoParalelaTeste`): `CREATE DATABASE … TEMPLATE` de smx (apagada no `Finally`; os bancos originais não são tocados), com as linhas de `FuncMes`, `FuncMesCC` e `Periodos` do mês anterior removidas (geradas de novo pelos workers, com a corrida real), `SalvarCacheAsync` em cada cartão e uma falha forçada no `SalvarCache` de um cartão: o estado final das 8 tabelas com N = 4 é igual ao de N = 1. Lib com N = 4 e 8 contra uma cópia migrada pelo Cloud (índices únicos): 0 duplicatas.
+- **Testes de mutação e de falha:** invalidação (cada ponto de escrita descarta a tabela certa; rollback descarta tudo; a escrita em outra conexão do conjunto descarta em todas), troca de bloco, `Soltar` sem derrubar o bloco seguinte, 23505 com e sem transação, e que sem o `SAVEPOINT` o 23505 abortaria a transação (25P02).
+- **Revisões por tarefa** (a 3, a 5, a 7 e a 8 voltaram para correção e foram reaprovadas).
+- **Suíte completa** (Debug, bancos locais, HEAD `17daa64`): **648 resultados** (base de `dev`: 594). Na 2ª execução, **564 aprovados e 84 com falha, 0 ignorados**, em 26 min 7 s, e as 84 são **exatamente** as de `falhas-base.txt`: zero falha nova. A 1ª execução teve 563 aprovados e 85 falhas, as 84 mais `ParidadePrecargaTeste.FuncMesCCSemOrigemNaoInsereNemProcuraOrigem` (teste da 5b que compara a contagem global de `FuncMesCC` e disputou o `smx-local` com um teste anterior à 5b que gera meses futuros; passou na 2ª execução e isolado, ver "Limites conhecidos"). Os 54 resultados novos em relação à base passam.
 
-- Data vazia baixa o AFD completo:
+### Mudanças de resultado permitidas (lista fechada, Global Constraints)
 
-![image](imagens/cloud_pr2731_imagem2.png)
+Fora delas, o resultado é idêntico (golden com diff zero).
 
-- Com a data informada, só as marcações a partir dela:
+- **(a) Empate de ordem resolvido por `Id`** em `Ponto`, `PontoTurnosEsp`, `FuncHorarios`, `PontoCalcLanc` e nos centros de custo: só muda quando há dois registros empatados na chave da ordem, e o `Id` menor passa a vir primeiro. Medido: nenhum empate no mês do período dos 4 bancos de golden; em smx há 1 empate de `Ponto` e 1 de `PontoTurnosEsp` (com conteúdo diferente) na janela de um mês antes ou depois (06 ou 08/2026), fora do mês do golden, e o golden não muda.
+- **(b) `PontoCalcDia` duplicado (`CdFunc`, `Data`):** atualiza-se **a de menor `Id`** (decisão do usuário). Antes, qual das linhas era atualizada não era definida.
+- **(c) `SalvarCache` atômico por cartão:** uma falha no meio não deixa mais metade do cartão gravada.
+- **R10, regra do menor `Id` estendida a `PontoCalc`, `PontoCalcPremio` e `PontoCalcTot`.** O brief só falava de `PontoCalcDia`; o lote precisa escolher uma linha também nessas três tabelas quando há duplicata, e hoje a linha atualizada ali também não é definida. O critério é o mesmo e os valores gravados são os mesmos. `PontoCalcTot` por estado final: o que hoje se apaga com `Ativo = false` continua fora, e a view do Cloud já filtra `Ativo = True`.
+- **R9, a verificação em lote "sem origem" chega ao banco de horas.** O ramo em lote de `GerarTabAnoMesAsync` (`SELECT DISTINCT … ANY`) é compartilhado com o banco de horas, o `PontoFuncs` e o Cloud, e o `DiaInicioCartaoPeriodoAsync` e os campos personalizados do BH usam a pré-carga ligada à conexão. O resultado é equivalente (a revisão conferiu, inclusive com cache velho) e há menos comandos. A decisão do usuário de "só carga principal" foi sobre **não pôr as tabelas do BH** (`BHTot`, `BHMes`, `BHLanc`) na pré-carga, e isso vale: o BH continua lendo e gravando pelas consultas de sempre.
 
-![image](imagens/cloud_pr2731_imagem3.png)
+### Limites conhecidos
 
-- Mais filtros com a faixa de 02:00 a 05:00 (dados fictícios):
+- **Janela de defasagem contra outras conexões.** A pré-carga de um bloco é lida de uma vez e só é avisada das escritas das conexões da própria coleção. Uma escrita de **outra** conexão (por exemplo, o usuário recalcula um cartão ou bloqueia um período no Cloud enquanto o laço mensal roda) só é vista no próximo bloco. Com blocos de 50, a janela é de alguns segundos (≈ 50 × 60–100 ms), da ordem da memória de 5 s de versão do worker do Cloud (ruling R7). O resultado do cartão continua correto para os dados lidos; o que pode acontecer é o laço mensal gravar um cálculo feito com leitura anterior à edição. "Período bloqueado" por outra conexão também só vale no próximo bloco.
+- **Uma pré-carga por conexão.** Se outra coleção ligar a sua na mesma conexão, a anterior é descartada por inteiro (o resultado é o mesmo, só perde a velocidade).
+- **`PontoCalcs.PontoCalc` fica `Nothing` depois de uma execução paralela** (cada worker termina o seu cartão); o XML doc diz que, com `GrauParalelismo > 1`, quem precisa do cartão usa o parâmetro do `DepoisCarregarCartaoAsync`. O `GravacaoLog` da coleção também não é tocado pelos cartões com N > 1.
+- **Coleções repetidas no mesmo processo ficam mais lentas** (kern ≤ 300 com N = 1: 2,25 s na 1ª execução e 2,7 a 3,1 s nas seguintes). Já acontecia em `dev` (A/B em `31b71ac`: 2,25 → 3,10 / 3,06 / 2,50 s), não é regressão da 5b, e infla as razões do "mesmo processo".
+- **Paralelismo e estado compartilhado:** `GrauParalelismo > 1` só vale com `ModoEvento = True`, sem assinante síncrono dos eventos por cartão, em conexão Postgres sem transação aberta e com `ConnectionString` não vazia (fechada ou por comando serve). Sem o índice único do Cloud, dois workers podem duplicar `FuncMes`/`FuncMesCC`/`Periodos` (a lib tolera o 23505 quando o índice existe). O cancelamento e a 1ª falha não interrompem um cartão: nenhum cartão novo começa e os que já começaram terminam. `bCancelado` (o `Cancelar`) é lido entre threads sem `Volatile`.
+- **Pool de conexões:** cada worker abre a sua conexão, além da conexão da coleção; dimensionar workers do Hangfire × (N + 1) ≤ `Max Pool Size`.
+- **Testes:** o teste da 5b que comparava a contagem global de `FuncMesCC` do `smx-local` (`ParidadePrecargaTeste.FuncMesCCSemOrigemNaoInsereNemProcuraOrigem`, falhou uma vez em duas suítes porque outro teste gerava linhas em paralelo) agora conta só os funcionários e meses da coleção. O `InsercaoToleranteTeste` deixou de contar a tabela inteira e de criar índice único na tabela real do `meta-local` (usa uma cópia `TEMP` das linhas de um funcionário), e o `GravacaoParalelaTeste` apaga as cópias que sobraram de uma execução interrompida e confere só as da própria execução. O `ParalelismoColecaoTeste` roda N > 1 nos bancos originais, que não têm o índice de `Periodos`: ele detecta escritas (afirma zero), mas não as impede. A suíte completa também **acrescenta** linhas de meses futuros em `FuncMes`, `FuncMesCC` e `Periodos` do `smx-local` (+350 / +264 / +59, criadas por um teste anterior à 5b, provavelmente `PontoBHTeste.TestarPontoBHCalc`, que usa a data de hoje); nenhum teste apaga linhas dessas tabelas no `smx-local`. Detalhes na seção 5 do spec, "Pendências achadas na 5b".
 
-![image](imagens/cloud_pr2731_imagem4.png)
+### Ordem de deploy
 
-- Resultado: só as marcações de madrugada:
+1. **Esta lib (12.8.0) com `GrauParalelismo = 1`** (o padrão): sem paralelismo, com a pré-carga, o `SalvarCache` em lote e a inserção tolerante já valendo. A inserção tolerante funciona sem o índice único.
+2. **A migração do Cloud** (PR do Cloud, DbMigrator em todos os tenants, fora do horário de cálculo): remove as duplicatas e cria os índices únicos de `FuncMes`, `FuncMesCC` e `Periodos`.
+3. **Só depois, a 5c** passa o laço mensal do Cloud para o callback com `ModoEvento = True` e liga `GrauParalelismo > 1`. **Pré-condição por tenant:** antes de passar um tenant para `GrauParalelismo > 1`, o Cloud confere no banco dele que os índices únicos existem (`UX_FuncMes*`, `UX_FuncMesCC*` e `UX_Periodos*`, ou um índice único completo equivalente em `(CdFunc, AnoMes)`); sem eles, o tenant fica em 1. Os tenants do banco compartilhado do host nunca recebem os índices e ficam sempre em 1.
 
-![image](imagens/cloud_pr2731_imagem5.png)
+**Antes de publicar o P8b, conferir triggers em produção** nas cinco tabelas gravadas em lote, em cada banco de tenant (um `INSERT` e um `UPDATE` de várias linhas disparam o trigger por linha, mas um trigger "por comando" ou que conte comandos veria menos execuções; hoje há 0 triggers nos 5 bancos locais):
 
-- Download do arquivo completo ou só dos registros filtrados:
+```sql
+SELECT event_object_table, trigger_name, action_timing, event_manipulation
+FROM information_schema.triggers
+WHERE event_object_table IN ('PontoCalc', 'PontoCalcDia', 'PontoCalcIncons', 'PontoCalcPremio', 'PontoCalcTot');
+```
 
-![image](imagens/cloud_pr2731_imagem6.png)
+### Falhas de teste que já existiam (deriva)
 
-- Menu de sincronização com o novo atalho Importar AFD:
+A suíte completa de `dev` (`e900da6`, com o `medir` da Tarefa 1) deu **594 resultados, 510 aprovados e 84 com falha** (`falhas-base.txt`). Contra a lista da 5a, 4 falhas são novas e 1 deixou de falhar, por deriva dos dados locais (nenhuma toca código da 5b):
 
-![image](imagens/cloud_pr2949_imagem1.png)
+- `BancoHorasGoldenTeste.LeituraDosBancosDeHorasDeSmxIgualAoBaseline` e `PontoBHCarregarAsyncTeste.CarregarAsyncProduzAMesmaLeituraDoBaseline` (golden `bh-smx-072026-leitura`: saldo e previsão do BH 97 diferem; deriva de dados do banco `smx-local`);
+- `ExtrasAposXHoras.TestarExtrasAposXHorasSeparandoNoturnas` (o cartão do `CdFunc` 71 não carrega no banco local);
+- `ObsoletosTeste.ExcecoesSaoCandidatasReaisSemObsolete` (a lista de candidatas não contém `PontoSituacoes.Carregar`);
+- deixou de falhar: `ReimportarResidualAsyncTeste.ImportarRegistroEspecialCarregaAEscalaPeloGemeo`.
 
-- Painel de coletores com o coletor com marcações inválidas em "Atenção":
+Nenhum golden foi regravado.
 
-![image](imagens/cloud_pr2707_imagem1.png)
+### Fora de escopo
 
-- Coletor que não respondeu, com o aviso em amarelo no card:
+- **Banco de horas na pré-carga** (`PontoBH*`, `BHTot`/`BHMes`/`BHLanc`): por decisão do usuário. Cerca de 316 dos 402 comandos que sobram em smx são do BH.
+- **5c, Cloud:** ligar o callback com `ModoEvento = True`, o `GrauParalelismo > 1`, e o opt-in "somente leitura" das cópias.
+- **Repositório `Simix.Ponto.Migracao`:** `AjustarPeriodosSql` com `CdEstab` nulo vindo do legado viola o índice de `Periodos` (que conta nulo como zero) e deixa de criar os períodos por estabelecimento; ajuste sugerido no PR do Cloud.
+- Remoção dos wrappers síncronos obsoletos, por decisão do usuário.
+- Os defeitos anteriores do levantamento (`HorasExtrasNoturnasDec` que grava 0, `RemoverDaChave` sem `ToLower`, `b_Horas2Num(Date)` em 12 h) continuam como estão.
+- O `Id` como desempate em `rcHorarioDia` (`Ponto`, `ORDER BY "Data"`) e em `HorariosCC` (sem coluna `Id`): fora da lista da fase.
 
-![image](imagens/cloud_pr2707_imagem2.png)
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-- Resultado da sincronização com o coletor sem conexão, "concluída com avisos":
 
-![image](imagens/cloud_pr2707_imagem3.png)
+## ✨ Novo layout de turnos Informativo para marcações paralelas [#526](https://github.com/simixsistemas/Simix.Ponto.Calc/pull/526)
 
-- Sincronização pelo site logo após o sistema iniciar, agora sem erro:
+### Objetivo
 
-![image](imagens/cloud_pr2688_imagem1.png)
+Fix: [#2935](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/2935)
 
-- Coletor com todas as conexões ocupadas, pedindo para tentar novamente em alguns minutos:
+### Alterações
+- ✨ Novo layout de turnos **Informativo**, para marcações paralelas (catraca, rastreador, logs) que ficam ao lado do cartão para conferência
+- ✨ As marcações do informativo não entram no cálculo, nos totais, nas inconsistências nem no resumo do dia, e não pedem justificativa
+- ✨ Importação direta no informativo, em ordem de horário e sem recalcular o dia; a mesma hora importada de novo fica como duplicada
+- ✨ Coletor com o turno preferencial "Gravar como informativo" manda todas as suas marcações para o informativo
+- ✨ A reimportação do cartão passa a levar as marcações de catraca para o informativo, em vez de ignorá-las
+- ♻ Consultas internas que olham as marcações efetivas deixam o informativo de fora
 
-![image](imagens/cloud_pr2688_imagem2.png)
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#2968
 
-![image](imagens/integracoes_pr28_imagem1.png)
 
-- Senha do coletor com o botão de ver:
 
-![image](imagens/cloud_pr2871_imagem1.png)
+### Demonstração
 
-## Cadastros
+![image](imagens/calc_pr526_imagem1.png)
 
-### Colaborador
 
-- **Troca de código**: novo botão **Trocar código** ao lado do código no cadastro. A troca atualiza o código em todos os dados do colaborador (marcações, cálculos, banco de horas, vales, pendências, espelhos, digitais e logs); se algo falhar, nada é alterado. Não permite código zero, igual ao atual ou já usado por outro colaborador (inclusive excluído), e mostra de quem é o código. Na regra "Código na folha", o código na folha e a matrícula acompanham o novo código. A troca fica registrada no histórico.
-- **Código na folha**: com a regra "Código na folha", o código na folha e a matrícula já preenchidos não são mais sobrescritos ao salvar. No colaborador já cadastrado, o campo do topo passa a ser o código na folha, que pode ser alterado; quando ele é diferente do código do colaborador, o código aparece ao lado.
-- **Histórico de evolução de cargo e efetivação**: ao salvar um colaborador com o cargo ou o tipo alterado, abre a janela **Adicionar ao histórico** com a descrição pronta e a data de hoje, ambas editáveis ("Evolução de cargo de X para Y", "Efetivado de Estagiário para…" ou "Alteração de tipo"). Cada linha pode ser desmarcada, e **Não adicionar** salva sem histórico. Os tipos de histórico são criados no primeiro uso.
-- **Campos obrigatórios e valores padrão**: novo botão de configuração no cadastro de Colaboradores para definir quais campos são obrigatórios (Cargo, Departamento, Setor, Estab. atual, Centro de custo, Data de nascimento, Data de admissão e Email) e com qual valor cada campo já vem preenchido (Tipo, Permitir registro App e Permitir registro Web), inclusive com condições, como "Permitir registro Web" só para os estabelecimentos escolhidos. Ao salvar, o cadastro avisa quais campos obrigatórios estão vazios, inclusive em guias não abertas. Só quem pode editar as **Configurações do sistema** altera essa configuração.
-- Ao cadastrar um colaborador novo com o CPF de outro e nome diferente, o sistema avisa e pergunta se deseja continuar; a busca por mesmo CPF/PIS encontra também documentos gravados com máscara.
 
-- Janela com o código atual e o novo código:
 
-![image](imagens/cloud_pr2911_imagem1.png)
+# Atualizacao - Sem_Iteracao 🎉
 
-- Cadastro já com o novo código após a troca:
+### **Esta atualizacao atende a tickets de clientes**
 
-![image](imagens/cloud_pr2911_imagem2.png)
+# Documentacao 📝
 
-- Código na folha editável, com o código do colaborador ao lado por ser diferente:
+## 🐛 Marcações do iDFace pelo agente local identificadas pela matrícula [#30](https://github.com/simixsistemas/Simix.Ponto.Integracoes/pull/30)
 
-![image](imagens/cloud_pr2918_imagem1.png)
+### Objetivo
 
-- Quando os dois são iguais, só o código na folha aparece:
+As marcações dos equipamentos iDFace sincronizados pelo agente local não eram lançadas no cartão do colaborador: o arquivo de marcações do iDFace traz o código interno do usuário no lugar do CPF, e a nuvem respondia "CPF/PIS não encontrado".
 
-![image](imagens/cloud_pr2918_imagem2.png)
+### Alterações
+- 🐛 Ao receber as marcações do iDFace, o código interno de cada usuário é trocado pela Matrícula cadastrada no equipamento (onde fica o CPF), e o colaborador passa a ser encontrado
+- Usuário sem Matrícula numérica continua como veio do equipamento; NSR, data e hora das marcações não mudam
 
-- Cargo e tipo alterados: a janela oferece as duas linhas:
+### Demonstração
 
-![image](imagens/cloud_pr2967_imagem1.png)
+Log do coletor antes da correção: todas as marcações recebidas pelo agente sem colaborador.
 
-- As duas linhas gravadas na guia Histórico do colaborador:
+![image](imagens/integracoes_pr30_imagem1.png)
 
-![image](imagens/cloud_pr2967_imagem2.png)
+![image](imagens/integracoes_pr30_imagem2.png)
 
-- Card na página de Novidades sobre campos obrigatórios e valores padrão, com o botão Me mostre:
+Arquivo do iDFace antes e depois da troca (CPFs fictícios no exemplo).
 
-![image](imagens/cloud_pr2795_imagem1.png)
+![image](imagens/integracoes_pr30_imagem3.png)
 
-- Janela de configuração com campos obrigatórios e um valor padrão com condição:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2795_imagem2.png)
 
-- Cadastro novo com CPF de outro colaborador: o sistema pergunta antes de gravar:
 
-![image](imagens/cloud_pr2944_imagem2.png)
+# Atualizacao - Sem_Iteracao 🎉
 
-### Layout de ações
+### **Esta atualizacao atende a tickets de clientes**
 
-- Lista com a prévia de cada botão (como o colaborador vê) e um painel ao lado com as opções do botão selecionado; os botões podem ser reordenados e duplicados.
-- Dias da semana marcados um a um, em qualquer combinação, e cada campo com a ajuda (?).
-- O campo **Sigla** ganhou o menu (⋮) para cadastrar ou editar o turno especial sem sair da tela.
-- Novo treinamento guiado "Montar um layout de ações".
+# Documentacao 📝
 
-- Layout de ações com a prévia dos botões e o painel do botão selecionado:
+## ✨🐛 Ajustes no Painel e editor de campos compacto [#163](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/163)
 
-![image](imagens/cloud_pr2871_imagem4.png)
+### Objetivo
 
-- Dias da semana marcados um a um e as regras explicadas:
+Fix: [#3044](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3044)
 
-![image](imagens/cloud_pr2871_imagem5.png)
+### Alterações
+- 🐛 O Painel com muitos widgets volta a abrir. O layout que o navegador guarda, quando passava de 32 KB, derrubava a conexão e, depois de 1 minuto, aparecia "Erro ao carregar dashboard: A task was canceled.", sem os dashboards
+- 🐛 Se o layout guardado no navegador não puder ser lido, o Painel segue funcionando e a loja volta a adicionar dashboards e widgets
+- ✨ Configuração dos campos do widget mais simples e compacta: uma linha por campo (arrastar para ordenar, visível, nome) e o campo escolhido editado ao lado, como no cadastro do layout de totais. Vale também para a configuração de campos dos relatórios
+- ♻ A dica abaixo do formato passa a mostrar o formato padrão do campo ("Padrão: dd/MM/yy")
 
-- No celular, lista em cima e painel embaixo:
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3052 (usa a versão nova deste pacote: publicar antes do release do Cloud)
 
-![image](imagens/cloud_pr2871_imagem6.png)
+### Demonstração
 
-- Menu da Sigla e o cadastro de turno especial aberto por ele:
+Testado com o backup do demo-comercial2, o banco do feedback: o layout do Painel do cliente tem 33.294 bytes na mensagem, acima do limite de 32.768. Antes, o Painel não abria e a loja não adicionava; agora abre os 17 widgets e a loja adiciona, no modo Server e no WebAssembly.
 
-![image](imagens/cloud_pr2871_imagem7.png)
+![image](imagens/rx_pr163_imagem1.png)
+Configuração dos campos: lista à esquerda e o campo escolhido editado ao lado.
 
-![image](imagens/cloud_pr2871_imagem8.png)
 
-- Treinamento da tela e o passo dos dias da semana:
+## ♻ Migrar MudBlazor 9.11 e corrigir parâmetros ignorados [#162](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/162)
 
-![image](imagens/cloud_pr2871_imagem9.png)
+### Objetivo
 
-![image](imagens/cloud_pr2871_imagem10.png)
+Fix: [#3034](https://github.com/simixsistemas/Simix.Ponto.Cloud/issues/3034)
 
-### Contratos, feriados, empresa e outros cadastros
+### Alterações
+- ♻ MudBlazor 9.9 → 9.11 (e MudBlazor.Markdown 9.10), a mesma versão do sistema na migração para o ABP 10.7
+- 🐛 Opções dos dashboards que estavam sendo ignoradas voltam a funcionar: editores de texto dos widgets crescem com o conteúdo em vez de ficar numa linha só, área de envio de arquivos do widget de upload com o visual de arrastar e soltar, campos compactos no filtro das colunas, espaçamento das abas, opção "Filtrável" com ícone de filtro e dica ao passar o mouse no botão da loja
 
-- **Contratos**: editar grava todos os campos (nome, tolerância, tipo e ativo); contrato **Intermitente** pode ser salvo; os dias são incluídos, alterados e removidos corretamente; excluir remove também os dias, e os vencimentos de contratos excluídos deixam de aparecer no painel. Novo campo **Ativo**, nova opção **Duplicar** na lista e o histórico (Logs) do contrato passa a incluir os dias.
-- **Importar Feriados** completa a lista da empresa com os próximos feriados que ainda faltam; antes, bastava existir um feriado cadastrado para nada ser importado. Feriado que a empresa já tem na mesma data não é duplicado, e feriado municipal só é importado para a empresa que tem estabelecimento naquela cidade.
-- **Empresa** e **Estabelecimento** ganharam o campo **CEP**: endereço, bairro e cidade são sugeridos automaticamente.
-- Horários, colaboradores, estabelecimentos, cargos, departamentos, setores, seções e demais cadastros não aceitam mais código 0, vazio, já em uso ou de um registro excluído. A sugestão de código considera tudo o que já existe, inclusive o criado por importação ou integração, e ao cancelar um cadastro novo o código sugerido é liberado. Cadastros antigos com código 0 continuam podendo ser editados.
-- O **Novo/Editar** dos campos **Categoria** (nota), **Grupo** (estabelecimento) e **Grupo de ações** (colaborador) passa a abrir o cadastro certo, e o registro gravado já aparece para escolher.
-- Layout mais limpo: cadastros com uma guia só não mostram a barra de guias; campos com código de outro cadastro viraram pesquisa (estabelecimento da OS, OS do turno especial, grupo de ações); descrição mais larga; sem a ajuda (?) em campos óbvios; botões ao lado dos campos padronizados.
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3035
 
-- Novo contrato já vem com o próximo código e marcado como ativo:
+### Demonstração
+Conferido por build sem avisos do MudBlazor e pelos 258 testes da biblioteca.
 
-![image](imagens/cloud_pr2906_imagem1.png)
 
-- Contrato reaberto após a edição, com os valores gravados:
+## ✨ Id do widget, exportação reutilizável e criar atalho no widget [#161](https://github.com/simixsistemas/DevShare.RX.Cloud/pull/161)
 
-![image](imagens/cloud_pr2906_imagem2.png)
+### Objetivo
 
-- Duplicar pela lista: a cópia ganha código novo e mantém campos e dias:
+Atalhos do painel inicial do Símix Ponto apontam para widgets de dashboard: o widget precisava de um Id e a exportação Excel precisava funcionar fora da tela expandida.
 
-![image](imagens/cloud_pr2906_imagem3.png)
+### Alterações
+- ✨ Cada widget passa a ter um Id gravado no dashboard. Dashboards salvos antes recebem um Id que não muda entre aberturas e fica gravado no próximo salvamento; widget novo ou colado recebe um Id próprio
+- ✨ Botão "Criar atalho" (pino) no cabeçalho do widget, quando o app oferece atalhos
+- ♻ A planilha do Exportar Excel saiu da tabela expandida para um serviço da lib, usado também pelos atalhos (mesmo resultado nas duas telas)
 
-- Lista vazia: os próximos feriados são importados e a mensagem informa quantos entraram:
+### PR's referências
+- simixsistemas/Simix.Ponto.Cloud#3009
 
-![image](imagens/cloud_pr2844_imagem1.png)
+### Demonstração
 
-- Com um feriado próprio da empresa já cadastrado (20/11), os demais são importados e o dela é mantido:
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-![image](imagens/cloud_pr2844_imagem2.png)
-
-- Com "Nossa Sra Aparecida" já cadastrado em 12/10, o feriado da mesma data não é duplicado:
-
-![image](imagens/cloud_pr2844_imagem3.png)
-
-- Importando de novo sem faltar nenhum, a tela avisa que não há feriado novo:
-
-![image](imagens/cloud_pr2844_imagem4.png)
-
-- Campo CEP no cadastro da empresa:
-
-![image](imagens/cloud_pr2744_imagem1.png)
-
-- Campo CEP no cadastro do estabelecimento:
-
-![image](imagens/cloud_pr2744_imagem2.png)
-
-- Categoria criada pelo Novo da nota e já escolhida no campo:
-
-![image](imagens/cloud_pr2811_imagem1.png)
-
-- Cadastro da categoria aberto por cima da nota:
-
-![image](imagens/cloud_pr2811_imagem2.png)
-
-- O Editar abre a categoria escolhida:
-
-![image](imagens/cloud_pr2811_imagem3.png)
-
-- Novo do campo Grupo no cadastro do estabelecimento:
-
-![image](imagens/cloud_pr2811_imagem4.png)
-
-- Novo do campo Grupo de ações no cadastro do colaborador:
-
-![image](imagens/cloud_pr2811_imagem5.png)
-
-- OS sem a barra de guias e com o estabelecimento por pesquisa:
-
-![image](imagens/cloud_pr2907_imagem1.png)
-
-- Horário com descrição na largura toda e botão de sugestão no novo estilo:
-
-![image](imagens/cloud_pr2907_imagem2.png)
-
-- Escala com código, descrição e ativo na mesma linha, e botões de adicionar no novo estilo:
-
-![image](imagens/cloud_pr2907_imagem3.png)
-
-- Afastamento com o botão de trocar sigla no mesmo estilo:
-
-![image](imagens/cloud_pr2907_imagem4.png)
-
-### Histórico de alterações e auditoria
-
-- Logs dos cadastros com pesquisa por qualquer informação (campo, valor, mês, quem alterou, data) e ordenação por coluna.
-- Campos com o nome usado na tela ("Código setor", "Dt. Admissão") e valores formatados: datas, Sim/Não, descrição das opções e vazio no lugar de "null". Na criação de um registro aparecem só os campos preenchidos.
-- Senhas não aparecem mais no histórico: a troca continua registrada, mas o valor aparece como *****.
-- Os logs do colaborador trazem as alterações dos dados mensais de todos os meses.
-- Regras de prêmio e regras de inconsistências passam a registrar alterações (antes o botão de logs abria vazio); na regra de prêmio, o histórico inclui os itens e os dias.
-- **Consulta de auditoria**: filtros de Tipo e Origem voltaram a funcionar, novas origens "Regras de prêmio" e "Regras de inconsistência", e exclusões de registros passam a aparecer.
-- Só administradores e usuários com permissão de auditoria consultam os logs.
-
-- Logs do colaborador com dados mensais de vários meses e pesquisa:
-
-![image](imagens/cloud_pr2713_imagem1.png)
-
-- Troca de senha registrada, sem mostrar o valor:
-
-![image](imagens/cloud_pr2713_imagem2.png)
-
-- Tela de auditoria ordenada por Campo Alterado:
-
-![image](imagens/cloud_pr2713_imagem3.png)
-
-## Portal, aplicativo e acesso dos usuários
-
-- Nova opção **Formato do login** na **Configuração Web**: Livre, CPF, nome.sobrenome ou E-mail. Em **Colaborador > Gerenciar usuário**, o usuário novo já vem com o login no formato configurado e o e-mail do cadastro. No registro de novo usuário, uma dica mostra o padrão; com CPF ou E-mail o usuário é preenchido enquanto a pessoa digita.
-- **Configurações do app**: "Solicitar reconhecimento facial" e "Processar facial no servidor" não ficam mais marcadas juntas, e cada uma ganhou uma ajuda explicando quando o registro prossegue.
-- Com o layout de consulta "Mínimo", o **Painel do colaborador** mostra as horas trabalhadas em vez dos saldos.
-- As solicitações de horário e de afastamento do colaborador passam a aparecer mesmo quando foram feitas com um código dele diferente do atual.
-- A quantidade de usuários da licença passa a contar só os acessos ativos do cliente.
-
-- Configuração Web com o campo "Formato do login":
-
-![image](imagens/cloud_pr2815_imagem1.png)
-
-- Usuário novo já com o login no formato nome.sobrenome e o e-mail do cadastro:
-
-![image](imagens/cloud_pr2815_imagem2.png)
-
-- Registro com o formato CPF: o usuário é preenchido ao digitar o CPF:
-
-![image](imagens/cloud_pr2815_imagem3.png)
-
-- Guia Segurança: marcar uma opção de facial desmarca a outra:
-
-![image](imagens/cloud_pr2883_imagem1.png)
-
-- A ajuda de cada opção:
-
-![image](imagens/cloud_pr2883_imagem2.png)
-
-![image](imagens/cloud_pr2883_imagem3.png)
-
-- Painel do colaborador com o layout "Mínimo":
-
-![image](imagens/cloud_pr2887_imagem5.png)
-
-## Relatórios e dashboards
-
-### Imprimir e exportar tabelas
-
-- Novo botão **Imprimir** na tabela aberta em tela cheia (botão **Abrir** do widget), ao lado do **Exportar Excel**: abre o relatório numa nova guia com os mesmos filtros, período, pesquisa e agrupamento da tela.
-- Cabeçalho com razão social, CNPJ (do estabelecimento, quando filtrado por um só), título do widget e período, repetido em todas as folhas, e "Página N de M" no rodapé. Tabela agrupada sai com o título de cada grupo e a linha de totais.
-- Folha em paisagem para tabelas largas e em retrato para as de até 6 colunas; pelo navegador dá para imprimir ou salvar em PDF. Até 10.000 linhas por impressão.
-- Na impressão e no **Exportar Excel**, a coluna "Extras" sai em uma coluna por percentual (Extras 50%, Extras 70%, Extras 100%…), e nas tabelas agrupadas a linha "Totais" soma cada percentual. Sem extras em nenhuma linha, continua a coluna única.
-
-- Botão Imprimir ao lado do Exportar Excel, na tabela em tela cheia:
-
-![image](imagens/cloud_pr2825_imagem1.png)
-
-![image](imagens/rx_pr151_imagem1.png)
-
-- Relatório aberto numa nova guia, com o botão Imprimir no topo:
-
-![image](imagens/cloud_pr2825_imagem2.png)
-
-- Relatório de manutenções filtrado por um estabelecimento, com CNPJ e nome no cabeçalho:
-
-![image](imagens/cloud_pr2825_imagem3.png)
-
-- Relatório de turnover e absenteísmo com 18 colunas em A4 paisagem:
-
-![image](imagens/cloud_pr2825_imagem4.png)
-
-- Tabela agrupada por estabelecimento, com título e totais de cada grupo, em A4 retrato:
-
-![image](imagens/cloud_pr2825_imagem5.png)
-
-- Impressão agrupada por colaborador, com uma coluna por percentual e os totais de cada grupo:
-
-![image](imagens/cloud_pr2964_imagem1.png)
-
-- A mesma tabela no Exportar Excel:
-
-![image](imagens/cloud_pr2964_imagem2.png)
-
-![image](imagens/rx_pr159_imagem1.png)
-
-### Horas extras por percentual
-
-- Nova fonte de dados para os widgets com uma linha por colaborador, mês e percentual, com extras totais, diurnas, noturnas e os saldos do mês; a fonte de dados mensal também passa a trazer as extras diurnas e noturnas.
-- **Horas extras por cargo** mostra uma linha por cargo e percentual, com extras diurnas, noturnas e total; antes só havia colunas fixas de 50%, 75% e 100%. **Horas extras por nível de cargo** passa a somar as extras de cada cargo corretamente.
-- **Ponto Sintético** e **Relatório Ponto Sintético** trazem a coluna "Extras" com todos os percentuais do mês.
-
-- Widget com as extras de cada percentual separadas em diurnas e noturnas, com total e saldo do mês:
-
-![image](imagens/cloud_pr2917_imagem1.png)
-
-- Widget com um colaborador por linha e uma coluna por percentual:
-
-![image](imagens/cloud_pr2917_imagem2.png)
-
-- Widget com as extras de cada percentual por dia:
-
-![image](imagens/cloud_pr2917_imagem3.png)
-
-- Horas extras por cargo, com cada percentual separado em diurnas e noturnas:
-
-![image](imagens/rx_pr158_imagem1.png)
-
-- Horas extras por nível de cargo, com as extras somadas por cargo:
-
-![image](imagens/rx_pr158_imagem2.png)
-
-- Ponto Sintético com a coluna "Extras":
-
-![image](imagens/rx_pr158_imagem3.png)
-
-- Relatório Ponto Sintético com a coluna "Extras":
-
-![image](imagens/rx_pr158_imagem4.png)
-
-### Salvamento e filtros dos dashboards
-
-- Trocar de visão, mudar o período, os filtros, pesquisar, ordenar ou paginar não marca mais o dashboard como **Não Salvo**. Colar, editar ou excluir uma visão pelo botão direito, editar uma nota e as alterações feitas pela IA marcam o dashboard como alterado (antes essas alterações se perdiam ao sair).
-- No **Painel**, a visão ou o widget colado é gravado na hora. Dashboard aberto só para consulta não grava mais nada sozinho, evitando sobrescrever o que outra pessoa acabou de salvar.
-- Sair da tela, criar um dashboard ou instalar um pack com alterações pendentes pergunta antes (**Salvar e continuar**, **Descartar** ou **Cancelar**).
-- O filtro **Período** do dashboard acompanha o período escolhido no sistema, e trocar no dashboard leva o mesmo mês para as outras telas. Filtros de data como "este mês" e "este ano" cobrem o período inteiro.
-- **Filtro avançado comparando com outro campo**: um valor entre chaves compara com outro campo da consulta (ex.: código de folha **Diferente** `{Código}`), em igual, diferente, contém, maior e menor.
-- Widgets com uma coluna sem nome na configuração voltam a carregar, e quando a consulta de um widget falha o aviso mostra o erro real.
-- Novo widget **Admissão e Demissão (Dias)**, com os motivos, filtrado por período de dias. O motivo da demissão também passa a estar disponível nos dados diários do cálculo.
-
-- Passando por todas as visões e abrindo outro dashboard: nenhum aviso de alteração:
-
-![image](imagens/cloud_pr2858_imagem1.png)
-
-- Visão copiada e colada sobre outra: o dashboard fica "Não Salvo", sair da tela pergunta antes e o Salvar grava:
-
-![image](imagens/cloud_pr2858_imagem2.png)
-
-![image](imagens/cloud_pr2858_imagem3.png)
-
-- No Painel, nota colada pelo menu da visão e aberta de novo em outro navegador:
-
-![image](imagens/cloud_pr2858_imagem4.png)
-
-- Com setembro escolhido no sistema, o painel abre com o filtro "Período: 09/2026":
-
-![image](imagens/rx_pr152_imagem1.png)
-
-- Filtro montado na configuração do widget, com a dica embaixo do campo Valor:
-
-![image](imagens/rx_pr148_imagem1.png)
-
-- Resultado: só os colaboradores com código de folha diferente do código:
-
-![image](imagens/rx_pr148_imagem2.png)
-
-- Antes: widget falhando por causa de uma coluna sem nome:
-
-![image](imagens/cloud_pr2966_imagem1.png)
-
-- Depois: a coluna sem nome é ignorada e o widget carrega:
-
-![image](imagens/cloud_pr2966_imagem2.png)
-
-- Widget Admissão e Demissão (Dias):
-
-![image](imagens/rx_pr150_imagem1.png)
-
-![image](imagens/rx_pr150_imagem2.png)
-
-### Relatórios de manutenção
-
-- O **Histórico de manutenções** volta a mostrar quem fez cada alteração, inclusive nas manutenções feitas no sistema anterior, e ganha a coluna **Justificativa**.
-- No **Relatório de manutenções**, a coluna Observação dá lugar à **Justificativa**, e entra a coluna Data do dia alterado.
-
-- Relatório de manutenções com o usuário em todas as linhas, inclusive nas alterações anteriores à migração:
-
-![image](imagens/cloud_pr2849_imagem1.png)
-
-- Widget da loja mostrando o usuário das manutenções feitas no Cloud:
-
-![image](imagens/cloud_pr2849_imagem2.png)
-
-## Feedbacks
-
-- Feedbacks aceitam anexos (prints, PDF, planilhas, texto): até 5 arquivos de até 1 MB cada, no envio e na edição do próprio feedback. Os anexos ficam visíveis só para o próprio cliente e para a equipe Símix.
-- Comentários dos feedbacks também aceitam anexos, inclusive comentário só com o arquivo.
-- Ao enviar pelo botão do cadastro ou pela barra do topo, o print da tela aberta é anexado automaticamente (sem o formulário) e pode ser removido antes do envio.
-- Quem enviou um feedback é avisado no sino quando a Símix conclui o feedback ou responde com um comentário.
-- Na aba **Votar**, os feedbacks de outros clientes não mostram mais quem enviou nem a empresa.
-- O usuário Símix pode excluir feedbacks, com confirmação.
-
-- Envio de feedback com anexos e o aviso de arquivo acima do limite:
-
-![image](imagens/cloud_pr2683_imagem1.png)
-
-- Feedback enviado com os anexos no card:
-
-![image](imagens/cloud_pr2683_imagem2.png)
-
-- Edição do próprio feedback, removendo ou incluindo anexos:
-
-![image](imagens/cloud_pr2683_imagem3.png)
-
-- Aba Votar com pedidos de outros clientes, sem autor e sem empresa:
-
-![image](imagens/cloud_pr2683_imagem4.png)
-
-- Comentários de feedback com anexos:
-
-![image](imagens/cloud_pr2871_imagem2.png)
-
-- Formulário de feedback com o print anexado:
-
-![image](imagens/cloud_pr2925_imagem1.png)
-
-- Imagem anexada: a tela aberta, sem o formulário:
-
-![image](imagens/cloud_pr2925_imagem2.png)
-
-- Sino de quem enviou o feedback, depois que o suporte comentou e concluiu:
-
-![image](imagens/cloud_pr2760_imagem1.png)
-
-- Exclusão de feedback pelo usuário Símix:
-
-![image](imagens/cloud_pr2779_imagem5.png)
-
-![image](imagens/cloud_pr2779_imagem6.png)
-
-## Novidades e demonstrações guiadas
-
-- Aviso de atualização no meio da barra do topo: clicar leva às novidades e o X fecha o aviso naquele navegador. Se a mensagem mudar, o aviso volta a aparecer; com pouco espaço, fica só o ícone.
-- Card **Feriados pela cidade certa** com o **Me mostre** (cerca de 3 min): abre um horário, vai até a guia **DSR** e explica o campo **Cidade dos feriados municipais e estaduais** e suas opções, lembrando de recalcular o período.
-- A demonstração do card **Alertas e notificações** passa a destacar na tela cada item no momento em que é citado: as abas **Regras**, **Canais** e **Envios**, cada canal e os filtros do histórico de envios.
-
-- Aviso de atualização na barra do topo:
-
-![image](imagens/cloud_pr2962_imagem1.png)
-
-- Card com o botão Me mostre e o passo a passo escrito:
-
-![image](imagens/cloud_pr2813_imagem1.png)
-
-- Na guia DSR do horário, o assistente aponta o campo:
-
-![image](imagens/cloud_pr2813_imagem2.png)
-
-- A demonstração escolhe "Colaborador" e explica quando usar:
-
-![image](imagens/cloud_pr2813_imagem3.png)
-
-- No fim, o lembrete de recalcular o período:
-
-![image](imagens/cloud_pr2813_imagem4.png)
-
-- Ao citar "os canais", a aba Canais é destacada:
-
-![image](imagens/cloud_pr2802_imagem1.png)
-
-- Com a aba Canais aberta, cada canal é apontado enquanto é descrito:
-
-![image](imagens/cloud_pr2802_imagem2.png)
-
-- Na aba Envios, os filtros de período e situação são apontados antes do histórico:
-
-![image](imagens/cloud_pr2802_imagem3.png)
-
-## Melhorias de interface
-
-### Período lembrado entre as telas
-
-- O período escolhido vale para todas as telas que trabalham por período: lista da **Manutenção**, **Colaboradores**, **Inconsistências por mês**, **Justificativa de extras**, pendências de afastamentos e de marcações, **Exportar para folha**, **Espelho do ponto**, **Painel** e **Gerencial**.
-- Trocar o período em qualquer uma delas (ou na barra do topo) atualiza as outras, inclusive as que estão abertas.
-- O período fica lembrado ao recarregar ou reabrir o sistema no mesmo dia; no dia seguinte volta ao mês atual. Fora do mês atual, aparece em destaque (laranja) na barra do topo.
-- Links que já trazem o mês continuam abrindo no mês do link.
-
-- Período na barra do topo:
-
-![image](imagens/cloud_pr2852_imagem1.png)
-
-- No mês atual o período aparece como sempre; fora dele, em destaque:
-
-![image](imagens/cloud_pr2852_imagem2.png)
-
-- Trocando o mês na lista da Manutenção, a barra do topo acompanha:
-
-![image](imagens/cloud_pr2852_imagem3.png)
-
-- A exportação já abre no período escolhido:
-
-![image](imagens/cloud_pr2852_imagem4.png)
-
-- O Espelho, aberto pelo menu, também:
-
-![image](imagens/cloud_pr2852_imagem5.png)
-
-- E o filtro de período do Painel:
-
-![image](imagens/cloud_pr2852_imagem6.png)
-
-- Inconsistências por mês também abre no período escolhido:
-
-![image](imagens/cloud_pr2852_imagem7.png)
-
-- Assim como o filtro de período das pendências:
-
-![image](imagens/cloud_pr2852_imagem8.png)
-
-### Telas de conta e páginas de erro
-
-- As telas de entrar, registrar-se, esqueci a senha, desconectado e acesso negado ficaram com o visual do sistema.
-- **Minha conta**, **Sessões** e **Logs de segurança** ganharam a barra azul do sistema, com **Voltar ao sistema** e **Sair**. A **Documentação** ficou com as cores do sistema, também no celular.
-- Quando uma tela dá erro, aparece uma página explicando o que houve (erro inesperado, regra não atendida, sem permissão ou sessão encerrada), com botões para seguir; no erro inesperado aparece um código para informar ao suporte.
-- Página protegida aberta sem login mostra "Entre para continuar", com o botão **Entrar**.
-
-- Erro inesperado: antes e depois, com o código para o suporte:
-
-![image](imagens/cloud_pr2892_imagem1.png)
-
-- Erro de regra de negócio com a mensagem para o usuário:
-
-![image](imagens/cloud_pr2892_imagem2.png)
-
-- Página protegida sem login:
-
-![image](imagens/cloud_pr2892_imagem3.png)
-
-- Tela de entrar:
-
-![image](imagens/cloud_pr2892_imagem4.png)
-
-- Tela após o "Esqueci a senha", sem a barra preta:
-
-![image](imagens/cloud_pr2892_imagem5.png)
-
-- Minha conta:
-
-![image](imagens/cloud_pr2892_imagem6.png)
-
-- Documentação com as cores do sistema:
-
-![image](imagens/cloud_pr2892_imagem7.png)
-
-- No celular: entrar, Minha conta, Documentação e erro:
-
-![image](imagens/cloud_pr2892_imagem8.png)
-
-### Barras das listas e do topo
-
-- Botão **Visões** mostra o nome da visão aberta, e a visão atual aparece marcada no menu. Situação (Ativos/Demitidos/Todos), inativos e filtro com o mesmo visual; o botão **Treinamentos** passou para a direita, ao lado da pesquisa.
-- As divisórias entre os grupos de botões da barra superior voltaram a aparecer.
-
-- Barra da lista de Colaboradores reorganizada:
-
-![image](imagens/cloud_pr2974_imagem1.png)
-
-- Barra superior, antes e depois:
-
-![image](imagens/cloud_pr2769_imagem1.png)
-
-![image](imagens/cloud_pr2769_imagem2.png)
-
-## Desempenho e infraestrutura
-
-- O motor de cálculo passou por uma série de otimizações: carregar e calcular cartões ficou de 3 a 5 vezes mais rápido (ex.: um estabelecimento de 38 colaboradores passou de cerca de 10 s para cerca de 2 s), com muito menos consultas ao banco de dados, sem alterar nenhum resultado.
-- Calcular dados, recálculo do banco de horas, reimportação, aprovações, manutenção em lote, aplicação e geração de escalas, importação de marcações, exportação da folha, vales, arquivos fiscais (AEJ, AFDT e ACJEF) e mudança do dia de início passam a rodar sem travar o servidor: as outras telas continuam respondendo enquanto o processamento acontece.
-- Gravar o cálculo passa a ser tudo ou nada: um erro ou um período bloqueado no meio desfaz o que já tinha sido escrito, em vez de deixar o cartão gravado pela metade.
-- Cancelar o **Calcular dados** pelo monitor de tarefas para de verdade em poucos segundos. A tarefa que não responde ao cancelamento pode ser encerrada no segundo clique (**Forçar encerramento**).
-- Cálculos e exportações em fila não ficam mais presos: a tarefa interrompida por um reinício do serviço volta na hora, em vez de esperar 2 horas. **Logs de Tarefas** mostra o nome da rotina, inclusive nos registros antigos.
-- O cálculo guarda em memória os cadastros mais usados e se atualiza em poucos segundos quando eles são alterados.
-- **Reimportar registros** na Manutenção não trava mais a tela: aparece a barra de processamento e a grade fica protegida contra cliques até o fim.
-- Meses cadastrados muito à frente (mais de 12 meses além do mês atual), trazidos do sistema antigo, são removidos automaticamente; marcações, afastamentos e lançamentos de banco de horas não são apagados.
-- A página aberta há muito tempo (ou durante uma atualização do sistema) não fica mais parada com erro ou em "Carregando...": o sistema tenta reconectar sozinho.
-
-- Reimportação em andamento, com a barra de processamento e a grade protegida:
-
-![image](imagens/cloud_pr2927_imagem1.png)
-
-- Fim da reimportação com o aviso de dias alterados:
-
-![image](imagens/cloud_pr2927_imagem2.png)
-
-- Modo compacto com a página rolada: as barras continuam presas no topo:
-
-![image](imagens/cloud_pr2927_imagem3.png)
-
-- Popup de registros e comprovantes por cima da grade:
-
-![image](imagens/cloud_pr2927_imagem4.png)
-
-- Sem o serviço de tarefas no ar, o cálculo fica parado na fila:
-
-![image](imagens/cloud_pr2828_imagem1.png)
-
-- O suporte interrompe as tarefas em andamento pelos Logs de Tarefas:
-
-![image](imagens/cloud_pr2828_imagem2.png)
-
-- A tela que estava esperando destrava sozinha, sem recarregar:
-
-![image](imagens/cloud_pr2828_imagem3.png)
-
-- Com o serviço ainda fora do ar, o cálculo pelo site conclui:
-
-![image](imagens/cloud_pr2828_imagem4.png)
-
-- Tarefa que não respondeu ao cancelamento, com o botão para forçar o encerramento:
-
-![image](imagens/cloud_pr2828_imagem5.png)
-
-- Painel do serviço antes, com o aviso indevido de tarefa abortada:
-
-![image](imagens/cloud_pr2828_imagem6.png)
-
-- Depois, sem o aviso e com o horário certo:
-
-![image](imagens/cloud_pr2828_imagem7.png)
-
-- Logs de Tarefas com o nome da rotina, inclusive nos registros antigos:
-
-![image](imagens/cloud_pr2828_imagem8.png)
-
-## Migração do PcPonto
-
-- Os usuários do sistema antigo (gestores e administradores, inclusive quem não registra ponto) viram acessos no Símix Ponto, com perfil de RH (DP), mantendo inativos como inativos e o vínculo com o colaborador. Usuários sem e-mail ou com e-mail repetido recebem um e-mail substituto; as senhas ainda não são migradas.
-- O histórico trazido do PcPonto volta a aparecer na guia **Histórico** do cadastro, com o tipo que tinha no PcPonto e o usuário que fez o lançamento.
-- O motivo de desligamento deixa de exibir o texto de um histórico que não é de desligamento; sem motivo cadastrado, vale o histórico mais recente cujo tipo tenha "desligamento", "demissão" ou "rescisão" no nome.
-- Notificações voltam a abrir depois da migração, e as notificações trazidas do PcPonto entram como lidas.
-- A observação do dia aceita até 150 caracteres, evitando falhas na migração de bancos com observações maiores.
-- Log da migração sem erros falsos de "coluna já existe".
-
-## Equipe Símix
-
-- Botão de suporte na barra do topo: alternar entre Beta e Oficial, atalho para Ferramentas e gravação de treinamentos (telas, tempo, cliques, campos alterados sem o conteúdo e cadastros salvos), com a tela **Suporte > Treinamentos gravados** e o botão **Copiar resumo**.
-- Tela de atendimento para localizar o cliente e acessar o ambiente como um usuário, com faixa de aviso, acesso de uso único e ações registradas em nome do suporte.
-- Painel de inconsistências da administração com novas conferências (registros bloqueados por afastamento e marcações em outro layout), menos falsos alertas e consulta mais rápida.
-- Restauração de backup no ambiente de desenvolvimento, para reproduzir situações do cliente sem afetar a produção; logs do sistema com mais de 90 dias excluídos automaticamente.
-- Avisos de falha ao suporte com o cliente e o usuário que dispararam a rotina, inclusive quando a criação ou migração do banco falha na implantação.
-- Opção de rodar **Calcular dados** e **Exportar folha** direto pelo site quando o serviço estiver travado.
-- Exportação do cálculo no formato do PcPonto para comparar migrações, login do app Símix Ponto Suporte e base para o futuro Símix Ponto no Teams (ainda desligado).
-- A administração de clientes mostra os layouts de folha ativos de cada empresa, e o cadastro de packs da loja explica em quais ambientes cada canal aparece.
-- Rotina para preencher a justificativa de logs de manutenção sem observação e o estabelecimento do mês vazio.
-
-- Botão de suporte na barra do topo:
-
-![image](imagens/cloud_pr2922_imagem1.png)
-
-- Início do treinamento:
-
-![image](imagens/cloud_pr2922_imagem2.png)
-
-- Gravando e pausado:
-
-![image](imagens/cloud_pr2922_imagem3.png)
-
-![image](imagens/cloud_pr2922_imagem4.png)
-
-- Observações ao parar o treinamento:
-
-![image](imagens/cloud_pr2922_imagem5.png)
-
-- Detalhe da gravação: resumo por tela, o que foi gravado e a linha do tempo:
-
-![image](imagens/cloud_pr2922_imagem6.png)
-
-- Treinamentos gravados, com os totais do período:
-
-![image](imagens/cloud_pr2922_imagem7.png)
-
-- Tela de atendimento filtrada por tag:
-
-![image](imagens/cloud_pr2715_imagem1.png)
-
-- Usuários do cliente, com pesquisa:
-
-![image](imagens/cloud_pr2715_imagem2.png)
-
-- Ambiente do cliente aberto pelo suporte, com a faixa de aviso:
-
-![image](imagens/cloud_pr2715_imagem3.png)
-
-- Link de acesso usado novamente, recusado:
-
-![image](imagens/cloud_pr2715_imagem4.png)
-
-- Marcações de uma colaboradora em férias, guardadas sem ir para o cálculo:
-
-![image](imagens/cloud_pr2951_imagem1.png)
-
-- Dias com marcação só no layout Livre para colaboradores com horário no layout Ponto:
-
-![image](imagens/cloud_pr2951_imagem2.png)
-
-- Botão Restaurar backup na tela de Backups do ambiente de desenvolvimento:
-
-![image](imagens/cloud_pr2685_imagem1.png)
-
-- Lista de backups do cliente, com aviso nos de estrutura antiga:
-
-![image](imagens/cloud_pr2685_imagem2.png)
-
-- Confirmação antes de restaurar:
-
-![image](imagens/cloud_pr2685_imagem3.png)
-
-- Aviso ao suporte quando a migração falha:
-
-![image](imagens/cloud_pr2760_imagem2.png)
-
-- Aviso de falha no cálculo disparado pela migração, já com a identificação do cliente:
-
-![image](imagens/cloud_pr2760_imagem3.png)
-
-- Layouts de folha ativos do cliente:
-
-![image](imagens/cloud_pr2744_imagem3.png)
-
-- Cadastro do pack com a explicação de onde cada canal aparece:
-
-![image](imagens/cloud_pr2817_imagem5.png)
-
-## Outras melhorias e correções
-
-- Solicitação de marcação aprovada não trava mais o cartão do colaborador nem gera erro nas marcações seguintes.
-- Marcações com sigla de turno (motoristas) não geram mais "Erro ao importar o dia" a partir da 2ª marcação; reprocessar uma marcação com sigla que já está no dia não abre outro turno.
-- Botão **Reprocessar** da consulta de comprovantes: funciona com a mesma data no início e no fim e reprocessa na ordem cronológica, mantendo os turnos dos motoristas na ordem certa.
-- O cálculo automático não para mais quando há dois estabelecimentos ativos com o mesmo código, e o cálculo por período funciona em empresas sem estabelecimento cadastrado.
-- Marcação do aplicativo encontra o colaborador pelo login mesmo quando o PIS enviado pelo aparelho é diferente do cadastro.
-- O cartão volta a carregar quando um dia do período anterior foi gravado com hora, e a geração dos dados do mês seguinte não falha mais com colaboradores repetidos.
-- Bancos criados ou migrados deixam de apresentar erro ao calcular, e o cálculo de vale-transporte deixa de falhar em bancos recentes.
-- A manutenção de VTs voltou a abrir normalmente, e bases mais antigas voltam a receber o histórico de quantidades de VT e a quantidade por dia do VT mensal.
-- O cadastro do colaborador volta a salvar quando o RG tinha espaços antes ou depois do número, e a mensagem de erro informa qual campo impede o salvamento.
-- Abrir o sistema por um link externo (e-mail, por exemplo) com a sessão ativa já entra logado, sem a página "HTTP ERROR 400"; os erros registrados identificam a empresa em que aconteceram.
-- No assistente, o **Novo colaborador** não pula mais um código a cada abertura.
-
-- Comprovantes de motoristas com erro de importação:
-
-![image](imagens/cloud_pr2909_imagem1.png)
-
-- Depois do Reprocessar: todos importados, com os turnos na ordem certa:
-
-![image](imagens/cloud_pr2909_imagem2.png)
-
-![image](imagens/calc_pr517_imagem2.png)
-
-![image](imagens/calc_pr517_imagem3.png)
-
-- Marcações com erro de conversão de data causado por uma solicitação aprovada:
-
-![image](imagens/cloud_pr2909_imagem3.png)
-
-- Depois do Reprocessar: importadas:
-
-![image](imagens/cloud_pr2909_imagem4.png)
-
-- Validação das correções na importação:
-
-![image](imagens/calc_pr517_imagem1.png)
-
-- Tela de Logs com o cliente identificado nos erros:
-
-![image](imagens/cloud_pr2682_imagem1.png)
