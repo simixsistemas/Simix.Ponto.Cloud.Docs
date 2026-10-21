@@ -21,15 +21,14 @@
 
 ## Listas do sistema: visões salvas e colunas melhores ✨
 
-Todas as listas do sistema passaram a descrever as próprias colunas, o que trouxe visões salvas por usuário e uma apresentação mais cuidadosa dos dados.
+Todas as listas de cadastros do sistema passaram a ter visões salvas por usuário e melhorias de performance.
 
 - **Cada usuário salva visões em qualquer lista**: escolhe o nome, as colunas e a ordem, e decide se a visão é só dele ou fica disponível para todos. Dá para editar e excluir depois, e a lista abre na última visão usada.
 - Colaboradores ganhou a visão **Contrato** (admissão, demissão, mês, horário e motorista).
 - Situação com cor em Clientes, Dispositivos e nas pendências de ponto e de afastamento (aguardando, aprovado, reprovado).
 - A foto da lista carrega só quando aparece na tela e amplia ao passar o mouse.
-- **Ofuscar dados** passou a borrar o que é realmente dado pessoal (nome, e-mail, CPF, PIS, RG, login, cargo, estabelecimento): antes CPF, PIS e RG ficavam legíveis, e contagens como "Qtd. de colaboradores" eram borradas sem necessidade. No celular, o nome da coluna também não é mais borrado.
-- Listas mais leves no navegador, e saíram das visões colunas que nunca tinham valor (Nome social, E-mail alternativo e Telefone em Colaboradores, entre outras).
-- Em Clientes, o link da documentação passou a abrir o endereço certo.
+- **Ofuscar dados** passou a borrar qualquer dado pessoal (nome, e-mail, CPF, PIS, RG, login, cargo, estabelecimento, valores, etc)
+- Listas mais leves no navegador
 
 > Nas imagens a seguir, as fotos foram trocadas por um avatar genérico e o "Ofuscar dados" está ligado.
 
@@ -58,7 +57,7 @@ Todas as listas do sistema passaram a descrever as próprias colunas, o que trou
 
 ## Totais da Manutenção ✨
 
-Os totais da Manutenção ficaram mais fáceis de conferir, e o cadastro do layout de totais foi refeito.
+Os totais da Manutenção ficaram mais fáceis de conferir, e o cadastro do layout de totais foi reestruturado.
 
 - Totais em **duas colunas**, na coluna e na ordem definidas no layout de totais do horário.
 - **Relevância**: o total de relevância alta sobe para o topo e fica em negrito, o informativo fica apagado. A opção "Destacar relevância" liga e desliga.
@@ -67,8 +66,6 @@ Os totais da Manutenção ficaram mais fáceis de conferir, e o cadastro do layo
 - No celular a barra dos totais some e os totais aparecem inteiros, numa coluna.
 - "Editar layout de totais" abre o layout do horário do colaborador e, ao gravar, a tela recalcula.
 - **Cadastro do layout de totais refeito**: totais em cartões nas colunas, arrastados para ordenar ou trocar de coluna; painel do total escolhido com explicação, relevância, marcador, quando mostrar e o nome na tela; prévia de como os totais ficam na Manutenção; quantos horários usam o layout; e "Adicionar totais" pelo catálogo, com pesquisa, assuntos e vários de uma vez.
-- Corrigidos vários problemas do layout de totais: total padrão incluído criava uma linha repetida, a Ação de cada item não era gravada, gravar apagava as condições, trocar a ordem ou a coluna duplicava o item e desmarcar "Ativo" sumia com ele sem como reativar.
-- Cada total passou a informar também a **categoria** (trabalhadas, saldo, extras, faltas, prêmio, afastamento…) e, nos prêmios e campos customizados, o código da folha.
 
 - O círculo à esquerda do total abre o menu: marcador, Explicação e Copiar:
 ![image](imagens/cloud_pr3030_imagem1.png)
@@ -94,17 +91,6 @@ Nova tela **Escalas › Home office**, com os dias de home office de cada colabo
 ![image](imagens/cloud_pr3077_imagem2.png)
 - Arrastando o colaborador da Terça para a Quarta:
 ![image](imagens/cloud_pr3077_imagem3.png)
-
-## Segurança e permissões
-
-Revisão completa do acesso aos dados: cada operação do sistema passa a conferir quem está pedindo e o que essa pessoa pode ver ou alterar.
-
-- Toda operação exige login, e as que gravam ou mostram dados de outras pessoas exigem a permissão da tela correspondente.
-- No portal, o colaborador vê e altera **somente os próprios dados**: cartão, marcações, espelhos, assinaturas, cadastro, notificações e solicitações. As solicitações que ele faz ficam sempre pendentes até a aprovação da gestão (ou da aprovação automática, quando configurada).
-- Usuários, perfis de acesso, troca de senha e vínculo com colaborador só podem ser alterados por quem tem a permissão de usuários.
-- Consultas de dashboards, relatórios e listas de escolha só leem dados, sempre do próprio cliente.
-- As senhas guardadas nas configurações não aparecem mais na tela, e salvar as configurações mantém as senhas gravadas. Anexos aceitam só imagem, PDF e JSON.
-- As rotinas automáticas (cálculo, escalas, espelhos, folha, migração) continuam funcionando normalmente.
 
 ### Cadastros abrem só para consulta quando falta permissão
 
@@ -137,21 +123,6 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 ![image](imagens/cloud_pr3081_imagem4.png)
 - Áudio gravado pelo microfone, com a prévia antes de enviar:
 ![image](imagens/cloud_pr3081_imagem5.png)
-
-## Manutenção em lote: histórico e nova tela ✨
-
-- **Toda execução fica registrada**: quem executou, quando, os filtros usados (com os nomes de cargo, quadro de horário, estabelecimento etc.), o que foi aplicado e quantos colaboradores e dias foram alterados — inclusive quando dá erro.
-- **Histórico das execuções**, com pesquisa: cada execução abre a lista dos dias alterados, com o valor antes e depois e o link para a manutenção do colaborador.
-- Nova tela: configuração do lote no painel à esquerda; à direita, os números do lote, a prévia e as últimas execuções. A prévia se atualiza sozinha ao mudar os filtros, sem o passo Executar → Voltar.
-- O botão **Aplicar** mostra quantos dias serão alterados, pede confirmação e só libera com a alteração preenchida.
-- Filtros de estabelecimento, departamento, setor e seção ficam recolhidos, com a contagem dos que estão em uso.
-
-- Prévia e números atualizados sozinhos, com o botão mostrando quantos dias serão alterados:
-![image](imagens/cloud_pr2996_imagem1.png)
-- Aplicar pede confirmação com o resumo do que será feito:
-![image](imagens/cloud_pr2996_imagem2.png)
-- Histórico com usuário, filtros e resultado de cada execução:
-![image](imagens/cloud_pr2996_imagem3.png)
 
 ## Espelho de ponto
 
