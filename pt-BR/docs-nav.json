@@ -14,6 +14,15 @@
       ]
     },
     {
+      "text": "Guias",
+      "items": [
+        {
+          "text": "Escala 5x2 na prática",
+          "path": "Guias/Escala-5x2.md"
+        }
+      ]
+    },
+    {
       "text": "Aplicativos",
       "items": [
         {
