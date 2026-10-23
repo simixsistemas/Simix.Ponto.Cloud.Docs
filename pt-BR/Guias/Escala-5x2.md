@@ -2,6 +2,8 @@
 
 **Guia prático · RH e DP** — Edição de outubro de 2026
 
+> 📄 **[Baixe o guia em PDF](pdf/Guia-Escala-5x2-na-Pratica-Simix.pdf)**
+
 Como a sua empresa sai da 6x1 sem perder o ritmo da operação. Com um capítulo especial para supermercados.
 
 O que a Emenda Constitucional nº 141/2026 muda na jornada, nas escalas, no ponto e na folha de qualquer empresa, com exemplos de cálculo e um plano de ação semana a semana.
