@@ -1,3 +1,10 @@
+# 28/10/2026
+
+## Aplicativo 📱
+
+- Versão **4.0.03**: bloqueio do registro pelo aplicativo (Padrão, Sempre ou Nunca por colaborador), marcação recusada sem comprovante, tipo de horário especial e Km e Placa obrigatórios para motoristas, e registro sem GPS sem a distância errada ao estabelecimento.
+- Detalhes e imagens em **[Novidades do aplicativo](Aplicativo.md)**.
+
 # 21/10/2026
 
 ## Resumo
