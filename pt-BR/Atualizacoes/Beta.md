@@ -1,4 +1,173 @@
 
+## Assistente de IA ✨
+
+Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cadastros e lançamentos, que só são gravados depois da confirmação de quem pediu.
+
+- Botão **Assistente** na barra do topo, que abre uma janela flutuante no canto da tela. A conversa continua ao trocar de tela, a janela minimiza e, no celular, ocupa a tela inteira. Não aparece para quem é só colaborador.
+- As respostas aparecem enquanto são escritas, trazem links para as telas do sistema e consultam a ajuda do sistema (roteiros, explicação dos totais, menu, tutoriais, novidades, dicas dos campos e a documentação) para responder "como faço…".
+- **Cadastros pelo chat**: cargos, departamentos, setores, estabelecimentos, feriados e tags. Pedir vários na mesma mensagem ("cadastre os cargos A, B e C") gera um único cartão, com uma linha por registro; dá para desmarcar itens antes de confirmar, e depois cada linha mostra se foi gravada, desmarcada ou recusada, com o motivo.
+- **Alterações em lote**: um a um ("troque o CBO dos cargos Dev e Teste") ou por critério ("todos os cargos com Motorista no nome"), com o valor atual riscado e o novo em destaque. Registro que já está com o valor pedido fica de fora, e o que foi alterado por outra pessoa depois da proposta não é sobrescrito. Até 200 itens por proposta.
+- O Assistente não exclui registros: explica que a exclusão é feita na tela do cadastro e oferece inativar.
+- **Manutenção em lote**: o Assistente entende o pedido (quem, qual afastamento ou alteração, qual período), acha os cadastros pelo nome e mostra um cartão com o resumo e a prévia. O botão **Abrir na manutenção em lote** abre a tela já preenchida, com o aviso "Preenchido pelo assistente", e nada é gravado até a pessoa clicar em Aplicar. Quando falta informação, ele pergunta; lançar para todos só com pedido explícito. Ele sabe a data de hoje, para pedidos como "nos próximos 30 dias", e avisa os dias que já têm afastamento e ficam de fora.
+- **Atalhos pelo chat**: "adiciona um atalho para a tela de Colaboradores no grupo Cadastros" gera o atalho num cartão, gravado na estrela de Favoritos quando a pessoa confirma.
+- O Assistente também conhece os dados de locais de trabalho para montar gráficos e listas nos dashboards.
+- Menu da janela com Nova conversa, Conversas anteriores, Enviar feedback e **Chamar a equipe Símix nesta conversa**: a equipe Símix responde direto na janela, com o nome de quem respondeu e aviso no sino. Enquanto ela atende, o Assistente fica pausado naquela conversa; ao devolver ("Voltar ao assistente"), ele retoma sabendo o que o suporte orientou.
+- O Assistente vem ligado para todas as empresas, junto com o Símix Ponto no Teams (é o mesmo recurso), e pode ser desligado por empresa. O Símix Ponto no Teams passa a usar a mesma ajuda do Assistente.
+- Para a equipe Símix: painel **Assistente** no admin, com as conversas de todos os clientes, os cards "Aguardando o suporte", "Em atendimento" e "Com falha", filtros por cliente, período e texto, e cada conversa com as propostas e o que aconteceu com cada uma.
+
+- Pedido de cadastro de cargo com o cartão de confirmação:
+![image](imagens/cloud_pr3048_imagem1.png)
+- Depois do Confirmar, o cartão mostra o cargo criado e o link para abrir:
+![image](imagens/cloud_pr3048_imagem2.png)
+- Pedido de três cargos num cartão só, com um desmarcado:
+![image](imagens/cloud_pr3155_imagem1.png)
+- Depois de confirmar, cada linha mostra o desfecho:
+![image](imagens/cloud_pr3155_imagem2.png)
+- Alteração do CBO de dois cargos, com o valor atual e o novo:
+![image](imagens/cloud_pr3155_imagem3.png)
+- Os dois cargos alterados:
+![image](imagens/cloud_pr3155_imagem4.png)
+- Cartão do aviso prévio de 2 horas por dia nos próximos 30 dias, com o dia que já tinha afastamento:
+![image](imagens/cloud_pr3200_imagem1.png)
+- A manutenção em lote aberta pelo cartão, já preenchida:
+![image](imagens/cloud_pr3200_imagem2.png)
+- Cartão das férias para o departamento Administrativo:
+![image](imagens/cloud_pr3200_imagem3.png)
+- A tela aberta com o departamento e o afastamento de férias:
+![image](imagens/cloud_pr3200_imagem4.png)
+- Atalho proposto pelo chat, confirmado no cartão e já na estrela:
+![image](imagens/cloud_pr3145_imagem7.png)
+- Painel do Assistente no admin, com a conversa aberta e as respostas da equipe Símix:
+![image](imagens/cloud_pr3192_imagem1.png)
+- Janela do Assistente em atendimento pela equipe Símix:
+![image](imagens/cloud_pr3192_imagem2.png)
+
+## Escala inteligente ✨
+
+O planejamento de escalas passa a conferir a lei, a convenção e a cobertura da loja enquanto a escala é montada, e ganhou um gerador de escala e o Assistente na grade.
+
+- **Conferência enquanto monta**: contorno vermelho no dia que impede a aprovação (7º dia seguido, descanso entre jornadas, domingos seguidos, horas da semana, jornada de aprendiz) e ocre no que só pede atenção, com o motivo e a fonte na dica. **Conferir com a Calc** aplica também as regras de inconsistência da empresa nos dias planejados, sem gravar no cartão.
+- Aba **Pendências** no painel lateral, agrupada por colaborador e por dia, e contadores de bloqueio e de atenção na barra. Aprovar com bloqueio mostra o que impede e pede uma justificativa, gravada em cada pendência com o usuário e a data.
+- Nova tela **Escalas › Regras e coberturas**: as políticas (convenção e empresa) com as regras e a vigência, a cobertura mínima de pessoas por faixa de horário e dia da semana em cada setor (em cards por setor) e os turnos de referência. A política aceita o envio da convenção coletiva em PDF: o Assistente propõe uma regra por cláusula, com a cláusula e a página, e cada uma só é gravada depois de confirmada.
+- **Sugerir coberturas**: a partir das marcações das últimas semanas, monta o rascunho das faixas de cada setor, com o horário de funcionamento, o porte e os picos de movimento ajustados pelo Assistente. Nada é gravado até aceitar, setor por setor.
+- Rodapé da grade com a cobertura de cada dia; clicando no dia, a linha do dia mostra o necessário e o escalado a cada meia hora, com a barra de cada pessoa.
+- **Início rápido** no editor do dia: os turnos de referência do setor e as entradas mais usadas montam o horário com um clique, com a jornada ao lado da meta do contrato.
+- **Gerar escala inteligente**: completa só os dias que faltam, repara o mínimo ou refaz o período, cumprindo a lei, a convenção e as regras da empresa e cobrindo a loja o melhor possível. A prévia entra na grade com os dias mudados circulados (Ctrl+Z desfaz) e um resumo da cobertura e das pendências antes e depois; quando ainda falta gente, o resumo diz por quê. O cartão de ponto só muda na aprovação.
+- **Assistente na grade** (botão Perguntar): explica pendências e cobertura, diz quem pode cobrir uma falta com o efeito de cada opção, aplica a opção escolhida e gera a semana ou o período pedido.
+- **Simulador da redução de jornada** (Escalas › Simulador da redução): por setor, quantas pessoas faltariam se a semana cair para 42 ou 40 horas, a partir da cobertura cadastrada ou das horas trabalhadas nas últimas semanas, com as vagas calculadas pelo gerador, as pessoas de cada setor e exportação para Excel.
+- Previsão do tempo nos dias da grade (16 dias), só informativa.
+
+- Regras da convenção e da empresa, com a vigência e a prioridade de cada política:
+![image](imagens/cloud_pr3149_imagem1.png)
+- Cobertura mínima do setor por faixa de horário e dia da semana:
+![image](imagens/cloud_pr3149_imagem2.png)
+- Turnos de referência:
+![image](imagens/cloud_pr3149_imagem3.png)
+- A grade com os dias que ferem a lei em vermelho, os de atenção em ocre e a cobertura no rodapé:
+![image](imagens/cloud_pr3149_imagem4.png)
+- A aba Pendências, com o motivo e a fonte de cada uma:
+![image](imagens/cloud_pr3149_imagem5.png)
+- A linha do dia: necessário × escalado a cada meia hora:
+![image](imagens/cloud_pr3149_imagem6.png)
+- Aprovar com bloqueio pede a justificativa:
+![image](imagens/cloud_pr3149_imagem7.png)
+- Simulador da redução de jornada, setor por setor:
+![image](imagens/cloud_pr3149_imagem8.png)
+- As pessoas do setor, com o regime e quem já passa do novo limite:
+![image](imagens/cloud_pr3149_imagem9.png)
+- Início rápido no editor do dia:
+![image](imagens/cloud_pr3150_imagem1.png)
+- Conferir com a Calc: a regra de inconsistência da empresa no painel:
+![image](imagens/cloud_pr3150_imagem3.png)
+- Coberturas em cards:
+![image](imagens/cloud_pr3205_imagem5.png)
+- Sugerir coberturas: o formulário preenchido pelo histórico:
+![image](imagens/cloud_pr3205_imagem6.png)
+- A prévia da sugestão ajustada pelo Assistente:
+![image](imagens/cloud_pr3205_imagem7.png)
+- O gerador: o que fazer, os dias, os colaboradores e o tempo da busca:
+![image](imagens/cloud_pr3162_imagem1.png)
+- Resumo depois de gerar o plano inteiro, com a cobertura e os bloqueios antes e depois:
+![image](imagens/cloud_pr3162_imagem2.png)
+- Os dias mudados circulados na grade:
+![image](imagens/cloud_pr3162_imagem3.png)
+- Assistente: quem cobre o atestado de amanhã, com o efeito de cada opção (nomes trocados por pseudônimos):
+![image](imagens/cloud_pr3162_imagem4.png)
+- A opção escolhida aplicada na grade:
+![image](imagens/cloud_pr3162_imagem5.png)
+- "Refaça a escala da semana que vem" pelo Assistente:
+![image](imagens/cloud_pr3162_imagem6.png)
+- Convenção em PDF enviada na política:
+![image](imagens/cloud_pr3162_imagem7.png)
+- Regras propostas a partir da convenção:
+![image](imagens/cloud_pr3162_imagem8.png)
+- Regra confirmada:
+![image](imagens/cloud_pr3162_imagem9.png)
+- Vagas pelo gerador no simulador da redução de jornada:
+![image](imagens/cloud_pr3162_imagem10.png)
+- Previsão do tempo no cabeçalho da grade:
+![image](imagens/cloud_pr3162_imagem11.png)
+
+## Uniformes e EPIs ✨
+
+Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, trocas, devoluções, estoque e os CAs dos equipamentos.
+
+- **Cadastro de itens** (EPI, uniforme ou outros) com grade de tamanhos, fornecedores e o CA de cada fornecedor, prazo de troca, devolução e orientação de uso. O CA digitado é conferido na base oficial do MTE, que traz validade, situação, fabricante e modelo e é atualizada toda semana.
+- **Kits por lotação** (estabelecimento, departamento, cargo…): na admissão a entrega já vem montada com os itens do kit e o tamanho do colaborador. O card "Kit incompleto" do painel lista quem está sem algum item do kit.
+- **Entrega com termo em PDF**, assinado na hora, anexado em papel ou pelo próprio colaborador no portal e no aplicativo. No atendimento presencial, o colaborador assina pelo desenho, pelo reconhecimento facial ou pela senha do registro de ponto, conforme as formas que a empresa aceitar.
+- **Troca** por tempo de uso, dano, extravio ou tamanho errado; **devolução** na demissão, na mudança de setor ou avulsa, com termo de devolução; aviso ou bloqueio de entrega com CA vencido, suspenso ou cancelado.
+- Guia **EPIs** no cadastro do colaborador, atalhos nas ações rápidas da admissão e da demissão e ficha de uniformes e EPIs para impressão.
+- **Estoque** (opcional): saldo por estabelecimento ou central, por item, fornecedor, tamanho e condição (novo ou usado), com custo médio; entrada de compra, ajuste, transferência e inventário; a entrega mostra o saldo e não entrega o que não tem.
+- **Pedido à central** (opcional): a loja pede os itens do colaborador, a central separa com o saldo à vista e envia, e a loja confirma o recebimento — que registra a entrega com o termo — ou recusa.
+- **Portal do colaborador**: tela "Uniformes e EPIs" com os termos a assinar, o que está com ele e quando troca, os pedidos, os tamanhos e o histórico. O colaborador pede a troca pelo portal ou pelo aplicativo (com foto em dano, mau uso e extravio), e a loja aprova ou reprova. Depois do registro de ponto, ele é lembrado das trocas vencidas e dos termos a assinar.
+- **Painel** com trocas vencidas e próximas, CAs a resolver, admitidos sem itens, devoluções pendentes, termos sem assinatura, estoque abaixo do mínimo e pedidos em aberto, além da lista de itens em uso com reposição em lote. Avisos diários de troca, de CA e de estoque mínimo.
+- Configuração do módulo (termo com valor, CA vencido, grades, dias de aviso, formas de assinatura) e carga inicial por planilha dos itens que cada colaborador já usa e do saldo do estoque.
+
+- Nova entrega com o kit da lotação já montado:
+![image](imagens/cloud_pr3146_imagem1.png)
+- Saldo da central depois de duas entradas de compra, com custo médio e valor:
+![image](imagens/cloud_pr3158_imagem1.png)
+- Entrega pedindo mais do que há no estoque: a linha fica em vermelho e a entrega não sai:
+![image](imagens/cloud_pr3158_imagem2.png)
+- Inventário: só a linha com contagem diferente vira ajuste:
+![image](imagens/cloud_pr3158_imagem3.png)
+- Pedido de admissão já com o kit:
+![image](imagens/cloud_pr3160_imagem1.png)
+- Separação com o saldo de cada linha:
+![image](imagens/cloud_pr3160_imagem2.png)
+- Ao receber, a entrega é registrada e o termo abre para a assinatura:
+![image](imagens/cloud_pr3160_imagem3.png)
+- Lista da loja com um pedido recebido e um recusado:
+![image](imagens/cloud_pr3160_imagem4.png)
+- Painel com as pendências e a data da base de CAs:
+![image](imagens/cloud_pr3161_imagem1.png)
+- Itens em uso com o prazo de troca e a marca de pedido aberto:
+![image](imagens/cloud_pr3161_imagem2.png)
+- Reposição em lote: um pedido à central para cada colaborador:
+![image](imagens/cloud_pr3161_imagem3.png)
+- CA conferido na base do MTE, com validade, fabricante e modelo:
+![image](imagens/cloud_pr3161_imagem4.png)
+- Dias de aviso de troca e de CA na configuração:
+![image](imagens/cloud_pr3161_imagem5.png)
+- Base de CAs no painel admin:
+![image](imagens/cloud_pr3161_imagem6.png)
+- Portal do colaborador: termo a assinar, item em uso e o pedido aguardando aprovação:
+![image](imagens/cloud_pr3165_imagem1.png)
+- Lembrete depois do registro de ponto:
+![image](imagens/cloud_pr3165_imagem2.png)
+- Pedido do colaborador aguardando a aprovação da loja:
+![image](imagens/cloud_pr3165_imagem3.png)
+- Sem pedido à central: a entrega abre preenchida com o pedido:
+![image](imagens/cloud_pr3165_imagem4.png)
+- Atendimento com os termos a assinar, o que falta do kit e o que está em uso:
+![image](imagens/cloud_pr3165_imagem5.png)
+- Assinatura do termo: desenho, reconhecimento facial ou senha de registro:
+![image](imagens/cloud_pr3165_imagem6.png)
+- Card "Kit incompleto" e a lista de quem está sem algum item:
+![image](imagens/cloud_pr3165_imagem7.png)
+- Formas de assinatura aceitas, pedido pelo colaborador e aviso depois do registro:
+![image](imagens/cloud_pr3165_imagem8.png)
+
 ## Trilha do conhecimento ✨
 
 Novo módulo para aprender o sistema no seu ritmo, com trilhas que guardam o progresso de cada pessoa.

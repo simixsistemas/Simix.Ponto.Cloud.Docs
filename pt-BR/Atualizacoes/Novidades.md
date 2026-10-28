@@ -1,9 +1,543 @@
 # 28/10/2026
 
+## Resumo
+
+- 🚨 Painel de inconsistências: o que trava o fechamento, risco trabalhista e regras a revisar
+- 🩺 Painel de manutenções e afastamentos, com absenteísmo e os ajustes feitos no cartão
+- 📍 Locais de trabalho: previsto × realizado, com painel e dashboard na loja
+- 🔍 Consulta do dia e página de Registros mostram as marcações que ficaram fora do cálculo
+- 📆 Consulta diária com intervalo de datas, totais em cards e faixas de extras
+- 🕘 Horários por período no cadastro do colaborador e direto na Manutenção
+- 🔁 Readmissão: o cadastro reconhece o CPF de quem já foi desligado
+- 📜 Termos de responsabilidade e atestado técnico gerados pelo próprio sistema
+- 🔄 Escalas: troca automática de domingos trabalhados, visão Semana e Excel
+- 📱 Registro pelo aplicativo e pela web: Padrão, Sempre ou Nunca por colaborador
+- 🧭 Menu do topo mais baixo, com Recentes e o menu com todas as telas
+- ⭐ Estrela de Favoritos com grupos de atalhos
+- 🚫 Cadastros não aceitam nome repetido
+- 📥 Importação de colaboradores por planilha com todos os dados
+- ⚖️ Forçar BH e Forçar sem compensação valem também para faltas e extras
+- 🧮 Calcular dados segue nos outros colaboradores quando um cartão dá erro
+- 🧹 Coletores: excluir do equipamento os colaboradores desligados
+- 🔐 Permissões com nomes completos e mensagem clara quando falta acesso
+
+## Painel de inconsistências ✨
+
+Novo painel em **Inconsistências › Painel** (também em Consultas e dashboards), que separa as inconsistências pelo que cada uma pede de ação e compara com o mês anterior.
+
+- Separa o que **trava o fechamento**, o **risco trabalhista**, o que é **erro de escala** e o que é **comportamento**.
+- Lista de quem trava o fechamento (marcação faltando ou falta sem afastamento), a partir do dia mais antigo, com atalho para o cartão.
+- Risco trabalhista por regra, com o artigo da CLT, e mapa por estabelecimento ou departamento colorido pela taxa por colaborador.
+- **Regras a revisar**: a regra que atinge mais da metade dos colaboradores no mês sai das contagens e aparece à parte, com atalho para ajustar. O cadastro de regras também avisa quando isso acontece.
+- Tendência dos últimos 6 meses por tipo de inconsistência.
+- As listas de inconsistências (do dia e por mês) abrem já filtradas a partir do painel, do painel de manutenções e do Início, e os atalhos para o painel e para Inconsistências por mês respeitam o filtro de lotação escolhido no atalho.
+- A regra padrão **"Acima de 4h trabalhadas no turno"** passa a valer acima de 6h (intervalo de 1 hora da CLT). Só muda onde a regra nunca foi editada, a partir do próximo cálculo.
+
+- Painel de setembro: a regra de horas no turno atinge 87% do quadro e vai para "Regras a revisar":
+![image](imagens/cloud_pr3213_imagem1.png)
+
+## Painel de manutenções e afastamentos ✨
+
+Nova tela em **Ponto › Manutenção › Manutenções e afastamentos**, que junta as ausências e os ajustes feitos no cartão do período. Segue o período e o filtro global e tem o próprio botão de filtro.
+
+- Cards de absenteísmo, faltas, atestados, atestados sem anexo, ajustes manuais e ajustes sem justificativa, comparados ao período anterior. O absenteísmo é calculado como no relatório de absenteísmo, e o card "Atestados sem anexo" abre a consulta de atestados já filtrada.
+- Ausentes por dia, afastamentos por tipo (as férias aparecem à parte, fora dos totais) e mapa de ausências, com um colaborador por linha e atalho para o cartão.
+- Ajustes por tipo, ajustes individuais × em massa (20 ou mais do mesmo usuário no mesmo minuto) e quem mais teve o cartão ajustado à mão.
+- Alerta de quem tem mais de 15 dias de trabalho seguidos de falta — provável afastamento ou demissão que não foi lançado —, com o absenteísmo sem esses dias, e alerta das inconsistências em aberto.
+- O histórico de alterações do cartão passa a guardar o mês do cartão: com o cartão começando fora do dia 1, os ajustes e o relatório de manutenções dos dashboards caem no mês certo. As alterações antigas foram corrigidas na atualização, e o relatório ficou mais rápido.
+- Na loja de dashboards, o antigo "Dashboard de manutenções", que mostrava as solicitações de ajuste, passa a se chamar **Pendências**. Entra um novo dashboard **Manutenções**, com os ajustes do mês por tipo, por rotina, por usuário (os automáticos aparecem como "Sistema") e por colaborador, e a lista dos ajustes com a marcação antiga e a nova.
+
+- Período 08/2026: cards comparados ao mês anterior, ausentes por dia, tipos, ajustes e mapa de ausências:
+![image](imagens/cloud_pr3153_imagem1.png)
+- Alerta das faltas corridas longas: sem esses dias, o absenteísmo cairia de 9,06% para 7,56%:
+![image](imagens/cloud_pr3153_imagem2.png)
+- No celular, dois cards por linha e o mapa rolando dentro do quadro:
+![image](imagens/cloud_pr3153_imagem3.png)
+- Novo dashboard Manutenções na loja:
+![image](imagens/rx_pr165_imagem1.png)
+- Dashboard Pendências, com o nome e os títulos novos:
+![image](imagens/rx_pr165_imagem2.png)
+
+## Locais de trabalho: previsto × realizado ✨
+
+Novo painel para acompanhar onde cada colaborador trabalhou no mês — empresa, fora da empresa, home office, sobreaviso, cliente ou viagem — comparado ao local previsto.
+
+- Nova tela **Locais de trabalho** no menu da Manutenção: dias no local previsto, dias fora da empresa, divergências, marcações sem evidência de local, sobreaviso acionado e local informado que a localização contradiz.
+- Quadro previsto × realizado e grade por colaborador e dia, com as divergências destacadas; o nome abre o cartão do colaborador.
+- Lista das divergências do mês: marcando os dias, o local previsto é ajustado em lote (igual ao realizado ou outro escolhido), e os dias são recalculados, inclusive VT e VR de viagem.
+- O local realizado vem do que a marcação informou; sem isso, do relógio de ponto (empresa) ou da localização do aplicativo e da web comparada à do estabelecimento. Localização a mais de 50 km do estabelecimento é tratada como coordenada errada do cadastro, e não como trabalho fora.
+- Novo dashboard **Locais de trabalho** na loja, com os mesmos dados e os filtros de período, estabelecimento e departamento.
+- O cadastro de estabelecimento avisa quando falta a latitude e a longitude, ou quando as marcações do aplicativo e da web do último mês ficam, na mediana, a mais de 50 km dele (sinal de coordenada errada). O painel também lista os estabelecimentos sem coordenada.
+- O registro pela web passa a pedir a localização ao navegador mesmo quando a empresa não confere o local: ela fica guardada só para consulta e nunca impede o registro.
+- Marcação feita sem a posição do aparelho deixa de gravar uma distância falsa até a empresa.
+- O cálculo, a importação de registros e a Manutenção voltaram a enxergar a escala do quadro de horário do colaborador: a marcação web sem local passa a receber o local da escala (por exemplo, home office nos dias previstos). O Calendário explica de onde vem o local do dia com essa regra.
+
+- Visão geral do painel, com os nomes borrados:
+![image](imagens/cloud_pr3197_imagem1.png)
+- Divergências do mês com dois dias marcados para ajustar o local previsto:
+![image](imagens/cloud_pr3197_imagem2.png)
+- Dashboard Locais de trabalho na loja:
+![image](imagens/rx_pr167_imagem1.jpg)
+- O mesmo dashboard aberto sobre os dados de locais de trabalho:
+![image](imagens/cloud_pr3195_imagem1.jpg)
+- Aviso de coordenada suspeita no cadastro do estabelecimento, com marcações recentes a 534 km:
+![image](imagens/cloud_pr3191_imagem1.jpg)
+
+## Marcações fora do cálculo e nova página de Registros ✨
+
+As consultas de registros passam a mostrar as marcações que foram guardadas mas não entraram no cálculo, e a consulta do dia e a página de Registros foram redesenhadas.
+
+- Aviso **"N marcações não entraram no cálculo"** na consulta do dia (aberta pelo olho da Manutenção, pela Consulta diária e pelas Inconsistências) e nas páginas de Registros e Comprovantes, com a situação e o motivo.
+- A consulta do dia virou uma lista só, **Marcações e Alterações do dia**: cada marcação mostra em que campo do cartão caiu (Ent 1, Sai lanche 2…) ou que ficou fora do cálculo, com os filtros Todas, No cartão e Fora do cálculo.
+- Aberta pela Manutenção, a lista confere com o cartão da tela: a marcação reorganizada aparece no campo atual, e a editada ou apagada depois da importação aparece como alterada ou removida.
+- Clicar na marcação abre o detalhe com a situação, o endereço e o comprovante (a aba Comprovantes deixou de existir). O título traz o nome do colaborador, e as setas trocam de dia sem fechar a janela.
+- Turno noturno: a marcação que caiu no cartão do dia vizinho aparece nos dois dias, com a data junto da hora.
+- **Página de Registros** numa visão só: total e período no cabeçalho; filtros numa linha (período, dispositivo, filtro de lotação com filtros salvos e pesquisa); as situações do filtro inteiro com a quantidade (Todas, No cartão, Fora do cálculo, Aguardando, Repetidas), servindo de filtro; e a nova coluna **Cartão**. Colunas sem nada na página saem da lista, e a linha fora do cálculo fica destacada.
+- Clicar numa marcação da página de Registros abre ao lado as marcações daquele dia do colaborador; em telas menores, o painel abre por cima da lista.
+- Corrigidos: a aba de comprovantes escondia a marcação de relógio que não entrou no cálculo; o selo "INATIVO" do comprovante saía sem cor; a coluna da hora da marcação se chamava "Data da alteração"; e a data final da página de Registros não entrava na consulta.
+
+- Cartão reorganizado na Manutenção: marcações no campo de hoje, uma alterada e as fora do cálculo em laranja:
+![image](imagens/cloud_pr3215_imagem1.png)
+- Turno noturno: as marcações da noite anterior aparecem com a data junto da hora:
+![image](imagens/cloud_pr3215_imagem2.png)
+- Página de Registros com as situações, a coluna Cartão e as marcações do dia ao lado:
+![image](imagens/cloud_pr3215_imagem3.png)
+- No celular, as marcações do dia abrem por cima da lista:
+![image](imagens/cloud_pr3215_imagem4.png)
+
+## Consulta diária com intervalo de datas ✨
+
+- Campos **Data inicial** e **Data final**: sem a data final, a consulta continua sendo do dia; com ela, traz todos os dias do intervalo (até 62), com a coluna Data. Os atalhos da linha (Manutenção, comprovantes) abrem no dia daquela linha.
+- No intervalo, a opção **Por colaborador** mostra uma linha por pessoa com o total: dias, presenças, faltas, horas previstas e trabalhadas, saldo, extras por faixa, horas faltas e adicional noturno. "Ver os dias" volta aos dias daquele colaborador.
+- Totais em **cards** no topo, no lugar da tabela do rodapé, com um card por faixa de extras, e a coluna Extras com as faixas de cada dia.
+- Os totais passam a somar todos os dias filtrados — antes somavam só as linhas da página exibida.
+- Quem é só colaborador consulta apenas o próprio cartão também por essa tela.
+- A Consulta diária volta a abrir para quem já vê o ponto da equipe: basta a permissão de Consulta diária, de Manutenção do ponto ou de Dias calculados.
+
+- Um dia, com os totais em cards e as faixas de extras:
+![image](imagens/cloud_pr3180_imagem1.png)
+- Intervalo de 01/10 a 20/10, com a coluna Data e os totais do período:
+![image](imagens/cloud_pr3180_imagem2.png)
+- O mesmo intervalo por colaborador:
+![image](imagens/cloud_pr3180_imagem3.png)
+
+## Horários por período ✨
+
+- O cadastro do colaborador ganhou a guia **Horários por período**, para incluir, alterar e excluir os períodos junto com o cadastro. A opção "Horários" saiu do menu da lista de colaboradores.
+- Ao trocar o horário do colaborador, escolha entre **No mês todo** (como era) ou **A partir de** uma data: ao salvar, o horário anterior continua valendo do início do cartão até a véspera.
+- **Na Manutenção**, coluna Horário: um ícone de calendário ao lado do "+" cria o horário por período a partir do dia clicado, até o fim do cartão, já com o quadro de horário atual. Ao gravar, o cartão é recalculado.
+- Os dias com horário por período mostram o nome do quadro; na edição do dia, clicar no nome abre o período para alterar ou excluir.
+- O período precisa das duas datas e não pode se sobrepor a outro do mesmo colaborador (sem a data final, o cálculo ignorava o período).
+
+- Calendário ao lado do "+" na coluna Horário:
+![image](imagens/cloud_pr3118_imagem1.png)
+- O período já vem do dia clicado até o fim do cartão:
+![image](imagens/cloud_pr3118_imagem2.png)
+- Depois de gravar e recalcular, os dias do período mostram o quadro:
+![image](imagens/cloud_pr3118_imagem3.png)
+- No dia em edição, o nome vira um botão para alterar o período:
+![image](imagens/cloud_pr3118_imagem4.png)
+- Alterar ou excluir o período:
+![image](imagens/cloud_pr3118_imagem5.png)
+- Período que se sobrepõe a outro é recusado:
+![image](imagens/cloud_pr3118_imagem6.png)
+- Guia Horários por período no cadastro do colaborador:
+![image](imagens/cloud_pr3118_imagem7.png)
+- Troca de horário "A partir de" uma data:
+![image](imagens/cloud_pr3118_imagem8.png)
+
+## Readmissão no cadastro do colaborador ✨
+
+- Ao digitar o CPF de um colaborador novo, o cadastro confere se ele já foi de alguém desligado e mostra o aviso com o nome, o código e a data do desligamento.
+- **Copiar dados cadastrais** preenche o cadastro novo com os dados pessoais do anterior (nome, nome social, nascimento, gênero, PIS, RG, carteira, estado civil, escolaridade, e-mails, telefone e endereço). Código, admissão, demissão, login, foto e os dados do mês continuam os do cadastro novo, e campo vazio no anterior não apaga o que já foi digitado.
+- **Ver histórico anterior** abre o cadastro antigo numa janela, no mês do desligamento.
+
+- Aviso logo abaixo do CPF:
+![image](imagens/cloud_pr3175_imagem1.png)
+- Depois de "Copiar dados cadastrais": dados pessoais preenchidos, organização e datas ainda vazias:
+![image](imagens/cloud_pr3175_imagem2.png)
+- "Ver histórico anterior" abre o cadastro do colaborador desligado:
+![image](imagens/cloud_pr3175_imagem3.png)
+
+## Termos de responsabilidade e atestado técnico ✨
+
+Nova tela **Avançado › Termos de responsabilidade**, com os documentos que a Portaria MTP 671/2021 (art. 89) exige na fiscalização.
+
+- A empresa gera o **Atestado Técnico e Termo de Responsabilidade do Símix Ponto** quando precisar, para a empresa ou para um estabelecimento (com o CNPJ dele), no papel timbrado da Símix e com a data do dia.
+- O atestado sai assinado digitalmente pelo responsável técnico; quando não há certificado configurado, a tela avisa que ele sai sem assinatura.
+- O atestado do fabricante de cada relógio (como o emitido pelo portal da Control iD) é anexado no cadastro do coletor e listado na mesma tela, com o que ainda falta anexar.
+
+- Atestado da Símix gerado para a empresa e a lista dos relógios com o atestado do fabricante:
+![image](imagens/cloud_pr3078_imagem1.png)
+- Cadastro do coletor, aba Informações: abrir, substituir ou remover o PDF do fabricante:
+![image](imagens/cloud_pr3078_imagem2.png)
+
+## Escalas
+
+### Troca automática de domingos trabalhados ✨
+
+- Novo botão **Trocar domingos trabalhados** em Trocas/Afastamentos: liga cada domingo trabalhado sem jornada prevista (DSR ou folga) a um dia de falta integral — ou a uma folga que ainda não tem troca — da semana ao lado, o mais próximo do domingo. Analisa os colaboradores da página ou só os das células selecionadas.
+- Escolha onde procurar: nas duas semanas (começando pela posterior ou pela anterior), só na posterior ou só na anterior. O dia travado pelo gestor, o alterado na grade e ainda não salvo e o dia para onde outra troca já aponta ficam de fora.
+- Antes de aplicar, a tela mostra os pares, avisa quando o domingo teve menos horas que o previsto do dia trocado e lista os domingos que ficaram sem troca, com o motivo.
+- Os dias trocados ficam circulados na grade, e um contador na barra filtra só quem teve troca. Cada troca pode ser desfeita no editor da célula, e Ctrl+Z desfaz todas. Nada vai para o cartão antes de salvar.
+- Card da novidade na página de Novidades, com o passo a passo e a demonstração guiada (Me mostre).
+
+- Os pares encontrados, o alerta de horas e o resumo dos domingos sem troca:
+![image](imagens/cloud_pr3128_imagem1.png)
+- Depois de aplicar: trocas circuladas, o contador filtrando e o botão Voltar:
+![image](imagens/cloud_pr3128_imagem2.png)
+- Card da novidade, com o "Me mostre":
+![image](imagens/cloud_pr3128_imagem3.png)
+- Demonstração guiada no passo da lista de pares:
+![image](imagens/cloud_pr3128_imagem4.png)
+- Os dias que compensam (falta e folga sem troca) e os pares antes de aplicar:
+![image](imagens/cloud_pr3150_imagem4.png)
+- Os dias trocados circulados na grade:
+![image](imagens/cloud_pr3150_imagem5.png)
+- O contador de trocas na barra, que mostra só os colaboradores com troca:
+![image](imagens/cloud_pr3150_imagem6.png)
+
+### Melhorias nas escalas
+
+- **Visão Semana** na grade, com setas para andar no período, e **Copiar a semana anterior** para as pessoas da página (Ctrl+Z desfaz).
+- **Exportar para Excel** a escala inteira, com os turnos de cada dia.
+- Feriado municipal e estadual só na célula de quem é da cidade (o cabeçalho marca só o nacional), também no Excel e na impressão.
+- Salvar recusa o dia de um colaborador que já está em outro planejamento aberto e diz qual.
+- Barra da escala em duas linhas: em cima o plano, Mês/Semana, os atalhos para as telas relacionadas, exportar, imprimir e as ações; embaixo as ferramentas, as pendências e uma ajuda só, com os atalhos do teclado, os treinamentos e o feedback.
+- Barra de status no pé da grade, com o que falta salvar, as células selecionadas, a legenda do dia selecionado e a navegação entre páginas, agora com 100 colaboradores por página.
+- Pesquisa de colaborador no próprio cabeçalho "Colaborador"; clicar na foto abre o menu com o nome, a manutenção do mês e os atalhos de sempre.
+- Painel lateral com largura fixa, deixando o resto da tela para a grade.
+- **Trocas/Afastamentos**: filtro por setor ao lado do estabelecimento, com vários setores de uma vez e valendo também na impressão e no Excel; botão Voltar para a tela de onde a pessoa veio; e a impressão filtrada por estabelecimento sai com o CNPJ e o nome dele — antes saíam os da empresa quando os colaboradores tinham lotação em outros estabelecimentos no mês.
+- Só quem tem a permissão de aprovar pode pedir a aplicação da escala no cartão.
+- Corrigidos: espaço vazio entre o nome e o primeiro dia na visão Semana, texto das células aparecendo por baixo do nome ao rolar, marcas da troca de domingos na cor do fundo, seta do Aprovar separada do botão, erro ao abrir a grade vinda de outra tela e demonstrações guiadas que não abriam as telas pelo menu.
+
+- Visão Semana:
+![image](imagens/cloud_pr3150_imagem2.png)
+- Feriado da cidade só na célula de quem é de lá (o feriado nacional fica na coluna):
+![image](imagens/cloud_pr3150_imagem7.png)
+- Barra em duas linhas e a barra de status com a legenda do dia (nomes ofuscados):
+![image](imagens/cloud_pr3205_imagem1.png)
+- Menu do colaborador pela foto:
+![image](imagens/cloud_pr3205_imagem2.png)
+- Atalhos para as telas relacionadas, por categoria:
+![image](imagens/cloud_pr3205_imagem3.png)
+- Trocas/Afastamentos com 100 colaboradores por página:
+![image](imagens/cloud_pr3205_imagem4.png)
+- Painel lateral com largura fixa:
+![image](imagens/cloud_pr3211_imagem1.png)
+- Trocas/Afastamentos com o filtro por setores:
+![image](imagens/cloud_pr3211_imagem3.png)
+- Impressão filtrada pelo estabelecimento 3, com o CNPJ e o nome dele:
+![image](imagens/cloud_pr3171_imagem1.png)
+- Filtrada pelo estabelecimento 2, com CNPJ de outra raiz:
+![image](imagens/cloud_pr3171_imagem2.png)
+
+## Registro pelo aplicativo e pela web: Padrão, Sempre ou Nunca ✨
+
+- Nova opção **Permitir registro pelo aplicativo** em **App › Configurações do app**, aba Segurança. Desmarcada, ninguém registra pelo aplicativo, a não ser quem estiver com **Sempre** no cadastro.
+- No cadastro do colaborador, **Permitir registro App** e **Permitir registro Web** passam a ter três opções: **Padrão** segue a configuração geral, **Sempre** libera mesmo com ela desligada e **Nunca** bloqueia mesmo com ela ligada. As mesmas opções valem na alteração em lote de colaboradores e nos valores padrão do cadastro.
+- O cadastro avisa quando o colaborador está no Padrão e a configuração geral está desligada (ele não vai conseguir registrar), com atalho para revisar a configuração.
+- O sistema confere a marcação quando ela chega do aplicativo — antes, a marcação era aceita mesmo com a opção desmarcada. A marcação recusada fica na consulta de registros como **Bloqueado**, com o motivo, sem comprovante e fora do cálculo.
+- Reimportar os dias na Manutenção não traz mais para o cartão as marcações bloqueadas (pela web ou pelo aplicativo) nem as relidas do coletor que ainda aguardam aprovação.
+- Os cadastros atuais foram convertidos sem mudar quem registra hoje, e o histórico passa a mostrar quem alterou as Configurações do app.
+
+- Configurações do app com a opção ligada:
+![image](imagens/cloud_pr3140_imagem1.png)
+- Com a opção desligada:
+![image](imagens/cloud_pr3140_imagem2.png)
+
 ## Aplicativo 📱
 
 - Versão **4.0.03**: bloqueio do registro pelo aplicativo (Padrão, Sempre ou Nunca por colaborador), marcação recusada sem comprovante, tipo de horário especial e Km e Placa obrigatórios para motoristas, e registro sem GPS sem a distância errada ao estabelecimento.
 - Detalhes e imagens em **[Novidades do aplicativo](Aplicativo.md)**.
+
+## Barra do topo, menu e favoritos
+
+### Menu do topo mais baixo ✨
+
+O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão some em telas menores.
+
+- Os grupos do menu ficam sempre numa linha só; os que não cabem rolam de lado.
+- O histórico de telas virou **Recentes**, no fim da barra de botões, com abrir em nova guia, fixar e remover; os fixados continuam à vista. A faixa própria abaixo do menu saiu.
+- Novo menu com **todos os grupos e telas** de uma vez (ícone à esquerda dos grupos), com filtro por nome sem acento.
+- Nova forma de exibir o menu, **Barra única**: sem a linha de grupos, o grupo é escolhido nesse menu completo, e o topo fica com uma linha a menos.
+- As setas de atalhos aparecem só no botão da tela aberta, ao passar o mouse e no foco do teclado.
+- Em telas menores, suporte e ajuda vão para o botão "⋯" e a empresa fica só com o ícone. O ícone de casa saiu da barra (o Início está no grupo Principal), e o botão "Chat" passa a se chamar **Suporte** (continua abrindo o chat do atendimento).
+- Os menus da estrela, de Consultas e de Escalas abrem na hora com o que já foi carregado e se atualizam em segundo plano, sem a barra de carregamento a cada clique.
+
+- Antes, a 1280px:
+![image](imagens/cloud_pr3216_imagem1.png)
+- Depois, a 1280px:
+![image](imagens/cloud_pr3216_imagem2.png)
+- Antes e depois, a 1024px:
+![image](imagens/cloud_pr3216_imagem3.png)
+![image](imagens/cloud_pr3216_imagem4.png)
+- Menu com todos os grupos e telas:
+![image](imagens/cloud_pr3216_imagem5.png)
+- Modo "Barra única":
+![image](imagens/cloud_pr3216_imagem6.png)
+
+### Estrela de Favoritos com grupos de atalhos ✨
+
+- Os atalhos ficam em **grupos** dentro do layout, cada um com nome e ícone, e a estrela mostra os grupos em seções. A estrela volta à barra do topo, e o ícone de cada atalho aparece sobre a cor dele.
+- Na estrela fica o uso: "Adicionar atalho" no rodapé (ou o + de cada grupo) e "Editar", que abre o cadastro completo do layout.
+- Cadastro do layout: os grupos um embaixo do outro, atalhos que se arrastam para ordenar ou mudar de grupo, grupos que sobem e descem e um painel ao lado para editar o atalho ou o grupo escolhido. Tudo é gravado junto no Salvar.
+- Novo atalho em passos: primeiro o tipo (tela ou comando, registro, dashboard, widget ou link), em cards com explicação e exemplo; depois as opções do tipo, com a explicação de cada uma.
+- Para quem ainda não tem atalhos, um assistente por perfil (Departamento pessoal, Gestor de equipe, Escalas e plantões, Registros e dispositivos ou Tudo) monta o layout só com as telas que a pessoa pode abrir. Também dá para montar do seu jeito ou começar do zero.
+- Os atalhos já criados continuam: cada layout antigo vira um grupo, com o mesmo nome e ícone. O card de atalhos do Início saiu.
+
+- Estrela com os grupos em seções, Adicionar atalho e Editar no rodapé:
+![image](imagens/cloud_pr3145_imagem1.png)
+- Cadastro do layout: grupos, atalhos arrastáveis e o painel do atalho escolhido:
+![image](imagens/cloud_pr3145_imagem2.png)
+- Novo atalho, passo 1: o tipo em cards, com explicação e exemplo:
+![image](imagens/cloud_pr3145_imagem3.png)
+- Novo atalho, passo 2: as opções do widget e o que o clique faz:
+![image](imagens/cloud_pr3145_imagem4.png)
+- Assistente de atalhos: os perfis, cada um com os grupos que traz:
+![image](imagens/cloud_pr3145_imagem5.png)
+- Os grupos do perfil Departamento pessoal já marcados, com as telas de cada um:
+![image](imagens/cloud_pr3145_imagem6.png)
+
+## Colaborador e cadastros
+
+### Cadastros não aceitam nome repetido ✨
+
+- Os cadastros não aceitam mais dois registros ativos com o mesmo nome ou descrição. Na comparação não contam maiúsculas, acentos nem espaços sobrando: "Guaiba", "GUAIBA" e "Guaíba" são o mesmo nome. Ao salvar um repetido, a mensagem mostra o registro que já existe e o código dele.
+- Registro inativo ou excluído não bloqueia o nome. Cidade com o mesmo nome em outra UF continua valendo, assim como bairro de outra cidade e motivo de outro tipo. Horários, feriados, colaboradores e médicos continuam podendo repetir o nome.
+- Os repetidos que já existiam foram corrigidos na atualização: cidades, bairros, cargos, departamentos, setores, seções e grupos de estabelecimentos ficaram com um registro só, o ativo mais antigo, e tudo o que apontava para os outros passou para ele. Nos cadastros de configuração (escalas, horários por dia, coletores, motivos, afastamentos…), em que o mesmo nome pode ter conteúdo diferente, o repetido ganhou o código no nome — por exemplo, "Folga (21)" — e nada muda no cálculo.
+
+- Pesquisa por "guaiba": as cidades repetidas viraram uma só, com tudo ligado a ela:
+![image](imagens/cloud_pr3106_imagem1.png)
+- Cadastrar "GUAÍBA" de novo é recusado, com a cidade que já existe:
+![image](imagens/cloud_pr3106_imagem2.jpg)
+
+### Importação de colaboradores por planilha ✨
+
+- A importação por planilha passa a trazer data de nascimento, gênero, matrícula, carteira de trabalho com a série, RG, estado civil, escolaridade, e-mail, telefone, CEP, endereço, complemento, bairro e cidade.
+- As colunas são reconhecidas sozinhas pelo nome do cabeçalho ("DATA NASCIMENTO", "CARTEIRA DE TRABALHO", "SERIE", "CIDADE"…), sem precisar escolher campo por campo.
+- Datas aceitas como data do Excel ou em texto (15/03/1990, 15/03/90, 1990-03-15); CEP com ou sem máscara, inclusive quando o Excel perde o zero à esquerda; estado civil e escolaridade em texto livre ("ENSINO MEDIO COMPLETO", "Casado(a)") viram as opções do cadastro.
+- Bairro e cidade são procurados pelo nome (aceitando "PELOTAS/RS" ou "CAMAQUÃ - RS") e só são cadastrados quando não existem.
+- Planilha sem estabelecimento grava o colaborador no estabelecimento padrão da empresa ou, sem ele, no primeiro ativo — antes ele ficava sem estabelecimento e o cadastro não salvava depois.
+- O RG aceita até 11 caracteres, só letras e números: ponto, traço, barra e espaços são retirados ao digitar ou colar, no cadastro e na importação. Antes o RG de 11 dígitos da planilha era cortado.
+- Ao terminar, a janela mostra quantos foram importados e quais não entraram por já estarem cadastrados com o mesmo código; se nenhum entrou, ela avisa.
+- A prévia mostra as colunas novas, e os campos para associar as colunas ficam numa grade que se ajusta à tela.
+
+- Colunas associadas automaticamente e a prévia (dados fictícios):
+![image](imagens/cloud_pr3143_imagem1.png)
+- Colaborador importado com o estabelecimento padrão:
+![image](imagens/cloud_pr3143_imagem2.png)
+- Nascimento, gênero, matrícula e documentos importados:
+![image](imagens/cloud_pr3143_imagem3.png)
+- E-mail, telefone, estado civil e escolaridade importados:
+![image](imagens/cloud_pr3143_imagem4.png)
+- Planilha com todos já cadastrados: a janela avisa que nada foi importado e lista quem já existe:
+![image](imagens/cloud_pr3143_imagem5.png)
+
+### Cadastro do colaborador
+
+- O código e o nome do colaborador ficam no título da janela ("Editar - 97 - Nome"), em qualquer guia, e acompanham a troca pelos botões Anterior e Próximo.
+- Ao avançar ou voltar de colaborador depois de preencher a guia Customizável, o sistema pergunta se deseja salvar — antes trocava sem perguntar e o que foi preenchido se perdia. O que foi digitado nessa guia também não se perde mais ao passar por outra guia e voltar.
+- Ao trocar cargo, estabelecimento, departamento, setor ou seção, a guia Customizável mostra os campos que valem para a nova escolha, mantendo o que já foi digitado.
+- Voltaram a aparecer a pergunta "Dados mensais futuros" ao trocar horário, cargo, departamento, setor, estabelecimento, tipo, salário, escala etc., e a sugestão de histórico de cargo e tipo. O recálculo automático ao mudar a admissão ou a demissão de quem já está cadastrado também voltou.
+- No cadastro de horário, a alteração de uma opção que muda o cálculo volta a perguntar a partir de quando ela vale e a criar o histórico do horário.
+- Nas visões da lista de colaboradores dá para escolher as colunas **Departamento**, **Setor** e **Tags**; as tags aparecem como etiquetas, e a lista pode ser ordenada por departamento e por setor.
+
+- Guia Customizável com o código e o nome no título:
+![image](imagens/cloud_pr3125_imagem1.png)
+- Ao clicar em Próximo com o campo alterado, o sistema pergunta se deseja salvar:
+![image](imagens/cloud_pr3125_imagem2.png)
+- O próximo colaborador abre na mesma guia, já com o nome dele no título:
+![image](imagens/cloud_pr3125_imagem3.png)
+- Colunas novas no editor da visão:
+![image](imagens/cloud_pr3218_imagem1.png)
+- Departamento, Setor e Tags na lista:
+![image](imagens/cloud_pr3218_imagem2.png)
+
+## Manutenção do cartão
+
+### Aviso de DSR não descontado ✨
+
+- Quando a semana tem falta, mas o dia do DSR tem um afastamento que impede o desconto do repouso remunerado, o ícone de explicações do dia fica **laranja** e o aviso aparece em destaque ao passar o mouse e na edição do dia.
+- O aviso diz quanto deixou de ser descontado e sugere trocar o afastamento do dia ou marcar **Desconto DSR: Sim** no cadastro dele. O cálculo não muda: o desconto continua seguindo o cadastro do afastamento.
+
+- Dia 04/10 com faltas na semana e o afastamento "Eleições" no domingo: ícone laranja e o aviso com a sugestão:
+![image](imagens/cloud_pr3111_imagem1.png)
+- O aviso nas explicações do dia:
+![image](imagens/calc_pr537_imagem1.png)
+
+### Forçar BH e Forçar sem compensação
+
+As opções da coluna Compensação da Manutenção passam a valer também para as faltas e para as extras.
+
+- **Forçar BH**: a falta do dia sai das horas faltas sem compensação e passa a descontar do saldo do banco de horas, também quando o horário ou o afastamento manda não compensar faltas.
+- **Forçar sem compensação** em dia com extras: as extras que iriam para o banco de horas passam a ser pagas como horas extras, no percentual da faixa em que caem, mesmo com o período negativo.
+- Os dias em Automático e as extras que já eram pagas continuam como antes.
+
+- Antes, tudo em Automático: as faltas vão para as faltas sem compensação e o saldo fica em +03:50:
+![image](imagens/calc_pr539_imagem1.png)
+- Forçar BH em dois dias: as faltas desses dias descontam do saldo:
+![image](imagens/calc_pr539_imagem2.png)
+- Forçar sem compensação em dois dias com extras: elas saem do saldo e aparecem como extras 50%:
+![image](imagens/calc_pr539_imagem3.png)
+
+### Espelho de ponto
+
+- **Imprimir** pela Manutenção abre o espelho com um clique: a nova guia abre na hora, com "Gerando espelho de ponto…", e recebe o PDF quando ele fica pronto. Se o navegador ainda assim bloquear a guia, o aviso traz o botão Abrir.
+- Colaborador sem espelho no período (demitido antes do início) recebe o aviso de que nenhum espelho foi gerado, em vez de "gerado com sucesso" sem abrir nada.
+- **Espelho assinado não volta como pendente**: gerar os espelhos de novo (pela tela de espelhos, pela Manutenção ou pelas ações rápidas) não cria mais um segundo espelho pendente num mês que o colaborador já assinou, e o aplicativo não volta a pedir a assinatura. Para pedir uma nova assinatura, use a ação "Gerar novamente" no próprio espelho. Nos meses que já ficaram com um pendente duplicado, a equipe Símix pode arquivá-lo, mantendo só o assinado.
+- **Manutenção em lote com período de vários meses** grava cada dia no mês de cartão dele e recalcula cada mês do período — antes os dias iam para o último mês, e o espelho saía com os dias de outro mês.
+
+- Antes: o mês assinado ganhou um segundo espelho, pendente:
+![image](imagens/cloud_pr3203_imagem1.png)
+- Depois do ajuste: o pendente duplicado fica arquivado e só o assinado vale:
+![image](imagens/cloud_pr3203_imagem2.png)
+- Gerando de novo o espelho de um colaborador que já assinou:
+![image](imagens/cloud_pr3203_imagem3.png)
+- Depois da geração, continua um só espelho, assinado:
+![image](imagens/cloud_pr3203_imagem4.png)
+
+### Outros ajustes da Manutenção
+
+- **Turno especial sem tipo**: um turno especial cadastrado sem tipo impedia a abertura de todos os cartões, inclusive de quem não tinha relação com ele. Agora o turno sem tipo é gravado como Padrão, o turno novo já abre com o Padrão escolhido, e os que estavam sem tipo foram corrigidos na atualização.
+- Usuários com o perfil **Gerencial** voltam a abrir o cartão na Manutenção, em modo somente leitura; salvar continua exigindo a permissão de edição do ponto.
+- A justificativa da marcação fica na linha de baixo da hora, deixando a edição mais compacta.
+- O tipo de layout "Mínimo" da consulta vale só para o portal do colaborador: quem é do RH e também tem acesso de colaborador volta a ver os totais completos na Manutenção.
+
+- Antes: com um turno especial sem tipo, o cartão de outro colaborador não abria:
+![image](imagens/cloud_pr3206_imagem1.png)
+- O turno especial sem tipo:
+![image](imagens/cloud_pr3206_imagem2.png)
+- Depois de salvar, o tipo fica como Padrão:
+![image](imagens/cloud_pr3206_imagem3.png)
+- O cartão volta a abrir:
+![image](imagens/cloud_pr3206_imagem4.png)
+- Turno especial novo já vem com o tipo Padrão:
+![image](imagens/cloud_pr3206_imagem5.png)
+- Gerente só com o perfil Gerencial: o cartão abre em somente leitura, sem o Salvar e sem a barra de edição:
+![image](imagens/cloud_pr3126_imagem1.png)
+- Justificativa abaixo da hora:
+![image](imagens/cloud_pr3211_imagem2.png)
+- Usuário com Gestão e Colaborador e o layout "Mínimo": a Manutenção mostra todos os totais:
+![image](imagens/cloud_pr3119_imagem2.jpg)
+
+## Afastamentos e atestados
+
+- Ao anexar o atestado, o botão mostra "Enviando…" e o Salvar fica bloqueado até o envio terminar — antes dava para salvar no meio do envio e aparecia "Esse afastamento exige um anexo" com o arquivo já escolhido.
+- No RH, salvar um atestado sem anexo agora pergunta antes: "Voltar e anexar" mantém a tela aberta com tudo preenchido; "Salvar sem anexo" grava como antes. Antes o pedido era gravado e a tela fechava, e quem tentava de novo criava um pedido duplicado. O colaborador sem anexo continua bloqueado, mas a tela não fecha mais.
+- Na solicitação de afastamento, médico, CID e anexo só aparecem quando o afastamento é um atestado ou está com "Obrigar anexo" (Férias não mostra mais esses campos). Ao salvar sem o anexo obrigatório, o colaborador é bloqueado e o RH recebe um aviso; os erros ao salvar mostram a mensagem real. O CID aceita até 10 caracteres, com contador.
+- Pedido de afastamento com data depois da demissão ou antes da admissão é avisado com as datas e não é gravado, e aprovar um afastamento em dia em que o colaborador não está ativo explica o motivo.
+- No RH, um pedido novo já marcado como Aprovado confere antes de gravar se o período está bloqueado ou se já existe outro afastamento nos mesmos dias: nesses casos avisa o motivo e a tela fica aberta para corrigir. Antes o pedido ficava "Aprovado" sem ir para o cartão.
+- **Consulta de atestados**: passa a mostrar também os afastamentos sem tipo que têm "atestado" na descrição, e com a lista vazia avisa que só entram os afastamentos com **Tipo: Atestado**, com link para o cadastro. Na atualização, o afastamento padrão de atestado sem tipo recebeu o Tipo: Atestado, nos clientes que ainda não tinham nenhum com esse tipo.
+
+- Pedido do colaborador com o atestado subindo: "Enviando…" e o Salvar desabilitado:
+![image](imagens/cloud_pr3176_imagem1.jpg)
+- Com um atestado aparecem médico, CID e Anexo; com Férias, só colaborador, datas, horas e situação:
+![image](imagens/cloud_pr3141_imagem1.jpg)
+- Consulta de atestados voltando a listar os atestados do mês (nomes e anexos ofuscados):
+![image](imagens/cloud_pr3177_imagem1.png)
+- Sem nenhum atestado no período, o aviso orienta a conferir o tipo no cadastro:
+![image](imagens/cloud_pr3177_imagem2.png)
+
+## Cálculo
+
+- **Calcular dados** continua calculando os outros colaboradores quando o cartão de um deles dá erro. O erro aparece no processamento e no registro da tarefa com o código e o nome do colaborador, e o período com erro fica pendente para ser calculado de novo.
+- Corrigidos erros que paravam o cálculo: cartão com dia de início 29, 30 ou 31 no mês cujo anterior não tem esse dia (agora começa no último dia do mês anterior); marcação com sigla de turno especial que não existe mais no cadastro (a sigla fica como está e o turno é calculado como normal); e regras de interjornada e de faltas em dia sem turno, como afastamento do dia inteiro ou domingo sem jornada.
+- **Faltas integrais só no dia sem trabalho**: as horas de falta só contam como integrais no dia em que o colaborador não trabalhou — o mesmo dia que entra em "Dias de faltas". Dia com registro incompleto (só a entrada, por exemplo) passa a somar nas faltas parciais e a sair na exportação da folha. Faltas em horário com jornada prevista menor que meia hora também passam a ser classificadas corretamente.
+
+- No meio do processamento, o período aparece com "1 colaborador não calculado" e o motivo, e o cálculo segue:
+![image](imagens/cloud_pr3142_imagem1.png)
+- A tarefa termina todas as rotinas, avisando os erros:
+![image](imagens/cloud_pr3142_imagem2.png)
+- Cartão que não abria por uma sigla de turno especial apagada:
+![image](imagens/calc_pr541_imagem1.png)
+- Cartão com dia de início 29 em março começando em 28/02:
+![image](imagens/calc_pr541_imagem2.png)
+- Cartão com dias de banco de horas e domingo sem jornada, que parava na regra de interjornada:
+![image](imagens/calc_pr541_imagem3.png)
+- Exportação da folha antes: as horas do dia com só a entrada não apareciam:
+![image](imagens/calc_pr542_imagem1.png)
+- Depois: essas horas entram nas faltas sem compensação parciais:
+![image](imagens/calc_pr542_imagem2.png)
+
+## Coletores (equipamentos de ponto)
+
+- Novo menu **Excluir desligados**, ao lado do Enviar cadastros e no menu de cada coletor: a tela compara os cadastros do equipamento com o sistema e mostra só quem está no equipamento e já foi desligado, com o código, o nome e a data de demissão.
+- Colaborador **readmitido** não aparece — tanto quem voltou no mesmo cadastro quanto quem ganhou um cadastro novo com o mesmo CPF ou PIS —, assim como quem sai hoje e quem não está no cadastro (como o administrador do equipamento). Todos vêm marcados, e a exclusão pede confirmação e vale para os coletores ligados direto e pelo agente local.
+- A sincronização do **iDClass** e do **iDFace** voltou a não excluir nenhum colaborador do equipamento; a retirada dos desligados é feita pelo novo menu.
+- Novo item **Atualizar agente** no menu de ferramentas do agente (Coletores › Agente): o agente procura a versão nova, mostra o resultado e reinicia sozinho para instalá-la. Pede confirmação, porque interrompe uma sincronização em andamento, e exige a permissão de edição de coletores.
+
+- Menu Excluir desligados ao lado do Enviar cadastros:
+![image](imagens/cloud_pr3116_imagem1.png)
+- Excluir desligados no menu de cada coletor:
+![image](imagens/cloud_pr3116_imagem2.png)
+- Lista dos desligados que ainda estão no equipamento, com a data de demissão:
+![image](imagens/cloud_pr3116_imagem3.png)
+
+## Permissões e segurança
+
+- Quando falta permissão para uma tela ou ação, a mensagem diz **qual permissão falta** e orienta a liberar no grupo de permissões do usuário — antes aparecia um erro técnico ou só "Forbidden".
+- Tela de permissões com os **nomes completos** ("Afasta Pends" virou "Pendências de afastamentos", "Func V Rs" virou "VRs do colaborador"…), lista mais densa e, quando há um grupo só, sem a guia lateral. "Banco de horas" e "Menu de navegação" apareciam com o nome de outra permissão.
+- Novo modelo de permissões **Colaborador**: espelho do ponto e as solicitações do portal (pedir ajuste de marcação e de afastamento, sem aprovar nem excluir).
+- **Arquivos importados** e **Logs de usuários** só aparecem no menu para quem tem a permissão que a tela exige, em vez de aparecer e dar erro.
+- As Trilhas do conhecimento passam a ser um módulo ligado por cliente, desligado por padrão.
+- **Documentos do colaborador**: cada colaborador só abre, assina, recusa e baixa o comprovante dos próprios documentos; só o aplicativo e quem administra documentos tratam os de outro colaborador. As telas de documentos do RH passam a pedir a permissão de documentos.
+- Reforço de segurança nas rotinas do sistema: a aprovação de pendências sempre exige a permissão de editar pendências, quem é só colaborador lê apenas os próprios campos customizados, e as consultas usadas por dashboards e listas ficam fora do alcance de quem é só colaborador.
+
+- Usuário sem a permissão de Consulta diária: a mensagem diz qual é a permissão e onde liberar:
+![image](imagens/cloud_pr3119_imagem1.jpg)
+
+## Relatórios, dashboards e folha
+
+- Widget com campo, filtro ou ordem que a visão não tem passa a mostrar no próprio widget qual campo corrigir, e os outros widgets do dashboard carregam normalmente. Ao trocar a visão de um widget, o editor avisa quais campos, filtros e ordens a nova visão não tem e pede para trocar ou remover antes de salvar — nada é removido sozinho.
+- Widgets que repetiam uma coluna na consulta (um campo adicionado duas vezes, ou uma condição de cor, ícone ou turnos que usava outro campo do widget) deixam de dar erro ao carregar, e um campo somado com condição sobre ele mesmo voltou a somar.
+- **Layout da folha**: ao escolher o campo Código, Valor ou Tipo do evento, o tipo do item passa para "Evento" sozinho (com o tipo "Ponto" a exportação inteira falhava), e a exportação diz qual item do layout corrigir em vez de uma mensagem técnica. Salvar depois do Testar/Rodar não dá mais erro nem troca o código do layout.
+
+- O widget aponta o campo que a visão não tem; os outros seguem carregando:
+![image](imagens/cloud_pr3181_imagem1.png)
+- Escolhido o campo "Valor do evento", o tipo do item passa para "Evento":
+![image](imagens/cloud_pr3181_imagem2.png)
+- Trocando a visão do widget: o aviso lista os campos que a nova visão não tem:
+![image](imagens/rx_pr166_imagem1.png)
+
+## Integrações por arquivo ✨
+
+Os layouts de integração passam a gravar no sistema os dados lidos do arquivo — até aqui eles só liam e validavam.
+
+- Nova aba **Destinos**: cada destino é uma tabela do sistema (feriados, cargos, centros de custo…) ou um tipo de dado com regra própria, começando pelas marcações de ponto. Um mesmo arquivo pode gravar em mais de um destino, e o resultado mostra o que aconteceu em cada um.
+- **Mapeamento de campos**: para cada campo do destino, escolhe o campo do arquivo ou um valor fixo; "Mapear pelos nomes" liga os de mesmo nome, e o campo marcado como chave localiza o registro que já existe.
+- Estratégias "inserir ou atualizar" (padrão), "inserir" e "atualizar". Valor vazio no arquivo não apaga o que já está gravado, e o código do cadastro é gerado quando o arquivo não traz.
+- **Marcações de ponto por planilha**: o colaborador é encontrado pelo código, CPF, PIS, código na folha ou código externo, e a marcação entra pendente, processada como as demais. Também dá para gravar os campos customizados do mês do colaborador, como nas integrações de convênio.
+- A análise do arquivo e a pré-visualização mostram o que seria gravado, sem gravar, e o "Modo simulação" do layout vale na execução. Linha com valor inválido é recusada com o motivo, o resto do arquivo é gravado, e o resumo mostra inseridos, atualizados, sem alteração e com erro.
+- Tabelas que só o sistema grava (marcações, cálculo, logs, configurações) ficam fora da gravação direta, e a gravação fica registrada no nome de quem executou o layout.
+
+## Para a equipe Símix
+
+- **Avisos no painel admin**: cadastro de avisos com título, texto, link, ícone, imagem de capa, período, ordem e permissão, como nas dicas. Eles aparecem no novo card **Avisos** do Início dos clientes.
+- Admin: Clientes e Atendimentos sem o filtro de tags e sem cores nas tags e nas situações, e "Tenants/Bancos" saiu do menu (a tela continua pelo endereço).
+- Teste automático da migração completa do PcPonto pela tela de implantação, e a exclusão de uma implantação passa a apagar tudo de forma definitiva (banco, empresa, cadastro do cliente e arquivo de backup).
+- No ambiente de desenvolvimento, o primeiro login depois de subir o servidor local caiu de 20 a 30 segundos para cerca de 2,5 segundos. Em produção nada muda.
+
+- Tempo do primeiro login no ambiente local, antes e depois:
+![image](imagens/cloud_pr3193_imagem1.png)
+
+## Outras melhorias e correções
+
+- **Card Avisos no Início**, no topo da coluna da direita, com os comunicados da Símix: um aviso por vez, começando por um diferente a cada dia, com setas para os outros. O aviso pode ter imagem de capa ou ser só um banner, e clicar na imagem abre o link. O card não aparece quando não há aviso valendo.
+- **Filtro global** em Facial, Registros, Comprovantes e Documentos dos colaboradores (e o filtro fixo do usuário), com o aviso de filtro ativo quando a lista fica vazia. No portal, o colaborador continua vendo as próprias marcações. No Facial, o total da paginação passou a contar com os mesmos filtros da lista.
+- Documentos: o seletor de colaborador mostra os ativos e os demitidos há até 30 dias.
+- **Modo escuro**: saldo, horas trabalhadas, faltas e previstas ficam legíveis na Manutenção, no banco de horas, no painel do colaborador e no espelho.
+- A foto ampliada ao passar o mouse na lista de colaboradores não fica mais cortada nas últimas linhas: quando não cabe embaixo, abre para o outro lado.
+- Configurações do app: quem nunca salvou a opção "Permitir registro" passa a ver a opção marcada (o registro pelo aplicativo já era liberado nesse caso).
+
+- Facial com o filtro global ativo: sem marcações daquele estabelecimento, a tela avisa o filtro:
+![image](imagens/cloud_pr3141_imagem2.jpg)
+- Documentos dos colaboradores recortados pelo filtro global:
+![image](imagens/cloud_pr3141_imagem3.jpg)
+- Manutenção no modo escuro, com saldo e horas legíveis:
+![image](imagens/cloud_pr3141_imagem4.jpg)
+- Foto ampliada da última linha da lista abrindo para cima:
+![image](imagens/cloud_pr3119_imagem3.jpg)
 
 # 21/10/2026
 
