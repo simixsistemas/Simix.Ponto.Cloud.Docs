@@ -1,3 +1,202 @@
+# 29/10/2026
+
+## Resumo
+
+- 📂 Integração de arquivos pelo agente local: contracheques, AFD e layouts de integração a partir de uma pasta
+- 🏠 Vale-transporte com o home office da escala e Manutenção de VTs com a conta da quantidade
+- ⏳ Quitação parcial do banco de horas: integral, até X horas ou percentual
+- 📥 Importação de colaboradores por planilha mais tolerante, com todas as abas e avisos por linha
+- 🛠️ Monitor de tarefas para todos e tarefas dos equipamentos uma de cada vez
+- 📌 Notas do mural também no aplicativo
+- ✍️ Colaborador volta a assinar o espelho de ponto pelo link
+- ↔️ Painel lateral das escalas com largura ajustável
+
+## Integração de arquivos pelo agente local ✨
+
+O agente local passa a monitorar pastas da empresa e a enviar os arquivos que aparecem nelas para o sistema, que os processa sozinho — sem precisar entrar no sistema para importar.
+
+- Novo cadastro de **integrações de arquivos**: a pasta que o agente monitora e para onde vão os arquivos dela — um layout de integração, os documentos dos colaboradores (contracheques) ou a importação de AFD.
+- Em cada integração, o que fazer com o arquivo depois de enviado: mover para a subpasta "Enviados", manter na pasta ou excluir.
+- **Contracheques**: cada página do PDF vai para o colaborador dela, e o mês de referência é lido do nome do arquivo (ex.: "holerite 03-2026.pdf", "202603", "mar26"); sem ele no nome, vale o mês anterior ao recebimento.
+- Nova tela **Arquivos recebidos**, com o resultado de cada arquivo e a opção de processar de novo. Arquivo com o mesmo conteúdo de um já processado fica como "Já importado".
+- Na página do **Agente**, nova seção "Integrações de arquivos", com o último arquivo de cada pasta e o botão **Verificar pastas agora**.
+- Card da novidade na página de Novidades, com o passo a passo para ligar uma pasta ao sistema.
+- Integração com destino "Campos do colaborador no mês": a carga não falha mais quando o código do colaborador e o mês estão cadastrados como campos customizados.
+
+- Página do Agente com as integrações e a situação do último arquivo de cada pasta:
+![image](imagens/cloud_pr3230_imagem1.png)
+- Lista de integrações de arquivos:
+![image](imagens/cloud_pr3230_imagem2.png)
+- Cadastro de uma integração de contracheques:
+![image](imagens/cloud_pr3230_imagem3.png)
+- Arquivos recebidos, com o resultado do processamento aberto (convênio pelo layout de integração, contracheques e AFD):
+![image](imagens/cloud_pr3230_imagem4.png)
+- Convênio gravando o valor da compra nos campos do colaborador no mês:
+![image](imagens/cloud_pr3230_imagem5.png)
+- Card da novidade na página de Novidades:
+![image](imagens/cloud_pr3230_imagem6.png)
+
+## Vale-transporte com o home office da escala ✨
+
+Os dias de home office definidos em **Escalas › Home office** passam a valer no vale-transporte, e a Manutenção de VTs mostra de onde vem cada número.
+
+- O dia sem local digitado recebe o local da escala do colaborador no mês, e os dias de home office saem dos dias previstos do VT, como o home office digitado. O local digitado no dia (na Manutenção ou em lote) continua valendo antes da escala.
+- Na conferência do período anterior, só é descontado o home office que foi pago: o dia que já tinha ficado fora dos previstos não é descontado; o dia pago que virou home office depois é descontado; e o dia de home office não pago em que a pessoa veio à empresa conta como dia adicional. Meses gerados antes desta versão seguem o local do dia.
+- Na **Manutenção de VTs**, novas colunas de **Home office**: **Previsto** (dias de home office que ficaram fora dos previstos e não foram pagos) e **Descontado** (dias pagos que viraram home office depois e entraram nas ausências). Passando o mouse, aparecem as datas.
+- Novas colunas **Qtd./dia** e **Adicionais** (dias trabalhados fora do previsto, que somam na quantidade), no lugar da coluna Descontos, que não entrava no cálculo.
+- Passando o mouse na **quantidade total** aparece a conta feita (previstos, ausências, quantidade manual e adicionais) e no **valor total**, a quantidade vezes o valor unitário.
+- Manutenção de VTs e de VRs com visual novo: cartões de resumo do mês (colaboradores, quantidade total e valor total), filtro rápido, pesquisa e tabela mais limpa. As duas telas seguem o período escolhido na barra do topo.
+- A quantidade manual é editada direto na tabela, a linha alterada fica destacada e o Salvar mostra quantas alterações serão gravadas; sair da tela ou trocar de mês com alteração pendente pede confirmação.
+- As listas de colaboradores e de vales-transportes podem ser ordenadas por código, nome e totais, clicando no cabeçalho da coluna.
+- Na Manutenção do cartão, os dias de home office da escala aparecem com a casinha esmaecida, com a dica de que vieram da escala (o local digitado no dia continua com o ícone normal).
+- **VR de viagem**: o vale-refeição por dias de viagem considera a viagem prevista na escala. Na conferência do período anterior, só é descontado o dia de viagem que foi pago (a viagem cancelada depois da geração ou a falta no dia da viagem), e a viagem que não foi paga, com o dia trabalhado, soma como dia adicional. Falta em dia sem viagem não desconta mais o VR de viagem — antes qualquer falta descontava, e a quantidade podia ficar negativa.
+- Corrigidos: a quantidade manual da Manutenção de VTs volta a somar no total quando o mês é gerado de novo; a lista de VTs do colaborador não mostra mais VTs de demitidos, de excluídos ou sem colaborador (os que apareciam com o nome em branco); a quantidade de colaboradores com VT nas informações da empresa deixa de contar os demitidos; a paginação da Manutenção de VTs mostra o total certo do mês e os nomes aparecem também em empresas com mais de 1000 colaboradores; e as linhas sem quantidade calculada, que o Salvar ignorava sem avisar, aparecem sinalizadas e sem campo de edição.
+
+- Manutenção de VTs com as colunas Qtd./dia, Home office (Previsto e Descontado) e Adicionais, e os três cartões de resumo (nomes ofuscados):
+![image](imagens/cloud_pr3202_imagem1.png)
+- A conta da quantidade total: (11 previstos − 1 ausência) × 1 + 3 manual + 7 adicionais × 1 = 20:
+![image](imagens/cloud_pr3202_imagem2.png)
+![image](imagens/calc_pr548_imagem2.png)
+- A conta do valor total: 20 × R$ 14,22:
+![image](imagens/cloud_pr3202_imagem3.png)
+- Home office previsto: as segundas e quintas da escala, que ficaram fora dos dias previstos:
+![image](imagens/cloud_pr3202_imagem4.png)
+- Home office descontado: o dia 20/10 tinha sido pago e foi marcado como home office depois, então entrou nas ausências:
+![image](imagens/cloud_pr3202_imagem5.png)
+![image](imagens/calc_pr548_imagem1.png)
+- Manutenção do cartão: os dias de home office da escala com a casinha esmaecida na coluna Observação:
+![image](imagens/cloud_pr3202_imagem6.png)
+
+## Quitação parcial do banco de horas ✨
+
+A quitação de saldo na **Consulta geral de banco de horas** ganha novas opções e fica mais rápida de aplicar.
+
+- Três formas de quitar: **Integral** (zera o saldo), **Até X horas** (teto por colaborador; quem tem menos quita tudo) e **Percentual** (ex.: 50% quita metade das horas). O diálogo mostra quantas horas serão quitadas antes de confirmar.
+- A consulta abre com o **período em andamento** já selecionado.
+- Sem nenhum colaborador marcado, o botão **Ferramentas do período** fica ativo e vale para **todos** os colaboradores da lista (a exclusão continua exigindo a seleção).
+
+- Período em andamento selecionado ao abrir:
+![image](imagens/cloud_pr3239_imagem1.png)
+- Ferramentas do período para todos, sem seleção:
+![image](imagens/cloud_pr3239_imagem2.png)
+- Quitação até 08:00 por colaborador, com a prévia das horas:
+![image](imagens/cloud_pr3239_imagem3.png)
+- Quitação de 50% do saldo:
+![image](imagens/cloud_pr3239_imagem4.png)
+
+## Importação de colaboradores por planilha ✨
+
+A importação por planilha passa a aceitar planilhas do jeito que chegam do cliente e, em vez de parar no primeiro problema, importa o que dá e lista o resto no fim.
+
+- CPF e PIS com espaço, ponto ou outro caractere junto do número (". 03082900038") ficam só com os números. Se a célula tiver texto (o nome de outra pessoa, por exemplo), o colaborador entra sem o documento e aparece um aviso no fim.
+- Cargo, departamento e setor escritos com maiúsculas, acento ou espaços diferentes ("AUX ADM ", "aux adm") usam o cadastro que já existe, em vez de parar com "já existe um registro ativo".
+- **Estabelecimento pelo nome**: usa o que já existe com aquele nome ou cadastra um novo; o código numérico continua valendo como antes.
+- Data de admissão com a barra faltando ("0802/2024") é lida como 08/02/2024; a data que não dá para ler vira aviso, em vez de ficar com a data de hoje sem avisar.
+- A mesma pessoa (mesmo CPF) em mais de uma linha é importada uma vez só, com aviso. Importar a mesma planilha de novo não duplica quem já entrou.
+- Uma linha com erro não interrompe mais a importação: ela fica de fora e aparece no fim com o número da linha e o motivo. Linha em branco no meio da planilha também não faz mais as de baixo serem ignoradas.
+- **Todas as abas** da planilha são lidas (antes, só a primeira); a tela mostra as abas lidas, as que não têm colaboradores e as ocultas. O cabeçalho pode estar em qualquer linha ou coluna, com título acima.
+- Avisos no fim quando um texto passa do tamanho do campo (nome, RG, matrícula, endereço…) e quando o CPF ou o PIS não confere pelo dígito verificador.
+- A conferência antes de importar mostra só as colunas que têm dados, o estabelecimento, o cargo, o departamento e o setor com código e nome, e os avisos de cada colaborador embaixo do nome.
+- Barra de progresso enquanto a planilha é lida, e tela no visual das telas novas, com cada etapa num cartão (enviar a planilha, colunas da planilha, conferir e importar). Enviar outra planilha, ou tirar o arquivo, limpa a conferência da anterior.
+- Código do colaborador zero ou negativo na planilha recebe um código novo, sem repetir os que vieram nela.
+- A importação pelo menu (Colaboradores › Importar) abria uma versão antiga da tela, sem estas correções: agora o menu, o painel admin e o assistente da implantação abrem a mesma tela.
+- **Trocar código** no cadastro do colaborador: o campo aceita o código inteiro (cortava em 4 dígitos) e abre vazio; dá para digitar o código desejado ou usar o botão **Usar o próximo código livre** (fora da regra "Código na folha"); e o código já usado aparece no próprio diálogo, que continua aberto para tentar outro.
+- O código na folha de pagamento do afastamento aceita 10 caracteres (eram 4), como o do estabelecimento.
+
+- CPF com ponto e espaço gravado só com os números, estabelecimento criado e reaproveitado pelo nome, repetido importado uma vez e CPF com texto avisado:
+![image](imagens/cloud_pr3238_imagem1.png)
+- Planilha com casos de erro: linha em branco pulada, cargo e departamento com grafias diferentes no mesmo cadastro, data inválida avisada e a linha com erro recusada sozinha:
+![image](imagens/cloud_pr3238_imagem2.png)
+- Planilha com várias abas e cabeçalho fora da coluna A; na segunda importação todos são reconhecidos pelo CPF:
+![image](imagens/cloud_pr3238_imagem3.png)
+- Barra de progresso enquanto a planilha é lida:
+![image](imagens/cloud_pr3238_imagem4.png)
+- Conferência só com as colunas que têm dados:
+![image](imagens/cloud_pr3238_imagem5.png)
+- O aviso de cada colaborador embaixo do nome:
+![image](imagens/cloud_pr3238_imagem6.png)
+- Trocar código com o próximo código livre, de 9 dígitos, inteiro no campo:
+![image](imagens/cloud_pr3238_imagem7.png)
+- Código já usado por outro colaborador: o motivo aparece no diálogo, que continua aberto:
+![image](imagens/cloud_pr3238_imagem8.png)
+- Afastamento gravado com o código na folha de 10 caracteres:
+![image](imagens/cloud_pr3238_imagem9.png)
+
+## Tarefas e equipamentos
+
+- Nas **ações rápidas** do colaborador, o envio para os equipamentos só é disparado: a janela fica livre na hora para seguir com os outros cadastros, e o monitor de tarefas avisa o resultado de cada equipamento.
+- As tarefas que mexem nos equipamentos do mesmo cliente (envio das ações rápidas, sincronização e reimportação dos coletores) rodam uma de cada vez. A que chega com outra em andamento aparece como "Aguardando outra tarefa do cliente terminar".
+- **Monitor de tarefas** ligado para todos, com ícone próprio para as tarefas em andamento, diferente do de sincronização. As telas deixam de repetir o aviso de conclusão ou de erro que o monitor já mostra, e o monitor passa a mostrar também o resultado da exportação e do e-mail da folha.
+- **Calcular dados** vem como Automático por padrão na geração do espelho, na exportação da folha e nas ações rápidas.
+- Corrigidos: o espelho de um colaborador só, no modo Automático, deixava o mês inteiro como calculado, e as alterações dos outros colaboradores daquele mês não eram mais recalculadas; e a opção de calcular dados da exportação da folha não tinha efeito.
+
+- Monitor com uma tarefa em andamento, com ícone próprio ao lado do de sincronização:
+![image](imagens/cloud_pr3231_imagem1.png)
+- Sincronização e envio do mesmo cliente: o envio terminou e a sincronização aguarda a vez:
+![image](imagens/cloud_pr3231_imagem2.png)
+- Ações rápidas: o envio é disparado, a janela fica livre e o resultado chega pelo monitor:
+![image](imagens/cloud_pr3231_imagem3.gif)
+
+## Notas do mural no aplicativo ✨
+
+- As notas ganham rotinas próprias do **aplicativo**: painel do colaborador, antes e depois do registro. As rotinas que já existiam passam a se chamar "na web", e cada nota escolhe se aparece na web, no app ou nos dois.
+- As notas que já existem continuam só na web até que as rotinas do app sejam marcadas.
+- O aplicativo passa a buscar os recados do mural do colaborador nessas rotinas (na próxima versão do aplicativo).
+
+- Rotinas da nota, com as da web e as do aplicativo:
+![image](imagens/cloud_pr3243_imagem1.png)
+- Mural com a nota e as rotinas marcadas:
+![image](imagens/cloud_pr3243_imagem2.png)
+
+## Espelho de ponto
+
+- O colaborador volta a **assinar (ou recusar) o próprio espelho pelo link**, no celular ou no computador. Desde 18/10, ao clicar em **Assinar Documento** aparecia um erro de autorização, e a assinatura não era gravada. A assinatura continua exigindo login.
+- Ao recusar a assinatura, um erro passa a aparecer como aviso na tela, em vez de travar a página.
+
+- Colaborador assinando o espelho:
+![image](imagens/cloud_pr3242_imagem1.jpg)
+- Assinatura concluída:
+![image](imagens/cloud_pr3242_imagem2.jpg)
+- Espelho com a assinatura aplicada:
+![image](imagens/cloud_pr3242_imagem3.jpg)
+
+## Escalas, barra do topo e menus
+
+- **Escalas**: o painel lateral da grade abre mais estreito, deixando mais espaço para os dias do mês, e pode ser alargado ou estreitado arrastando a divisória entre a grade e o painel. A largura escolhida fica guardada no navegador, e o duplo clique na divisória volta ao padrão. Com o painel estreito, as abas (Horários, Afastamentos, Pendências e Histórico) aparecem só com o texto.
+- **Barra do topo**: o botão de Suporte vai para depois do Assistente, só com o ícone, e o botão de Escalas sai da barra (as telas continuam no menu Escalas).
+- **Menu Escalas**: Regras e coberturas e Simulador da redução passam para o fim do grupo. Em Consultas, o atalho Monitor de registros sai da lista.
+- **Novidades**: novos cards do painel de Manutenções e afastamentos, do painel de Locais de trabalho e dos favoritos da estrela — o "Me mostre" deste abre a estrela e mostra como adicionar um atalho ou, para quem ainda não tem atalhos, o assistente de perfis. O card das visões das listas passa a citar as colunas Departamento, Setor e Tags da lista de colaboradores.
+
+- Card do painel de Manutenções e afastamentos:
+![image](imagens/cloud_pr3223_imagem1.png)
+- Card do painel de Locais de trabalho:
+![image](imagens/cloud_pr3223_imagem2.png)
+- Card dos favoritos da estrela:
+![image](imagens/cloud_pr3223_imagem3.png)
+
+## Para a equipe Símix
+
+- As atualizações de banco passam a pular os ajustes que já foram aplicados e a atualizar vários bancos ao mesmo tempo, o que encurta a implantação de cada versão. Se a estrutura de um banco mudou desde a última atualização, ele roda todos os ajustes, como antes.
+- O Claude Code da equipe de desenvolvimento passa a consultar os bancos de teste locais, abrir o sistema local num navegador próprio para conferir telas e tirar prints, consultar a documentação da Microsoft e usar as operações de teste do próprio sistema em desenvolvimento. Nada disso existe em produção.
+
+- Tela de login do ambiente local aberta pelo navegador do Claude Code:
+![image](imagens/cloud_pr3232_imagem1.png)
+
+## Outras melhorias e correções
+
+- **Manutenção de afastamentos**: nova coluna **Médico**, com o nome do médico informado no atestado.
+- **Duplicar** nos cadastros (regras de prêmio, horários, afastamentos, contratos, EPIs…) falhava quando o nome com "Cópia" passava do tamanho do campo ou quando já existia uma cópia com o mesmo nome. Agora o nome da cópia sempre cabe e, se já existir, vira "Cópia 2", "Cópia 3"…
+- O nome da regra de prêmio aceita até 100 caracteres (eram 30).
+- "Clientes que usam esta opção", na ajuda dos campos do horário, mostra por ramo de atividade quantos clientes usam cada opção, sem o nome dos clientes; cada cliente aparece uma vez só, e a soma bate com o total.
+- Na Manutenção, a opção **Destacar relevância dos totais** começa desligada.
+- Salvar o colaborador não troca mais a escala do mês pela do quadro de horário.
+- Reforço de segurança no cálculo: quem é só colaborador recalcula apenas o próprio cartão.
+
+- Coluna Médico na Manutenção de afastamentos (nomes borrados):
+![image](imagens/cloud_pr3239_imagem6.png)
+- "Clientes que usam esta opção" para um usuário do cliente, sem os nomes:
+![image](imagens/cloud_pr3231_imagem4.png)
+
 # 28/10/2026
 
 ## Resumo

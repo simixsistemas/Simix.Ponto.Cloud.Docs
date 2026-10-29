@@ -14,6 +14,13 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 - Menu da janela com Nova conversa, Conversas anteriores, Enviar feedback e **Chamar a equipe Símix nesta conversa**: a equipe Símix responde direto na janela, com o nome de quem respondeu e aviso no sino. Enquanto ela atende, o Assistente fica pausado naquela conversa; ao devolver ("Voltar ao assistente"), ele retoma sabendo o que o suporte orientou.
 - O Assistente vem ligado para todas as empresas, junto com o Símix Ponto no Teams (é o mesmo recurso), e pode ser desligado por empresa. O Símix Ponto no Teams passa a usar a mesma ajuda do Assistente.
 - Para a equipe Símix: painel **Assistente** no admin, com as conversas de todos os clientes, os cards "Aguardando o suporte", "Em atendimento" e "Com falha", filtros por cliente, período e texto, e cada conversa com as propostas e o que aconteceu com cada uma.
+- **Notas pelo chat**: o Assistente cadastra e altera notas do mural com todas as opções (título, texto, cor, categoria, período, horário, onde aparece e para quem vale). Aviso, recado, mensagem e comunicado são entendidos como nota. Com só a mensagem, ele já sugere título, cor, período e onde aparece, e mostra tudo no cartão para confirmar ou pedir mudança.
+- **Quitação de banco de horas**: o Assistente prepara a quitação (saldo, colaboradores, integral, até X horas ou percentual), mostra a prévia num cartão e abre a consulta de BH com tudo preenchido; quem confirma é o usuário, clicando em Quitar.
+- **Inconsistências**: quando o usuário diz que uma inconsistência está errada (ou pergunta por que ela apareceu), o Assistente consulta o dia do colaborador e a regra que a gerou — o que ela avalia, os limites, o tipo de dia, os filtros e se ignora afastamento — e explica com os números se a regra está certa, sem concordar só porque o usuário disse. Se o dia tem afastamento e a regra não está com "Ignorar com afastamento", ele sugere marcar a opção e mostra o botão **Abrir a regra** (ele não altera a regra; depois de marcar, é preciso recalcular o período). Disponível para quem acessa a Manutenção.
+- Para explicar um recurso, o Assistente mostra o card da novidade na conversa, com "Me mostre" e "Passo a passo", e faz perguntas com opções para clicar (como a cor ou onde a nota aparece). O cartão de confirmação mostra um campo por linha, com a amostra da cor.
+- Novo card **Assistente de IA** em Novidades, com exemplos do que pedir. O **Me mostre** apresenta o botão, abre a janela e explica o que pedir, sem enviar mensagem; o **Quero usar** abre o Início com a janela do Assistente aberta.
+- O botão do Assistente na barra do topo passa a aparecer só para usuários da Símix, e a janela vazia mostra "Pergunte sobre o Símix Ponto ou peça algo.".
+- A ajuda consultada pelo Assistente deixa de fora as páginas de Tabelas (dicionário do banco) e do PcPontoWeb, que apareciam nas respostas. Os assistentes de IA da equipe Símix (Implantador, Suporte, Dev e Ajuda) passam a usar o mesmo modelo do Assistente.
 
 - Pedido de cadastro de cargo com o cartão de confirmação:
 ![image](imagens/cloud_pr3048_imagem1.png)
@@ -41,6 +48,28 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 ![image](imagens/cloud_pr3192_imagem1.png)
 - Janela do Assistente em atendimento pela equipe Símix:
 ![image](imagens/cloud_pr3192_imagem2.png)
+- Proposta de nota feita pelo Assistente, com período, rotinas e para quem vale:
+![image](imagens/cloud_pr3243_imagem3.png)
+- Card da novidade na conversa, com Me mostre e Passo a passo:
+![image](imagens/cloud_pr3243_imagem4.png)
+- Pergunta do Assistente com as opções de cor:
+![image](imagens/cloud_pr3243_imagem5.png)
+- Quitação de BH aberta pelo Assistente, com o período, os colaboradores e o diálogo já preenchidos (até 04:30):
+![image](imagens/cloud_pr3239_imagem5.png)
+- Dia sem afastamento: 13 minutos de atraso numa regra a partir de 10 minutos; o Assistente mostra que a regra está certa:
+![image](imagens/cloud_pr3237_imagem1.png)
+- Dia com atestado e a regra sem "Ignorar com afastamento": a explicação de por que a inconsistência apareceu:
+![image](imagens/cloud_pr3237_imagem2.png)
+- A sugestão de marcar a opção na regra e recalcular o período:
+![image](imagens/cloud_pr3237_imagem3.png)
+- Cartão com o resumo e o botão Abrir a regra:
+![image](imagens/cloud_pr3237_imagem4.png)
+- O cadastro da regra aberto pelo botão, com a opção "Ignorar com afastamento":
+![image](imagens/cloud_pr3237_imagem5.png)
+- Card Assistente de IA em Novidades:
+![image](imagens/cloud_pr3250_imagem1.png)
+- Me mostre, no passo da caixa de texto:
+![image](imagens/cloud_pr3250_imagem2.png)
 
 ## Escala inteligente ✨
 
