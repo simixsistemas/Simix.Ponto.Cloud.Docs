@@ -23,6 +23,59 @@
       ]
     },
     {
+      "text": "Escalas inteligentes",
+      "items": [
+        {
+          "text": "Visão geral",
+          "path": "Escalas/Escalas-inteligentes.md"
+        },
+        {
+          "text": "Planejamento de escala",
+          "path": "Escalas/Planejamento.md"
+        },
+        {
+          "text": "Regras e coberturas",
+          "path": "Escalas/Regras-e-coberturas.md"
+        },
+        {
+          "text": "Validação e aprovação",
+          "path": "Escalas/Validacao-e-aprovacao.md"
+        },
+        {
+          "text": "Gerar escala",
+          "path": "Escalas/Gerador.md"
+        },
+        {
+          "text": "Assistente na escala",
+          "path": "Escalas/Assistente.md"
+        },
+        {
+          "text": "Trocas, afastamentos e domingos",
+          "path": "Escalas/Trocas-e-domingos.md"
+        },
+        {
+          "text": "Simulador da redução",
+          "path": "Escalas/Simulador.md"
+        },
+        {
+          "text": "Demanda do PDV",
+          "path": "Escalas/Demanda.md"
+        },
+        {
+          "text": "Outras escalas",
+          "path": "Escalas/Outras-escalas.md"
+        },
+        {
+          "text": "Referência das regras",
+          "path": "Escalas/Referencia-regras.md"
+        },
+        {
+          "text": "Perguntas frequentes",
+          "path": "Escalas/Perguntas-frequentes.md"
+        }
+      ]
+    },
+    {
       "text": "Atualizações",
       "items": [
         {
