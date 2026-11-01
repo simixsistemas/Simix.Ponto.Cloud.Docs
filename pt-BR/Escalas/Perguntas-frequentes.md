@@ -56,4 +56,4 @@ Nas semanas que começam a partir de 16/12/2026, o limite cai para **42 horas** 
 
 ### Onde vejo uma demonstração?
 
-Na página **Novidades**, no card **Escalas inteligentes**, botão **Me mostre**. O roteiro percorre as regras, a cobertura, a grade, o gerador, o Assistente e a aprovação nas telas de verdade, sem gravar nada por você.
+Na página **Novidades**, no card **Escalas inteligentes**, botão **Ver demonstração**. O roteiro percorre as regras, a cobertura, a grade, o gerador, o Assistente e a aprovação nas telas de verdade, sem gravar nada por você.

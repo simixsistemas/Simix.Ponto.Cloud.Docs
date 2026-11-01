@@ -103,7 +103,7 @@ O gerador, a validação e o simulador valem para todas as empresas, sem recurso
 
 ## Aprenda na prática
 
-- Na página **Novidades**, o card **Escalas inteligentes** tem o botão **Me mostre**: uma demonstração guiada que percorre as regras, a cobertura, a grade, o gerador, o Assistente e a aprovação nas telas de verdade, sem gravar nada por você.
+- Na página **Novidades**, o card **Escalas inteligentes** tem o botão **Ver demonstração**: uma demonstração guiada que percorre as regras, a cobertura, a grade, o gerador, o Assistente e a aprovação nas telas de verdade, sem gravar nada por você.
 - O botão de **Treinamentos** de cada tela das escalas lista as demonstrações daquela tela.
 - O botão **?** da grade reúne todos os atalhos de teclado e de mouse.
 
