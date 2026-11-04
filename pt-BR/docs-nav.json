@@ -23,6 +23,35 @@
       ]
     },
     {
+      "text": "Integração por API",
+      "items": [
+        {
+          "text": "Visão geral",
+          "path": "Integracoes/API.md"
+        },
+        {
+          "text": "Consultas",
+          "path": "Integracoes/Consultas.md"
+        },
+        {
+          "text": "Exemplos em C#",
+          "path": "Integracoes/Exemplos-CSharp.md"
+        },
+        {
+          "text": "Exemplos em JavaScript",
+          "path": "Integracoes/Exemplos-JavaScript.md"
+        },
+        {
+          "text": "Usar com assistentes de IA (MCP)",
+          "path": "Integracoes/MCP.md"
+        },
+        {
+          "text": "Acesso com usuário (token)",
+          "path": "Integracoes/Token-de-usuario.md"
+        }
+      ]
+    },
+    {
       "text": "Escalas inteligentes",
       "items": [
         {
