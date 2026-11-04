@@ -89,7 +89,7 @@ O Claude Desktop só liga servidores remotos com login próprio, e não aceita a
 | `inconsistencias` | Dias com inconsistência e as regras que dispararam | `anoMes` ou `dataInicial` + `dataFinal` | Consultar as inconsistências do ponto |
 | `espelhos` | Espelhos gerados, com o link do PDF | `anoMes` | Consultar os espelhos de ponto |
 
-O assistente vê todas as ferramentas, mas só consegue usar as que a chave permite: nas outras ele recebe o aviso de que a chave não tem permissão. Todas aceitam `cdFunc` (um colaborador); as quatro primeiras também `cdEstab` (um estabelecimento). Cada chamada devolve até 200 registros (o assistente pode pedir até 1.000) e indica a próxima página. Os campos estão descritos em [Consultas](Consultas.md).
+O assistente vê todas as ferramentas, mas só consegue usar as que a chave permite: nas outras ele recebe o aviso de que a chave não tem permissão. Todas aceitam `cdFunc` (um colaborador); as quatro primeiras também `cdEstab` (um estabelecimento). Cada chamada devolve até 50 registros (o assistente pode pedir até 100) e indica a próxima página; para só contar, ele pede 1 registro e lê o total. Os campos estão descritos em [Consultas](Consultas.md).
 
 ## Dicas
 
@@ -148,7 +148,7 @@ const filtros = {
   cdFunc: { type: "integer", description: "Código do colaborador (opcional)" },
   cdEstab: { type: "integer", description: "Código do estabelecimento (opcional)" },
   skipCount: { type: "integer", minimum: 0, description: "Registros a pular, para a próxima página (padrão 0)" },
-  maxResultCount: { type: "integer", minimum: 1, maximum: 1000, description: "Registros por página (padrão 200, máximo 1000)" }
+  maxResultCount: { type: "integer", minimum: 1, maximum: 100, description: "Registros por página (padrão 50, máximo 100); para só contar, use 1 e leia o totalCount" }
 };
 const periodo = {
   dataInicial: { type: "string", format: "date", description: "Primeiro dia (AAAA-MM-DD), no lugar do anoMes" },
@@ -190,7 +190,7 @@ async function consultar(ferramenta, argumentos = {}) {
   const parametros = {
     AnoMes: argumentos.anoMes, CdFunc: argumentos.cdFunc, CdEstab: argumentos.cdEstab,
     DataInicial: argumentos.dataInicial, DataFinal: argumentos.dataFinal,
-    SkipCount: argumentos.skipCount ?? 0, MaxResultCount: argumentos.maxResultCount ?? 200
+    SkipCount: argumentos.skipCount ?? 0, MaxResultCount: Math.min(argumentos.maxResultCount ?? 50, 100)
   };
   for (const [nome, valor] of Object.entries(parametros)) {
     if (valor !== undefined && valor !== null && valor !== "") url.searchParams.set(nome, valor);
@@ -212,7 +212,7 @@ async function tratar(mensagem) {
         protocolVersion: VERSOES.includes(params?.protocolVersion) ? params.protocolVersion : VERSOES[0],
         capabilities: { tools: {} },
         serverInfo: { name: "simix-ponto", version: "1.0.0" },
-        instructions: "Consultas somente leitura do Símix Ponto. Horas em HH:MM (saldo com sinal). Use anoMes (AAAAMM) e pagine com skipCount enquanto proximaPagina vier preenchido."
+        instructions: "Consultas somente leitura do Símix Ponto. Horas em HH:MM (saldo com sinal). Use anoMes (AAAAMM) e pagine com skipCount enquanto proximaPagina vier preenchido. Para só contar, peça maxResultCount=1 e leia o totalCount."
       };
     case "ping":
       return {};
