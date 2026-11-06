@@ -75,6 +75,8 @@ Em `~/.cursor/mcp.json` (ou **Settings › MCP › Add new MCP server**):
 claude mcp add --transport http simix-ponto https://{tenant}.simixponto.app/api/integracoes/mcp --header "X-Api-Key: smx_SUA_CHAVE"
 ```
 
+Para não deixar a chave escrita na configuração, guarde-a numa variável de ambiente (ex.: `SIMIX_CHAVE`) e use `--header 'X-Api-Key: ${SIMIX_CHAVE}'`, com aspas simples: o Claude Code lê a variável ao conectar.
+
 ### Claude Desktop
 
 O Claude Desktop só liga servidores remotos com login próprio, e não aceita a chave no cabeçalho. Para ele, use o [servidor local](#alternativa-servidor-local-claude-desktop) do fim da página.
@@ -84,16 +86,18 @@ O Claude Desktop só liga servidores remotos com login próprio, e não aceita a
 | Ferramenta | O que consulta | Período | Permissão da chave |
 |---|---|---|---|
 | `colaboradores_mes` | Colaboradores ativos na competência, com a lotação | `anoMes` | Consultar os colaboradores mês a mês |
+| `colaboradores_resumo` | Quantos colaboradores há em cada estabelecimento, cargo, departamento, setor, seção ou horário | `anoMes` | Consultar os colaboradores mês a mês |
 | `ponto_dias` | Ponto calculado dia a dia: previsto, registrado, horas, faltas e afastamentos | `anoMes` ou `dataInicial` + `dataFinal` | Consultar o ponto calculado por dia |
 | `ponto_totais_mes` | Totais do mês: horas, extras por percentual, faltas, banco de horas, DSR | `anoMes` | Consultar os totais do ponto no mês |
 | `inconsistencias` | Dias com inconsistência e as regras que dispararam | `anoMes` ou `dataInicial` + `dataFinal` | Consultar as inconsistências do ponto |
 | `espelhos` | Espelhos gerados, com o link do PDF | `anoMes` | Consultar os espelhos de ponto |
 
-O assistente vê todas as ferramentas, mas só consegue usar as que a chave permite: nas outras ele recebe o aviso de que a chave não tem permissão. Todas aceitam `cdFunc` (um colaborador); as quatro primeiras também `cdEstab` (um estabelecimento). Cada chamada devolve até 50 registros (o assistente pode pedir até 100) e indica a próxima página; para só contar, ele pede 1 registro e lê o total. Os campos estão descritos em [Consultas](Consultas.md).
+O assistente vê todas as ferramentas, mas só consegue usar as que a chave permite: nas outras ele recebe o aviso de que a chave não tem permissão. As consultas aceitam `cdFunc` (um colaborador) e `cdEstab` (um estabelecimento), menos o `espelhos`, que só aceita `cdFunc`, e o `colaboradores_resumo`, que só aceita `cdEstab`. Cada chamada devolve até 50 registros (o assistente pode pedir até 100) e indica a próxima página; para só contar, ele pede 1 registro e lê o total. Os campos estão descritos em [Consultas](Consultas.md).
 
 ## Dicas
 
 - Diga a competência na pergunta (*outubro de 2026*): o assistente a converte para `202610`.
+- Para contar ou comparar grupos, pergunte pelo grupo (*quantos colaboradores por estabelecimento em outubro?*): o assistente usa o `colaboradores_resumo` e responde numa chamada, em vez de percorrer a lista.
 - Em empresas grandes, peça recortes (um estabelecimento, um departamento) ou os totais do mês em vez do dia a dia. Assim o assistente faz menos chamadas e responde mais rápido.
 - Cada mensagem do assistente para o servidor conta no limite de 1.000 chamadas por hora da chave.
 
@@ -101,14 +105,14 @@ O assistente vê todas as ferramentas, mas só consegue usar as que a chave perm
 
 | Sintoma | Causa provável | Como resolver |
 |---|---|---|
-| Erro 401 ao conectar | Chave ausente, errada, desativada ou vencida | Confira o cabeçalho `X-Api-Key` e a chave na tela de Chaves de API |
+| Erro ao conectar (HTTP 400) com *Informe a chave de API no cabeçalho X-Api-Key* ou *Chave de API inválida, desativada ou vencida* | Chave ausente, errada, desativada, vencida ou de outra empresa | Confira o cabeçalho `X-Api-Key` na configuração do assistente e a chave na tela de Chaves de API |
 | "A chave não tem permissão para esta chamada" | A chave não tem a permissão daquela consulta | Crie uma chave com a permissão marcada |
 | Erro 429 | Limite de chamadas por hora | Espere e peça recortes menores |
 | As ferramentas não aparecem | Endereço errado ou sem o `/api/integracoes/mcp` | Use o endereço da empresa, o mesmo do navegador |
 
 ## Alternativa: servidor local (Claude Desktop)
 
-Para assistentes que não aceitam cabeçalho em servidor remoto, como o Claude Desktop, o servidor abaixo roda no computador e chama a mesma API com a chave. Ele tem as mesmas cinco ferramentas.
+Para assistentes que não aceitam cabeçalho em servidor remoto, como o Claude Desktop, o servidor abaixo roda no computador e chama a mesma API com a chave. Ele tem as mesmas seis ferramentas.
 
 1. Instale o **Node.js 18 ou mais novo** ([nodejs.org](https://nodejs.org)).
 2. Salve o código abaixo numa pasta fixa como `simix-ponto-mcp.mjs` (ex.: `C:\Integracoes\simix-ponto-mcp.mjs`).
@@ -162,6 +166,19 @@ const FERRAMENTAS = [
     inputSchema: { type: "object", properties: { ...filtros }, required: ["anoMes"] }
   },
   {
+    name: "colaboradores_resumo", rota: "func-mes/resumo",
+    description: "Quantos colaboradores ativos na competência há em cada estabelecimento, cargo, departamento, setor, seção ou horário (código, nome e quantidade, do maior para o menor), numa chamada só.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        anoMes: filtros.anoMes,
+        agruparPor: { type: "string", enum: ["estabelecimento", "cargo", "departamento", "setor", "secao", "horario"], description: "Pelo que agrupar (padrão estabelecimento)" },
+        cdEstab: filtros.cdEstab, skipCount: filtros.skipCount, maxResultCount: filtros.maxResultCount
+      },
+      required: ["anoMes"]
+    }
+  },
+  {
     name: "ponto_dias", rota: "ponto-calc-dia",
     description: "Ponto calculado dia a dia: horários previstos e registrados, horas trabalhadas, saldo, extras, adicional noturno, faltas, atrasos e afastamentos. Horas em HH:MM.",
     inputSchema: { type: "object", properties: { ...filtros, ...periodo } }
@@ -188,7 +205,7 @@ async function consultar(ferramenta, argumentos = {}) {
 
   const url = new URL(`/api/integracoes/${ferramenta.rota}`, URL_BASE);
   const parametros = {
-    AnoMes: argumentos.anoMes, CdFunc: argumentos.cdFunc, CdEstab: argumentos.cdEstab,
+    AnoMes: argumentos.anoMes, AgruparPor: argumentos.agruparPor, CdFunc: argumentos.cdFunc, CdEstab: argumentos.cdEstab,
     DataInicial: argumentos.dataInicial, DataFinal: argumentos.dataFinal,
     SkipCount: argumentos.skipCount ?? 0, MaxResultCount: Math.min(argumentos.maxResultCount ?? 50, 100)
   };
@@ -212,7 +229,7 @@ async function tratar(mensagem) {
         protocolVersion: VERSOES.includes(params?.protocolVersion) ? params.protocolVersion : VERSOES[0],
         capabilities: { tools: {} },
         serverInfo: { name: "simix-ponto", version: "1.0.0" },
-        instructions: "Consultas somente leitura do Símix Ponto. Horas em HH:MM (saldo com sinal). Use anoMes (AAAAMM) e pagine com skipCount enquanto proximaPagina vier preenchido. Para só contar, peça maxResultCount=1 e leia o totalCount."
+        instructions: "Consultas somente leitura do Símix Ponto. Horas em HH:MM (saldo com sinal). Use anoMes (AAAAMM) e pagine com skipCount enquanto proximaPagina vier preenchido. Para só contar, peça maxResultCount=1 e leia o totalCount; para contar por estabelecimento, cargo, departamento, setor, seção ou horário, use colaboradores_resumo."
       };
     case "ping":
       return {};

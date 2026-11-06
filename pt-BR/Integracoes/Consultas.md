@@ -7,6 +7,7 @@ Todas as consultas são **GET** no endereço da sua empresa, com a chave no cabe
 | Consulta | Endereço | Uma linha por | Período |
 |---|---|---|---|
 | [Colaboradores no mês](#colaboradores-no-mês) | `/api/integracoes/func-mes` | colaborador | `AnoMes` (obrigatório) |
+| [Resumo de colaboradores](#resumo-de-colaboradores) | `/api/integracoes/func-mes/resumo` | estabelecimento, cargo, departamento, setor, seção ou horário | `AnoMes` (obrigatório) |
 | [Ponto calculado por dia](#ponto-calculado-por-dia) | `/api/integracoes/ponto-calc-dia` | colaborador e dia | `AnoMes` ou `DataInicial` + `DataFinal` |
 | [Totais do mês](#totais-do-mês) | `/api/integracoes/ponto-calc` | colaborador | `AnoMes` (obrigatório) |
 | [Inconsistências](#inconsistências) | `/api/integracoes/ponto-incons` | colaborador e dia com problema | `AnoMes` ou `DataInicial` + `DataFinal` |
@@ -23,7 +24,7 @@ Todas as consultas são **GET** no endereço da sua empresa, com a chave no cabe
 | `SkipCount` | número | Registros a pular (paginação). Padrão 0 |
 | `MaxResultCount` | número | Registros por página, de 1 a 1.000. Padrão 100 |
 
-A ordem é fixa: código do colaborador e, nas consultas por dia, a data.
+A ordem é fixa: código do colaborador e, nas consultas por dia, a data. No resumo, a maior quantidade primeiro.
 
 ## Colaboradores no mês
 
@@ -57,6 +58,28 @@ Quem estava ativo na competência, **inclusive quem foi demitido dentro dela**, 
 | `cdCentroCusto` | Código do centro de custo |
 
 Código `0` com nome `null` quer dizer que o colaborador não tem aquele item da lotação.
+
+## Resumo de colaboradores
+
+`GET /api/integracoes/func-mes/resumo?AnoMes=202610&AgruparPor=Estabelecimento` · permissão da chave: *Consultar os colaboradores mês a mês*
+
+Quantos colaboradores do mês há em cada estabelecimento, cargo, departamento, setor, seção ou horário, do maior para o menor. Use para contar e comparar sem baixar a lista inteira. Os colaboradores são os mesmos da consulta acima.
+
+| Parâmetro | Descrição |
+|---|---|
+| `AgruparPor` | `Estabelecimento` (padrão), `Cargo`, `Departamento`, `Setor`, `Secao` ou `Horario` |
+| `CdEstab` | Agrupa só dentro de um estabelecimento (ex.: os cargos de uma loja) |
+
+```json
+{ "codigo": 23, "nome": "Loja Centro", "quantidade": 35 }
+```
+
+| Campo | Descrição |
+|---|---|
+| `codigo` / `nome` | O estabelecimento, cargo, departamento, setor, seção ou horário. Código `0` com nome `null` agrupa quem não tem aquele item |
+| `quantidade` | Colaboradores nele |
+
+Aqui o `totalCount` é o número de grupos, e a paginação é por grupo. A soma das quantidades é o `totalCount` da consulta de colaboradores no mês com os mesmos filtros.
 
 ## Ponto calculado por dia
 
