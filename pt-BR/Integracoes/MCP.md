@@ -8,7 +8,7 @@ O **MCP** (Model Context Protocol) é o padrão que os assistentes de IA usam pa
 - *Liste as inconsistências da última semana no estabelecimento 1.*
 - *Compare as faltas de setembro e de outubro.*
 
-O servidor só **lê**: ele não altera nada no Símix Ponto. Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
+As consultas só **leem**. A única ferramenta que grava é a de [importar planilhas](Importar-planilhas.md), e só com uma chave que tenha a permissão *Importar planilhas pelo assistente*. Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
 
 ## Antes de começar: dados pessoais
 
@@ -17,6 +17,10 @@ O que o assistente lê vai para o provedor da IA (Microsoft, Anthropic, OpenAI..
 - Use uma conta empresarial do assistente, em que os dados não são usados para treinar o modelo, e confira se isso está de acordo com a política de privacidade (LGPD) da sua empresa.
 - Crie uma **chave só para o assistente**, com só as permissões que ele precisa. Sem a permissão de colaboradores, o CPF não sai.
 - Desative a chave na tela de Chaves de API quando ela não for mais usada.
+
+## Importar planilhas
+
+Com a permissão *Importar planilhas pelo assistente* na chave, o Claude também leva planilhas do RH para o Símix Ponto (pedidos de adiantamento, campos do colaborador no mês, marcações): ele simula, mostra os erros de cada linha e só grava com o seu ok. O passo a passo está em [Importar planilhas com o Claude](Importar-planilhas.md).
 
 ## O que você precisa
 

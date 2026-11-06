@@ -46,6 +46,10 @@
           "path": "Integracoes/MCP.md"
         },
         {
+          "text": "Importar planilhas com o Claude",
+          "path": "Integracoes/Importar-planilhas.md"
+        },
+        {
           "text": "Acesso com usuário (token)",
           "path": "Integracoes/Token-de-usuario.md"
         }
