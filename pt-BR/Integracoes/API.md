@@ -45,7 +45,7 @@ X-Api-Key: smx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 | Permissão da chave | Consulta liberada |
 |---|---|
-| Consultar os colaboradores mês a mês | `func-mes` |
+| Consultar os colaboradores mês a mês | `func-mes` e `func-mes/resumo` |
 | Consultar o ponto calculado por dia | `ponto-calc-dia` |
 | Consultar os totais do ponto no mês | `ponto-calc` |
 | Consultar as inconsistências do ponto | `ponto-incons` |
