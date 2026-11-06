@@ -12,6 +12,7 @@ Nesta seção:
 | [Exemplos em C#](Exemplos-CSharp.md) | Programa pronto em .NET, com paginação |
 | [Exemplos em JavaScript](Exemplos-JavaScript.md) | Programa pronto em Node.js, com paginação |
 | [Usar com assistentes de IA (MCP)](MCP.md) | Ligar o Claude, o Copilot ou o Cursor aos dados do ponto |
+| [Importar planilhas com o Claude](Importar-planilhas.md) | Levar uma planilha do RH para o Símix Ponto, com simulação antes de gravar |
 | [Acesso com usuário (token)](Token-de-usuario.md) | Quando a integração precisa entrar como um usuário |
 
 ## Como funciona
