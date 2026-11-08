@@ -13,7 +13,8 @@ As **Escalas inteligentes** reúnem, num lugar só, tudo o que o RH, o DP e a ge
 - a **cobertura** que cada setor precisa, faixa por faixa de horário;
 - um **gerador** que monta ou conserta a escala sozinho, cobrindo a loja o melhor possível;
 - o **Assistente**, que explica pendências, diz quem pode cobrir uma falta e aplica a troca na grade;
-- o **simulador da redução de jornada**, que mostra quantas pessoas faltam em cada setor com 42 e 40 horas.
+- o **simulador da redução de jornada**, que mostra quantas pessoas faltam em cada setor com 42 e 40 horas;
+- a **escala no portal do colaborador**: depois da aprovação, cada pessoa vê a própria escala e a do setor e recebe um aviso.
 
 Nada vai para o cartão de ponto antes da **aprovação**. Até lá, o planejamento é um rascunho: dá para montar o mês com calma, voltar no dia seguinte e ajustar.
 
@@ -39,9 +40,9 @@ Na aba **Coberturas**, informe o mínimo de pessoas por faixa de horário e dia 
 
 ### 3. Crie o planejamento do mês
 
-Em **Escalas › Planejamento**, clique em **Novo**, escolha o período e o recorte (estabelecimento, departamento e setor). A grade abre com o que cada pessoa já cumpre hoje, ao fundo.
+Em **Escalas › Planejamento**, clique em **Novo** e escolha o período e o recorte: um estabelecimento e, se quiser, um setor (vazio vale para todos). Ao salvar, a grade abre com o que cada pessoa já cumpre hoje, ao fundo. No exemplo, o plano é da Loja Centro, e o filtro de **Setores** da grade mostra só a frente de caixa (Caixa e Fiscal de caixa).
 
-![Novo planejamento: período, descrição e o recorte da frente de caixa da Loja Centro](img/planejamento-novo.png)
+![Novo planejamento: período, situação, estabelecimento, setor e a descrição sugerida](img/planejamento-novo.png)
 
 ### 4. Veja o que a lei e as regras não aceitam
 
@@ -67,11 +68,11 @@ O que ainda falta tem explicação: no exemplo, são o Natal e o Ano-Novo, dias 
 
 ### 6. Ajuste com o Assistente e aprove
 
-Uma operadora vai faltar no sábado? Pergunte ao **Assistente** na própria grade. Ele mostra quem pode cobrir, o efeito de cada opção nas horas da semana e na cobertura, e aplica a escolhida na grade.
+Uma operadora vai faltar no sábado? Pergunte ao **Assistente**, pelo botão dele na ponta direita da barra da grade. Ele mostra quem pode cobrir, o efeito de cada opção nas horas da semana e na cobertura, e aplica a escolhida na grade.
 
 ![O Assistente aplicou a troca: o dia entra circulado na grade e o Ctrl+Z desfaz](img/assistente-aplicado.png)
 
-Com tudo certo, **Aprovar** leva o planejado para o cartão de ponto. Se ainda houver bloqueio, o sistema pede uma justificativa, que fica gravada com o usuário e a data. Veja [Validação e aprovação](Validacao-e-aprovacao.md) e [Assistente na escala](Assistente.md).
+Com tudo certo, **Aprovar** leva o planejado para o cartão de ponto. Se ainda houver bloqueio, o sistema pede uma justificativa, que fica gravada com o usuário e a data. Cada colaborador com dias gravados recebe o aviso **Escala aprovada** e vê a escala no portal e no aplicativo. Veja [Validação e aprovação](Validacao-e-aprovacao.md), [Assistente na escala](Assistente.md) e [Minha escala](Minha-escala.md).
 
 ## As telas do menu Escalas
 
@@ -86,6 +87,13 @@ Com tudo certo, **Aprovar** leva o planejado para o cartão de ponto. Se ainda h
 | **Simulador da redução** | Quantas pessoas faltam em cada setor com 42 e 40 horas | [Simulador](Simulador.md) |
 | **Demanda** | Volumes do PDV e previsão da demanda virando cobertura | [Demanda do PDV](Demanda.md) |
 
+Fora do menu Escalas:
+
+| Onde | Para que serve | Página |
+|---|---|---|
+| **Início › Módulos**, card **Escalas** | O assistente que implanta a escala: um ciclo que se repete (12x36, 4x2, 5x2) ou o caminho da escala montada todo mês | [Implantar Escalas](Implantar.md) |
+| **Portal e aplicativo do colaborador** | O card **Minha escala**, a escala do setor e o aviso de escala aprovada | [Minha escala](Minha-escala.md) |
+
 A lista completa das regras conferidas está em [Referência das regras](Referencia-regras.md), e as dúvidas mais comuns, em [Perguntas frequentes](Perguntas-frequentes.md).
 
 ## Quem pode usar
@@ -97,7 +105,8 @@ O acesso é pelas permissões do usuário (Segurança › Permissões):
 | **Planejamento de escala** | Ver os planejamentos, abrir a grade, o relatório e o simulador |
 | **Planejamento de escala › Criar / Editar / Excluir** | Criar planejamentos, editar a grade, **gerar a escala** e calcular as vagas no simulador |
 | **Planejamento de escala › Aprovar** | Aprovar e reprovar (é o que grava no cartão) e usar **Trocas/Afastamentos** |
-| **Regras de escala** (e Criar / Editar / Excluir) | Políticas, regras, coberturas e turnos de referência |
+| **Regras de escala** (e Criar / Editar / Excluir) | Políticas, regras, coberturas e turnos de referência. O Sugerir regras e o Sugerir turnos pedem o Criar; o Sugerir coberturas, o Editar |
+| **Demanda das escalas (PDV e previsão)** (e Criar / Editar / Excluir / Importar) | A tela Demanda: previsão, volumes, padrões e eventos. O Criar libera o **Sugerir demanda** e o Importar, a planilha de volumes |
 
 O gerador, a validação e o simulador valem para todas as empresas, sem recurso a ligar. O **Assistente** depende do recurso de IA da empresa.
 
@@ -105,6 +114,7 @@ O gerador, a validação e o simulador valem para todas as empresas, sem recurso
 
 - Na página **Novidades**, o card **Escalas inteligentes** tem o botão **Ver demonstração**: uma demonstração guiada que percorre as regras, a cobertura, a grade, o gerador, o Assistente e a aprovação nas telas de verdade, sem gravar nada por você.
 - O botão de **Treinamentos** de cada tela das escalas lista as demonstrações daquela tela.
-- O botão **?** da grade reúne todos os atalhos de teclado e de mouse.
+- Na grade, a **Ajuda** reúne os atalhos de teclado e de mouse, as legendas da célula, as regras que a escala confere e o caminho para esta documentação.
+- Começando do zero? O assistente [Implantar Escalas](Implantar.md) mostra o caminho, tela por tela.
 
 > **Aviso.** O sistema ajuda a cumprir a lei e a convenção, mas não substitui a análise do DP e do jurídico. Temas da EC 141 ainda em aberto (como o divisor da hora e o desconto por faltas) dependem de regulamentação, da convenção da categoria e dos tribunais.

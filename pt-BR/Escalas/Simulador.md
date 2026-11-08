@@ -8,7 +8,7 @@ A EC 141/2026 reduz o limite semanal para **42 horas a partir de 16/12/2026** e 
 
 ## Como usar
 
-1. Escolha o **período** e, se quiser, o **estabelecimento**, o **departamento** e o **setor**.
+1. Escolha o **período** e, se quiser, o **estabelecimento** e o **setor**.
 2. Clique em **Simular**. Cada linha é um setor, com o subtotal do estabelecimento.
 3. Abra o setor para ver as **pessoas**: cargo, regime (6x1, 5x2, 4x3, parcial ou outro, pelos dias trabalhados na semana), contrato, horas realizadas e as marcas de quem já tem **1 folga por semana** ou trabalha **acima de 42h**.
 4. **Excel** exporta as abas *Setores* e *Pessoas*.

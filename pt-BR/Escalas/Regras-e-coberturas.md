@@ -29,6 +29,18 @@ Na aba **Regras** da política ficam as regras dela, cada uma com a frase que re
 
 Abaixo das políticas, a lista **Regras soltas e das pessoas** traz as regras que não pertencem a uma política, como as de um colaborador específico (disponibilidade, turno fixo).
 
+### Sugerir regras
+
+Não sabe por onde começar? O botão **Sugerir regras**, na lista de políticas, monta o rascunho das regras de um estabelecimento a partir das marcações das últimas semanas:
+
+1. Escolha o estabelecimento. O sistema lê o histórico e mostra o regime de hoje (6x1 ou 5x2, pelos dias trabalhados na semana) e o contrato mais comum.
+2. Confira o **regime** que a escala vai seguir, a data em **Vale a partir de** e o **funcionamento** deduzido (da primeira à última pessoa presente; corrija se a loja abre ou fecha em outro horário). Marque se **a loja abre nos feriados** e se quer **o horário de Natal e Ano-Novo**.
+3. Em **Gravar em**, escolha uma **nova política** (vale para o estabelecimento escolhido) ou uma **existente**.
+4. Se quiser, escreva observações e ligue **Ajustar com o Assistente (IA)**. Escolhendo uma política que tem o PDF da convenção, o Assistente lê as cláusulas de escala e cita a cláusula e a página.
+5. Clique em **Sugerir**, confira as regras e grave as marcadas (**Gravar N regra(s)**). Nada é gravado antes disso.
+
+O rascunho traz o funcionamento da loja, as folgas e a jornada do regime e o revezamento do fechamento. O que só vale com convenção ou acordo coletivo (jornada acima de 8h, trabalho em feriado, a média de folgas no mês do 6x1 depois de 16/12/2026) vem **desmarcado**, com origem Convenção e a fonte "Confirmar na convenção": marque só depois de conferir a cláusula. As regras da lei não entram, porque já são conferidas sempre.
+
 ## Regras
 
 Cada regra tem um **tipo**, os **parâmetros** do tipo, a **rigidez** e a **origem**.
@@ -121,3 +133,13 @@ Os turnos de referência são os turnos que a operação usa: Abertura, Intermed
 | **Vale para** | Os setores (ou outros filtros) que usam o turno |
 
 Eles alimentam o **Início rápido** do editor do dia, o **gerador** (que monta os dias com esses turnos), as regras de **Turno fixo** e **Limite de turno** e as coberturas de **pessoas por turno**.
+
+### Sugerir turnos
+
+O botão **Sugerir turnos**, na lista de turnos de referência, monta a abertura, o intermediário, o fechamento e o domingo de cada setor pelas entradas e saídas reais das últimas semanas:
+
+1. Escolha o estabelecimento, o **regime** (6x1 ou 5x2), a data em **Escala a partir de** (a jornada do dia segue a lei dessa data) e os **setores**.
+2. Se quiser, escreva observações e ligue o Assistente (IA), que junta, separa e renomeia turnos.
+3. Clique em **Sugerir**, confira nome, sigla, entrada, jornada e intervalo de cada turno, com o motivo, e grave os marcados (**Gravar N turno(s)**).
+
+As entradas são agrupadas de meia em meia hora, o domingo com horário próprio vira um turno separado e o intervalo é a maior pausa do dia (o almoço, e não o lanche). A jornada segue o regime: no 5x2 de 44 horas antes de 16/12/2026, 8h48 por dia. Cada turno fica com o filtro e o nome do setor, e o setor que já tem turnos vem desmarcado.

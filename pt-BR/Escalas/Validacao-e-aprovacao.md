@@ -9,9 +9,10 @@ Enquanto você monta a escala, a grade confere a lei, a convenção, as regras d
 Cada alteração é conferida na hora, na própria tela, e de novo no servidor ao salvar.
 
 - **Contorno vermelho**: o dia fere a lei ou uma regra obrigatória e **impede aprovar** sem justificativa.
-- **Contorno ocre**: o dia só **pede atenção** (uma preferência, um turno fora do horário da loja, horas acima do contrato).
+- **Contorno ocre**: o dia só **pede atenção** (uma preferência, um turno fora do horário da loja, horas acima do contrato, um dia de 8h a 10h que é compensação ou hora extra).
 - A **dica** da célula e a **legenda** da barra de status dizem o motivo e a fonte de cada pendência.
 - Na barra, os contadores mostram quantos dias **bloqueiam** e quantos pedem **atenção**.
+- Quem prefere a grade sem os contornos desmarca **Exibir › Inconsistências**: a dica, os contadores e a aba Pendências continuam.
 
 ![Rafaela escalada no Natal com a loja fechada: o dia fica vermelho e a legenda explica o motivo e a fonte](img/validacao-ao-vivo.png)
 
@@ -59,3 +60,11 @@ Se ainda houver pendência que bloqueia, o Aprovar mostra cada uma e pede uma **
 | Observação | A observação do dia |
 
 Depois da aprovação, o cálculo do ponto segue normalmente: horas, extras, faltas e banco de horas passam a considerar a nova escala.
+
+## O aviso ao colaborador
+
+Ao aprovar, cada colaborador que teve dias gravados no cartão recebe o aviso **Escala aprovada**, no site e no aplicativo: *"A escala de (nome) de 21/12/2026 a 20/01/2027 foi aprovada."*, com o primeiro e o último dia aprovados. Para o colaborador, o aviso abre a escala dele e a do setor a partir do primeiro dia aprovado (veja [Minha escala](Minha-escala.md)); para a gestão, abre a grade do plano.
+
+- O aviso sai só da aprovação do planejamento. O que é gravado direto em [Trocas/Afastamentos](Trocas-e-domingos.md) não avisa.
+- A regra do aviso já vem criada na tela **Alertas** (rotina **Escalas**, evento **Aprovado**): para o perfil Colaborador, com o alcance **Somente eu** e os canais Site e Aplicativo. Ela pode ser ajustada (por exemplo, para mandar também por e-mail) ou excluída; excluída, não volta sozinha.
+- Só o que foi **aprovado** chega ao colaborador: o plano em Rascunho ou Publicado não aparece para ele.

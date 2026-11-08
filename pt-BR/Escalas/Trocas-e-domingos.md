@@ -9,13 +9,17 @@ Para o dia a dia, nem sempre é preciso um planejamento: trocar a folga de algu�
 ## Como é a tela
 
 - **Período**: o mês do cartão, com a opção de **intervalo de datas** (que pode passar do fim do mês).
-- **Estabelecimento atual** e **Setores**: filtros sempre visíveis, com vários setores de uma vez. Quando o estabelecimento já vem do filtro global da barra do topo, vale o dele. Os filtros valem também para o Excel e a impressão.
-- **Mês / Semana**, **Atalhos**, **Exportar** e **Imprimir**, como no planejamento.
+- **Estabelecimento** e **Estabelecimento atual**, ao lado do período, e **Setores**, na linha de baixo da barra (vários de uma vez). Quando o estabelecimento ou o atual já vem do filtro global da barra do topo, vale o dele: o campo some e fica o aviso. Os filtros valem também para o Excel e a impressão.
+- **Mês / Semana**, **Atalhos**, **Ajuda**, **Exportar**, **Imprimir** e **Exibir**, como no [planejamento](Planejamento.md#a-barra-da-grade).
 - **Salvar** grava no cartão (o log registra **Manutenção de escala**). Não há Aprovar nem salvamento automático: ao trocar de mês, de página ou sair com alterações, a tela pergunta se grava, descarta ou cancela.
 - **Voltar** leva para a tela de onde você veio.
 - A tela pede a permissão **Planejamento de escala › Aprovar**, a mesma de quem grava a escala no cartão.
 
-A edição é a mesma do [planejamento](Planejamento.md#editar-como-numa-planilha): seleção com o mouse, teclas dos afastamentos, editor do dia, Ctrl + Z.
+A edição é a mesma do [planejamento](Planejamento.md#editar-como-numa-planilha): seleção com o mouse, teclas dos afastamentos, teclas A e S, editor do dia, Ctrl + Z.
+
+### A impressão
+
+O **Imprimir** abre o relatório Escalas/Afastamentos com o recorte dos filtros e o que estiver marcado no **Exibir**. Quando o **Estabelecimento** e o **Estabelecimento atual** do filtro são diferentes, o cabeçalho sai com os dados do **Estabelecimento**, e a barra do relatório mostra a opção **Cabeçalho: Estabelecimento | Estabelecimento atual** para escolher de onde vêm a empresa, o CNPJ e o nome do estabelecimento. A barra não sai no papel. Com só um dos dois preenchido, o cabeçalho segue o preenchido.
 
 ## Afastamento com horas
 
@@ -25,19 +29,19 @@ No editor do dia, o afastamento tem o campo **Horas**. Ao escolher um afastament
 
 Arraste entre uma folga e um dia de trabalho: os dois trocam de conteúdo e cada um registra a data do outro. Na grade e na impressão, o dia trocado aparece num **círculo**, com o ícone de troca, e o texto **Folga** no dia que virou descanso (a legenda explica).
 
-O painel lateral sugere, para o dia selecionado:
+No painel lateral, para o dia selecionado:
 
-- **Trocar pelo domingo anterior** ou **pelo próximo domingo** (fora do domingo);
-- **Inserir** o último afastamento e o último horário usados.
+- **Anterior (A)** e **Próximo (S)** trocam o dia com o domingo anterior ou com o próximo domingo (fora do domingo); as teclas **A** e **S** fazem o mesmo na grade;
+- as sugestões **inserem** o último afastamento e o último horário usados.
 
 ## Troca automática de domingos trabalhados
 
-O botão **Trocar domingos** (também na grade do planejamento) compensa os domingos trabalhados de uma vez:
+O botão **Trocar domingos**, no topo do painel lateral (também na grade do planejamento), compensa os domingos trabalhados de uma vez:
 
 ![Trocar domingos trabalhados: as opções e o par encontrado, com o horário trabalhado no domingo e o dia da troca](img/trocar-domingos.png)
 
 1. Cada **domingo trabalhado sem jornada prevista** (DSR ou folga) troca com um dia de **falta integral** da semana ao lado, o mais próximo do domingo. O dia da falta vira o descanso e o domingo fica com a jornada daquele dia.
-2. Escolha **quem**: todos da página ou só os das células selecionadas.
+2. Escolha **quem**: **Todos do filtro (N)**, e não só os da página (a grade carrega todos numa página só antes de analisar), ou só os das células selecionadas.
 3. Escolha **onde procurar**: nas duas semanas (começando pela posterior, recomendado, ou pela anterior), só na posterior ou só na anterior.
 4. Escolha **os dias que compensam**: a falta do dia inteiro e, se quiser, a **folga que ainda não tem troca**.
 5. **Analisar** lista os pares encontrados, avisa quando a pessoa trabalhou no domingo **menos** que o previsto do dia trocado e mostra os domingos que ficaram **sem troca**, com o motivo.
@@ -54,4 +58,4 @@ Detalhes que evitam surpresa:
 ## Ver também
 
 - **Manutenção**: a opção da visão **Ocultar a sigla do turno especial** (ex.: REG) nas marcações da listagem; a sigla continua no dia, no espelho e ao abrir o dia.
-- Nas próximas atualizações, as teclas **A** e **S** trocam o dia selecionado com o domingo anterior e com o próximo domingo, e a visão **Planejado e trabalhado** mostra as horas trabalhadas embaixo do planejado.
+- **Exibir** da barra: as horas trabalhadas, os turnos e as horas previstas embaixo de cada dia, e a opção de esconder o contorno das inconsistências. Veja [Exibir](Planejamento.md#exibir).

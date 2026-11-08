@@ -22,11 +22,15 @@ Sem cobertura cadastrada, o gerador ainda cumpre as regras, mas não tem como sa
 |---|---|
 | **O que fazer** | **Reparar**: muda o mínimo para cumprir as regras e cobrir a loja. **Completar**: preenche só os dias que o plano ainda não tem. **Refazer**: monta a escala de novo |
 | **Dias** | A semana mostrada (na visão Semana) ou o período do plano, de hoje em diante |
-| **Colaboradores** | Todos da página ou só os das células selecionadas. A cobertura conta todos do plano; quem fica de fora entra como está |
+| **Colaboradores** | **Todos do filtro (N)**: todos os que a grade mostra com a pesquisa, o setor e o período escolhidos, e não só os da página. Para a prévia entrar em todos, a grade grava o pendente e carrega todos numa página só (pesquisar ou trocar o setor ou o período volta a paginar). Ou **Com células selecionadas**. A cobertura conta todos do plano; quem fica de fora entra como está |
 | **Horário da folga** | O horário do dia usado no descanso (ex.: DSR) e, se quiser, outro para a 2ª folga da semana |
 | **Tempo da busca** | Rápido (20 s), Normal (1 min) ou Caprichado (3 min). Sem achar nada melhor por um tempo, a busca para antes |
 
 O gerador **não mexe** em dia travado, afastamento, troca de folga e dias que já passaram: eles ficam como estão e entram na conta.
+
+- Dia de afastamento inteiro (home office, day off, aula do aprendiz, atestado) conta as horas previstas dele no contrato da semana: o gerador não completa essa semana com mais um dia de trabalho.
+- Quem não tem nenhuma opção de trabalho que caiba nas regras fica com os dias como estão, e o resumo avisa. O gerador não põe essa pessoa de folga no período inteiro.
+- Os turnos que o gerador monta têm até 8 horas por dia. O horário que a pessoa já faz, mesmo acima de 8h (como o 8h48 de segunda a sexta que compensa o sábado), continua valendo, com a atenção de compensação ou hora extra.
 
 ## O andamento
 
@@ -83,7 +87,7 @@ O mesmo gerador calcula, no [Simulador da redução](Simulador.md), **quantas pe
 
 ## Pelo Assistente
 
-O [Assistente](Assistente.md) também gera: *"refaça a escala da semana que vem"* ou *"complete os dias que faltam do Caixa"*. A prévia entra na grade do mesmo jeito, circulada.
+O [Assistente](Assistente.md) também gera: *"refaça a escala da semana que vem"* ou *"complete os dias que faltam do Caixa"*. Ele propõe a geração num cartão com o botão **Gerar na grade**, e a prévia entra na grade do mesmo jeito, circulada.
 
 ## Perguntas comuns
 
@@ -91,6 +95,6 @@ O [Assistente](Assistente.md) também gera: *"refaça a escala da semana que vem
 
 **Gerei e não gostei. E agora?** Ctrl + Z (ou Desfazer a geração) volta tudo. Mesmo salvo, nada foi para o cartão.
 
-**Posso gerar só para algumas pessoas?** Sim: selecione células delas e escolha **Com células selecionadas**. As demais entram como estão.
+**Posso gerar só para algumas pessoas?** Sim: selecione células delas e escolha **Com células selecionadas**, ou escolha os setores no filtro **Setores** da grade e gere para **Todos do filtro**. As demais entram como estão.
 
 **Quem pode gerar?** Quem tem **Planejamento de escala › Editar**.
