@@ -12,7 +12,7 @@ Não. Descanso de 11h, 7º dia seguido, domingos (inclusive a escala quinzenal d
 
 ### A minha convenção permite mais de 8 horas por dia. Como faço?
 
-Cadastre uma regra de **Jornada diária** na política da convenção, com origem **Convenção** e a cláusula na fonte. Acima de 8h o sistema só aceita regra de convenção ou acordo coletivo.
+Sem regra nenhuma, o dia de 8h a 10h já não bloqueia: ele aparece como **atenção** (compensação ou hora extra, CLT, art. 59), como o 8h48 de segunda a sexta que compensa o sábado. Acima de 10h a escala bloqueia. Para uma jornada maior, como a 12x36, cadastre uma regra de **Jornada diária** na política da convenção, com origem **Convenção** e a cláusula na fonte: acima de 8h o sistema só aceita regra de convenção ou acordo coletivo.
 
 ### O que é contorno vermelho e contorno ocre?
 
@@ -40,11 +40,15 @@ Sem uma regra de **Feriado** da convenção, a escala bloqueia o trabalho no fer
 
 ### Quantas pessoas cabem na grade?
 
-100 colaboradores por página, com a pesquisa no cabeçalho *Colaborador*. A aprovação sem seleção vale para o planejamento inteiro, não só para a página aberta.
+100 colaboradores por página, com a pesquisa no cabeçalho *Colaborador*. A aprovação sem seleção vale para o planejamento inteiro, não só para a página aberta. O **Gerar escala** e o **Trocar domingos** com **Todos do filtro** carregam todos numa página só antes de agir.
 
 ### Posso ter dois planejamentos no mesmo mês?
 
-Sim, um por equipe. Só não pode o **mesmo dia do mesmo colaborador** estar em dois planejamentos abertos: o Salvar recusa e diz em qual ele está.
+Sim: um por loja, ou um por setor quando a equipe é grande (o plano tem um estabelecimento e um setor, no máximo). Só não pode o **mesmo dia do mesmo colaborador** estar em dois planejamentos abertos: o Salvar recusa e diz em qual ele está.
+
+### O colaborador vê a escala que eu monto?
+
+Só depois da **aprovação**. A escala do colaborador (o card **Minha escala** e a escala do setor, no portal e no aplicativo) vem do cartão de ponto, que só recebe o que foi aprovado. O plano em Rascunho ou Publicado não aparece para ele. Ao aprovar, cada um recebe o aviso **Escala aprovada**. Veja [Minha escala](Minha-escala.md).
 
 ### O Assistente grava sozinho?
 
@@ -57,3 +61,7 @@ Nas semanas que começam a partir de 16/12/2026, o limite cai para **42 horas** 
 ### Onde vejo uma demonstração?
 
 Na página **Novidades**, no card **Escalas inteligentes**, botão **Ver demonstração**. O roteiro percorre as regras, a cobertura, a grade, o gerador, o Assistente e a aprovação nas telas de verdade, sem gravar nada por você.
+
+### Por onde começo, se ainda não uso escala?
+
+Pelo assistente [Implantar Escalas](Implantar.md), em **Início › Módulos**, card **Escalas**. Ele pergunta como a equipe trabalha: num ciclo que se repete (12x36, 4x2, 5x2), ele cria a escala e passa os colaboradores para ela; na escala montada todo mês, ele mostra as telas na ordem certa.

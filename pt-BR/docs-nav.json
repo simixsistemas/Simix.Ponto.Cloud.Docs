@@ -63,6 +63,10 @@
           "path": "Escalas/Escalas-inteligentes.md"
         },
         {
+          "text": "Implantar Escalas",
+          "path": "Escalas/Implantar.md"
+        },
+        {
           "text": "Planejamento de escala",
           "path": "Escalas/Planejamento.md"
         },
@@ -93,6 +97,10 @@
         {
           "text": "Demanda do PDV",
           "path": "Escalas/Demanda.md"
+        },
+        {
+          "text": "Minha escala (colaborador)",
+          "path": "Escalas/Minha-escala.md"
         },
         {
           "text": "Outras escalas",

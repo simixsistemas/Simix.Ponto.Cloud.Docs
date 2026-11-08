@@ -7,13 +7,16 @@ A grade confere a escala a cada alteração, o servidor confere de novo ao salva
 - **Bloqueia** (contorno vermelho): impede aprovar sem justificativa.
 - **Atenção** (contorno ocre): aparece nas pendências, mas não impede aprovar.
 
+Na grade, **Ajuda › Regras** mostra esta mesma lista com os números da data do plano, as regras cadastradas que valem para as pessoas da escala e os tipos que ainda podem ser cadastrados. Veja [A janela de regras](Planejamento.md#a-janela-de-regras).
+
 ## A lei, conferida sempre
 
 Estas regras valem para todos, sem cadastro. Uma regra da convenção ou da empresa pode deixá-las **mais rígidas**; para afrouxar, só por convenção ou acordo, e mesmo assim dentro do que a lei permite.
 
 | Regra | O que acusa | Gravidade | Fonte |
 |---|---|---|---|
-| **Jornada diária** | Mais de 8h no dia (6h para aprendiz). Acima de 8h, só com regra de jornada diária da convenção | Bloqueia | CF, art. 7º, XIII; a partir de 16/12/2026, EC 141/2026, art. 7º, XIII; aprendiz: CLT, art. 432 |
+| **Jornada diária** | Mais de 8h e até 10h no dia: é compensação ou hora extra (como o 8h48 de segunda a sexta que compensa o sábado) | Atenção | CLT, art. 59 |
+| **Jornada diária (teto)** | Mais de 10h no dia, mesmo com regra de jornada menor; só uma regra de jornada diária da convenção acima de 10h (como a 12x36) permite. Aprendiz: mais de 6h | Bloqueia | CF, art. 7º, XIII; a partir de 16/12/2026, EC 141/2026, art. 7º, XIII; CLT, art. 59; aprendiz: CLT, art. 432 |
 | **Jornada semanal** | Horas da semana acima do limite: **44h** até 15/12/2026, **42h** nas semanas que começam a partir de 16/12/2026 e **40h** a partir de 16/12/2027 | Bloqueia | CF, art. 7º, XIII; EC 141/2026, art. 6º |
 | **Aprendiz** | Aprendiz acima do contrato na semana (sem extra nem compensação) | Bloqueia | CLT, art. 432 |
 | **Horas acima do contrato** | Semana acima do contrato da pessoa, dentro do limite da lei: vira hora extra ou banco | Atenção | CLT, art. 59 |
@@ -40,7 +43,7 @@ Cadastradas em [Regras e coberturas](Regras-e-coberturas.md). A gravidade segue 
 
 | Tipo | O que acusa | Observações |
 |---|---|---|
-| **Jornada diária** | Dia acima do máximo da regra | Acima de 8h só por convenção; no feriado vence a regra marcada para feriado; aprendiz só aceita regra da própria pessoa |
+| **Jornada diária** | Dia acima do máximo da regra, com a gravidade da regra; acima de 10h bloqueia sempre, salvo regra de convenção com máximo maior | Acima de 8h só por convenção; no feriado vence a regra marcada para feriado; aprendiz só aceita regra da própria pessoa |
 | **Jornada semanal** | Semana acima do máximo da regra | Até 44h |
 | **Folgas** | Semana com menos folgas do que a regra pede; folgas não seguidas, quando a regra pede seguidas | A média no mês só por convenção |
 | **Domingo de folga** | Domingos seguidos trabalhados além do que a regra permite | No comércio, no máximo a cada 3 semanas; para mulheres vale a escala quinzenal da lei |
@@ -59,4 +62,4 @@ A cobertura não vira pendência de bloqueio: o rodapé da grade mostra, por set
 
 O botão **Conferir** roda as **regras de inconsistência da empresa** (as mesmas da Manutenção) nos dias planejados, sem gravar no cartão. O que a Calc acusar aparece como pendência de **atenção**, com o nome da regra. Regra sobre o realizado (marcações) não acusa nada em dia futuro; regra sobre o previsto (como domingos previstos seguidos) acusa.
 
-> As regras e as fontes desta página refletem a legislação e o entendimento de outubro de 2026. Pontos ainda em aberto da EC 141 dependem de regulamentação, da convenção da categoria e dos tribunais.
+> As regras e as fontes desta página refletem a legislação e o entendimento de novembro de 2026. Pontos ainda em aberto da EC 141 dependem de regulamentação, da convenção da categoria e dos tribunais.
