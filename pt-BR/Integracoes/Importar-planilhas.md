@@ -16,6 +16,7 @@ O Símix Ponto confere cada linha com as mesmas regras das telas: o colaborador 
 | Destino | O que grava | Campos |
 |---|---|---|
 | **Pedidos de adiantamento** | O pedido do mês de cada colaborador e, se a planilha trouxer, a decisão do RH | Colaborador, mês, valor pedido e valor aprovado (opcional) |
+| **Salário do colaborador** | O salário-base e os adicionais fixos do cadastro (aba Complementar), a partir do mês informado | Colaborador, mês, salário-base e adicionais fixos (opcional) |
 | **Campos do colaborador no mês** | Os campos personalizados do mês, como convênio e comissão | Colaborador, mês e os campos da sua empresa |
 | **Marcações de ponto** | Marcações pendentes, que o sistema processa como as importadas por arquivo | Colaborador, data e hora |
 
@@ -35,12 +36,12 @@ O conteúdo da planilha passa pelo provedor da IA (Anthropic). Planilhas do RH c
 
 1. O **Claude Code**, o Claude de linha de comando ([claude.com/claude-code](https://claude.com/claude-code)). O Claude Desktop e o claude.ai não aceitam a chave da empresa nesta conexão.
 2. O **Python 3** com o pacote `openpyxl`, que o Claude usa para ler o Excel: `pip install openpyxl`.
-3. Uma **chave de API** com a permissão *Importar planilhas pelo assistente*.
+3. Uma **chave de API** com a permissão *Importar planilhas pelo assistente*. Para importar salários, a permissão *Importar salários pelo assistente*, que é separada, e quem cria a chave precisa poder ver o salário dos colaboradores.
 4. O **módulo** do destino ligado na empresa. Para os pedidos de adiantamento, o módulo de adiantamento salarial contratado e ligado nas regras (`/adiantamentos/regras`).
 
 ## Passo 1: criar a chave
 
-Em **Configurações › Segurança › Chaves de API**, dê um nome (ex.: *Claude - importação*) e marque só **Importar planilhas pelo assistente**. Copie a chave e o comando que aparece embaixo dela: a chave não é mostrada de novo. Os detalhes estão em [Integração por API](API.md#passo-1-criar-a-chave-de-api).
+Em **Configurações › Segurança › Chaves de API**, dê um nome (ex.: *Claude - importação*) e marque só **Importar planilhas pelo assistente** (e **Importar salários pelo assistente**, se a planilha tiver a base salarial). Copie a chave e o comando que aparece embaixo dela: a chave não é mostrada de novo. Os detalhes estão em [Integração por API](API.md#passo-1-criar-a-chave-de-api).
 
 ## Passo 2: ligar o Claude ao Símix Ponto
 
@@ -100,16 +101,36 @@ Linhas com erro ficam de fora. Corrija a planilha e importe de novo: a linha que
 - O pedido entra com origem **Importação** e vale como lançamento do RH: é aceito mesmo depois do prazo dos pedidos.
 - Mês com a análise **concluída** não aceita importação: reabra a análise na tela e importe de novo.
 - O colaborador precisa ter cadastro no mês. Quem foi demitido antes dele fica de fora, com a data da demissão.
+- Colaborador **sem salário** no cadastro do mês fica bloqueado ("Sem salário no cadastro de MM/AAAA"), porque o limite é calculado sobre o salário. Se a planilha tiver a base salarial, importe os **salários antes** dos pedidos.
 
 Para conferir, abra **Adiantamentos** no mês importado.
 
+## Salário do colaborador: como cada linha entra
+
+O salário fica no cadastro do colaborador, na aba **Complementar** ("Valor salário" e "Adicionais fixos"), e é guardado mês a mês. A importação:
+
+- grava a partir do **mês informado** e em todos os meses seguintes que já existem (até 12 meses à frente). Os meses anteriores continuam com o valor que tinham, e os meses criados depois herdam o novo valor;
+- muda **só** o salário e os adicionais: cargo, horário e lotação ficam como estão;
+- registra a alteração no histórico do colaborador, como a tela faz.
+
+| Situação no cadastro | Resultado |
+|---|---|
+| Sem salário | **Inserido**: o colaborador recebe o salário |
+| Salário diferente | **Atualizado** para o valor da planilha (reajuste, dissídio) |
+| Mesmo salário | **Sem alteração** |
+
+- Adicionais fixos vazios na planilha mantêm os do cadastro; **zero** limpa o campo.
+- Basta importar **uma vez** e de novo só quando houver reajuste. Na simulação o Claude mostra quantos recebem salário pela primeira vez, quantos mudam e quantos ficam iguais.
+
+Para conferir, abra o colaborador em **Cadastros › Colaboradores**, aba **Complementar**, no mês importado.
+
 ## As ferramentas
 
-O Claude usa três ferramentas do [servidor MCP](MCP.md), todas com a permissão *Importar planilhas pelo assistente*:
+O Claude usa três ferramentas do [servidor MCP](MCP.md). Cada destino exige a permissão dele na chave: *Importar salários pelo assistente* para o salário, *Importar planilhas pelo assistente* para os demais.
 
 | Ferramenta | O que faz |
 |---|---|
-| `importacao_destinos` | Lista os destinos e os campos de cada um |
+| `importacao_destinos` | Lista os destinos que a chave pode importar e os campos de cada um |
 | `importacao_simular` | Confere as linhas sem gravar nada |
 | `importacao_gravar` | Grava as linhas que passam na conferência |
 
@@ -120,6 +141,9 @@ Cada chamada leva até 500 linhas e conta no limite de chamadas por hora da chav
 | Sintoma | Causa provável | Como resolver |
 |---|---|---|
 | "A chave não tem permissão para esta chamada" | A chave não tem a permissão de importar | Crie uma chave com *Importar planilhas pelo assistente* marcada |
+| "A chave não tem a permissão \"Importar ...\"" | A chave não tem a permissão daquele destino | Crie uma chave com a permissão citada na mensagem |
+| "Quem importa salário precisa da permissão de ver o salário" | Quem criou a chave não vê salários | Crie a chave com um usuário que tenha a permissão de ver salário |
+| Pedidos bloqueados com "Sem salário no cadastro de MM/AAAA" | Os colaboradores estão sem salário no mês | Importe os salários e depois os pedidos de novo |
 | "Módulo desativado para a sua empresa" | O módulo do destino não está contratado ou ligado | Fale com o suporte da Símix |
 | "Ligue o adiantamento salarial nas regras antes de abrir o mês" | O módulo está contratado, mas desligado nas regras | Ligue em **Adiantamentos › Regras** |
 | "colaborador não encontrado" em quase todas as linhas | A chave é de outra empresa, ou a coluna escolhida não é o CPF nem o código do Símix Ponto | Confira o endereço no comando do passo 2 e peça ao Claude para identificar pelo CPF |
