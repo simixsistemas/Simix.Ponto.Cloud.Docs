@@ -1,0 +1,32 @@
+# Nomes de clientes e de bancos que aparecem nos PRs e não podem ir para as notas.
+# Uma expressão por linha (grep -E, sem diferenciar maiúsculas, palavra inteira). Acrescente os que aparecerem.
+[ií]ndio
+weibert
+banquinho
+supersamy
+carbonicfa
+cabonifca
+facta
+super ?ramos
+superramos
+blitz
+blitztransportes
+kern
+skycompany
+csctur
+rodosilver
+vila rosa
+osana
+panificadora
+superviezzer
+notare
+vitoriarh
+[a-z0-9-]+-local
+demo-roxo
+meta-local
+keppler
+nicolini
+monsenhor
+madefar
+barcellos
+kowal

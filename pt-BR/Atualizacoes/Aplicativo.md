@@ -1,3 +1,29 @@
+# 04/11/2026
+
+Versão **4.0.04** do aplicativo (Android, iOS e Windows).
+
+## Resumo
+
+- 📌 Recados do mural no Painel, no Registro e no Comprovante
+- 📍 Endereço da marcação sempre perto da posição do GPS
+
+## Recados do mural no aplicativo ✨
+
+- Os recados do mural aparecem no aplicativo: no topo do **Painel**, acima dos botões de marcação no **Registro** e no **Comprovante**, logo depois de marcar.
+- Onde cada recado aparece é escolhido na própria nota do mural, nas rotinas novas do aplicativo.
+- O recado sai na cor escolhida no sistema, com o negrito, o itálico, as listas e os links do texto.
+
+- Painel do aplicativo com o recado no topo:
+![image](imagens/app_pr510_imagem1.png)
+- Registro: o recado acima dos botões de marcação (nome do colaborador borrado):
+![image](imagens/app_pr510_imagem2.png)
+- Comprovante logo depois de marcar, com o recado da rotina "depois do registro":
+![image](imagens/app_pr510_imagem3.png)
+
+## Outras melhorias e correções
+
+- **Endereço da marcação**: o aplicativo passa a usar o primeiro endereço que fica perto da posição do GPS (até 50 km), ignorando os que vêm de longe; sem nenhum perto, a marcação fica com as coordenadas do GPS. Em 23/10, o serviço de endereços chegou a devolver uma rua de outro país para pontos no Brasil, e o aplicativo gravava esse endereço — a posição do GPS estava certa. Vale também para o endereço gravado na assinatura de documentos.
+
 # 28/10/2026
 
 Versão **4.0.03** do aplicativo (Android, iOS e Windows).

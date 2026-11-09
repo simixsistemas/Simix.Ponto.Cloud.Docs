@@ -21,6 +21,24 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 - Novo card **Assistente de IA** em Novidades, com exemplos do que pedir. O **Me mostre** apresenta o botão, abre a janela e explica o que pedir, sem enviar mensagem; o **Quero usar** abre o Início com a janela do Assistente aberta.
 - O botão do Assistente na barra do topo passa a aparecer só para usuários da Símix, e a janela vazia mostra "Pergunte sobre o Símix Ponto ou peça algo.".
 - A ajuda consultada pelo Assistente deixa de fora as páginas de Tabelas (dicionário do banco) e do PcPontoWeb, que apareciam nas respostas. Os assistentes de IA da equipe Símix (Implantador, Suporte, Dev e Ajuda) passam a usar o mesmo modelo do Assistente.
+- **Novos pedidos**: importar AFD (o Assistente mostra a tela com o botão da demonstração guiada) e importar contracheques (abre o Importar em lote já na categoria e na competência); criar um filtro salvo por cidade dos estabelecimentos; criar uma visão da lista de Colaboradores com a coluna pedida — e, se a coluna não existe, oferecer a sugestão de melhoria já preenchida.
+- **Aplicativo**: liga ou desliga o registro pelo app, libera o app só para os colaboradores de uma filial e cria os botões Presencial, Home office e Visita com o local de cada um.
+- **Perguntas sobre a equipe**: qual setor, departamento, cargo ou colaborador fez mais extras, faltas ou saldo no mês, com o link para a Manutenção já filtrada; quem faz home office e em quais dias; por que uma marcação não entrou no cartão; quem mais desrespeita a interjornada e o intervalo.
+- **Rotina do gestor**: quem não registrou hoje, relógios sem comunicar, cadastros incompletos, pendências do colaborador (aprovar ou recusar em lote, com confirmação), espelhos não assinados, o que falta para fechar o mês, quem entra de férias ou volta de afastamento e o saldo do banco de horas.
+- **Em lote**: home office em certos dias da semana para um setor, com o antes e o depois de cada colaborador; e, no plano de escala, mudar o local previsto, a observação ou o horário de muitos dias de uma vez, com os dias circulados na grade.
+- **Manutenção**: o Assistente abre a manutenção do colaborador, explica qualquer total ou campo com o valor dele no mês e esconde ou mostra totais no layout de totais do horário. A solução de problemas da manutenção oferece reimportar o dia depois de corrigir o "Bloquear registro" do afastamento.
+- **Prêmios**: explica por que o colaborador ganhou ou perdeu o prêmio no mês, com o valor realizado e o que a regra exigia; mostra as regras com cada condição; e cadastra ou altera regras de prêmio com o cartão de antes → depois.
+- **Onde fica o campo**: responde onde se configura cada coisa, com um link que abre a tela com o campo destacado, só para telas que a pessoa pode abrir.
+- **Calculadora** de horas dentro da resposta, e cada resposta mostra as ferramentas que o Assistente usou. A janela pode ser arrastada pelo título e redimensionada pelas bordas, e a posição fica salva.
+- **Avaliação das respostas**: Péssimo, Ruim, Bom ou Excelente, com comentário opcional, que aparece para a equipe Símix no painel do Assistente. A resposta da equipe Símix chega na janela em até 10 segundos, mesmo quando a pessoa não chamou o suporte. O texto "Avalie essa resposta" aparece antes dos ícones.
+- **Cadastro do colaborador**: o Assistente consulta admissão, demissão, horário e lotação do mês em vez de perguntar — "abonar as faltas desde a admissão" já usa a data de admissão e lança o abono só nos dias previstos sem marcação. Para trocar o horário padrão, mostra o horário atual e um cartão que abre o cadastro com o campo Horário destacado. Em problema de um colaborador citado, confere o cadastro, as inconsistências e as marcações antes de pedir dados.
+- O Assistente lembra os cartões que mostrou na conversa e o que a pessoa fez com eles, e não diz mais que "o cartão não apareceu".
+- **Desbloqueio do REP Control iD**: pede o serial e a senha e responde com o código e o aviso da Control iD; quando é preciso trocar a bateria, orienta falar com o suporte Símix.
+- **O que posso pedir?**, no texto inicial e no menu "...": exemplos de pedido por assunto, com busca e só com o que a pessoa pode pedir, inclusive a situação dos módulos e a implantação de cada um. O clique põe o exemplo na caixa de texto, para trocar nomes e datas antes de enviar.
+- **Implantação pelo chat**: "o que falta implantar?" responde a situação de cada módulo com o caminho para configurar, e pedidos como "R$ 5,00, 2 viagens por dia", "escritório com cerca de 200 metros", "12x36 das 7 às 19 para a portaria" ou "R$ 150 de assiduidade" abrem o assistente de implantação já com o modelo e os valores.
+- Mensagem só com o assunto ("coletores") mostra as telas sobre ele, com o link, e pergunta o que a pessoa quer fazer. Horas de um afastamento vêm com a sugestão de marcar o Totalizar, e o layout de totais é criado pelo cartão quando o quadro de horário ainda não tem.
+- Escala para o plano inteiro ("passar as equipes de segunda a sábado para 5x2") agrupa as pessoas pela semana que fazem e propõe a mudança por grupo; o "Abrir a grade" abre já com a conversa e o cartão. Pergunta que chega ao limite de consultas fecha com o que foi encontrado e pede "continue".
+- Aberto na Manutenção ou nas Escalas, o Assistente atende só o que é daquela tela, mais a calculadora e a ajuda; para outro assunto, explica como fazer e sugere abrir o Assistente em outra tela.
 
 - Pedido de cadastro de cargo com o cartão de confirmação:
 ![image](imagens/cloud_pr3048_imagem1.png)
@@ -70,72 +88,84 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 ![image](imagens/cloud_pr3250_imagem1.png)
 - Me mostre, no passo da caixa de texto:
 ![image](imagens/cloud_pr3250_imagem2.png)
-
-## Escala inteligente ✨
-
-O planejamento de escalas passa a conferir a lei, a convenção e a cobertura da loja enquanto a escala é montada, e ganhou um gerador de escala e o Assistente na grade.
-
-- **Conferência enquanto monta**: contorno vermelho no dia que impede a aprovação (7º dia seguido, descanso entre jornadas, domingos seguidos, horas da semana, jornada de aprendiz) e ocre no que só pede atenção, com o motivo e a fonte na dica. **Conferir com a Calc** aplica também as regras de inconsistência da empresa nos dias planejados, sem gravar no cartão.
-- Aba **Pendências** no painel lateral, agrupada por colaborador e por dia, e contadores de bloqueio e de atenção na barra. Aprovar com bloqueio mostra o que impede e pede uma justificativa, gravada em cada pendência com o usuário e a data.
-- Nova tela **Escalas › Regras e coberturas**: as políticas (convenção e empresa) com as regras e a vigência, a cobertura mínima de pessoas por faixa de horário e dia da semana em cada setor (em cards por setor) e os turnos de referência. A política aceita o envio da convenção coletiva em PDF: o Assistente propõe uma regra por cláusula, com a cláusula e a página, e cada uma só é gravada depois de confirmada.
-- **Sugerir coberturas**: a partir das marcações das últimas semanas, monta o rascunho das faixas de cada setor, com o horário de funcionamento, o porte e os picos de movimento ajustados pelo Assistente. Nada é gravado até aceitar, setor por setor.
-- Rodapé da grade com a cobertura de cada dia; clicando no dia, a linha do dia mostra o necessário e o escalado a cada meia hora, com a barra de cada pessoa.
-- **Início rápido** no editor do dia: os turnos de referência do setor e as entradas mais usadas montam o horário com um clique, com a jornada ao lado da meta do contrato.
-- **Gerar escala inteligente**: completa só os dias que faltam, repara o mínimo ou refaz o período, cumprindo a lei, a convenção e as regras da empresa e cobrindo a loja o melhor possível. A prévia entra na grade com os dias mudados circulados (Ctrl+Z desfaz) e um resumo da cobertura e das pendências antes e depois; quando ainda falta gente, o resumo diz por quê. O cartão de ponto só muda na aprovação.
-- **Assistente na grade** (botão Perguntar): explica pendências e cobertura, diz quem pode cobrir uma falta com o efeito de cada opção, aplica a opção escolhida e gera a semana ou o período pedido.
-- **Simulador da redução de jornada** (Escalas › Simulador da redução): por setor, quantas pessoas faltariam se a semana cair para 42 ou 40 horas, a partir da cobertura cadastrada ou das horas trabalhadas nas últimas semanas, com as vagas calculadas pelo gerador, as pessoas de cada setor e exportação para Excel.
-- Previsão do tempo nos dias da grade (16 dias), só informativa.
-
-- Regras da convenção e da empresa, com a vigência e a prioridade de cada política:
-![image](imagens/cloud_pr3149_imagem1.png)
-- Cobertura mínima do setor por faixa de horário e dia da semana:
-![image](imagens/cloud_pr3149_imagem2.png)
-- Turnos de referência:
-![image](imagens/cloud_pr3149_imagem3.png)
-- A grade com os dias que ferem a lei em vermelho, os de atenção em ocre e a cobertura no rodapé:
-![image](imagens/cloud_pr3149_imagem4.png)
-- A aba Pendências, com o motivo e a fonte de cada uma:
-![image](imagens/cloud_pr3149_imagem5.png)
-- A linha do dia: necessário × escalado a cada meia hora:
-![image](imagens/cloud_pr3149_imagem6.png)
-- Aprovar com bloqueio pede a justificativa:
-![image](imagens/cloud_pr3149_imagem7.png)
-- Simulador da redução de jornada, setor por setor:
-![image](imagens/cloud_pr3149_imagem8.png)
-- As pessoas do setor, com o regime e quem já passa do novo limite:
-![image](imagens/cloud_pr3149_imagem9.png)
-- Início rápido no editor do dia:
-![image](imagens/cloud_pr3150_imagem1.png)
-- Conferir com a Calc: a regra de inconsistência da empresa no painel:
-![image](imagens/cloud_pr3150_imagem3.png)
-- Coberturas em cards:
-![image](imagens/cloud_pr3205_imagem5.png)
-- Sugerir coberturas: o formulário preenchido pelo histórico:
-![image](imagens/cloud_pr3205_imagem6.png)
-- A prévia da sugestão ajustada pelo Assistente:
-![image](imagens/cloud_pr3205_imagem7.png)
-- O gerador: o que fazer, os dias, os colaboradores e o tempo da busca:
-![image](imagens/cloud_pr3162_imagem1.png)
-- Resumo depois de gerar o plano inteiro, com a cobertura e os bloqueios antes e depois:
-![image](imagens/cloud_pr3162_imagem2.png)
-- Os dias mudados circulados na grade:
-![image](imagens/cloud_pr3162_imagem3.png)
-- Assistente: quem cobre o atestado de amanhã, com o efeito de cada opção (nomes trocados por pseudônimos):
-![image](imagens/cloud_pr3162_imagem4.png)
-- A opção escolhida aplicada na grade:
-![image](imagens/cloud_pr3162_imagem5.png)
-- "Refaça a escala da semana que vem" pelo Assistente:
-![image](imagens/cloud_pr3162_imagem6.png)
-- Convenção em PDF enviada na política:
-![image](imagens/cloud_pr3162_imagem7.png)
-- Regras propostas a partir da convenção:
-![image](imagens/cloud_pr3162_imagem8.png)
-- Regra confirmada:
-![image](imagens/cloud_pr3162_imagem9.png)
-- Vagas pelo gerador no simulador da redução de jornada:
-![image](imagens/cloud_pr3162_imagem10.png)
-- Previsão do tempo no cabeçalho da grade:
-![image](imagens/cloud_pr3162_imagem11.png)
+- Cada resposta mostra as ferramentas usadas, e o cartão de confirmação tem os botões à direita:
+![image](imagens/cloud_pr3260_imagem1.png)
+- Totais do ponto na resposta:
+![image](imagens/cloud_pr3260_imagem2.png)
+- Importar AFD com a demonstração guiada:
+![image](imagens/cloud_pr3260_imagem3.png)
+- Contracheques: o Importar em lote já preenchido:
+![image](imagens/cloud_pr3260_imagem4.png)
+- Filtro salvo por cidade:
+![image](imagens/cloud_pr3260_imagem5.png)
+- Lista de Colaboradores aberta na visão nova com o departamento:
+![image](imagens/cloud_pr3260_imagem6.png)
+- Coluna que não existe: a sugestão de melhoria:
+![image](imagens/cloud_pr3260_imagem7.png)
+- Desligar o registro pelo app:
+![image](imagens/cloud_pr3260_imagem8.png)
+- App liberado só para uma filial:
+![image](imagens/cloud_pr3260_imagem9.png)
+- Botões Presencial, Home office e Visita:
+![image](imagens/cloud_pr3260_imagem10.png)
+- Setor com mais horas extras no mês:
+![image](imagens/cloud_pr3260_imagem11.png)
+- Home office em dois dias da semana para um setor:
+![image](imagens/cloud_pr3260_imagem12.png)
+- Marcações bloqueadas pelo afastamento, na manutenção:
+![image](imagens/cloud_pr3260_imagem13.png)
+- Solução de problemas oferecendo reimportar depois de corrigir o afastamento:
+![image](imagens/cloud_pr3260_imagem14.png)
+- Explicação de um total:
+![image](imagens/cloud_pr3260_imagem15.png)
+- Layout de totais:
+![image](imagens/cloud_pr3260_imagem16.png)
+- Calculadora na resposta:
+![image](imagens/cloud_pr3260_imagem17.png)
+- Janela movida e redimensionada:
+![image](imagens/cloud_pr3260_imagem18.png)
+- Escala em lote: a proposta de home office para o setor:
+![image](imagens/cloud_pr3260_imagem19.png)
+- Os dias circulados na grade do plano:
+![image](imagens/cloud_pr3260_imagem20.png)
+- O que falta para fechar o mês:
+![image](imagens/cloud_pr3260_imagem21.png)
+- Onde fica o campo: a resposta com o link que abre a tela com o campo destacado:
+![image](imagens/cloud_pr3263_imagem3.jpg)
+- Regra de prêmio alterada pelo Assistente, com o antes → depois:
+![image](imagens/cloud_pr3310_imagem1.png)
+- Depois de confirmar:
+![image](imagens/cloud_pr3310_imagem2.png)
+- Por que o colaborador não ganhou o prêmio no mês:
+![image](imagens/cloud_pr3310_imagem4.png)
+- Avaliação da resposta e resposta da equipe Símix entrando na janela sem reabrir a conversa:
+![image](imagens/cloud_pr3308_imagem1.gif)
+- Depois de avaliar, a carinha escolhida fica destacada:
+![image](imagens/cloud_pr3308_imagem2.png)
+- No painel do suporte, a avaliação e o comentário embaixo da resposta:
+![image](imagens/cloud_pr3308_imagem3.png)
+- Pedido de trocar o horário padrão: o horário atual e o cartão que abre o cadastro:
+![image](imagens/cloud_pr3344_imagem1.png)
+- O cadastro do colaborador aberto com o campo Horário destacado:
+![image](imagens/cloud_pr3344_imagem2.png)
+- O código de desbloqueio do REP no cartão do Assistente:
+![image](imagens/cloud_pr3346_imagem2.png)
+- O link "O que posso pedir?" no texto inicial da janela:
+![image](imagens/cloud_pr3387_imagem1.png)
+- Os exemplos de pedido por assunto:
+![image](imagens/cloud_pr3387_imagem2.png)
+- "coletores": as telas sobre o assunto, cada uma com o link:
+![image](imagens/cloud_pr3387_imagem3.png)
+- Totalizar no afastamento, proposto pelo Assistente:
+![image](imagens/cloud_pr3387_imagem4.png)
+- Quadro sem layout de totais: o cartão cria o layout só para ele:
+![image](imagens/cloud_pr3387_imagem5.png)
+- O layout de totais gravado:
+![image](imagens/cloud_pr3387_imagem6.png)
+- A situação dos módulos, com o caminho para configurar:
+![image](imagens/cloud_pr3278_imagem4.png)
+- Pelo chat: o cartão do prêmio de pontualidade com o valor e as condições em frase; "Abrir o assistente" leva ao passo 2 já preenchido:
+![image](imagens/cloud_pr3278_imagem34.png)
 
 ## Uniformes e EPIs ✨
 
@@ -259,6 +289,7 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Voltou a escolha da forma de exibir o menu (Normal, Compacto ou Escondido), agora salva no usuário e valendo em qualquer navegador. Os botões do menu mostram a descrição ao parar o mouse em cima, e botão com cadeado mostra o motivo.
 - Todos os ícones da barra mostram o nome ao passar o mouse (a pesquisa mostra também o atalho Ctrl+Espaço), e os botões de VTs e VRs ganharam ícones próprios.
 - No celular, a borda das faixas que rolam para o lado esmaece quando há mais itens.
+- Período fora do mês atual fica só com o ícone laranja na barra, sem o mês em destaque.
 
 - Antes: quatro atalhos grandes e o botão de tela cheia ao lado do sino:
 ![image](imagens/cloud_pr3028_imagem1.png)
@@ -364,6 +395,8 @@ Novo módulo para gerenciar os pedidos de adiantamento salarial do mês, do pedi
 - **Regras**: valor pedido, percentual fixo ou proporcional aos dias trabalhados; teto de 80% do salário (configurável), arredondamento, valor mínimo e máximo; calendário com antecipação ou adiamento em fins de semana e feriados; bloqueios por férias, afastamento, demissão, aviso prévio, admissão recente, faltas e vínculo; aprovação automática do que está no limite; exceções por grupo e simulação ao lado.
 - O mês abre sozinho no dia configurado e os pedidos são recalculados todo dia. Regras alteradas valem a partir do próximo mês.
 - O cadastro do colaborador ganha o campo **Adicionais fixos**, que pode entrar na base do adiantamento.
+- **Assistente de implantação**, na página de Módulos, em 8 passos: como funciona (valor à escolha até 40%, 40% fixo, proporcional ao trabalhado ou com convênio, cada um com o exemplo de um salário), o calendário com as datas do mês e os feriados, quem pede e quem fica de fora, quem está sem salário no cadastro, o envio à folha com a linha de exemplo, os descontos do convênio e conferir e ligar, com a prévia do mês — quantos podem pedir hoje, quem fica bloqueado e por quê e o que um colaborador veria no app —, sem gravar nada. No fim, dá para abrir o mês na hora. Pedindo ao Assistente ("até 40%, pagando no dia 20"), o assistente abre já com o modelo e o calendário.
+- As regras não aceitam mais o envio à folha antes do fim dos pedidos.
 
 - Painel do RH no mês, com as etapas, os totais e os pedidos:
 
@@ -394,3 +427,25 @@ Novo módulo para gerenciar os pedidos de adiantamento salarial do mês, do pedi
 - Regras com a simulação do valor disponível:
 
 ![image](imagens/cloud_pr2929_imagem8.png)
+
+- Assistente de implantação, passo 1: os modelos com o exemplo de um salário:
+![image](imagens/cloud_pr3278_imagem20.jpg)
+- Salário no cadastro: quem está sem salário no mês, com o atalho para preencher:
+![image](imagens/cloud_pr3278_imagem21.jpg)
+- Conferir e ligar: a prévia do mês e o que um colaborador vê no app:
+![image](imagens/cloud_pr3278_imagem22.jpg)
+
+## Calculadora ✨
+
+Nova barra de ferramentas da calculadora, por enquanto só nos ambientes de teste e beta; no oficial ficam só as contas.
+
+- Barra no topo organizada em menus: guias, desfazer e refazer no início, **Copiar** (copiar texto, copiar o código com todas as guias e legendas, colar e limpar), **Abrir/Salvar** (abrir, salvar e salvar como), **Exemplos** e **Ajuda**.
+- **Exemplos** prontos de salário previsto (mensalista pelas horas do período, mensalista de 44 h e horista), cada um numa guia nova, com os mesmos números do cálculo do ponto.
+- **Ajuda** com os treinamentos da calculadora e a lista de atalhos do teclado e do mouse.
+- Várias guias: criar, renomear, mover para os lados e excluir.
+- Desfazer e refazer pela barra ou por Ctrl+Z e Ctrl+Y, com o campo Expressão vazio.
+- As contas são salvas sozinhas a cada 2 minutos, quando mudam, e ao fechar a calculadora. O salvamento automático não aparece na lista do Abrir, e o Salvar dá nome a ele.
+- **Copiar link**: gera um endereço que abre as mesmas contas para outra pessoa, sem alterar as originais.
+
+- Guias e desfazer no início da barra, com a linha em edição contornada:
+![image](imagens/cloud_pr3412_imagem1.jpg)

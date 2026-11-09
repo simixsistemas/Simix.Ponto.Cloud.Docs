@@ -1,3 +1,995 @@
+# 09/11/2026
+
+## Resumo
+
+- 🧩 Página de Módulos, com a situação de cada módulo e assistentes de implantação
+- 🎨 Novo tema e padrão visual em todas as telas, com o tema escuro refeito
+- 🧠 Escalas inteligentes: sugestão de regras e turnos, pendências por tipo, transição 6x1 → 5x2 e Minha escala para o colaborador
+- 📄 Contrato de trabalho e PCD no cadastro do colaborador, com os códigos do eSocial
+- 🔑 Integração por API com chave, MCP e importação de planilhas pelo Claude
+- 🔗 Integrações por arquivo: relatório em blocos, cadastro de colaboradores e vendas do PDV
+- 🧾 Folha: linha customizada, importar layout e extras de viagem e sobreaviso separadas do saldo
+- ⏱️ Carga horária mensal no horário e valor hora pelo salário
+- ⚠️ Regras de inconsistência com filtro por horas previstas e sugestões prontas
+- 🖥️ Vários agentes de sincronização local e desbloqueio de REP Control iD pela tela
+- 👤 Painel do colaborador renovado
+- ✍️ Assinatura do espelho mais confiável, também pelo link do e-mail
+
+## Página de módulos e assistentes de implantação ✨
+
+Nova página **Início › Módulos**, com um card por módulo e assistentes que implantam cada um em poucos passos, só com o mouse, mostrando o resultado antes de gravar.
+
+- Um card por módulo (App, VT, VR, Documentos, Adiantamentos, Prêmios e Escalas; Férias, Uniformes e EPIs, Trilhas e Banco de horas em "Outros módulos") com a situação — não configurado, com pendência, configurado, em uso, desligado ou não contratado —, os números de uso, o que falta e os atalhos **Abrir**, **Configurar** e **Treinamentos**, que reúne os vídeos e as demonstrações de todas as telas do módulo.
+- No Início, o card Sugestões › Implantação ganha a linha **Implantar módulos**, com o resumo (em uso, configurados, para implantar) e o atalho para a página.
+- **Documentos**, em 5 passos: escolher os documentos entre modelos prontos (contracheques, informe de rendimentos, contrato de trabalho, exames médicos e outros), conferir a assinatura e quem abre cada um, criar as categorias, mandar o primeiro documento — um PDF de exemplo no colaborador Demonstração ou a importação dos contracheques já na categoria e no mês — e ver como ele chega ao colaborador.
+- **Vale-transporte**, em 6 passos: como paga (ônibus, ônibus + metrô, recarga fixa ou um VT já cadastrado), valores com o exemplo do mês, dias de corte com as datas do período, quem recebe (todos, por estabelecimento, departamento, setor ou um a um, com a contagem antes de gravar), conferir e salvar num botão só e o resultado com **Calcular agora** e a conta de um colaborador.
+- **Vale-refeição ou alimentação**, em 6 passos: por dia previsto, mensal fixo ou com participação do colaborador, valor e regras de desconto, adiantado ou pelo mês fechado, quem recebe, conferir e salvar, e o resultado com a conta e o desconto de um colaborador.
+- **App e registro pela web**, em 8 passos: como a equipe registra (escritório com cerca e foto, equipe externa ou home office), local de trabalho com a busca pelo endereço e o raio da cerca, segurança (foto, reconhecimento facial, biometria do celular, proteção contra fraude e aparelho novo), quem registra pelo app e pela web, avisos no aparelho, revisar e aplicar, colocar a equipe para usar e testar um ponto contra a cerca, sem gravar nada.
+- **Escalas**, começando pelo caso. No ciclo (12x36 diurno, 12x36 noturno ou 4x2): a prévia de 14 dias com as horas por semana, o mês desenhado com os avisos da lei, quem segue a escala e, num botão só, o horário, a folga, a escala, o quadro e a troca de quadro, com a escala do mês já gerada. Na escala montada todo mês: o roteiro das telas na ordem e o simulador da redução para quem está em 6x1.
+- **Prêmios**, em 7 passos: o prêmio (assiduidade, pontualidade, frequência integral ou domingo trabalhado, com o valor sugerido), quem participa, quando o colaborador perde (cada condição em frase, com tolerâncias de um clique), cartão e folha, a **prévia de quem ganharia** no mês com o total e o motivo de cada perda, sem gravar nada, nome, vigência e ativar.
+- O colaborador Demonstração fica de fora das contagens de uso, e a conta do mês nos assistentes é a mesma da Manutenção de VTs e de VRs.
+
+- Cards da página de módulos com a situação, os números e o que falta em cada módulo:
+![image](imagens/cloud_pr3278_imagem1.png)
+- Linha Implantar módulos no card Sugestões do Início:
+![image](imagens/cloud_pr3278_imagem2.png)
+- Treinamentos do card de Escalas, com os roteiros de todas as telas do módulo:
+![image](imagens/cloud_pr3278_imagem3.png)
+- Documentos, passo 1: os modelos, com contracheques, informe de rendimentos, contrato e exames já marcados:
+![image](imagens/cloud_pr3278_imagem5.png)
+- Documentos, passo 2: como o colaborador assina e quem abre cada documento:
+![image](imagens/cloud_pr3278_imagem6.png)
+- Vale-transporte, passo 1: os modelos com a conta de 22 dias e os VTs já cadastrados:
+![image](imagens/cloud_pr3278_imagem7.png)
+- Quando contar: o mês do VT e a conferência de faltas com as datas do período:
+![image](imagens/cloud_pr3278_imagem8.png)
+- Quem recebe, com a contagem:
+![image](imagens/cloud_pr3278_imagem9.png)
+- Conferir e salvar, num botão só:
+![image](imagens/cloud_pr3278_imagem10.png)
+- Vale-refeição, passo 1: por dia previsto, mensal fixo ou com participação:
+![image](imagens/cloud_pr3278_imagem11.png)
+- Valores e regras do VR, com a conta de exemplo:
+![image](imagens/cloud_pr3278_imagem12.png)
+- Conferir e salvar o VR:
+![image](imagens/cloud_pr3278_imagem13.png)
+- Cadastro do VR: a condição vazia aparece como "Dia Previsto", como o cálculo conta:
+![image](imagens/cloud_pr3278_imagem14.png)
+- App, passo 1: os modelos de como a equipe registra:
+![image](imagens/cloud_pr3278_imagem15.jpg)
+- Passo 2: coordenada dos estabelecimentos, raio da cerca e conferência pela web:
+![image](imagens/cloud_pr3278_imagem16.jpg)
+- Passo 3: foto, reconhecimento facial, biometria e aparelho novo:
+![image](imagens/cloud_pr3278_imagem17.jpg)
+- Revisar e aplicar: o que muda, antes e depois:
+![image](imagens/cloud_pr3278_imagem18.jpg)
+- Ver funcionando: teste de um ponto contra a cerca do app e da web e o comprovante de exemplo:
+![image](imagens/cloud_pr3278_imagem19.jpg)
+- Escalas, ciclo: 12x36 diurno, noturno e 4x2 com a prévia de 14 dias e as horas por semana:
+![image](imagens/cloud_pr3278_imagem23.jpg)
+- O mês com os plantões, as folgas e os avisos da lei:
+![image](imagens/cloud_pr3278_imagem24.jpg)
+- Quem segue: o Demonstração, com o quadro atual e o quadro de onde vêm as regras:
+![image](imagens/cloud_pr3278_imagem25.jpg)
+- Conferir e criar: horário do plantão, folga, escala, quadro e a troca de quadro:
+![image](imagens/cloud_pr3278_imagem26.jpg)
+- Pronto: a escala do mês gerada, com o mês desenhado:
+![image](imagens/cloud_pr3278_imagem27.jpg)
+- Escala montada todo mês: o roteiro das telas de planejamento na ordem:
+![image](imagens/cloud_pr3278_imagem28.jpg)
+- Prêmios: assiduidade, pontualidade, frequência integral e domingo trabalhado, com o valor sugerido:
+![image](imagens/cloud_pr3278_imagem29.jpg)
+- Quando perde: cada condição em frase, com as tolerâncias de um clique:
+![image](imagens/cloud_pr3278_imagem30.jpg)
+- Prévia sem gravar: quem ganharia, o total e por que cada um perderia:
+![image](imagens/cloud_pr3278_imagem31.jpg)
+- Nome e vigência, com o resumo do que será ativado:
+![image](imagens/cloud_pr3278_imagem32.jpg)
+- Pronto: calcular o mês e ver o prêmio no cartão:
+![image](imagens/cloud_pr3278_imagem33.jpg)
+
+## Novo tema e padrão visual ✨
+
+As telas ganharam um tema novo e um padrão único para listas, cadastros, diálogos e telas de processo.
+
+- Barra do topo no marinho do logo, botões sem caixa alta e **tema escuro refeito**, com fundo e cartões em tons de cinza-azulado e mais contraste. A fonte continua a Roboto.
+- Listas e cadastros no mesmo padrão: título com a contagem, pesquisa e período contornados, campos mais baixos e da mesma altura, cartões com contorno em vez de sombra e paginação em português. No cadastro, cada campo continua no mesmo lugar e na mesma ordem.
+- Ao abrir uma lista ou um cadastro pela primeira vez, aparece o esboço do conteúdo enquanto carrega, em vez de uma tela vazia.
+- O título de cada tela fica dentro do cartão principal, com o ícone da tela: cálculos e exportações, importações, logs, consultas, configurações, Integrações e portal do colaborador.
+- Os totais das telas (VR, VT, adiantamentos, arquivos importados, logs) ficam todos no mesmo quadro de indicadores.
+- Cores: sai o amarelo antigo; Cancelar e Fechar ficam neutros, a ação principal fica azul e excluir fica vermelho. O que não mudava no tema escuro (linha do tempo do banco de horas, card do espelho, histórico da manutenção, calculadora) passa a seguir o tema.
+- Diálogos no mesmo padrão dos cadastros: Cancelar e Fechar à esquerda e uma única ação em destaque à direita.
+- Menu: a tela aberta fica destacada só pelo fundo colorido, o grupo selecionado fica em negrito, abas, barra e botões têm os mesmos cantos arredondados, e o ponto que indica o grupo da tela aberta é o mesmo nas abas e na lista de todas as telas. As abas dos grupos não mostram mais a dica, e o botão de telas recentes mostra só o ícone.
+- Contorno dos cartões mais visível em todo o sistema, no tema claro e no escuro.
+
+- Lista de colaboradores no tema claro:
+![image](imagens/cloud_pr3301_imagem1.png)
+- E no tema escuro:
+![image](imagens/cloud_pr3301_imagem2.png)
+- Cadastro com o rodapé novo: ferramentas neutras, Cancelar em texto e Salvar em destaque:
+![image](imagens/cloud_pr3301_imagem3.png)
+- Calcular dados com o título dentro do cartão, no tema claro:
+![image](imagens/cloud_pr3301_imagem4.png)
+- E no tema escuro:
+![image](imagens/cloud_pr3301_imagem5.png)
+- Exportar folha, com treinamentos e histórico ao lado do título:
+![image](imagens/cloud_pr3301_imagem6.png)
+- Gerar escalas no padrão novo:
+![image](imagens/cloud_pr3301_imagem7.png)
+- Mais cadastros, com os cartões contornados e os títulos no padrão:
+![image](imagens/cloud_pr3301_imagem8.png)
+- Menu com o grupo selecionado em negrito, o ponto no grupo da tela aberta e o item ativo só com o fundo colorido:
+![image](imagens/cloud_pr3412_imagem2.png)
+
+## Escalas inteligentes ✨
+
+As Escalas inteligentes ganharam sugestão de regras e turnos, pendências separadas por tipo, a tela de transição para o 5x2 e a escala para o próprio colaborador. O guia completo está em **[Escalas inteligentes](../Escalas/Escalas-inteligentes.md)**.
+
+### Sugerir regras e turnos de referência
+
+- **Sugerir regras** na lista de Políticas: o funcionamento da loja vem do histórico de presença, e o regime atual (6x1 ou 5x2) e o contrato mais comum já vêm marcados. O rascunho traz o funcionamento, as folgas e a jornada do regime, o revezamento do fechamento e, se quiser, o horário de Natal e Ano-Novo. Gravar cria a política com as regras marcadas, numa só operação.
+- O que só vale com convenção ou acordo coletivo (jornada acima de 8h, trabalho em feriado, média de folgas no mês do 6x1 depois de 16/12/2026) vem desmarcado e, quando gravado sem a cláusula, fica **A confirmar** (em laranja na lista): continua cadastrado, mas não vale até alguém informar a cláusula na fonte e trocar a origem para Convenção — até lá, a escala segue a lei. Na grade, a ajuda Regras ganha a seção "A confirmar", com a política de cada regra. As regras já gravadas com a fonte "Confirmar na convenção" passam a "a confirmar".
+- Com o Assistente, a IA ajusta o rascunho e, numa política com o PDF da convenção, lê as cláusulas de escala e cita a cláusula e a página.
+- **Sugerir turnos** na lista de Turnos de referência: abertura, intermediário, fechamento e domingo de cada setor, pelas entradas e saídas reais das últimas semanas, com a jornada do regime escolhido e o intervalo do almoço. Setor que já tem turnos vem desmarcado.
+- Enquanto o sistema lê o histórico e consulta o Assistente, Sugerir coberturas, regras e turnos mostram uma espera animada com as etapas, no lugar do formulário parado.
+
+- Sugerir regras: rascunho de uma loja em 5x2, com as regras de convenção desmarcadas para confirmar:
+![image](imagens/cloud_pr3339_imagem1.png)
+- Sugerir turnos: abertura, intermediário, fechamento e domingo de três setores, pelo histórico:
+![image](imagens/cloud_pr3339_imagem2.png)
+- Espera animada ao sugerir os turnos, com as etapas marcadas:
+![image](imagens/cloud_pr3340_imagem3.png)
+- Lista de regras da política com a jornada diária e o feriado "A confirmar":
+![image](imagens/cloud_pr3421_imagem1.jpg)
+- Na grade, a jornada diária volta a valer como na lei:
+![image](imagens/cloud_pr3421_imagem2.jpg)
+- Seção "A confirmar" na ajuda Regras, com as regras que ainda não valem:
+![image](imagens/cloud_pr3421_imagem3.jpg)
+
+### Pendências por tipo e previsão estimada
+
+- A barra da escala mostra três contadores: o que **bloqueia** a aprovação, as **regras** que pedem atenção e a falta de **cobertura**. Clicar num contador abre a aba Pendências já filtrada naquele tipo.
+- A aba Pendências agrupa **por tipo** (Lei, Regras cadastradas, Conferência pela Calc, Cobertura de férias e Cobertura) e, dentro de cada um, por regra ou setor, com a contagem e cada nível recolhível. A lista por pessoa continua num botão ao lado, e uma linha de cobertura abre a linha do dia daquele setor.
+- Dia com cobertura vinda da previsão de uma loja que ainda não manda o volume do PDV ganha um **filete tracejado**, com a dica de que a cobertura é uma aproximação. No Simulador da redução, o setor sobre volume estimado e o que pede mais de 1,5 vez as horas trabalhadas nas últimas semanas aparecem marcados no Necessário, com as faltas "a conferir", um aviso no topo e as colunas na planilha do Excel. Nenhum número do cálculo muda.
+- A sugestão da demanda dá **máximo** a todo setor que acompanha o movimento da loja (açougue, padaria, hortifrúti, empacotador, fiscal), pelo pico de pessoas juntas nas últimas semanas, mostra o máximo na coluna "De onde vem" e avisa quando um padrão já gravado não tem máximo.
+- **Assistente na grade**: perguntas como "o que merece atenção nesta semana?" são respondidas sobre o plano aberto, a partir de um resumo com as pendências agrupadas, as regras que mais aparecem e os setores abaixo do mínimo, com o pior dia de cada um. Com previsão estimada, o Assistente avisa que a falta é uma aproximação antes de sugerir gente para cobri-la.
+
+- Contador de cobertura: a aba abre filtrada, com os setores e as contagens:
+![image](imagens/cloud_pr3422_imagem1.jpg)
+- Contador de regras: Lei e Regras cadastradas com as contagens:
+![image](imagens/cloud_pr3422_imagem2.jpg)
+- Rodapé da grade com o filete tracejado nos dias da previsão estimada:
+![image](imagens/cloud_pr3423_imagem1.jpg)
+- Simulador com o aviso no topo e as marcas no Necessário e nas faltas:
+![image](imagens/cloud_pr3423_imagem2.jpg)
+- Sugerir demanda com a coluna Máximo e o aviso dos padrões sem máximo:
+![image](imagens/cloud_pr3418_imagem1.png)
+
+### Transição 6x1 → 5x2 ✨
+
+- Nova tela **Escalas › Transição 6x1 → 5x2**: para cada loja, uma barra com as pessoas **regularizadas** (o cartão já passa na semana), **com proposta** (um planejamento em rascunho ou publicado resolve) e **em infração**, com a contagem e o percentual da rede.
+- Abrindo a loja, aparecem as pessoas ainda não regularizadas, com o motivo (horas acima de 42h, menos de 2 folgas, dias seguidos ou cartão sem horário na semana), e os atalhos para o planejamento que cobre a loja (ou criar um novo) e para o Simulador da redução já filtrado nela.
+- A semana muda pelas setas, a partir da de 21/12/2026, e o cálculo da rede roda no botão Calcular. A conferência usa só o que a virada muda — limite semanal, folgas da semana e dias seguidos —, respeitando a média de folgas da convenção e a regra cadastrada mais estrita.
+
+- As lojas com as pessoas regularizadas, com proposta e em infração:
+![image](imagens/cloud_pr3424_imagem1.png)
+- Loja aberta, com quem ainda não está regularizado e o motivo:
+![image](imagens/cloud_pr3424_imagem2.png)
+- Pessoas com proposta e o link para o planejamento:
+![image](imagens/cloud_pr3424_imagem3.png)
+
+### Escala do colaborador
+
+- Card **Minha escala** no painel do colaborador: o horário de hoje e dos próximos 7 dias, com folga, feriado, afastamento e local previsto. **Ver do meu setor** abre a semana dos colegas do mesmo setor e estabelecimento, com a linha dele em destaque; afastamento de colega aparece só como "Ausente". Veja **[Minha escala](../Escalas/Minha-escala.md)**.
+- Ao aprovar o plano, cada colaborador recebe o aviso **Escala aprovada**, no site e no aplicativo, que abre a escala dele e a do setor. A regra de alerta da nova rotina "Escalas" já vem criada e pode ser ajustada em Alertas.
+- A impressão da escala segue o **Exibir** da grade: turnos previstos, horas previstas e horas trabalhadas embaixo de cada dia, com legenda.
+
+- Card Minha escala no painel do colaborador, com o atalho para o setor:
+![image](imagens/cloud_pr3375_imagem1.png)
+- Escala do setor, com a linha do colaborador em destaque e os colegas afastados como "Ausente":
+![image](imagens/cloud_pr3375_imagem2.png)
+- Aviso de escala aprovada no sino do colaborador:
+![image](imagens/cloud_pr3375_imagem3.png)
+- Grade com o Exibir marcado:
+![image](imagens/cloud_pr3375_imagem4.png)
+- A impressão com as mesmas informações embaixo de cada dia:
+![image](imagens/cloud_pr3375_imagem5.png)
+
+### Melhorias na grade da escala
+
+- Barra mais enxuta: o Exibir virou só o ícone, e Calculadora (em janela sobre a grade), Atalhos, Tela cheia, Ajuda e o botão **Assistente**, agora com nome, ficam na ponta direita.
+- O painel lateral recolhe para um ícone na borda da grade; na lista de horários do painel, o "..." abre o cadastro do horário, e Trocar domingos vem antes de Anterior e Próximo.
+- Filtros de Estabelecimento e Estabelecimento atual ao lado do nome da escala quando o planejamento não tem estabelecimento, e o filtro de Estabelecimento também em Trocas/Afastamentos (vale na impressão e no Excel). O filtro de Setores foi para a linha de baixo, só com os setores do rodapé; com setor escolhido, o rodapé mostra só ele.
+- Coberturas: abrir um setor pelo card já preenche Estabelecimento e Setor, e a matriz abre logo abaixo do card. A tecla Esc fecha a linha do dia.
+- **Gerador**: dia acima de 8h até 10h (como o 8h48 de segunda a sexta que compensa o sábado) passa a ser só um aviso de atenção; acima de 10h continua bloqueando. Quem não tem nenhum horário que caiba nas regras fica como estava, com aviso no resumo, em vez de folga no período inteiro. Dia de afastamento inteiro (home office, day off, aula do aprendiz, atestado) conta as horas previstas no contrato da semana.
+- Relatório de Escalas/Afastamentos: com Estabelecimento e Estabelecimento atual diferentes, o cabeçalho sai pelo Estabelecimento, e a barra do relatório permite escolher o outro.
+- **Ofuscar dados** ligado ou desligado numa aba vale na hora nas outras abas abertas, inclusive na escala.
+- A demonstração guiada das Escalas inteligentes acompanha a grade nova: o passo do Assistente volta a abrir a janela, o das pendências destaca os contadores, e salvar o planejamento no meio da demonstração segue na grade.
+
+- Barra nova, setor escolhido no filtro e o "..." de cada horário no painel:
+![image](imagens/cloud_pr3338_imagem1.png)
+- Painel lateral recolhido, só com o ícone para abrir de novo:
+![image](imagens/cloud_pr3338_imagem2.png)
+- Setores na linha de baixo e o rodapé só com o setor escolhido:
+![image](imagens/cloud_pr3340_imagem1.png)
+- A lista de Setores com os setores do rodapé:
+![image](imagens/cloud_pr3340_imagem2.png)
+- Coberturas: a matriz logo abaixo do card, com Estabelecimento e Setor preenchidos:
+![image](imagens/cloud_pr3420_imagem1.png)
+- Escala com nomes, fotos e cargos borrados depois de ligar o Ofuscar em outra aba:
+![image](imagens/cloud_pr3420_imagem2.png)
+- Demanda: o filtro "Estabelecimento (vazio = todos)" com o rótulo inteiro:
+![image](imagens/cloud_pr3420_imagem3.png)
+- Relatório de Escalas/Afastamentos com o cabeçalho pelo Estabelecimento:
+![image](imagens/cloud_pr3380_imagem1.png)
+- Escolhendo "Estabelecimento atual" na barra do relatório:
+![image](imagens/cloud_pr3380_imagem2.png)
+- O passo do Assistente na demonstração guiada:
+![image](imagens/cloud_pr3419_imagem1.jpg)
+
+## Contrato de trabalho e PCD no cadastro do colaborador ✨
+
+O cadastro do colaborador ganha o grupo **Contrato de trabalho**, que passa a orientar o cálculo, as férias e as escalas, e os campos de PCD do eSocial.
+
+- **Contrato de trabalho**: vínculo (CLT, aprendiz, estagiário, doméstico, temporário, intermitente, MEI, PJ, sócio…), tipo de salário (horista, mensalista, diarista, comissionista…), regime de jornada e modalidade (presencial, híbrido ou home office). O Vínculo tem pesquisa, e Cargo, Estabelecimento, Departamento, Setor e Centro de custo ficam sob o título "Organização".
+- Cargo de gestão, atividade externa e teletrabalho por produção (CLT, art. 62) pedem confirmação com o texto da lei; motorista não pode ficar sem controle de jornada.
+- **No cálculo**: aprendiz fica sem horas extras nem saldo de banco de horas, como o estagiário. Colaborador sem controle de jornada (art. 62) registra o ponto, mas o dia não gera falta, atraso, hora extra nem banco de horas; afastamentos, férias e DSR continuam. Quem fica no regime padrão tem o mesmo cálculo de antes.
+- Férias e Escalas usam o vínculo do mês: estagiário tem recesso, intermitente e doméstico seguem as regras próprias e aprendiz tem o limite de jornada. A ficha de Férias mostra o vínculo.
+- Nova tela **Colaboradores › Conferir regimes**: sugere aprendizes, estagiários e cargos de gestão pelo nome do cargo, para o RH confirmar.
+- Lista de colaboradores com a visão **Contrato**, pesquisa global achando os campos (MEI, PJ, home office, cargo de confiança…) e regra de adiantamento bloqueando por uma lista de vínculos — quem bloqueava estagiários continua bloqueando.
+- Ao atualizar, estagiários e horistas já cadastrados recebem o vínculo e o tipo de salário certos. O campo Tipo (E/H/M) sai da tela, mas continua gravado para relatórios e integrações.
+- **PCD conforme o eSocial**, na aba Complementar: deficiência física, visual, auditiva, mental e intelectual (pode marcar mais de uma), reabilitado ou readaptado, se preenche a cota e observação. Cota e observação exigem um tipo de deficiência ou reabilitado; a tela avisa e não deixa salvar. Na readmissão, os dados vêm do cadastro antigo, e as alterações entram no histórico do colaborador.
+- A importação de colaboradores por planilha aceita uma coluna por tipo (S/N) ou uma coluna "Deficiência" com o tipo escrito ("Física", "Visual e auditiva"…). A informação de PCD entra nas consultas usadas por relatórios e dashboards, com uma consulta nova de colaboradores PCD por mês para acompanhar a cota.
+
+> **Atenção (integrações externas):** a consulta de colaboradores do mês da integração por API passa a devolver os códigos de vínculo, tipo de salário, regime de jornada e modalidade.
+
+- Grupo de PCD preenchido na aba Complementar:
+![image](imagens/cloud_pr3396_imagem4.png)
+- Cota marcada sem o tipo de deficiência: a tela avisa e não salva:
+![image](imagens/cloud_pr3396_imagem5.png)
+
+## Integração por API e assistentes de IA ✨
+
+Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **chave de API**, sem usuário e senha. Os guias estão em **[Integração por API](../Integracoes/API.md)**, **[MCP](../Integracoes/MCP.md)** e **[Importar planilhas com o Claude](../Integracoes/Importar-planilhas.md)**.
+
+- Consultas só de leitura, com campos que não mudam entre versões e paginação: colaboradores do mês, ponto calculado por dia, totais do mês, inconsistências e espelhos, e o **resumo de colaboradores** por estabelecimento, cargo, departamento, setor, seção ou horário numa chamada só.
+- Cada chave só abre as consultas marcadas na tela Chaves de API, que traz o link para o guia e um exemplo de consulta pronto. Limite de 1.000 chamadas por hora por chave, e a resposta diz quanto esperar.
+- **MCP** no endereço da empresa: o assistente de IA do cliente (Copilot do VS Code, Cursor, Claude Code) consulta os mesmos dados com a chave. Chave ausente ou errada mostra o motivo, e o link do PDF do espelho sai com o endereço da empresa.
+- **Importação de planilhas pelo Claude**: com a permissão "Importar planilhas pelo assistente" na chave, o Claude lê a planilha, propõe de qual coluna vai para qual campo, simula, mostra o resumo e os erros por linha e só grava depois do ok. O primeiro destino são os pedidos de adiantamento salarial: o colaborador é achado pelo CPF (mesmo sem o zero da frente), código, PIS ou matrícula, o mês é aberto se ainda não existir, e importar de novo atualiza, sem duplicar.
+
+- Chaves de API com as permissões de consulta e o exemplo pronto:
+![image](imagens/cloud_pr3352_imagem1.png)
+- Chave criada com a permissão de importar planilhas e o comando para conectar o Claude:
+![image](imagens/cloud_pr3397_imagem1.png)
+- O mês do adiantamento com os pedidos gravados pelo Claude (origem "Importação"):
+![image](imagens/cloud_pr3397_imagem2.png)
+- Painel do adiantamento com vários pedidos importados de uma vez:
+![image](imagens/cloud_pr3397_imagem3.png)
+
+## Integrações por arquivo
+
+- **Relatório em blocos**: "Sugerir pelo arquivo" reconhece o espelho exportado de outro sistema, em que cada colaborador vem com um cabeçalho (código, nome, cargo, admissão e período) e a tabela dos dias abaixo. Os dados do cabeçalho valem para todos os dias do bloco, e a coluna do dia sem ano vira data pelo período.
+- Campo do layout com **Repetir o último valor nas linhas de baixo** e origem por faixa de colunas (`A:P`). A função Extrair passa a ser aplicada na leitura, e a tela avisa as funções que ainda não são.
+- Novo destino **Colaboradores**: cadastra ou atualiza o colaborador e a lotação do mês, criando cargo, departamento e setor pela descrição. O destino **Marcações de ponto** aceita uma coluna com todas as horas do dia (`07:58 12:01 13:02 18:00`); hora menor que a anterior vai para o dia seguinte.
+- Novo destino **Vendas do PDV**: as vendas por loja, setor, dia e quarto de hora viram a demanda das escalas, com cupons, itens e vendas. Loja ou setor que o ponto não tem fica de fora sem erro, com o motivo em "Linhas deixadas de fora", e o setor é achado mesmo sem o número da frente ou pelo começo do nome. A demanda das escalas fica só com cupons, itens e vendas.
+- Planilha com várias guias: a importação diz qual guia ler, pelo nome ou pela posição.
+- **Testar** no menu do card e no topo do layout: a prévia abre ao lado da configuração com o último arquivo testado, sem enviar de novo e sem gravar nada. O arquivo testado fica nos documentos, na categoria Integrações.
+- No novo layout, o arquivo de exemplo vem primeiro, o formato vem da extensão dele, e os destinos prováveis são sugeridos pelo nome do arquivo e pelos campos ("importar-funcionarios.xlsx" → Colaboradores, com os campos já ligados).
+- Tela do layout reorganizada: a execução vai para a guia Avançado, os campos mudam de ordem arrastando, um resumo mostra só o que foge do padrão, os chips abrem o campo direto e cada origem tem um texto de teste. Cada campo ganha **Sobrescrever** (Padrão, Sempre, Se preenchido ou Nunca), e o valor fixo passa a valer também quando a coluna vem vazia.
+- A gravação direta em tabela só aceita os cadastros liberados: estabelecimentos, departamentos, setores, seções, cargos, centros de custo, grupos, localidades, feriados, médicos, motivos, contratos e ordens de serviço.
+- Com mais de um agente local, a integração escolhe qual agente verifica a pasta.
+
+- Campos sugeridos pelo arquivo em blocos, com a faixa de colunas e o repetir para baixo:
+![image](imagens/cloud_pr3407_imagem1.png)
+- Campo do cabeçalho com a opção de repetir o valor nas linhas de baixo:
+![image](imagens/cloud_pr3407_imagem2.png)
+- Função Extrair conferida pelo texto de teste:
+![image](imagens/cloud_pr3407_imagem3.png)
+- Destino Colaboradores com os campos do cabeçalho:
+![image](imagens/cloud_pr3407_imagem4.png)
+- Destino Marcações de ponto pela coluna com as horas do dia:
+![image](imagens/cloud_pr3407_imagem5.png)
+- Destinos disponíveis, com os ícones e só as tabelas liberadas:
+![image](imagens/cloud_pr3407_imagem6.png)
+- Novo layout: o arquivo de exemplo primeiro, e o formato vem dele:
+![image](imagens/cloud_pr3407_imagem7.png)
+- Testar, com a prévia ao lado da configuração:
+![image](imagens/cloud_pr3407_imagem8.png)
+- Vendas do PDV: as linhas da loja cadastrada viram volumes, e o resto fica de fora com o motivo:
+![image](imagens/cloud_pr3407_imagem9.png)
+- Planilha com várias guias: a guia escolhida no teste vai para a importação:
+![image](imagens/cloud_pr3407_imagem10.png)
+- Destino Colaboradores sugerido pelo nome do arquivo, com os campos já ligados:
+![image](imagens/cloud_pr3407_imagem11.png)
+- Integração de arquivos com a escolha do agente:
+![image](imagens/cloud_pr3363_imagem5.png)
+
+## Cálculo e folha
+
+### Linha customizada na exportação da folha
+
+- Novo tipo **Linha customizada** na aba Campos do layout de folha: a linha é escrita livremente e recebe no meio os campos do colaborador, como Horas extras. O botão **Inserir campo** escolhe o campo, o tamanho e o formato (por exemplo, horas extras em decimais com 6 posições e zeros à esquerda).
+- Na exportação, a linha sai uma vez por colaborador, depois das linhas dos eventos dele; com **Valores não nulos** ligado, não sai quando todos os campos dela estão zerados. Com o campo **Data de Falta**, sai uma linha para cada dia de falta, com a data do dia.
+- Data de admissão, data de demissão, códigos do horário, do setor, do cargo e do estabelecimento atual, BH cadastrado no quadro, Período, Horas de atraso, Horas previstas, Dias de férias e as datas de falta davam erro na exportação; agora trazem o valor do colaborador, também nos itens comuns do layout.
+
+- Linha customizada em edição, com o botão Inserir campo:
+![image](imagens/cloud_pr3329_imagem1.png)
+- Inserir campo: o campo, o tamanho e o formato:
+![image](imagens/cloud_pr3329_imagem2.png)
+- A linha na grade de campos:
+![image](imagens/cloud_pr3329_imagem3.png)
+- Arquivo gerado: a linha depois de cada colaborador, só para quem teve horas extras:
+![image](imagens/cloud_pr3329_imagem4.png)
+- Inserir campo com a Data de Falta, avisando que a linha se repete por dia de falta:
+![image](imagens/cloud_pr3329_imagem5.png)
+- Linhas com a data de falta e com os campos que davam erro:
+![image](imagens/cloud_pr3329_imagem6.png)
+- Arquivo com uma linha por dia de falta e a linha com os campos corrigidos:
+![image](imagens/cloud_pr3329_imagem7.png)
+
+### Importar layout da folha
+
+- **Importar layout** na lista de Layouts da Folha de Pagamento: copia um layout dos modelos Símix ou de outro cliente, pesquisando pelo nome, e mostra os campos antes de importar. A cópia entra com o próximo código livre e, se o nome já existir, ganha "(importado)".
+- Os outros clientes não aparecem pelo nome: ficam agrupados por ramo de atividade e layout, com quantos usam, e ao abrir o grupo aparecem as versões do layout. Só vêm os layouts ativos, e o filtro de colaboradores do layout não vem junto.
+- O link direto de um layout (o da pesquisa global) volta a abrir o layout.
+
+- Importar layout visto pela equipe Símix, com as origens (nomes borrados):
+![image](imagens/cloud_pr3351_imagem2.png)
+- Importar layout visto pelo gestor, com os clientes agrupados por ramo e layout:
+![image](imagens/cloud_pr3351_imagem3.png)
+- As versões do layout no grupo e a prévia dos campos:
+![image](imagens/cloud_pr3351_imagem4.png)
+
+### Extras de viagem e sobreaviso separadas do saldo
+
+- Nova seção **Viagem** no quadro de horário (guia Controles), com o **Horário de viagem**: nos dias com local previsto Viagem, o cálculo usa esse horário no lugar do normal, menos em domingo/DSR e feriado.
+- Opções **Separar extras de viagem** e **Separar extras de sobreaviso**: as horas a mais desses dias saem do saldo e do banco de horas e vão para os totais **Ext. viagem** e **Ext. sobreaviso** (úteis e não úteis, diurnas e noturnas), prontos para receber o evento no layout da folha. O dia é de viagem ou sobreaviso pelo local previsto (manutenção, lote ou escalas).
+
+- Seções Sobreaviso e Viagem do quadro de horário com as opções novas:
+![image](imagens/cloud_pr3350_imagem1.png)
+- Manutenção: o dia de viagem vai para Ext. viagem e o de sobreaviso para Ext. sobreaviso, fora do saldo:
+![image](imagens/cloud_pr3350_imagem2.png)
+
+### Horários e totais
+
+- Novo campo **Carga horária mensal** no cadastro de horários (`220`, `220:00` ou `212:30`), sugerido pelos horários da semana (horas semanais × 5) e com coluna na lista. Os horários já cadastrados recebem a carga padrão. No cadastro do colaborador, o **valor hora** é calculado pelo salário ÷ carga mensal do horário, com a conta abaixo do campo; valor digitado à mão é mantido.
+- Horário por dia com **Horário Padrão**, num dia dentro de um horário por período do colaborador, passa a usar as entradas e saídas do quadro do período (antes pegava sempre o do cadastro).
+- Novos totais **Valor do salário previsto simples** (o salário previsto sem o repouso remunerado e o adicional noturno) e **Horas trabalhadas reais** (as trabalhadas menos as horas de afastamento a não descontar), com a explicação no botão "..." dos totais.
+
+- Lista de horários com a nova coluna:
+![image](imagens/cloud_pr3372_imagem1.png)
+- Carga horária mensal no cadastro do horário:
+![image](imagens/cloud_pr3372_imagem2.png)
+- Carga alterada à mão, com a lâmpada para voltar à sugestão:
+![image](imagens/cloud_pr3372_imagem3.png)
+- Valor hora no colaborador pelo salário ÷ carga mensal:
+![image](imagens/cloud_pr3372_imagem4.png)
+- Horário por dia com Horário Padrão dentro do período, com o previsto do quadro do período:
+![image](imagens/calc_pr558_imagem1.png)
+- Fora do período, continua o previsto do quadro do cadastro:
+![image](imagens/calc_pr558_imagem2.png)
+
+### Regras de inconsistência
+
+- Novo filtro **Horas previstas a partir de / até**: a regra vale só nos dias em que as horas previstas ficam na faixa (por exemplo, "intervalo menor que 1h" só para jornada acima de 6h, mesmo com colaboradores de 6h e 8h no mesmo cargo).
+- **Sugestões prontas** ao criar uma regra (intervalo menor que 1h ou 15min, interjornada menor que 11h, turno acima de 6h, jornada acima de 10h, extras acima de 2h, atraso acima de 10min, 7 dias seguidos, domingos e feriados seguidos): um clique preenche a regra.
+- Cadastro reorganizado: na Principal, só os limites que valem para o campo escolhido; os Filtros separados em "Dia" e "Colaborador", com cada condição ao lado da lista.
+- Correções: os dias da semana escolhidos passam a ser respeitados pelo cálculo, o filtro de turno 3 volta a funcionar, escolher cargos ou estabelecimentos sem a condição assume "Somente os escolhidos", e quantidades aparecem como número inteiro.
+
+- Sugestão "Intervalo menor que 1h" aplicada numa regra nova:
+![image](imagens/cloud_pr3400_imagem1.png)
+- Aba Filtros com o filtro de horas previstas:
+![image](imagens/cloud_pr3400_imagem2.jpg)
+
+### Regras de prêmio
+
+- Regra de prêmio excluída deixa de pagar, e regra sem condição do mês paga a todos, como a tela explica (antes não pagava a ninguém ou repetia a regra anterior). Regra só com regras por dia passa a contar os dias.
+- Regra com "Descontar" sem desconto no mês paga o valor cheio; o desconto sai do valor proporcional, e desconto maior que o valor zera o prêmio com o motivo, em vez de lançar valor negativo.
+- Prêmio proporcional às horas trabalhadas: quem cumpria todas as horas recebia o valor multiplicado por ele mesmo; agora recebe o valor cheio.
+- Regra de código 1 sem o valor no cadastro do colaborador roda como as outras, inclusive as regras por dia. Condição de código sem valor não derruba mais o cálculo do cartão.
+- "Data de admissão" com N dias atrás conta a partir do fim do cartão, e recalcular um mês antigo não muda mais quem ganha. A sugestão "Admitido há mais de 45 dias" pega quem tem mais de 45 dias de casa.
+- Trocar o código de uma regra não faz mais as condições dela pararem de valer.
+
+### Vales
+
+- **Gerar escalas, Calcular VT e Calcular VR** usam o mesmo filtro das outras telas (estabelecimento, departamento, colaborador e demais campos, pela lotação do mês, com filtros salvos), e ao lado do botão aparece quem entra. Antes, o Filtrar não fazia nada e todos eram processados. Filtro sem ninguém no mês não processa ninguém e avisa.
+- No vale-transporte, calcular com filtro apaga e refaz só os dados dos colaboradores do filtro; os dos outros ficam como estão.
+- VR com a condição "Dia Previsto" volta a contar os dias (os VRs já gravados são corrigidos), e VRs e VTs migrados do PcPonto com campos vazios voltam a abrir e gravar.
+
+- Painel de filtro no Calcular VT:
+![image](imagens/cloud_pr3277_imagem1.jpg)
+- VT calculado só para o colaborador do filtro:
+![image](imagens/cloud_pr3277_imagem2.jpg)
+- Escalas geradas para o colaborador do filtro:
+![image](imagens/cloud_pr3277_imagem3.jpg)
+- Filtro sem colaborador no mês: nada é processado:
+![image](imagens/cloud_pr3277_imagem4.jpg)
+
+## Manutenção
+
+- Ao sair com alterações pendentes, a pergunta tem **Salvar**, **Sair sem salvar** e **Cancelar**.
+- Botão de **modo denso** na barra: linhas mais baixas e letra menor, para caber mais dias na tela. A escolha fica guardada no navegador.
+- **Colar registros**: o cartão fica marcado como alterado e os dias colados ficam destacados; sair sem salvar pergunta, em vez de descartar. O colar também acha os dias do cartão aberto, e não os do primeiro carregado.
+- O card do colaborador não mostra mais "Folha: 0" quando ele não tem código da folha.
+- **Calculadora**: legenda em cada linha ("Valor: 100 * 3 = 300"), que serve para usar o resultado em outra linha com `{Valor}`, e em cada número, gravadas junto com as fórmulas. Com a Expressão vazia, a seta para cima abre a última linha para editar. Cada linha tem uma margem com o lápis e um menu (marcador colorido, copiar e remover), título opcional e a opção de ficar inativa; clicar no sinal troca a operação, e o texto colado aceita "Nome: conta". Números com a fonte dos relatórios, que alinha os algarismos.
+
+- Modo denso ligado e o card sem o código da folha:
+![image](imagens/cloud_pr3377_imagem1.jpg)
+- Pergunta ao sair com alterações pendentes:
+![image](imagens/cloud_pr3377_imagem2.jpg)
+
+## Coletores e registros
+
+- **Vários agentes de sincronização local**, por exemplo um em cada estabelecimento: a tela **Coletores › Agente** lista todos os agentes da empresa e tem **Novo agente**. Cada coletor é vinculado a um agente pelo **Selecionar** e é sincronizado só por ele; se esse agente estiver desconectado, o erro diz qual é. O Sincronizar da tela do agente envia só os coletores dele. Empresas com um agente só não precisam fazer nada.
+- Nova tela **Avançado › Desbloqueio de REP**: com o número de série e a senha que aparece no REP Control iD bloqueado, gera o código de desbloqueio direto na Control iD, sem entrar no RHiD. Também pelo botão **Desbloquear REP** no cadastro do coletor, já com o serial. Quando a Control iD pede a troca da bateria, a tela orienta falar com o suporte Símix.
+- Coletores Control iD: a última marcação do coletor não vem mais vazia quando houve envio de colaboradores depois dela; usuário ou senha errados mostram "o equipamento recusou o login"; no iDFace, colaborador com o nome alterado é atualizado em vez de duplicado; e o iDClass aceita o código e a matrícula no formato certo.
+
+- Agente com os seus coletores e o aviso do coletor ainda sem agente:
+![image](imagens/cloud_pr3363_imagem1.png)
+- Selecionar os coletores do agente:
+![image](imagens/cloud_pr3363_imagem2.png)
+- O outro agente, com os coletores dele:
+![image](imagens/cloud_pr3363_imagem3.png)
+- Novo agente abre o assistente de instalação:
+![image](imagens/cloud_pr3363_imagem4.png)
+- Desbloqueio de REP com o código gerado e o aviso da Control iD:
+![image](imagens/cloud_pr3346_imagem1.png)
+- Botão Desbloquear REP no cadastro do coletor:
+![image](imagens/cloud_pr3346_imagem3.png)
+
+## Espelho de ponto e portal do colaborador
+
+- **Painel do colaborador** mais simples: saudação com o nome e a data no topo, com a escolha do mês (atual ou anterior) e o botão de atualizar. Sai o bloco de registros de hoje e de ontem. Os espelhos aparecem com a prévia da primeira página, a situação e a data; o pendente abre direto para assinar. Comprovantes e documentos ficam no mesmo formato de cartão, com "Ver todos".
+- **Assinatura do espelho**: o colaborador volta a assinar o próprio espelho pelo celular, pelo computador e pelo app, mesmo quando o login não traz o vínculo com o cadastro. Espelho já assinado ou recusado não é assinado de novo, a recusa exige o motivo, e o espelho que o gestor assina como responsável depois do colaborador não volta para pendente. Erros aparecem com mensagem amigável.
+- Quem abre sem estar logado o link do espelho recebido por e-mail, ou pelo portal, vai para o login e volta direto para o espelho para assinar.
+- **Gerar espelhos**: digitar o nome no filtro de colaborador sem clicar na lista gerava os espelhos de todos. Agora, se o texto aponta um colaborador só, ele fica escolhido; se aponta vários ou nenhum, o campo fica em vermelho com o motivo e nada é gerado. O mesmo vale na Ficha cadastral, nos Arquivos fiscais e nas outras telas com esse campo.
+- O download dos espelhos para em até 30 segundos com um aviso quando o armazenamento de arquivos não responde, e o Cancelar interrompe na hora. Vale também para o PDF de espelhos da exportação da folha.
+- **Anexo no pedido de afastamento**: o colaborador anexa o documento ao próprio pedido que ainda aguarda, sem precisar da permissão de alterar pedidos. O anexo é gravado assim que o envio termina, e o pedido mostra "Ver anexo".
+
+- Topo do painel do colaborador, com a saudação e os blocos em cartão:
+![image](imagens/cloud_pr3402_imagem1.png)
+- Espelhos de ponto no painel:
+![image](imagens/cloud_pr3402_imagem2.png)
+- Assinatura desenhada no celular:
+![image](imagens/cloud_pr3354_imagem1.png)
+- Espelho assinado pelo celular:
+![image](imagens/cloud_pr3354_imagem2.jpg)
+- PDF assinado, com o carimbo do colaborador sobre a linha dele:
+![image](imagens/cloud_pr3354_imagem3.png)
+- Recusa com o motivo:
+![image](imagens/cloud_pr3354_imagem4.jpg)
+- Espelho recusado:
+![image](imagens/cloud_pr3354_imagem5.jpg)
+- Aviso ao abrir o espelho de outro colaborador:
+![image](imagens/cloud_pr3354_imagem6.png)
+- Link do espelho aberto sem login leva à tela de login:
+![image](imagens/cloud_pr3379_imagem1.png)
+- Depois de entrar, o espelho abre para assinar:
+![image](imagens/cloud_pr3379_imagem2.png)
+- Gerar espelhos: nome digitado com um colaborador na lista:
+![image](imagens/cloud_pr3355_imagem1.jpg)
+- Ao sair do campo, a colaboradora fica escolhida:
+![image](imagens/cloud_pr3355_imagem2.jpg)
+- Texto que aponta dois colaboradores:
+![image](imagens/cloud_pr3355_imagem3.jpg)
+- Ao clicar em Gerar, o campo mostra o motivo e nada é gerado:
+![image](imagens/cloud_pr3355_imagem4.jpg)
+- Lista de pedidos com o botão de anexo para quem não pode alterar:
+![image](imagens/cloud_pr3396_imagem1.png)
+- Pedido só para consulta, com o anexo liberado:
+![image](imagens/cloud_pr3396_imagem2.png)
+- Pedido com o anexo gravado e o link Ver anexo:
+![image](imagens/cloud_pr3396_imagem3.png)
+
+## Permissões e segurança
+
+- O colaborador assina e recusa só os próprios espelhos, com ou sem as permissões de Espelho Ponto no papel Colaborador. Quem tenta abrir o espelho de outro recebe uma mensagem clara, e o gestor sem permissão de alterar espelhos vê o aviso antes de desenhar a assinatura.
+- O anexo do pedido de afastamento vale só no pedido do próprio colaborador que ainda aguarda; pedido aprovado ou reprovado recusa.
+- Enviar e analisar um arquivo AFD e listar, consultar e criar os logs dos coletores, arquivos importados e logs do VR, de horários, de erros, do espelho e do cálculo da folha passam a exigir só o login. Editar e excluir continuam exigindo a permissão de cada um, e os logs de e-mails, do ponto e de tarefas ficam como antes.
+
+## Para a equipe Símix
+
+- **Admin › Início** com os cards em três colunas — Suporte, Acompanhamento e Monitoramento —, o novo card **Erros gerais** (erros de produção de impacto alto de ontem para cá) e os últimos chats do assistente de todos os clientes. Menu reorganizado (Chats Assistente logo abaixo do Início, Coletores em Monitoramento, "Logs gerais", o Serviço como botão em Logs de tarefas), "Admin" ao lado do logo e menu no marinho da barra do topo nos dois temas.
+- Novo painel **Demonstrações**: uso de cada demonstração guiada, quantos concluem, em que passo param e os passos em que a demonstração não achou o alvo, com o detalhe de cada execução. Um teste automático passa a conferir os alvos de todos os roteiros.
+- Chats do assistente: **Nova conversa** para a equipe começar um chat com um usuário de um cliente (chega pelo sino como "Mensagem da equipe Símix"), e filtro **Todos / Meus**, com quem está atendendo.
+- **Copiar como** na tela de Backups: cria um cliente novo com a cópia dos dados do atual, sem os logs, com a tag Demonstração e o Serviço desativado, conferindo antes o espaço livre no servidor.
+- **Clientes**: quem tem a permissão Suporte vê os usuários, os feedbacks e os coletores do cliente e pode entrar como um usuário dele. O cliente fica ligado a uma cidade do cadastro de Cidades, com filtro por cidade, e ganha a informação **Colaboradores por dia** (média dos últimos 7 dias com marcação) e a coluna e o filtro **Layouts de folha**.
+- Nova tela **Admin › Documentos**, com os documentos gerais de todos os clientes, atualizada toda madrugada ou pelo "Indexar agora". A indexação diária passa uma vez só por cliente.
+- As views criadas pelo suporte no banco do cliente não somem mais na atualização do banco nem no **Recriar views**; view que não pode ser recriada fica com o motivo no log e é tentada de novo.
+- Dados de demonstração: o preenchimento das marcações não cai mais por tempo esgotado nos bancos sem o índice das marcações.
+- Durante a instabilidade do armazenamento do Brasil, os arquivos novos são gravados na conta dos EUA e os antigos continuam sendo lidos do Brasil; a volta é só pela configuração.
+- Tarefas: os erros da importação de registros enviada pelo agente aparecem com o cliente nos logs, a importação interrompida por reinício do servidor roda de novo, e marcação do aplicativo sem empresa é ignorada no recebimento.
+- A pílula "Gravar" sai da barra do topo; a gravação de treinamento começa pelo "Iniciar treinamento" das Configurações. Guia de padrões visuais e verificação automática para as telas novas. O desbloqueio de administrador do REP, que só pede o serial, fica com o suporte.
+
+- Início do admin com os cards por categoria e o card de erros gerais:
+![image](imagens/cloud_pr3337_imagem1.png)
+- Menu reorganizado na tela de Logs gerais:
+![image](imagens/cloud_pr3337_imagem2.png)
+- Contagem de notificações inteira no rodapé do menu:
+![image](imagens/cloud_pr3337_imagem3.png)
+- Menu do Admin no marinho da barra do topo, no tema claro:
+![image](imagens/cloud_pr3301_imagem9.png)
+- E no tema escuro:
+![image](imagens/cloud_pr3301_imagem10.png)
+- Painel das demonstrações guiadas:
+![image](imagens/cloud_pr3347_imagem1.png)
+- Funil por passo de uma demonstração:
+![image](imagens/cloud_pr3347_imagem2.png)
+- Passos de uma execução:
+![image](imagens/cloud_pr3347_imagem3.png)
+- Nova conversa no painel do assistente:
+![image](imagens/cloud_pr3347_imagem4.png)
+- A conversa iniciada pela equipe na janela do cliente:
+![image](imagens/cloud_pr3347_imagem5.png)
+- Filtro Meus no painel do assistente:
+![image](imagens/cloud_pr3347_imagem6.png)
+- Botão Copiar como na tela de Backups:
+![image](imagens/cloud_pr3343_imagem1.png)
+- Nome já usado recusado na hora, com o motivo:
+![image](imagens/cloud_pr3343_imagem2.png)
+- Cópia em andamento:
+![image](imagens/cloud_pr3343_imagem3.png)
+- Cópia criada, com o botão para abrir:
+![image](imagens/cloud_pr3343_imagem4.png)
+- As cópias na lista de clientes, com a tag Demonstração e o serviço desativado:
+![image](imagens/cloud_pr3343_imagem5.png)
+- Clientes filtrados pela cidade, com a cidade e os colaboradores por dia no painel:
+![image](imagens/cloud_pr3394_imagem1.jpg)
+- Clientes com a coluna e o filtro de layouts de folha:
+![image](imagens/cloud_pr3351_imagem1.png)
+- Admin › Documentos com os documentos dos clientes:
+![image](imagens/cloud_pr3410_imagem1.jpg)
+- Recriar views na tela de SQL:
+![image](imagens/cloud_pr3374_imagem1.png)
+- Barra do topo da equipe Símix com a pílula de gravação (depois retirada):
+![image](imagens/cloud_pr3402_imagem3.png)
+
+## Outras melhorias e correções
+
+- **Afastamento na virada do mês**: aprovar um afastamento que passa da virada (ex.: de 28/10 a 03/11) grava cada dia no mês dele e respeita o período bloqueado de todos os meses. O mesmo vale para reimportar registros num período que passa da virada.
+- O cálculo de 02/2027 e 03/2027 voltou a passar onde dava "A data inicial não pode ser maior que a final", com a remoção de períodos de banco de horas inválidos criados em agosto.
+- Fotos das marcações, fotos dos colaboradores e miniaturas dos espelhos voltam a aparecer durante a instabilidade do armazenamento, e espelhos, comprovantes, documentos e anexos voltam a ser gravados.
+- Cadastro da Empresa: a cidade é escolhida no cadastro de Cidades e sugerida pelo CEP; as empresas com a cidade digitada são ligadas à cidade de mesmo nome. Cidade incluída pelo CEP não repete mais o código de uma cidade excluída.
+- Categorias de documentos ganham a **Finalidade** (Geral, Integrações, Convenções), e todo cliente recebe as categorias "Convenções, acordos e dissídios" e "Integrações" quando ainda não tem uma.
+- Autorizar aparelhos em lote voltou a gravar.
+- Saiu um "}" que aparecia solto em Gerar escalas, e os botões do topo da tela de Backups aparecem assim que ela abre.
+
+- Cadastro da Empresa com a cidade escolhida no cadastro de Cidades:
+![image](imagens/cloud_pr3394_imagem2.jpg)
+
+# 04/11/2026
+
+## Resumo
+
+- 🧠 Escalas inteligentes: regras da lei e da convenção, cobertura, gerador de escala e demonstração guiada
+- 📈 Previsão da demanda pelo movimento do PDV, que vira a cobertura de cada dia
+- 📊 Dashboards com visual novo: widgets, pizza e rosca, filtros, loja e organização
+- 🔎 Pesquisa global acha os campos das telas e separa Principais e Outros resultados
+- ⏰ Relógio dos coletores conferido e ajustado pela nuvem, no fuso do estabelecimento
+- 💰 Importar saldos de banco de horas por planilha
+- 🏆 Regras de prêmio com resumo na lista e dias de atrasos por turno
+- 🔗 Painel de integrações e cadastro do layout refeitos
+- 🧮 Calcular dados e Exportar para folha com mensagens e progresso mais claros
+- 🏢 Opção Todas as empresas no menu de empresa
+- 🔒 Documentos de categoria restrita protegidos também pelo servidor
+- 🎙️ Demonstrações guiadas com a nova apresentadora Sara e nova voz
+- 📱 Aplicativo 4.0.04: recados do mural e endereço certo na marcação
+
+## Escalas inteligentes ✨
+
+O planejamento de escalas confere a lei, a convenção e a cobertura da loja enquanto a escala é montada, gera a escala sozinho e prevê quantas pessoas cada setor precisa. O guia completo está em **[Escalas inteligentes](../Escalas/Escalas-inteligentes.md)**.
+
+- **Conferência enquanto monta**: contorno vermelho no dia que impede a aprovação (7º dia seguido, descanso entre jornadas, domingos seguidos, horas da semana, jornada de aprendiz) e ocre no que só pede atenção, com o motivo e a fonte na dica. **Conferir com a Calc** aplica também as regras de inconsistência da empresa nos dias planejados, sem gravar no cartão.
+- Aba **Pendências** no painel lateral, agrupada por colaborador e por dia, e contadores de bloqueio e de atenção na barra. Aprovar com bloqueio mostra o que impede e pede uma justificativa, gravada em cada pendência com o usuário e a data.
+- Nova tela **Escalas › Regras e coberturas**: as políticas (convenção e empresa) com as regras e a vigência, a cobertura mínima de pessoas por faixa de horário e dia da semana em cada setor (em cards por setor) e os turnos de referência. A política aceita o envio da convenção coletiva em PDF: o Assistente propõe uma regra por cláusula, com a cláusula e a página, e cada uma só é gravada depois de confirmada.
+- **Sugerir coberturas**: a partir das marcações das últimas semanas, monta o rascunho das faixas de cada setor, com o horário de funcionamento, o porte e os picos de movimento ajustados pelo Assistente. Nada é gravado até aceitar, setor por setor.
+- Rodapé da grade com a cobertura de cada dia; clicando no dia, a linha do dia mostra o necessário e o escalado a cada meia hora, com a barra de cada pessoa.
+- **Início rápido** no editor do dia: os turnos de referência do setor e as entradas mais usadas montam o horário com um clique, com a jornada ao lado da meta do contrato.
+- **Gerar escala inteligente**: completa só os dias que faltam, repara o mínimo ou refaz o período, cumprindo a lei, a convenção e as regras da empresa e cobrindo a loja o melhor possível. A prévia entra na grade com os dias mudados circulados (Ctrl+Z desfaz) e um resumo da cobertura e das pendências antes e depois; quando ainda falta gente, o resumo diz por quê. O cartão de ponto só muda na aprovação.
+- **Assistente na grade** (botão Perguntar): explica pendências e cobertura, diz quem pode cobrir uma falta com o efeito de cada opção, aplica a opção escolhida e gera a semana ou o período pedido.
+- **Simulador da redução de jornada** (Escalas › Simulador da redução): por setor, quantas pessoas faltariam se a semana cair para 42 ou 40 horas, a partir da cobertura cadastrada, da previsão da demanda ou das horas trabalhadas nas últimas semanas, com as vagas calculadas pelo gerador, as pessoas de cada setor e exportação para Excel.
+- Previsão do tempo nos dias da grade (16 dias), só informativa.
+- Card **Escalas inteligentes** na página de Novidades, com **Ver demonstração** — a demonstração guiada completa, com locução, no exemplo da frente de caixa de um supermercado: regras e coberturas, planejamento, grade, gerador, Assistente, troca de domingos, conferência, aprovação e simulador. O roteiro só aponta e explica: salvar e gerar ficam com a pessoa. **Quero usar** traz os passos para montar a escala, a partir de Regras e coberturas. A demonstração também fica no botão de Treinamentos dessas telas.
+
+- Card Escalas inteligentes na página de Novidades:
+![image](imagens/cloud_pr3288_imagem1.png)
+- A demonstração guiada na grade do planejamento, explicando o Assistente:
+![image](imagens/cloud_pr3288_imagem2.png)
+- Regras da convenção e da empresa, com a vigência e a prioridade de cada política:
+![image](imagens/cloud_pr3149_imagem1.png)
+- Cobertura mínima do setor por faixa de horário e dia da semana:
+![image](imagens/cloud_pr3149_imagem2.png)
+- Turnos de referência:
+![image](imagens/cloud_pr3149_imagem3.png)
+- A grade com os dias que ferem a lei em vermelho, os de atenção em ocre e a cobertura no rodapé:
+![image](imagens/cloud_pr3149_imagem4.png)
+- A aba Pendências, com o motivo e a fonte de cada uma:
+![image](imagens/cloud_pr3149_imagem5.png)
+- A linha do dia: necessário × escalado a cada meia hora:
+![image](imagens/cloud_pr3149_imagem6.png)
+- Aprovar com bloqueio pede a justificativa:
+![image](imagens/cloud_pr3149_imagem7.png)
+- Simulador da redução de jornada, setor por setor:
+![image](imagens/cloud_pr3149_imagem8.png)
+- As pessoas do setor, com o regime e quem já passa do novo limite:
+![image](imagens/cloud_pr3149_imagem9.png)
+- Início rápido no editor do dia:
+![image](imagens/cloud_pr3150_imagem1.png)
+- Conferir com a Calc: a regra de inconsistência da empresa no painel:
+![image](imagens/cloud_pr3150_imagem3.png)
+- Coberturas em cards:
+![image](imagens/cloud_pr3205_imagem5.png)
+- Sugerir coberturas: o formulário preenchido pelo histórico:
+![image](imagens/cloud_pr3205_imagem6.png)
+- A prévia da sugestão ajustada pelo Assistente:
+![image](imagens/cloud_pr3205_imagem7.png)
+- O gerador: o que fazer, os dias, os colaboradores e o tempo da busca:
+![image](imagens/cloud_pr3162_imagem1.png)
+- Resumo depois de gerar o plano inteiro, com a cobertura e os bloqueios antes e depois:
+![image](imagens/cloud_pr3162_imagem2.png)
+- Os dias mudados circulados na grade:
+![image](imagens/cloud_pr3162_imagem3.png)
+- Assistente: quem cobre o atestado de amanhã, com o efeito de cada opção (nomes trocados por pseudônimos):
+![image](imagens/cloud_pr3162_imagem4.png)
+- A opção escolhida aplicada na grade:
+![image](imagens/cloud_pr3162_imagem5.png)
+- "Refaça a escala da semana que vem" pelo Assistente:
+![image](imagens/cloud_pr3162_imagem6.png)
+- Convenção em PDF enviada na política:
+![image](imagens/cloud_pr3162_imagem7.png)
+- Regras propostas a partir da convenção:
+![image](imagens/cloud_pr3162_imagem8.png)
+- Regra confirmada:
+![image](imagens/cloud_pr3162_imagem9.png)
+- Vagas pelo gerador no simulador da redução de jornada:
+![image](imagens/cloud_pr3162_imagem10.png)
+- Previsão do tempo no cabeçalho da grade:
+![image](imagens/cloud_pr3162_imagem11.png)
+
+### Previsão da demanda pelo movimento do PDV ✨
+
+Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quantas pessoas cada setor precisa a cada meia hora, e a previsão vira a cobertura da escala.
+
+- **Volumes do PDV** (cupons, itens, vendas, clientes…) de 15 em 15 minutos, pela planilha (CSV ou XLSX, com modelo) ou pela API. Reenviar um dia substitui o que havia, e um envio com erro é recusado inteiro, com a linha apontada.
+- **Chaves de API** (Configurações › Segurança › Chaves de API), para sistemas sem usuário, como o ERP da loja: a chave aparece uma vez ao ser criada, pode ter validade, ser desativada ou excluída, e só faz o que foi marcado nela (por enquanto, enviar os volumes do PDV). A chave recusada responde o motivo.
+- **Padrão de produtividade** por setor (quanto uma pessoa atende por hora, com mínimo e máximo de pessoas), com uma sugestão calculada pelo movimento e pela presença no ponto das últimas semanas.
+- **Eventos** que mexem com o movimento (oferta, inventário, pagamento…), com o impacto informado ou aprendido pelos eventos passados, e um atalho que cria os dias de pagamento dos próximos meses (5º dia útil, dias fixos e o dia do adiantamento).
+- **Previsão por meia hora** para as próximas 6 semanas, refeita toda madrugada ou pelo "Prever agora": a semana típica do setor ajustada por feriado, véspera e eventos, com cada fator guardado para explicar o número. A tela mostra a acurácia de cada setor nas últimas 4 semanas.
+- A previsão vira a **cobertura do setor dia a dia**, com a faixa digitada pelo gestor como mínimo. Dia ajustado à mão fica como o gestor deixou, e loja fechada não pede ninguém. O planejamento e o gerador já usam essa cobertura, e os dias que vieram da previsão ficam marcados no rodapé do setor.
+- O Assistente responde sobre a demanda prevista de um setor e calcula o quadro ideal da semana (44 horas hoje, 42 e 40 horas depois da redução da jornada).
+- Card da novidade na página de Novidades.
+
+- Previsão do Caixa: o pico de pessoas de cada dia e a curva da meia hora no dia escolhido:
+![image](imagens/cloud_pr3217_imagem1.png)
+- Volumes do mês depois da importação, dia a dia:
+![image](imagens/cloud_pr3217_imagem2.png)
+- Antes de importar, a planilha é conferida e resumida por dia:
+![image](imagens/cloud_pr3217_imagem3.png)
+- Padrão do setor com a sugestão calculada pelo histórico:
+![image](imagens/cloud_pr3217_imagem4.png)
+- Dias de pagamento criados pelo atalho; repetir não duplica:
+![image](imagens/cloud_pr3217_imagem5.png)
+- Chaves de API: a chave aparece uma vez, com o exemplo de envio (borrado):
+![image](imagens/cloud_pr3217_imagem6.png)
+- Rodapé do setor com os dias que vieram da previsão marcados:
+![image](imagens/cloud_pr3217_imagem7.png)
+- No simulador, o setor passa a usar a previsão como necessário:
+![image](imagens/cloud_pr3217_imagem8.png)
+
+### Melhorias na grade da escala
+
+- Teclas **A** e **S** trocam o dia selecionado com o domingo anterior e com o próximo domingo; as teclas aparecem ao lado das sugestões de troca no painel e na ajuda de atalhos. Afastamento cadastrado com a tecla A ou S fica sem atalho na escala.
+- Menu **Exibir** na barra da grade, guardado para o usuário: marca e desmarca as **horas trabalhadas** embaixo do planejado, os **turnos previstos** de cada dia (ex.: 08:00-12:00 / 14:00-18:00) e as **inconsistências** — desmarcadas, as células perdem o contorno vermelho ou ocre, mas elas continuam na dica, no contador da barra e na aba Pendências.
+- Novo item **Legendas** na ajuda da grade, com o significado de cada cor, contorno e marca da célula.
+- A barra da escala ficou numa linha só: Desfazer, Trocar domingos e Conferir passaram para o topo do painel lateral, junto das trocas de domingo.
+- O filtro de **Setores** aparece também no planejamento (antes só em Trocas/Afastamentos), mostrando só quem é dos setores escolhidos, sem mudar o planejamento.
+- **Cadastro do planejamento** só com um estabelecimento e um setor (vazio = todos), com a descrição por último e sugerida pelo mês, estabelecimento e setor. Planejamento novo abre direto na escala, e na lista clicar na descrição abre a escala; a lista mostra só o Mês.
+- Digitar na janela do Assistente, nos filtros ou num diálogo com a grade aberta não aplica mais o afastamento da tecla de atalho.
+
+- Terça trocada com o domingo anterior pela tecla A, com as ferramentas no topo do painel:
+![image](imagens/cloud_pr3287_imagem1.png)
+- Editor da visão com a opção Exibir trabalhado:
+![image](imagens/cloud_pr3287_imagem2.png)
+- Horas trabalhadas em verde embaixo do planejado:
+![image](imagens/cloud_pr3287_imagem3.png)
+- Cadastro do planejamento só com estabelecimento e setor:
+![image](imagens/cloud_pr3299_imagem1.png)
+- Setores e o menu Exibir na barra da grade do planejamento:
+![image](imagens/cloud_pr3299_imagem2.png)
+- Turnos previstos embaixo do planejado (no feriado não aparecem):
+![image](imagens/cloud_pr3299_imagem3.png)
+- Com Inconsistências marcado, os dias com regra violada aparecem com o contorno vermelho:
+![image](imagens/cloud_pr3318_imagem1.png)
+- Desmarcado, o contorno some; o contador e a aba Pendências continuam:
+![image](imagens/cloud_pr3318_imagem2.png)
+
+## Dashboards com visual novo ✨
+
+- Widgets com o mesmo cartão (borda fina, ícone, título em uma linha) e legíveis no tema escuro: a cor escolhida vira um tom escuro da mesma cor.
+- Gráficos de **pizza** com legenda de valor, percentual e total, ao lado da pizza quando o widget é largo; acima de 8 fatias, as menores viram "Outros". Nas opções do widget dá para trocar para **rosca**, e clicar na legenda destaca a fatia.
+- "Atualizado às" embaixo do título; clicando, atualiza só aquele widget. Erro da consulta aparece dentro do widget, com "Tentar de novo", e enquanto os dados carregam, tabelas e gráficos já mostram o formato do conteúdo.
+- Opções do widget (⋮) redesenhadas: largura (o "Automático" ocupa o resto da linha), tipo de gráfico, cor e cache.
+- Nota com título na escala do widget, quebras de linha como foram digitadas e edição com "Concluir"; o widget Dias passa a ser mostrado como uma Nota.
+- Tabelas com cabeçalho e paginação mais discretos e o total de registros na tela "Abrir". O mapa enquadra os pontos registrados, fica escuro no tema escuro e cabe em widget pequeno.
+- **Organizar widgets** (antigo "Editar layout de widgets"): na grade, a edição fica igual ao painel; no modo livre, os widgets são arrastados para onde quiser, e uma visão livre com todos empilhados se organiza sozinha ao abrir.
+- Barra de filtros mostra o que está filtrado; janela do filtro, loja e "Adicionar widget" redesenhadas.
+- Corrigidos: gráfico pequeno cortado à direita, widget seguinte assumindo a cor do excluído, nota ilegível no tema escuro, widget Código numa linha só e sem gravar a edição, e mapa abrindo sempre no mesmo ponto.
+
+- Pizza pequena: antes cortada à direita, agora inteira, com valor, percentual e total:
+![image](imagens/cloud_pr3259_imagem1.png)
+- Rosca, com o total no centro:
+![image](imagens/cloud_pr3259_imagem2.png)
+- Tabela com cabeçalho e paginação mais discretos e "Atualizado às":
+![image](imagens/cloud_pr3259_imagem3.png)
+- Enquanto a consulta não volta, o gráfico e a tabela já mostram o formato do conteúdo:
+![image](imagens/cloud_pr3259_imagem4.png)
+- Opções do widget, antes e depois:
+![image](imagens/cloud_pr3259_imagem5.png)
+- Barra de filtros: o filtro aplicado fica azul e mostra o que está filtrado:
+![image](imagens/cloud_pr3259_imagem6.png)
+- Janela do filtro com os selecionados, a contagem e "Limpar":
+![image](imagens/cloud_pr3259_imagem7.png)
+- Loja, antes e depois:
+![image](imagens/cloud_pr3259_imagem8.png)
+- Adicionar widget: um quadro por tipo:
+![image](imagens/cloud_pr3259_imagem9.png)
+- Organizar widgets na grade:
+![image](imagens/cloud_pr3259_imagem10.png)
+- Modo livre: os widgets se organizam sozinhos e podem ser arrastados:
+![image](imagens/cloud_pr3259_imagem11.png)
+
+## Pesquisa global ✨
+
+- A pesquisa (Ctrl+Espaço) também acha os **campos das telas** de cadastro e de configuração, pelo nome do campo, guia, seção ou ajuda — inclusive escrito do jeito do dia a dia ("o funcionário pode solicitar" acha "Permitir…", "atestado" acha afastamento, "vale transporte" acha VT). Cada campo vem com o caminho até ele (Menu › Tela › Guia › Seção).
+- Ao escolher um campo, o sistema leva até ele: no cadastro, abre a lista e, ao abrir um registro, já vai para a guia com o campo destacado em laranja; nas configurações, abre a janela na guia do campo.
+- Os resultados vêm em dois grupos: **Principais resultados** (colaboradores e outros cadastros, tabelas e telas do menu) e **Outros resultados** (demonstrações, vídeos e documentos dos treinamentos, campos e guias das telas).
+- A janela abre na hora, sem animação, e mostra até 14 resultados de uma vez (antes eram 5). A pesquisa também acha as telas de **Downloads** e do **Agente de sincronização**.
+- A linha escolhida com as setas, que é a que o Enter abre, fica destacada, e as setas não levam mais o cursor para o início do texto. **Abrir no popup** fecha a pesquisa e a janela flutuante já abre com o que foi digitado.
+
+- Pesquisando "dsr": a demonstração, a guia DSR do horário e os campos de cada tela, com o caminho:
+![image](imagens/cloud_pr3263_imagem1.jpg)
+- Escolhido o campo "Dia de DSR", o horário abre na guia DSR com o campo destacado:
+![image](imagens/cloud_pr3263_imagem2.jpg)
+- Configuração Web aberta com o campo destacado e as permissões em duas colunas:
+![image](imagens/cloud_pr3263_imagem4.jpg)
+- Pesquisando "horário": as telas em Principais resultados e o resto em Outros resultados:
+![image](imagens/cloud_pr3291_imagem1.png)
+- Pesquisando "agente": o Agente de sincronização e os Downloads:
+![image](imagens/cloud_pr3291_imagem2.png)
+- Pesquisa no popup, mantendo a lista depois de abrir um resultado:
+![image](imagens/cloud_pr3291_imagem3.png)
+
+## Coletores e registros
+
+- **Relógio dos coletores**: a sincronização confere o relógio do coletor e, com diferença acima de 1 minuto, registra no log e mostra o aviso, sem alterar o relógio. Para ajustar, há **Ajustar relógio** no menu de cada coletor e **Ajustar relógios** no menu do Sincronizar, um coletor de cada vez; cada ajuste fica no log, de → para. Vale para os coletores Control iD (iDClass e iDFace), inclusive os sincronizados pelo agente local atualizado.
+- O horário certo segue o fuso do estabelecimento do coletor, inclusive o horário de verão: novo campo **Fuso horário** no cadastro do estabelecimento — em "Automático" vale o fuso da UF da cidade e, sem cidade, o horário de Brasília. Em Informações do coletor, a diferença do relógio passa a ser comparada com esse horário, e não com o do servidor.
+- **CPF/PIS sem cadastro no relógio**: o aviso aparece só na sincronização em que a marcação chega; a sincronização segue em frente, a data de "Sincronizado" volta a atualizar e o relógio volta a ficar Ok. Antes, a mesma marcação era lida de novo a cada sincronização, com todas as seguintes. Se o colaborador for cadastrado depois, a marcação pode ser trazida pela opção de reimportar a partir de uma data.
+- **Reprocessar marcações inválidas** na consulta de comprovantes: a marcação do aplicativo recusada por "Colaborador não encontrado" é importada depois que o cadastro é localizado, e o botão fica disponível mesmo para marcações sem comprovante.
+- **Botões do aplicativo**: ao salvar um layout de ações já existente, as opções de cada botão eram gravadas no campo seguinte — "Ignorar bloqueio de raio" fazia o botão sumir do app — e o local não era gravado.
+- Fim de jornada do motorista num dia sem início de jornada (nem no dia anterior) ficava inválido e não entrava no cartão. Agora ele fica no dia anterior.
+
+- Aviso de relógio atrasado na sincronização:
+![image](imagens/cloud_pr3311_imagem1.png)
+- Ajustar relógio no menu do coletor:
+![image](imagens/cloud_pr3311_imagem2.png)
+- Resultado do ajuste:
+![image](imagens/cloud_pr3311_imagem3.png)
+- Antes: o relógio parado, com o aviso do CPF desconhecido em toda sincronização:
+![image](imagens/cloud_pr3323_imagem1.png)
+- Primeira sincronização com a correção: o aviso aparece e a data é atualizada:
+![image](imagens/cloud_pr3323_imagem2.png)
+- Sincronização seguinte: o relógio volta a ficar Ok:
+![image](imagens/cloud_pr3323_imagem3.png)
+- Marcações inválidas com o Reprocessar disponível:
+![image](imagens/cloud_pr3273_imagem1.png)
+- Depois de reprocessar: as marcações entram no cartão e as repetidas ficam como duplicadas:
+![image](imagens/cloud_pr3273_imagem2.png)
+- Antes: o fim de jornada ficava inválido:
+![image](imagens/calc_pr553_imagem1.png)
+- Depois: o mesmo registro entra no cartão do dia anterior:
+![image](imagens/calc_pr553_imagem2.png)
+
+## Banco de horas e vales
+
+- **Importar saldos de banco de horas** por planilha (.xlsx ou .csv, com CPF, Saldo e MesAno; sem CPF, usa o Código), no menu BH e na Consulta geral. Antes de importar, cada linha mostra o colaborador, o mês, o saldo atual e o novo, com os erros e o que não muda. A importação roda em segundo plano e calcula o banco de horas de cada colaborador em seguida.
+- O saldo informado vira o saldo do banco de horas no fim daquele mês, e os meses seguintes acompanham a diferença. Quando o banco começa logo depois do mês da planilha, o valor entra como saldo anterior no primeiro dia do banco. Reimportar a mesma planilha não altera nada. Se o mês da planilha já tem banco de horas, recalcular o cartão desse mês volta o saldo ao calculado pelo cartão.
+- A consulta geral de banco de horas volta a mostrar o nome dos colaboradores nos períodos trazidos pela migração do PcPonto, e lançamentos de banco de horas, familiares, horários, vale-transporte e turnos especiais migrados também passam a ficar ligados ao colaborador.
+- **Manutenção de VRs**: o Calcular de VRs voltou a funcionar com as viagens pagas e descontadas. Nova coluna **Adicionais**, com os dias que somam pela regra do VR (inclusive a viagem que não tinha sido paga); passando o mouse na quantidade total aparece a conta feita e, no valor total, a quantidade vezes o valor unitário. Os cartões de resumo ficaram como na Manutenção de VTs.
+
+- Prévia da importação de saldos, com o saldo atual e o novo de cada linha (nomes ofuscados):
+![image](imagens/cloud_pr3258_imagem1.png)
+- Resultado da importação:
+![image](imagens/cloud_pr3258_imagem2.png)
+- Manutenção de uma colaboradora que recebeu +10:00: o banco soma a abertura com o saldo do mês:
+![image](imagens/cloud_pr3258_imagem3.png)
+- Consulta geral de BH com o nome dos colaboradores (borrados):
+![image](imagens/cloud_pr3276_imagem1.png)
+
+## Regras de prêmio
+
+- Novas colunas **Período** (mês inicial e final, ou "Sempre") e **Resumo**, com o valor do prêmio, as condições do mês e o que cada regra por dia paga ou desconta, em uma linha. O resumo entra na pesquisa da lista.
+- Visão **Padrão** com Nome, Período, Resumo, Alteração e Ativo, e nova visão **Suporte** com todas as colunas.
+- Salvar uma regra não pergunta mais se deve calcular: a lista mostra uma faixa avisando que as regras mudaram, com o botão **Calcular mês atual**. Mudar só as condições também atualiza a data de alteração.
+- **Dias de atrasos por turno**: "Dias de atrasos" e "Dias de atrasos (sem afastamento)" ganham Turno e Marcação (entrada ou saída), para contar só o atraso do turno escolhido. Sem turno, conta qualquer atraso do dia, como antes — e antes, com turno preenchido, o cálculo ignorava o turno.
+
+- Lista na visão Padrão com Período, Resumo, Alteração e Ativo:
+![image](imagens/cloud_pr3289_imagem1.png)
+- A condição com Turno e Marcação:
+![image](imagens/cloud_pr3310_imagem3.png)
+
+## Integrações por arquivo
+
+- O menu **Fechamento › Integrações** abre o painel de integrações: cards dos layouts ativos com a última execução, layouts de adiantamento em seção própria, pesquisa enquanto digita, período na linha do título e a opção **Duplicar** no menu do card.
+- Cadastro do layout em tela cheia, com abas no topo (Geral, Importações, Destinos e Testar com arquivo), textos de ajuda nos campos, **Copiar** e **Colar** como nos cadastros e aviso ao sair com alterações não salvas. Cada importação fica separada em Geral (arquivo e como ler) e Campos.
+- Aba **Testar com arquivo**: envio do arquivo de exemplo, sugestão de campos e pré-visualização no mesmo lugar.
+- Novo campo **Período da execução** (Mensal, Anual ou Nenhum): no Mensal, a execução pede o mês, e o destino com campo de mês sem origem nem valor fixo grava nesse mês; no Anual pede só o ano; no Nenhum não pede período.
+- Salvar o layout fica na tela, e salvar de novo não dá mais o erro de "registro alterado por outro usuário".
+- Cadastros com abas laterais (Afastamentos, Horários, Colaborador, Feriados, Regras de inconsistência e outros): os campos voltam a ocupar a largura do diálogo — várias abas encolhiam e cortavam o texto.
+
+- Painel antes:
+![image](imagens/cloud_pr3252_imagem1.jpg)
+- Painel refeito, com os cards e a última execução:
+![image](imagens/cloud_pr3252_imagem2.png)
+- Cadastro antes, com as opções espremidas ao lado:
+![image](imagens/cloud_pr3252_imagem3.jpg)
+- Cadastro depois, aba Geral:
+![image](imagens/cloud_pr3252_imagem4.png)
+- Aba Importações:
+![image](imagens/cloud_pr3252_imagem5.png)
+- Aba Destinos, com o mapeamento dos campos:
+![image](imagens/cloud_pr3252_imagem6.png)
+- Painel com o período na linha do título e a opção Duplicar:
+![image](imagens/cloud_pr3290_imagem1.png)
+- Cadastro em tela cheia, com Copiar/Colar e o Período da execução:
+![image](imagens/cloud_pr3290_imagem2.png)
+- Aviso ao sair com alterações não salvas:
+![image](imagens/cloud_pr3290_imagem3.png)
+- Importação separada em Geral e Campos:
+![image](imagens/cloud_pr3290_imagem4.png)
+- Destino de campos do mês: o mês vem do período da execução:
+![image](imagens/cloud_pr3290_imagem5.png)
+- Execução de um layout mensal, com o mês escolhido:
+![image](imagens/cloud_pr3290_imagem6.png)
+- Abas laterais antes, com os campos em meia largura:
+![image](imagens/cloud_pr3252_imagem7.png)
+- Abas laterais depois:
+![image](imagens/cloud_pr3252_imagem8.png)
+
+## Tarefas, cálculo e folha
+
+- **Calcular dados** termina com uma mensagem curta, só com os meses ("Cálculo concluído para 2 meses", ou "…com 1 erro"), e o painel ficou mais enxuto: "Colaborador" no lugar de "Funcionário" e banco de horas, modo de cálculo e local de execução no painel **Avançado**, que abre recolhido.
+- **Exportar para folha**: o cálculo antes de exportar mostra "Calculando os cartões" e o colaborador da vez, e fica só com os colaboradores exportados — antes recalculava o mês de todos os estabelecimentos pendentes, e a folha de um estabelecimento esperava o cliente inteiro. A barra de progresso só avança (cálculo, arquivos e espelhos).
+- **Planilha Excel na exportação**: com "Gerar Excel" marcado no layout da folha, a exportação volta a gerar a planilha, com códigos, valores e dias como número e as horas no formato 08:30, uma por estabelecimento quando o layout separa. Na visualização, a planilha tem guia própria, com o link para baixar.
+- **Tarefas em execução**: enquanto a tela da tarefa está aberta, ela não entra no contador do ícone do topo e não vem aviso ao terminar, porque o resultado já está na tela. Saindo da tela, o contador aparece e o fim é avisado, com o botão Abrir.
+- Ao gerar o espelho pela Manutenção, a guia que abre mostra a mensagem centralizada, com ícone.
+
+- Calcular dados com a mensagem curta, sem contador no ícone de tarefas e o Avançado aberto:
+![image](imagens/cloud_pr3293_imagem1.jpg)
+- Saindo da tela, a tarefa entra no contador:
+![image](imagens/cloud_pr3293_imagem2.png)
+- Fora da tela, o fim chega pelo aviso, com o botão Abrir:
+![image](imagens/cloud_pr3293_imagem3.png)
+- Exportação com espelhos: cálculo só dos exportados, depois os arquivos e os espelhos, com a barra sempre avançando:
+![image](imagens/cloud_pr3293_imagem4.gif)
+- Planilha gerada pela exportação da folha:
+![image](imagens/cloud_pr3330_imagem1.png)
+- Guia do espelho enquanto ele é gerado:
+![image](imagens/cloud_pr3256_imagem1.png)
+
+## Demonstrações guiadas: nova apresentadora e nova voz ✨
+
+- Nova apresentadora, a **Sara**, com foto nítida: a boca acompanha a fala, e os olhos piscam e mudam de expressão. A locução ganhou uma voz nova, e siglas como CPF, CNPJ e PIS continuam soletradas.
+- Enquanto a Sara fala, o avatar mostra ⏸ para pausar e ▶ para continuar de onde parou.
+- O piloto automático virou uma varinha mágica ao lado do Próximo, colorida enquanto está ligado, e fechar o roteiro sai direto, sem pedir confirmação.
+- Na página de Novidades, o botão "Me mostre" passou a se chamar **Ver demonstração** (também em Treinamentos), e há o filtro "Somente com demonstração".
+
+- O balão com o ⏸ da voz no avatar e a varinha do piloto ao lado do Próximo:
+![image](imagens/cloud_pr3294_imagem1.png)
+- A Sara com cada pose de olhos e boca:
+![image](imagens/cloud_pr3294_imagem2.png)
+- Escolha da nova voz da locução:
+![image](imagens/cloud_pr3297_imagem1.png)
+
+## Aplicativo 📱
+
+- Versão **4.0.04**: recados do mural no Painel, no Registro e no Comprovante, e o endereço da marcação sempre perto da posição do GPS.
+- Detalhes e imagens em **[Novidades do aplicativo](Aplicativo.md)**.
+
+## Permissões e segurança
+
+- **Documentos de categoria restrita** (como contracheques) passam a ser protegidos pelo servidor, e não só pela tela: quem não tem um dos papéis marcados na categoria vê o documento com o cadeado e sem o arquivo, em todas as listas, e abrir o arquivo pelo endereço direto também é recusado. O próprio colaborador continua abrindo os documentos dele no portal e no aplicativo.
+- O comprovante de assinatura de documento passa a pedir login e só abre para quem administra documentos ou para o próprio colaborador.
+- Quem não abre o arquivo continua editando nome, data e observação do documento sem perder o arquivo, mas não consegue trocar a categoria ou o colaborador de um jeito que libere o arquivo para si.
+- As categorias de contracheque restritas sem nenhum papel marcado só são abertas pelo próprio colaborador, até alguém marcar os papéis na categoria.
+- Tela de um módulo que não está ativo para a empresa (Trilhas do conhecimento, Férias, Uniformes e EPIs e Adiantamento salarial), aberta por link ou pelo endereço, mostra o aviso **"Módulo desativado"**, com os botões Ir para o início e Voltar — antes aparecia um erro de permissão. A ação que depende de um módulo desativado também avisa isso, em vez de dizer que falta permissão.
+
+- Contracheque com o cadeado para um papel fora da categoria; os outros documentos seguem normais:
+![image](imagens/cloud_pr3275_imagem1.jpg)
+- Na edição, o arquivo aparece como restrito e salvar mantém o arquivo gravado:
+![image](imagens/cloud_pr3275_imagem2.jpg)
+- O próprio colaborador abre o contracheque no portal:
+![image](imagens/cloud_pr3275_imagem3.jpg)
+- Aviso de módulo desativado:
+![image](imagens/cloud_pr3263_imagem5.jpg)
+
+## Para a equipe Símix
+
+- **Painel admin** com menu lateral no lugar da barra do topo e das abas: seções com a tela aberta destacada, Assistente, feedback e notificações na linha do usuário, e a barra recolhível para só os ícones.
+- Nova tela **Início** no admin, que passa a ser a página de entrada: números de conversas aguardando o suporte, coletores com erro, tarefas com erro, feedbacks novos, clientes novos, implantações em andamento e gravações dos últimos 7 dias, com as listas de detalhe. Cada bloco aparece só para quem tem acesso à tela.
+- Nova tela **Gravações** no admin, com as sessões gravadas pelo botão de suporte: totais do período, gráfico por dia, gravações por quem conduziu e por cliente, telas mais vistas e o detalhe de cada gravação com a ata.
+- **Clientes**: cidade (preenchida sozinha) e ramo de atividade abaixo do nome, tags coloridas, observação interna no painel lateral, filtros por período, ramo, tags, situação, contabilidade, colaboradores e usuários, e ramo e contabilidade editados no cadastro do cliente. Quem tem a permissão Suporte vê os usuários, os feedbacks e os coletores do cliente e pode entrar como um usuário dele.
+- **Dados de demonstração** (Suporte), só para ambientes de demonstração e de teste: remove os dados sensíveis, troca os nomes dos colaboradores por nomes fictícios e preenche as marcações até hoje, copiando o histórico ou com o padrão e a tolerância.
+- **API para migrar backups do PcPonto**: envio do `.bak` por um link público do Dropbox, OneDrive ou SharePoint, que cria o cliente e migra os dados numa fila própria, com acesso pela nova tela **Chaves de API** do admin.
+- Recursos do cliente: nova opção "Integração de convênio (legada)", grupo **Avançado** com ela e o Monitor de tarefas (que saiu do Beta), e "Assistente de IA e Símix Ponto no Teams" passou a se chamar só "Assistente de IA".
+- **Comparar com o PcPonto** saiu do Calcular dados e virou a tela Suporte › Comparar com o PcPonto.
+- A atualização dos bancos pula os scripts que já rodaram e não mudaram, e atualiza 3 bancos ao mesmo tempo; erro num banco não interrompe os outros.
+- Os testes automáticos de interface voltaram a rodar no deploy.
+
+- Menu lateral do admin, aberto:
+![image](imagens/cloud_pr3253_imagem1.png)
+- Menu recolhido, com o menu de suporte e ajuda:
+![image](imagens/cloud_pr3253_imagem2.png)
+- Menu lateral depois dos ajustes:
+![image](imagens/cloud_pr3270_imagem1.png)
+- Menu recolhido, com as notificações abertas:
+![image](imagens/cloud_pr3270_imagem2.png)
+- Início do admin com os números e as listas:
+![image](imagens/cloud_pr3286_imagem1.png)
+- Assistente, feedback e notificações na linha do usuário:
+![image](imagens/cloud_pr3286_imagem2.png)
+- Bloco Gravações no Início do admin:
+![image](imagens/cloud_pr3295_imagem1.png)
+- Tela Gravações:
+![image](imagens/cloud_pr3295_imagem2.png)
+- Detalhe de uma gravação:
+![image](imagens/cloud_pr3295_imagem3.png)
+- Clientes com cidade, ramo e tags coloridas:
+![image](imagens/cloud_pr3304_imagem1.jpg)
+- Ramo de atividade no cadastro do cliente:
+![image](imagens/cloud_pr3304_imagem2.jpg)
+- Barra de filtros com tags:
+![image](imagens/cloud_pr3304_imagem3.jpg)
+- Botão de filtro com Situação, Contabilidade, Colaboradores e Usuários:
+![image](imagens/cloud_pr3304_imagem4.jpg)
+- Dados de demonstração antes do preenchimento:
+![image](imagens/cloud_pr3319_imagem1.png)
+- Depois: todos os meses preenchidos até hoje:
+![image](imagens/cloud_pr3319_imagem2.png)
+- Chaves de API no admin:
+![image](imagens/cloud_pr3327_imagem1.png)
+- Migração enviada pela API em andamento:
+![image](imagens/cloud_pr3327_imagem2.png)
+- Migração concluída:
+![image](imagens/cloud_pr3327_imagem3.png)
+- Cálculo depois da migração na fila própria:
+![image](imagens/cloud_pr3327_imagem4.png)
+- Link sem acesso público: a implantação para com o motivo:
+![image](imagens/cloud_pr3327_imagem5.png)
+- Recursos do cliente com o grupo Avançado:
+![image](imagens/cloud_pr3290_imagem7.png)
+- Tela Comparar com o PcPonto:
+![image](imagens/cloud_pr3293_imagem5.jpg)
+
+## Outras melhorias e correções
+
+- **Todas as empresas**: com mais de uma empresa cadastrada, o menu de empresa da barra do topo ganha a opção "Todas as empresas", que volta a mostrar os colaboradores de todas. O botão mostra a empresa escolhida também ao entrar por um navegador novo, e a empresa escolhida que foi excluída deixa de esconder todos os colaboradores.
+- A página que ficou aberta e sem conexão por mais de 5 minutos recarrega sozinha na versão nova quando o sistema é atualizado nesse meio-tempo, sem a barra vermelha de erro.
+- Ao terminar uma tarefa que a própria tela acompanha (Espelho do ponto, Calcular dados, Folha, Importar AFD…), o aviso no canto não aparece mais; se a tela foi fechada antes, o aviso continua, com o botão Abrir.
+- O texto das Configurações do app explica quando a regra do colaborador vence a configuração geral.
+- Na Configuração Web, as permissões ficam uma por linha, em uma ou duas colunas conforme a largura da tela.
+- Em **Arquivos recebidos**, clicar dentro do resultado de um arquivo derrubava a tela.
+- A lista de motivos de recusa filtrava o tipo pela descrição.
+- O espaço entre o menu e o conteúdo ficou igual em todas as telas, e a dica dos botões do menu não fica mais presa ao voltar de outra guia.
+
+- Menu de empresa com a opção Todas as empresas:
+![image](imagens/cloud_pr3262_imagem1.png)
+- Escolhendo Todas as empresas, a lista volta a ter os colaboradores de todas:
+![image](imagens/cloud_pr3262_imagem2.png)
+- Reabrindo o menu, a opção aparece marcada:
+![image](imagens/cloud_pr3262_imagem3.png)
+- Resultado do arquivo recebido aberto e clicado por dentro, sem erro:
+![image](imagens/cloud_pr3272_imagem1.png)
+
 # 29/10/2026
 
 ## Resumo

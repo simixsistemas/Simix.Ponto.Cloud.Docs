@@ -1,6 +1,6 @@
 ---
 name: formatar-novidades
-description: Use quando pedirem para melhorar, formatar, revisar ou organizar o Novidades.md (notas de atualização geradas a partir de descrições de PRs) em pt-BR/Atualizacoes/, ou para preparar o arquivo mensal de atualizações (pt-BR/Atualizacoes/AAAA/AAAA-MM.md).
+description: Use quando pedirem para melhorar, formatar, revisar ou organizar o Novidades.md (notas de atualização geradas a partir de descrições de PRs) em pt-BR/Atualizacoes/, ou para preparar o arquivo mensal de atualizações (pt-BR/Atualizacoes/AAAA/AAAA-MM.md). Para gerar notas novas a partir dos PRs mesclados, use a atualizar-novidades.
 ---
 
 # Formatar Novidades
