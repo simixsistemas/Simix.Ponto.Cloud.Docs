@@ -1,6 +1,6 @@
 ---
 name: importando-planilhas
-description: Importa uma planilha (xlsx, xls, csv) para o Símix Ponto pelo MCP de integração — pedidos de adiantamento, campos do colaborador no mês, marcações de ponto. Use quando o usuário (cliente, suporte ou implantação) quiser "importar a planilha", "subir os pedidos de adiantamento", "lançar os valores da planilha no sistema" ou mandar um arquivo do RH para um cadastro ou módulo do Símix Ponto.
+description: Importa uma planilha (xlsx, xls, csv) para o Símix Ponto pelo MCP de integração — pedidos de adiantamento, salário-base dos colaboradores, campos do colaborador no mês, marcações de ponto. Use quando o usuário (cliente, suporte ou implantação) quiser "importar a planilha", "subir os pedidos de adiantamento", "lançar os valores da planilha no sistema" ou mandar um arquivo do RH para um cadastro ou módulo do Símix Ponto.
 ---
 
 # Importando planilhas para o Símix Ponto
@@ -9,7 +9,7 @@ Quem lê a planilha é você: ela costuma ser a planilha de trabalho do RH, com 
 
 ## Antes de começar
 
-- O MCP do Símix Ponto precisa estar conectado (ferramentas `importacao_destinos`, `importacao_simular` e `importacao_gravar`). Se não estiver, peça ao usuário uma chave de API criada em **Configurações › Segurança › Chaves de API** com o escopo "Importar planilhas pelo assistente" e oriente:
+- O MCP do Símix Ponto precisa estar conectado (ferramentas `importacao_destinos`, `importacao_simular` e `importacao_gravar`). Se não estiver, peça ao usuário uma chave de API criada em **Configurações › Segurança › Chaves de API** com o escopo "Importar planilhas pelo assistente" (e "Importar salários pelo assistente", se for importar salários) e oriente:
   ```
   claude mcp add --transport http simix-ponto https://{empresa}.simixponto.app/api/integracoes/mcp --header "X-Api-Key: {chave}"
   ```
@@ -38,6 +38,19 @@ Campos: colaborador (CPF, CdFunc, PIS, CdFolhaPag ou CdExterno), `AnoMes`, `VlrS
 - O mês é aberto automaticamente se ainda não existir. O módulo precisa estar ligado nas regras do adiantamento, e mês com a análise concluída não aceita importação: o RH reabre a análise na tela.
 - O pedido entra com origem "Importação", vale como lançamento do RH (aceito fora do prazo) e recebe o cálculo do mês. O colaborador precisa ter cadastro naquele mês.
 - Conferir depois em `/adiantamentos`, no mês importado.
+- Colaborador sem salário no cadastro do mês fica **bloqueado** ("Sem salário no cadastro de MM/AAAA") e o limite não é calculado. Se a planilha tiver a base salarial e a chave tiver o escopo de salários, importe os salários (destino abaixo) **antes** dos pedidos.
+
+## Destino: salário do colaborador (`Salarios`)
+
+Exige na chave o escopo "Importar salários pelo assistente" (separado do de planilhas) e, em quem criou a chave, a permissão de ver o salário dos colaboradores. Sem o escopo, o destino nem aparece em `importacao_destinos`.
+
+Campos: colaborador (CPF, CdFunc, PIS, CdFolhaPag ou CdExterno), `AnoMes`, `VlrSalario` (salário-base, obrigatório) e `VlrAdicionais` (adicionais fixos, opcional).
+
+- `AnoMes` é o mês **a partir do qual** vale o salário: grava nesse mês e nos seguintes já criados (até 12 meses à frente). Os meses anteriores ficam como estavam, e os meses criados depois herdam o valor. Pergunte ao usuário o mês do reajuste; na primeira carga, em geral é o mês da planilha.
+- Grava só salário e adicionais: cargo, horário e lotação não mudam. Fica no histórico do colaborador (aba Complementar, "Valor salário").
+- Resposta: **inserido** = o colaborador estava sem salário; **atualizado** = o salário mudou; **sem alteração** = já era o mesmo. Mostre essas três contagens no resumo antes de gravar e destaque os reajustes (quantos e de quanto, sem nomes).
+- `VlrAdicionais` vazio mantém os do cadastro; `0` limpa. Só mande a coluna se a planilha tiver os adicionais fixos (ex.: "Adicional 40%").
+- Planilha típica: aba "Base salarial" com CPF e "Salário-base". Não use o total com os adicionais como salário-base.
 
 Planilha típica do RH: uma aba de pedidos (código, nome, CPF e valor pedido) e uma aba do que foi à folha (código e valor do adiantamento). Pedido = valor da aba de pedidos; aprovado = valor da aba da folha, ligado pelo código. Abas de afastados, férias, base salarial, consignado, convênio e baixa são insumo do cálculo que o sistema já faz, ou entram pela importação de descontos da tela do adiantamento: não vão para este destino.
 

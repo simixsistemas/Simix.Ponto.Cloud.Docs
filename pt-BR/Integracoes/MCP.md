@@ -8,7 +8,7 @@ O **MCP** (Model Context Protocol) é o padrão que os assistentes de IA usam pa
 - *Liste as inconsistências da última semana no estabelecimento 1.*
 - *Compare as faltas de setembro e de outubro.*
 
-As consultas só **leem**. A única ferramenta que grava é a de [importar planilhas](Importar-planilhas.md), e só com uma chave que tenha a permissão *Importar planilhas pelo assistente*. Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
+As consultas só **leem**. A única ferramenta que grava é a de [importar planilhas](Importar-planilhas.md), e só com uma chave que tenha a permissão *Importar planilhas pelo assistente* (ou *Importar salários pelo assistente*, para o salário dos colaboradores). Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
 
 ## Antes de começar: dados pessoais
 
@@ -20,7 +20,7 @@ O que o assistente lê vai para o provedor da IA (Microsoft, Anthropic, OpenAI..
 
 ## Importar planilhas
 
-Com a permissão *Importar planilhas pelo assistente* na chave, o Claude também leva planilhas do RH para o Símix Ponto (pedidos de adiantamento, campos do colaborador no mês, marcações): ele simula, mostra os erros de cada linha e só grava com o seu ok. O passo a passo está em [Importar planilhas com o Claude](Importar-planilhas.md).
+Com a permissão *Importar planilhas pelo assistente* na chave, o Claude também leva planilhas do RH para o Símix Ponto (pedidos de adiantamento, campos do colaborador no mês, marcações; com a permissão *Importar salários pelo assistente*, também o salário-base): ele simula, mostra os erros de cada linha e só grava com o seu ok. O passo a passo está em [Importar planilhas com o Claude](Importar-planilhas.md).
 
 ## O que você precisa
 
