@@ -39,6 +39,7 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 - Mensagem só com o assunto ("coletores") mostra as telas sobre ele, com o link, e pergunta o que a pessoa quer fazer. Horas de um afastamento vêm com a sugestão de marcar o Totalizar, e o layout de totais é criado pelo cartão quando o quadro de horário ainda não tem.
 - Escala para o plano inteiro ("passar as equipes de segunda a sábado para 5x2") agrupa as pessoas pela semana que fazem e propõe a mudança por grupo; o "Abrir a grade" abre já com a conversa e o cartão. Pergunta que chega ao limite de consultas fecha com o que foi encontrado e pede "continue".
 - Aberto na Manutenção ou nas Escalas, o Assistente atende só o que é daquela tela, mais a calculadora e a ajuda; para outro assunto, explica como fazer e sugere abrir o Assistente em outra tela.
+- Toda resposta pode ser avaliada, inclusive a que só mostra um cartão e a interrompida pelo Parar. A última resposta pede a avaliação em destaque, com as quatro notas escritas, e depois da nota vem uma pergunta conforme ela (o que deu errado, o que faltou, o que foi bom). No painel do admin, os cards "Avaliadas" e "Avaliação ruim" filtram a lista, e cada conversa mostra quantas respostas foram bem ou mal avaliadas.
 
 - Pedido de cadastro de cargo com o cartão de confirmação:
 ![image](imagens/cloud_pr3048_imagem1.png)
@@ -166,6 +167,16 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 ![image](imagens/cloud_pr3278_imagem4.png)
 - Pelo chat: o cartão do prêmio de pontualidade com o valor e as condições em frase; "Abrir o assistente" leva ao passo 2 já preenchido:
 ![image](imagens/cloud_pr3278_imagem34.png)
+- Avaliação em destaque na última resposta:
+![image](imagens/cloud_pr3429_imagem9.png)
+- Resposta com cartão de proposta também avaliada:
+![image](imagens/cloud_pr3429_imagem10.png)
+- Depois da nota, a pergunta muda conforme ela:
+![image](imagens/cloud_pr3429_imagem11.png)
+- Resposta interrompida pelo Parar, já avaliada:
+![image](imagens/cloud_pr3429_imagem12.png)
+- Painel do Assistente no admin filtrado por "Avaliadas":
+![image](imagens/cloud_pr3429_imagem13.png)
 
 ## Uniformes e EPIs ✨
 
@@ -289,7 +300,9 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Voltou a escolha da forma de exibir o menu (Normal, Compacto ou Escondido), agora salva no usuário e valendo em qualquer navegador. Os botões do menu mostram a descrição ao parar o mouse em cima, e botão com cadeado mostra o motivo.
 - Todos os ícones da barra mostram o nome ao passar o mouse (a pesquisa mostra também o atalho Ctrl+Espaço), e os botões de VTs e VRs ganharam ícones próprios.
 - No celular, a borda das faixas que rolam para o lado esmaece quando há mais itens.
-- Período fora do mês atual fica só com o ícone laranja na barra, sem o mês em destaque.
+- O ícone do período não muda mais de cor fora do mês atual: o aviso fica só na dica. Os painéis do período, do filtro e das preferências abrem logo abaixo do botão.
+- A forma de exibir o menu perde a opção Compacto; quem usava volta ao Normal.
+- **Recentes** sem a lixeira e sem Copiar, Colar e Remover todos: a estrela (também na pesquisa) leva a tela ao grupo Favoritos da estrela da barra do topo, e os botões fixados ao lado do menu saíram. O botão de voltar à gestão no portal do colaborador ganha o visual dos botões da barra.
 
 - Antes: quatro atalhos grandes e o botão de tela cheia ao lado do sino:
 ![image](imagens/cloud_pr3028_imagem1.png)

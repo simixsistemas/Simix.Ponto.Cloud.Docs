@@ -1,3 +1,91 @@
+# 10/11/2026
+
+## Resumo
+
+- 🧭 Nova página Como se achar?, com os caminhos para achar uma tela, um campo ou uma resposta
+- 🤖 Integrações por arquivo: a IA sugere o layout e o destino a partir do arquivo de exemplo
+- ⚡ Consulta diária muito mais rápida em bancos com muito histórico
+- 🎨 Registros, Comprovantes e Facial no padrão das consultas, e barras das listas alinhadas
+- 🗓️ Escalas: botão Sugerir e barra da grade mais enxuta
+- ✅ Desconsiderar aprovado retira também as marcações do lanche
+
+## Como se achar? ✨
+
+Nova página na ajuda que ensina os caminhos para achar uma tela, um campo ou uma resposta sem decorar o menu.
+
+- Passo a passo da pesquisa do menu (Ctrl+Espaço), da pesquisa de campos, do Assistente e de **Início › Ajuda e novidades**, com o print do card e o atalho para o Início.
+- Exemplos clicáveis ("feriados", "vale transporte", "tolerância"…) que abrem a pesquisa já procurando, e botões para abrir a pesquisa, o Assistente e os treinamentos.
+- Partes "Achei, acabei de acessar ou preciso com frequência" (Recentes e os atalhos da estrela) e "Ainda não achei o que preciso" (loja de relatórios e consultas e feedback).
+- A página é o primeiro atalho do menu de ajuda, aparece no menu "⋯" das telas menores e na pesquisa global ("onde fica", "encontrar", "atalhos"), e entra no lugar do suporte remoto em "Precisa de ajuda?" do Início.
+
+- Página Como se achar?:
+![image](imagens/cloud_pr3440_imagem1.jpg)
+- O exemplo "vale transporte" abrindo a pesquisa com as telas e os campos:
+![image](imagens/cloud_pr3440_imagem2.jpg)
+
+## Integrações por arquivo: layout sugerido pela IA ✨
+
+- Ao criar uma integração a partir de um arquivo de exemplo, a IA lê o conteúdo e sugere o layout: onde ficam os títulos, a coluna e o tipo de cada campo, qual campo identifica a pessoa e qual valor soma quando ela aparece em várias linhas.
+- A IA também sugere o **destino da carga**, já com os campos ligados e o motivo da escolha numa frase — por exemplo, numa planilha de baixas do convênio: CPF como chave e o valor da baixa somado por colaborador. No espelho exportado de outro sistema, sugere os dois destinos na ordem da carga: o cadastro dos colaboradores e as marcações de ponto.
+- A sugestão é conferida antes de aparecer: o arquivo é lido com o layout sugerido e a tela mostra o resultado ("1 registro de 6 linhas, 4 mescladas, 1 ignorada"). Sem IA disponível, vale a sugestão de antes. O botão **Sugerir campos** do cadastro também traz chave, soma e destino.
+- O nome sugerido para a integração é o do arquivo de exemplo, sem o mês e sem matriz/filial/loja, e o botão do card diz qual arquivo enviar.
+- Clicar na última execução do card abre os detalhes dela, e o **Executar** do cadastro salva o que está na tela e abre a execução por cima, já com o arquivo em teste.
+- Painel e tela de execução mais limpos: mês ao lado do título, edição no menu do card, envio e arquivo numa linha, contagens com ponto de milhar e avisos das linhas em português. O assistente de nova integração não fecha mais ao clicar fora.
+- Correções: planilhas exportadas de relatório do ERP que não abriam passam a ser lidas; relatórios com células mescladas (título numa coluna e valor na do lado) não deixam mais os campos vazios, e linhas de total e rodapé não entram como registro; a página não cai mais ao terminar a execução.
+
+## Escalas
+
+- O botão "Gerar escala" passa a se chamar **Sugerir**, com ícone de varinha mágica, e o botão do Assistente na grade usa o mesmo ícone da barra do topo. A barra perdeu a linha divisória, e "Tudo salvo" virou só o ícone, com o texto na dica.
+- Exibir › Horas previstas desmarcado esconde as horas também nos dias sem sigla, na grade e no relatório impresso.
+- A célula selecionada não passa mais por cima da coluna do colaborador nem do cabeçalho ao rolar a grade.
+- Demanda, aba Volumes: filtro por setor e, no menu avançado (⋮), **Apagar os volumes do mês** do estabelecimento e do setor filtrados, ou de todos.
+
+## Consultas e telas
+
+- **Consulta diária mais rápida**: a consulta de um dia abre em menos de 1 segundo (antes, cerca de 14 segundos em bancos com muito histórico), e a de um mês caiu de cerca de 30 para 5 segundos, nos modos Dias e Por colaborador. Os totais zerados não aparecem mais.
+- **Registros, Comprovantes e Facial** no padrão das consultas: um cartão só, cabeçalho com o total e o período, filtros numa linha, esboço enquanto carrega e aviso quando não há resultado. Em Comprovantes e Facial, o período abre até hoje e inclui o dia final inteiro; no Facial, "Ao passar o mouse" tira o borrão quando o mouse entra no cartão, e o dispositivo aparece pelo nome.
+- Barra das listas e da Manutenção: a visão escolhida aparece num campo "Visão", como o Período, os botões de filtro e de inativos ficam na altura dos campos e com o mesmo espaço, e o botão de treinamentos fica sempre à direita. Sai o menu ⋮ com Atualizar das listas.
+- Cadastros com o botão **Logs de auditoria** à vista no rodapé. No cadastro do colaborador, a guia Pagamento passa a se chamar Contas, Seção vai para o Principal abaixo do Setor, Grupo de ações vai para Avançado e Tags para Complementar.
+- **Configurações do app** abrem em janela, como as Configurações gerais, com as guias à esquerda.
+- **Assistente de fechamento**: o período e o filtro ficam no próprio card do fechamento, com filtros salvos e favoritos, valendo para as contagens, as listas e o link para a manutenção.
+- O tema escuro já abre escuro, sem mostrar o claro antes, e a cor de alerta passa a um laranja mais vivo.
+- **Feedbacks e suporte**: "Falar com o suporte" passa para o menu do ícone de Feedbacks, e o chat tenta carregar de novo antes de avisar que não carregou. Em Downloads, nova parte **Suporte remoto**, com TeamViewer e AnyDesk.
+- O monitor de tarefas fica dentro do painel de sincronização, com o contador no botão e a lista no fim do painel; o fim de uma tarefa não abre mais aviso no canto da tela.
+- Menu Cadastros com **Implantar módulo**, e Feedbacks no submenu de Início. O menu de ajuda mostra os atalhos um abaixo do outro e não passa mais da borda da tela.
+
+- Barra de Colaboradores com o campo Visão, os botões alinhados e os treinamentos à direita:
+![image](imagens/cloud_pr3429_imagem1.png)
+- A mesma barra no tema escuro:
+![image](imagens/cloud_pr3429_imagem2.png)
+- Barra da Manutenção com o Período, o filtro e os treinamentos à direita:
+![image](imagens/cloud_pr3429_imagem3.png)
+- Registros com o painel do dia aberto:
+![image](imagens/cloud_pr3429_imagem4.png)
+- Comprovantes:
+![image](imagens/cloud_pr3429_imagem5.png)
+- Facial com a proteção de dados ligada:
+![image](imagens/cloud_pr3429_imagem6.png)
+- Configurações do app em janela:
+![image](imagens/cloud_pr3429_imagem7.png)
+
+## Para a equipe Símix
+
+- No login de suporte, o botão **Gravar** fica fixo na barra do topo, com um X que o esconde por 2 horas.
+- Admin › Documentos dos clientes: os mais recentes primeiro, o nome do cliente abre o sistema dele e a coluna Arquivo abre o arquivo direto.
+
+- Login de suporte com o Gravar na barra do topo:
+![image](imagens/cloud_pr3429_imagem8.png)
+
+## Outras melhorias e correções
+
+- **Desconsiderar marcação**: a solicitação aprovada retira também as marcações que ficaram no lanche (saída e retorno do lanche); antes aparecia como aprovada, mas a marcação continuava no cartão. Quando a marcação já não está no dia, fica um aviso no log.
+- Os avisos do canto da tela somem na hora ao fechar, e o espaço entre o menu e as telas ficou igual ao espaço entre os cards.
+
+- Desconsiderar aprovado no lanche, antes e depois da correção:
+![image](imagens/cloud_pr3433_imagem1.png)
+- Comparação por layout do horário: só as marcações de lanche mudaram:
+![image](imagens/cloud_pr3433_imagem2.png)
+
 # 09/11/2026
 
 ## Resumo
