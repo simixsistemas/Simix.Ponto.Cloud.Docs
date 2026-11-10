@@ -56,6 +56,35 @@
       ]
     },
     {
+      "text": "Adiantamento salarial",
+      "items": [
+        {
+          "text": "Visão geral",
+          "path": "Adiantamentos/Visao-geral.md"
+        },
+        {
+          "text": "Regras",
+          "path": "Adiantamentos/Regras.md"
+        },
+        {
+          "text": "Pedidos e análise",
+          "path": "Adiantamentos/Pedidos-e-analise.md"
+        },
+        {
+          "text": "Descontos e envio à folha",
+          "path": "Adiantamentos/Descontos-e-folha.md"
+        },
+        {
+          "text": "Pedir o meu adiantamento",
+          "path": "Adiantamentos/Colaborador.md"
+        },
+        {
+          "text": "Perguntas frequentes",
+          "path": "Adiantamentos/Perguntas-frequentes.md"
+        }
+      ]
+    },
+    {
       "text": "Escalas inteligentes",
       "items": [
         {
