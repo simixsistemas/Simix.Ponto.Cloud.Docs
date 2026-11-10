@@ -4,6 +4,8 @@
 
 > As regras valem **a partir do próximo mês aberto**. O mês que já abriu mantém as regras de quando abriu.
 
+![Regras do adiantamento: o interruptor do módulo, como o valor é definido, o limite de comprometimento e a simulação ao lado](img/regras.png)
+
 ## Ligar o módulo
 
 O interruptor **Adiantamento salarial ligado** abre o mês sozinho no dia da abertura, mostra o item Adiantamento no portal do colaborador e libera o lançamento pelo estabelecimento. Desligado, ninguém faz novos pedidos, mas o mês já aberto continua com o RH.
@@ -41,6 +43,8 @@ Conferido pelo ponto e pelo cadastro. Se o RH lançar férias ou afastamento dep
 **Nova exceção** cria outra regra para parte dos colaboradores, como um estabelecimento com percentual fixo ou um cargo com limite menor. Ela tem os mesmos campos da regra padrão. Quem não entra em nenhuma exceção fica com a padrão.
 
 ## Calendário do mês
+
+![Calendário do mês, aprovação, arquivos e folha, com a simulação de um caso ao lado](img/regras-calendario.png)
 
 | Campo | Significado |
 | --- | --- |

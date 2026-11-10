@@ -4,6 +4,8 @@
 
 ## O painel
 
+![Painel do adiantamento de novembro: etapas do mês, indicadores, o aviso dos pendentes e a lista com um pedido aprovado pela regra e um bloqueado](img/painel.png)
+
 No alto, as **etapas do mês** com a data de cada uma. Abaixo, os indicadores:
 
 | Indicador | O que mostra |
@@ -27,12 +29,14 @@ Quando há pedidos aguardando o RH, o painel avisa e oferece duas ações em lot
 
 ## Analisar um pedido
 
-**Analisar** abre o pedido com o salário-base, o convênio, o consignado e a pensão, a situação no ponto e o comprometimento. Escolha:
+**Analisar** abre o pedido com a **margem do mês** em barras (salário-base, limite da regra, convênio, consignado e pensão, margem livre e o pedido), a origem dos descontos, a situação no ponto e os pedidos dos últimos 6 meses. Na **Decisão**:
 
-- **Aprovar a sugestão**;
+- **Aprovar a sugestão**, quando o pedido passa do disponível (a margem livre, arredondada);
 - **Aprovar o valor pedido**;
-- **Aprovar outro valor**;
-- **Reprovar o pedido**, com o motivo.
+- **Aprovar outro valor**, até a margem livre;
+- **Reprovar o pedido**, com o motivo e o texto que o colaborador lê no aviso.
+
+![Análise de um pedido dentro do limite: margem do mês em barras, situação no ponto e a decisão](img/analise.png)
 
 > Quando o colaborador está bloqueado, a janela já abre em **Reprovar**. Confira antes de salvar.
 
@@ -44,7 +48,14 @@ No menu ⋮ da lista, **Lançar pedido pelo RH** cria o pedido de um colaborador
 
 ## Gestor do estabelecimento
 
-Em *Adiantamentos › Meu estabelecimento*, o gestor lança pedidos pelos colaboradores do estabelecimento dele e vê a **situação** e o **valor aprovado**. Ele não vê salário, descontos nem o motivo da análise.
+Em *Adiantamentos › Meu estabelecimento*, o gestor vê os colaboradores do estabelecimento dele, com o **disponível estimado**, o pedido, a origem (app ou lançado ali) e o **retorno do RH**. Ele lança o valor na coluna do pedido e clica em **Salvar**. **Só quem tem pedido** esconde os demais.
+
+![Tela do estabelecimento: prazo, indicadores e a lista dos colaboradores para lançar os pedidos](img/estabelecimento.png)
+
+- O aviso no alto mostra o **prazo do estabelecimento**: depois dele, os pedidos seguem para o RH.
+- Até o prazo, o estabelecimento altera os pedidos que lançou. Pedido feito pelo app só o colaborador ou o RH alteram.
+- O disponível é uma estimativa com os descontos importados até o momento; o valor final sai na análise do RH.
+- O gestor não vê salário, descontos nem o motivo da análise.
 
 ## Concluir a análise
 

@@ -2,6 +2,8 @@
 
 **Módulo Adiantamentos** · O colaborador pede um adiantamento pelo portal, o RH analisa só as exceções, o convênio e o consignado entram no cálculo e o resultado segue para a folha.
 
+![Painel do adiantamento do mês, com as etapas do calendário, os indicadores e a lista de pedidos](img/painel.png)
+
 ## O caminho de um pedido
 
 1. **O mês abre.** No dia configurado nas [regras](Regras.md) o mês abre sozinho, com as datas do calendário e a cópia das regras em vigor. O RH também pode abrir antes, pelo painel.
@@ -28,6 +30,11 @@ O módulo precisa estar contratado no cliente. Para começar:
 2. **Salário-base no cadastro.** O cálculo usa o salário do mês no cadastro do colaborador. Colaborador sem salário no mês aparece como **Bloqueado** no painel, com o motivo "Sem salário no cadastro". Para carregar muitos salários de uma vez, veja [Importar planilhas](../Integracoes/Importar-planilhas.md).
 3. **Regras.** Ligue o módulo e configure a regra padrão, o calendário e, para o envio à folha, o layout e os eventos. Veja [Regras](Regras.md).
 4. **Assistente de implantação.** Na página *Módulos*, o card **Adiantamentos** abre um assistente que guia essas etapas na ordem.
+
+## Ajuda dentro do sistema
+
+- Numa tela do adiantamento, **Ajuda › Documentação** abre esta documentação; no portal do colaborador, o guia do colaborador fica no botão **Treinamentos**.
+- **Ajuda › Treinamentos** e o botão de treinamentos de cada tela têm as demonstrações guiadas: *Adiantamento salarial: o caminho do RH* e *Pedir meu adiantamento*.
 
 ## Em resumo
 

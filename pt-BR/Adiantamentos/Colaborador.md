@@ -18,6 +18,8 @@ No portal do colaborador, abra **Adiantamento**. O que a tela mostra depende do 
 3. Confira o resumo: data do crédito, pagamento pela folha na conta salário e o mês do desconto.
 4. Toque em **Pedir**.
 
+![Tela do adiantamento no celular: valor disponível, valores sugeridos, outro valor e o resumo do crédito](img/colaborador-pedir.png)
+
 Pedindo acima do disponível, o pedido não é negado: ele vai para a análise do RH.
 
 Em algumas empresas o valor é fixo (um percentual do salário): você só confirma que quer receber.
@@ -28,7 +30,9 @@ Até o prazo mostrado na tela você pode **alterar o valor** ou **cancelar o ped
 
 ## Acompanhar
 
-Depois do pedido a tela mostra os passos: pedido recebido, análise e crédito.
+Depois do pedido a tela mostra a situação e os passos: **pedido enviado**, **conferência do RH**, **pagamento** e **desconto**.
+
+![Adiantamento aprovado: valor e data do crédito, com os passos do pedido](img/colaborador-acompanhar.png)
 
 | Situação | Significa |
 | --- | --- |
