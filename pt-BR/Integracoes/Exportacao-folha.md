@@ -1,18 +1,18 @@
 # Exportação da folha pela API
 
-**Integrações › Exportação da folha** · Gere a exportação da folha de pagamento a partir de outro sistema e receba os eventos em JSON
+**Integrações › Exportação da folha** · Gere os arquivos da folha de pagamento a partir de outro sistema e baixe o resultado
 
-A exportação da folha é a mesma da tela **Folha de pagamento** (`/folha`): o Símix Ponto monta os eventos de cada colaborador no layout da sua folha (Questor, Domínio, Senior...). Pela API, o resultado vem de dois jeitos: os **lançamentos em JSON** (colaborador, evento e valor, um por linha do arquivo) e os **links dos arquivos**, iguais aos da tela. A exportação é feita em **dois passos**, porque a geração pode levar alguns minutos:
+A exportação da folha é a mesma da tela **Folha de pagamento** (`/folha`): o Símix Ponto monta os arquivos no layout da sua folha (Questor, Domínio, Senior...) e devolve os links para baixar. Pela API, ela é feita em **dois passos**, porque a geração pode levar alguns minutos:
 
 1. **Gerar**: o seu sistema pede a exportação e recebe na hora um número de execução.
-2. **Buscar a última**: o seu sistema consulta esse número até a exportação terminar e lê os lançamentos.
+2. **Buscar a última**: o seu sistema consulta esse número até a exportação terminar e baixa os arquivos pelos links.
 
 O acesso é com a **chave de API** no cabeçalho `X-Api-Key`, como nas [consultas](Consultas.md) (veja [Integração por API](API.md)).
 
 | Passo | Endereço | Resposta |
 |---|---|---|
 | [Gerar](#passo-1-gerar) | `POST /api/integracoes/folha/gerar` | Número da execução (na hora) |
-| [Buscar a última](#passo-2-buscar-a-última) | `GET /api/integracoes/folha/ultima` | Situação da execução, lançamentos e links dos arquivos |
+| [Buscar a última](#passo-2-buscar-a-última) | `GET /api/integracoes/folha/ultima` | Situação da execução e links dos arquivos |
 
 ## Antes de começar
 
@@ -75,7 +75,7 @@ Sem nenhum parâmetro, vem a última exportação gerada, inclusive as feitas pe
 }
 ```
 
-**Quando termina**, vêm os lançamentos e os arquivos:
+**Quando termina**, vêm os arquivos com o link para baixar:
 
 ```json
 {
@@ -88,12 +88,6 @@ Sem nenhum parâmetro, vem a última exportação gerada, inclusive as feitas pe
     "execucaoId": "3a24e1b7-5406-2856-d3ff-3eb921bd817b",
     "anoMes": "202610", "cdLayout": 5, "cdEstab": null,
     "dtGeracao": "2026-11-12T08:35:50-03:00", "usuario": "API (Folha de pagamento)",
-    "lancamentos": [
-      { "cdFunc": 133, "nome": "Maria Souza", "cdFolhaPag": "82", "cdEstab": 3, "cdEstabFolhaPag": "138",
-        "cdEvento": "25", "descricao": "Horas de desconto do repouso remunerado", "valor": 29.333333, "formato": "HR", "horas": "29:20" },
-      { "cdFunc": 133, "nome": "Maria Souza", "cdFolhaPag": "82", "cdEstab": 3, "cdEstabFolhaPag": "138",
-        "cdEvento": "35", "descricao": "Horas extras 50%", "valor": 4.5, "formato": "HR", "horas": "04:30" }
-    ],
     "arquivos": [
       { "nome": "3a24e1b7-acae-2ad4-1ae1-fc085edf3e2b_10-2026-138.txt", "link": "https://{tenant}.simixponto.app/arquivos/pontos/3a24e1b7-acae-2ad4-1ae1-fc085edf3e2b_10-2026-138.txt" },
       { "nome": "3a24e1b7-acae-2ad4-1ae1-fc085edf3e2b_10-2026-138.html", "link": "https://{tenant}.simixponto.app/arquivos/pontos/3a24e1b7-acae-2ad4-1ae1-fc085edf3e2b_10-2026-138.html" },
@@ -121,25 +115,7 @@ A situação fica guardada por **24 horas**. Depois disso, a consulta pelo `exec
 | `anoMes`, `cdLayout`, `cdEstab` | O que foi exportado |
 | `dtGeracao` | Quando a exportação terminou |
 | `usuario` | Quem gerou: o nome do usuário ou **API (nome da chave)** |
-| `lancamentos` | Os eventos que entraram nos arquivos: [campos abaixo](#campos-dos-lançamentos). Vazio nas exportações feitas antes desta versão |
 | `arquivos` | Os arquivos gerados, com `nome` e `link`. O link abre o arquivo direto, sem login |
-
-### Campos dos lançamentos
-
-Um lançamento por colaborador e evento, **o mesmo conteúdo das linhas do `.txt`**, já separado em campos.
-
-| Campo | Descrição |
-|---|---|
-| `cdFunc` / `nome` | Colaborador no Símix Ponto |
-| `cdFolhaPag` | Código do colaborador na folha de pagamento (o que vai no arquivo) |
-| `cdEstab` / `cdEstabFolhaPag` | Estabelecimento no Símix Ponto e o código dele na folha |
-| `cdEvento` | Código do evento na folha |
-| `descricao` | Descrição do item no layout (ex.: *Horas extras 50%*). Um mesmo evento pode aparecer em mais de um item |
-| `valor` | Valor sem formatação: **horas em decimal** nos formatos de hora (`4.5` = 4h30), quantidade ou valor em reais nos demais |
-| `formato` | Formato do item no layout: `HR`, `HR2`, `HR3`, `HR4` e `MIN` são horas; `MOE` é valor em reais; `INT` é quantidade; `DEC` é número com 2 casas |
-| `horas` | O valor em `HH:MM` quando o formato é de hora; `null` nos demais |
-
-Com a opção **Valores não nulos** desligada no layout, os eventos zerados também vêm (com `valor` 0), como no arquivo.
 
 ### O que vem nos arquivos
 
@@ -165,7 +141,7 @@ O colaborador no arquivo é identificado pelo **código da folha** (`cdFolhaPag`
 1. Chame o **gerar** e guarde o `execucaoId`.
 2. A cada 10 segundos, chame a **última** com o `execucaoId`.
 3. Quando `finalizada` vier `true`:
-   - `Concluida` ou `ConcluidaComAvisos`: leia `exportacao.lancamentos` (e, se precisar, baixe cada `link` de `exportacao.arquivos`).
+   - `Concluida` ou `ConcluidaComAvisos`: baixe cada `link` de `exportacao.arquivos` para uma pasta.
    - `Erro` ou `Cancelada`: leia a `mensagem` e gere de novo depois de corrigir.
 
 ```bash
@@ -179,8 +155,9 @@ while true; do
   sleep 10
 done
 
-# lançamentos em CSV: código na folha, evento, valor e horas
-echo "$RESPOSTA" | jq -r '.exportacao.lancamentos[] | [.cdFolhaPag, .cdEvento, .valor, .horas] | @csv' > lancamentos.csv
+# baixa os arquivos numa pasta por competência
+mkdir -p "folha/202610"
+echo "$RESPOSTA" | jq -r '.exportacao.arquivos[]?.link' | while read -r LINK; do curl -s -o "folha/202610/${LINK##*/}" "$LINK"; done
 ```
 
 Consultar de 10 em 10 segundos gasta 6 chamadas por minuto do [limite de 1.000 por hora](API.md#limites). Não precisa ser mais rápido do que isso.
@@ -203,4 +180,4 @@ Todo erro vem com o motivo em português, no formato `{ "erros": ["..."] }`.
 - [ ] Código do layout ativo anotado (`cdLayout`)
 - [ ] Rotina guardando o `execucaoId` e consultando até `finalizada`
 - [ ] Tratamento de `Erro` e `Cancelada` pela `mensagem`
-- [ ] Lançamentos lidos pelo `cdFolhaPag` e `cdEvento`, com as horas em decimal ou pelo campo `horas`
+- [ ] Arquivos baixados pelos links e conferidos com a exportação da tela

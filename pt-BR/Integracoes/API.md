@@ -9,7 +9,7 @@ Nesta seção:
 | Página | O que tem |
 |---|---|
 | [Consultas](Consultas.md) | As consultas, os filtros e o significado de cada campo |
-| [Exportação da folha](Exportacao-folha.md) | Gerar a exportação da folha de pagamento e receber os eventos em JSON |
+| [Exportação da folha](Exportacao-folha.md) | Gerar os arquivos da folha de pagamento e baixar o resultado |
 | [Exemplos em C#](Exemplos-CSharp.md) | Programa pronto em .NET, com paginação |
 | [Exemplos em JavaScript](Exemplos-JavaScript.md) | Programa pronto em Node.js, com paginação |
 | [Usar com assistentes de IA (MCP)](MCP.md) | Ligar o Claude, o Copilot ou o Cursor aos dados do ponto |
