@@ -34,6 +34,10 @@
           "path": "Integracoes/Consultas.md"
         },
         {
+          "text": "Exportação da folha",
+          "path": "Integracoes/Exportacao-folha.md"
+        },
+        {
           "text": "Exemplos em C#",
           "path": "Integracoes/Exemplos-CSharp.md"
         },
