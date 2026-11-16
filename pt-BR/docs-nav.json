@@ -50,6 +50,10 @@
           "path": "Integracoes/Importar-planilhas.md"
         },
         {
+          "text": "Arquivos pelo Agente",
+          "path": "Integracoes/Arquivos-agente.md"
+        },
+        {
           "text": "Acesso com usuário (token)",
           "path": "Integracoes/Token-de-usuario.md"
         }
