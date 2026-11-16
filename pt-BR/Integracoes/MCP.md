@@ -8,7 +8,7 @@ O **MCP** (Model Context Protocol) é o padrão que os assistentes de IA usam pa
 - *Liste as inconsistências da última semana no estabelecimento 1.*
 - *Compare as faltas de setembro e de outubro.*
 
-As consultas só **leem**. A única ferramenta que grava é a de [importar planilhas](Importar-planilhas.md), e só com uma chave que tenha a permissão *Importar planilhas pelo assistente* (ou *Importar salários pelo assistente*, para o salário dos colaboradores). Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
+As consultas só **leem**. Só gravam a de [importar planilhas](Importar-planilhas.md), com uma chave que tenha a permissão *Importar planilhas pelo assistente* (ou *Importar salários pelo assistente*, para o salário dos colaboradores), e a de enviar arquivos, com a permissão *Enviar arquivos para importar pelo assistente*. Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
 
 ## Antes de começar: dados pessoais
 
@@ -21,6 +21,10 @@ O que o assistente lê vai para o provedor da IA (Microsoft, Anthropic, OpenAI..
 ## Importar planilhas
 
 Com a permissão *Importar planilhas pelo assistente* na chave, o Claude também leva planilhas do RH para o Símix Ponto (pedidos de adiantamento, campos do colaborador no mês, marcações; com a permissão *Importar salários pelo assistente*, também o salário-base): ele simula, mostra os erros de cada linha e só grava com o seu ok. O passo a passo está em [Importar planilhas com o Claude](Importar-planilhas.md).
+
+## Enviar arquivos
+
+Com a permissão *Enviar arquivos para importar pelo assistente* na chave, o Claude manda um arquivo inteiro com a ferramenta `arquivo_importar`: o AFD do relógio ou a planilha ou o texto de um layout de integração. O Símix Ponto escolhe a importação como o [tipo Automático do agente](Arquivos-agente.md): o AFD pelo conteúdo e o layout pelo *Arquivo de origem*. Por padrão ele só **simula** e devolve o resumo e, linha a linha, o que seria inserido, alterado ou deixado de fora, com os valores lidos do arquivo; o Claude só grava, com `simular` desligado, depois do seu ok. Sem layout que reconheça o arquivo, a resposta traz os layouts para escolher. Layout que grava salários pede também a permissão *Importar salários pelo assistente*.
 
 ## O que você precisa
 
