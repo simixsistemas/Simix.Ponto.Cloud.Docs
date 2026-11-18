@@ -1,183 +1,4 @@
 
-## Assistente de IA ✨
-
-Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cadastros e lançamentos, que só são gravados depois da confirmação de quem pediu.
-
-- Botão **Assistente** na barra do topo, que abre uma janela flutuante no canto da tela. A conversa continua ao trocar de tela, a janela minimiza e, no celular, ocupa a tela inteira. Não aparece para quem é só colaborador.
-- As respostas aparecem enquanto são escritas, trazem links para as telas do sistema e consultam a ajuda do sistema (roteiros, explicação dos totais, menu, tutoriais, novidades, dicas dos campos e a documentação) para responder "como faço…".
-- **Cadastros pelo chat**: cargos, departamentos, setores, estabelecimentos, feriados e tags. Pedir vários na mesma mensagem ("cadastre os cargos A, B e C") gera um único cartão, com uma linha por registro; dá para desmarcar itens antes de confirmar, e depois cada linha mostra se foi gravada, desmarcada ou recusada, com o motivo.
-- **Alterações em lote**: um a um ("troque o CBO dos cargos Dev e Teste") ou por critério ("todos os cargos com Motorista no nome"), com o valor atual riscado e o novo em destaque. Registro que já está com o valor pedido fica de fora, e o que foi alterado por outra pessoa depois da proposta não é sobrescrito. Até 200 itens por proposta.
-- O Assistente não exclui registros: explica que a exclusão é feita na tela do cadastro e oferece inativar.
-- **Manutenção em lote**: o Assistente entende o pedido (quem, qual afastamento ou alteração, qual período), acha os cadastros pelo nome e mostra um cartão com o resumo e a prévia. O botão **Abrir na manutenção em lote** abre a tela já preenchida, com o aviso "Preenchido pelo assistente", e nada é gravado até a pessoa clicar em Aplicar. Quando falta informação, ele pergunta; lançar para todos só com pedido explícito. Ele sabe a data de hoje, para pedidos como "nos próximos 30 dias", e avisa os dias que já têm afastamento e ficam de fora.
-- **Atalhos pelo chat**: "adiciona um atalho para a tela de Colaboradores no grupo Cadastros" gera o atalho num cartão, gravado na estrela de Favoritos quando a pessoa confirma.
-- O Assistente também conhece os dados de locais de trabalho para montar gráficos e listas nos dashboards.
-- Menu da janela com Nova conversa, Conversas anteriores, Enviar feedback e **Chamar a equipe Símix nesta conversa**: a equipe Símix responde direto na janela, com o nome de quem respondeu e aviso no sino. Enquanto ela atende, o Assistente fica pausado naquela conversa; ao devolver ("Voltar ao assistente"), ele retoma sabendo o que o suporte orientou.
-- O Assistente vem ligado para todas as empresas, junto com o Símix Ponto no Teams (é o mesmo recurso), e pode ser desligado por empresa. O Símix Ponto no Teams passa a usar a mesma ajuda do Assistente.
-- Para a equipe Símix: painel **Assistente** no admin, com as conversas de todos os clientes, os cards "Aguardando o suporte", "Em atendimento" e "Com falha", filtros por cliente, período e texto, e cada conversa com as propostas e o que aconteceu com cada uma.
-- **Notas pelo chat**: o Assistente cadastra e altera notas do mural com todas as opções (título, texto, cor, categoria, período, horário, onde aparece e para quem vale). Aviso, recado, mensagem e comunicado são entendidos como nota. Com só a mensagem, ele já sugere título, cor, período e onde aparece, e mostra tudo no cartão para confirmar ou pedir mudança.
-- **Quitação de banco de horas**: o Assistente prepara a quitação (saldo, colaboradores, integral, até X horas ou percentual), mostra a prévia num cartão e abre a consulta de BH com tudo preenchido; quem confirma é o usuário, clicando em Quitar.
-- **Inconsistências**: quando o usuário diz que uma inconsistência está errada (ou pergunta por que ela apareceu), o Assistente consulta o dia do colaborador e a regra que a gerou — o que ela avalia, os limites, o tipo de dia, os filtros e se ignora afastamento — e explica com os números se a regra está certa, sem concordar só porque o usuário disse. Se o dia tem afastamento e a regra não está com "Ignorar com afastamento", ele sugere marcar a opção e mostra o botão **Abrir a regra** (ele não altera a regra; depois de marcar, é preciso recalcular o período). Disponível para quem acessa a Manutenção.
-- Para explicar um recurso, o Assistente mostra o card da novidade na conversa, com "Me mostre" e "Passo a passo", e faz perguntas com opções para clicar (como a cor ou onde a nota aparece). O cartão de confirmação mostra um campo por linha, com a amostra da cor.
-- Novo card **Assistente de IA** em Novidades, com exemplos do que pedir. O **Me mostre** apresenta o botão, abre a janela e explica o que pedir, sem enviar mensagem; o **Quero usar** abre o Início com a janela do Assistente aberta.
-- O botão do Assistente na barra do topo passa a aparecer só para usuários da Símix, e a janela vazia mostra "Pergunte sobre o Símix Ponto ou peça algo.".
-- A ajuda consultada pelo Assistente deixa de fora as páginas de Tabelas (dicionário do banco) e do PcPontoWeb, que apareciam nas respostas. Os assistentes de IA da equipe Símix (Implantador, Suporte, Dev e Ajuda) passam a usar o mesmo modelo do Assistente.
-- **Novos pedidos**: importar AFD (o Assistente mostra a tela com o botão da demonstração guiada) e importar contracheques (abre o Importar em lote já na categoria e na competência); criar um filtro salvo por cidade dos estabelecimentos; criar uma visão da lista de Colaboradores com a coluna pedida — e, se a coluna não existe, oferecer a sugestão de melhoria já preenchida.
-- **Aplicativo**: liga ou desliga o registro pelo app, libera o app só para os colaboradores de uma filial e cria os botões Presencial, Home office e Visita com o local de cada um.
-- **Perguntas sobre a equipe**: qual setor, departamento, cargo ou colaborador fez mais extras, faltas ou saldo no mês, com o link para a Manutenção já filtrada; quem faz home office e em quais dias; por que uma marcação não entrou no cartão; quem mais desrespeita a interjornada e o intervalo.
-- **Rotina do gestor**: quem não registrou hoje, relógios sem comunicar, cadastros incompletos, pendências do colaborador (aprovar ou recusar em lote, com confirmação), espelhos não assinados, o que falta para fechar o mês, quem entra de férias ou volta de afastamento e o saldo do banco de horas.
-- **Em lote**: home office em certos dias da semana para um setor, com o antes e o depois de cada colaborador; e, no plano de escala, mudar o local previsto, a observação ou o horário de muitos dias de uma vez, com os dias circulados na grade.
-- **Manutenção**: o Assistente abre a manutenção do colaborador, explica qualquer total ou campo com o valor dele no mês e esconde ou mostra totais no layout de totais do horário. A solução de problemas da manutenção oferece reimportar o dia depois de corrigir o "Bloquear registro" do afastamento.
-- **Prêmios**: explica por que o colaborador ganhou ou perdeu o prêmio no mês, com o valor realizado e o que a regra exigia; mostra as regras com cada condição; e cadastra ou altera regras de prêmio com o cartão de antes → depois.
-- **Onde fica o campo**: responde onde se configura cada coisa, com um link que abre a tela com o campo destacado, só para telas que a pessoa pode abrir.
-- **Calculadora** de horas dentro da resposta, e cada resposta mostra as ferramentas que o Assistente usou. A janela pode ser arrastada pelo título e redimensionada pelas bordas, e a posição fica salva.
-- **Avaliação das respostas**: Péssimo, Ruim, Bom ou Excelente, com comentário opcional, que aparece para a equipe Símix no painel do Assistente. A resposta da equipe Símix chega na janela em até 10 segundos, mesmo quando a pessoa não chamou o suporte. O texto "Avalie essa resposta" aparece antes dos ícones.
-- **Cadastro do colaborador**: o Assistente consulta admissão, demissão, horário e lotação do mês em vez de perguntar — "abonar as faltas desde a admissão" já usa a data de admissão e lança o abono só nos dias previstos sem marcação. Para trocar o horário padrão, mostra o horário atual e um cartão que abre o cadastro com o campo Horário destacado. Em problema de um colaborador citado, confere o cadastro, as inconsistências e as marcações antes de pedir dados.
-- O Assistente lembra os cartões que mostrou na conversa e o que a pessoa fez com eles, e não diz mais que "o cartão não apareceu".
-- **Desbloqueio do REP Control iD**: pede o serial e a senha e responde com o código e o aviso da Control iD; quando é preciso trocar a bateria, orienta falar com o suporte Símix.
-- **O que posso pedir?**, no texto inicial e no menu "...": exemplos de pedido por assunto, com busca e só com o que a pessoa pode pedir, inclusive a situação dos módulos e a implantação de cada um. O clique põe o exemplo na caixa de texto, para trocar nomes e datas antes de enviar.
-- **Implantação pelo chat**: "o que falta implantar?" responde a situação de cada módulo com o caminho para configurar, e pedidos como "R$ 5,00, 2 viagens por dia", "escritório com cerca de 200 metros", "12x36 das 7 às 19 para a portaria" ou "R$ 150 de assiduidade" abrem o assistente de implantação já com o modelo e os valores.
-- Mensagem só com o assunto ("coletores") mostra as telas sobre ele, com o link, e pergunta o que a pessoa quer fazer. Horas de um afastamento vêm com a sugestão de marcar o Totalizar, e o layout de totais é criado pelo cartão quando o quadro de horário ainda não tem.
-- Escala para o plano inteiro ("passar as equipes de segunda a sábado para 5x2") agrupa as pessoas pela semana que fazem e propõe a mudança por grupo; o "Abrir a grade" abre já com a conversa e o cartão. Pergunta que chega ao limite de consultas fecha com o que foi encontrado e pede "continue".
-- Aberto na Manutenção ou nas Escalas, o Assistente atende só o que é daquela tela, mais a calculadora e a ajuda; para outro assunto, explica como fazer e sugere abrir o Assistente em outra tela.
-- Toda resposta pode ser avaliada, inclusive a que só mostra um cartão e a interrompida pelo Parar. A última resposta pede a avaliação em destaque, com as quatro notas escritas, e depois da nota vem uma pergunta conforme ela (o que deu errado, o que faltou, o que foi bom). No painel do admin, os cards "Avaliadas" e "Avaliação ruim" filtram a lista, e cada conversa mostra quantas respostas foram bem ou mal avaliadas.
-
-- Pedido de cadastro de cargo com o cartão de confirmação:
-![image](imagens/cloud_pr3048_imagem1.png)
-- Depois do Confirmar, o cartão mostra o cargo criado e o link para abrir:
-![image](imagens/cloud_pr3048_imagem2.png)
-- Pedido de três cargos num cartão só, com um desmarcado:
-![image](imagens/cloud_pr3155_imagem1.png)
-- Depois de confirmar, cada linha mostra o desfecho:
-![image](imagens/cloud_pr3155_imagem2.png)
-- Alteração do CBO de dois cargos, com o valor atual e o novo:
-![image](imagens/cloud_pr3155_imagem3.png)
-- Os dois cargos alterados:
-![image](imagens/cloud_pr3155_imagem4.png)
-- Cartão do aviso prévio de 2 horas por dia nos próximos 30 dias, com o dia que já tinha afastamento:
-![image](imagens/cloud_pr3200_imagem1.png)
-- A manutenção em lote aberta pelo cartão, já preenchida:
-![image](imagens/cloud_pr3200_imagem2.png)
-- Cartão das férias para o departamento Administrativo:
-![image](imagens/cloud_pr3200_imagem3.png)
-- A tela aberta com o departamento e o afastamento de férias:
-![image](imagens/cloud_pr3200_imagem4.png)
-- Atalho proposto pelo chat, confirmado no cartão e já na estrela:
-![image](imagens/cloud_pr3145_imagem7.png)
-- Painel do Assistente no admin, com a conversa aberta e as respostas da equipe Símix:
-![image](imagens/cloud_pr3192_imagem1.png)
-- Janela do Assistente em atendimento pela equipe Símix:
-![image](imagens/cloud_pr3192_imagem2.png)
-- Proposta de nota feita pelo Assistente, com período, rotinas e para quem vale:
-![image](imagens/cloud_pr3243_imagem3.png)
-- Card da novidade na conversa, com Me mostre e Passo a passo:
-![image](imagens/cloud_pr3243_imagem4.png)
-- Pergunta do Assistente com as opções de cor:
-![image](imagens/cloud_pr3243_imagem5.png)
-- Quitação de BH aberta pelo Assistente, com o período, os colaboradores e o diálogo já preenchidos (até 04:30):
-![image](imagens/cloud_pr3239_imagem5.png)
-- Dia sem afastamento: 13 minutos de atraso numa regra a partir de 10 minutos; o Assistente mostra que a regra está certa:
-![image](imagens/cloud_pr3237_imagem1.png)
-- Dia com atestado e a regra sem "Ignorar com afastamento": a explicação de por que a inconsistência apareceu:
-![image](imagens/cloud_pr3237_imagem2.png)
-- A sugestão de marcar a opção na regra e recalcular o período:
-![image](imagens/cloud_pr3237_imagem3.png)
-- Cartão com o resumo e o botão Abrir a regra:
-![image](imagens/cloud_pr3237_imagem4.png)
-- O cadastro da regra aberto pelo botão, com a opção "Ignorar com afastamento":
-![image](imagens/cloud_pr3237_imagem5.png)
-- Card Assistente de IA em Novidades:
-![image](imagens/cloud_pr3250_imagem1.png)
-- Me mostre, no passo da caixa de texto:
-![image](imagens/cloud_pr3250_imagem2.png)
-- Cada resposta mostra as ferramentas usadas, e o cartão de confirmação tem os botões à direita:
-![image](imagens/cloud_pr3260_imagem1.png)
-- Totais do ponto na resposta:
-![image](imagens/cloud_pr3260_imagem2.png)
-- Importar AFD com a demonstração guiada:
-![image](imagens/cloud_pr3260_imagem3.png)
-- Contracheques: o Importar em lote já preenchido:
-![image](imagens/cloud_pr3260_imagem4.png)
-- Filtro salvo por cidade:
-![image](imagens/cloud_pr3260_imagem5.png)
-- Lista de Colaboradores aberta na visão nova com o departamento:
-![image](imagens/cloud_pr3260_imagem6.png)
-- Coluna que não existe: a sugestão de melhoria:
-![image](imagens/cloud_pr3260_imagem7.png)
-- Desligar o registro pelo app:
-![image](imagens/cloud_pr3260_imagem8.png)
-- App liberado só para uma filial:
-![image](imagens/cloud_pr3260_imagem9.png)
-- Botões Presencial, Home office e Visita:
-![image](imagens/cloud_pr3260_imagem10.png)
-- Setor com mais horas extras no mês:
-![image](imagens/cloud_pr3260_imagem11.png)
-- Home office em dois dias da semana para um setor:
-![image](imagens/cloud_pr3260_imagem12.png)
-- Marcações bloqueadas pelo afastamento, na manutenção:
-![image](imagens/cloud_pr3260_imagem13.png)
-- Solução de problemas oferecendo reimportar depois de corrigir o afastamento:
-![image](imagens/cloud_pr3260_imagem14.png)
-- Explicação de um total:
-![image](imagens/cloud_pr3260_imagem15.png)
-- Layout de totais:
-![image](imagens/cloud_pr3260_imagem16.png)
-- Calculadora na resposta:
-![image](imagens/cloud_pr3260_imagem17.png)
-- Janela movida e redimensionada:
-![image](imagens/cloud_pr3260_imagem18.png)
-- Escala em lote: a proposta de home office para o setor:
-![image](imagens/cloud_pr3260_imagem19.png)
-- Os dias circulados na grade do plano:
-![image](imagens/cloud_pr3260_imagem20.png)
-- O que falta para fechar o mês:
-![image](imagens/cloud_pr3260_imagem21.png)
-- Onde fica o campo: a resposta com o link que abre a tela com o campo destacado:
-![image](imagens/cloud_pr3263_imagem3.jpg)
-- Regra de prêmio alterada pelo Assistente, com o antes → depois:
-![image](imagens/cloud_pr3310_imagem1.png)
-- Depois de confirmar:
-![image](imagens/cloud_pr3310_imagem2.png)
-- Por que o colaborador não ganhou o prêmio no mês:
-![image](imagens/cloud_pr3310_imagem4.png)
-- Avaliação da resposta e resposta da equipe Símix entrando na janela sem reabrir a conversa:
-![image](imagens/cloud_pr3308_imagem1.gif)
-- Depois de avaliar, a carinha escolhida fica destacada:
-![image](imagens/cloud_pr3308_imagem2.png)
-- No painel do suporte, a avaliação e o comentário embaixo da resposta:
-![image](imagens/cloud_pr3308_imagem3.png)
-- Pedido de trocar o horário padrão: o horário atual e o cartão que abre o cadastro:
-![image](imagens/cloud_pr3344_imagem1.png)
-- O cadastro do colaborador aberto com o campo Horário destacado:
-![image](imagens/cloud_pr3344_imagem2.png)
-- O código de desbloqueio do REP no cartão do Assistente:
-![image](imagens/cloud_pr3346_imagem2.png)
-- O link "O que posso pedir?" no texto inicial da janela:
-![image](imagens/cloud_pr3387_imagem1.png)
-- Os exemplos de pedido por assunto:
-![image](imagens/cloud_pr3387_imagem2.png)
-- "coletores": as telas sobre o assunto, cada uma com o link:
-![image](imagens/cloud_pr3387_imagem3.png)
-- Totalizar no afastamento, proposto pelo Assistente:
-![image](imagens/cloud_pr3387_imagem4.png)
-- Quadro sem layout de totais: o cartão cria o layout só para ele:
-![image](imagens/cloud_pr3387_imagem5.png)
-- O layout de totais gravado:
-![image](imagens/cloud_pr3387_imagem6.png)
-- A situação dos módulos, com o caminho para configurar:
-![image](imagens/cloud_pr3278_imagem4.png)
-- Pelo chat: o cartão do prêmio de pontualidade com o valor e as condições em frase; "Abrir o assistente" leva ao passo 2 já preenchido:
-![image](imagens/cloud_pr3278_imagem34.png)
-- Avaliação em destaque na última resposta:
-![image](imagens/cloud_pr3429_imagem9.png)
-- Resposta com cartão de proposta também avaliada:
-![image](imagens/cloud_pr3429_imagem10.png)
-- Depois da nota, a pergunta muda conforme ela:
-![image](imagens/cloud_pr3429_imagem11.png)
-- Resposta interrompida pelo Parar, já avaliada:
-![image](imagens/cloud_pr3429_imagem12.png)
-- Painel do Assistente no admin filtrado por "Avaliadas":
-![image](imagens/cloud_pr3429_imagem13.png)
-
 ## Uniformes e EPIs ✨
 
 Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, trocas, devoluções, estoque e os CAs dos equipamentos.
@@ -288,49 +109,6 @@ Os processos — rotinas que alteram os cartões conforme regras que você defin
 - Processo aplicado no cartão aberto: o dia ganha o ícone de home office e fica para salvar:
 ![image](imagens/cloud_pr3029_imagem5.png)
 
-## Barra do topo, favoritos e foto do usuário ✨
-
-A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
-
-- Os atalhos ao lado do logo ficaram menores e sem contorno próprio; Gestão ganhou o ícone de casa e entrou o atalho do **Calendário**.
-- **Estrela de Favoritos** ao lado dos atalhos, com os atalhos de um grupo (telas, comandos, registros, dashboards e widgets). Na primeira vez ela pede o grupo, ou cria um, e a escolha fica salva. Pela estrela dá para criar, editar e excluir atalhos e renomear, compartilhar e excluir grupos.
-- **Foto do usuário** no avatar do topo. Quem já tinha foto no cadastro de colaborador recebe essa foto uma vez; sem foto, continua a inicial do nome. A troca é feita em "Alterar foto" no menu do avatar ou em "Sua foto" em Minha conta, por arquivo ou pela webcam — e vale só para o usuário, sem mexer na foto do cadastro.
-- O painel do botão de configurações virou **Preferências**, mais estreito, com ícone e explicação em cada opção. A engrenagem ao lado do som abre a tela de alertas, e com Ofuscar dados ligado a foto do avatar também fica borrada.
-- O item "Configurações" do avatar virou **Minha conta** (senha e foto); "Configurações" fica só para a aba do sistema.
-- Voltou a escolha da forma de exibir o menu (Normal, Compacto ou Escondido), agora salva no usuário e valendo em qualquer navegador. Os botões do menu mostram a descrição ao parar o mouse em cima, e botão com cadeado mostra o motivo.
-- Todos os ícones da barra mostram o nome ao passar o mouse (a pesquisa mostra também o atalho Ctrl+Espaço), e os botões de VTs e VRs ganharam ícones próprios.
-- No celular, a borda das faixas que rolam para o lado esmaece quando há mais itens.
-- O ícone do período não muda mais de cor fora do mês atual: o aviso fica só na dica. Os painéis do período, do filtro e das preferências abrem logo abaixo do botão.
-- A forma de exibir o menu perde a opção Compacto; quem usava volta ao Normal.
-- **Recentes** sem a lixeira e sem Copiar, Colar e Remover todos: a estrela (também na pesquisa) leva a tela ao grupo Favoritos da estrela da barra do topo, e os botões fixados ao lado do menu saíram. O botão de voltar à gestão no portal do colaborador ganha o visual dos botões da barra.
-
-- Antes: quatro atalhos grandes e o botão de tela cheia ao lado do sino:
-![image](imagens/cloud_pr3028_imagem1.png)
-- Depois: atalhos menores logo depois do logo e avatar com foto:
-![image](imagens/cloud_pr3028_imagem2.png)
-- A estrela de Favoritos depois do Calendário:
-![image](imagens/cloud_pr3028_imagem3.png)
-- Na primeira vez a estrela pede o grupo de atalhos, ou cria um novo:
-![image](imagens/cloud_pr3028_imagem4.png)
-- Os atalhos do grupo escolhido; editar e excluir aparecem ao passar o mouse:
-![image](imagens/cloud_pr3028_imagem5.png)
-- Menu do avatar com a foto, Alterar foto e Minha conta:
-![image](imagens/cloud_pr3028_imagem6.png)
-- Troca da foto por arquivo ou webcam, só no usuário:
-![image](imagens/cloud_pr3028_imagem7.png)
-- Seção "Sua foto" em Minha conta:
-![image](imagens/cloud_pr3028_imagem8.png)
-- Antes: painel largo e opções sem explicação:
-![image](imagens/cloud_pr3028_imagem9.png)
-- Depois: Preferências com ícone e descrição em cada opção:
-![image](imagens/cloud_pr3028_imagem10.png)
-- A escolha da forma de exibir o menu de volta, salva no usuário:
-![image](imagens/cloud_pr3028_imagem11.png)
-- Descrição do botão ao parar o mouse em cima:
-![image](imagens/cloud_pr3028_imagem12.png)
-- No celular, as abas e os botões do menu esmaecem na borda:
-![image](imagens/cloud_pr3028_imagem13.png)
-
 ## Atalhos no painel inicial ✨
 
 Cada usuário monta grupos de atalhos para o que usa todo dia.
@@ -410,6 +188,8 @@ Novo módulo para gerenciar os pedidos de adiantamento salarial do mês, do pedi
 - O cadastro do colaborador ganha o campo **Adicionais fixos**, que pode entrar na base do adiantamento.
 - **Assistente de implantação**, na página de Módulos, em 8 passos: como funciona (valor à escolha até 40%, 40% fixo, proporcional ao trabalhado ou com convênio, cada um com o exemplo de um salário), o calendário com as datas do mês e os feriados, quem pede e quem fica de fora, quem está sem salário no cadastro, o envio à folha com a linha de exemplo, os descontos do convênio e conferir e ligar, com a prévia do mês — quantos podem pedir hoje, quem fica bloqueado e por quê e o que um colaborador veria no app —, sem gravar nada. No fim, dá para abrir o mês na hora. Pedindo ao Assistente ("até 40%, pagando no dia 20"), o assistente abre já com o modelo e o calendário.
 - As regras não aceitam mais o envio à folha antes do fim dos pedidos.
+- **Demonstrações guiadas** "Adiantamento salarial: o caminho do RH" (painel do mês, análise dos pedidos, regras, descontos e envio à folha) e "Pedir meu adiantamento", no portal do colaborador. O botão Treinamentos das telas do adiantamento traz também o guia do RH e o do colaborador, e a Ajuda › Documentação abre o guia do módulo da tela aberta.
+- O salário-base e os adicionais fixos podem ser importados da planilha do RH pelo Claude, antes dos pedidos, para evitar os bloqueios por "Sem salário no cadastro". O feriado só de alguns estabelecimentos não conta como dia não útil no calendário da empresa toda.
 
 - Painel do RH no mês, com as etapas, os totais e os pedidos:
 
@@ -447,6 +227,20 @@ Novo módulo para gerenciar os pedidos de adiantamento salarial do mês, do pedi
 ![image](imagens/cloud_pr3278_imagem21.jpg)
 - Conferir e ligar: a prévia do mês e o que um colaborador vê no app:
 ![image](imagens/cloud_pr3278_imagem22.jpg)
+- Painel do mês com os pedidos importados, antes de importar os salários:
+![image](imagens/cloud_pr3438_imagem1.png)
+- Treinamentos do painel do adiantamento, com o guia do RH e a demonstração guiada:
+![image](imagens/cloud_pr3438_imagem3.png)
+- Demonstração do RH no passo da análise dos pedidos:
+![image](imagens/cloud_pr3438_imagem4.png)
+- Demonstração do RH nas regras:
+![image](imagens/cloud_pr3438_imagem5.png)
+- Treinamentos no portal do colaborador:
+![image](imagens/cloud_pr3438_imagem6.png)
+- Demonstração do colaborador no valor disponível:
+![image](imagens/cloud_pr3438_imagem7.png)
+- A Ajuda numa tela do adiantamento abre o guia do módulo:
+![image](imagens/cloud_pr3438_imagem8.png)
 
 ## Calculadora ✨
 
