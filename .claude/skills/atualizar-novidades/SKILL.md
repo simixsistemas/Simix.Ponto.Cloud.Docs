@@ -14,6 +14,7 @@ As regras de escrita são as da skill **formatar-novidades** (`.claude/skills/fo
 - **Novidades.md**: um bloco por leva, `# dd/MM/aaaa` (data de hoje) no topo do arquivo, o mais novo primeiro. Os blocos anteriores não são tocados.
 - **Beta.md**: seções `## Recurso ✨`, sem data, com os recursos que ainda não foram anunciados aos clientes. Melhoria de um recurso que está lá entra na seção dele.
 - **Aplicativo.md**: um bloco por versão do app (`# dd/MM/aaaa` e a linha `Versão **x.y.zz** do aplicativo (Android, iOS e Windows).`). No Novidades, a seção `## Aplicativo 📱` resume a versão em uma linha e linka `[Novidades do aplicativo](Aplicativo.md)`.
+- **Suporte-interno.md**: o que é só da equipe Símix (painel admin, suporte, implantação, migração, ferramentas internas). Um bloco por leva, com a mesma data `# dd/MM/aaaa` do bloco do Novidades, no topo do arquivo; dentro, uma linha por item e os prints logo abaixo. O Novidades não tem mais a seção "Para a equipe Símix". Como o Beta.md, a página não entra no menu (`docs-nav.json`).
 - O arquivo mensal `AAAA/AAAA-MM.md` não é deste fluxo (ver formatar-novidades).
 
 ## Passo a passo
@@ -41,7 +42,7 @@ bash .claude/skills/atualizar-novidades/scripts/despejo.sh listar 2026-10-28T00:
 O `prs.tsv` traz, por PR, a base, se já está no `main` e se algum print dele já aparece nas notas. O script já tira os merges de liberação (`dev -> main`). Comente com `#` o que não entra:
 
 - **`nas_notas = sim`**: já documentado.
-- **PR anterior ao corte sem print**: não deixa rastro de imagem. Procure o assunto no bloco anterior (e no Beta) antes de decidir. Os internos costumam ter ficado de fora e podem entrar agora em "Para a equipe Símix".
+- **PR anterior ao corte sem print**: não deixa rastro de imagem. Procure o assunto no bloco anterior (e no Beta) antes de decidir. Os internos costumam ter ficado de fora e podem entrar agora no Suporte-interno.md.
 - **Base diferente de `dev`** (PR para o branch de outro PR): o conteúdo pode não ter chegado à `dev`, e é comum vir depois um PR que o leva. Em geral, fica de fora.
 - **`em_main = não`**: mesclado na `dev` depois da última liberação. Mantenha nas notas, mas avise o usuário no fim. Só o Cloud e o App liberam pelo `main`. Nos outros repositórios o `main` fica parado e o código chega ao cliente junto com o Cloud, por isso aparece `-`.
 - **Duplicada de outro PR**: o PR da RX ou do Calc que repete o print do PR do Cloud aparece sem `nas_notas` mesmo já documentado, porque a cópia não foi usada. Confira pelo assunto.
@@ -65,8 +66,8 @@ Leia o `despejo.md` inteiro, em partes. É dele que sai tudo, então não escrev
 - **Recurso que já tem seção no Beta.md** → na seção dele, no Beta.
 - **Módulo novo que vem desligado por cliente**, ou **recurso do Beta que parece lançado** (página pública em `pt-BR/`, card de novidade com demonstração guiada, "ligado para todos") → **pergunte ao usuário** antes de escrever, de preferência com AskUserQuestion e as opções concretas. A resposta muda onde seções inteiras vão. Lançar significa mover a seção do Beta, com as imagens, para o bloco novo do Novidades.
 - **PR do Simix.Ponto.App** → bloco novo no Aplicativo.md com a versão que o `listar` mostra (a do `main`), e a seção `## Aplicativo 📱` no Novidades. Se a versão não mudou desde o último bloco, os PRs ainda não saíram: avise e pergunte.
-- **Painel admin, suporte, implantação, migração, ferramentas da equipe** → `## Para a equipe Símix`, uma linha cada, com os prints logo abaixo.
-- **Só técnico, sem efeito para ninguém** (teste de CI, deploy, renomear tabela) → sem texto. Se tiver print, ele vai para "Para a equipe Símix" com uma linha.
+- **Painel admin, suporte, implantação, migração, ferramentas da equipe** → bloco da leva no **Suporte-interno.md**, uma linha cada, com os prints logo abaixo. Vale também para o item do painel admin dentro de um recurso do cliente (por exemplo, o painel do Assistente no admin): ele e os prints dele vão para o Suporte interno.
+- **Só técnico, sem efeito para ninguém** (teste de CI, deploy, renomear tabela) → sem texto. Se tiver print, ele vai para o Suporte-interno.md com uma linha.
 - **O mesmo recurso em vários repositórios** (Cloud + Calc + RX + Client + App) → um item só, agrupado pelo recurso.
 - **PRs que refazem o mesmo assunto** (um PR muda o que o anterior fez) → descreva o estado final. Os prints de cada etapa continuam, com a legenda dizendo o que mostram.
 - **PR misto** (parte em beta, parte geral, como uma melhoria que traz uma função do Assistente) → divida: cada parte e os prints dela no seu destino.
@@ -81,14 +82,18 @@ Estrutura do bloco do Novidades, nesta ordem:
 4. Itens menores agrupados por assunto em `##` (e `###` quando ajuda), por exemplo: Escalas, Coletores e registros, Manutenção do cartão, Banco de horas e vales, Cálculo, Integrações por arquivo, Tarefas, cálculo e folha.
 5. `## Aplicativo 📱`, quando houver versão nova.
 6. `## Permissões e segurança`, quando houver.
-7. `## Para a equipe Símix`.
-8. `## Outras melhorias e correções`, sempre por último.
+7. `## Outras melhorias e correções`, sempre por último.
 
-Imagens: depois dos bullets da seção, cada uma com a legenda numa linha própria, assim:
+Imagens: depois dos bullets da seção, cada uma com a legenda numa linha própria e a imagem num parágrafo próprio, com uma linha em branco antes e recuada em 2 espaços. Sem isso, a imagem pequena fica ao lado da legenda em vez de embaixo:
 
 ```markdown
 - Previsão do Caixa: o pico de pessoas de cada dia e a curva da meia hora:
-![image](imagens/cloud_pr3217_imagem1.png)
+
+  ![image](imagens/cloud_pr3217_imagem1.png)
+
+- Volumes do mês depois da importação:
+
+  ![image](imagens/cloud_pr3217_imagem2.png)
 ```
 
 Cuidados que os PRs costumam exigir:
@@ -117,7 +122,8 @@ bash .claude/skills/atualizar-novidades/scripts/conferir.sh <pasta>
 ```
 
 O `conferir` só termina "Tudo certo." quando:
-- toda imagem do despejo (menos as duplicadas) está no bloco novo, no Aplicativo ou no Beta;
+- toda imagem do despejo (menos as duplicadas) está no bloco novo do Novidades, do Aplicativo ou do Suporte interno, ou no Beta;
+- nenhuma imagem ficou colada na linha de cima (ela precisa de uma linha em branco antes);
 - toda imagem e todo link `.md` citados existem;
 - o texto não tem referência de PR, link do GitHub, resto de template nem nome que esteja em `references/termos-sensiveis.txt`.
 
@@ -140,5 +146,6 @@ Adiciona notas de dd/MM/aaaa do Cloud e relacionados
 - Novidades.md: bloco de dd/MM com os PRs do Cloud, Calc, … mesclados desde as notas de dd/MM (destaques)
 - Beta.md: …
 - Aplicativo.md: versão x.y.zz (…)
+- Suporte-interno.md: bloco de dd/MM com o que é da equipe Símix
 - Imagens das novidades
 ```

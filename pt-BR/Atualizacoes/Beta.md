@@ -15,49 +15,92 @@ Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, 
 - Configuração do módulo (termo com valor, CA vencido, grades, dias de aviso, formas de assinatura) e carga inicial por planilha dos itens que cada colaborador já usa e do saldo do estoque.
 
 - Nova entrega com o kit da lotação já montado:
-![image](imagens/cloud_pr3146_imagem1.png)
+
+  ![image](imagens/cloud_pr3146_imagem1.png)
+
 - Saldo da central depois de duas entradas de compra, com custo médio e valor:
-![image](imagens/cloud_pr3158_imagem1.png)
+
+  ![image](imagens/cloud_pr3158_imagem1.png)
+
 - Entrega pedindo mais do que há no estoque: a linha fica em vermelho e a entrega não sai:
-![image](imagens/cloud_pr3158_imagem2.png)
+
+  ![image](imagens/cloud_pr3158_imagem2.png)
+
 - Inventário: só a linha com contagem diferente vira ajuste:
-![image](imagens/cloud_pr3158_imagem3.png)
+
+  ![image](imagens/cloud_pr3158_imagem3.png)
+
 - Pedido de admissão já com o kit:
-![image](imagens/cloud_pr3160_imagem1.png)
+
+  ![image](imagens/cloud_pr3160_imagem1.png)
+
 - Separação com o saldo de cada linha:
-![image](imagens/cloud_pr3160_imagem2.png)
+
+  ![image](imagens/cloud_pr3160_imagem2.png)
+
 - Ao receber, a entrega é registrada e o termo abre para a assinatura:
-![image](imagens/cloud_pr3160_imagem3.png)
+
+  ![image](imagens/cloud_pr3160_imagem3.png)
+
 - Lista da loja com um pedido recebido e um recusado:
-![image](imagens/cloud_pr3160_imagem4.png)
+
+  ![image](imagens/cloud_pr3160_imagem4.png)
+
 - Painel com as pendências e a data da base de CAs:
-![image](imagens/cloud_pr3161_imagem1.png)
+
+  ![image](imagens/cloud_pr3161_imagem1.png)
+
 - Itens em uso com o prazo de troca e a marca de pedido aberto:
-![image](imagens/cloud_pr3161_imagem2.png)
+
+  ![image](imagens/cloud_pr3161_imagem2.png)
+
 - Reposição em lote: um pedido à central para cada colaborador:
-![image](imagens/cloud_pr3161_imagem3.png)
+
+  ![image](imagens/cloud_pr3161_imagem3.png)
+
 - CA conferido na base do MTE, com validade, fabricante e modelo:
-![image](imagens/cloud_pr3161_imagem4.png)
+
+  ![image](imagens/cloud_pr3161_imagem4.png)
+
 - Dias de aviso de troca e de CA na configuração:
-![image](imagens/cloud_pr3161_imagem5.png)
+
+  ![image](imagens/cloud_pr3161_imagem5.png)
+
 - Base de CAs no painel admin:
-![image](imagens/cloud_pr3161_imagem6.png)
+
+  ![image](imagens/cloud_pr3161_imagem6.png)
+
 - Portal do colaborador: termo a assinar, item em uso e o pedido aguardando aprovação:
-![image](imagens/cloud_pr3165_imagem1.png)
+
+  ![image](imagens/cloud_pr3165_imagem1.png)
+
 - Lembrete depois do registro de ponto:
-![image](imagens/cloud_pr3165_imagem2.png)
+
+  ![image](imagens/cloud_pr3165_imagem2.png)
+
 - Pedido do colaborador aguardando a aprovação da loja:
-![image](imagens/cloud_pr3165_imagem3.png)
+
+  ![image](imagens/cloud_pr3165_imagem3.png)
+
 - Sem pedido à central: a entrega abre preenchida com o pedido:
-![image](imagens/cloud_pr3165_imagem4.png)
+
+  ![image](imagens/cloud_pr3165_imagem4.png)
+
 - Atendimento com os termos a assinar, o que falta do kit e o que está em uso:
-![image](imagens/cloud_pr3165_imagem5.png)
+
+  ![image](imagens/cloud_pr3165_imagem5.png)
+
 - Assinatura do termo: desenho, reconhecimento facial ou senha de registro:
-![image](imagens/cloud_pr3165_imagem6.png)
+
+  ![image](imagens/cloud_pr3165_imagem6.png)
+
 - Card "Kit incompleto" e a lista de quem está sem algum item:
-![image](imagens/cloud_pr3165_imagem7.png)
+
+  ![image](imagens/cloud_pr3165_imagem7.png)
+
 - Formas de assinatura aceitas, pedido pelo colaborador e aviso depois do registro:
-![image](imagens/cloud_pr3165_imagem8.png)
+
+  ![image](imagens/cloud_pr3165_imagem8.png)
 
 ## Trilha do conhecimento ✨
 
@@ -73,17 +116,28 @@ Novo módulo para aprender o sistema no seu ritmo, com trilhas que guardam o pro
 > Perfis **DP** já existentes nos clientes não recebem sozinhos as permissões de Trilhas: é preciso concedê-las em Permissões.
 
 - Minhas trilhas, com as três trilhas iniciais da Símix:
-![image](imagens/cloud_pr3051_imagem1.png)
+
+  ![image](imagens/cloud_pr3051_imagem1.png)
+
 - Visão da trilha: etapas, itens e o progresso ao lado:
-![image](imagens/cloud_pr3051_imagem2.png)
+
+  ![image](imagens/cloud_pr3051_imagem2.png)
+
 - Item de demonstração guiada concluído pelo fim da demonstração, com o índice da trilha:
-![image](imagens/cloud_pr3051_imagem3.png)
+
+  ![image](imagens/cloud_pr3051_imagem3.png)
+
 - Vídeo dentro da trilha, com o percentual assistido:
-![image](imagens/cloud_pr3051_imagem4.png)
+
+  ![image](imagens/cloud_pr3051_imagem4.png)
+
 - Faixa "Suas trilhas" na página de Treinamentos:
-![image](imagens/cloud_pr3051_imagem5.png)
+
+  ![image](imagens/cloud_pr3051_imagem5.png)
+
 - Catálogo de trilhas da Símix:
-![image](imagens/cloud_pr3051_imagem6.png)
+
+  ![image](imagens/cloud_pr3051_imagem6.png)
 
 ## Nova tela de processos ✨
 
@@ -99,15 +153,24 @@ Os processos — rotinas que alteram os cartões conforme regras que você defin
 - As condições das ações passam a ser conferidas antes de alterar o dia, o turno ou a marcação — antes a ação alterava tudo sem olhar as condições —, e a ação lida de um layout salvo voltou a funcionar.
 
 - Lista de processos em cards, com as rotinas e o botão de executar:
-![image](imagens/cloud_pr3029_imagem1.png)
+
+  ![image](imagens/cloud_pr3029_imagem1.png)
+
 - Cadastro: ação que marca como home office as marcações dos turnos trabalhados:
-![image](imagens/cloud_pr3029_imagem2.png)
+
+  ![image](imagens/cloud_pr3029_imagem2.png)
+
 - Simulação em lote: um dia mudaria, com o antes e o depois da marcação:
-![image](imagens/cloud_pr3029_imagem3.png)
+
+  ![image](imagens/cloud_pr3029_imagem3.png)
+
 - Menu Processos na barra da manutenção:
-![image](imagens/cloud_pr3029_imagem4.png)
+
+  ![image](imagens/cloud_pr3029_imagem4.png)
+
 - Processo aplicado no cartão aberto: o dia ganha o ícone de home office e fica para salvar:
-![image](imagens/cloud_pr3029_imagem5.png)
+
+  ![image](imagens/cloud_pr3029_imagem5.png)
 
 ## Atalhos no painel inicial ✨
 
@@ -121,13 +184,20 @@ Cada usuário monta grupos de atalhos para o que usa todo dia.
 - Atalho cujo destino foi excluído aparece como indisponível, com o motivo; sem permissão para a tela, o atalho não aparece.
 
 - Card de atalhos no Início:
-![image](imagens/cloud_pr3009_imagem1.png)
+
+  ![image](imagens/cloud_pr3009_imagem1.png)
+
 - Organização dos grupos e atalhos:
-![image](imagens/cloud_pr3009_imagem2.png)
+
+  ![image](imagens/cloud_pr3009_imagem2.png)
+
 - Atalho com recorte de colaboradores:
-![image](imagens/cloud_pr3009_imagem3.png)
+
+  ![image](imagens/cloud_pr3009_imagem3.png)
+
 - Widget aberto pelo atalho, no próprio Início:
-![image](imagens/cloud_pr3009_imagem4.png)
+
+  ![image](imagens/cloud_pr3009_imagem4.png)
 
 ## Módulo de férias ✨
 
@@ -150,27 +220,27 @@ Primeira entrega do módulo de férias: saldo por período aquisitivo calculado 
 
 - Painel de férias com os cards de situação e a lista por colaborador:
 
-![image](imagens/cloud_pr2928_imagem1.png)
+  ![image](imagens/cloud_pr2928_imagem1.png)
 
 - Ficha do colaborador com períodos, direito, ajustes e histórico:
 
-![image](imagens/cloud_pr2928_imagem2.png)
+  ![image](imagens/cloud_pr2928_imagem2.png)
 
 - Importação do histórico, antes de gravar:
 
-![image](imagens/cloud_pr2928_imagem3.png)
+  ![image](imagens/cloud_pr2928_imagem3.png)
 
 - Política de férias da empresa:
 
-![image](imagens/cloud_pr2928_imagem4.png)
+  ![image](imagens/cloud_pr2928_imagem4.png)
 
 - Aba Férias no cadastro do colaborador:
 
-![image](imagens/cloud_pr2928_imagem5.png)
+  ![image](imagens/cloud_pr2928_imagem5.png)
 
 - Manutenção em lote deixando de fora os dias com afastamento:
 
-![image](imagens/cloud_pr2928_imagem6.png)
+  ![image](imagens/cloud_pr2928_imagem6.png)
 
 ## Módulo de adiantamento salarial ✨
 
@@ -193,66 +263,70 @@ Novo módulo para gerenciar os pedidos de adiantamento salarial do mês, do pedi
 
 - Painel do RH no mês, com as etapas, os totais e os pedidos:
 
-![image](imagens/cloud_pr2929_imagem1.png)
+  ![image](imagens/cloud_pr2929_imagem1.png)
 
 - Análise de um pedido acima do disponível, com a sugestão pela margem livre:
 
-![image](imagens/cloud_pr2929_imagem2.png)
+  ![image](imagens/cloud_pr2929_imagem2.png)
 
 - Portal do colaborador: o pedido e o acompanhamento depois de aprovado:
 
-![image](imagens/cloud_pr2929_imagem3.png)
+  ![image](imagens/cloud_pr2929_imagem3.png)
 
-![image](imagens/cloud_pr2929_imagem4.png)
+  ![image](imagens/cloud_pr2929_imagem4.png)
 
 - Tela do gestor do estabelecimento:
 
-![image](imagens/cloud_pr2929_imagem5.png)
+  ![image](imagens/cloud_pr2929_imagem5.png)
 
 - Descontos do mês com o arquivo do convênio importado e linhas a resolver:
 
-![image](imagens/cloud_pr2929_imagem6.png)
+  ![image](imagens/cloud_pr2929_imagem6.png)
 
 - Envio à folha durante o prazo dos pedidos:
 
-![image](imagens/cloud_pr2929_imagem7.png)
+  ![image](imagens/cloud_pr2929_imagem7.png)
 
 - Regras com a simulação do valor disponível:
 
-![image](imagens/cloud_pr2929_imagem8.png)
+  ![image](imagens/cloud_pr2929_imagem8.png)
 
 - Assistente de implantação, passo 1: os modelos com o exemplo de um salário:
-![image](imagens/cloud_pr3278_imagem20.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem20.jpg)
+
 - Salário no cadastro: quem está sem salário no mês, com o atalho para preencher:
-![image](imagens/cloud_pr3278_imagem21.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem21.jpg)
+
 - Conferir e ligar: a prévia do mês e o que um colaborador vê no app:
-![image](imagens/cloud_pr3278_imagem22.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem22.jpg)
+
 - Painel do mês com os pedidos importados, antes de importar os salários:
-![image](imagens/cloud_pr3438_imagem1.png)
+
+  ![image](imagens/cloud_pr3438_imagem1.png)
+
 - Treinamentos do painel do adiantamento, com o guia do RH e a demonstração guiada:
-![image](imagens/cloud_pr3438_imagem3.png)
+
+  ![image](imagens/cloud_pr3438_imagem3.png)
+
 - Demonstração do RH no passo da análise dos pedidos:
-![image](imagens/cloud_pr3438_imagem4.png)
+
+  ![image](imagens/cloud_pr3438_imagem4.png)
+
 - Demonstração do RH nas regras:
-![image](imagens/cloud_pr3438_imagem5.png)
+
+  ![image](imagens/cloud_pr3438_imagem5.png)
+
 - Treinamentos no portal do colaborador:
-![image](imagens/cloud_pr3438_imagem6.png)
+
+  ![image](imagens/cloud_pr3438_imagem6.png)
+
 - Demonstração do colaborador no valor disponível:
-![image](imagens/cloud_pr3438_imagem7.png)
+
+  ![image](imagens/cloud_pr3438_imagem7.png)
+
 - A Ajuda numa tela do adiantamento abre o guia do módulo:
-![image](imagens/cloud_pr3438_imagem8.png)
 
-## Calculadora ✨
-
-Nova barra de ferramentas da calculadora, por enquanto só nos ambientes de teste e beta; no oficial ficam só as contas.
-
-- Barra no topo organizada em menus: guias, desfazer e refazer no início, **Copiar** (copiar texto, copiar o código com todas as guias e legendas, colar e limpar), **Abrir/Salvar** (abrir, salvar e salvar como), **Exemplos** e **Ajuda**.
-- **Exemplos** prontos de salário previsto (mensalista pelas horas do período, mensalista de 44 h e horista), cada um numa guia nova, com os mesmos números do cálculo do ponto.
-- **Ajuda** com os treinamentos da calculadora e a lista de atalhos do teclado e do mouse.
-- Várias guias: criar, renomear, mover para os lados e excluir.
-- Desfazer e refazer pela barra ou por Ctrl+Z e Ctrl+Y, com o campo Expressão vazio.
-- As contas são salvas sozinhas a cada 2 minutos, quando mudam, e ao fechar a calculadora. O salvamento automático não aparece na lista do Abrir, e o Salvar dá nome a ele.
-- **Copiar link**: gera um endereço que abre as mesmas contas para outra pessoa, sem alterar as originais.
-
-- Guias e desfazer no início da barra, com a linha em edição contornada:
-![image](imagens/cloud_pr3412_imagem1.jpg)
+  ![image](imagens/cloud_pr3438_imagem8.png)

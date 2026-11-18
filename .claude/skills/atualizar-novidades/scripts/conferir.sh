@@ -4,7 +4,8 @@
 #
 #   conferir.sh <pasta-do-despejo>
 #
-# Olha o bloco do topo do Novidades.md e do Aplicativo.md (até o segundo título "# dd/MM/aaaa") e o Beta.md inteiro.
+# Olha o bloco do topo do Novidades.md, do Aplicativo.md e do Suporte-interno.md (até o segundo título "# dd/MM/aaaa")
+# e o Beta.md inteiro.
 # Sai com código 1 quando há algum PROBLEMA; os avisos são para o relatório ao usuário.
 set -u
 [ $# -eq 1 ] || { echo "uso: $0 <pasta-do-despejo>" >&2; exit 2; }
@@ -19,9 +20,11 @@ aviso() { echo "aviso: $*"; }
 topo() { awk '/^# [0-9][0-9]\/[0-9][0-9]\/[0-9][0-9][0-9][0-9]/ { n++ } n < 2' "$1"; }
 nov=$(topo "$AT/Novidades.md")
 app=$(topo "$AT/Aplicativo.md")
+sup=$([ -f "$AT/Suporte-interno.md" ] && topo "$AT/Suporte-interno.md")
 beta=$(cat "$AT/Beta.md")
 novos="$nov
 $app
+$sup
 $beta"
 
 echo "== Imagens do despejo"
@@ -38,12 +41,19 @@ done
 echo "imagens conferidas: $total"
 grep '^FALHA' "$PASTA/imagens.log" 2>/dev/null | sed 's/^/aviso: download falhou, imagem sem como entrar: /'
 
+echo "== Imagens coladas na linha de cima"
+for arq in Novidades.md Aplicativo.md Suporte-interno.md Beta.md; do
+  [ -f "$AT/$arq" ] || continue
+  awk -v a="$arq" '/^[[:space:]]*!\[[^]]*\]\(/ && prev !~ /^[[:space:]]*$/ { printf "PROBLEMA: %s:%d imagem sem linha em branco antes (fica ao lado do texto)\n", a, NR } { prev = $0 }' "$AT/$arq"
+done | tee /dev/stderr | grep -q PROBLEMA && problemas=$((problemas + 1))
+
 echo "== Caminhos e links"
 grep -oE 'imagens/[^)]+' <<<"$novos" | sort -u | while read -r p; do
   [ -f "$AT/$p" ] || echo "PROBLEMA: imagem citada sem arquivo: $p"
 done | tee /dev/stderr | grep -q PROBLEMA && problemas=$((problemas + 1))
 grep -oE '\]\([^)]+\.md(#[^)]*)?\)' <<<"$nov
-$app" | sed -E 's/^\]\(//; s/\)$//; s/#.*//' | sort -u | while read -r l; do
+$app
+$sup" | sed -E 's/^\]\(//; s/\)$//; s/#.*//' | sort -u | while read -r l; do
   [ -f "$AT/$l" ] || echo "PROBLEMA: link para página que não existe: $l"
 done | tee /dev/stderr | grep -q PROBLEMA && problemas=$((problemas + 1))
 
@@ -55,8 +65,8 @@ if [ -f "$TERMOS" ]; then
   [ -n "$achados" ] && { falha "nome de cliente ou banco no texto (references/termos-sensiveis.txt):"; echo "$achados"; }
 fi
 
-echo "== Repetidas entre Novidades, Beta e Aplicativo"
-cat "$AT/Novidades.md" "$AT/Beta.md" "$AT/Aplicativo.md" | grep -oE 'imagens/[^)]+' | sort | uniq -d | sed 's/^/aviso: repetida: /'
+echo "== Repetidas entre Novidades, Beta, Aplicativo e Suporte interno"
+cat "$AT/Novidades.md" "$AT/Beta.md" "$AT/Aplicativo.md" "$AT/Suporte-interno.md" 2>/dev/null | grep -oE 'imagens/[^)]+' | sort | uniq -d | sed 's/^/aviso: repetida: /'
 
 echo
 if [ "$problemas" -gt 0 ]; then echo "Com problemas: $problemas"; exit 1; fi

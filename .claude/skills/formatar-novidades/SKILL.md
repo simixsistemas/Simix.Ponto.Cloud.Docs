@@ -11,7 +11,7 @@ O `pt-BR/Atualizacoes/Novidades.md` chega como um despejo bruto das descrições
 
 ## Regras invioláveis
 
-1. **NUNCA remova imagens.** Toda `![image](...)` do documento original — arquivo local ou URL — precisa aparecer no resultado. Antes de cada bloco de imagens, escreva uma linha descritiva curta terminada em dois-pontos (ex.: `- Solicitação com turno:`), aproveitando as legendas do original quando existirem. Antes de finalizar, faça o inventário: liste todas as imagens do original e confira uma a uma no resultado. Nenhuma imagem é "redundante".
+1. **NUNCA remova imagens.** Toda `![image](...)` do documento original — arquivo local ou URL — precisa aparecer no resultado. Antes de cada imagem, escreva uma linha descritiva curta terminada em dois-pontos (ex.: `- Solicitação com turno:`), aproveitando as legendas do original quando existirem. A imagem vai num parágrafo próprio: linha em branco depois da legenda e a imagem recuada em 2 espaços (`  ![image](...)`); colada na legenda, a imagem pequena fica ao lado do texto. Antes de finalizar, faça o inventário: liste todas as imagens do original e confira uma a uma no resultado. Nenhuma imagem é "redundante".
 2. **Sem referências de PR no texto final.** Nada de `[#2392](...)`, números de PR/issue ou links para o GitHub no texto.
 3. **Preserve edições manuais do usuário.** Se o arquivo mudou em disco (seções removidas, títulos alterados), trabalhe sobre a versão atual — seções removidas podem ser recursos ainda não liberados; não as recoloque.
 4. **Confira que cada imagem local referenciada existe** em `pt-BR/Atualizacoes/imagens/` (use Glob). Nunca invente um caminho de imagem.
@@ -35,7 +35,7 @@ Remover ou traduzir para linguagem simples:
 Manter:
 
 - Mudanças que afetam integrações externas (contratos de API) em bloco destacado `> **Atenção (integrações externas):** ...`.
-- Recursos internos da equipe Símix resumidos em uma linha simples.
+- Recursos internos da equipe Símix (painel admin, suporte, implantação) vão para o `Suporte-interno.md`, uma linha cada, com os prints.
 - Todas as imagens (regra 1), com legendas.
 
 ## Erros comuns

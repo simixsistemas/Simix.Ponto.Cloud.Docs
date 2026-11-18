@@ -1,8 +1,8 @@
-# 17/11/2026
+# 18/11/2026
 
 ## Resumo
 
-- 🤖 Assistente de IA: tira dúvidas, consulta os dados e prepara cadastros e lançamentos, que só são gravados depois da confirmação
+- 🤖 Assistente de IA: diversos novos recursos
 - ⭐ Barra do topo com favoritos, foto do usuário e preferências
 - 📥 Importar arquivo: o sistema reconhece o AFD ou o layout da integração
 - 🗓️ Escalas: escalas prontas na grade, convenção lida pelo Assistente, escalas intermitentes e dois planejamentos no mesmo mês
@@ -15,27 +15,20 @@
 - 🧾 Exportação da folha pela API e espelhos separados por estabelecimento
 - ✅ Permissão própria para aprovar e reprovar pendências
 
-## Assistente de IA ✨
+## Novos recursos do Assistente ✨
 
-Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cadastros e lançamentos, que só são gravados depois da confirmação de quem pediu.
+O **Assistente** ganhou vários novos recursos: tira dúvidas, sugere a tela certa e prepara cadastros e lançamentos.
 
-- Botão **Assistente** na barra do topo, que abre uma janela flutuante no canto da tela. A conversa continua ao trocar de tela, a janela minimiza e, no celular, ocupa a tela inteira. Não aparece para quem é só colaborador.
-- As respostas aparecem enquanto são escritas, trazem links para as telas do sistema e consultam a ajuda do sistema (roteiros, explicação dos totais, menu, tutoriais, novidades, dicas dos campos e a documentação) para responder "como faço…".
 - **Cadastros pelo chat**: cargos, departamentos, setores, estabelecimentos, feriados e tags. Pedir vários na mesma mensagem ("cadastre os cargos A, B e C") gera um único cartão, com uma linha por registro; dá para desmarcar itens antes de confirmar, e depois cada linha mostra se foi gravada, desmarcada ou recusada, com o motivo.
-- **Alterações em lote**: um a um ("troque o CBO dos cargos Dev e Teste") ou por critério ("todos os cargos com Motorista no nome"), com o valor atual riscado e o novo em destaque. Registro que já está com o valor pedido fica de fora, e o que foi alterado por outra pessoa depois da proposta não é sobrescrito. Até 200 itens por proposta.
 - O Assistente não exclui registros: explica que a exclusão é feita na tela do cadastro e oferece inativar.
-- **Manutenção em lote**: o Assistente entende o pedido (quem, qual afastamento ou alteração, qual período), acha os cadastros pelo nome e mostra um cartão com o resumo e a prévia. O botão **Abrir na manutenção em lote** abre a tela já preenchida, com o aviso "Preenchido pelo assistente", e nada é gravado até a pessoa clicar em Aplicar. Quando falta informação, ele pergunta; lançar para todos só com pedido explícito. Ele sabe a data de hoje, para pedidos como "nos próximos 30 dias", e avisa os dias que já têm afastamento e ficam de fora.
 - **Atalhos pelo chat**: "adiciona um atalho para a tela de Colaboradores no grupo Cadastros" gera o atalho num cartão, gravado na estrela de Favoritos quando a pessoa confirma.
 - O Assistente também conhece os dados de locais de trabalho para montar gráficos e listas nos dashboards.
+- **Manutenção em lote**: o Assistente entende o pedido (quem, qual afastamento ou alteração, qual período), acha os cadastros pelo nome e mostra um cartão com o resumo e a prévia. O botão **Abrir na manutenção em lote** abre a tela já preenchida, com o aviso "Preenchido pelo assistente", e nada é gravado até a pessoa clicar em Aplicar. Quando falta informação, ele pergunta; lançar para todos só com pedido explícito. Ele sabe a data de hoje, para pedidos como "nos próximos 30 dias", e avisa os dias que já têm afastamento e ficam de fora.
 - Menu da janela com Nova conversa, Conversas anteriores, Enviar feedback e **Chamar a equipe Símix nesta conversa**: a equipe Símix responde direto na janela, com o nome de quem respondeu e aviso no sino. Enquanto ela atende, o Assistente fica pausado naquela conversa; ao devolver ("Voltar ao assistente"), ele retoma sabendo o que o suporte orientou.
-- O Assistente vem ligado para todas as empresas, junto com o Símix Ponto no Teams (é o mesmo recurso), e pode ser desligado por empresa. O Símix Ponto no Teams passa a usar a mesma ajuda do Assistente.
-- Para a equipe Símix: painel **Assistente** no admin, com as conversas de todos os clientes, os cards "Aguardando o suporte", "Em atendimento" e "Com falha", filtros por cliente, período e texto, e cada conversa com as propostas e o que aconteceu com cada uma.
 - **Notas pelo chat**: o Assistente cadastra e altera notas do mural com todas as opções (título, texto, cor, categoria, período, horário, onde aparece e para quem vale). Aviso, recado, mensagem e comunicado são entendidos como nota. Com só a mensagem, ele já sugere título, cor, período e onde aparece, e mostra tudo no cartão para confirmar ou pedir mudança.
 - **Quitação de banco de horas**: o Assistente prepara a quitação (saldo, colaboradores, integral, até X horas ou percentual), mostra a prévia num cartão e abre a consulta de BH com tudo preenchido; quem confirma é o usuário, clicando em Quitar.
 - **Inconsistências**: quando o usuário diz que uma inconsistência está errada (ou pergunta por que ela apareceu), o Assistente consulta o dia do colaborador e a regra que a gerou — o que ela avalia, os limites, o tipo de dia, os filtros e se ignora afastamento — e explica com os números se a regra está certa, sem concordar só porque o usuário disse. Se o dia tem afastamento e a regra não está com "Ignorar com afastamento", ele sugere marcar a opção e mostra o botão **Abrir a regra** (ele não altera a regra; depois de marcar, é preciso recalcular o período). Disponível para quem acessa a Manutenção.
 - Para explicar um recurso, o Assistente mostra o card da novidade na conversa, com "Me mostre" e "Passo a passo", e faz perguntas com opções para clicar (como a cor ou onde a nota aparece). O cartão de confirmação mostra um campo por linha, com a amostra da cor.
-- Novo card **Assistente de IA** em Novidades, com exemplos do que pedir. O **Me mostre** apresenta o botão, abre a janela e explica o que pedir, sem enviar mensagem; o **Quero usar** abre o Início com a janela do Assistente aberta.
-- A janela vazia mostra "Pergunte sobre o Símix Ponto ou peça algo.".
 - A ajuda consultada pelo Assistente deixa de fora as páginas de Tabelas (dicionário do banco) e do PcPontoWeb, que apareciam nas respostas. Os assistentes de IA da equipe Símix (Implantador, Suporte, Dev e Ajuda) passam a usar o mesmo modelo do Assistente.
 - **Novos pedidos**: importar AFD (o Assistente mostra a tela com o botão da demonstração guiada) e importar contracheques (abre o Importar em lote já na categoria e na competência); criar um filtro salvo por cidade dos estabelecimentos; criar uma visão da lista de Colaboradores com a coluna pedida — e, se a coluna não existe, oferecer a sugestão de melhoria já preenchida.
 - **Aplicativo**: liga ou desliga o registro pelo app, libera o app só para os colaboradores de uma filial e cria os botões Presencial, Home office e Visita com o local de cada um.
@@ -51,163 +44,298 @@ Novo **Assistente** no sistema: tira dúvidas, sugere a tela certa e prepara cad
 - O Assistente lembra os cartões que mostrou na conversa e o que a pessoa fez com eles, e não diz mais que "o cartão não apareceu".
 - **Desbloqueio do REP Control iD**: pede o serial e a senha e responde com o código e o aviso da Control iD; quando é preciso trocar a bateria, orienta falar com o suporte Símix.
 - **O que posso pedir?**, no texto inicial e no menu "...": exemplos de pedido por assunto, com busca e só com o que a pessoa pode pedir, inclusive a situação dos módulos e a implantação de cada um. O clique põe o exemplo na caixa de texto, para trocar nomes e datas antes de enviar.
-- **Implantação pelo chat**: "o que falta implantar?" responde a situação de cada módulo com o caminho para configurar, e pedidos como "R$ 5,00, 2 viagens por dia", "escritório com cerca de 200 metros", "12x36 das 7 às 19 para a portaria" ou "R$ 150 de assiduidade" abrem o assistente de implantação já com o modelo e os valores.
 - Mensagem só com o assunto ("coletores") mostra as telas sobre ele, com o link, e pergunta o que a pessoa quer fazer. Horas de um afastamento vêm com a sugestão de marcar o Totalizar, e o layout de totais é criado pelo cartão quando o quadro de horário ainda não tem.
 - Escala para o plano inteiro ("passar as equipes de segunda a sábado para 5x2") agrupa as pessoas pela semana que fazem e propõe a mudança por grupo; o "Abrir a grade" abre já com a conversa e o cartão. Pergunta que chega ao limite de consultas fecha com o que foi encontrado e pede "continue".
 - Aberto na Manutenção ou nas Escalas, o Assistente atende só o que é daquela tela, mais a calculadora e a ajuda; para outro assunto, explica como fazer e sugere abrir o Assistente em outra tela.
-- Toda resposta pode ser avaliada, inclusive a que só mostra um cartão e a interrompida pelo Parar. A última resposta pede a avaliação em destaque, com as quatro notas escritas, e depois da nota vem uma pergunta conforme ela (o que deu errado, o que faltou, o que foi bom). No painel do admin, os cards "Avaliadas" e "Avaliação ruim" filtram a lista, e cada conversa mostra quantas respostas foram bem ou mal avaliadas.
+- Toda resposta pode ser avaliada, inclusive a que só mostra um cartão e a interrompida pelo Parar. A última resposta pede a avaliação em destaque, com as quatro notas escritas, e depois da nota vem uma pergunta conforme ela (o que deu errado, o que faltou, o que foi bom).
 - **Limites da licença**: o Assistente diz quantos colaboradores, estabelecimentos e coletores estão em uso e qual o limite de cada um. Com um limite atingido, oferece aumentar em 1, uma vez a cada 30 dias, para não travar o trabalho (por exemplo, fora do horário comercial); o cartão avisa que o comercial da Símix entrará em contato sobre o ajuste. Só aumenta quem pode cadastrar o que o limite conta.
 - Os logs mostram quem fez a alteração de verdade: "usuário (pelo Assistente)" no que foi confirmado no Assistente e "chave X (pela API)" nas integrações por chave de API, no histórico de cada cadastro e nos Logs de alterações.
 - Quem pede para falar com um atendente é orientado a usar **Chamar a equipe Símix nesta conversa**, no menu da janela. As respostas sobre a ajuda do sistema chegam mais completas.
 - Novo card **O Assistente ganhou novos truques** na página de Novidades, com o "O que posso pedir?", a consulta ao cadastro do colaborador, as respostas sobre a escala, o desbloqueio de REP e a avaliação das respostas.
 
 - Pedido de cadastro de cargo com o cartão de confirmação:
-![image](imagens/cloud_pr3048_imagem1.png)
+
+  ![image](imagens/cloud_pr3048_imagem1.png)
+
 - Depois do Confirmar, o cartão mostra o cargo criado e o link para abrir:
-![image](imagens/cloud_pr3048_imagem2.png)
+
+  ![image](imagens/cloud_pr3048_imagem2.png)
+
 - Pedido de três cargos num cartão só, com um desmarcado:
-![image](imagens/cloud_pr3155_imagem1.png)
+
+  ![image](imagens/cloud_pr3155_imagem1.png)
+
 - Depois de confirmar, cada linha mostra o desfecho:
-![image](imagens/cloud_pr3155_imagem2.png)
+
+  ![image](imagens/cloud_pr3155_imagem2.png)
+
 - Alteração do CBO de dois cargos, com o valor atual e o novo:
-![image](imagens/cloud_pr3155_imagem3.png)
+
+  ![image](imagens/cloud_pr3155_imagem3.png)
+
 - Os dois cargos alterados:
-![image](imagens/cloud_pr3155_imagem4.png)
+
+  ![image](imagens/cloud_pr3155_imagem4.png)
+
 - Cartão do aviso prévio de 2 horas por dia nos próximos 30 dias, com o dia que já tinha afastamento:
-![image](imagens/cloud_pr3200_imagem1.png)
+
+  ![image](imagens/cloud_pr3200_imagem1.png)
+
 - A manutenção em lote aberta pelo cartão, já preenchida:
-![image](imagens/cloud_pr3200_imagem2.png)
+
+  ![image](imagens/cloud_pr3200_imagem2.png)
+
 - Cartão das férias para o departamento Administrativo:
-![image](imagens/cloud_pr3200_imagem3.png)
+
+  ![image](imagens/cloud_pr3200_imagem3.png)
+
 - A tela aberta com o departamento e o afastamento de férias:
-![image](imagens/cloud_pr3200_imagem4.png)
+
+  ![image](imagens/cloud_pr3200_imagem4.png)
+
 - Atalho proposto pelo chat, confirmado no cartão e já na estrela:
-![image](imagens/cloud_pr3145_imagem7.png)
-- Painel do Assistente no admin, com a conversa aberta e as respostas da equipe Símix:
-![image](imagens/cloud_pr3192_imagem1.png)
+
+  ![image](imagens/cloud_pr3145_imagem7.png)
+
 - Janela do Assistente em atendimento pela equipe Símix:
-![image](imagens/cloud_pr3192_imagem2.png)
+
+  ![image](imagens/cloud_pr3192_imagem2.png)
+
 - Proposta de nota feita pelo Assistente, com período, rotinas e para quem vale:
-![image](imagens/cloud_pr3243_imagem3.png)
+
+  ![image](imagens/cloud_pr3243_imagem3.png)
+
 - Card da novidade na conversa, com Me mostre e Passo a passo:
-![image](imagens/cloud_pr3243_imagem4.png)
+
+  ![image](imagens/cloud_pr3243_imagem4.png)
+
 - Pergunta do Assistente com as opções de cor:
-![image](imagens/cloud_pr3243_imagem5.png)
+
+  ![image](imagens/cloud_pr3243_imagem5.png)
+
 - Quitação de BH aberta pelo Assistente, com o período, os colaboradores e o diálogo já preenchidos (até 04:30):
-![image](imagens/cloud_pr3239_imagem5.png)
+
+  ![image](imagens/cloud_pr3239_imagem5.png)
+
 - Dia sem afastamento: 13 minutos de atraso numa regra a partir de 10 minutos; o Assistente mostra que a regra está certa:
-![image](imagens/cloud_pr3237_imagem1.png)
+
+  ![image](imagens/cloud_pr3237_imagem1.png)
+
 - Dia com atestado e a regra sem "Ignorar com afastamento": a explicação de por que a inconsistência apareceu:
-![image](imagens/cloud_pr3237_imagem2.png)
+
+  ![image](imagens/cloud_pr3237_imagem2.png)
+
 - A sugestão de marcar a opção na regra e recalcular o período:
-![image](imagens/cloud_pr3237_imagem3.png)
+
+  ![image](imagens/cloud_pr3237_imagem3.png)
+
 - Cartão com o resumo e o botão Abrir a regra:
-![image](imagens/cloud_pr3237_imagem4.png)
+
+  ![image](imagens/cloud_pr3237_imagem4.png)
+
 - O cadastro da regra aberto pelo botão, com a opção "Ignorar com afastamento":
-![image](imagens/cloud_pr3237_imagem5.png)
+
+  ![image](imagens/cloud_pr3237_imagem5.png)
+
 - Card Assistente de IA em Novidades:
-![image](imagens/cloud_pr3250_imagem1.png)
+
+  ![image](imagens/cloud_pr3250_imagem1.png)
+
 - Me mostre, no passo da caixa de texto:
-![image](imagens/cloud_pr3250_imagem2.png)
+
+  ![image](imagens/cloud_pr3250_imagem2.png)
+
 - Cada resposta mostra as ferramentas usadas, e o cartão de confirmação tem os botões à direita:
-![image](imagens/cloud_pr3260_imagem1.png)
+
+  ![image](imagens/cloud_pr3260_imagem1.png)
+
 - Totais do ponto na resposta:
-![image](imagens/cloud_pr3260_imagem2.png)
+
+  ![image](imagens/cloud_pr3260_imagem2.png)
+
 - Importar AFD com a demonstração guiada:
-![image](imagens/cloud_pr3260_imagem3.png)
+
+  ![image](imagens/cloud_pr3260_imagem3.png)
+
 - Contracheques: o Importar em lote já preenchido:
-![image](imagens/cloud_pr3260_imagem4.png)
+
+  ![image](imagens/cloud_pr3260_imagem4.png)
+
 - Filtro salvo por cidade:
-![image](imagens/cloud_pr3260_imagem5.png)
+
+  ![image](imagens/cloud_pr3260_imagem5.png)
+
 - Lista de Colaboradores aberta na visão nova com o departamento:
-![image](imagens/cloud_pr3260_imagem6.png)
+
+  ![image](imagens/cloud_pr3260_imagem6.png)
+
 - Coluna que não existe: a sugestão de melhoria:
-![image](imagens/cloud_pr3260_imagem7.png)
+
+  ![image](imagens/cloud_pr3260_imagem7.png)
+
 - Desligar o registro pelo app:
-![image](imagens/cloud_pr3260_imagem8.png)
+
+  ![image](imagens/cloud_pr3260_imagem8.png)
+
 - App liberado só para uma filial:
-![image](imagens/cloud_pr3260_imagem9.png)
+
+  ![image](imagens/cloud_pr3260_imagem9.png)
+
 - Botões Presencial, Home office e Visita:
-![image](imagens/cloud_pr3260_imagem10.png)
+
+  ![image](imagens/cloud_pr3260_imagem10.png)
+
 - Setor com mais horas extras no mês:
-![image](imagens/cloud_pr3260_imagem11.png)
+
+  ![image](imagens/cloud_pr3260_imagem11.png)
+
 - Home office em dois dias da semana para um setor:
-![image](imagens/cloud_pr3260_imagem12.png)
+
+  ![image](imagens/cloud_pr3260_imagem12.png)
+
 - Marcações bloqueadas pelo afastamento, na manutenção:
-![image](imagens/cloud_pr3260_imagem13.png)
+
+  ![image](imagens/cloud_pr3260_imagem13.png)
+
 - Solução de problemas oferecendo reimportar depois de corrigir o afastamento:
-![image](imagens/cloud_pr3260_imagem14.png)
+
+  ![image](imagens/cloud_pr3260_imagem14.png)
+
 - Explicação de um total:
-![image](imagens/cloud_pr3260_imagem15.png)
+
+  ![image](imagens/cloud_pr3260_imagem15.png)
+
 - Layout de totais:
-![image](imagens/cloud_pr3260_imagem16.png)
+
+  ![image](imagens/cloud_pr3260_imagem16.png)
+
 - Calculadora na resposta:
-![image](imagens/cloud_pr3260_imagem17.png)
+
+  ![image](imagens/cloud_pr3260_imagem17.png)
+
 - Janela movida e redimensionada:
-![image](imagens/cloud_pr3260_imagem18.png)
+
+  ![image](imagens/cloud_pr3260_imagem18.png)
+
 - Escala em lote: a proposta de home office para o setor:
-![image](imagens/cloud_pr3260_imagem19.png)
+
+  ![image](imagens/cloud_pr3260_imagem19.png)
+
 - Os dias circulados na grade do plano:
-![image](imagens/cloud_pr3260_imagem20.png)
+
+  ![image](imagens/cloud_pr3260_imagem20.png)
+
 - O que falta para fechar o mês:
-![image](imagens/cloud_pr3260_imagem21.png)
+
+  ![image](imagens/cloud_pr3260_imagem21.png)
+
 - Onde fica o campo: a resposta com o link que abre a tela com o campo destacado:
-![image](imagens/cloud_pr3263_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3263_imagem3.jpg)
+
 - Regra de prêmio alterada pelo Assistente, com o antes → depois:
-![image](imagens/cloud_pr3310_imagem1.png)
+
+  ![image](imagens/cloud_pr3310_imagem1.png)
+
 - Depois de confirmar:
-![image](imagens/cloud_pr3310_imagem2.png)
+
+  ![image](imagens/cloud_pr3310_imagem2.png)
+
 - Por que o colaborador não ganhou o prêmio no mês:
-![image](imagens/cloud_pr3310_imagem4.png)
+
+  ![image](imagens/cloud_pr3310_imagem4.png)
+
 - Avaliação da resposta e resposta da equipe Símix entrando na janela sem reabrir a conversa:
-![image](imagens/cloud_pr3308_imagem1.gif)
+
+  ![image](imagens/cloud_pr3308_imagem1.gif)
+
 - Depois de avaliar, a carinha escolhida fica destacada:
-![image](imagens/cloud_pr3308_imagem2.png)
+
+  ![image](imagens/cloud_pr3308_imagem2.png)
+
 - No painel do suporte, a avaliação e o comentário embaixo da resposta:
-![image](imagens/cloud_pr3308_imagem3.png)
+
+  ![image](imagens/cloud_pr3308_imagem3.png)
+
 - Pedido de trocar o horário padrão: o horário atual e o cartão que abre o cadastro:
-![image](imagens/cloud_pr3344_imagem1.png)
+
+  ![image](imagens/cloud_pr3344_imagem1.png)
+
 - O cadastro do colaborador aberto com o campo Horário destacado:
-![image](imagens/cloud_pr3344_imagem2.png)
+
+  ![image](imagens/cloud_pr3344_imagem2.png)
+
 - O código de desbloqueio do REP no cartão do Assistente:
-![image](imagens/cloud_pr3346_imagem2.png)
+
+  ![image](imagens/cloud_pr3346_imagem2.png)
+
 - O link "O que posso pedir?" no texto inicial da janela:
-![image](imagens/cloud_pr3387_imagem1.png)
+
+  ![image](imagens/cloud_pr3387_imagem1.png)
+
 - Os exemplos de pedido por assunto:
-![image](imagens/cloud_pr3387_imagem2.png)
+
+  ![image](imagens/cloud_pr3387_imagem2.png)
+
 - "coletores": as telas sobre o assunto, cada uma com o link:
-![image](imagens/cloud_pr3387_imagem3.png)
+
+  ![image](imagens/cloud_pr3387_imagem3.png)
+
 - Totalizar no afastamento, proposto pelo Assistente:
-![image](imagens/cloud_pr3387_imagem4.png)
+
+  ![image](imagens/cloud_pr3387_imagem4.png)
+
 - Quadro sem layout de totais: o cartão cria o layout só para ele:
-![image](imagens/cloud_pr3387_imagem5.png)
+
+  ![image](imagens/cloud_pr3387_imagem5.png)
+
 - O layout de totais gravado:
-![image](imagens/cloud_pr3387_imagem6.png)
+
+  ![image](imagens/cloud_pr3387_imagem6.png)
+
 - A situação dos módulos, com o caminho para configurar:
-![image](imagens/cloud_pr3278_imagem4.png)
+
+  ![image](imagens/cloud_pr3278_imagem4.png)
+
 - Pelo chat: o cartão do prêmio de pontualidade com o valor e as condições em frase; "Abrir o assistente" leva ao passo 2 já preenchido:
-![image](imagens/cloud_pr3278_imagem34.png)
+
+  ![image](imagens/cloud_pr3278_imagem34.png)
+
 - Avaliação em destaque na última resposta:
-![image](imagens/cloud_pr3429_imagem9.png)
+
+  ![image](imagens/cloud_pr3429_imagem9.png)
+
 - Resposta com cartão de proposta também avaliada:
-![image](imagens/cloud_pr3429_imagem10.png)
+
+  ![image](imagens/cloud_pr3429_imagem10.png)
+
 - Depois da nota, a pergunta muda conforme ela:
-![image](imagens/cloud_pr3429_imagem11.png)
+
+  ![image](imagens/cloud_pr3429_imagem11.png)
+
 - Resposta interrompida pelo Parar, já avaliada:
-![image](imagens/cloud_pr3429_imagem12.png)
-- Painel do Assistente no admin filtrado por "Avaliadas":
-![image](imagens/cloud_pr3429_imagem13.png)
+
+  ![image](imagens/cloud_pr3429_imagem12.png)
 
 - Limites da licença consultados e o aumento confirmado pelo Assistente:
-![image](imagens/cloud_pr3552_imagem1.png)
+
+  ![image](imagens/cloud_pr3552_imagem1.png)
+
 - Histórico do cadastro com a alteração feita "pelo Assistente", também no cabeçalho:
-![image](imagens/cloud_pr3552_imagem2.png)
+
+  ![image](imagens/cloud_pr3552_imagem2.png)
+
 - Logs de alterações, guia Mudanças da Entidade:
-![image](imagens/cloud_pr3552_imagem3.png)
+
+  ![image](imagens/cloud_pr3552_imagem3.png)
+
 - A mesma alteração na guia Logs de auditoria:
-![image](imagens/cloud_pr3552_imagem4.png)
+
+  ![image](imagens/cloud_pr3552_imagem4.png)
+
 - Página de Novidades com os cards novos:
-![image](imagens/cloud_pr3445_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3445_imagem1.jpg)
 
 ## Barra do topo, favoritos e foto do usuário ✨
 
@@ -226,32 +354,56 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - **Recentes** sem a lixeira e sem Copiar, Colar e Remover todos: a estrela (também na pesquisa) leva a tela ao grupo Favoritos da estrela da barra do topo, e os botões fixados ao lado do menu saíram. O botão de voltar à gestão no portal do colaborador ganha o visual dos botões da barra.
 
 - Antes: quatro atalhos grandes e o botão de tela cheia ao lado do sino:
-![image](imagens/cloud_pr3028_imagem1.png)
-- Depois: atalhos menores logo depois do logo e avatar com foto:
-![image](imagens/cloud_pr3028_imagem2.png)
-- A estrela de Favoritos depois do Calendário:
-![image](imagens/cloud_pr3028_imagem3.png)
-- Na primeira vez a estrela pede o grupo de atalhos, ou cria um novo:
-![image](imagens/cloud_pr3028_imagem4.png)
-- Os atalhos do grupo escolhido; editar e excluir aparecem ao passar o mouse:
-![image](imagens/cloud_pr3028_imagem5.png)
-- Menu do avatar com a foto, Alterar foto e Minha conta:
-![image](imagens/cloud_pr3028_imagem6.png)
-- Troca da foto por arquivo ou webcam, só no usuário:
-![image](imagens/cloud_pr3028_imagem7.png)
-- Seção "Sua foto" em Minha conta:
-![image](imagens/cloud_pr3028_imagem8.png)
-- Antes: painel largo e opções sem explicação:
-![image](imagens/cloud_pr3028_imagem9.png)
-- Depois: Preferências com ícone e descrição em cada opção:
-![image](imagens/cloud_pr3028_imagem10.png)
-- A escolha da forma de exibir o menu de volta, salva no usuário:
-![image](imagens/cloud_pr3028_imagem11.png)
-- Descrição do botão ao parar o mouse em cima:
-![image](imagens/cloud_pr3028_imagem12.png)
-- No celular, as abas e os botões do menu esmaecem na borda:
-![image](imagens/cloud_pr3028_imagem13.png)
 
+  ![image](imagens/cloud_pr3028_imagem1.png)
+
+- Depois: atalhos menores logo depois do logo e avatar com foto:
+
+  ![image](imagens/cloud_pr3028_imagem2.png)
+
+- A estrela de Favoritos depois do Calendário:
+
+  ![image](imagens/cloud_pr3028_imagem3.png)
+
+- Na primeira vez a estrela pede o grupo de atalhos, ou cria um novo:
+
+  ![image](imagens/cloud_pr3028_imagem4.png)
+
+- Os atalhos do grupo escolhido; editar e excluir aparecem ao passar o mouse:
+
+  ![image](imagens/cloud_pr3028_imagem5.png)
+
+- Menu do avatar com a foto, Alterar foto e Minha conta:
+
+  ![image](imagens/cloud_pr3028_imagem6.png)
+
+- Troca da foto por arquivo ou webcam, só no usuário:
+
+  ![image](imagens/cloud_pr3028_imagem7.png)
+
+- Seção "Sua foto" em Minha conta:
+
+  ![image](imagens/cloud_pr3028_imagem8.png)
+
+- Antes: painel largo e opções sem explicação:
+
+  ![image](imagens/cloud_pr3028_imagem9.png)
+
+- Depois: Preferências com ícone e descrição em cada opção:
+
+  ![image](imagens/cloud_pr3028_imagem10.png)
+
+- A escolha da forma de exibir o menu de volta, salva no usuário:
+
+  ![image](imagens/cloud_pr3028_imagem11.png)
+
+- Descrição do botão ao parar o mouse em cima:
+
+  ![image](imagens/cloud_pr3028_imagem12.png)
+
+- No celular, as abas e os botões do menu esmaecem na borda:
+
+  ![image](imagens/cloud_pr3028_imagem13.png)
 
 ## Escalas ✨
 
@@ -263,21 +415,36 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Barra da grade mais compacta, horas previstas no formato 07:30 e o card do colaborador com o cargo numa linha e o horário na outra.
 
 - Guia Escalas na grade: a 12x36 inserida a partir de 10/11, com os dias circulados até o fim do mês:
-![image](imagens/cloud_pr3459_imagem1.png)
+
+  ![image](imagens/cloud_pr3459_imagem1.png)
+
 - Cadastro de escala com o Montar ciclo:
-![image](imagens/cloud_pr3459_imagem2.png)
+
+  ![image](imagens/cloud_pr3459_imagem2.png)
+
 - O Assistente propondo uma escala 12x36 noturna, com o aviso da jornada acima de 8h:
-![image](imagens/cloud_pr3459_imagem3.png)
+
+  ![image](imagens/cloud_pr3459_imagem3.png)
+
 - O Assistente aplicando a 12x36 para uma colaboradora no cartão "Aplicar na grade":
-![image](imagens/cloud_pr3459_imagem4.png)
+
+  ![image](imagens/cloud_pr3459_imagem4.png)
+
 - Barra da grade antes:
-![image](imagens/cloud_pr3467_imagem1.png)
+
+  ![image](imagens/cloud_pr3467_imagem1.png)
+
 - E depois, mais compacta:
-![image](imagens/cloud_pr3467_imagem2.png)
+
+  ![image](imagens/cloud_pr3467_imagem2.png)
+
 - Ciclo com as horas previstas e o total:
-![image](imagens/cloud_pr3467_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3467_imagem3.jpg)
+
 - Semana fixa com as horas previstas e o total:
-![image](imagens/cloud_pr3467_imagem4.jpg)
+
+  ![image](imagens/cloud_pr3467_imagem4.jpg)
 
 ### Convenção coletiva lida pelo Assistente
 
@@ -287,15 +454,24 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - O antigo "Sugerir regras" virou **Sugerir regras da loja**, para o horário de funcionamento e o regime. Os turnos sugeridos ficam com intervalo de até 2h, e a regra de intervalo acima de 2h só passa com a cláusula que a permite.
 
 - Seção da convenção no Sugerir regras: enviar os PDFs, marcar os que valem e ler com o Assistente:
-![image](imagens/cloud_pr3476_imagem1.png)
+
+  ![image](imagens/cloud_pr3476_imagem1.png)
+
 - Importação do zero: nome, vigência e municípios tirados das cláusulas e as lojas das cidades já marcadas:
-![image](imagens/cloud_pr3480_imagem1.png)
+
+  ![image](imagens/cloud_pr3480_imagem1.png)
+
 - PDFs que já estavam numa política: a gravação completa essa política:
-![image](imagens/cloud_pr3480_imagem2.png)
+
+  ![image](imagens/cloud_pr3480_imagem2.png)
+
 - Cadastro da política mostrando só os PDFs dela:
-![image](imagens/cloud_pr3480_imagem3.png)
+
+  ![image](imagens/cloud_pr3480_imagem3.png)
+
 - Convenção nova para as mesmas lojas: a opção de encerrar a anterior na véspera vem marcada:
-![image](imagens/cloud_pr3480_imagem4.png)
+
+  ![image](imagens/cloud_pr3480_imagem4.png)
 
 ### Dois planejamentos no mesmo mês
 
@@ -303,17 +479,28 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Ao aprovar, a tela mostra os planos e as datas em comum e oferece **Aprovar e tirar do outro planejamento** (fica no histórico dele). Publicar só é recusado quando outro planejamento já publicado tem o mesmo dia.
 
 - O dia que também está em outro planejamento, marcado antes de salvar:
-![image](imagens/cloud_pr3496_imagem1.png)
+
+  ![image](imagens/cloud_pr3496_imagem1.png)
+
 - Salvar grava e avisa, com o botão para abrir o outro planejamento:
-![image](imagens/cloud_pr3496_imagem2.png)
+
+  ![image](imagens/cloud_pr3496_imagem2.png)
+
 - Ao aprovar, a escolha de qual planejamento os dias saem:
-![image](imagens/cloud_pr3496_imagem3.png)
+
+  ![image](imagens/cloud_pr3496_imagem3.png)
+
 - Aprovado: os dias saíram do outro planejamento e foram para o cartão:
-![image](imagens/cloud_pr3496_imagem4.png)
+
+  ![image](imagens/cloud_pr3496_imagem4.png)
+
 - Se o outro planejamento mudar enquanto isso, a aprovação é recusada com o link para ele:
-![image](imagens/cloud_pr3496_imagem5.png)
+
+  ![image](imagens/cloud_pr3496_imagem5.png)
+
 - Publicar recusado só quando outro planejamento publicado tem o mesmo dia:
-![image](imagens/cloud_pr3496_imagem6.png)
+
+  ![image](imagens/cloud_pr3496_imagem6.png)
 
 ### Mais nas escalas
 
@@ -324,19 +511,32 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Previsão da demanda: o erro da previsão aparece logo depois de cadastrar o padrão, medido nas últimas 4 semanas com venda real.
 
 - Gerar escalas com a opção de intermitentes:
-![image](imagens/cloud_pr3495_imagem1.png)
+
+  ![image](imagens/cloud_pr3495_imagem1.png)
+
 - Carga horária semanal no quadro de horários:
-![image](imagens/cloud_pr3495_imagem2.png)
+
+  ![image](imagens/cloud_pr3495_imagem2.png)
+
 - Cartão do intermitente: só os dias com marcação recebem o horário, até a carga da semana:
-![image](imagens/cloud_pr3495_imagem3.png)
+
+  ![image](imagens/cloud_pr3495_imagem3.png)
+
 - Grade agrupada por setor, com o BH e o menu do colaborador:
-![image](imagens/cloud_pr3477_imagem1.png)
+
+  ![image](imagens/cloud_pr3477_imagem1.png)
+
 - Impressão da semana agrupada por setor e com o BH:
-![image](imagens/cloud_pr3477_imagem2.png)
+
+  ![image](imagens/cloud_pr3477_imagem2.png)
+
 - Plano gerado sem ninguém no Natal e com a folga proporcional na última semana:
-![image](imagens/cloud_pr3523_imagem1.png)
+
+  ![image](imagens/cloud_pr3523_imagem1.png)
+
 - As pendências de quem trabalha no dia proibido ou fica sem a folga:
-![image](imagens/cloud_pr3523_imagem2.png)
+
+  ![image](imagens/cloud_pr3523_imagem2.png)
 
 ## Quadro de horários: até 4 turnos e dois dias de DSR ✨
 
@@ -348,43 +548,80 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Gravar o horário avisa turno sem entrada ou saída, 4º turno sem o 3º e hora inválida; horário por dia em uso não pode ser excluído, e a mensagem diz onde ele é usado.
 
 - O botão "3º turno" no quadro de horários:
-![image](imagens/cloud_pr3470_imagem1.png)
+
+  ![image](imagens/cloud_pr3470_imagem1.png)
+
 - Horário com 4 turnos e o total do dia:
-![image](imagens/cloud_pr3470_imagem2.png)
+
+  ![image](imagens/cloud_pr3470_imagem2.png)
+
 - Tolerância por turno:
-![image](imagens/cloud_pr3470_imagem3.png)
+
+  ![image](imagens/cloud_pr3470_imagem3.png)
+
 - Aviso de turno incompleto ao gravar:
-![image](imagens/cloud_pr3470_imagem4.png)
+
+  ![image](imagens/cloud_pr3470_imagem4.png)
+
 - Horário do dia com o 3º turno:
-![image](imagens/cloud_pr3470_imagem5.png)
+
+  ![image](imagens/cloud_pr3470_imagem5.png)
+
 - Grade do quadro de horário na Manutenção, com o previsto somando os 4 turnos:
-![image](imagens/cloud_pr3470_imagem6.png)
+
+  ![image](imagens/cloud_pr3470_imagem6.png)
+
 - Manutenção com o previsto de 4 turnos e a falta do dia sem marcação:
-![image](imagens/calc_pr566_imagem1.png)
+
+  ![image](imagens/calc_pr566_imagem1.png)
+
 - Campos 1º e 2º dia de DSR:
-![image](imagens/cloud_pr3512_imagem1.png)
+
+  ![image](imagens/cloud_pr3512_imagem1.png)
+
 - Aviso ao repetir o mesmo dia nos dois campos:
-![image](imagens/cloud_pr3512_imagem2.png)
+
+  ![image](imagens/cloud_pr3512_imagem2.png)
+
 - Totais com um dia de DSR:
-![image](imagens/cloud_pr3512_imagem3.png)
+
+  ![image](imagens/cloud_pr3512_imagem3.png)
+
 - Totais com dois dias de DSR: o mesmo repouso e o sábado trabalhado como extra não útil:
-![image](imagens/cloud_pr3512_imagem4.png)
+
+  ![image](imagens/cloud_pr3512_imagem4.png)
+
 - Viagem antes das faixas:
-![image](imagens/cloud_pr3493_imagem1.png)
+
+  ![image](imagens/cloud_pr3493_imagem1.png)
+
 - A opção por faixa no quadro de horário:
-![image](imagens/cloud_pr3493_imagem2.png)
+
+  ![image](imagens/cloud_pr3493_imagem2.png)
+
 - As mesmas horas de viagem pelas faixas:
-![image](imagens/cloud_pr3493_imagem3.png)
+
+  ![image](imagens/cloud_pr3493_imagem3.png)
+
 - Extras de viagem e de sobreaviso escolhidas em lista:
-![image](imagens/cloud_pr3505_imagem1.png)
+
+  ![image](imagens/cloud_pr3505_imagem1.png)
+
 - Viagem por faixa e sobreaviso em totais próprios:
-![image](imagens/cloud_pr3505_imagem2.png)
+
+  ![image](imagens/cloud_pr3505_imagem2.png)
+
 - Viagem e sobreaviso por faixa:
-![image](imagens/cloud_pr3505_imagem3.png)
+
+  ![image](imagens/cloud_pr3505_imagem3.png)
+
 - Faixa de extras com 30 horas:
-![image](imagens/cloud_pr3521_imagem1.png)
+
+  ![image](imagens/cloud_pr3521_imagem1.png)
+
 - Exclusão de horário por dia recusada, com quem usa o horário:
-![image](imagens/cloud_pr3526_imagem1.png)
+
+  ![image](imagens/cloud_pr3526_imagem1.png)
 
 ## Feriado só de alguns estabelecimentos ✨
 
@@ -392,15 +629,24 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - O cálculo, as escalas, a previsão da demanda e o calendário de adiantamentos seguem a mesma regra; o Calendário mostra o feriado como "Estabelecimentos". Feriados sem estabelecimentos continuam nacionais, estaduais ou municipais.
 
 - Cadastro do feriado, guia Geral:
-![image](imagens/cloud_pr3439_imagem1.png)
+
+  ![image](imagens/cloud_pr3439_imagem1.png)
+
 - Guia Abrangência com o estabelecimento escolhido:
-![image](imagens/cloud_pr3439_imagem2.png)
+
+  ![image](imagens/cloud_pr3439_imagem2.png)
+
 - Lista de feriados com a coluna Estabelecimentos:
-![image](imagens/cloud_pr3439_imagem3.png)
+
+  ![image](imagens/cloud_pr3439_imagem3.png)
+
 - Colaborador do estabelecimento com o dia como feriado:
-![image](imagens/cloud_pr3439_imagem4.png)
+
+  ![image](imagens/cloud_pr3439_imagem4.png)
+
 - No mesmo dia, o colaborador de outro estabelecimento segue em dia normal:
-![image](imagens/cloud_pr3439_imagem5.png)
+
+  ![image](imagens/cloud_pr3439_imagem5.png)
 
 ## Manutenção e cartão
 
@@ -412,25 +658,44 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Trocar o código do colaborador leva junto a divisão das extras entre justificativas.
 
 - Manutenção com o período bloqueado e o botão Desbloquear:
-![image](imagens/cloud_pr3453_imagem1.png)
+
+  ![image](imagens/cloud_pr3453_imagem1.png)
+
 - Depois do Desbloquear, a edição volta:
-![image](imagens/cloud_pr3453_imagem2.png)
+
+  ![image](imagens/cloud_pr3453_imagem2.png)
+
 - Justificativa de extras com o botão Dividir:
-![image](imagens/cloud_pr3435_imagem1.png)
+
+  ![image](imagens/cloud_pr3435_imagem1.png)
+
 - Diálogo Dividir com as extras do dia e quanto falta:
-![image](imagens/cloud_pr3435_imagem2.png)
+
+  ![image](imagens/cloud_pr3435_imagem2.png)
+
 - Soma acima das extras do dia: o Salvar fica bloqueado:
-![image](imagens/cloud_pr3435_imagem3.png)
+
+  ![image](imagens/cloud_pr3435_imagem3.png)
+
 - Soma igual às extras do dia: o Salvar libera:
-![image](imagens/cloud_pr3435_imagem4.png)
+
+  ![image](imagens/cloud_pr3435_imagem4.png)
+
 - Depois de salvar, o dia sai dos pendentes:
-![image](imagens/cloud_pr3435_imagem5.png)
+
+  ![image](imagens/cloud_pr3435_imagem5.png)
+
 - Inconsistências por mês com os motivos pelo nome:
-![image](imagens/cloud_pr3399_imagem1.png)
+
+  ![image](imagens/cloud_pr3399_imagem1.png)
+
 - Manutenção do motorista com as noites que viram o dia sem inconsistência:
-![image](imagens/cloud_pr3399_imagem2.png)
+
+  ![image](imagens/cloud_pr3399_imagem2.png)
+
 - Banco de horas criado com a configuração de código 2:
-![image](imagens/calc_pr573_imagem1.png)
+
+  ![image](imagens/calc_pr573_imagem1.png)
 
 ## Integrações, API e folha
 
@@ -443,41 +708,76 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Arquivo de convênio volta a sugerir o destino sem a IA, e a sugestão da IA não liga mais uma coluna de texto a um campo de valor ou data.
 
 - Importar arquivo no botão de sincronização:
-![image](imagens/cloud_pr3522_imagem1.png)
+
+  ![image](imagens/cloud_pr3522_imagem1.png)
+
 - Arquivos soltos na tela Integrações, reconhecidos pelo nome:
-![image](imagens/cloud_pr3522_imagem2.png)
+
+  ![image](imagens/cloud_pr3522_imagem2.png)
+
 - Modelo "Somente números", com o texto de teste:
-![image](imagens/cloud_pr3522_imagem3.png)
+
+  ![image](imagens/cloud_pr3522_imagem3.png)
+
 - Colaboradores achados pelo nome:
-![image](imagens/cloud_pr3522_imagem4.png)
+
+  ![image](imagens/cloud_pr3522_imagem4.png)
+
 - Destino Quadros de horários:
-![image](imagens/cloud_pr3522_imagem5.png)
+
+  ![image](imagens/cloud_pr3522_imagem5.png)
+
 - Integração de arquivos do agente com o tipo Automático:
-![image](imagens/cloud_pr3522_imagem6.png)
+
+  ![image](imagens/cloud_pr3522_imagem6.png)
+
 - A tela de integrações do agente:
-![image](imagens/cloud_pr3522_imagem7.png)
+
+  ![image](imagens/cloud_pr3522_imagem7.png)
+
 - Arquivos recebidos, com o tipo identificado:
-![image](imagens/cloud_pr3522_imagem8.png)
+
+  ![image](imagens/cloud_pr3522_imagem8.png)
+
 - Chave de API com a permissão de importar salários:
-![image](imagens/cloud_pr3438_imagem2.png)
+
+  ![image](imagens/cloud_pr3438_imagem2.png)
+
 - Layout com "Separar arquivo por estabelecimento":
-![image](imagens/cloud_pr3554_imagem1.png)
+
+  ![image](imagens/cloud_pr3554_imagem1.png)
+
 - Um PDF de espelhos para cada estabelecimento:
-![image](imagens/cloud_pr3554_imagem2.png)
+
+  ![image](imagens/cloud_pr3554_imagem2.png)
+
 - Na visualização, cada PDF numa guia com o nome do estabelecimento:
-![image](imagens/cloud_pr3554_imagem3.png)
+
+  ![image](imagens/cloud_pr3554_imagem3.png)
+
 - Download dos espelhos de um colaborador:
-![image](imagens/cloud_pr3486_imagem1.png)
+
+  ![image](imagens/cloud_pr3486_imagem1.png)
+
 - As páginas do PDF em ordem, do mais antigo ao mais recente:
-![image](imagens/cloud_pr3486_imagem2.png)
+
+  ![image](imagens/cloud_pr3486_imagem2.png)
+
 - Guia Campos do layout da folha antes:
-![image](imagens/cloud_pr3534_imagem1.png)
+
+  ![image](imagens/cloud_pr3534_imagem1.png)
+
 - E depois, com todas as colunas:
-![image](imagens/cloud_pr3534_imagem2.png)
+
+  ![image](imagens/cloud_pr3534_imagem2.png)
+
 - Condições escolhidas em lista:
-![image](imagens/cloud_pr3534_imagem3.png)
+
+  ![image](imagens/cloud_pr3534_imagem3.png)
+
 - Linha da comissão antes e depois:
-![image](imagens/calc_pr575_imagem1.png)
+
+  ![image](imagens/calc_pr575_imagem1.png)
 
 ## Usuários, acessos e alertas
 
@@ -486,21 +786,36 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - **Alerta de colaborador sem marcação**: novo evento **Sem marcação** (rotina Registros de ponto) nas regras de Alertas e notificações, quando quem tem horário previsto não marcou nada X minutos depois da entrada prevista (padrão 15 min). Ficam de fora folga, DSR, feriado, afastamento, demitidos e isentos. Até 3 colaboradores chega um aviso para cada; acima disso, um resumo com o link para a Consulta diária. A lista de eventos da regra mostra só os das rotinas escolhidas.
 
 - Enviar acessos na barra de Usuários:
-![image](imagens/cloud_pr3485_imagem1.png)
+
+  ![image](imagens/cloud_pr3485_imagem1.png)
+
 - A lista para marcar quem recebe:
-![image](imagens/cloud_pr3485_imagem2.png)
+
+  ![image](imagens/cloud_pr3485_imagem2.png)
+
 - Cadastro aberto pelo link, só faltando a senha:
-![image](imagens/cloud_pr3485_imagem3.png)
+
+  ![image](imagens/cloud_pr3485_imagem3.png)
+
 - O colaborador com o usuário criado:
-![image](imagens/cloud_pr3485_imagem4.png)
+
+  ![image](imagens/cloud_pr3485_imagem4.png)
+
 - Eventos da regra só das rotinas escolhidas:
-![image](imagens/cloud_pr3546_imagem1.png)
+
+  ![image](imagens/cloud_pr3546_imagem1.png)
+
 - Regra com o evento Sem marcação e os minutos depois da entrada:
-![image](imagens/cloud_pr3546_imagem2.png)
+
+  ![image](imagens/cloud_pr3546_imagem2.png)
+
 - Até 3 colaboradores, um aviso para cada:
-![image](imagens/cloud_pr3546_imagem3.png)
+
+  ![image](imagens/cloud_pr3546_imagem3.png)
+
 - Acima de 3, um resumo só:
-![image](imagens/cloud_pr3546_imagem4.png)
+
+  ![image](imagens/cloud_pr3546_imagem4.png)
 
 ## Coletores e agente local
 
@@ -509,9 +824,12 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - **Horários de sincronização** do agente local: modelos (a cada hora, a cada 15 minutos, horários fixos) ou expressão livre, no horário do computador do agente; com os horários confirmados, o próprio agente sincroniza os coletores dele.
 
 - REP de teste antes do envio, sem o administrador:
-![image](imagens/cloud_pr3502_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3502_imagem1.jpg)
+
 - Depois do envio, com o privilégio de administrador do cadastro:
-![image](imagens/cloud_pr3502_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3502_imagem2.jpg)
 
 ## Permissões e segurança
 
@@ -519,65 +837,8 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - Na dupla aprovação, aprovar pelo detalhe da solicitação segue a etapa da configuração da empresa.
 
 - Aviso ao tentar aprovar sem a permissão:
-![image](imagens/cloud_pr3492_imagem1.png)
 
-## Para a equipe Símix
-
-- **Questionário de implantação** que o cliente preenche por um link, sem login: nova etapa "Questionário" na implantação, com o link para mandar por e-mail, a coluna na lista de Implantações e o **Aprovar**, que mostra item a item o que está no banco e o que fica, simula a planilha de colaboradores e grava os marcados. A implantação só fica Finalizada com o questionário aprovado ou "Concluir sem questionário".
-- Migração do PcPonto pelo app Suporte direto ao storage, com a migração começando sozinha ao terminar o envio e o início, o fim e a duração de cada implantação.
-- Monitor de coletores e painel de inconsistências do admin só com o que pede ação: coletores ativos, de rede, com sincronização não manual e de clientes com o serviço ativo, sem os parados e as falhas passageiras, e sem os falsos positivos de virada de turno e de motorista.
-- Telas do admin (Chats do assistente, Feedbacks, Gravações, Demonstrações e Implantações) com os mesmos indicadores e os filtros sempre à vista. O filtro Cidade de Clientes não repete mais a mesma cidade.
-- Copiar banco volta a restaurar no servidor de produção, e o aumento de limite pelo Assistente aparece no histórico do cliente.
-- Sistema atualizado para o .NET 11 e o ABP 11, com os mesmos resultados de cálculo e os mesmos arredondamentos; scripts de banco corrigidos para todos os clientes.
-
-- Etapa Questionário da implantação:
-![image](imagens/cloud_pr3503_imagem1.png)
-- Coluna Questionário na lista de implantações:
-![image](imagens/cloud_pr3503_imagem2.png)
-- O formulário do cliente, sem login:
-![image](imagens/cloud_pr3503_imagem3.png)
-- Contatos sem contato completo:
-![image](imagens/cloud_pr3503_imagem4.png)
-- A equipe preenchendo pelo link:
-![image](imagens/cloud_pr3503_imagem5.png)
-- Documentos no formulário do cliente:
-![image](imagens/cloud_pr3503_imagem6.png)
-- Respostas com os arquivos no topo:
-![image](imagens/cloud_pr3503_imagem7.png)
-- Prévia do e-mail:
-![image](imagens/cloud_pr3503_imagem8.png)
-- Confirmação do e-mail:
-![image](imagens/cloud_pr3503_imagem9.png)
-- Prévia da aprovação:
-![image](imagens/cloud_pr3503_imagem10.png)
-- Questionário aprovado:
-![image](imagens/cloud_pr3503_imagem11.png)
-- Migração pelo app Suporte:
-![image](imagens/cloud_pr3529_imagem1.png)
-- Monitor de coletores com o filtro fixo:
-![image](imagens/cloud_pr3479_imagem1.png)
-- Chats do assistente no tema claro:
-![image](imagens/cloud_pr3544_imagem1.png)
-- E no tema escuro:
-![image](imagens/cloud_pr3544_imagem2.png)
-- Feedbacks no tema claro:
-![image](imagens/cloud_pr3544_imagem3.png)
-- E no tema escuro:
-![image](imagens/cloud_pr3544_imagem4.png)
-- Gravações no tema claro:
-![image](imagens/cloud_pr3544_imagem5.png)
-- E no tema escuro:
-![image](imagens/cloud_pr3544_imagem6.png)
-- Demonstrações:
-![image](imagens/cloud_pr3544_imagem7.png)
-- Filtro Cidade com a cidade uma vez só:
-![image](imagens/cloud_pr3524_imagem1.png)
-- Tela de login no .NET 11:
-![image](imagens/cloud_pr3517_imagem1.png)
-- Informações do ambiente:
-![image](imagens/cloud_pr3517_imagem2.png)
-- Painel com os widgets carregados:
-![image](imagens/cloud_pr3517_imagem3.png)
+  ![image](imagens/cloud_pr3492_imagem1.png)
 
 ## Outras melhorias e correções
 
@@ -590,33 +851,60 @@ A barra do topo foi reorganizada e ganhou favoritos e foto de perfil.
 - A pesquisa e as dicas voltam a achar os campos das Configurações do app.
 
 - Consulta geral de banco de horas com o filtro por estabelecimento:
-![image](imagens/cloud_pr3483_imagem1.png)
+
+  ![image](imagens/cloud_pr3483_imagem1.png)
+
 - Os períodos e colaboradores só do estabelecimento:
-![image](imagens/cloud_pr3483_imagem2.png)
+
+  ![image](imagens/cloud_pr3483_imagem2.png)
+
 - Manutenção de VRs sem filtro:
-![image](imagens/cloud_pr3559_imagem1.png)
+
+  ![image](imagens/cloud_pr3559_imagem1.png)
+
 - Filtrando um estabelecimento:
-![image](imagens/cloud_pr3559_imagem2.png)
+
+  ![image](imagens/cloud_pr3559_imagem2.png)
+
 - Filtrando o outro estabelecimento:
-![image](imagens/cloud_pr3559_imagem3.png)
+
+  ![image](imagens/cloud_pr3559_imagem3.png)
+
 - Antes: a barra vermelha por cima da tela já reconectada:
-![image](imagens/cloud_pr3449_imagem1.png)
+
+  ![image](imagens/cloud_pr3449_imagem1.png)
+
 - Depois: a tela reconecta sem a barra:
-![image](imagens/cloud_pr3449_imagem2.png)
+
+  ![image](imagens/cloud_pr3449_imagem2.png)
+
 - A página recarregou sozinha, logada, na mesma tela:
-![image](imagens/cloud_pr3449_imagem3.png)
+
+  ![image](imagens/cloud_pr3449_imagem3.png)
+
 - Logs do colaborador com campos customizáveis, contatos e vale-transporte:
-![image](imagens/cloud_pr3508_imagem1.png)
+
+  ![image](imagens/cloud_pr3508_imagem1.png)
+
 - Assinatura no tema escuro, com o traço visível:
-![image](imagens/cloud_pr3544_imagem8.png)
+
+  ![image](imagens/cloud_pr3544_imagem8.png)
+
 - Assinatura no tema claro, sem mudança:
-![image](imagens/cloud_pr3544_imagem9.png)
+
+  ![image](imagens/cloud_pr3544_imagem9.png)
+
 - Calendário com as cores por tipo de evento:
-![image](imagens/cloud_pr3524_imagem2.png)
+
+  ![image](imagens/cloud_pr3524_imagem2.png)
+
 - Só os tipos com evento no mês:
-![image](imagens/cloud_pr3524_imagem3.png)
+
+  ![image](imagens/cloud_pr3524_imagem3.png)
+
 - Feedback das Escalas com o print anexado:
-![image](imagens/cloud_pr3524_imagem4.png)
+
+  ![image](imagens/cloud_pr3524_imagem4.png)
 
 # 10/11/2026
 
@@ -639,9 +927,12 @@ Nova página na ajuda que ensina os caminhos para achar uma tela, um campo ou um
 - A página é o primeiro atalho do menu de ajuda, aparece no menu "⋯" das telas menores e na pesquisa global ("onde fica", "encontrar", "atalhos"), e entra no lugar do suporte remoto em "Precisa de ajuda?" do Início.
 
 - Página Como se achar?:
-![image](imagens/cloud_pr3440_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3440_imagem1.jpg)
+
 - O exemplo "vale transporte" abrindo a pesquisa com as telas e os campos:
-![image](imagens/cloud_pr3440_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3440_imagem2.jpg)
 
 ## Integrações por arquivo: layout sugerido pela IA ✨
 
@@ -674,27 +965,32 @@ Nova página na ajuda que ensina os caminhos para achar uma tela, um campo ou um
 - Menu Cadastros com **Implantar módulo**, e Feedbacks no submenu de Início. O menu de ajuda mostra os atalhos um abaixo do outro e não passa mais da borda da tela.
 
 - Barra de Colaboradores com o campo Visão, os botões alinhados e os treinamentos à direita:
-![image](imagens/cloud_pr3429_imagem1.png)
+
+  ![image](imagens/cloud_pr3429_imagem1.png)
+
 - A mesma barra no tema escuro:
-![image](imagens/cloud_pr3429_imagem2.png)
+
+  ![image](imagens/cloud_pr3429_imagem2.png)
+
 - Barra da Manutenção com o Período, o filtro e os treinamentos à direita:
-![image](imagens/cloud_pr3429_imagem3.png)
+
+  ![image](imagens/cloud_pr3429_imagem3.png)
+
 - Registros com o painel do dia aberto:
-![image](imagens/cloud_pr3429_imagem4.png)
+
+  ![image](imagens/cloud_pr3429_imagem4.png)
+
 - Comprovantes:
-![image](imagens/cloud_pr3429_imagem5.png)
+
+  ![image](imagens/cloud_pr3429_imagem5.png)
+
 - Facial com a proteção de dados ligada:
-![image](imagens/cloud_pr3429_imagem6.png)
+
+  ![image](imagens/cloud_pr3429_imagem6.png)
+
 - Configurações do app em janela:
-![image](imagens/cloud_pr3429_imagem7.png)
 
-## Para a equipe Símix
-
-- No login de suporte, o botão **Gravar** fica fixo na barra do topo, com um X que o esconde por 2 horas.
-- Admin › Documentos dos clientes: os mais recentes primeiro, o nome do cliente abre o sistema dele e a coluna Arquivo abre o arquivo direto.
-
-- Login de suporte com o Gravar na barra do topo:
-![image](imagens/cloud_pr3429_imagem8.png)
+  ![image](imagens/cloud_pr3429_imagem7.png)
 
 ## Outras melhorias e correções
 
@@ -702,9 +998,12 @@ Nova página na ajuda que ensina os caminhos para achar uma tela, um campo ou um
 - Os avisos do canto da tela somem na hora ao fechar, e o espaço entre o menu e as telas ficou igual ao espaço entre os cards.
 
 - Desconsiderar aprovado no lanche, antes e depois da correção:
-![image](imagens/cloud_pr3433_imagem1.png)
+
+  ![image](imagens/cloud_pr3433_imagem1.png)
+
 - Comparação por layout do horário: só as marcações de lanche mudaram:
-![image](imagens/cloud_pr3433_imagem2.png)
+
+  ![image](imagens/cloud_pr3433_imagem2.png)
 
 # 09/11/2026
 
@@ -738,63 +1037,120 @@ Nova página **Início › Módulos**, com um card por módulo e assistentes que
 - O colaborador Demonstração fica de fora das contagens de uso, e a conta do mês nos assistentes é a mesma da Manutenção de VTs e de VRs.
 
 - Cards da página de módulos com a situação, os números e o que falta em cada módulo:
-![image](imagens/cloud_pr3278_imagem1.png)
+
+  ![image](imagens/cloud_pr3278_imagem1.png)
+
 - Linha Implantar módulos no card Sugestões do Início:
-![image](imagens/cloud_pr3278_imagem2.png)
+
+  ![image](imagens/cloud_pr3278_imagem2.png)
+
 - Treinamentos do card de Escalas, com os roteiros de todas as telas do módulo:
-![image](imagens/cloud_pr3278_imagem3.png)
+
+  ![image](imagens/cloud_pr3278_imagem3.png)
+
 - Documentos, passo 1: os modelos, com contracheques, informe de rendimentos, contrato e exames já marcados:
-![image](imagens/cloud_pr3278_imagem5.png)
+
+  ![image](imagens/cloud_pr3278_imagem5.png)
+
 - Documentos, passo 2: como o colaborador assina e quem abre cada documento:
-![image](imagens/cloud_pr3278_imagem6.png)
+
+  ![image](imagens/cloud_pr3278_imagem6.png)
+
 - Vale-transporte, passo 1: os modelos com a conta de 22 dias e os VTs já cadastrados:
-![image](imagens/cloud_pr3278_imagem7.png)
+
+  ![image](imagens/cloud_pr3278_imagem7.png)
+
 - Quando contar: o mês do VT e a conferência de faltas com as datas do período:
-![image](imagens/cloud_pr3278_imagem8.png)
+
+  ![image](imagens/cloud_pr3278_imagem8.png)
+
 - Quem recebe, com a contagem:
-![image](imagens/cloud_pr3278_imagem9.png)
+
+  ![image](imagens/cloud_pr3278_imagem9.png)
+
 - Conferir e salvar, num botão só:
-![image](imagens/cloud_pr3278_imagem10.png)
+
+  ![image](imagens/cloud_pr3278_imagem10.png)
+
 - Vale-refeição, passo 1: por dia previsto, mensal fixo ou com participação:
-![image](imagens/cloud_pr3278_imagem11.png)
+
+  ![image](imagens/cloud_pr3278_imagem11.png)
+
 - Valores e regras do VR, com a conta de exemplo:
-![image](imagens/cloud_pr3278_imagem12.png)
+
+  ![image](imagens/cloud_pr3278_imagem12.png)
+
 - Conferir e salvar o VR:
-![image](imagens/cloud_pr3278_imagem13.png)
+
+  ![image](imagens/cloud_pr3278_imagem13.png)
+
 - Cadastro do VR: a condição vazia aparece como "Dia Previsto", como o cálculo conta:
-![image](imagens/cloud_pr3278_imagem14.png)
+
+  ![image](imagens/cloud_pr3278_imagem14.png)
+
 - App, passo 1: os modelos de como a equipe registra:
-![image](imagens/cloud_pr3278_imagem15.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem15.jpg)
+
 - Passo 2: coordenada dos estabelecimentos, raio da cerca e conferência pela web:
-![image](imagens/cloud_pr3278_imagem16.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem16.jpg)
+
 - Passo 3: foto, reconhecimento facial, biometria e aparelho novo:
-![image](imagens/cloud_pr3278_imagem17.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem17.jpg)
+
 - Revisar e aplicar: o que muda, antes e depois:
-![image](imagens/cloud_pr3278_imagem18.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem18.jpg)
+
 - Ver funcionando: teste de um ponto contra a cerca do app e da web e o comprovante de exemplo:
-![image](imagens/cloud_pr3278_imagem19.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem19.jpg)
+
 - Escalas, ciclo: 12x36 diurno, noturno e 4x2 com a prévia de 14 dias e as horas por semana:
-![image](imagens/cloud_pr3278_imagem23.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem23.jpg)
+
 - O mês com os plantões, as folgas e os avisos da lei:
-![image](imagens/cloud_pr3278_imagem24.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem24.jpg)
+
 - Quem segue: o Demonstração, com o quadro atual e o quadro de onde vêm as regras:
-![image](imagens/cloud_pr3278_imagem25.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem25.jpg)
+
 - Conferir e criar: horário do plantão, folga, escala, quadro e a troca de quadro:
-![image](imagens/cloud_pr3278_imagem26.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem26.jpg)
+
 - Pronto: a escala do mês gerada, com o mês desenhado:
-![image](imagens/cloud_pr3278_imagem27.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem27.jpg)
+
 - Escala montada todo mês: o roteiro das telas de planejamento na ordem:
-![image](imagens/cloud_pr3278_imagem28.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem28.jpg)
+
 - Prêmios: assiduidade, pontualidade, frequência integral e domingo trabalhado, com o valor sugerido:
-![image](imagens/cloud_pr3278_imagem29.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem29.jpg)
+
 - Quando perde: cada condição em frase, com as tolerâncias de um clique:
-![image](imagens/cloud_pr3278_imagem30.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem30.jpg)
+
 - Prévia sem gravar: quem ganharia, o total e por que cada um perderia:
-![image](imagens/cloud_pr3278_imagem31.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem31.jpg)
+
 - Nome e vigência, com o resumo do que será ativado:
-![image](imagens/cloud_pr3278_imagem32.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem32.jpg)
+
 - Pronto: calcular o mês e ver o prêmio no cartão:
-![image](imagens/cloud_pr3278_imagem33.jpg)
+
+  ![image](imagens/cloud_pr3278_imagem33.jpg)
 
 ## Novo tema e padrão visual ✨
 
@@ -811,23 +1167,40 @@ As telas ganharam um tema novo e um padrão único para listas, cadastros, diál
 - Contorno dos cartões mais visível em todo o sistema, no tema claro e no escuro.
 
 - Lista de colaboradores no tema claro:
-![image](imagens/cloud_pr3301_imagem1.png)
+
+  ![image](imagens/cloud_pr3301_imagem1.png)
+
 - E no tema escuro:
-![image](imagens/cloud_pr3301_imagem2.png)
+
+  ![image](imagens/cloud_pr3301_imagem2.png)
+
 - Cadastro com o rodapé novo: ferramentas neutras, Cancelar em texto e Salvar em destaque:
-![image](imagens/cloud_pr3301_imagem3.png)
+
+  ![image](imagens/cloud_pr3301_imagem3.png)
+
 - Calcular dados com o título dentro do cartão, no tema claro:
-![image](imagens/cloud_pr3301_imagem4.png)
+
+  ![image](imagens/cloud_pr3301_imagem4.png)
+
 - E no tema escuro:
-![image](imagens/cloud_pr3301_imagem5.png)
+
+  ![image](imagens/cloud_pr3301_imagem5.png)
+
 - Exportar folha, com treinamentos e histórico ao lado do título:
-![image](imagens/cloud_pr3301_imagem6.png)
+
+  ![image](imagens/cloud_pr3301_imagem6.png)
+
 - Gerar escalas no padrão novo:
-![image](imagens/cloud_pr3301_imagem7.png)
+
+  ![image](imagens/cloud_pr3301_imagem7.png)
+
 - Mais cadastros, com os cartões contornados e os títulos no padrão:
-![image](imagens/cloud_pr3301_imagem8.png)
+
+  ![image](imagens/cloud_pr3301_imagem8.png)
+
 - Menu com o grupo selecionado em negrito, o ponto no grupo da tela aberta e o item ativo só com o fundo colorido:
-![image](imagens/cloud_pr3412_imagem2.png)
+
+  ![image](imagens/cloud_pr3412_imagem2.png)
 
 ## Escalas inteligentes ✨
 
@@ -842,17 +1215,28 @@ As Escalas inteligentes ganharam sugestão de regras e turnos, pendências separ
 - Enquanto o sistema lê o histórico e consulta o Assistente, Sugerir coberturas, regras e turnos mostram uma espera animada com as etapas, no lugar do formulário parado.
 
 - Sugerir regras: rascunho de uma loja em 5x2, com as regras de convenção desmarcadas para confirmar:
-![image](imagens/cloud_pr3339_imagem1.png)
+
+  ![image](imagens/cloud_pr3339_imagem1.png)
+
 - Sugerir turnos: abertura, intermediário, fechamento e domingo de três setores, pelo histórico:
-![image](imagens/cloud_pr3339_imagem2.png)
+
+  ![image](imagens/cloud_pr3339_imagem2.png)
+
 - Espera animada ao sugerir os turnos, com as etapas marcadas:
-![image](imagens/cloud_pr3340_imagem3.png)
+
+  ![image](imagens/cloud_pr3340_imagem3.png)
+
 - Lista de regras da política com a jornada diária e o feriado "A confirmar":
-![image](imagens/cloud_pr3421_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3421_imagem1.jpg)
+
 - Na grade, a jornada diária volta a valer como na lei:
-![image](imagens/cloud_pr3421_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3421_imagem2.jpg)
+
 - Seção "A confirmar" na ajuda Regras, com as regras que ainda não valem:
-![image](imagens/cloud_pr3421_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3421_imagem3.jpg)
 
 ### Pendências por tipo e previsão estimada
 
@@ -863,15 +1247,24 @@ As Escalas inteligentes ganharam sugestão de regras e turnos, pendências separ
 - **Assistente na grade**: perguntas como "o que merece atenção nesta semana?" são respondidas sobre o plano aberto, a partir de um resumo com as pendências agrupadas, as regras que mais aparecem e os setores abaixo do mínimo, com o pior dia de cada um. Com previsão estimada, o Assistente avisa que a falta é uma aproximação antes de sugerir gente para cobri-la.
 
 - Contador de cobertura: a aba abre filtrada, com os setores e as contagens:
-![image](imagens/cloud_pr3422_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3422_imagem1.jpg)
+
 - Contador de regras: Lei e Regras cadastradas com as contagens:
-![image](imagens/cloud_pr3422_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3422_imagem2.jpg)
+
 - Rodapé da grade com o filete tracejado nos dias da previsão estimada:
-![image](imagens/cloud_pr3423_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3423_imagem1.jpg)
+
 - Simulador com o aviso no topo e as marcas no Necessário e nas faltas:
-![image](imagens/cloud_pr3423_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3423_imagem2.jpg)
+
 - Sugerir demanda com a coluna Máximo e o aviso dos padrões sem máximo:
-![image](imagens/cloud_pr3418_imagem1.png)
+
+  ![image](imagens/cloud_pr3418_imagem1.png)
 
 ### Transição 6x1 → 5x2 ✨
 
@@ -880,11 +1273,16 @@ As Escalas inteligentes ganharam sugestão de regras e turnos, pendências separ
 - A semana muda pelas setas, a partir da de 21/12/2026, e o cálculo da rede roda no botão Calcular. A conferência usa só o que a virada muda — limite semanal, folgas da semana e dias seguidos —, respeitando a média de folgas da convenção e a regra cadastrada mais estrita.
 
 - As lojas com as pessoas regularizadas, com proposta e em infração:
-![image](imagens/cloud_pr3424_imagem1.png)
+
+  ![image](imagens/cloud_pr3424_imagem1.png)
+
 - Loja aberta, com quem ainda não está regularizado e o motivo:
-![image](imagens/cloud_pr3424_imagem2.png)
+
+  ![image](imagens/cloud_pr3424_imagem2.png)
+
 - Pessoas com proposta e o link para o planejamento:
-![image](imagens/cloud_pr3424_imagem3.png)
+
+  ![image](imagens/cloud_pr3424_imagem3.png)
 
 ### Escala do colaborador
 
@@ -893,15 +1291,24 @@ As Escalas inteligentes ganharam sugestão de regras e turnos, pendências separ
 - A impressão da escala segue o **Exibir** da grade: turnos previstos, horas previstas e horas trabalhadas embaixo de cada dia, com legenda.
 
 - Card Minha escala no painel do colaborador, com o atalho para o setor:
-![image](imagens/cloud_pr3375_imagem1.png)
+
+  ![image](imagens/cloud_pr3375_imagem1.png)
+
 - Escala do setor, com a linha do colaborador em destaque e os colegas afastados como "Ausente":
-![image](imagens/cloud_pr3375_imagem2.png)
+
+  ![image](imagens/cloud_pr3375_imagem2.png)
+
 - Aviso de escala aprovada no sino do colaborador:
-![image](imagens/cloud_pr3375_imagem3.png)
+
+  ![image](imagens/cloud_pr3375_imagem3.png)
+
 - Grade com o Exibir marcado:
-![image](imagens/cloud_pr3375_imagem4.png)
+
+  ![image](imagens/cloud_pr3375_imagem4.png)
+
 - A impressão com as mesmas informações embaixo de cada dia:
-![image](imagens/cloud_pr3375_imagem5.png)
+
+  ![image](imagens/cloud_pr3375_imagem5.png)
 
 ### Melhorias na grade da escala
 
@@ -915,25 +1322,44 @@ As Escalas inteligentes ganharam sugestão de regras e turnos, pendências separ
 - A demonstração guiada das Escalas inteligentes acompanha a grade nova: o passo do Assistente volta a abrir a janela, o das pendências destaca os contadores, e salvar o planejamento no meio da demonstração segue na grade.
 
 - Barra nova, setor escolhido no filtro e o "..." de cada horário no painel:
-![image](imagens/cloud_pr3338_imagem1.png)
+
+  ![image](imagens/cloud_pr3338_imagem1.png)
+
 - Painel lateral recolhido, só com o ícone para abrir de novo:
-![image](imagens/cloud_pr3338_imagem2.png)
+
+  ![image](imagens/cloud_pr3338_imagem2.png)
+
 - Setores na linha de baixo e o rodapé só com o setor escolhido:
-![image](imagens/cloud_pr3340_imagem1.png)
+
+  ![image](imagens/cloud_pr3340_imagem1.png)
+
 - A lista de Setores com os setores do rodapé:
-![image](imagens/cloud_pr3340_imagem2.png)
+
+  ![image](imagens/cloud_pr3340_imagem2.png)
+
 - Coberturas: a matriz logo abaixo do card, com Estabelecimento e Setor preenchidos:
-![image](imagens/cloud_pr3420_imagem1.png)
+
+  ![image](imagens/cloud_pr3420_imagem1.png)
+
 - Escala com nomes, fotos e cargos borrados depois de ligar o Ofuscar em outra aba:
-![image](imagens/cloud_pr3420_imagem2.png)
+
+  ![image](imagens/cloud_pr3420_imagem2.png)
+
 - Demanda: o filtro "Estabelecimento (vazio = todos)" com o rótulo inteiro:
-![image](imagens/cloud_pr3420_imagem3.png)
+
+  ![image](imagens/cloud_pr3420_imagem3.png)
+
 - Relatório de Escalas/Afastamentos com o cabeçalho pelo Estabelecimento:
-![image](imagens/cloud_pr3380_imagem1.png)
+
+  ![image](imagens/cloud_pr3380_imagem1.png)
+
 - Escolhendo "Estabelecimento atual" na barra do relatório:
-![image](imagens/cloud_pr3380_imagem2.png)
+
+  ![image](imagens/cloud_pr3380_imagem2.png)
+
 - O passo do Assistente na demonstração guiada:
-![image](imagens/cloud_pr3419_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3419_imagem1.jpg)
 
 ## Contrato de trabalho e PCD no cadastro do colaborador ✨
 
@@ -952,9 +1378,12 @@ O cadastro do colaborador ganha o grupo **Contrato de trabalho**, que passa a or
 > **Atenção (integrações externas):** a consulta de colaboradores do mês da integração por API passa a devolver os códigos de vínculo, tipo de salário, regime de jornada e modalidade.
 
 - Grupo de PCD preenchido na aba Complementar:
-![image](imagens/cloud_pr3396_imagem4.png)
+
+  ![image](imagens/cloud_pr3396_imagem4.png)
+
 - Cota marcada sem o tipo de deficiência: a tela avisa e não salva:
-![image](imagens/cloud_pr3396_imagem5.png)
+
+  ![image](imagens/cloud_pr3396_imagem5.png)
 
 ## Integração por API e assistentes de IA ✨
 
@@ -966,13 +1395,20 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - **Importação de planilhas pelo Claude**: com a permissão "Importar planilhas pelo assistente" na chave, o Claude lê a planilha, propõe de qual coluna vai para qual campo, simula, mostra o resumo e os erros por linha e só grava depois do ok. O primeiro destino são os pedidos de adiantamento salarial: o colaborador é achado pelo CPF (mesmo sem o zero da frente), código, PIS ou matrícula, o mês é aberto se ainda não existir, e importar de novo atualiza, sem duplicar.
 
 - Chaves de API com as permissões de consulta e o exemplo pronto:
-![image](imagens/cloud_pr3352_imagem1.png)
+
+  ![image](imagens/cloud_pr3352_imagem1.png)
+
 - Chave criada com a permissão de importar planilhas e o comando para conectar o Claude:
-![image](imagens/cloud_pr3397_imagem1.png)
+
+  ![image](imagens/cloud_pr3397_imagem1.png)
+
 - O mês do adiantamento com os pedidos gravados pelo Claude (origem "Importação"):
-![image](imagens/cloud_pr3397_imagem2.png)
+
+  ![image](imagens/cloud_pr3397_imagem2.png)
+
 - Painel do adiantamento com vários pedidos importados de uma vez:
-![image](imagens/cloud_pr3397_imagem3.png)
+
+  ![image](imagens/cloud_pr3397_imagem3.png)
 
 ## Integrações por arquivo
 
@@ -988,29 +1424,52 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Com mais de um agente local, a integração escolhe qual agente verifica a pasta.
 
 - Campos sugeridos pelo arquivo em blocos, com a faixa de colunas e o repetir para baixo:
-![image](imagens/cloud_pr3407_imagem1.png)
+
+  ![image](imagens/cloud_pr3407_imagem1.png)
+
 - Campo do cabeçalho com a opção de repetir o valor nas linhas de baixo:
-![image](imagens/cloud_pr3407_imagem2.png)
+
+  ![image](imagens/cloud_pr3407_imagem2.png)
+
 - Função Extrair conferida pelo texto de teste:
-![image](imagens/cloud_pr3407_imagem3.png)
+
+  ![image](imagens/cloud_pr3407_imagem3.png)
+
 - Destino Colaboradores com os campos do cabeçalho:
-![image](imagens/cloud_pr3407_imagem4.png)
+
+  ![image](imagens/cloud_pr3407_imagem4.png)
+
 - Destino Marcações de ponto pela coluna com as horas do dia:
-![image](imagens/cloud_pr3407_imagem5.png)
+
+  ![image](imagens/cloud_pr3407_imagem5.png)
+
 - Destinos disponíveis, com os ícones e só as tabelas liberadas:
-![image](imagens/cloud_pr3407_imagem6.png)
+
+  ![image](imagens/cloud_pr3407_imagem6.png)
+
 - Novo layout: o arquivo de exemplo primeiro, e o formato vem dele:
-![image](imagens/cloud_pr3407_imagem7.png)
+
+  ![image](imagens/cloud_pr3407_imagem7.png)
+
 - Testar, com a prévia ao lado da configuração:
-![image](imagens/cloud_pr3407_imagem8.png)
+
+  ![image](imagens/cloud_pr3407_imagem8.png)
+
 - Vendas do PDV: as linhas da loja cadastrada viram volumes, e o resto fica de fora com o motivo:
-![image](imagens/cloud_pr3407_imagem9.png)
+
+  ![image](imagens/cloud_pr3407_imagem9.png)
+
 - Planilha com várias guias: a guia escolhida no teste vai para a importação:
-![image](imagens/cloud_pr3407_imagem10.png)
+
+  ![image](imagens/cloud_pr3407_imagem10.png)
+
 - Destino Colaboradores sugerido pelo nome do arquivo, com os campos já ligados:
-![image](imagens/cloud_pr3407_imagem11.png)
+
+  ![image](imagens/cloud_pr3407_imagem11.png)
+
 - Integração de arquivos com a escolha do agente:
-![image](imagens/cloud_pr3363_imagem5.png)
+
+  ![image](imagens/cloud_pr3363_imagem5.png)
 
 ## Cálculo e folha
 
@@ -1021,19 +1480,32 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Data de admissão, data de demissão, códigos do horário, do setor, do cargo e do estabelecimento atual, BH cadastrado no quadro, Período, Horas de atraso, Horas previstas, Dias de férias e as datas de falta davam erro na exportação; agora trazem o valor do colaborador, também nos itens comuns do layout.
 
 - Linha customizada em edição, com o botão Inserir campo:
-![image](imagens/cloud_pr3329_imagem1.png)
+
+  ![image](imagens/cloud_pr3329_imagem1.png)
+
 - Inserir campo: o campo, o tamanho e o formato:
-![image](imagens/cloud_pr3329_imagem2.png)
+
+  ![image](imagens/cloud_pr3329_imagem2.png)
+
 - A linha na grade de campos:
-![image](imagens/cloud_pr3329_imagem3.png)
+
+  ![image](imagens/cloud_pr3329_imagem3.png)
+
 - Arquivo gerado: a linha depois de cada colaborador, só para quem teve horas extras:
-![image](imagens/cloud_pr3329_imagem4.png)
+
+  ![image](imagens/cloud_pr3329_imagem4.png)
+
 - Inserir campo com a Data de Falta, avisando que a linha se repete por dia de falta:
-![image](imagens/cloud_pr3329_imagem5.png)
+
+  ![image](imagens/cloud_pr3329_imagem5.png)
+
 - Linhas com a data de falta e com os campos que davam erro:
-![image](imagens/cloud_pr3329_imagem6.png)
+
+  ![image](imagens/cloud_pr3329_imagem6.png)
+
 - Arquivo com uma linha por dia de falta e a linha com os campos corrigidos:
-![image](imagens/cloud_pr3329_imagem7.png)
+
+  ![image](imagens/cloud_pr3329_imagem7.png)
 
 ### Importar layout da folha
 
@@ -1042,11 +1514,16 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - O link direto de um layout (o da pesquisa global) volta a abrir o layout.
 
 - Importar layout visto pela equipe Símix, com as origens (nomes borrados):
-![image](imagens/cloud_pr3351_imagem2.png)
+
+  ![image](imagens/cloud_pr3351_imagem2.png)
+
 - Importar layout visto pelo gestor, com os clientes agrupados por ramo e layout:
-![image](imagens/cloud_pr3351_imagem3.png)
+
+  ![image](imagens/cloud_pr3351_imagem3.png)
+
 - As versões do layout no grupo e a prévia dos campos:
-![image](imagens/cloud_pr3351_imagem4.png)
+
+  ![image](imagens/cloud_pr3351_imagem4.png)
 
 ### Extras de viagem e sobreaviso separadas do saldo
 
@@ -1054,9 +1531,12 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Opções **Separar extras de viagem** e **Separar extras de sobreaviso**: as horas a mais desses dias saem do saldo e do banco de horas e vão para os totais **Ext. viagem** e **Ext. sobreaviso** (úteis e não úteis, diurnas e noturnas), prontos para receber o evento no layout da folha. O dia é de viagem ou sobreaviso pelo local previsto (manutenção, lote ou escalas).
 
 - Seções Sobreaviso e Viagem do quadro de horário com as opções novas:
-![image](imagens/cloud_pr3350_imagem1.png)
+
+  ![image](imagens/cloud_pr3350_imagem1.png)
+
 - Manutenção: o dia de viagem vai para Ext. viagem e o de sobreaviso para Ext. sobreaviso, fora do saldo:
-![image](imagens/cloud_pr3350_imagem2.png)
+
+  ![image](imagens/cloud_pr3350_imagem2.png)
 
 ### Horários e totais
 
@@ -1065,17 +1545,28 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Novos totais **Valor do salário previsto simples** (o salário previsto sem o repouso remunerado e o adicional noturno) e **Horas trabalhadas reais** (as trabalhadas menos as horas de afastamento a não descontar), com a explicação no botão "..." dos totais.
 
 - Lista de horários com a nova coluna:
-![image](imagens/cloud_pr3372_imagem1.png)
+
+  ![image](imagens/cloud_pr3372_imagem1.png)
+
 - Carga horária mensal no cadastro do horário:
-![image](imagens/cloud_pr3372_imagem2.png)
+
+  ![image](imagens/cloud_pr3372_imagem2.png)
+
 - Carga alterada à mão, com a lâmpada para voltar à sugestão:
-![image](imagens/cloud_pr3372_imagem3.png)
+
+  ![image](imagens/cloud_pr3372_imagem3.png)
+
 - Valor hora no colaborador pelo salário ÷ carga mensal:
-![image](imagens/cloud_pr3372_imagem4.png)
+
+  ![image](imagens/cloud_pr3372_imagem4.png)
+
 - Horário por dia com Horário Padrão dentro do período, com o previsto do quadro do período:
-![image](imagens/calc_pr558_imagem1.png)
+
+  ![image](imagens/calc_pr558_imagem1.png)
+
 - Fora do período, continua o previsto do quadro do cadastro:
-![image](imagens/calc_pr558_imagem2.png)
+
+  ![image](imagens/calc_pr558_imagem2.png)
 
 ### Regras de inconsistência
 
@@ -1085,9 +1576,12 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Correções: os dias da semana escolhidos passam a ser respeitados pelo cálculo, o filtro de turno 3 volta a funcionar, escolher cargos ou estabelecimentos sem a condição assume "Somente os escolhidos", e quantidades aparecem como número inteiro.
 
 - Sugestão "Intervalo menor que 1h" aplicada numa regra nova:
-![image](imagens/cloud_pr3400_imagem1.png)
+
+  ![image](imagens/cloud_pr3400_imagem1.png)
+
 - Aba Filtros com o filtro de horas previstas:
-![image](imagens/cloud_pr3400_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3400_imagem2.jpg)
 
 ### Regras de prêmio
 
@@ -1105,13 +1599,20 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - VR com a condição "Dia Previsto" volta a contar os dias (os VRs já gravados são corrigidos), e VRs e VTs migrados do PcPonto com campos vazios voltam a abrir e gravar.
 
 - Painel de filtro no Calcular VT:
-![image](imagens/cloud_pr3277_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3277_imagem1.jpg)
+
 - VT calculado só para o colaborador do filtro:
-![image](imagens/cloud_pr3277_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3277_imagem2.jpg)
+
 - Escalas geradas para o colaborador do filtro:
-![image](imagens/cloud_pr3277_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3277_imagem3.jpg)
+
 - Filtro sem colaborador no mês: nada é processado:
-![image](imagens/cloud_pr3277_imagem4.jpg)
+
+  ![image](imagens/cloud_pr3277_imagem4.jpg)
 
 ## Manutenção
 
@@ -1122,9 +1623,12 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - **Calculadora**: legenda em cada linha ("Valor: 100 * 3 = 300"), que serve para usar o resultado em outra linha com `{Valor}`, e em cada número, gravadas junto com as fórmulas. Com a Expressão vazia, a seta para cima abre a última linha para editar. Cada linha tem uma margem com o lápis e um menu (marcador colorido, copiar e remover), título opcional e a opção de ficar inativa; clicar no sinal troca a operação, e o texto colado aceita "Nome: conta". Números com a fonte dos relatórios, que alinha os algarismos.
 
 - Modo denso ligado e o card sem o código da folha:
-![image](imagens/cloud_pr3377_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3377_imagem1.jpg)
+
 - Pergunta ao sair com alterações pendentes:
-![image](imagens/cloud_pr3377_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3377_imagem2.jpg)
 
 ## Coletores e registros
 
@@ -1133,17 +1637,28 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Coletores Control iD: a última marcação do coletor não vem mais vazia quando houve envio de colaboradores depois dela; usuário ou senha errados mostram "o equipamento recusou o login"; no iDFace, colaborador com o nome alterado é atualizado em vez de duplicado; e o iDClass aceita o código e a matrícula no formato certo.
 
 - Agente com os seus coletores e o aviso do coletor ainda sem agente:
-![image](imagens/cloud_pr3363_imagem1.png)
+
+  ![image](imagens/cloud_pr3363_imagem1.png)
+
 - Selecionar os coletores do agente:
-![image](imagens/cloud_pr3363_imagem2.png)
+
+  ![image](imagens/cloud_pr3363_imagem2.png)
+
 - O outro agente, com os coletores dele:
-![image](imagens/cloud_pr3363_imagem3.png)
+
+  ![image](imagens/cloud_pr3363_imagem3.png)
+
 - Novo agente abre o assistente de instalação:
-![image](imagens/cloud_pr3363_imagem4.png)
+
+  ![image](imagens/cloud_pr3363_imagem4.png)
+
 - Desbloqueio de REP com o código gerado e o aviso da Control iD:
-![image](imagens/cloud_pr3346_imagem1.png)
+
+  ![image](imagens/cloud_pr3346_imagem1.png)
+
 - Botão Desbloquear REP no cadastro do coletor:
-![image](imagens/cloud_pr3346_imagem3.png)
+
+  ![image](imagens/cloud_pr3346_imagem3.png)
 
 ## Espelho de ponto e portal do colaborador
 
@@ -1155,102 +1670,78 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - **Anexo no pedido de afastamento**: o colaborador anexa o documento ao próprio pedido que ainda aguarda, sem precisar da permissão de alterar pedidos. O anexo é gravado assim que o envio termina, e o pedido mostra "Ver anexo".
 
 - Topo do painel do colaborador, com a saudação e os blocos em cartão:
-![image](imagens/cloud_pr3402_imagem1.png)
+
+  ![image](imagens/cloud_pr3402_imagem1.png)
+
 - Espelhos de ponto no painel:
-![image](imagens/cloud_pr3402_imagem2.png)
+
+  ![image](imagens/cloud_pr3402_imagem2.png)
+
 - Assinatura desenhada no celular:
-![image](imagens/cloud_pr3354_imagem1.png)
+
+  ![image](imagens/cloud_pr3354_imagem1.png)
+
 - Espelho assinado pelo celular:
-![image](imagens/cloud_pr3354_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3354_imagem2.jpg)
+
 - PDF assinado, com o carimbo do colaborador sobre a linha dele:
-![image](imagens/cloud_pr3354_imagem3.png)
+
+  ![image](imagens/cloud_pr3354_imagem3.png)
+
 - Recusa com o motivo:
-![image](imagens/cloud_pr3354_imagem4.jpg)
+
+  ![image](imagens/cloud_pr3354_imagem4.jpg)
+
 - Espelho recusado:
-![image](imagens/cloud_pr3354_imagem5.jpg)
+
+  ![image](imagens/cloud_pr3354_imagem5.jpg)
+
 - Aviso ao abrir o espelho de outro colaborador:
-![image](imagens/cloud_pr3354_imagem6.png)
+
+  ![image](imagens/cloud_pr3354_imagem6.png)
+
 - Link do espelho aberto sem login leva à tela de login:
-![image](imagens/cloud_pr3379_imagem1.png)
+
+  ![image](imagens/cloud_pr3379_imagem1.png)
+
 - Depois de entrar, o espelho abre para assinar:
-![image](imagens/cloud_pr3379_imagem2.png)
+
+  ![image](imagens/cloud_pr3379_imagem2.png)
+
 - Gerar espelhos: nome digitado com um colaborador na lista:
-![image](imagens/cloud_pr3355_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3355_imagem1.jpg)
+
 - Ao sair do campo, a colaboradora fica escolhida:
-![image](imagens/cloud_pr3355_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3355_imagem2.jpg)
+
 - Texto que aponta dois colaboradores:
-![image](imagens/cloud_pr3355_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3355_imagem3.jpg)
+
 - Ao clicar em Gerar, o campo mostra o motivo e nada é gerado:
-![image](imagens/cloud_pr3355_imagem4.jpg)
+
+  ![image](imagens/cloud_pr3355_imagem4.jpg)
+
 - Lista de pedidos com o botão de anexo para quem não pode alterar:
-![image](imagens/cloud_pr3396_imagem1.png)
+
+  ![image](imagens/cloud_pr3396_imagem1.png)
+
 - Pedido só para consulta, com o anexo liberado:
-![image](imagens/cloud_pr3396_imagem2.png)
+
+  ![image](imagens/cloud_pr3396_imagem2.png)
+
 - Pedido com o anexo gravado e o link Ver anexo:
-![image](imagens/cloud_pr3396_imagem3.png)
+
+  ![image](imagens/cloud_pr3396_imagem3.png)
 
 ## Permissões e segurança
 
 - O colaborador assina e recusa só os próprios espelhos, com ou sem as permissões de Espelho Ponto no papel Colaborador. Quem tenta abrir o espelho de outro recebe uma mensagem clara, e o gestor sem permissão de alterar espelhos vê o aviso antes de desenhar a assinatura.
 - O anexo do pedido de afastamento vale só no pedido do próprio colaborador que ainda aguarda; pedido aprovado ou reprovado recusa.
 - Enviar e analisar um arquivo AFD e listar, consultar e criar os logs dos coletores, arquivos importados e logs do VR, de horários, de erros, do espelho e do cálculo da folha passam a exigir só o login. Editar e excluir continuam exigindo a permissão de cada um, e os logs de e-mails, do ponto e de tarefas ficam como antes.
-
-## Para a equipe Símix
-
-- **Admin › Início** com os cards em três colunas — Suporte, Acompanhamento e Monitoramento —, o novo card **Erros gerais** (erros de produção de impacto alto de ontem para cá) e os últimos chats do assistente de todos os clientes. Menu reorganizado (Chats Assistente logo abaixo do Início, Coletores em Monitoramento, "Logs gerais", o Serviço como botão em Logs de tarefas), "Admin" ao lado do logo e menu no marinho da barra do topo nos dois temas.
-- Novo painel **Demonstrações**: uso de cada demonstração guiada, quantos concluem, em que passo param e os passos em que a demonstração não achou o alvo, com o detalhe de cada execução. Um teste automático passa a conferir os alvos de todos os roteiros.
-- Chats do assistente: **Nova conversa** para a equipe começar um chat com um usuário de um cliente (chega pelo sino como "Mensagem da equipe Símix"), e filtro **Todos / Meus**, com quem está atendendo.
-- **Copiar como** na tela de Backups: cria um cliente novo com a cópia dos dados do atual, sem os logs, com a tag Demonstração e o Serviço desativado, conferindo antes o espaço livre no servidor.
-- **Clientes**: quem tem a permissão Suporte vê os usuários, os feedbacks e os coletores do cliente e pode entrar como um usuário dele. O cliente fica ligado a uma cidade do cadastro de Cidades, com filtro por cidade, e ganha a informação **Colaboradores por dia** (média dos últimos 7 dias com marcação) e a coluna e o filtro **Layouts de folha**.
-- Nova tela **Admin › Documentos**, com os documentos gerais de todos os clientes, atualizada toda madrugada ou pelo "Indexar agora". A indexação diária passa uma vez só por cliente.
-- As views criadas pelo suporte no banco do cliente não somem mais na atualização do banco nem no **Recriar views**; view que não pode ser recriada fica com o motivo no log e é tentada de novo.
-- Dados de demonstração: o preenchimento das marcações não cai mais por tempo esgotado nos bancos sem o índice das marcações.
-- Durante a instabilidade do armazenamento do Brasil, os arquivos novos são gravados na conta dos EUA e os antigos continuam sendo lidos do Brasil; a volta é só pela configuração.
-- Tarefas: os erros da importação de registros enviada pelo agente aparecem com o cliente nos logs, a importação interrompida por reinício do servidor roda de novo, e marcação do aplicativo sem empresa é ignorada no recebimento.
-- A pílula "Gravar" sai da barra do topo; a gravação de treinamento começa pelo "Iniciar treinamento" das Configurações. Guia de padrões visuais e verificação automática para as telas novas. O desbloqueio de administrador do REP, que só pede o serial, fica com o suporte.
-
-- Início do admin com os cards por categoria e o card de erros gerais:
-![image](imagens/cloud_pr3337_imagem1.png)
-- Menu reorganizado na tela de Logs gerais:
-![image](imagens/cloud_pr3337_imagem2.png)
-- Contagem de notificações inteira no rodapé do menu:
-![image](imagens/cloud_pr3337_imagem3.png)
-- Menu do Admin no marinho da barra do topo, no tema claro:
-![image](imagens/cloud_pr3301_imagem9.png)
-- E no tema escuro:
-![image](imagens/cloud_pr3301_imagem10.png)
-- Painel das demonstrações guiadas:
-![image](imagens/cloud_pr3347_imagem1.png)
-- Funil por passo de uma demonstração:
-![image](imagens/cloud_pr3347_imagem2.png)
-- Passos de uma execução:
-![image](imagens/cloud_pr3347_imagem3.png)
-- Nova conversa no painel do assistente:
-![image](imagens/cloud_pr3347_imagem4.png)
-- A conversa iniciada pela equipe na janela do cliente:
-![image](imagens/cloud_pr3347_imagem5.png)
-- Filtro Meus no painel do assistente:
-![image](imagens/cloud_pr3347_imagem6.png)
-- Botão Copiar como na tela de Backups:
-![image](imagens/cloud_pr3343_imagem1.png)
-- Nome já usado recusado na hora, com o motivo:
-![image](imagens/cloud_pr3343_imagem2.png)
-- Cópia em andamento:
-![image](imagens/cloud_pr3343_imagem3.png)
-- Cópia criada, com o botão para abrir:
-![image](imagens/cloud_pr3343_imagem4.png)
-- As cópias na lista de clientes, com a tag Demonstração e o serviço desativado:
-![image](imagens/cloud_pr3343_imagem5.png)
-- Clientes filtrados pela cidade, com a cidade e os colaboradores por dia no painel:
-![image](imagens/cloud_pr3394_imagem1.jpg)
-- Clientes com a coluna e o filtro de layouts de folha:
-![image](imagens/cloud_pr3351_imagem1.png)
-- Admin › Documentos com os documentos dos clientes:
-![image](imagens/cloud_pr3410_imagem1.jpg)
-- Recriar views na tela de SQL:
-![image](imagens/cloud_pr3374_imagem1.png)
-- Barra do topo da equipe Símix com a pílula de gravação (depois retirada):
-![image](imagens/cloud_pr3402_imagem3.png)
 
 ## Outras melhorias e correções
 
@@ -1263,7 +1754,8 @@ Sistemas e assistentes de IA do cliente passam a consultar o ponto com uma **cha
 - Saiu um "}" que aparecia solto em Gerar escalas, e os botões do topo da tela de Backups aparecem assim que ela abre.
 
 - Cadastro da Empresa com a cidade escolhida no cadastro de Cidades:
-![image](imagens/cloud_pr3394_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3394_imagem2.jpg)
 
 # 04/11/2026
 
@@ -1300,59 +1792,112 @@ O planejamento de escalas confere a lei, a convenção e a cobertura da loja enq
 - Card **Escalas inteligentes** na página de Novidades, com **Ver demonstração** — a demonstração guiada completa, com locução, no exemplo da frente de caixa de um supermercado: regras e coberturas, planejamento, grade, gerador, Assistente, troca de domingos, conferência, aprovação e simulador. O roteiro só aponta e explica: salvar e gerar ficam com a pessoa. **Quero usar** traz os passos para montar a escala, a partir de Regras e coberturas. A demonstração também fica no botão de Treinamentos dessas telas.
 
 - Card Escalas inteligentes na página de Novidades:
-![image](imagens/cloud_pr3288_imagem1.png)
+
+  ![image](imagens/cloud_pr3288_imagem1.png)
+
 - A demonstração guiada na grade do planejamento, explicando o Assistente:
-![image](imagens/cloud_pr3288_imagem2.png)
+
+  ![image](imagens/cloud_pr3288_imagem2.png)
+
 - Regras da convenção e da empresa, com a vigência e a prioridade de cada política:
-![image](imagens/cloud_pr3149_imagem1.png)
+
+  ![image](imagens/cloud_pr3149_imagem1.png)
+
 - Cobertura mínima do setor por faixa de horário e dia da semana:
-![image](imagens/cloud_pr3149_imagem2.png)
+
+  ![image](imagens/cloud_pr3149_imagem2.png)
+
 - Turnos de referência:
-![image](imagens/cloud_pr3149_imagem3.png)
+
+  ![image](imagens/cloud_pr3149_imagem3.png)
+
 - A grade com os dias que ferem a lei em vermelho, os de atenção em ocre e a cobertura no rodapé:
-![image](imagens/cloud_pr3149_imagem4.png)
+
+  ![image](imagens/cloud_pr3149_imagem4.png)
+
 - A aba Pendências, com o motivo e a fonte de cada uma:
-![image](imagens/cloud_pr3149_imagem5.png)
+
+  ![image](imagens/cloud_pr3149_imagem5.png)
+
 - A linha do dia: necessário × escalado a cada meia hora:
-![image](imagens/cloud_pr3149_imagem6.png)
+
+  ![image](imagens/cloud_pr3149_imagem6.png)
+
 - Aprovar com bloqueio pede a justificativa:
-![image](imagens/cloud_pr3149_imagem7.png)
+
+  ![image](imagens/cloud_pr3149_imagem7.png)
+
 - Simulador da redução de jornada, setor por setor:
-![image](imagens/cloud_pr3149_imagem8.png)
+
+  ![image](imagens/cloud_pr3149_imagem8.png)
+
 - As pessoas do setor, com o regime e quem já passa do novo limite:
-![image](imagens/cloud_pr3149_imagem9.png)
+
+  ![image](imagens/cloud_pr3149_imagem9.png)
+
 - Início rápido no editor do dia:
-![image](imagens/cloud_pr3150_imagem1.png)
+
+  ![image](imagens/cloud_pr3150_imagem1.png)
+
 - Conferir com a Calc: a regra de inconsistência da empresa no painel:
-![image](imagens/cloud_pr3150_imagem3.png)
+
+  ![image](imagens/cloud_pr3150_imagem3.png)
+
 - Coberturas em cards:
-![image](imagens/cloud_pr3205_imagem5.png)
+
+  ![image](imagens/cloud_pr3205_imagem5.png)
+
 - Sugerir coberturas: o formulário preenchido pelo histórico:
-![image](imagens/cloud_pr3205_imagem6.png)
+
+  ![image](imagens/cloud_pr3205_imagem6.png)
+
 - A prévia da sugestão ajustada pelo Assistente:
-![image](imagens/cloud_pr3205_imagem7.png)
+
+  ![image](imagens/cloud_pr3205_imagem7.png)
+
 - O gerador: o que fazer, os dias, os colaboradores e o tempo da busca:
-![image](imagens/cloud_pr3162_imagem1.png)
+
+  ![image](imagens/cloud_pr3162_imagem1.png)
+
 - Resumo depois de gerar o plano inteiro, com a cobertura e os bloqueios antes e depois:
-![image](imagens/cloud_pr3162_imagem2.png)
+
+  ![image](imagens/cloud_pr3162_imagem2.png)
+
 - Os dias mudados circulados na grade:
-![image](imagens/cloud_pr3162_imagem3.png)
+
+  ![image](imagens/cloud_pr3162_imagem3.png)
+
 - Assistente: quem cobre o atestado de amanhã, com o efeito de cada opção (nomes trocados por pseudônimos):
-![image](imagens/cloud_pr3162_imagem4.png)
+
+  ![image](imagens/cloud_pr3162_imagem4.png)
+
 - A opção escolhida aplicada na grade:
-![image](imagens/cloud_pr3162_imagem5.png)
+
+  ![image](imagens/cloud_pr3162_imagem5.png)
+
 - "Refaça a escala da semana que vem" pelo Assistente:
-![image](imagens/cloud_pr3162_imagem6.png)
+
+  ![image](imagens/cloud_pr3162_imagem6.png)
+
 - Convenção em PDF enviada na política:
-![image](imagens/cloud_pr3162_imagem7.png)
+
+  ![image](imagens/cloud_pr3162_imagem7.png)
+
 - Regras propostas a partir da convenção:
-![image](imagens/cloud_pr3162_imagem8.png)
+
+  ![image](imagens/cloud_pr3162_imagem8.png)
+
 - Regra confirmada:
-![image](imagens/cloud_pr3162_imagem9.png)
+
+  ![image](imagens/cloud_pr3162_imagem9.png)
+
 - Vagas pelo gerador no simulador da redução de jornada:
-![image](imagens/cloud_pr3162_imagem10.png)
+
+  ![image](imagens/cloud_pr3162_imagem10.png)
+
 - Previsão do tempo no cabeçalho da grade:
-![image](imagens/cloud_pr3162_imagem11.png)
+
+  ![image](imagens/cloud_pr3162_imagem11.png)
 
 ### Previsão da demanda pelo movimento do PDV ✨
 
@@ -1368,21 +1913,36 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Card da novidade na página de Novidades.
 
 - Previsão do Caixa: o pico de pessoas de cada dia e a curva da meia hora no dia escolhido:
-![image](imagens/cloud_pr3217_imagem1.png)
+
+  ![image](imagens/cloud_pr3217_imagem1.png)
+
 - Volumes do mês depois da importação, dia a dia:
-![image](imagens/cloud_pr3217_imagem2.png)
+
+  ![image](imagens/cloud_pr3217_imagem2.png)
+
 - Antes de importar, a planilha é conferida e resumida por dia:
-![image](imagens/cloud_pr3217_imagem3.png)
+
+  ![image](imagens/cloud_pr3217_imagem3.png)
+
 - Padrão do setor com a sugestão calculada pelo histórico:
-![image](imagens/cloud_pr3217_imagem4.png)
+
+  ![image](imagens/cloud_pr3217_imagem4.png)
+
 - Dias de pagamento criados pelo atalho; repetir não duplica:
-![image](imagens/cloud_pr3217_imagem5.png)
+
+  ![image](imagens/cloud_pr3217_imagem5.png)
+
 - Chaves de API: a chave aparece uma vez, com o exemplo de envio (borrado):
-![image](imagens/cloud_pr3217_imagem6.png)
+
+  ![image](imagens/cloud_pr3217_imagem6.png)
+
 - Rodapé do setor com os dias que vieram da previsão marcados:
-![image](imagens/cloud_pr3217_imagem7.png)
+
+  ![image](imagens/cloud_pr3217_imagem7.png)
+
 - No simulador, o setor passa a usar a previsão como necessário:
-![image](imagens/cloud_pr3217_imagem8.png)
+
+  ![image](imagens/cloud_pr3217_imagem8.png)
 
 ### Melhorias na grade da escala
 
@@ -1395,21 +1955,36 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Digitar na janela do Assistente, nos filtros ou num diálogo com a grade aberta não aplica mais o afastamento da tecla de atalho.
 
 - Terça trocada com o domingo anterior pela tecla A, com as ferramentas no topo do painel:
-![image](imagens/cloud_pr3287_imagem1.png)
+
+  ![image](imagens/cloud_pr3287_imagem1.png)
+
 - Editor da visão com a opção Exibir trabalhado:
-![image](imagens/cloud_pr3287_imagem2.png)
+
+  ![image](imagens/cloud_pr3287_imagem2.png)
+
 - Horas trabalhadas em verde embaixo do planejado:
-![image](imagens/cloud_pr3287_imagem3.png)
+
+  ![image](imagens/cloud_pr3287_imagem3.png)
+
 - Cadastro do planejamento só com estabelecimento e setor:
-![image](imagens/cloud_pr3299_imagem1.png)
+
+  ![image](imagens/cloud_pr3299_imagem1.png)
+
 - Setores e o menu Exibir na barra da grade do planejamento:
-![image](imagens/cloud_pr3299_imagem2.png)
+
+  ![image](imagens/cloud_pr3299_imagem2.png)
+
 - Turnos previstos embaixo do planejado (no feriado não aparecem):
-![image](imagens/cloud_pr3299_imagem3.png)
+
+  ![image](imagens/cloud_pr3299_imagem3.png)
+
 - Com Inconsistências marcado, os dias com regra violada aparecem com o contorno vermelho:
-![image](imagens/cloud_pr3318_imagem1.png)
+
+  ![image](imagens/cloud_pr3318_imagem1.png)
+
 - Desmarcado, o contorno some; o contador e a aba Pendências continuam:
-![image](imagens/cloud_pr3318_imagem2.png)
+
+  ![image](imagens/cloud_pr3318_imagem2.png)
 
 ## Dashboards com visual novo ✨
 
@@ -1424,27 +1999,48 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Corrigidos: gráfico pequeno cortado à direita, widget seguinte assumindo a cor do excluído, nota ilegível no tema escuro, widget Código numa linha só e sem gravar a edição, e mapa abrindo sempre no mesmo ponto.
 
 - Pizza pequena: antes cortada à direita, agora inteira, com valor, percentual e total:
-![image](imagens/cloud_pr3259_imagem1.png)
+
+  ![image](imagens/cloud_pr3259_imagem1.png)
+
 - Rosca, com o total no centro:
-![image](imagens/cloud_pr3259_imagem2.png)
+
+  ![image](imagens/cloud_pr3259_imagem2.png)
+
 - Tabela com cabeçalho e paginação mais discretos e "Atualizado às":
-![image](imagens/cloud_pr3259_imagem3.png)
+
+  ![image](imagens/cloud_pr3259_imagem3.png)
+
 - Enquanto a consulta não volta, o gráfico e a tabela já mostram o formato do conteúdo:
-![image](imagens/cloud_pr3259_imagem4.png)
+
+  ![image](imagens/cloud_pr3259_imagem4.png)
+
 - Opções do widget, antes e depois:
-![image](imagens/cloud_pr3259_imagem5.png)
+
+  ![image](imagens/cloud_pr3259_imagem5.png)
+
 - Barra de filtros: o filtro aplicado fica azul e mostra o que está filtrado:
-![image](imagens/cloud_pr3259_imagem6.png)
+
+  ![image](imagens/cloud_pr3259_imagem6.png)
+
 - Janela do filtro com os selecionados, a contagem e "Limpar":
-![image](imagens/cloud_pr3259_imagem7.png)
+
+  ![image](imagens/cloud_pr3259_imagem7.png)
+
 - Loja, antes e depois:
-![image](imagens/cloud_pr3259_imagem8.png)
+
+  ![image](imagens/cloud_pr3259_imagem8.png)
+
 - Adicionar widget: um quadro por tipo:
-![image](imagens/cloud_pr3259_imagem9.png)
+
+  ![image](imagens/cloud_pr3259_imagem9.png)
+
 - Organizar widgets na grade:
-![image](imagens/cloud_pr3259_imagem10.png)
+
+  ![image](imagens/cloud_pr3259_imagem10.png)
+
 - Modo livre: os widgets se organizam sozinhos e podem ser arrastados:
-![image](imagens/cloud_pr3259_imagem11.png)
+
+  ![image](imagens/cloud_pr3259_imagem11.png)
 
 ## Pesquisa global ✨
 
@@ -1455,17 +2051,28 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - A linha escolhida com as setas, que é a que o Enter abre, fica destacada, e as setas não levam mais o cursor para o início do texto. **Abrir no popup** fecha a pesquisa e a janela flutuante já abre com o que foi digitado.
 
 - Pesquisando "dsr": a demonstração, a guia DSR do horário e os campos de cada tela, com o caminho:
-![image](imagens/cloud_pr3263_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3263_imagem1.jpg)
+
 - Escolhido o campo "Dia de DSR", o horário abre na guia DSR com o campo destacado:
-![image](imagens/cloud_pr3263_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3263_imagem2.jpg)
+
 - Configuração Web aberta com o campo destacado e as permissões em duas colunas:
-![image](imagens/cloud_pr3263_imagem4.jpg)
+
+  ![image](imagens/cloud_pr3263_imagem4.jpg)
+
 - Pesquisando "horário": as telas em Principais resultados e o resto em Outros resultados:
-![image](imagens/cloud_pr3291_imagem1.png)
+
+  ![image](imagens/cloud_pr3291_imagem1.png)
+
 - Pesquisando "agente": o Agente de sincronização e os Downloads:
-![image](imagens/cloud_pr3291_imagem2.png)
+
+  ![image](imagens/cloud_pr3291_imagem2.png)
+
 - Pesquisa no popup, mantendo a lista depois de abrir um resultado:
-![image](imagens/cloud_pr3291_imagem3.png)
+
+  ![image](imagens/cloud_pr3291_imagem3.png)
 
 ## Coletores e registros
 
@@ -1477,25 +2084,44 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Fim de jornada do motorista num dia sem início de jornada (nem no dia anterior) ficava inválido e não entrava no cartão. Agora ele fica no dia anterior.
 
 - Aviso de relógio atrasado na sincronização:
-![image](imagens/cloud_pr3311_imagem1.png)
+
+  ![image](imagens/cloud_pr3311_imagem1.png)
+
 - Ajustar relógio no menu do coletor:
-![image](imagens/cloud_pr3311_imagem2.png)
+
+  ![image](imagens/cloud_pr3311_imagem2.png)
+
 - Resultado do ajuste:
-![image](imagens/cloud_pr3311_imagem3.png)
+
+  ![image](imagens/cloud_pr3311_imagem3.png)
+
 - Antes: o relógio parado, com o aviso do CPF desconhecido em toda sincronização:
-![image](imagens/cloud_pr3323_imagem1.png)
+
+  ![image](imagens/cloud_pr3323_imagem1.png)
+
 - Primeira sincronização com a correção: o aviso aparece e a data é atualizada:
-![image](imagens/cloud_pr3323_imagem2.png)
+
+  ![image](imagens/cloud_pr3323_imagem2.png)
+
 - Sincronização seguinte: o relógio volta a ficar Ok:
-![image](imagens/cloud_pr3323_imagem3.png)
+
+  ![image](imagens/cloud_pr3323_imagem3.png)
+
 - Marcações inválidas com o Reprocessar disponível:
-![image](imagens/cloud_pr3273_imagem1.png)
+
+  ![image](imagens/cloud_pr3273_imagem1.png)
+
 - Depois de reprocessar: as marcações entram no cartão e as repetidas ficam como duplicadas:
-![image](imagens/cloud_pr3273_imagem2.png)
+
+  ![image](imagens/cloud_pr3273_imagem2.png)
+
 - Antes: o fim de jornada ficava inválido:
-![image](imagens/calc_pr553_imagem1.png)
+
+  ![image](imagens/calc_pr553_imagem1.png)
+
 - Depois: o mesmo registro entra no cartão do dia anterior:
-![image](imagens/calc_pr553_imagem2.png)
+
+  ![image](imagens/calc_pr553_imagem2.png)
 
 ## Banco de horas e vales
 
@@ -1505,13 +2131,20 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - **Manutenção de VRs**: o Calcular de VRs voltou a funcionar com as viagens pagas e descontadas. Nova coluna **Adicionais**, com os dias que somam pela regra do VR (inclusive a viagem que não tinha sido paga); passando o mouse na quantidade total aparece a conta feita e, no valor total, a quantidade vezes o valor unitário. Os cartões de resumo ficaram como na Manutenção de VTs.
 
 - Prévia da importação de saldos, com o saldo atual e o novo de cada linha (nomes ofuscados):
-![image](imagens/cloud_pr3258_imagem1.png)
+
+  ![image](imagens/cloud_pr3258_imagem1.png)
+
 - Resultado da importação:
-![image](imagens/cloud_pr3258_imagem2.png)
+
+  ![image](imagens/cloud_pr3258_imagem2.png)
+
 - Manutenção de uma colaboradora que recebeu +10:00: o banco soma a abertura com o saldo do mês:
-![image](imagens/cloud_pr3258_imagem3.png)
+
+  ![image](imagens/cloud_pr3258_imagem3.png)
+
 - Consulta geral de BH com o nome dos colaboradores (borrados):
-![image](imagens/cloud_pr3276_imagem1.png)
+
+  ![image](imagens/cloud_pr3276_imagem1.png)
 
 ## Regras de prêmio
 
@@ -1521,9 +2154,12 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - **Dias de atrasos por turno**: "Dias de atrasos" e "Dias de atrasos (sem afastamento)" ganham Turno e Marcação (entrada ou saída), para contar só o atraso do turno escolhido. Sem turno, conta qualquer atraso do dia, como antes — e antes, com turno preenchido, o cálculo ignorava o turno.
 
 - Lista na visão Padrão com Período, Resumo, Alteração e Ativo:
-![image](imagens/cloud_pr3289_imagem1.png)
+
+  ![image](imagens/cloud_pr3289_imagem1.png)
+
 - A condição com Turno e Marcação:
-![image](imagens/cloud_pr3310_imagem3.png)
+
+  ![image](imagens/cloud_pr3310_imagem3.png)
 
 ## Integrações por arquivo
 
@@ -1535,33 +2171,60 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Cadastros com abas laterais (Afastamentos, Horários, Colaborador, Feriados, Regras de inconsistência e outros): os campos voltam a ocupar a largura do diálogo — várias abas encolhiam e cortavam o texto.
 
 - Painel antes:
-![image](imagens/cloud_pr3252_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3252_imagem1.jpg)
+
 - Painel refeito, com os cards e a última execução:
-![image](imagens/cloud_pr3252_imagem2.png)
+
+  ![image](imagens/cloud_pr3252_imagem2.png)
+
 - Cadastro antes, com as opções espremidas ao lado:
-![image](imagens/cloud_pr3252_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3252_imagem3.jpg)
+
 - Cadastro depois, aba Geral:
-![image](imagens/cloud_pr3252_imagem4.png)
+
+  ![image](imagens/cloud_pr3252_imagem4.png)
+
 - Aba Importações:
-![image](imagens/cloud_pr3252_imagem5.png)
+
+  ![image](imagens/cloud_pr3252_imagem5.png)
+
 - Aba Destinos, com o mapeamento dos campos:
-![image](imagens/cloud_pr3252_imagem6.png)
+
+  ![image](imagens/cloud_pr3252_imagem6.png)
+
 - Painel com o período na linha do título e a opção Duplicar:
-![image](imagens/cloud_pr3290_imagem1.png)
+
+  ![image](imagens/cloud_pr3290_imagem1.png)
+
 - Cadastro em tela cheia, com Copiar/Colar e o Período da execução:
-![image](imagens/cloud_pr3290_imagem2.png)
+
+  ![image](imagens/cloud_pr3290_imagem2.png)
+
 - Aviso ao sair com alterações não salvas:
-![image](imagens/cloud_pr3290_imagem3.png)
+
+  ![image](imagens/cloud_pr3290_imagem3.png)
+
 - Importação separada em Geral e Campos:
-![image](imagens/cloud_pr3290_imagem4.png)
+
+  ![image](imagens/cloud_pr3290_imagem4.png)
+
 - Destino de campos do mês: o mês vem do período da execução:
-![image](imagens/cloud_pr3290_imagem5.png)
+
+  ![image](imagens/cloud_pr3290_imagem5.png)
+
 - Execução de um layout mensal, com o mês escolhido:
-![image](imagens/cloud_pr3290_imagem6.png)
+
+  ![image](imagens/cloud_pr3290_imagem6.png)
+
 - Abas laterais antes, com os campos em meia largura:
-![image](imagens/cloud_pr3252_imagem7.png)
+
+  ![image](imagens/cloud_pr3252_imagem7.png)
+
 - Abas laterais depois:
-![image](imagens/cloud_pr3252_imagem8.png)
+
+  ![image](imagens/cloud_pr3252_imagem8.png)
 
 ## Tarefas, cálculo e folha
 
@@ -1572,17 +2235,28 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Ao gerar o espelho pela Manutenção, a guia que abre mostra a mensagem centralizada, com ícone.
 
 - Calcular dados com a mensagem curta, sem contador no ícone de tarefas e o Avançado aberto:
-![image](imagens/cloud_pr3293_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3293_imagem1.jpg)
+
 - Saindo da tela, a tarefa entra no contador:
-![image](imagens/cloud_pr3293_imagem2.png)
+
+  ![image](imagens/cloud_pr3293_imagem2.png)
+
 - Fora da tela, o fim chega pelo aviso, com o botão Abrir:
-![image](imagens/cloud_pr3293_imagem3.png)
+
+  ![image](imagens/cloud_pr3293_imagem3.png)
+
 - Exportação com espelhos: cálculo só dos exportados, depois os arquivos e os espelhos, com a barra sempre avançando:
-![image](imagens/cloud_pr3293_imagem4.gif)
+
+  ![image](imagens/cloud_pr3293_imagem4.gif)
+
 - Planilha gerada pela exportação da folha:
-![image](imagens/cloud_pr3330_imagem1.png)
+
+  ![image](imagens/cloud_pr3330_imagem1.png)
+
 - Guia do espelho enquanto ele é gerado:
-![image](imagens/cloud_pr3256_imagem1.png)
+
+  ![image](imagens/cloud_pr3256_imagem1.png)
 
 ## Demonstrações guiadas: nova apresentadora e nova voz ✨
 
@@ -1592,11 +2266,16 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Na página de Novidades, o botão "Me mostre" passou a se chamar **Ver demonstração** (também em Treinamentos), e há o filtro "Somente com demonstração".
 
 - O balão com o ⏸ da voz no avatar e a varinha do piloto ao lado do Próximo:
-![image](imagens/cloud_pr3294_imagem1.png)
+
+  ![image](imagens/cloud_pr3294_imagem1.png)
+
 - A Sara com cada pose de olhos e boca:
-![image](imagens/cloud_pr3294_imagem2.png)
+
+  ![image](imagens/cloud_pr3294_imagem2.png)
+
 - Escolha da nova voz da locução:
-![image](imagens/cloud_pr3297_imagem1.png)
+
+  ![image](imagens/cloud_pr3297_imagem1.png)
 
 ## Aplicativo 📱
 
@@ -1612,71 +2291,20 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - Tela de um módulo que não está ativo para a empresa (Trilhas do conhecimento, Férias, Uniformes e EPIs e Adiantamento salarial), aberta por link ou pelo endereço, mostra o aviso **"Módulo desativado"**, com os botões Ir para o início e Voltar — antes aparecia um erro de permissão. A ação que depende de um módulo desativado também avisa isso, em vez de dizer que falta permissão.
 
 - Contracheque com o cadeado para um papel fora da categoria; os outros documentos seguem normais:
-![image](imagens/cloud_pr3275_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3275_imagem1.jpg)
+
 - Na edição, o arquivo aparece como restrito e salvar mantém o arquivo gravado:
-![image](imagens/cloud_pr3275_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3275_imagem2.jpg)
+
 - O próprio colaborador abre o contracheque no portal:
-![image](imagens/cloud_pr3275_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3275_imagem3.jpg)
+
 - Aviso de módulo desativado:
-![image](imagens/cloud_pr3263_imagem5.jpg)
 
-## Para a equipe Símix
-
-- **Painel admin** com menu lateral no lugar da barra do topo e das abas: seções com a tela aberta destacada, Assistente, feedback e notificações na linha do usuário, e a barra recolhível para só os ícones.
-- Nova tela **Início** no admin, que passa a ser a página de entrada: números de conversas aguardando o suporte, coletores com erro, tarefas com erro, feedbacks novos, clientes novos, implantações em andamento e gravações dos últimos 7 dias, com as listas de detalhe. Cada bloco aparece só para quem tem acesso à tela.
-- Nova tela **Gravações** no admin, com as sessões gravadas pelo botão de suporte: totais do período, gráfico por dia, gravações por quem conduziu e por cliente, telas mais vistas e o detalhe de cada gravação com a ata.
-- **Clientes**: cidade (preenchida sozinha) e ramo de atividade abaixo do nome, tags coloridas, observação interna no painel lateral, filtros por período, ramo, tags, situação, contabilidade, colaboradores e usuários, e ramo e contabilidade editados no cadastro do cliente. Quem tem a permissão Suporte vê os usuários, os feedbacks e os coletores do cliente e pode entrar como um usuário dele.
-- **Dados de demonstração** (Suporte), só para ambientes de demonstração e de teste: remove os dados sensíveis, troca os nomes dos colaboradores por nomes fictícios e preenche as marcações até hoje, copiando o histórico ou com o padrão e a tolerância.
-- **API para migrar backups do PcPonto**: envio do `.bak` por um link público do Dropbox, OneDrive ou SharePoint, que cria o cliente e migra os dados numa fila própria, com acesso pela nova tela **Chaves de API** do admin.
-- Recursos do cliente: nova opção "Integração de convênio (legada)", grupo **Avançado** com ela e o Monitor de tarefas (que saiu do Beta), e "Assistente de IA e Símix Ponto no Teams" passou a se chamar só "Assistente de IA".
-- **Comparar com o PcPonto** saiu do Calcular dados e virou a tela Suporte › Comparar com o PcPonto.
-- A atualização dos bancos pula os scripts que já rodaram e não mudaram, e atualiza 3 bancos ao mesmo tempo; erro num banco não interrompe os outros.
-- Os testes automáticos de interface voltaram a rodar no deploy.
-
-- Menu lateral do admin, aberto:
-![image](imagens/cloud_pr3253_imagem1.png)
-- Menu recolhido, com o menu de suporte e ajuda:
-![image](imagens/cloud_pr3253_imagem2.png)
-- Menu lateral depois dos ajustes:
-![image](imagens/cloud_pr3270_imagem1.png)
-- Menu recolhido, com as notificações abertas:
-![image](imagens/cloud_pr3270_imagem2.png)
-- Início do admin com os números e as listas:
-![image](imagens/cloud_pr3286_imagem1.png)
-- Assistente, feedback e notificações na linha do usuário:
-![image](imagens/cloud_pr3286_imagem2.png)
-- Bloco Gravações no Início do admin:
-![image](imagens/cloud_pr3295_imagem1.png)
-- Tela Gravações:
-![image](imagens/cloud_pr3295_imagem2.png)
-- Detalhe de uma gravação:
-![image](imagens/cloud_pr3295_imagem3.png)
-- Clientes com cidade, ramo e tags coloridas:
-![image](imagens/cloud_pr3304_imagem1.jpg)
-- Ramo de atividade no cadastro do cliente:
-![image](imagens/cloud_pr3304_imagem2.jpg)
-- Barra de filtros com tags:
-![image](imagens/cloud_pr3304_imagem3.jpg)
-- Botão de filtro com Situação, Contabilidade, Colaboradores e Usuários:
-![image](imagens/cloud_pr3304_imagem4.jpg)
-- Dados de demonstração antes do preenchimento:
-![image](imagens/cloud_pr3319_imagem1.png)
-- Depois: todos os meses preenchidos até hoje:
-![image](imagens/cloud_pr3319_imagem2.png)
-- Chaves de API no admin:
-![image](imagens/cloud_pr3327_imagem1.png)
-- Migração enviada pela API em andamento:
-![image](imagens/cloud_pr3327_imagem2.png)
-- Migração concluída:
-![image](imagens/cloud_pr3327_imagem3.png)
-- Cálculo depois da migração na fila própria:
-![image](imagens/cloud_pr3327_imagem4.png)
-- Link sem acesso público: a implantação para com o motivo:
-![image](imagens/cloud_pr3327_imagem5.png)
-- Recursos do cliente com o grupo Avançado:
-![image](imagens/cloud_pr3290_imagem7.png)
-- Tela Comparar com o PcPonto:
-![image](imagens/cloud_pr3293_imagem5.jpg)
+  ![image](imagens/cloud_pr3263_imagem5.jpg)
 
 ## Outras melhorias e correções
 
@@ -1690,13 +2318,20 @@ Nova tela **Escalas › Demanda**: o movimento do PDV vira a previsão de quanta
 - O espaço entre o menu e o conteúdo ficou igual em todas as telas, e a dica dos botões do menu não fica mais presa ao voltar de outra guia.
 
 - Menu de empresa com a opção Todas as empresas:
-![image](imagens/cloud_pr3262_imagem1.png)
+
+  ![image](imagens/cloud_pr3262_imagem1.png)
+
 - Escolhendo Todas as empresas, a lista volta a ter os colaboradores de todas:
-![image](imagens/cloud_pr3262_imagem2.png)
+
+  ![image](imagens/cloud_pr3262_imagem2.png)
+
 - Reabrindo o menu, a opção aparece marcada:
-![image](imagens/cloud_pr3262_imagem3.png)
+
+  ![image](imagens/cloud_pr3262_imagem3.png)
+
 - Resultado do arquivo recebido aberto e clicado por dentro, sem erro:
-![image](imagens/cloud_pr3272_imagem1.png)
+
+  ![image](imagens/cloud_pr3272_imagem1.png)
 
 # 29/10/2026
 
@@ -1724,17 +2359,28 @@ O agente local passa a monitorar pastas da empresa e a enviar os arquivos que ap
 - Integração com destino "Campos do colaborador no mês": a carga não falha mais quando o código do colaborador e o mês estão cadastrados como campos customizados.
 
 - Página do Agente com as integrações e a situação do último arquivo de cada pasta:
-![image](imagens/cloud_pr3230_imagem1.png)
+
+  ![image](imagens/cloud_pr3230_imagem1.png)
+
 - Lista de integrações de arquivos:
-![image](imagens/cloud_pr3230_imagem2.png)
+
+  ![image](imagens/cloud_pr3230_imagem2.png)
+
 - Cadastro de uma integração de contracheques:
-![image](imagens/cloud_pr3230_imagem3.png)
+
+  ![image](imagens/cloud_pr3230_imagem3.png)
+
 - Arquivos recebidos, com o resultado do processamento aberto (convênio pelo layout de integração, contracheques e AFD):
-![image](imagens/cloud_pr3230_imagem4.png)
+
+  ![image](imagens/cloud_pr3230_imagem4.png)
+
 - Convênio gravando o valor da compra nos campos do colaborador no mês:
-![image](imagens/cloud_pr3230_imagem5.png)
+
+  ![image](imagens/cloud_pr3230_imagem5.png)
+
 - Card da novidade na página de Novidades:
-![image](imagens/cloud_pr3230_imagem6.png)
+
+  ![image](imagens/cloud_pr3230_imagem6.png)
 
 ## Vale-transporte com o home office da escala ✨
 
@@ -1753,19 +2399,32 @@ Os dias de home office definidos em **Escalas › Home office** passam a valer n
 - Corrigidos: a quantidade manual da Manutenção de VTs volta a somar no total quando o mês é gerado de novo; a lista de VTs do colaborador não mostra mais VTs de demitidos, de excluídos ou sem colaborador (os que apareciam com o nome em branco); a quantidade de colaboradores com VT nas informações da empresa deixa de contar os demitidos; a paginação da Manutenção de VTs mostra o total certo do mês e os nomes aparecem também em empresas com mais de 1000 colaboradores; e as linhas sem quantidade calculada, que o Salvar ignorava sem avisar, aparecem sinalizadas e sem campo de edição.
 
 - Manutenção de VTs com as colunas Qtd./dia, Home office (Previsto e Descontado) e Adicionais, e os três cartões de resumo (nomes ofuscados):
-![image](imagens/cloud_pr3202_imagem1.png)
+
+  ![image](imagens/cloud_pr3202_imagem1.png)
+
 - A conta da quantidade total: (11 previstos − 1 ausência) × 1 + 3 manual + 7 adicionais × 1 = 20:
-![image](imagens/cloud_pr3202_imagem2.png)
-![image](imagens/calc_pr548_imagem2.png)
+
+  ![image](imagens/cloud_pr3202_imagem2.png)
+
+  ![image](imagens/calc_pr548_imagem2.png)
+
 - A conta do valor total: 20 × R$ 14,22:
-![image](imagens/cloud_pr3202_imagem3.png)
+
+  ![image](imagens/cloud_pr3202_imagem3.png)
+
 - Home office previsto: as segundas e quintas da escala, que ficaram fora dos dias previstos:
-![image](imagens/cloud_pr3202_imagem4.png)
+
+  ![image](imagens/cloud_pr3202_imagem4.png)
+
 - Home office descontado: o dia 20/10 tinha sido pago e foi marcado como home office depois, então entrou nas ausências:
-![image](imagens/cloud_pr3202_imagem5.png)
-![image](imagens/calc_pr548_imagem1.png)
+
+  ![image](imagens/cloud_pr3202_imagem5.png)
+
+  ![image](imagens/calc_pr548_imagem1.png)
+
 - Manutenção do cartão: os dias de home office da escala com a casinha esmaecida na coluna Observação:
-![image](imagens/cloud_pr3202_imagem6.png)
+
+  ![image](imagens/cloud_pr3202_imagem6.png)
 
 ## Quitação parcial do banco de horas ✨
 
@@ -1776,13 +2435,20 @@ A quitação de saldo na **Consulta geral de banco de horas** ganha novas opçõ
 - Sem nenhum colaborador marcado, o botão **Ferramentas do período** fica ativo e vale para **todos** os colaboradores da lista (a exclusão continua exigindo a seleção).
 
 - Período em andamento selecionado ao abrir:
-![image](imagens/cloud_pr3239_imagem1.png)
+
+  ![image](imagens/cloud_pr3239_imagem1.png)
+
 - Ferramentas do período para todos, sem seleção:
-![image](imagens/cloud_pr3239_imagem2.png)
+
+  ![image](imagens/cloud_pr3239_imagem2.png)
+
 - Quitação até 08:00 por colaborador, com a prévia das horas:
-![image](imagens/cloud_pr3239_imagem3.png)
+
+  ![image](imagens/cloud_pr3239_imagem3.png)
+
 - Quitação de 50% do saldo:
-![image](imagens/cloud_pr3239_imagem4.png)
+
+  ![image](imagens/cloud_pr3239_imagem4.png)
 
 ## Importação de colaboradores por planilha ✨
 
@@ -1804,23 +2470,40 @@ A importação por planilha passa a aceitar planilhas do jeito que chegam do cli
 - O código na folha de pagamento do afastamento aceita 10 caracteres (eram 4), como o do estabelecimento.
 
 - CPF com ponto e espaço gravado só com os números, estabelecimento criado e reaproveitado pelo nome, repetido importado uma vez e CPF com texto avisado:
-![image](imagens/cloud_pr3238_imagem1.png)
+
+  ![image](imagens/cloud_pr3238_imagem1.png)
+
 - Planilha com casos de erro: linha em branco pulada, cargo e departamento com grafias diferentes no mesmo cadastro, data inválida avisada e a linha com erro recusada sozinha:
-![image](imagens/cloud_pr3238_imagem2.png)
+
+  ![image](imagens/cloud_pr3238_imagem2.png)
+
 - Planilha com várias abas e cabeçalho fora da coluna A; na segunda importação todos são reconhecidos pelo CPF:
-![image](imagens/cloud_pr3238_imagem3.png)
+
+  ![image](imagens/cloud_pr3238_imagem3.png)
+
 - Barra de progresso enquanto a planilha é lida:
-![image](imagens/cloud_pr3238_imagem4.png)
+
+  ![image](imagens/cloud_pr3238_imagem4.png)
+
 - Conferência só com as colunas que têm dados:
-![image](imagens/cloud_pr3238_imagem5.png)
+
+  ![image](imagens/cloud_pr3238_imagem5.png)
+
 - O aviso de cada colaborador embaixo do nome:
-![image](imagens/cloud_pr3238_imagem6.png)
+
+  ![image](imagens/cloud_pr3238_imagem6.png)
+
 - Trocar código com o próximo código livre, de 9 dígitos, inteiro no campo:
-![image](imagens/cloud_pr3238_imagem7.png)
+
+  ![image](imagens/cloud_pr3238_imagem7.png)
+
 - Código já usado por outro colaborador: o motivo aparece no diálogo, que continua aberto:
-![image](imagens/cloud_pr3238_imagem8.png)
+
+  ![image](imagens/cloud_pr3238_imagem8.png)
+
 - Afastamento gravado com o código na folha de 10 caracteres:
-![image](imagens/cloud_pr3238_imagem9.png)
+
+  ![image](imagens/cloud_pr3238_imagem9.png)
 
 ## Tarefas e equipamentos
 
@@ -1831,11 +2514,16 @@ A importação por planilha passa a aceitar planilhas do jeito que chegam do cli
 - Corrigidos: o espelho de um colaborador só, no modo Automático, deixava o mês inteiro como calculado, e as alterações dos outros colaboradores daquele mês não eram mais recalculadas; e a opção de calcular dados da exportação da folha não tinha efeito.
 
 - Monitor com uma tarefa em andamento, com ícone próprio ao lado do de sincronização:
-![image](imagens/cloud_pr3231_imagem1.png)
+
+  ![image](imagens/cloud_pr3231_imagem1.png)
+
 - Sincronização e envio do mesmo cliente: o envio terminou e a sincronização aguarda a vez:
-![image](imagens/cloud_pr3231_imagem2.png)
+
+  ![image](imagens/cloud_pr3231_imagem2.png)
+
 - Ações rápidas: o envio é disparado, a janela fica livre e o resultado chega pelo monitor:
-![image](imagens/cloud_pr3231_imagem3.gif)
+
+  ![image](imagens/cloud_pr3231_imagem3.gif)
 
 ## Notas do mural no aplicativo ✨
 
@@ -1844,9 +2532,12 @@ A importação por planilha passa a aceitar planilhas do jeito que chegam do cli
 - O aplicativo passa a buscar os recados do mural do colaborador nessas rotinas (na próxima versão do aplicativo).
 
 - Rotinas da nota, com as da web e as do aplicativo:
-![image](imagens/cloud_pr3243_imagem1.png)
+
+  ![image](imagens/cloud_pr3243_imagem1.png)
+
 - Mural com a nota e as rotinas marcadas:
-![image](imagens/cloud_pr3243_imagem2.png)
+
+  ![image](imagens/cloud_pr3243_imagem2.png)
 
 ## Espelho de ponto
 
@@ -1854,11 +2545,16 @@ A importação por planilha passa a aceitar planilhas do jeito que chegam do cli
 - Ao recusar a assinatura, um erro passa a aparecer como aviso na tela, em vez de travar a página.
 
 - Colaborador assinando o espelho:
-![image](imagens/cloud_pr3242_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3242_imagem1.jpg)
+
 - Assinatura concluída:
-![image](imagens/cloud_pr3242_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3242_imagem2.jpg)
+
 - Espelho com a assinatura aplicada:
-![image](imagens/cloud_pr3242_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3242_imagem3.jpg)
 
 ## Escalas, barra do topo e menus
 
@@ -1868,19 +2564,16 @@ A importação por planilha passa a aceitar planilhas do jeito que chegam do cli
 - **Novidades**: novos cards do painel de Manutenções e afastamentos, do painel de Locais de trabalho e dos favoritos da estrela — o "Me mostre" deste abre a estrela e mostra como adicionar um atalho ou, para quem ainda não tem atalhos, o assistente de perfis. O card das visões das listas passa a citar as colunas Departamento, Setor e Tags da lista de colaboradores.
 
 - Card do painel de Manutenções e afastamentos:
-![image](imagens/cloud_pr3223_imagem1.png)
+
+  ![image](imagens/cloud_pr3223_imagem1.png)
+
 - Card do painel de Locais de trabalho:
-![image](imagens/cloud_pr3223_imagem2.png)
+
+  ![image](imagens/cloud_pr3223_imagem2.png)
+
 - Card dos favoritos da estrela:
-![image](imagens/cloud_pr3223_imagem3.png)
 
-## Para a equipe Símix
-
-- As atualizações de banco passam a pular os ajustes que já foram aplicados e a atualizar vários bancos ao mesmo tempo, o que encurta a implantação de cada versão. Se a estrutura de um banco mudou desde a última atualização, ele roda todos os ajustes, como antes.
-- O Claude Code da equipe de desenvolvimento passa a consultar os bancos de teste locais, abrir o sistema local num navegador próprio para conferir telas e tirar prints, consultar a documentação da Microsoft e usar as operações de teste do próprio sistema em desenvolvimento. Nada disso existe em produção.
-
-- Tela de login do ambiente local aberta pelo navegador do Claude Code:
-![image](imagens/cloud_pr3232_imagem1.png)
+  ![image](imagens/cloud_pr3223_imagem3.png)
 
 ## Outras melhorias e correções
 
@@ -1893,9 +2586,12 @@ A importação por planilha passa a aceitar planilhas do jeito que chegam do cli
 - Reforço de segurança no cálculo: quem é só colaborador recalcula apenas o próprio cartão.
 
 - Coluna Médico na Manutenção de afastamentos (nomes borrados):
-![image](imagens/cloud_pr3239_imagem6.png)
+
+  ![image](imagens/cloud_pr3239_imagem6.png)
+
 - "Clientes que usam esta opção" para um usuário do cliente, sem os nomes:
-![image](imagens/cloud_pr3231_imagem4.png)
+
+  ![image](imagens/cloud_pr3231_imagem4.png)
 
 # 28/10/2026
 
@@ -1933,7 +2629,8 @@ Novo painel em **Inconsistências › Painel** (também em Consultas e dashboard
 - A regra padrão **"Acima de 4h trabalhadas no turno"** passa a valer acima de 6h (intervalo de 1 hora da CLT). Só muda onde a regra nunca foi editada, a partir do próximo cálculo.
 
 - Painel de setembro: a regra de horas no turno atinge 87% do quadro e vai para "Regras a revisar":
-![image](imagens/cloud_pr3213_imagem1.png)
+
+  ![image](imagens/cloud_pr3213_imagem1.png)
 
 ## Painel de manutenções e afastamentos ✨
 
@@ -1947,15 +2644,24 @@ Nova tela em **Ponto › Manutenção › Manutenções e afastamentos**, que ju
 - Na loja de dashboards, o antigo "Dashboard de manutenções", que mostrava as solicitações de ajuste, passa a se chamar **Pendências**. Entra um novo dashboard **Manutenções**, com os ajustes do mês por tipo, por rotina, por usuário (os automáticos aparecem como "Sistema") e por colaborador, e a lista dos ajustes com a marcação antiga e a nova.
 
 - Período 08/2026: cards comparados ao mês anterior, ausentes por dia, tipos, ajustes e mapa de ausências:
-![image](imagens/cloud_pr3153_imagem1.png)
+
+  ![image](imagens/cloud_pr3153_imagem1.png)
+
 - Alerta das faltas corridas longas: sem esses dias, o absenteísmo cairia de 9,06% para 7,56%:
-![image](imagens/cloud_pr3153_imagem2.png)
+
+  ![image](imagens/cloud_pr3153_imagem2.png)
+
 - No celular, dois cards por linha e o mapa rolando dentro do quadro:
-![image](imagens/cloud_pr3153_imagem3.png)
+
+  ![image](imagens/cloud_pr3153_imagem3.png)
+
 - Novo dashboard Manutenções na loja:
-![image](imagens/rx_pr165_imagem1.png)
+
+  ![image](imagens/rx_pr165_imagem1.png)
+
 - Dashboard Pendências, com o nome e os títulos novos:
-![image](imagens/rx_pr165_imagem2.png)
+
+  ![image](imagens/rx_pr165_imagem2.png)
 
 ## Locais de trabalho: previsto × realizado ✨
 
@@ -1972,15 +2678,24 @@ Novo painel para acompanhar onde cada colaborador trabalhou no mês — empresa,
 - O cálculo, a importação de registros e a Manutenção voltaram a enxergar a escala do quadro de horário do colaborador: a marcação web sem local passa a receber o local da escala (por exemplo, home office nos dias previstos). O Calendário explica de onde vem o local do dia com essa regra.
 
 - Visão geral do painel, com os nomes borrados:
-![image](imagens/cloud_pr3197_imagem1.png)
+
+  ![image](imagens/cloud_pr3197_imagem1.png)
+
 - Divergências do mês com dois dias marcados para ajustar o local previsto:
-![image](imagens/cloud_pr3197_imagem2.png)
+
+  ![image](imagens/cloud_pr3197_imagem2.png)
+
 - Dashboard Locais de trabalho na loja:
-![image](imagens/rx_pr167_imagem1.jpg)
+
+  ![image](imagens/rx_pr167_imagem1.jpg)
+
 - O mesmo dashboard aberto sobre os dados de locais de trabalho:
-![image](imagens/cloud_pr3195_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3195_imagem1.jpg)
+
 - Aviso de coordenada suspeita no cadastro do estabelecimento, com marcações recentes a 534 km:
-![image](imagens/cloud_pr3191_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3191_imagem1.jpg)
 
 ## Marcações fora do cálculo e nova página de Registros ✨
 
@@ -1996,13 +2711,20 @@ As consultas de registros passam a mostrar as marcações que foram guardadas ma
 - Corrigidos: a aba de comprovantes escondia a marcação de relógio que não entrou no cálculo; o selo "INATIVO" do comprovante saía sem cor; a coluna da hora da marcação se chamava "Data da alteração"; e a data final da página de Registros não entrava na consulta.
 
 - Cartão reorganizado na Manutenção: marcações no campo de hoje, uma alterada e as fora do cálculo em laranja:
-![image](imagens/cloud_pr3215_imagem1.png)
+
+  ![image](imagens/cloud_pr3215_imagem1.png)
+
 - Turno noturno: as marcações da noite anterior aparecem com a data junto da hora:
-![image](imagens/cloud_pr3215_imagem2.png)
+
+  ![image](imagens/cloud_pr3215_imagem2.png)
+
 - Página de Registros com as situações, a coluna Cartão e as marcações do dia ao lado:
-![image](imagens/cloud_pr3215_imagem3.png)
+
+  ![image](imagens/cloud_pr3215_imagem3.png)
+
 - No celular, as marcações do dia abrem por cima da lista:
-![image](imagens/cloud_pr3215_imagem4.png)
+
+  ![image](imagens/cloud_pr3215_imagem4.png)
 
 ## Consulta diária com intervalo de datas ✨
 
@@ -2014,11 +2736,16 @@ As consultas de registros passam a mostrar as marcações que foram guardadas ma
 - A Consulta diária volta a abrir para quem já vê o ponto da equipe: basta a permissão de Consulta diária, de Manutenção do ponto ou de Dias calculados.
 
 - Um dia, com os totais em cards e as faixas de extras:
-![image](imagens/cloud_pr3180_imagem1.png)
+
+  ![image](imagens/cloud_pr3180_imagem1.png)
+
 - Intervalo de 01/10 a 20/10, com a coluna Data e os totais do período:
-![image](imagens/cloud_pr3180_imagem2.png)
+
+  ![image](imagens/cloud_pr3180_imagem2.png)
+
 - O mesmo intervalo por colaborador:
-![image](imagens/cloud_pr3180_imagem3.png)
+
+  ![image](imagens/cloud_pr3180_imagem3.png)
 
 ## Horários por período ✨
 
@@ -2029,21 +2756,36 @@ As consultas de registros passam a mostrar as marcações que foram guardadas ma
 - O período precisa das duas datas e não pode se sobrepor a outro do mesmo colaborador (sem a data final, o cálculo ignorava o período).
 
 - Calendário ao lado do "+" na coluna Horário:
-![image](imagens/cloud_pr3118_imagem1.png)
+
+  ![image](imagens/cloud_pr3118_imagem1.png)
+
 - O período já vem do dia clicado até o fim do cartão:
-![image](imagens/cloud_pr3118_imagem2.png)
+
+  ![image](imagens/cloud_pr3118_imagem2.png)
+
 - Depois de gravar e recalcular, os dias do período mostram o quadro:
-![image](imagens/cloud_pr3118_imagem3.png)
+
+  ![image](imagens/cloud_pr3118_imagem3.png)
+
 - No dia em edição, o nome vira um botão para alterar o período:
-![image](imagens/cloud_pr3118_imagem4.png)
+
+  ![image](imagens/cloud_pr3118_imagem4.png)
+
 - Alterar ou excluir o período:
-![image](imagens/cloud_pr3118_imagem5.png)
+
+  ![image](imagens/cloud_pr3118_imagem5.png)
+
 - Período que se sobrepõe a outro é recusado:
-![image](imagens/cloud_pr3118_imagem6.png)
+
+  ![image](imagens/cloud_pr3118_imagem6.png)
+
 - Guia Horários por período no cadastro do colaborador:
-![image](imagens/cloud_pr3118_imagem7.png)
+
+  ![image](imagens/cloud_pr3118_imagem7.png)
+
 - Troca de horário "A partir de" uma data:
-![image](imagens/cloud_pr3118_imagem8.png)
+
+  ![image](imagens/cloud_pr3118_imagem8.png)
 
 ## Readmissão no cadastro do colaborador ✨
 
@@ -2052,11 +2794,16 @@ As consultas de registros passam a mostrar as marcações que foram guardadas ma
 - **Ver histórico anterior** abre o cadastro antigo numa janela, no mês do desligamento.
 
 - Aviso logo abaixo do CPF:
-![image](imagens/cloud_pr3175_imagem1.png)
+
+  ![image](imagens/cloud_pr3175_imagem1.png)
+
 - Depois de "Copiar dados cadastrais": dados pessoais preenchidos, organização e datas ainda vazias:
-![image](imagens/cloud_pr3175_imagem2.png)
+
+  ![image](imagens/cloud_pr3175_imagem2.png)
+
 - "Ver histórico anterior" abre o cadastro do colaborador desligado:
-![image](imagens/cloud_pr3175_imagem3.png)
+
+  ![image](imagens/cloud_pr3175_imagem3.png)
 
 ## Termos de responsabilidade e atestado técnico ✨
 
@@ -2067,9 +2814,12 @@ Nova tela **Avançado › Termos de responsabilidade**, com os documentos que a 
 - O atestado do fabricante de cada relógio (como o emitido pelo portal da Control iD) é anexado no cadastro do coletor e listado na mesma tela, com o que ainda falta anexar.
 
 - Atestado da Símix gerado para a empresa e a lista dos relógios com o atestado do fabricante:
-![image](imagens/cloud_pr3078_imagem1.png)
+
+  ![image](imagens/cloud_pr3078_imagem1.png)
+
 - Cadastro do coletor, aba Informações: abrir, substituir ou remover o PDF do fabricante:
-![image](imagens/cloud_pr3078_imagem2.png)
+
+  ![image](imagens/cloud_pr3078_imagem2.png)
 
 ## Escalas
 
@@ -2082,19 +2832,32 @@ Nova tela **Avançado › Termos de responsabilidade**, com os documentos que a 
 - Card da novidade na página de Novidades, com o passo a passo e a demonstração guiada (Me mostre).
 
 - Os pares encontrados, o alerta de horas e o resumo dos domingos sem troca:
-![image](imagens/cloud_pr3128_imagem1.png)
+
+  ![image](imagens/cloud_pr3128_imagem1.png)
+
 - Depois de aplicar: trocas circuladas, o contador filtrando e o botão Voltar:
-![image](imagens/cloud_pr3128_imagem2.png)
+
+  ![image](imagens/cloud_pr3128_imagem2.png)
+
 - Card da novidade, com o "Me mostre":
-![image](imagens/cloud_pr3128_imagem3.png)
+
+  ![image](imagens/cloud_pr3128_imagem3.png)
+
 - Demonstração guiada no passo da lista de pares:
-![image](imagens/cloud_pr3128_imagem4.png)
+
+  ![image](imagens/cloud_pr3128_imagem4.png)
+
 - Os dias que compensam (falta e folga sem troca) e os pares antes de aplicar:
-![image](imagens/cloud_pr3150_imagem4.png)
+
+  ![image](imagens/cloud_pr3150_imagem4.png)
+
 - Os dias trocados circulados na grade:
-![image](imagens/cloud_pr3150_imagem5.png)
+
+  ![image](imagens/cloud_pr3150_imagem5.png)
+
 - O contador de trocas na barra, que mostra só os colaboradores com troca:
-![image](imagens/cloud_pr3150_imagem6.png)
+
+  ![image](imagens/cloud_pr3150_imagem6.png)
 
 ### Melhorias nas escalas
 
@@ -2111,25 +2874,44 @@ Nova tela **Avançado › Termos de responsabilidade**, com os documentos que a 
 - Corrigidos: espaço vazio entre o nome e o primeiro dia na visão Semana, texto das células aparecendo por baixo do nome ao rolar, marcas da troca de domingos na cor do fundo, seta do Aprovar separada do botão, erro ao abrir a grade vinda de outra tela e demonstrações guiadas que não abriam as telas pelo menu.
 
 - Visão Semana:
-![image](imagens/cloud_pr3150_imagem2.png)
+
+  ![image](imagens/cloud_pr3150_imagem2.png)
+
 - Feriado da cidade só na célula de quem é de lá (o feriado nacional fica na coluna):
-![image](imagens/cloud_pr3150_imagem7.png)
+
+  ![image](imagens/cloud_pr3150_imagem7.png)
+
 - Barra em duas linhas e a barra de status com a legenda do dia (nomes ofuscados):
-![image](imagens/cloud_pr3205_imagem1.png)
+
+  ![image](imagens/cloud_pr3205_imagem1.png)
+
 - Menu do colaborador pela foto:
-![image](imagens/cloud_pr3205_imagem2.png)
+
+  ![image](imagens/cloud_pr3205_imagem2.png)
+
 - Atalhos para as telas relacionadas, por categoria:
-![image](imagens/cloud_pr3205_imagem3.png)
+
+  ![image](imagens/cloud_pr3205_imagem3.png)
+
 - Trocas/Afastamentos com 100 colaboradores por página:
-![image](imagens/cloud_pr3205_imagem4.png)
+
+  ![image](imagens/cloud_pr3205_imagem4.png)
+
 - Painel lateral com largura fixa:
-![image](imagens/cloud_pr3211_imagem1.png)
+
+  ![image](imagens/cloud_pr3211_imagem1.png)
+
 - Trocas/Afastamentos com o filtro por setores:
-![image](imagens/cloud_pr3211_imagem3.png)
+
+  ![image](imagens/cloud_pr3211_imagem3.png)
+
 - Impressão filtrada pelo estabelecimento 3, com o CNPJ e o nome dele:
-![image](imagens/cloud_pr3171_imagem1.png)
+
+  ![image](imagens/cloud_pr3171_imagem1.png)
+
 - Filtrada pelo estabelecimento 2, com CNPJ de outra raiz:
-![image](imagens/cloud_pr3171_imagem2.png)
+
+  ![image](imagens/cloud_pr3171_imagem2.png)
 
 ## Registro pelo aplicativo e pela web: Padrão, Sempre ou Nunca ✨
 
@@ -2141,9 +2923,12 @@ Nova tela **Avançado › Termos de responsabilidade**, com os documentos que a 
 - Os cadastros atuais foram convertidos sem mudar quem registra hoje, e o histórico passa a mostrar quem alterou as Configurações do app.
 
 - Configurações do app com a opção ligada:
-![image](imagens/cloud_pr3140_imagem1.png)
+
+  ![image](imagens/cloud_pr3140_imagem1.png)
+
 - Com a opção desligada:
-![image](imagens/cloud_pr3140_imagem2.png)
+
+  ![image](imagens/cloud_pr3140_imagem2.png)
 
 ## Aplicativo 📱
 
@@ -2165,16 +2950,26 @@ O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão so
 - Os menus da estrela, de Consultas e de Escalas abrem na hora com o que já foi carregado e se atualizam em segundo plano, sem a barra de carregamento a cada clique.
 
 - Antes, a 1280px:
-![image](imagens/cloud_pr3216_imagem1.png)
+
+  ![image](imagens/cloud_pr3216_imagem1.png)
+
 - Depois, a 1280px:
-![image](imagens/cloud_pr3216_imagem2.png)
+
+  ![image](imagens/cloud_pr3216_imagem2.png)
+
 - Antes e depois, a 1024px:
-![image](imagens/cloud_pr3216_imagem3.png)
-![image](imagens/cloud_pr3216_imagem4.png)
+
+  ![image](imagens/cloud_pr3216_imagem3.png)
+
+  ![image](imagens/cloud_pr3216_imagem4.png)
+
 - Menu com todos os grupos e telas:
-![image](imagens/cloud_pr3216_imagem5.png)
+
+  ![image](imagens/cloud_pr3216_imagem5.png)
+
 - Modo "Barra única":
-![image](imagens/cloud_pr3216_imagem6.png)
+
+  ![image](imagens/cloud_pr3216_imagem6.png)
 
 ### Estrela de Favoritos com grupos de atalhos ✨
 
@@ -2186,17 +2981,28 @@ O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão so
 - Os atalhos já criados continuam: cada layout antigo vira um grupo, com o mesmo nome e ícone. O card de atalhos do Início saiu.
 
 - Estrela com os grupos em seções, Adicionar atalho e Editar no rodapé:
-![image](imagens/cloud_pr3145_imagem1.png)
+
+  ![image](imagens/cloud_pr3145_imagem1.png)
+
 - Cadastro do layout: grupos, atalhos arrastáveis e o painel do atalho escolhido:
-![image](imagens/cloud_pr3145_imagem2.png)
+
+  ![image](imagens/cloud_pr3145_imagem2.png)
+
 - Novo atalho, passo 1: o tipo em cards, com explicação e exemplo:
-![image](imagens/cloud_pr3145_imagem3.png)
+
+  ![image](imagens/cloud_pr3145_imagem3.png)
+
 - Novo atalho, passo 2: as opções do widget e o que o clique faz:
-![image](imagens/cloud_pr3145_imagem4.png)
+
+  ![image](imagens/cloud_pr3145_imagem4.png)
+
 - Assistente de atalhos: os perfis, cada um com os grupos que traz:
-![image](imagens/cloud_pr3145_imagem5.png)
+
+  ![image](imagens/cloud_pr3145_imagem5.png)
+
 - Os grupos do perfil Departamento pessoal já marcados, com as telas de cada um:
-![image](imagens/cloud_pr3145_imagem6.png)
+
+  ![image](imagens/cloud_pr3145_imagem6.png)
 
 ## Colaborador e cadastros
 
@@ -2207,9 +3013,12 @@ O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão so
 - Os repetidos que já existiam foram corrigidos na atualização: cidades, bairros, cargos, departamentos, setores, seções e grupos de estabelecimentos ficaram com um registro só, o ativo mais antigo, e tudo o que apontava para os outros passou para ele. Nos cadastros de configuração (escalas, horários por dia, coletores, motivos, afastamentos…), em que o mesmo nome pode ter conteúdo diferente, o repetido ganhou o código no nome — por exemplo, "Folga (21)" — e nada muda no cálculo.
 
 - Pesquisa por "guaiba": as cidades repetidas viraram uma só, com tudo ligado a ela:
-![image](imagens/cloud_pr3106_imagem1.png)
+
+  ![image](imagens/cloud_pr3106_imagem1.png)
+
 - Cadastrar "GUAÍBA" de novo é recusado, com a cidade que já existe:
-![image](imagens/cloud_pr3106_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3106_imagem2.jpg)
 
 ### Importação de colaboradores por planilha ✨
 
@@ -2223,15 +3032,24 @@ O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão so
 - A prévia mostra as colunas novas, e os campos para associar as colunas ficam numa grade que se ajusta à tela.
 
 - Colunas associadas automaticamente e a prévia (dados fictícios):
-![image](imagens/cloud_pr3143_imagem1.png)
+
+  ![image](imagens/cloud_pr3143_imagem1.png)
+
 - Colaborador importado com o estabelecimento padrão:
-![image](imagens/cloud_pr3143_imagem2.png)
+
+  ![image](imagens/cloud_pr3143_imagem2.png)
+
 - Nascimento, gênero, matrícula e documentos importados:
-![image](imagens/cloud_pr3143_imagem3.png)
+
+  ![image](imagens/cloud_pr3143_imagem3.png)
+
 - E-mail, telefone, estado civil e escolaridade importados:
-![image](imagens/cloud_pr3143_imagem4.png)
+
+  ![image](imagens/cloud_pr3143_imagem4.png)
+
 - Planilha com todos já cadastrados: a janela avisa que nada foi importado e lista quem já existe:
-![image](imagens/cloud_pr3143_imagem5.png)
+
+  ![image](imagens/cloud_pr3143_imagem5.png)
 
 ### Cadastro do colaborador
 
@@ -2243,15 +3061,24 @@ O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão so
 - Nas visões da lista de colaboradores dá para escolher as colunas **Departamento**, **Setor** e **Tags**; as tags aparecem como etiquetas, e a lista pode ser ordenada por departamento e por setor.
 
 - Guia Customizável com o código e o nome no título:
-![image](imagens/cloud_pr3125_imagem1.png)
+
+  ![image](imagens/cloud_pr3125_imagem1.png)
+
 - Ao clicar em Próximo com o campo alterado, o sistema pergunta se deseja salvar:
-![image](imagens/cloud_pr3125_imagem2.png)
+
+  ![image](imagens/cloud_pr3125_imagem2.png)
+
 - O próximo colaborador abre na mesma guia, já com o nome dele no título:
-![image](imagens/cloud_pr3125_imagem3.png)
+
+  ![image](imagens/cloud_pr3125_imagem3.png)
+
 - Colunas novas no editor da visão:
-![image](imagens/cloud_pr3218_imagem1.png)
+
+  ![image](imagens/cloud_pr3218_imagem1.png)
+
 - Departamento, Setor e Tags na lista:
-![image](imagens/cloud_pr3218_imagem2.png)
+
+  ![image](imagens/cloud_pr3218_imagem2.png)
 
 ## Manutenção do cartão
 
@@ -2261,9 +3088,12 @@ O menu do topo ocupa menos altura antes do conteúdo da tela, e nenhum botão so
 - O aviso diz quanto deixou de ser descontado e sugere trocar o afastamento do dia ou marcar **Desconto DSR: Sim** no cadastro dele. O cálculo não muda: o desconto continua seguindo o cadastro do afastamento.
 
 - Dia 04/10 com faltas na semana e o afastamento "Eleições" no domingo: ícone laranja e o aviso com a sugestão:
-![image](imagens/cloud_pr3111_imagem1.png)
+
+  ![image](imagens/cloud_pr3111_imagem1.png)
+
 - O aviso nas explicações do dia:
-![image](imagens/calc_pr537_imagem1.png)
+
+  ![image](imagens/calc_pr537_imagem1.png)
 
 ### Forçar BH e Forçar sem compensação
 
@@ -2274,11 +3104,16 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - Os dias em Automático e as extras que já eram pagas continuam como antes.
 
 - Antes, tudo em Automático: as faltas vão para as faltas sem compensação e o saldo fica em +03:50:
-![image](imagens/calc_pr539_imagem1.png)
+
+  ![image](imagens/calc_pr539_imagem1.png)
+
 - Forçar BH em dois dias: as faltas desses dias descontam do saldo:
-![image](imagens/calc_pr539_imagem2.png)
+
+  ![image](imagens/calc_pr539_imagem2.png)
+
 - Forçar sem compensação em dois dias com extras: elas saem do saldo e aparecem como extras 50%:
-![image](imagens/calc_pr539_imagem3.png)
+
+  ![image](imagens/calc_pr539_imagem3.png)
 
 ### Espelho de ponto
 
@@ -2288,13 +3123,20 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - **Manutenção em lote com período de vários meses** grava cada dia no mês de cartão dele e recalcula cada mês do período — antes os dias iam para o último mês, e o espelho saía com os dias de outro mês.
 
 - Antes: o mês assinado ganhou um segundo espelho, pendente:
-![image](imagens/cloud_pr3203_imagem1.png)
+
+  ![image](imagens/cloud_pr3203_imagem1.png)
+
 - Depois do ajuste: o pendente duplicado fica arquivado e só o assinado vale:
-![image](imagens/cloud_pr3203_imagem2.png)
+
+  ![image](imagens/cloud_pr3203_imagem2.png)
+
 - Gerando de novo o espelho de um colaborador que já assinou:
-![image](imagens/cloud_pr3203_imagem3.png)
+
+  ![image](imagens/cloud_pr3203_imagem3.png)
+
 - Depois da geração, continua um só espelho, assinado:
-![image](imagens/cloud_pr3203_imagem4.png)
+
+  ![image](imagens/cloud_pr3203_imagem4.png)
 
 ### Outros ajustes da Manutenção
 
@@ -2304,21 +3146,36 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - O tipo de layout "Mínimo" da consulta vale só para o portal do colaborador: quem é do RH e também tem acesso de colaborador volta a ver os totais completos na Manutenção.
 
 - Antes: com um turno especial sem tipo, o cartão de outro colaborador não abria:
-![image](imagens/cloud_pr3206_imagem1.png)
+
+  ![image](imagens/cloud_pr3206_imagem1.png)
+
 - O turno especial sem tipo:
-![image](imagens/cloud_pr3206_imagem2.png)
+
+  ![image](imagens/cloud_pr3206_imagem2.png)
+
 - Depois de salvar, o tipo fica como Padrão:
-![image](imagens/cloud_pr3206_imagem3.png)
+
+  ![image](imagens/cloud_pr3206_imagem3.png)
+
 - O cartão volta a abrir:
-![image](imagens/cloud_pr3206_imagem4.png)
+
+  ![image](imagens/cloud_pr3206_imagem4.png)
+
 - Turno especial novo já vem com o tipo Padrão:
-![image](imagens/cloud_pr3206_imagem5.png)
+
+  ![image](imagens/cloud_pr3206_imagem5.png)
+
 - Gerente só com o perfil Gerencial: o cartão abre em somente leitura, sem o Salvar e sem a barra de edição:
-![image](imagens/cloud_pr3126_imagem1.png)
+
+  ![image](imagens/cloud_pr3126_imagem1.png)
+
 - Justificativa abaixo da hora:
-![image](imagens/cloud_pr3211_imagem2.png)
+
+  ![image](imagens/cloud_pr3211_imagem2.png)
+
 - Usuário com Gestão e Colaborador e o layout "Mínimo": a Manutenção mostra todos os totais:
-![image](imagens/cloud_pr3119_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3119_imagem2.jpg)
 
 ## Afastamentos e atestados
 
@@ -2330,13 +3187,20 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - **Consulta de atestados**: passa a mostrar também os afastamentos sem tipo que têm "atestado" na descrição, e com a lista vazia avisa que só entram os afastamentos com **Tipo: Atestado**, com link para o cadastro. Na atualização, o afastamento padrão de atestado sem tipo recebeu o Tipo: Atestado, nos clientes que ainda não tinham nenhum com esse tipo.
 
 - Pedido do colaborador com o atestado subindo: "Enviando…" e o Salvar desabilitado:
-![image](imagens/cloud_pr3176_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3176_imagem1.jpg)
+
 - Com um atestado aparecem médico, CID e Anexo; com Férias, só colaborador, datas, horas e situação:
-![image](imagens/cloud_pr3141_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3141_imagem1.jpg)
+
 - Consulta de atestados voltando a listar os atestados do mês (nomes e anexos ofuscados):
-![image](imagens/cloud_pr3177_imagem1.png)
+
+  ![image](imagens/cloud_pr3177_imagem1.png)
+
 - Sem nenhum atestado no período, o aviso orienta a conferir o tipo no cadastro:
-![image](imagens/cloud_pr3177_imagem2.png)
+
+  ![image](imagens/cloud_pr3177_imagem2.png)
 
 ## Cálculo
 
@@ -2345,19 +3209,32 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - **Faltas integrais só no dia sem trabalho**: as horas de falta só contam como integrais no dia em que o colaborador não trabalhou — o mesmo dia que entra em "Dias de faltas". Dia com registro incompleto (só a entrada, por exemplo) passa a somar nas faltas parciais e a sair na exportação da folha. Faltas em horário com jornada prevista menor que meia hora também passam a ser classificadas corretamente.
 
 - No meio do processamento, o período aparece com "1 colaborador não calculado" e o motivo, e o cálculo segue:
-![image](imagens/cloud_pr3142_imagem1.png)
+
+  ![image](imagens/cloud_pr3142_imagem1.png)
+
 - A tarefa termina todas as rotinas, avisando os erros:
-![image](imagens/cloud_pr3142_imagem2.png)
+
+  ![image](imagens/cloud_pr3142_imagem2.png)
+
 - Cartão que não abria por uma sigla de turno especial apagada:
-![image](imagens/calc_pr541_imagem1.png)
+
+  ![image](imagens/calc_pr541_imagem1.png)
+
 - Cartão com dia de início 29 em março começando em 28/02:
-![image](imagens/calc_pr541_imagem2.png)
+
+  ![image](imagens/calc_pr541_imagem2.png)
+
 - Cartão com dias de banco de horas e domingo sem jornada, que parava na regra de interjornada:
-![image](imagens/calc_pr541_imagem3.png)
+
+  ![image](imagens/calc_pr541_imagem3.png)
+
 - Exportação da folha antes: as horas do dia com só a entrada não apareciam:
-![image](imagens/calc_pr542_imagem1.png)
+
+  ![image](imagens/calc_pr542_imagem1.png)
+
 - Depois: essas horas entram nas faltas sem compensação parciais:
-![image](imagens/calc_pr542_imagem2.png)
+
+  ![image](imagens/calc_pr542_imagem2.png)
 
 ## Coletores (equipamentos de ponto)
 
@@ -2367,11 +3244,16 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - Novo item **Atualizar agente** no menu de ferramentas do agente (Coletores › Agente): o agente procura a versão nova, mostra o resultado e reinicia sozinho para instalá-la. Pede confirmação, porque interrompe uma sincronização em andamento, e exige a permissão de edição de coletores.
 
 - Menu Excluir desligados ao lado do Enviar cadastros:
-![image](imagens/cloud_pr3116_imagem1.png)
+
+  ![image](imagens/cloud_pr3116_imagem1.png)
+
 - Excluir desligados no menu de cada coletor:
-![image](imagens/cloud_pr3116_imagem2.png)
+
+  ![image](imagens/cloud_pr3116_imagem2.png)
+
 - Lista dos desligados que ainda estão no equipamento, com a data de demissão:
-![image](imagens/cloud_pr3116_imagem3.png)
+
+  ![image](imagens/cloud_pr3116_imagem3.png)
 
 ## Permissões e segurança
 
@@ -2384,7 +3266,8 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - Reforço de segurança nas rotinas do sistema: a aprovação de pendências sempre exige a permissão de editar pendências, quem é só colaborador lê apenas os próprios campos customizados, e as consultas usadas por dashboards e listas ficam fora do alcance de quem é só colaborador.
 
 - Usuário sem a permissão de Consulta diária: a mensagem diz qual é a permissão e onde liberar:
-![image](imagens/cloud_pr3119_imagem1.jpg)
+
+  ![image](imagens/cloud_pr3119_imagem1.jpg)
 
 ## Relatórios, dashboards e folha
 
@@ -2393,11 +3276,16 @@ As opções da coluna Compensação da Manutenção passam a valer também para 
 - **Layout da folha**: ao escolher o campo Código, Valor ou Tipo do evento, o tipo do item passa para "Evento" sozinho (com o tipo "Ponto" a exportação inteira falhava), e a exportação diz qual item do layout corrigir em vez de uma mensagem técnica. Salvar depois do Testar/Rodar não dá mais erro nem troca o código do layout.
 
 - O widget aponta o campo que a visão não tem; os outros seguem carregando:
-![image](imagens/cloud_pr3181_imagem1.png)
+
+  ![image](imagens/cloud_pr3181_imagem1.png)
+
 - Escolhido o campo "Valor do evento", o tipo do item passa para "Evento":
-![image](imagens/cloud_pr3181_imagem2.png)
+
+  ![image](imagens/cloud_pr3181_imagem2.png)
+
 - Trocando a visão do widget: o aviso lista os campos que a nova visão não tem:
-![image](imagens/rx_pr166_imagem1.png)
+
+  ![image](imagens/rx_pr166_imagem1.png)
 
 ## Integrações por arquivo ✨
 
@@ -2410,16 +3298,6 @@ Os layouts de integração passam a gravar no sistema os dados lidos do arquivo 
 - A análise do arquivo e a pré-visualização mostram o que seria gravado, sem gravar, e o "Modo simulação" do layout vale na execução. Linha com valor inválido é recusada com o motivo, o resto do arquivo é gravado, e o resumo mostra inseridos, atualizados, sem alteração e com erro.
 - Tabelas que só o sistema grava (marcações, cálculo, logs, configurações) ficam fora da gravação direta, e a gravação fica registrada no nome de quem executou o layout.
 
-## Para a equipe Símix
-
-- **Avisos no painel admin**: cadastro de avisos com título, texto, link, ícone, imagem de capa, período, ordem e permissão, como nas dicas. Eles aparecem no novo card **Avisos** do Início dos clientes.
-- Admin: Clientes e Atendimentos sem o filtro de tags e sem cores nas tags e nas situações, e "Tenants/Bancos" saiu do menu (a tela continua pelo endereço).
-- Teste automático da migração completa do PcPonto pela tela de implantação, e a exclusão de uma implantação passa a apagar tudo de forma definitiva (banco, empresa, cadastro do cliente e arquivo de backup).
-- No ambiente de desenvolvimento, o primeiro login depois de subir o servidor local caiu de 20 a 30 segundos para cerca de 2,5 segundos. Em produção nada muda.
-
-- Tempo do primeiro login no ambiente local, antes e depois:
-![image](imagens/cloud_pr3193_imagem1.png)
-
 ## Outras melhorias e correções
 
 - **Card Avisos no Início**, no topo da coluna da direita, com os comunicados da Símix: um aviso por vez, começando por um diferente a cada dia, com setas para os outros. O aviso pode ter imagem de capa ou ser só um banner, e clicar na imagem abre o link. O card não aparece quando não há aviso valendo.
@@ -2430,13 +3308,20 @@ Os layouts de integração passam a gravar no sistema os dados lidos do arquivo 
 - Configurações do app: quem nunca salvou a opção "Permitir registro" passa a ver a opção marcada (o registro pelo aplicativo já era liberado nesse caso).
 
 - Facial com o filtro global ativo: sem marcações daquele estabelecimento, a tela avisa o filtro:
-![image](imagens/cloud_pr3141_imagem2.jpg)
+
+  ![image](imagens/cloud_pr3141_imagem2.jpg)
+
 - Documentos dos colaboradores recortados pelo filtro global:
-![image](imagens/cloud_pr3141_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3141_imagem3.jpg)
+
 - Manutenção no modo escuro, com saldo e horas legíveis:
-![image](imagens/cloud_pr3141_imagem4.jpg)
+
+  ![image](imagens/cloud_pr3141_imagem4.jpg)
+
 - Foto ampliada da última linha da lista abrindo para cima:
-![image](imagens/cloud_pr3119_imagem3.jpg)
+
+  ![image](imagens/cloud_pr3119_imagem3.jpg)
 
 # 21/10/2026
 
@@ -2473,27 +3358,48 @@ Todas as listas de cadastros do sistema passaram a ter visões salvas por usuár
 > Nas imagens a seguir, as fotos foram trocadas por um avatar genérico e o "Ofuscar dados" está ligado.
 
 - Colaboradores na visão Padrão, com os dados pessoais borrados:
-![image](imagens/cloud_pr3038_imagem1.png)
+
+  ![image](imagens/cloud_pr3038_imagem1.png)
+
 - A foto amplia ao passar o mouse:
-![image](imagens/cloud_pr3038_imagem2.png)
+
+  ![image](imagens/cloud_pr3038_imagem2.png)
+
 - Visão nova Contrato: datas, mês e a caixa do motorista:
-![image](imagens/cloud_pr3038_imagem3.png)
+
+  ![image](imagens/cloud_pr3038_imagem3.png)
+
 - Situação dos dispositivos com cor; o último login agora é borrado:
-![image](imagens/cloud_pr3038_imagem4.png)
+
+  ![image](imagens/cloud_pr3038_imagem4.png)
+
 - Pendências de ponto com a situação colorida e o tipo por extenso:
-![image](imagens/cloud_pr3038_imagem5.png)
+
+  ![image](imagens/cloud_pr3038_imagem5.png)
+
 - Feriados com a data e o dia da semana:
-![image](imagens/cloud_pr3038_imagem6.png)
+
+  ![image](imagens/cloud_pr3038_imagem6.png)
+
 - No celular, o nome de cada coluna continua legível com o Ofuscar dados ligado:
-![image](imagens/cloud_pr3038_imagem7.png)
+
+  ![image](imagens/cloud_pr3038_imagem7.png)
+
 - O menu de visões, com Compartilhadas e Minhas visões:
-![image](imagens/cloud_pr3038_imagem8.png)
+
+  ![image](imagens/cloud_pr3038_imagem8.png)
+
 - Criando uma visão disponível para todos os usuários:
-![image](imagens/cloud_pr3038_imagem9.png)
+
+  ![image](imagens/cloud_pr3038_imagem9.png)
+
 - Criando uma visão: nome, colunas marcadas e ordem:
-![image](imagens/cloud_pr3038_imagem10.png)
+
+  ![image](imagens/cloud_pr3038_imagem10.png)
+
 - A lista com a visão salva aplicada; ao recarregar a página ela continua selecionada:
-![image](imagens/cloud_pr3038_imagem11.png)
+
+  ![image](imagens/cloud_pr3038_imagem11.png)
 
 ## Totais da Manutenção ✨
 
@@ -2508,11 +3414,16 @@ Os totais da Manutenção ficaram mais fáceis de conferir, e o cadastro do layo
 - **Cadastro do layout de totais refeito**: totais em cartões nas colunas, arrastados para ordenar ou trocar de coluna; painel do total escolhido com explicação, relevância, marcador, quando mostrar e o nome na tela; prévia de como os totais ficam na Manutenção; quantos horários usam o layout; e "Adicionar totais" pelo catálogo, com pesquisa, assuntos e vários de uma vez.
 
 - O círculo à esquerda do total abre o menu: marcador, Explicação e Copiar:
-![image](imagens/cloud_pr3030_imagem1.png)
+
+  ![image](imagens/cloud_pr3030_imagem1.png)
+
 - Cadastro do layout: colunas com arrastar, painel do total e prévia da Manutenção:
-![image](imagens/cloud_pr3030_imagem2.png)
+
+  ![image](imagens/cloud_pr3030_imagem2.png)
+
 - No celular a barra some e os totais aparecem inteiros, numa coluna:
-![image](imagens/cloud_pr3030_imagem3.png)
+
+  ![image](imagens/cloud_pr3030_imagem3.png)
 
 ## Escala de home office ✨
 
@@ -2526,11 +3437,16 @@ Nova tela **Escalas › Home office**, com os dias de home office de cada colabo
 - Escala com dias sem local definido (comum nos bancos vindos do sistema antigo) dava erro ao abrir e agora abre normalmente.
 
 - Quadro por dia da semana:
-![image](imagens/cloud_pr3077_imagem1.png)
+
+  ![image](imagens/cloud_pr3077_imagem1.png)
+
 - Lista por colaborador: um clique na Terça grava o home office desse dia:
-![image](imagens/cloud_pr3077_imagem2.png)
+
+  ![image](imagens/cloud_pr3077_imagem2.png)
+
 - Arrastando o colaborador da Terça para a Quarta:
-![image](imagens/cloud_pr3077_imagem3.png)
+
+  ![image](imagens/cloud_pr3077_imagem3.png)
 
 ### Cadastros abrem só para consulta quando falta permissão
 
@@ -2539,9 +3455,12 @@ Nova tela **Escalas › Home office**, com os dias de home office de cada colabo
 - As guias que o usuário não tem permissão de consultar (Customizável, Familiares, VT, VR, Pagamento, Histórico, Contatos) e o quadro de tags deixam de aparecer, em vez de mostrar erro de autorização.
 
 - Cadastro aberto por usuário sem permissão de alterar: aviso, campos travados e só o botão Fechar:
-![image](imagens/cloud_pr3063_imagem1.png)
+
+  ![image](imagens/cloud_pr3063_imagem1.png)
+
 - O mesmo comportamento em outro cadastro, com consulta de Cargos e sem permissão de editar:
-![image](imagens/cloud_pr3063_imagem2.png)
+
+  ![image](imagens/cloud_pr3063_imagem2.png)
 
 ## Feedbacks ✨
 
@@ -2554,15 +3473,24 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - **Aviso especial**: ao salvar o status de um feedback, a Símix escolhe se avisa no sino, com comentário e link opcionais, e quem recebe. Quando há aviso, o sino ganha uma estrela animada; abrir o aviso mostra o comentário, o botão do link e o feedback com as opções de reagir, comentar e abrir — e, se foi concluído, solta confete.
 
 - Comentários e anexos abertos embaixo da linha, com o áudio enviado pelo cliente:
-![image](imagens/cloud_pr3081_imagem1.png)
+
+  ![image](imagens/cloud_pr3081_imagem1.png)
+
 - Detalhe completo numa janela, com "Notificar cliente" e a previsão de entrega:
-![image](imagens/cloud_pr3081_imagem2.png)
+
+  ![image](imagens/cloud_pr3081_imagem2.png)
+
 - Reenvio do aviso: status atual, previsão, quem recebe, comentário e link:
-![image](imagens/cloud_pr3081_imagem3.png)
+
+  ![image](imagens/cloud_pr3081_imagem3.png)
+
 - O cliente vê a previsão de entrega no card e ouve o áudio anexado:
-![image](imagens/cloud_pr3081_imagem4.png)
+
+  ![image](imagens/cloud_pr3081_imagem4.png)
+
 - Áudio gravado pelo microfone, com a prévia antes de enviar:
-![image](imagens/cloud_pr3081_imagem5.png)
+
+  ![image](imagens/cloud_pr3081_imagem5.png)
 
 ## Espelho de ponto
 
@@ -2573,13 +3501,20 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - O espelho gerado pela Manutenção voltou a mostrar **todos os totais** (Horas extras, Horas faltas…): ele estava usando a visão da grade, e a visão "Padrão" da grade ocultava essas colunas. A visão "Padrão" da Manutenção deixou de ocultar colunas.
 
 - Totais do espelho gerado pela Manutenção, antes: sem "Horas extras" e "Horas faltas":
-![image](imagens/cloud_pr3068_imagem1.png)
+
+  ![image](imagens/cloud_pr3068_imagem1.png)
+
 - Depois: os mesmos totais do cartão:
-![image](imagens/cloud_pr3068_imagem2.png)
+
+  ![image](imagens/cloud_pr3068_imagem2.png)
+
 - Edição da visão: cada campo com Padrão, Sempre, Nunca ou Se preenchido:
-![image](imagens/cloud_pr3068_imagem3.png)
+
+  ![image](imagens/cloud_pr3068_imagem3.png)
+
 - Manutenção na visão "Padrão", agora com as colunas de Extras, Faltas e as demais:
-![image](imagens/cloud_pr3068_imagem4.png)
+
+  ![image](imagens/cloud_pr3068_imagem4.png)
 
 ### Espelho sem os ícones das marcações ✨
 
@@ -2588,11 +3523,16 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Corrigida também a geração do espelho com totais no rodapé, que falhava em alguns layouts.
 
 - Edição da visão do espelho com a nova opção:
-![image](imagens/cloud_pr3070_imagem1.png)
+
+  ![image](imagens/cloud_pr3070_imagem1.png)
+
 - Marcações como saem hoje, com os ícones:
-![image](imagens/cloud_pr3070_imagem2.png)
+
+  ![image](imagens/cloud_pr3070_imagem2.png)
+
 - Com a opção em Nunca: só os horários, mantendo o divisor entre os turnos:
-![image](imagens/cloud_pr3070_imagem3.png)
+
+  ![image](imagens/cloud_pr3070_imagem3.png)
 
 ## Manutenção do cartão
 
@@ -2603,11 +3543,16 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - **Copiar** passou a copiar o filtro, os totais e a observação do grupo; o botão da seção copia todos os grupos. Na grade de Totais, Copiar copia os totais visíveis, prontos para colar em planilha.
 
 - Notas do colaborador, gravadas no mural com a rotina Manutenção:
-![image](imagens/cloud_pr2965_imagem1.png)
+
+  ![image](imagens/cloud_pr2965_imagem1.png)
+
 - Totais do filtro com um grupo mantido e o filtro atual:
-![image](imagens/cloud_pr2965_imagem2.png)
+
+  ![image](imagens/cloud_pr2965_imagem2.png)
+
 - Menu "Mais" do grupo com Duplicar e Remover:
-![image](imagens/cloud_pr2965_imagem3.png)
+
+  ![image](imagens/cloud_pr2965_imagem3.png)
 
 ### Layout de turnos Informativo ✨
 
@@ -2617,17 +3562,28 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Conferências, contagem de dispositivos, refeições e o monitor de registros deixam o informativo de fora, para não somar como jornada. A reimportação do cartão passa a levar as marcações de catraca para o informativo, em vez de ignorá-las.
 
 - Menu de layout da Manutenção com o novo item Informativo:
-![image](imagens/cloud_pr2968_imagem1.png)
+
+  ![image](imagens/cloud_pr2968_imagem1.png)
+
 - Manutenção com o informativo ligado: a linha aparece abaixo das marcações do dia:
-![image](imagens/cloud_pr2968_imagem2.png)
+
+  ![image](imagens/cloud_pr2968_imagem2.png)
+
 - Edição do dia: a seção Informativo funciona como o layout Livre:
-![image](imagens/cloud_pr2968_imagem3.png)
+
+  ![image](imagens/cloud_pr2968_imagem3.png)
+
 - Cadastro do coletor: nova opção Gravar como informativo:
-![image](imagens/cloud_pr2968_imagem4.png)
+
+  ![image](imagens/cloud_pr2968_imagem4.png)
+
 - Ajuda do campo explicando a opção:
-![image](imagens/cloud_pr2968_imagem5.png)
+
+  ![image](imagens/cloud_pr2968_imagem5.png)
+
 - O mesmo layout visto pelo cálculo, com as marcações paralelas:
-![image](imagens/calc_pr526_imagem1.png)
+
+  ![image](imagens/calc_pr526_imagem1.png)
 
 ### Compartilhar o resumo da Manutenção ✨
 
@@ -2637,9 +3593,12 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Os avisos de "copiado" na tela não entram no print.
 
 - Botão de compartilhar com a seta dos formatos, ao lado da Calculadora:
-![image](imagens/cloud_pr3084_imagem1.png)
+
+  ![image](imagens/cloud_pr3084_imagem1.png)
+
 - A seta abre os três formatos; o clique no ícone copia o primeiro:
-![image](imagens/cloud_pr3084_imagem2.png)
+
+  ![image](imagens/cloud_pr3084_imagem2.png)
 
 ### Demonstração guiada dos lançamentos de cálculo ✨
 
@@ -2648,17 +3607,28 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - A mesma demonstração aparece no botão Treinamentos das telas de Lançamentos e da Manutenção.
 
 - Os exemplos prontos no topo da janela:
-![image](imagens/cloud_pr3016_imagem1.png)
+
+  ![image](imagens/cloud_pr3016_imagem1.png)
+
 - Depois de escolher "Mais uma hora extra", a ação fica em Somar:
-![image](imagens/cloud_pr3016_imagem2.png)
+
+  ![image](imagens/cloud_pr3016_imagem2.png)
+
 - O campo do total que o lançamento ajusta:
-![image](imagens/cloud_pr3016_imagem3.png)
+
+  ![image](imagens/cloud_pr3016_imagem3.png)
+
 - Na Manutenção, o atalho da calculadora dos Totais:
-![image](imagens/cloud_pr3016_imagem4.png)
+
+  ![image](imagens/cloud_pr3016_imagem4.png)
+
 - O asterisco no total alterado pelo lançamento:
-![image](imagens/cloud_pr3016_imagem5.png)
+
+  ![image](imagens/cloud_pr3016_imagem5.png)
+
 - O "..." do total, com Editar lançamento e Explicação:
-![image](imagens/cloud_pr3016_imagem6.png)
+
+  ![image](imagens/cloud_pr3016_imagem6.png)
 
 ### Outros ajustes da Manutenção
 
@@ -2670,9 +3640,12 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Corrigido o erro **"Filtro de consulta inválido"** ao entrar na lista da Manutenção, e o campo "Cidade do estabelecimento" voltou a listar as cidades.
 
 - Filtros da Manutenção, antes:
-![image](imagens/cloud_pr3031_imagem1.png)
+
+  ![image](imagens/cloud_pr3031_imagem1.png)
+
 - Depois, com a moldura e os filtros não escolhidos apagados:
-![image](imagens/cloud_pr3031_imagem2.png)
+
+  ![image](imagens/cloud_pr3031_imagem2.png)
 
 ## Filtro global e pesquisa
 
@@ -2687,18 +3660,30 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Novos ícones para estabelecimento, grupo de estabelecimentos e tipo de turno.
 
 - Os campos novos no filtro global; a lista traz só as cidades com estabelecimento:
-![image](imagens/cloud_pr3033_imagem1.png)
+
+  ![image](imagens/cloud_pr3033_imagem1.png)
+
 - Com a cidade escolhida, a lista fica com os colaboradores de lá:
-![image](imagens/cloud_pr3033_imagem2.png)
+
+  ![image](imagens/cloud_pr3033_imagem2.png)
+
 - Cidade e horário juntos:
-![image](imagens/cloud_pr3033_imagem3.png)
-![image](imagens/cloud_pr3033_imagem4.png)
+
+  ![image](imagens/cloud_pr3033_imagem3.png)
+
+  ![image](imagens/cloud_pr3033_imagem4.png)
+
 - Campos de vários itens: os escolhidos ficam dentro do campo:
-![image](imagens/cloud_pr3033_imagem5.png)
+
+  ![image](imagens/cloud_pr3033_imagem5.png)
+
 - O mesmo campo na Manutenção em lote:
-![image](imagens/cloud_pr3033_imagem6.png)
+
+  ![image](imagens/cloud_pr3033_imagem6.png)
+
 - Novos ícones do filtro global:
-![image](imagens/cloud_pr3013_imagem1.png)
+
+  ![image](imagens/cloud_pr3013_imagem1.png)
 
 ### Pesquisa global encontra todas as telas ✨
 
@@ -2708,11 +3693,16 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Quando o nome da tela bate, ela vem antes dos registros; a tela achada só pela descrição fica depois, para não atrapalhar quem procura um colaborador.
 
 - "atestados" traz a Consulta de atestados primeiro:
-![image](imagens/cloud_pr3032_imagem1.png)
+
+  ![image](imagens/cloud_pr3032_imagem1.png)
+
 - "férias" traz as telas do módulo Férias, depois o cadastro de Afastamentos:
-![image](imagens/cloud_pr3032_imagem2.png)
+
+  ![image](imagens/cloud_pr3032_imagem2.png)
+
 - "painel" separa o Painel do início do Painel de Férias pelo grupo:
-![image](imagens/cloud_pr3032_imagem3.png)
+
+  ![image](imagens/cloud_pr3032_imagem3.png)
 
 ## Colaborador e cadastros
 
@@ -2723,9 +3713,12 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Marcações e horas extras continuam valendo para quem registrar mesmo isento. Na Manutenção, o dia isento mostra um ícone ao lado da data e "Isento de registro" no afastamento.
 
 - Isenção de dois dias: os dias com marcação faltando passam a 00:00, com o ícone e "Isento de registro":
-![image](imagens/cloud_pr3050_imagem1.png)
+
+  ![image](imagens/cloud_pr3050_imagem1.png)
+
 - A opção na aba Registro do cadastro, com as datas de início e fim:
-![image](imagens/cloud_pr3050_imagem2.png)
+
+  ![image](imagens/cloud_pr3050_imagem2.png)
 
 ### Clique no nome do colaborador ✨
 
@@ -2735,9 +3728,12 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - A escolha fica salva no usuário e vale em qualquer computador ou navegador.
 
 - Primeiro clique no nome:
-![image](imagens/cloud_pr3008_imagem1.png)
+
+  ![image](imagens/cloud_pr3008_imagem1.png)
+
 - Para mudar depois, no menu do botão Configurações:
-![image](imagens/cloud_pr3008_imagem2.png)
+
+  ![image](imagens/cloud_pr3008_imagem2.png)
 
 ### Histórico de alterações dos cadastros
 
@@ -2747,7 +3743,8 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Senhas não vão para o histórico, e o título mostra o código e a descrição do cadastro.
 
 - Cargo inativado e reativado pela tela: o histórico mostra cada mudança, com data e usuário:
-![image](imagens/cloud_pr3023_imagem1.png)
+
+  ![image](imagens/cloud_pr3023_imagem1.png)
 
 ### Login nome.sobrenome ✨
 
@@ -2756,9 +3753,12 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Vale para o usuário novo em Colaborador › Gerenciar usuário e para o registro de novo usuário na tela de login.
 
 - Com maria.silva já em uso, a sugestão passa para maria.lima:
-![image](imagens/cloud_pr3020_imagem1.png)
+
+  ![image](imagens/cloud_pr3020_imagem1.png)
+
 - Com os três sobrenomes em uso, a sugestão vira maria.silva2:
-![image](imagens/cloud_pr3020_imagem2.png)
+
+  ![image](imagens/cloud_pr3020_imagem2.png)
 
 ### Correções nos cadastros
 
@@ -2770,11 +3770,16 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Cadastros com código repetido (cargo, departamento, setor, seção, horário e estabelecimento) e os com código zero recebem um código novo na atualização — era o que fazia o mesmo colaborador aparecer repetido nas telas que listam os colaboradores do mês.
 
 - Duplo clique no Salvar: o segundo clique já encontra o botão desabilitado:
-![image](imagens/cloud_pr2992_imagem1.png)
+
+  ![image](imagens/cloud_pr2992_imagem1.png)
+
 - Depois do duplo clique, o colaborador aparece uma única vez na lista:
-![image](imagens/cloud_pr2992_imagem2.png)
+
+  ![image](imagens/cloud_pr2992_imagem2.png)
+
 - Horário e estabelecimento não vêm mais preenchidos com o código 0:
-![image](imagens/cloud_pr2990_imagem1.png)
+
+  ![image](imagens/cloud_pr2990_imagem1.png)
 
 ## Painel Início
 
@@ -2785,17 +3790,28 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Os cards do Início ocupam a mesma largura do menu, sem a margem extra, e os botões Implantação e Rotinas ficaram menores.
 
 - Lista de dicas no painel admin:
-![image](imagens/cloud_pr3066_imagem1.png)
+
+  ![image](imagens/cloud_pr3066_imagem1.png)
+
 - Card Dica no Início, acima do Calendário, com duas dicas valendo:
-![image](imagens/cloud_pr3066_imagem2.png)
+
+  ![image](imagens/cloud_pr3066_imagem2.png)
+
 - A seta passa para a outra dica:
-![image](imagens/cloud_pr3066_imagem3.png)
+
+  ![image](imagens/cloud_pr3066_imagem3.png)
+
 - Calendário em que o mesmo colaborador aparecia quatro vezes: agora cada aniversariante aparece uma vez:
-![image](imagens/cloud_pr3024_imagem1.png)
+
+  ![image](imagens/cloud_pr3024_imagem1.png)
+
 - Notas ativas em miniatura no Início, abaixo do Calendário:
-![image](imagens/cloud_pr3007_imagem3.png)
+
+  ![image](imagens/cloud_pr3007_imagem3.png)
+
 - Sugestões com "Atualizado às" no rodapé e Calendário nos próximos 15 dias:
-![image](imagens/cloud_pr2990_imagem2.png)
+
+  ![image](imagens/cloud_pr2990_imagem2.png)
 
 ### Mural de notas ✨
 
@@ -2804,9 +3820,12 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Na edição, os botões Cancelar e Salvar passam para a linha de baixo quando a nota é estreita, em vez de ficarem cortados.
 
 - Categoria recolhida pelo clique no cabeçalho:
-![image](imagens/cloud_pr3007_imagem1.png)
+
+  ![image](imagens/cloud_pr3007_imagem1.png)
+
 - A caixa de edição cresce com o texto:
-![image](imagens/cloud_pr3007_imagem2.png)
+
+  ![image](imagens/cloud_pr3007_imagem2.png)
 
 ## Períodos e pendências
 
@@ -2816,15 +3835,24 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - O banco deixa de aceitar o mesmo mês de um colaborador ou o mesmo período gravado duas vezes, e ao cadastrar um período repetido o sistema avisa com uma mensagem clara em vez de um erro genérico.
 
 - Configuração do portal com os prazos: solicitações até o dia 7 e aprovações até o dia 9:
-![image](imagens/cloud_pr3024_imagem2.png)
+
+  ![image](imagens/cloud_pr3024_imagem2.png)
+
 - Períodos sem data própria seguindo a configuração, marcados como "herdado":
-![image](imagens/cloud_pr3024_imagem3.png)
+
+  ![image](imagens/cloud_pr3024_imagem3.png)
+
 - Período com os prazos em branco: a tela mostra a data que vale para ele:
-![image](imagens/cloud_pr3024_imagem4.png)
+
+  ![image](imagens/cloud_pr3024_imagem4.png)
+
 - Duas marcações de 26/09 aguardando aprovação, o caso que dava "Período não encontrado":
-![image](imagens/cloud_pr2999_imagem1.png)
+
+  ![image](imagens/cloud_pr2999_imagem1.png)
+
 - Com a correção, as duas são aprovadas e entram no dia 26/09 do período 10/2026:
-![image](imagens/cloud_pr2999_imagem2.png)
+
+  ![image](imagens/cloud_pr2999_imagem2.png)
 
 ## Coletores (equipamentos de ponto)
 
@@ -2835,22 +3863,38 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - **Ações rápidas do colaborador**: cada equipamento tem uma caixa de marcação e o envio vai só para os marcados, com o resultado ao lado de cada um. Nova opção no cadastro do coletor, **Ignorar nas ações rápidas do colaborador**, para tirar um equipamento dessa janela.
 
 - Ações rápidas com dois equipamentos desmarcados:
-![image](imagens/cloud_pr3060_imagem1.png)
+
+  ![image](imagens/cloud_pr3060_imagem1.png)
+
 - Coletor marcado para ser ignorado nas ações rápidas:
-![image](imagens/cloud_pr3060_imagem2.png)
+
+  ![image](imagens/cloud_pr3060_imagem2.png)
+
 - Card do coletor AFD com o chip "AFD" e sem o botão Sincronizar:
-![image](imagens/cloud_pr2991_imagem1.png)
+
+  ![image](imagens/cloud_pr2991_imagem1.png)
+
 - Menu do coletor AFD sem a opção Sincronizar:
-![image](imagens/cloud_pr2991_imagem2.png)
+
+  ![image](imagens/cloud_pr2991_imagem2.png)
+
 - Sincronizando o coletor AFD selecionado: ele é ignorado, sem erro:
-![image](imagens/cloud_pr2991_imagem3.png)
+
+  ![image](imagens/cloud_pr2991_imagem3.png)
+
 - Novo layout dos avisos da sincronização:
-![image](imagens/cloud_pr2991_imagem4.png)
+
+  ![image](imagens/cloud_pr2991_imagem4.png)
+
 - Log do coletor antes da correção: marcações do agente sem colaborador:
-![image](imagens/integracoes_pr30_imagem1.png)
-![image](imagens/integracoes_pr30_imagem2.png)
+
+  ![image](imagens/integracoes_pr30_imagem1.png)
+
+  ![image](imagens/integracoes_pr30_imagem2.png)
+
 - Arquivo do iDFace antes e depois da troca pela matrícula:
-![image](imagens/integracoes_pr30_imagem3.png)
+
+  ![image](imagens/integracoes_pr30_imagem3.png)
 
 ## Registro de ponto e aplicativo
 
@@ -2861,23 +3905,40 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - O **painel de filtros** das telas ganhou o ícone de cada cadastro nos campos, o botão igual/diferente alinhado e "Tipo de turno" como último campo.
 
 - Registro feito: a animação começa com o anel e desenha o símbolo de confirmação:
-![image](imagens/cloud_pr2979_imagem1.png)
+
+  ![image](imagens/cloud_pr2979_imagem1.png)
+
 - Fim da animação, acima da mensagem do registro:
-![image](imagens/cloud_pr2979_imagem2.png)
+
+  ![image](imagens/cloud_pr2979_imagem2.png)
+
 - Painel de filtros com ícone por campo e o botão igual/diferente alinhado:
-![image](imagens/cloud_pr2979_imagem3.png)
+
+  ![image](imagens/cloud_pr2979_imagem3.png)
+
 - Ações rápidas depois da admissão, com os botões no mesmo estilo:
-![image](imagens/cloud_pr2979_imagem4.png)
+
+  ![image](imagens/cloud_pr2979_imagem4.png)
+
 - Manutenção aberta pela primeira vez: "Inconsistências" desmarcado:
-![image](imagens/cloud_pr2979_imagem5.png)
+
+  ![image](imagens/cloud_pr2979_imagem5.png)
+
 - Motorista pedindo pelo aplicativo a marcação que faltou como "Fim Jornada":
-![image](imagens/cloud_pr2994_imagem1.png)
+
+  ![image](imagens/cloud_pr2994_imagem1.png)
+
 - O pedido aguardando aprovação, com o tipo escolhido:
-![image](imagens/cloud_pr2994_imagem2.png)
+
+  ![image](imagens/cloud_pr2994_imagem2.png)
+
 - Duas marcações do aplicativo de um colaborador demitido em 22/09:
-![image](imagens/cloud_pr3075_imagem4.png)
+
+  ![image](imagens/cloud_pr3075_imagem4.png)
+
 - Reprocessadas: a de 15/09 foi importada, e a de 29/09 ficou Inativa, com o motivo:
-![image](imagens/cloud_pr3075_imagem5.png)
+
+  ![image](imagens/cloud_pr3075_imagem5.png)
 
 ## Cálculo
 
@@ -2896,23 +3957,40 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - **Hora inválida no quadro de horário**: o campo só aceita hora no formato HH:MM. Antes qualquer texto de 5 caracteres era aceito, e uma dessas horas impedia o cartão de carregar para todos os colaboradores do horário. O sistema agora avisa qual dia e qual campo corrigir.
 
 - Antes: 07/09 com +04:58 e 14/09 com +05:00, e 9:58 de extras noturnas no mês:
-![image](imagens/calc_pr534_imagem1.png)
+
+  ![image](imagens/calc_pr534_imagem1.png)
+
 - Depois: 07/09 com +01:38 e 14/09 com +01:29, e 3:07 de extras noturnas:
-![image](imagens/calc_pr534_imagem2.png)
+
+  ![image](imagens/calc_pr534_imagem2.png)
+
 - Extras da faixa de 150% do feriado agora no total do mês:
-![image](imagens/calc_pr529_imagem1.png)
+
+  ![image](imagens/calc_pr529_imagem1.png)
+
 - Conferência por dia: as 08:58 a 150% do dia 07/09 são as mesmas que aparecem no mês:
-![image](imagens/calc_pr529_imagem2.png)
+
+  ![image](imagens/calc_pr529_imagem2.png)
+
 - Regra de intervalo com a opção ligada: os intervalos feitos fora do previsto passam a aparecer:
-![image](imagens/calc_pr530_imagem1.png)
+
+  ![image](imagens/calc_pr530_imagem1.png)
+
 - Horário já gravado com hora inválida: ao salvar, o sistema aponta o campo:
-![image](imagens/cloud_pr3075_imagem1.png)
+
+  ![image](imagens/cloud_pr3075_imagem1.png)
+
 - Digitando uma hora inválida no quadro de horário:
-![image](imagens/cloud_pr3075_imagem2.png)
-![image](imagens/calc_pr536_imagem1.png)
+
+  ![image](imagens/cloud_pr3075_imagem2.png)
+
+  ![image](imagens/calc_pr536_imagem1.png)
+
 - Ao sair do campo, a hora inválida não fica gravada:
-![image](imagens/cloud_pr3075_imagem3.png)
-![image](imagens/calc_pr536_imagem2.png)
+
+  ![image](imagens/cloud_pr3075_imagem3.png)
+
+  ![image](imagens/calc_pr536_imagem2.png)
 
 ## Turnos especiais ✨
 
@@ -2921,11 +3999,16 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Depois de criada, a sigla só muda pelo botão de troca — antes, editar o texto da sigla deixava as marcações com a sigla antiga, e os dias apareciam sem fim de jornada.
 
 - Excluir uma sigla com marcações mostra onde ela é usada:
-![image](imagens/cloud_pr3072_imagem1.png)
+
+  ![image](imagens/cloud_pr3072_imagem1.png)
+
 - Na edição, a sigla fica bloqueada e o botão ao lado abre a troca:
-![image](imagens/cloud_pr3072_imagem2.png)
+
+  ![image](imagens/cloud_pr3072_imagem2.png)
+
 - Informando a nova sigla:
-![image](imagens/cloud_pr3072_imagem3.png)
+
+  ![image](imagens/cloud_pr3072_imagem3.png)
 
 ## Exportação da folha de pagamento
 
@@ -2941,13 +4024,20 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - No passo **Horários**, criar um horário com Extras 50%/100% marcado derrubava a tela e o horário ficava sem as faixas; agora as faixas são gravadas junto. Se a criação falhar, a janela mostra um aviso em vez de travar a tela.
 
 - Estabelecimento novo: o código vem sugerido e pode ser alterado:
-![image](imagens/cloud_pr2998_imagem1.png)
+
+  ![image](imagens/cloud_pr2998_imagem1.png)
+
 - Estabelecimento existente: o código aparece para consulta e o cadastro é mantido ao salvar:
-![image](imagens/cloud_pr2998_imagem2.png)
+
+  ![image](imagens/cloud_pr2998_imagem2.png)
+
 - Depois de salvar, o passo fica concluído:
-![image](imagens/cloud_pr2998_imagem3.png)
+
+  ![image](imagens/cloud_pr2998_imagem3.png)
+
 - Horários: com Extras 50% marcado, o horário é criado com as faixas de 50% e 100%:
-![image](imagens/cloud_pr2998_imagem4.png)
+
+  ![image](imagens/cloud_pr2998_imagem4.png)
 
 ## Arquivos fiscais
 
@@ -2965,27 +4055,24 @@ O módulo de feedbacks ganhou áudio, previsão de entrega e um acompanhamento b
 - Um erro do servidor ao ler as preferências de visão deixou de derrubar as telas: a tela segue sem a preferência, com o aviso registrado.
 
 - Página de links, antes (a onda divisória saía preta):
-![image](imagens/cloud_pr3031_imagem3.png)
+
+  ![image](imagens/cloud_pr3031_imagem3.png)
+
 - Depois:
-![image](imagens/cloud_pr3031_imagem4.png)
+
+  ![image](imagens/cloud_pr3031_imagem4.png)
+
 - Importação abrindo na aba do Excel, com o espaçamento aplicado:
-![image](imagens/cloud_pr3035_imagem1.png)
+
+  ![image](imagens/cloud_pr3035_imagem1.png)
+
 - Login com a biblioteca nova: a validação acontece no navegador:
-![image](imagens/cloud_pr3035_imagem2.png)
+
+  ![image](imagens/cloud_pr3035_imagem2.png)
+
 - Configuração dos campos do widget: lista à esquerda e o campo escolhido ao lado:
-![image](imagens/rx_pr163_imagem1.png)
 
-## Para a equipe Símix
-
-- **Atendimento do painel admin**: clicar no cliente abre um painel lateral com os dados dele sem sair da lista — situação, porte, última atividade, observação interna e links para o ambiente e a documentação. O painel traz também os usuários (com pesquisa e "entrar como"), os últimos feedbacks e os coletores do cliente, com o destaque de "sem sincronizar há mais de 3 dias". A divisória entre lista e painel pode ser arrastada.
-- **Cadastro de dicas** em Principal › Dicas, que alimenta o card Dica no Início de todos os clientes.
-- As opções do Suporte Símix (Beta/Oficial, ferramentas e treinamentos) foram para dentro do botão de Configurações, e o atalho do Admin saiu da barra do topo para a seção Suporte Símix das Preferências, junto do novo atalho Recursos.
-- Testes automáticos novos cobrindo a Manutenção (navegação com o botão Próximo e impressão do espelho), a troca de código do colaborador e as telas que exigem uma permissão inexistente.
-
-- Cliente selecionado: dados no topo, usuários, últimos feedbacks e coletores:
-![image](imagens/cloud_pr3000_imagem1.png)
-- Usuários do cliente no painel, com pesquisa e "entrar como":
-![image](imagens/cloud_pr3000_imagem2.png)
+  ![image](imagens/rx_pr163_imagem1.png)
 
 ## Outras melhorias e correções
 

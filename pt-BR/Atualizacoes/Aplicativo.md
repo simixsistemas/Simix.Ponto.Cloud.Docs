@@ -14,11 +14,16 @@ Versão **4.0.04** do aplicativo (Android, iOS e Windows).
 - O recado sai na cor escolhida no sistema, com o negrito, o itálico, as listas e os links do texto.
 
 - Painel do aplicativo com o recado no topo:
-![image](imagens/app_pr510_imagem1.png)
+
+  ![image](imagens/app_pr510_imagem1.png)
+
 - Registro: o recado acima dos botões de marcação (nome do colaborador borrado):
-![image](imagens/app_pr510_imagem2.png)
+
+  ![image](imagens/app_pr510_imagem2.png)
+
 - Comprovante logo depois de marcar, com o recado da rotina "depois do registro":
-![image](imagens/app_pr510_imagem3.png)
+
+  ![image](imagens/app_pr510_imagem3.png)
 
 ## Outras melhorias e correções
 
@@ -47,7 +52,8 @@ A empresa passa a definir quem registra o ponto pelo aplicativo, com uma opção
 - Os cadastros atuais foram convertidos sem mudar quem registra hoje: quem estava com o registro pelo aplicativo desmarcado ficou com **Nunca**, e os demais ficaram no **Padrão**.
 
 - Nova opção nas Configurações do app, aba Segurança:
-![image](imagens/cloud_pr3140_imagem1.png)
+
+  ![image](imagens/cloud_pr3140_imagem1.png)
 
 ## Motoristas no aplicativo
 
@@ -55,11 +61,16 @@ A empresa passa a definir quem registra o ponto pelo aplicativo, com uma opção
 - **Km e Placa obrigatórios**: o layout de horário do tipo Motorista com "Obrigar Km" ou "Obrigar Placa" passa a obrigar no aplicativo mesmo sem layout de ações vinculado. Antes, sem layout de ações, o aparelho ficava com a configuração do dia em que o aplicativo foi instalado, e quem instalou antes de marcarem "Obrigar Km" nunca era obrigado. Agora a obrigação acompanha o cadastro a cada sincronização, e o Km e a Placa obrigatórios aparecem na tela de registro mesmo quando o layout esconde esses campos.
 
 - Motorista incluindo a marcação que faltou (18:30) como "Fim Jornada":
-![image](imagens/app_pr504_imagem1.png)
+
+  ![image](imagens/app_pr504_imagem1.png)
+
 - Depois de enviar, o pedido aguardando aprovação com o tipo escolhido:
-![image](imagens/app_pr504_imagem2.png)
+
+  ![image](imagens/app_pr504_imagem2.png)
+
 - Layout de horário Motorista com Km e Placa obrigatórios, sem layout de ações, que passa a valer no aplicativo:
-![image](imagens/app_pr507_imagem1.png)
+
+  ![image](imagens/app_pr507_imagem1.png)
 
 ## Outras melhorias e correções
 
