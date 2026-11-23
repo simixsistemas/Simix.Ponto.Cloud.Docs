@@ -62,6 +62,10 @@
           "path": "Integracoes/Arquivos-agente.md"
         },
         {
+          "text": "Banco de dados pelo Agente",
+          "path": "Integracoes/Banco-de-dados.md"
+        },
+        {
           "text": "Acesso com usuário (token)",
           "path": "Integracoes/Token-de-usuario.md"
         }

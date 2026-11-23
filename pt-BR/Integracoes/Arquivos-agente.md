@@ -6,6 +6,8 @@ O **Símix Agente**, o programa de sincronização instalado num computador da e
 
 Use quando o arquivo chega sempre do mesmo jeito: a planilha de unidades que o financeiro atualiza, a lista de e-mails do RH, o quadro de horários, o AFD que o relógio grava na rede.
 
+Quando o outro sistema guarda os dados num banco de dados da rede da empresa, o agente pode consultar o banco direto, sem ninguém exportar arquivo: veja [Banco de dados pelo Agente](Banco-de-dados.md).
+
 ## Como funciona
 
 1. Você cadastra a **integração** no Símix Ponto: a pasta, quais arquivos pegar e para onde eles vão.
