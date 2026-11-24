@@ -97,6 +97,43 @@
       ]
     },
     {
+      "text": "Férias",
+      "items": [
+        {
+          "text": "Visão geral",
+          "path": "Ferias/Visao-geral.md"
+        },
+        {
+          "text": "Saldo e períodos",
+          "path": "Ferias/Saldo-e-periodos.md"
+        },
+        {
+          "text": "Painel e ficha",
+          "path": "Ferias/Painel-e-ficha.md"
+        },
+        {
+          "text": "Programar férias",
+          "path": "Ferias/Programar.md"
+        },
+        {
+          "text": "Política de férias",
+          "path": "Ferias/Politica.md"
+        },
+        {
+          "text": "Importar histórico",
+          "path": "Ferias/Importar-historico.md"
+        },
+        {
+          "text": "Rotina diária e avisos",
+          "path": "Ferias/Rotina-e-avisos.md"
+        },
+        {
+          "text": "Perguntas frequentes",
+          "path": "Ferias/Perguntas-frequentes.md"
+        }
+      ]
+    },
+    {
       "text": "Escalas inteligentes",
       "items": [
         {
