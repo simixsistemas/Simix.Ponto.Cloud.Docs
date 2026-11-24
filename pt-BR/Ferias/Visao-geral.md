@@ -2,6 +2,8 @@
 
 **Módulo Férias** · O Símix calcula o saldo de férias de cada colaborador a partir do ponto, avisa o RH antes do vencimento e grava no espelho as férias que o RH programa, conferindo as regras da CLT antes de gravar.
 
+![Painel de férias com os indicadores de vencidas, a vencer, a conferir, perda a confirmar e em férias hoje, e a lista por colaborador](img/painel.png)
+
 ## O que o módulo faz
 
 - **Saldo por período aquisitivo.** Cada ano de trabalho vira um período, com o direito calculado pelas faltas do ponto (art. 130 da CLT), a perda do direito por afastamento longo (art. 133) e o proporcional na saída. Veja [Saldo e períodos](Saldo-e-periodos.md).

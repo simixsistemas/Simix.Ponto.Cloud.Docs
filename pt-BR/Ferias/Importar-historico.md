@@ -13,6 +13,8 @@ Precisa da permissão **Ajustar saldo e importar histórico**.
 - A parcela entra inteira no período mais antigo que ainda tem saldo; se não couber, é dividida entre os períodos.
 - Período sem dados do ponto e já vencido na data das férias não recebe parcela.
 
+![Conferência do ponto com os totais de prontos, a conferir e com problema, e cada parcela encontrada com o período aquisitivo, o saldo depois e a situação](img/importar-ponto.png)
+
 A conferência lista cada parcela com o colaborador, o período aquisitivo, as datas encontradas, o **saldo depois** e a situação:
 
 | Situação | Significado | Vem marcada? |

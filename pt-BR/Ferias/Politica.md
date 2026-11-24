@@ -2,6 +2,8 @@
 
 **Férias** · Em *Módulos › Férias › Política* ficam as regras de férias da empresa. A política já nasce com o padrão da CLT. Voltar à [visão geral](Visao-geral.md).
 
+![Política de férias: onde as férias são controladas, pedido e aprovação, divisão e venda e dia de início](img/politica.png)
+
 Qualquer usuário com a permissão **Férias** vê a política; para alterar é preciso a permissão **Política de férias**. **Salvar** grava tudo, inclusive o limite de ausentes.
 
 ## Onde as férias são controladas
@@ -63,6 +65,8 @@ A redução por faltas segue o art. 130 (veja [Saldo e períodos](Saldo-e-period
 O aviso de férias precisa sair 30 dias antes do início: 60 dias antes do limite é o último momento seguro. Veja [Rotina diária e avisos](Rotina-e-avisos.md).
 
 ## Limite de ausentes por unidade
+
+![Final da política: faltas e direito, alertas e o limite de ausentes por unidade, ainda sem nenhum limite](img/politica-limites.png)
 
 Define quantas pessoas de uma unidade podem estar ausentes ao mesmo tempo. Cada linha tem:
 

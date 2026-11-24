@@ -18,6 +18,12 @@ Precisa da permissão **Programar férias**.
 5. Abaixo aparecem as regras: em vermelho o que impede, em amarelo os avisos. Sem nada pendente aparece "Nenhuma regra pendente".
 6. **Programar** grava a parcela, leva as férias ao espelho e recalcula o saldo.
 
+![Diálogo Programar férias com início, dias, fim, retorno, avisar até e pagar até, e a mensagem "Nenhuma regra pendente"](img/programar.png)
+
+No calendário do início, os dias riscados em vermelho não podem ser o início das férias:
+
+![Calendário do início com os domingos, feriados e os dias antes deles riscados](img/programar-calendario.png)
+
 > Se o espelho ainda não chega ao mês das férias, aparece "O espelho ainda não chega a esse mês". A parcela fica gravada e a [rotina diária](Rotina-e-avisos.md) leva as férias ao espelho quando o mês entrar no cálculo. Na ficha a parcela mostra "ainda fora do espelho" até lá.
 
 ## Regras conferidas
@@ -47,6 +53,8 @@ Precisa da permissão **Programar férias**.
 **Repouso** é o DSR ou feriado do cartão do colaborador. Em escala 12x36 o padrão da política é contar só domingos e feriados. Para dia que o cálculo ainda não alcança, conta o domingo.
 
 ### Liberar uma regra
+
+![Programação com duas regras em vermelho: parcela sem 14 dias e início no sábado, véspera do domingo, com o campo Justificativa para liberar](img/programar-regra.png)
 
 As regras **liberáveis** mostram o campo **Justificativa para liberar**. Preenchida a justificativa, a regra passa a informativa e o botão Programar libera. A justificativa fica gravada na parcela e no histórico, com o nome de quem liberou.
 

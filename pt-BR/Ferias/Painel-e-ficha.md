@@ -2,6 +2,8 @@
 
 **Férias** · Em *Módulos › Férias › Painel* o RH vê os vencimentos de todos os colaboradores e abre a ficha de cada um. Voltar à [visão geral](Visao-geral.md).
 
+![Painel de férias: indicadores no topo, filtros rápidos e a lista com período, faltas, direito, saldo, tirar até e situação](img/painel.png)
+
 ## Indicadores
 
 Clicar num indicador filtra a lista.
@@ -31,6 +33,8 @@ A **situação** da linha mostra o que é mais urgente: *Confirmar perda · art.
 ## Ficha do colaborador
 
 Clique na linha para abrir a ficha.
+
+![Ficha do colaborador: vínculo, admissão, saldo disponível e próximo limite; a tabela dos períodos aquisitivos e, do período selecionado, as parcelas, o que definiu os dias, os ajustes e o histórico](img/ficha.png)
 
 No topo: o **vínculo** (do cadastro do colaborador), a **admissão**, o **saldo disponível** (soma dos períodos abertos e vencidos), o **próximo limite** e o botão **Recalcular**.
 
