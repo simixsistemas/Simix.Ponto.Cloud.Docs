@@ -19,6 +19,22 @@ O acesso é com a **chave de API** no cabeçalho `X-Api-Key`, como nas [consulta
 - A chave precisa da permissão **Gerar e baixar a exportação da folha de pagamento** (Configurações › Segurança › Chaves de API).
 - O layout da folha precisa estar cadastrado e **ativo** em Cadastros › Layouts da folha. Anote o **código** dele: é o `cdLayout`.
 - A exportação aparece no histórico da tela de folha como **API (nome da chave)** e no monitor de tarefas de quem criou a chave.
+- Equipe da Símix exportando de vários clientes: use a [chave única do admin](#chave-única-para-vários-clientes-equipe-símix), sem criar uma chave em cada cliente.
+
+## Chave única para vários clientes (equipe Símix)
+
+Para testar a exportação em muitos clientes de uma vez (por exemplo, comparar com a do PcPonto depois da migração), a equipe da Símix usa **uma chave só**, criada no admin, em vez de uma chave em cada cliente:
+
+1. No **admin**, em Segurança › Chaves de API, crie a chave marcando **Gerar e baixar a exportação da folha de qualquer cliente**. A **validade é obrigatória**, porque a chave vale em todos os clientes. A mesma chave pode ter também a permissão de enviar os backups da migração.
+2. Chame os endereços desta página **no endereço de cada cliente** (`https://{tenant}.simixponto.app/api/integracoes/folha/...`), com a chave do admin no `X-Api-Key`. Os passos, os campos e as respostas são os mesmos.
+
+| Onde a chave do admin é usada | Resposta |
+|---|---|
+| Gerar e buscar a última, no endereço do cliente | Igual à chave do cliente |
+| Endereço do admin, sem o cliente | **400**: a exportação precisa do endereço do cliente |
+| Consultas, importação e assistente do cliente | **403**: a chave vale só para a exportação da folha |
+
+O [limite de 1.000 chamadas por hora](API.md#limites) é da chave, somando todos os clientes. Cada exportação acompanhada de 10 em 10 segundos gasta 6 chamadas por minuto enquanto roda: com muitos clientes ao mesmo tempo, consulte com intervalo maior.
 
 ## Passo 1: gerar
 
@@ -168,7 +184,7 @@ Todo erro vem com o motivo em português, no formato `{ "erros": ["..."] }`.
 
 | Código | Quando acontece |
 |---|---|
-| 400 | `anoMes` ou `cdLayout` ausente ou inválido, layout inativo, valor com tipo errado |
+| 400 | `anoMes` ou `cdLayout` ausente ou inválido, layout inativo, valor com tipo errado, chave do admin chamada no endereço do admin |
 | 401 | Chave ausente, errada, desativada ou vencida |
 | 403 | A chave não tem a permissão da exportação da folha |
 | 404 | Não existe layout da folha com o `cdLayout` informado |
