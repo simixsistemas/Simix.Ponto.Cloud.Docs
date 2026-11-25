@@ -114,6 +114,8 @@ A guia **Cálculos** define como o Símix Ponto tratará **faltas, horas extras 
 • Faltas são descontadas diretamente em folha  
 • Utilizado quando não se deseja compensação  
 
+> No espelho de ponto, o quadro com compensação no dia e mês mostra a coluna **Saldo** em cada dia; os outros mostram **Faltas** e **Extras**. Para trocar as colunas, use a [visão do espelho](../Guias/Espelho-de-ponto.md).
+
 <!--Palavras-chave: compensação símix, banco de horas, faltas-->
 
 ---
