@@ -7,6 +7,7 @@ O **MCP** (Model Context Protocol) é o padrão que os assistentes de IA usam pa
 - *Quem fez mais horas extras em outubro de 2026, por departamento?*
 - *Liste as inconsistências da última semana no estabelecimento 1.*
 - *Compare as faltas de setembro e de outubro.*
+- *Qual estabelecimento teve o maior turnover este ano?*
 
 As consultas só **leem**. Só gravam a de [importar planilhas](Importar-planilhas.md), com uma chave que tenha a permissão *Importar planilhas pelo assistente* (ou *Importar salários pelo assistente*, para o salário dos colaboradores), e a de enviar arquivos, com a permissão *Enviar arquivos para importar pelo assistente*. Dentro do próprio sistema, o **Assistente** da barra do topo já responde sobre o ponto, sem configurar nada; o MCP é para levar os dados ao assistente de fora.
 
@@ -99,13 +100,17 @@ O Claude Desktop só liga servidores remotos com login próprio, e não aceita a
 | `ponto_totais_mes` | Totais do mês: horas, extras por percentual, faltas, banco de horas, DSR | `anoMes` | Consultar os totais do ponto no mês |
 | `inconsistencias` | Dias com inconsistência e as regras que dispararam | `anoMes` ou `dataInicial` + `dataFinal` | Consultar as inconsistências do ponto |
 | `espelhos` | Espelhos gerados, com o link do PDF | `anoMes` | Consultar os espelhos de ponto |
+| `turnover` | Turnover e absenteísmo por estabelecimento ou departamento | `anoMes` ou `anoMesInicial` + `anoMesFinal` | Consultar o turnover e o absenteísmo |
+| `views` | As views do banco e, com o nome, as colunas de uma delas | — | Consultar qualquer view do banco pelo nome |
+| `consultar_view` | As linhas de uma view pelo nome (prêmios, afastamentos, indicadores, views próprias) | depende da view ([regras](Consultas.md#views-do-banco)) | Consultar qualquer view do banco pelo nome |
 
-O assistente vê todas as ferramentas, mas só consegue usar as que a chave permite: nas outras ele recebe o aviso de que a chave não tem permissão. As consultas aceitam `cdFunc` (um colaborador) e `cdEstab` (um estabelecimento), menos o `espelhos`, que só aceita `cdFunc`, e o `colaboradores_resumo`, que só aceita `cdEstab`. Cada chamada devolve até 50 registros (o assistente pode pedir até 100) e indica a próxima página; para só contar, ele pede 1 registro e lê o total. Os campos estão descritos em [Consultas](Consultas.md).
+O assistente vê todas as ferramentas, mas só consegue usar as que a chave permite: nas outras ele recebe o aviso de que a chave não tem permissão. As consultas aceitam `cdFunc` (um colaborador) e `cdEstab` (um estabelecimento), menos o `espelhos`, que só aceita `cdFunc`, e o `colaboradores_resumo` e o `turnover`, que só aceitam `cdEstab`; o `consultar_view` aceita também `estabId` e `cdDepa`, quando a view tem a coluna. Cada chamada devolve até 50 registros (o assistente pode pedir até 100) e indica a próxima página; para só contar, ele pede 1 registro e lê o total. Os campos estão descritos em [Consultas](Consultas.md).
 
 ## Dicas
 
 - Diga a competência na pergunta (*outubro de 2026*): o assistente a converte para `202610`.
 - Para contar ou comparar grupos, pergunte pelo grupo (*quantos colaboradores por estabelecimento em outubro?*): o assistente usa o `colaboradores_resumo` e responde numa chamada, em vez de percorrer a lista.
+- Para o que nenhuma outra ferramenta traz (prêmios, afastamentos por cargo), pergunte normalmente: o assistente procura a view com `views`, confere as colunas e lê com `consultar_view`.
 - Em empresas grandes, peça recortes (um estabelecimento, um departamento) ou os totais do mês em vez do dia a dia. Assim o assistente faz menos chamadas e responde mais rápido.
 - Cada mensagem do assistente para o servidor conta no limite de 1.000 chamadas por hora da chave.
 
@@ -166,6 +171,10 @@ const periodo = {
   dataInicial: { type: "string", format: "date", description: "Primeiro dia (AAAA-MM-DD), no lugar do anoMes" },
   dataFinal: { type: "string", format: "date", description: "Último dia (AAAA-MM-DD), no máximo 62 dias depois do primeiro" }
 };
+const faixa = {
+  anoMesInicial: { type: "string", pattern: "^\\d{6}$", description: "Primeira competência da faixa (AAAAMM), no lugar do anoMes" },
+  anoMesFinal: { type: "string", pattern: "^\\d{6}$", description: "Última competência da faixa (AAAAMM), no máximo 24 meses" }
+};
 
 const FERRAMENTAS = [
   {
@@ -205,15 +214,48 @@ const FERRAMENTAS = [
     name: "espelhos", rota: "espelho-pontos",
     description: "Espelhos de ponto gerados na competência, com o link do PDF de cada colaborador.",
     inputSchema: { type: "object", properties: { anoMes: filtros.anoMes, cdFunc: filtros.cdFunc, skipCount: filtros.skipCount, maxResultCount: filtros.maxResultCount }, required: ["anoMes"] }
+  },
+  {
+    name: "turnover", rota: "turnover",
+    description: "Turnover e absenteísmo do mês por estabelecimento (ou por departamento): percentuais, efetivos, admitidos, demitidos, afastados, atestados, dias de falta, férias e INSS. Horas em HH:MM.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        anoMes: filtros.anoMes, ...faixa,
+        agruparPor: { type: "string", enum: ["estabelecimento", "departamento"], description: "Pelo que agrupar (padrão estabelecimento)" },
+        cdEstab: filtros.cdEstab, skipCount: filtros.skipCount, maxResultCount: filtros.maxResultCount
+      }
+    }
+  },
+  {
+    name: "views", rota: "views",
+    description: "Views do banco que consultar_view lê. Sem nome, lista os nomes; com o nome, devolve as colunas dela.",
+    inputSchema: { type: "object", properties: { nome: { type: "string", description: "Nome da view (opcional), ex.: VPontoCalcPremio" } } }
+  },
+  {
+    name: "consultar_view", rota: argumentos => `views/${encodeURIComponent(argumentos.nome ?? "")}`,
+    description: "Linhas de uma view do banco pelo nome, com todas as colunas dela. View com AnoMes exige a competência, a faixa ou o período; view com Data exige o período.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        nome: { type: "string", description: "Nome da view, ex.: VPontoCalcPremio, VPontoAfastaBI" },
+        ...filtros, ...faixa, ...periodo,
+        estabId: { type: "string", format: "uuid", description: "Id do estabelecimento (opcional)" },
+        cdDepa: { type: "integer", description: "Código do departamento (opcional)" }
+      },
+      required: ["nome"]
+    }
   }
 ];
 
 async function consultar(ferramenta, argumentos = {}) {
   if (!URL_BASE || !CHAVE) throw new Error("Configure SIMIX_URL e SIMIX_CHAVE no servidor MCP.");
 
-  const url = new URL(`/api/integracoes/${ferramenta.rota}`, URL_BASE);
+  const rota = typeof ferramenta.rota === "function" ? ferramenta.rota(argumentos) : ferramenta.rota;
+  const url = new URL(`/api/integracoes/${rota}`, URL_BASE);
   const parametros = {
-    AnoMes: argumentos.anoMes, AgruparPor: argumentos.agruparPor, CdFunc: argumentos.cdFunc, CdEstab: argumentos.cdEstab,
+    AnoMes: argumentos.anoMes, AnoMesInicial: argumentos.anoMesInicial, AnoMesFinal: argumentos.anoMesFinal, AgruparPor: argumentos.agruparPor,
+    CdFunc: argumentos.cdFunc, CdEstab: argumentos.cdEstab, EstabId: argumentos.estabId, CdDepa: argumentos.cdDepa,
     DataInicial: argumentos.dataInicial, DataFinal: argumentos.dataFinal,
     SkipCount: argumentos.skipCount ?? 0, MaxResultCount: Math.min(argumentos.maxResultCount ?? 50, 100)
   };
@@ -224,6 +266,14 @@ async function consultar(ferramenta, argumentos = {}) {
   const resposta = await fetch(url, { headers: { "X-Api-Key": CHAVE } });
   const corpo = await resposta.json().catch(() => ({}));
   if (!resposta.ok) throw new Error(`${resposta.status}: ${(corpo.erros ?? [resposta.statusText]).join(" ")}`);
+
+  // a lista de views não é paginada: sem nome, só os nomes; com o nome, as colunas dela
+  if (ferramenta.name === "views") {
+    if (!argumentos.nome) return { views: corpo.map(v => v.nome) };
+    const view = corpo.find(v => v.nome.toLowerCase() === argumentos.nome.toLowerCase());
+    if (!view) throw new Error(`A view ${argumentos.nome} não existe neste banco.`);
+    return view;
+  }
 
   const proximo = parametros.SkipCount + corpo.items.length;
   return { ...corpo, proximaPagina: proximo < corpo.totalCount ? { skipCount: proximo } : null };
@@ -237,7 +287,7 @@ async function tratar(mensagem) {
         protocolVersion: VERSOES.includes(params?.protocolVersion) ? params.protocolVersion : VERSOES[0],
         capabilities: { tools: {} },
         serverInfo: { name: "simix-ponto", version: "1.0.0" },
-        instructions: "Consultas somente leitura do Símix Ponto. Horas em HH:MM (saldo com sinal). Use anoMes (AAAAMM) e pagine com skipCount enquanto proximaPagina vier preenchido. Para só contar, peça maxResultCount=1 e leia o totalCount; para contar por estabelecimento, cargo, departamento, setor, seção ou horário, use colaboradores_resumo."
+        instructions: "Consultas somente leitura do Símix Ponto. Horas em HH:MM (saldo com sinal). Use anoMes (AAAAMM) e pagine com skipCount enquanto proximaPagina vier preenchido. Para só contar, peça maxResultCount=1 e leia o totalCount; para contar por estabelecimento, cargo, departamento, setor, seção ou horário, use colaboradores_resumo. Turnover e absenteísmo: turnover. Prêmios, afastamentos e outros indicadores: procure a view em views e leia com consultar_view."
       };
     case "ping":
       return {};

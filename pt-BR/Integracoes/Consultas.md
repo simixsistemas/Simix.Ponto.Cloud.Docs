@@ -12,6 +12,8 @@ Todas as consultas são **GET** no endereço da sua empresa, com a chave no cabe
 | [Totais do mês](#totais-do-mês) | `/api/integracoes/ponto-calc` | colaborador | `AnoMes` (obrigatório) |
 | [Inconsistências](#inconsistências) | `/api/integracoes/ponto-incons` | colaborador e dia com problema | `AnoMes` ou `DataInicial` + `DataFinal` |
 | [Espelhos de ponto](#espelhos-de-ponto) | `/api/integracoes/espelho-pontos` | espelho gerado | `AnoMes` |
+| [Turnover e absenteísmo](#turnover-e-absenteísmo) | `/api/integracoes/turnover` | estabelecimento (ou departamento) e mês | `AnoMes` ou `AnoMesInicial` + `AnoMesFinal` |
+| [Views do banco](#views-do-banco) | `/api/integracoes/views/{nome}` | linha da view | depende da view |
 
 ## Filtros
 
@@ -19,6 +21,7 @@ Todas as consultas são **GET** no endereço da sua empresa, com a chave no cabe
 |---|---|---|
 | `AnoMes` | texto AAAAMM | Competência (ex.: `202610`). É o mês de fechamento do ponto: quando o período vai de 21 a 20, a competência 202610 vai de 21/09 a 20/10 |
 | `DataInicial`, `DataFinal` | data AAAA-MM-DD | Só nas consultas por dia, no lugar do `AnoMes` (ou junto com ele). Os dois dias entram; no máximo 62 dias |
+| `AnoMesInicial`, `AnoMesFinal` | texto AAAAMM | Só no turnover e nas views, no lugar do `AnoMes`: as duas competências entram; no máximo 24 meses |
 | `CdFunc` | número | Só um colaborador |
 | `CdEstab` | número | Só um estabelecimento |
 | `SkipCount` | número | Registros a pular (paginação). Padrão 0 |
@@ -182,6 +185,87 @@ Os espelhos gerados na competência, com o link do PDF. O link abre o arquivo di
 
 Esta consulta é anterior às outras e mantém o formato dela: aceita `AnoMes`, `CdFunc`, `SkipCount` e `MaxResultCount` (padrão 10, máximo 1.000), e também o [acesso com usuário](Token-de-usuario.md) com a permissão do Espelho do ponto.
 
+## Turnover e absenteísmo
+
+`GET /api/integracoes/turnover?AnoMes=202610` · permissão da chave: *Consultar o turnover e o absenteísmo do mês por estabelecimento ou departamento*
+
+Os indicadores do mês de cada estabelecimento, com as mesmas contas dos dashboards do sistema. Com `AgruparPor=Departamento`, uma linha por departamento dentro de cada estabelecimento. Para ver a evolução, peça uma faixa: `AnoMesInicial=202601&AnoMesFinal=202610`.
+
+| Parâmetro | Descrição |
+|---|---|
+| `AgruparPor` | `Estabelecimento` (padrão) ou `Departamento` |
+| `CdEstab` | Só um estabelecimento |
+
+```json
+{
+  "anoMes": "202610", "cdEstab": 1, "estabNome": "Matriz", "cdDepa": null, "depaNome": null,
+  "percTurnover": 17.6471, "percAbsenteismo": 3.4914,
+  "qtdEfetivos": 17, "qtdAdmitidos": 5, "qtdDemitidos": 1, "qtdAfastados": 1, "qtdAtestados": 8,
+  "diasFaltas": 7, "diasFaltasNC": 7, "diasFerias": 0, "diasINSS": 31,
+  "hrPrev": "2270:20", "hrTrab": "2204:06", "hrFaltas": "44:52", "hrAtestados": "36:40"
+}
+```
+
+| Campo | Descrição |
+|---|---|
+| `cdEstab` / `estabNome` | Estabelecimento |
+| `cdDepa` / `depaNome` | Departamento, só com `AgruparPor=Departamento` |
+| `percTurnover` | Rotatividade em %: (admitidos + demitidos) ÷ 2 ÷ efetivos × 100 |
+| `percAbsenteismo` | Absenteísmo em %: (horas de falta não compensadas + horas de atestado) ÷ horas previstas × 100, a mesma conta do dashboard |
+| `qtdEfetivos` | Colaboradores efetivos no mês |
+| `qtdAdmitidos`, `qtdDemitidos` | Admitidos e demitidos no mês |
+| `qtdAfastados`, `qtdAtestados` | Colaboradores afastados e atestados lançados |
+| `diasFaltas`, `diasFaltasNC` | Dias de falta: todos e só os não compensados |
+| `diasFerias`, `diasINSS` | Dias de férias e de afastamento pelo INSS |
+| `hrPrev`, `hrTrab` | Horas previstas e trabalhadas |
+| `hrFaltas`, `hrAtestados` | Horas de falta e de atestado |
+
+Esta consulta não aceita `CdFunc`: os números são do grupo, não de cada colaborador.
+
+## Views do banco
+
+`GET /api/integracoes/views/VPontoCalcPremio?AnoMes=202610` · permissão da chave: *Consultar qualquer view do banco pelo nome*
+
+Para o que as consultas acima não trazem (prêmios, afastamentos por cargo, indicadores dos dashboards), a API lê **qualquer view do banco da sua empresa** pelo nome, inclusive as criadas só para ela. Cada linha vem com as colunas da view, com o nome delas, sem mudar nada:
+
+```json
+{
+  "CdFunc": 11, "AnoMes": "202610", "CdRegraPremio": 1, "Nome": "Prêmio assiduidade", "Valor": 150.00,
+  "Explicacao": "Sem faltas no mês", "CdEstab": 1, "EstabNome": "Matriz", "CdCargo": 3, "CargoNome": "Vendedor", "Tipo": "Ganho"
+}
+```
+
+Diferente das outras consultas, aqui as colunas acompanham a view: se ela ganhar ou mudar uma coluna numa atualização do sistema, a resposta muda junto. Para integração que precisa de campos fixos, prefira as consultas acima e peça ao suporte o que faltar.
+
+**Quais views existem:** `GET /api/integracoes/views` lista todas, com as colunas e o tipo de cada uma:
+
+```json
+[
+  { "nome": "VPontoAfastaBI", "colunas": [ { "nome": "AnoMes", "tipo": "character varying" }, { "nome": "Sigla", "tipo": "text" } ] },
+  { "nome": "VPontoCalcPremio", "colunas": [ { "nome": "CdFunc", "tipo": "bigint" }, { "nome": "AnoMes", "tipo": "character varying" } ] }
+]
+```
+
+Algumas das mais usadas:
+
+| View | O que traz |
+|---|---|
+| `VPontoCalcBITurnover` | Turnover e absenteísmo por estabelecimento, com todas as colunas (a [consulta de turnover](#turnover-e-absenteísmo) é a versão de campos fixos) |
+| `VPontoCalcBITurnoverDepa` | O mesmo, por departamento |
+| `VPontoCalcBI` | Indicadores do mês por estabelecimento, departamento, setor, cargo e seção: faltas, atestados, extras, admitidos e demitidos |
+| `VPontoCalcPremio` | Prêmios calculados no mês e o motivo de cada um |
+| `VPontoAfastaBI` | Afastamentos do mês por tipo, estabelecimento, departamento e cargo |
+
+**Filtros:** os mesmos da [tabela de filtros](#filtros) (`AnoMes`, `AnoMesInicial` + `AnoMesFinal`, `DataInicial` + `DataFinal`, `CdFunc`, `CdEstab`), mais `EstabId` (o Id do estabelecimento) e `CdDepa` (departamento). Cada filtro só vale se a view tiver a coluna dele; o período usa a coluna `Data` (ou `DataHora`, nas marcações). Pedir um filtro que a view não tem dá erro 400 dizendo qual tirar.
+
+Para não ler o histórico inteiro a cada chamada:
+
+- view com a coluna `AnoMes` exige a competência, a faixa de meses ou o período;
+- view com `Data` ou `DataHora` (e sem `AnoMes`) exige o período, de no máximo 62 dias;
+- as demais (cadastros) não pedem filtro.
+
+**O que não sai:** só views (tabelas não), e nunca colunas de senha ou credencial, de salário ou de arquivo anexado. Nome de view que não existe responde **404**. A ordem das linhas é fixa (competência, data, estabelecimento, colaborador e as demais colunas), para a paginação não repetir nem pular registros.
+
 ## Exemplos de chamadas
 
 ```bash
@@ -190,4 +274,10 @@ curl "https://{tenant}.simixponto.app/api/integracoes/ponto-calc-dia?CdFunc=15&D
 
 # Totais do mês de um estabelecimento, segunda página de 1.000
 curl "https://{tenant}.simixponto.app/api/integracoes/ponto-calc?AnoMes=202610&CdEstab=1&SkipCount=1000&MaxResultCount=1000" -H "X-Api-Key: smx_SUA_CHAVE"
+
+# Turnover por departamento no ano
+curl "https://{tenant}.simixponto.app/api/integracoes/turnover?AnoMesInicial=202601&AnoMesFinal=202612&AgruparPor=Departamento" -H "X-Api-Key: smx_SUA_CHAVE"
+
+# Afastamentos de outubro num estabelecimento, pela view
+curl "https://{tenant}.simixponto.app/api/integracoes/views/VPontoAfastaBI?AnoMes=202610&CdEstab=1" -H "X-Api-Key: smx_SUA_CHAVE"
 ```
