@@ -1,3 +1,66 @@
+# 19/11/2026
+
+- **Pesquisas de satisfação** (Painel admin › Pesquisas): NPS, CSAT ou personalizada, com perguntas conforme a nota, público recortado por cliente, edição, perfil e tempo de uso (com a estimativa de alcance), recorrência, amostra e identificada ou anônima. Só usuários de gestão recebem; colaborador, app, e-mail Símix, suporte e "entrar como" ficam de fora. Resultados com índice, taxa de resposta, distribuição, evolução, cortes e temas dos comentários pela IA, exportação para Excel, fila de retorno dos detratores com aviso no Teams e **Virar feedback**. O Atendimento mostra o NPS do cliente, e o painel de Feedbacks, o CSAT médio.
+- **Licenças** no admin: o contrato de cada cliente (plano, mensalidade, valor por colaborador adicional, vencimento, situação, validade e limites), com os cards Últimas, Maiores e Upgrades e o aprovar ou recusar do upgrade pedido pelo Assistente. Os limites saíram do cadastro do cliente e foram para a licença, e o painel de Clientes ganha a seção "Contrato e licença".
+- **Mapa de clientes**: cada cliente na cidade dele, com o tamanho pelos colaboradores, por empresa ou por estabelecimento; os estabelecimentos dos clientes passam a ser indexados no admin.
+- Monitor de coletores volta a mostrar todos os coletores com a contagem real de cada situação, com os filtros "Precisam de atenção" e "Parados".
+- O questionário de implantação fica só para a criação de banco novo: a implantação por migração termina direto como Finalizada.
+- O sistema voltou para o .NET 10 e o ABP 10: no .NET 11.0.0 a geração de PDF quebrava. A atualização para o .NET 11 fica para quando sair a correção.
+- O envio da versão do iPhone ao TestFlight mostra o motivo real quando a Apple recusa; a publicação da 4.0.05 para iPhone parou no contrato pendente da conta Apple Developer.
+- Correções nas atualizações dos bancos (licenças e scripts) e no deploy.
+
+- Painel admin › Pesquisas:
+
+  ![image](imagens/cloud_pr3560_imagem4.png)
+
+- O "?" com as regras das pesquisas:
+
+  ![image](imagens/cloud_pr3560_imagem5.png)
+
+- Cadastro da pesquisa: tipo, gatilho, recorrência, amostra e período:
+
+  ![image](imagens/cloud_pr3560_imagem6.png)
+
+- Perguntas que dependem da nota:
+
+  ![image](imagens/cloud_pr3560_imagem7.png)
+
+- Perguntas mudando de ordem pela alça:
+
+  ![image](imagens/cloud_pr3560_imagem8.png)
+
+- Público e a estimativa de alcance:
+
+  ![image](imagens/cloud_pr3560_imagem9.png)
+
+- Resultados: índice, distribuição das notas e as respostas:
+
+  ![image](imagens/cloud_pr3560_imagem10.png)
+
+- Resposta do detrator: retorno, nota interna e Virar feedback:
+
+  ![image](imagens/cloud_pr3560_imagem11.png)
+
+- NPS do cliente no Atendimento:
+
+  ![image](imagens/cloud_pr3560_imagem12.png)
+
+- CSAT médio no painel de Feedbacks:
+
+  ![image](imagens/cloud_pr3560_imagem16.png)
+
+- Mapa de clientes por empresa, com o contrato no painel lateral:
+
+  ![image](imagens/cloud_pr3584_imagem1.png)
+
+- Licenças com os cards e o upgrade aguardando aprovação:
+
+  ![image](imagens/cloud_pr3584_imagem2.png)
+
+- Mapa de clientes por estabelecimento:
+
+  ![image](imagens/cloud_pr3584_imagem4.png)
+
 # 18/11/2026
 
 - Painel **Assistente** no admin, com as conversas de todos os clientes, os cards "Aguardando o suporte", "Em atendimento" e "Com falha", filtros por cliente, período e texto, e cada conversa com as propostas e o que aconteceu com cada uma. Os cards "Avaliadas" e "Avaliação ruim" filtram a lista, e cada conversa mostra quantas respostas foram bem ou mal avaliadas.

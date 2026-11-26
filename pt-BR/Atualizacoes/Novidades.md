@@ -1,3 +1,288 @@
+# 19/11/2026
+
+## Resumo
+
+- 📝 Justificativa de extras no registro, pela web e pelo aplicativo
+- 🌙 Extras interjornada configuradas pelo quadro de horários
+- 🗓️ Escalas: comparativo com a previsão de vendas e edição do mínimo pelo detalhe do dia, relatório da escala do dia e regras pelo lápis
+- 🔎 Inconsistências com pesquisa livre e o filtro de lotação das outras telas
+- 📧 Enviar acessos também para usuários sem colaborador, com link para criar a senha
+- 🧮 Calculadora com exemplos da escala 5x2, ícone no marcador e link que abre sem login
+- 📷 Fotos enviadas ao iDFace pelo agente local
+- 📱 Aplicativo 4.0.06: justificativa de extras no registro e atestado pela câmera, galeria ou arquivo
+
+## Justificativa de extras no registro ✨
+
+O colaborador pode justificar as horas extras na hora em que registra o ponto, pela web ou pelo aplicativo, e a gestão confere depois.
+
+- No quadro de horário (Controles › Registro), **Justificativa de extras no registro**: Não pedir, Opcional ou Obrigatória, e **a partir de** quantas horas extras do dia.
+- Antes de registrar, se a marcação deixa o dia com extras acima do mínimo, o sistema pede a justificativa e uma observação. Obrigatória só registra com o motivo escolhido; opcional permite registrar sem justificar. A marcação nunca é barrada por falha na verificação.
+- No aplicativo, a regra e os motivos vêm na sincronização, então funciona também sem internet e no modo quiosque.
+- A justificativa sai no comprovante e vai para o dia do colaborador com a origem **Colaborador**.
+- Tela **Justificativa de extras**: nova coluna **Origem** (Colaborador ou Gestor), filtro Todos, Justificadas e Pendentes (abre em Pendentes), e o Salvar grava só as linhas alteradas, sem apagar justificativas já gravadas.
+- Novo alerta **Registros de ponto › Justificativa de extras**, que avisa a gestão quando o colaborador justifica.
+
+- Configuração no quadro de horário:
+
+  ![image](imagens/cloud_pr3561_imagem1.png)
+
+- Registro web com a justificativa obrigatória:
+
+  ![image](imagens/cloud_pr3561_imagem2.png)
+
+- Motivo e observação preenchidos antes de registrar:
+
+  ![image](imagens/cloud_pr3561_imagem3.png)
+
+- Justificativa opcional, com a opção de registrar sem justificar:
+
+  ![image](imagens/cloud_pr3561_imagem4.png)
+
+- Tela Justificativa de extras com a origem Colaborador:
+
+  ![image](imagens/cloud_pr3561_imagem5.png)
+
+- Alerta para a gestão no sino:
+
+  ![image](imagens/cloud_pr3561_imagem6.png)
+
+- Justificativa de extras abrindo em Pendentes:
+
+  ![image](imagens/cloud_pr3587_imagem1.png)
+
+- Filtro Justificadas, só os dias com justificativa:
+
+  ![image](imagens/cloud_pr3587_imagem2.png)
+
+## Extras interjornada ✨
+
+- No cadastro de horários, aba Cálculos, novo quadro **Extras interjornada**: ligar a opção, o descanso mínimo entre jornadas (vazio = 11:00) e o percentual (vazio = 50).
+- Com a opção ligada, o tempo que faltou para completar o descanso mínimo em cada dia vira o total **Ext.interjornada 50%** na Manutenção, também gravado pelo Calcular dados e pela exportação. Exemplo: saiu às 23:00 e entrou às 07:00, 8h de descanso, 3h de extras.
+- O total é à parte: não altera horas trabalhadas, extras, saldo nem banco de horas. A explicação está no botão "..." dos totais.
+
+- Quadro Extras interjornada no cadastro de horários:
+
+  ![image](imagens/cloud_pr3591_imagem1.png)
+
+- Total Ext.interjornada 50% na Manutenção, com o saldo e as extras inalterados:
+
+  ![image](imagens/cloud_pr3591_imagem2.png)
+
+## Escalas
+
+### Cobertura e previsão de vendas no detalhe do dia
+
+- O detalhe do dia (clique num dia do rodapé de cobertura) compara, por hora, quem está escalado (barra), o mínimo cadastrado (linha tracejada) e as pessoas que as vendas previstas pedem (linha laranja). Três cartões resumem o dia — quanto falta para o mínimo, o volume previsto com a hora de pico e quanto da demanda a escala cobre —, e embaixo ficam os saldos "Escalado × mínimo" e "Escalado × vendas" de cada hora.
+- Botão **Editar** no detalhe: grava o mínimo só naquela data ou em todo dia da semana igual, e ajusta as pessoas que as vendas pedem de amanhã em diante (a hora ajustada ganha uma marca e o "Voltar ao calculado"). A barra de cada colaborador pode ser arrastada para outro horário do dia, encaixando nos horários cadastrados com a mesma jornada.
+- Quem abre a grade vê o comparativo sem precisar da permissão da tela de Demanda; quem não pode editar as regras ou a demanda não vê o Editar.
+
+- Detalhe do dia com o escalado, o mínimo cadastrado e o necessário pelas vendas:
+
+  ![image](imagens/cloud_pr3569_imagem1.png)
+
+- Dia sem previsão de vendas, só com o mínimo cadastrado:
+
+  ![image](imagens/cloud_pr3569_imagem2.png)
+
+- Editor da hora com o mínimo só na data e o ajuste das vendas:
+
+  ![image](imagens/cloud_pr3593_imagem1.png)
+
+- "Toda terça-feira", com o aviso da data que já tem mínimo próprio:
+
+  ![image](imagens/cloud_pr3593_imagem2.png)
+
+### Escala do dia e impressão
+
+- Novo relatório **Escala do dia**, para domingos e feriados, em retrato: Nome, Cargo, Data, Escala, Troca/Obs, Horas extras (quando o dia já passou) e Assinatura. Por padrão lista só quem trabalha no dia; a opção **Todos** traz também quem está de folga, em feriado ou afastado.
+- Na grade e em Trocas/Afastamentos, o Imprimir oferece a escala do período ou a do dia selecionado. Na lista do planejamento, botão de imprimir em cada linha e as colunas **Alterado em** e **Alterado por**; a escala abre pelo nome.
+
+- Lista do planejamento com o imprimir e quem alterou por último:
+
+  ![image](imagens/cloud_pr3580_imagem1.png)
+
+- O imprimir na grade, com a escala do dia selecionado:
+
+  ![image](imagens/cloud_pr3580_imagem2.png)
+
+- Escala do dia num domingo futuro:
+
+  ![image](imagens/cloud_pr3580_imagem3.png)
+
+- Escala do dia num feriado que já passou, com as horas extras:
+
+  ![image](imagens/cloud_pr3580_imagem4.png)
+
+- Opção Todos, com quem não trabalha no feriado e os afastados:
+
+  ![image](imagens/cloud_pr3580_imagem5.png)
+
+### Regras, setores e sugestões
+
+- Em Ajuda › Regras, o lápis abre o cadastro da regra e o martelo abre a política; no painel de pendências, o lápis do aviso faz o mesmo. Depois de gravar, as pendências são conferidas de novo, sem perder o que não foi salvo na grade. O aviso de jornada acima de 8h explica em quais dias a regra cadastrada vale e mostra a regra a confirmar que poderia valer.
+- Setas ao lado do filtro de **Setores** passam para o setor anterior ou o próximo. Com setores escolhidos, a contagem de cobertura e as pendências mostram só a falta deles.
+- Quem tem um único estabelecimento no filtro global já o encontra escolhido no planejamento novo e na escala.
+- As sugestões do gerador ganham um fundo mais forte quanto mais o dia sugerido se afasta do horário que o colaborador já cumpre, explicado na legenda.
+- A semana que termina no planejamento seguinte só bloqueia a aprovação quando as folgas já não cabem nos dias que faltam; antes disso, fica um aviso de atenção.
+- Na barra, Regras e Legendas viraram botões ao lado da Ajuda; as janelas abertas pela grade não escurecem mais a escala, e dá para clicar na grade com o detalhe do dia, as Regras ou a justificativa do Aprovar abertos. Salvar e Aprovar mostram o andamento desde o clique. O editor do dia ficou mais compacto, e os turnos de referência foram para a aba Horários do painel lateral.
+
+- Setas de setor e o aviso de jornada com a regra a confirmar:
+
+  ![image](imagens/cloud_pr3574_imagem1.png)
+
+- Ajuda › Regras com os dias da regra e o lápis:
+
+  ![image](imagens/cloud_pr3574_imagem2.png)
+
+- Cadastro da regra aberto pelo lápis:
+
+  ![image](imagens/cloud_pr3574_imagem3.png)
+
+- Cadastro da política aberto pelo martelo:
+
+  ![image](imagens/cloud_pr3574_imagem4.png)
+
+- Painel de pendências com o menu da regra e da política:
+
+  ![image](imagens/cloud_pr3574_imagem5.png)
+
+- Planejamento novo com o estabelecimento do filtro global:
+
+  ![image](imagens/cloud_pr3589_imagem1.png)
+
+- Sugestões do gerador com o tom pela diferença do horário:
+
+  ![image](imagens/cloud_pr3589_imagem2.png)
+
+- Semana parcial com aviso de atenção em vez de bloqueio:
+
+  ![image](imagens/cloud_pr3589_imagem3.png)
+
+## Inconsistências e painel inicial
+
+- **Inconsistências**: campo de pesquisa livre (nome ou código do colaborador, inconsistência, observação, afastamento e lotação; com várias palavras, todas precisam aparecer), com os cartões por tipo acompanhando a pesquisa.
+- **Inconsistências por mês**: o botão de filtro das outras telas (estabelecimento, departamento, setor, cargo, tags…), com filtros salvos.
+- No Início, o card Sugestões mostra as inconsistências só como o total do mês, com o atalho para a tela Por mês. Os avisos de bloqueio automático de períodos do mesmo dia viram uma linha só, com **Bloquear agora** para todos e **Adiar/alterar**.
+
+- Pesquisa livre nas inconsistências:
+
+  ![image](imagens/cloud_pr3596_imagem1.png)
+
+- Filtro de lotação em Inconsistências por mês:
+
+  ![image](imagens/cloud_pr3596_imagem2.png)
+
+## Usuários e acessos
+
+- **Enviar acessos** lista também os usuários que não estão ligados a um colaborador (gestores, RH e os criados pelo "Importar da lista"), com a marca "Usuário". "Com acesso" conta só quem tem usuário e senha; quem ainda não criou a senha já vem marcado e recebe no e-mail o botão **Criar minha senha** (o link vale 30 dias e deixa de valer depois de usado).
+- Nova coluna **Alterado em** e ordenação por qualquer coluna, para mandar primeiro aos cadastros mais recentes. Usuário sem e-mail tem o atalho "Abrir cadastro".
+- **Importar da lista** virou botão ao lado de Enviar acessos. Na lista de colaboradores, o recém-criado mostra a data na coluna de alteração.
+
+- Enviar acessos com colaboradores e usuários, ordenado por Alterado em:
+
+  ![image](imagens/cloud_pr3592_imagem1.png)
+
+- Tela de criar a senha aberta pelo e-mail:
+
+  ![image](imagens/cloud_pr3592_imagem2.png)
+
+- Importar da lista ao lado de Enviar acessos:
+
+  ![image](imagens/cloud_pr3600_imagem2.png)
+
+## Calculadora
+
+- Exemplos prontos da escala 5x2: jornada do dia, saldo do mês e jornada de 42 h e 40 h.
+- O marcador da linha pode ter um ícone (calendário, dinheiro, asterisco ou colaborador), na cor do marcador.
+- O link compartilhado abre sem login, só para fazer as contas.
+- Guias mais baixas, sinais (+ − × ÷) em vermelho, o lápis de editar no fim da linha, e a linha com um valor só não repete o resultado.
+
+- Barra da calculadora com o menu das guias:
+
+  ![image](imagens/cloud_pr3600_imagem3.png)
+
+- Exemplo da escala 5x2:
+
+  ![image](imagens/cloud_pr3600_imagem4.png)
+
+- Linhas com ícone no marcador:
+
+  ![image](imagens/calc_pr583_imagem1.png)
+
+- Menu do marcador com a cor e o ícone:
+
+  ![image](imagens/calc_pr583_imagem2.png)
+
+## Coletores e agente local
+
+- **Enviar fotos** funciona no iDFace que sincroniza pelo agente local: vão só as fotos de quem ainda não tem foto no equipamento, e o resultado mostra quantas foram gravadas.
+- O **Editar** do agente local volta a abrir, já com os horários de sincronização.
+- No painel de status dos coletores, "Sincronizando" fica sempre verde e "Com falha" sempre vermelho.
+
+- Editar do agente aberto, com os horários de sincronização:
+
+  ![image](imagens/cloud_pr3582_imagem1.png)
+
+- Horário adicionado pelo modelo "A cada 1 hora":
+
+  ![image](imagens/cloud_pr3582_imagem2.png)
+
+- Agente atualizado sem erro:
+
+  ![image](imagens/cloud_pr3582_imagem3.png)
+
+## Assistente de IA
+
+- **Upgrade da licença pelo Assistente**: o cliente pede mais colaboradores, vê o valor adicional e a mensalidade nova, e o pedido fica em análise até o comercial da Símix aprovar.
+- Novas demonstrações guiadas "Máquina do tempo: ver e desfazer alterações" e "Tirar ou trocar o anexo do afastamento", em Treinamentos e na ajuda do Assistente.
+
+- Upgrade pedido pelo Assistente, com o valor adicional:
+
+  ![image](imagens/cloud_pr3584_imagem3.png)
+
+## Aplicativo 📱
+
+- Versão **4.0.06**: justificativa de extras no registro, atestado pela câmera, galeria ou arquivo, e o app do Android disponível também em aparelhos sem Wi-Fi.
+- Detalhes em **[Novidades do aplicativo](Aplicativo.md)**.
+
+## Outras melhorias e correções
+
+- **Anexo do afastamento**: o atestado enviado pelo aplicativo junto com a solicitação aparece nas Pendências de afastamento, com o link para abrir. Na Manutenção e na Consulta de atestados, novo botão para remover só o anexo do dia, mantendo o afastamento; excluir o afastamento do dia leva o anexo junto.
+- **Pesquisa de satisfação**: de vez em quando, um card no canto da tela pede a nota do Símix Ponto (0 a 10), sem bloquear o trabalho, com "Responder depois" e "Não perguntar agora". Não aparece do dia 25 ao dia 5, nem na Manutenção e no Registro. Quando um feedback é concluído, o aviso já pede a nota de 1 a 5 do atendimento.
+- Manutenção: trocar de colaborador enquanto o cartão ainda carregava não dá mais erro, nem mostra o cartão de um na tela do outro.
+- Lanche pré-assinalado não fica mais duplicado no turno da manhã quando a volta do almoço reorganiza o dia.
+- O widget de totais com link, condição de cor ou ordenação por outra coluna volta a carregar.
+- A lista de feriados mostra o nome dos estabelecimentos do feriado.
+- No calendário do Início, a data fica na cor do tipo de evento.
+
+- Card da pesquisa no canto da tela:
+
+  ![image](imagens/cloud_pr3560_imagem1.png)
+
+- Com nota baixa, as perguntas sobre o que faltou:
+
+  ![image](imagens/cloud_pr3560_imagem2.png)
+
+- O agradecimento depois de enviar:
+
+  ![image](imagens/cloud_pr3560_imagem3.png)
+
+- Aviso de feedback concluído pedindo a nota do atendimento:
+
+  ![image](imagens/cloud_pr3560_imagem13.png)
+
+- O comentário opcional depois da nota:
+
+  ![image](imagens/cloud_pr3560_imagem14.png)
+
+- Nota respondida, com o feedback seguindo como antes:
+
+  ![image](imagens/cloud_pr3560_imagem15.png)
+
+- Calendário do Início com a data na cor do tipo:
+
+  ![image](imagens/cloud_pr3600_imagem1.png)
+
 # 18/11/2026
 
 ## Resumo

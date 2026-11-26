@@ -1,3 +1,29 @@
+# 19/11/2026
+
+Versão **4.0.06** do aplicativo (Android, iOS e Windows).
+
+## Resumo
+
+- 📝 Justificativa de extras antes de registrar
+- 📎 Atestado pela câmera, pela galeria ou por arquivo
+- 📶 App do Android também em aparelhos sem Wi-Fi
+
+## Justificativa de extras no registro ✨
+
+- Antes da foto, quando a marcação deixa o dia com horas extras acima do mínimo configurado no quadro de horário, o aplicativo pede a justificativa e uma observação.
+- Funciona sem internet: a regra e os motivos vêm na sincronização, e as extras são estimadas pelas marcações do dia e pelo horário previsto. Vale também para o modo quiosque.
+- Justificativa obrigatória não deixa registrar sem o motivo; opcional permite registrar sem justificar. A justificativa aparece na prévia do comprovante e segue com o registro.
+
+- O aplicativo pedindo a justificativa antes da foto:
+
+  ![image](imagens/app_pr514_imagem1.png)
+
+## Outras melhorias e correções
+
+- **Atestado no afastamento**: o colaborador escolhe entre tirar uma foto (câmera traseira, reduzida antes do envio), escolher da galeria ou escolher um arquivo (PDF ou imagem). O atestado enviado junto com a solicitação aparece nas Pendências de afastamento.
+- O app do Android deixa de exigir Wi-Fi no aparelho: celulares e tablets sem Wi-Fi já conseguem instalar. Nos aparelhos sem Wi-Fi, o registro mostra o tipo de conexão (dados móveis ou cabo).
+- No login de um colaborador do PcPonto, o aplicativo já guarda a empresa e o estabelecimento dele, sem esperar a sincronização seguinte.
+
 # 04/11/2026
 
 Versão **4.0.04** do aplicativo (Android, iOS e Windows).

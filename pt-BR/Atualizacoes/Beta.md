@@ -215,6 +215,10 @@ Primeira entrega do módulo de férias: saldo por período aquisitivo calculado 
 - Aprovar um afastamento sobre outro pede confirmação; na aprovação em lista, um conflito recusa o lote inteiro e mostra os colaboradores envolvidos.
 - A aplicação de escala não grava mais por cima de dia de férias.
 - Os módulos de **Férias** e de **Adiantamento salarial** são ativados por cliente pelo suporte Símix e vêm desligados por padrão. Desligados, somem do menu.
+- **Programar férias** pela ficha do colaborador: o RH escolhe o início, os dias, a venda e o adiantamento do 13º, e vê na hora o fim, o retorno, as datas-limite de aviso e de pagamento e os dias em dobro.
+- As regras da CLT são conferidas antes de gravar: até 3 parcelas (uma com 14 dias e as outras com pelo menos 5), venda de até 1/3, início fora do repouso, do feriado e dos 2 dias antes, férias sobrepostas, antecipação só com cláusula da convenção, aviso de 30 dias, aprendiz menor de 18 e limite de ausentes por unidade. Início no repouso e gravação por cima de outro afastamento podem ser liberados pelo RH com uma justificativa, que fica na parcela e no histórico.
+- As férias programadas vão para o espelho, inclusive as de meses que o cálculo ainda não alcançou (entram pela rotina diária). **Remarcar** e **cancelar** tiram a sigla só dos dias que ainda estão com ela, e o saldo é recalculado.
+- Na política de férias, os dias da semana em que a convenção não deixa começar as férias.
 
 > **Atenção (integrações externas):** os totais de dias de férias e de INSS do cálculo deixam de sair zerados para quem tinha afastamentos sem tipo. Exportações de folha e dashboards que usam esses campos podem mudar de valor depois do próximo cálculo.
 
@@ -241,6 +245,10 @@ Primeira entrega do módulo de férias: saldo por período aquisitivo calculado 
 - Manutenção em lote deixando de fora os dias com afastamento:
 
   ![image](imagens/cloud_pr2928_imagem6.png)
+
+- Programação gravada na ficha: o saldo atualizado, a parcela e o histórico:
+
+  ![image](imagens/cloud_pr3551_imagem1.png)
 
 ## Módulo de adiantamento salarial ✨
 
