@@ -19,7 +19,7 @@ A edição é a mesma do [planejamento](Planejamento.md#editar-como-numa-planilh
 
 ### A impressão
 
-O **Imprimir** abre o relatório Escalas/Afastamentos com o recorte dos filtros e o que estiver marcado no **Exibir**. Quando o **Estabelecimento** e o **Estabelecimento atual** do filtro são diferentes, o cabeçalho sai com os dados do **Estabelecimento**, e a barra do relatório mostra a opção **Cabeçalho: Estabelecimento | Estabelecimento atual** para escolher de onde vêm a empresa, o CNPJ e o nome do estabelecimento. A barra não sai no papel. Com só um dos dois preenchido, o cabeçalho segue o preenchido.
+O **Imprimir** abre o relatório Escalas/Afastamentos com o recorte dos filtros e o que estiver marcado no **Exibir**. Quando o **Estabelecimento** e o **Estabelecimento atual** do filtro são diferentes, o cabeçalho sai com os dados do **Estabelecimento**, e a barra do relatório mostra a opção **Cabeçalho: Estabelecimento | Estabelecimento atual** para escolher de onde vêm a empresa, o CNPJ e o nome do estabelecimento. A barra não sai no papel. Com só um dos dois preenchido, o cabeçalho segue o preenchido. O seletor **Setor** da barra troca o setor impresso sem voltar à grade.
 
 ## Afastamento com horas
 

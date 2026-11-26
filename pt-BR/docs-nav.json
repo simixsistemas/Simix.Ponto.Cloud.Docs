@@ -23,6 +23,10 @@
         {
           "text": "Alertas e notificações",
           "path": "Guias/Alertas.md"
+        },
+        {
+          "text": "Colunas do espelho de ponto",
+          "path": "Guias/Espelho-de-ponto.md"
         }
       ]
     },

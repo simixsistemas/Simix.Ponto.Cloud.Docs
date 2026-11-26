@@ -218,7 +218,12 @@ O **Imprimir** abre o relatório no mesmo desenho do PcPonto (Escalas/Afastament
 - O cabeçalho traz a razão social e o CNPJ (do estabelecimento, quando o plano é de um só), o período por extenso, o nome do plano e a situação.
 - Domingos e feriados ficam destacados; a troca de folga aparece com o dia num círculo.
 - Dia reprovado sai com o que vale no cartão, e os dias antes da admissão ou depois da demissão saem como "Inativo".
+- **Setor na barra**: o seletor **Setor**, ao lado do Imprimir, troca o setor do relatório sem voltar à grade; **Todos** traz uma faixa por setor. No plano que já é de um setor só, ele não aparece. A barra não sai no papel.
+
+![Relatório de escalas filtrado pelo setor Desenvolvimento, com o seletor Setor na barra](img/relatorio-escala-setor.png)
+
 - **O relatório segue o Exibir da grade**: com turnos previstos, horas previstas ou horas trabalhadas marcados, cada dia sai com essas linhas embaixo da sigla, e a legenda ganha o "Embaixo do dia". Com os turnos, nome, cargo e assinatura estreitam para os dias caberem. As inconsistências não vão para o papel.
+- **Pelo Assistente**: "imprima a escala do setor Caixa com o horário de cada um" abre o relatório do mês já no setor, com os turnos e as horas de cada dia, numa guia nova. Também dá para pedir um dia só ("quem trabalha no domingo"). Ele vai pelas [trocas e afastamentos](Trocas-e-domingos.md), então serve também a quem não usa o planejamento, e pede a permissão **Aprovar** do Planejamento de escala.
 
 ## Aprovar
 
