@@ -1,4 +1,156 @@
 
+## Trilha do conhecimento ✨
+
+Trilhas de treinamento para aprender o sistema e para os treinamentos da própria empresa, com progresso de cada pessoa, avaliação, certificado e acompanhamento do RH.
+
+- Tela **Minhas trilhas**, com "Continuar de onde parou" e as guias Em andamento, Obrigatórias, Disponíveis e Concluídas. Cada trilha tem etapas e itens — vídeo, documento, demonstração guiada, texto, **questionário**, **pesquisa**, **presencial** e **prática** — e guarda o percentual, o item onde parou e a data de conclusão.
+- A demonstração guiada abre a tela certa e conclui o item sozinha ao terminar; o vídeo conclui com 90% assistido e volta do ponto em que a pessoa parou. O item **Prática** confere se o passo foi feito na empresa (primeiro horário, primeiro colaborador, aplicativo, primeira marcação…) e conclui sozinho.
+- **Questionário** com escolha única, múltipla escolha ou verdadeiro/falso, nota mínima, tentativas, ordem embaralhada e correção depois do envio; pode sortear perguntas de um banco, equilibrando a dificuldade. A **pesquisa de reação** (sem nota) mostra o resultado ao RH sem nomes, a partir de 3 respostas. Ao concluir a trilha, a pessoa avalia com estrelas.
+- **Público e prazos**: quem faz a trilha (lotação e tempo de admissão), como entra (livre, automática ou só atribuída), se é obrigatória, prazo, validade, lembretes e pré-requisitos entre trilhas. Uma tarefa diária inscreve, recicla as vencidas e avisa prazo, atraso e validade.
+- **Certificado** em PDF com código e QR, com o verso no formato da NR-1, que entra nos documentos do colaborador; o código é conferido sem login numa página pública, com o nome abreviado. Treinamento feito fora pode ser convalidado com o certificado do curso.
+- **Turmas presenciais**: data, local, instrutor e vagas, chamada, lista de presença em PDF para assinar e presença registrada pelo QR da turma no celular.
+- **Só dentro da jornada**: os itens obrigatórios só abrem no horário previsto do colaborador, e o tempo de estudo fora da jornada vai para o acompanhamento, para lançar no espelho como afastamento "Treinamento" ou desconsiderar com justificativa.
+- Tela **Acompanhamento**: quem concluiu, quem está atrasado e quem precisa reciclar, por pessoa e por trilha, com troca de prazo, conclusão registrada pelo RH, "lembrar agora", exportação para Excel, a guia **Conformidade** por cargo e o **dossiê de treinamentos** do colaborador em PDF.
+- **Modelos prontos** de prevenção ao assédio e à violência no trabalho, integração de novos colaboradores e LGPD: "Usar modelo" cria a trilha da empresa para completar e publicar. Além das três trilhas da Símix (Primeiros passos, Fechamento do mês e Banco de horas), a empresa monta as próprias em **Módulos › Trilhas** e atribui a colaboradores ou usuários.
+- **Pontos e conquistas**: cada item concluído vale pontos, o nível sobe com a soma, e as conquistas saem sozinhas (primeira trilha, nota máxima, conclusão no prazo…). A empresa cria as suas conquistas e liga ou desliga os pontos e o ranking do mês, do ano e geral, que mostra o nome abreviado e só a própria unidade.
+- **Comentários e dúvidas** em cada item: quem faz a trilha pergunta e a gestão responde, também numa tela própria com todos os itens comentados.
+- No portal do colaborador, o item **Trilhas** com as obrigatórias pendentes e as **Conquistas**; na barra do topo, o andamento dos **Primeiros passos**, com o que falta e o atalho para cada tela.
+
+> Perfis **DP** já existentes nos clientes não recebem sozinhos as permissões de Trilhas: é preciso concedê-las em Permissões, inclusive as novas "Conquistas" e "Gamificação e ranking".
+
+- Minhas trilhas, com as três trilhas iniciais da Símix:
+
+  ![image](imagens/cloud_pr3051_imagem1.png)
+
+- Visão da trilha: etapas, itens e o progresso ao lado:
+
+  ![image](imagens/cloud_pr3051_imagem2.png)
+
+- Item de demonstração guiada concluído pelo fim da demonstração, com o índice da trilha:
+
+  ![image](imagens/cloud_pr3051_imagem3.png)
+
+- Vídeo dentro da trilha, com o percentual assistido:
+
+  ![image](imagens/cloud_pr3051_imagem4.png)
+
+- Faixa "Suas trilhas" na página de Treinamentos:
+
+  ![image](imagens/cloud_pr3051_imagem5.png)
+
+- Catálogo de trilhas da Símix:
+
+  ![image](imagens/cloud_pr3051_imagem6.png)
+
+- Público e prazos no editor, com a opção "Só dentro da jornada":
+
+  ![image](imagens/cloud_pr3398_imagem1.png)
+
+- Questionário aprovado, com a correção das respostas:
+
+  ![image](imagens/cloud_pr3398_imagem2.png)
+
+- Turma presencial: chamada, lista de presença e envio da lista assinada:
+
+  ![image](imagens/cloud_pr3398_imagem3.png)
+
+- O QR do check-in da turma:
+
+  ![image](imagens/cloud_pr3398_imagem4.png)
+
+- Presença registrada pelo QR, com o certificado e a avaliação liberados:
+
+  ![image](imagens/cloud_pr3398_imagem5.png)
+
+- Certificado com código, QR e as linhas de assinatura:
+
+  ![image](imagens/cloud_pr3398_imagem6.png)
+
+- O verso no formato da NR-1:
+
+  ![image](imagens/cloud_pr3398_imagem7.png)
+
+- Validação pública do código, sem login:
+
+  ![image](imagens/cloud_pr3398_imagem8.png)
+
+- Acompanhamento das trilhas:
+
+  ![image](imagens/cloud_pr3398_imagem9.png)
+
+- Fora da jornada: dia lançado no espelho, dia desconsiderado e um pendente:
+
+  ![image](imagens/cloud_pr3398_imagem10.png)
+
+- Item bloqueado fora do horário previsto:
+
+  ![image](imagens/cloud_pr3398_imagem11.png)
+
+- Questionário com perguntas sorteadas do banco:
+
+  ![image](imagens/cloud_pr3398_imagem12.png)
+
+- Pesquisa de reação:
+
+  ![image](imagens/cloud_pr3398_imagem13.png)
+
+- Resultado da pesquisa, fechado enquanto tem menos de 3 respostas:
+
+  ![image](imagens/cloud_pr3398_imagem14.png)
+
+- Pré-requisitos no editor:
+
+  ![image](imagens/cloud_pr3398_imagem15.png)
+
+- Modelos prontos na guia Catálogo Símix:
+
+  ![image](imagens/cloud_pr3398_imagem17.png)
+
+- "Usar modelo" cria o rascunho da empresa:
+
+  ![image](imagens/cloud_pr3398_imagem18.png)
+
+- Primeiros passos na barra do topo, com o que falta e o motivo:
+
+  ![image](imagens/cloud_pr3398_imagem19.png)
+
+- Item Prática, com "Ir para a tela" e "Conferir":
+
+  ![image](imagens/cloud_pr3398_imagem20.png)
+
+- Conquistas no portal do colaborador, com o ranking da unidade:
+
+  ![image](imagens/cloud_pr3398_imagem21.png)
+
+- Trilha concluída com os pontos e a conquista nova:
+
+  ![image](imagens/cloud_pr3398_imagem22.png)
+
+- Cadastro de conquistas da empresa:
+
+  ![image](imagens/cloud_pr3398_imagem23.png)
+
+- Nova conquista: ícone, cor, regra, público e bônus:
+
+  ![image](imagens/cloud_pr3398_imagem24.png)
+
+- Guia Pontos do editor:
+
+  ![image](imagens/cloud_pr3398_imagem26.png)
+
+- Pontos de um item, de 0 a 1.000:
+
+  ![image](imagens/cloud_pr3398_imagem27.png)
+
+- Comentários e dúvidas para a gestão responder:
+
+  ![image](imagens/cloud_pr3398_imagem28.png)
+
+- A resposta no próprio item:
+
+  ![image](imagens/cloud_pr3398_imagem29.png)
+
+
 ## Uniformes e EPIs ✨
 
 Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, trocas, devoluções, estoque e os CAs dos equipamentos.
@@ -13,6 +165,8 @@ Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, 
 - **Portal do colaborador**: tela "Uniformes e EPIs" com os termos a assinar, o que está com ele e quando troca, os pedidos, os tamanhos e o histórico. O colaborador pede a troca pelo portal ou pelo aplicativo (com foto em dano, mau uso e extravio), e a loja aprova ou reprova. Depois do registro de ponto, ele é lembrado das trocas vencidas e dos termos a assinar.
 - **Painel** com trocas vencidas e próximas, CAs a resolver, admitidos sem itens, devoluções pendentes, termos sem assinatura, estoque abaixo do mínimo e pedidos em aberto, além da lista de itens em uso com reposição em lote. Avisos diários de troca, de CA e de estoque mínimo.
 - Configuração do módulo (termo com valor, CA vencido, grades, dias de aviso, formas de assinatura) e carga inicial por planilha dos itens que cada colaborador já usa e do saldo do estoque.
+- O menu acompanha a configuração: **Estoque** só com o controle de estoque ligado, **Separação** e **Devoluções a conferir** só com o pedido à central. Sem o pedido à central, a tela de Pedidos explica que ali ficam os pedidos de troca dos colaboradores.
+- **Nova entrega**: a quantidade volta a aparecer, e o item adicionado à mão já abre com o motivo certo (Admissão para quem não tem nada em uso; Avulsa ou Tempo de uso para os demais).
 
 - Nova entrega com o kit da lotação já montado:
 
@@ -102,42 +256,13 @@ Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, 
 
   ![image](imagens/cloud_pr3165_imagem8.png)
 
-## Trilha do conhecimento ✨
+- Pedidos sem a central: o menu sem Estoque e Separação:
 
-Novo módulo para aprender o sistema no seu ritmo, com trilhas que guardam o progresso de cada pessoa.
+  ![image](imagens/cloud_pr3608_imagem1.png)
 
-- Nova tela **Minhas trilhas**, com "Continuar de onde parou" e as guias Em andamento, Obrigatórias, Disponíveis e Concluídas.
-- Cada trilha tem etapas e itens — vídeo, documento, demonstração guiada e texto — e guarda o percentual, o item onde parou e a data de conclusão.
-- A demonstração guiada abre a tela certa e conclui o item sozinha ao terminar; o vídeo conclui com 90% assistido e volta do ponto em que a pessoa parou.
-- Três trilhas prontas da Símix: **Primeiros passos**, **Fechamento do mês** e **Banco de horas**, montadas com as demonstrações guiadas que já existem.
-- A empresa monta as próprias trilhas em **Módulos › Trilhas**: criar, montar as etapas (inclusive com itens do catálogo Símix), publicar, duplicar uma trilha da Símix e atribuir a colaboradores ou usuários. Gravar não muda a trilha para quem está fazendo; só o Publicar muda.
-- O portal do colaborador ganha o item **Trilhas**, com o número de obrigatórias pendentes, e um card no painel. A página de Treinamentos ganha a faixa "Suas trilhas", e o Início mostra o card do próximo passo.
+- Nova entrega com o item adicionado à mão:
 
-> Perfis **DP** já existentes nos clientes não recebem sozinhos as permissões de Trilhas: é preciso concedê-las em Permissões.
-
-- Minhas trilhas, com as três trilhas iniciais da Símix:
-
-  ![image](imagens/cloud_pr3051_imagem1.png)
-
-- Visão da trilha: etapas, itens e o progresso ao lado:
-
-  ![image](imagens/cloud_pr3051_imagem2.png)
-
-- Item de demonstração guiada concluído pelo fim da demonstração, com o índice da trilha:
-
-  ![image](imagens/cloud_pr3051_imagem3.png)
-
-- Vídeo dentro da trilha, com o percentual assistido:
-
-  ![image](imagens/cloud_pr3051_imagem4.png)
-
-- Faixa "Suas trilhas" na página de Treinamentos:
-
-  ![image](imagens/cloud_pr3051_imagem5.png)
-
-- Catálogo de trilhas da Símix:
-
-  ![image](imagens/cloud_pr3051_imagem6.png)
+  ![image](imagens/cloud_pr3608_imagem2.png)
 
 ## Nova tela de processos ✨
 
