@@ -1,13 +1,13 @@
 # 27/11/2026
 
-Versão **1.0.29** do Símix Agente (Windows). No canal beta, saiu como 1.0.30.
+Versão **1.0.29** do Símix Agente (Windows).
 
 ## Resumo
 
-- 🗄️ Consulta a bancos de dados para as integrações
-- 🙂 iDFace e iDClass 671 pelo agente, com o envio das fotos
-- 🖐️ Biometrus Passfinger 2040 pelo agente
-- 👥 Cadastros de colaboradores também nos coletores mais antigos
+- Consulta a bancos de dados para as integrações
+- iDFace e iDClass 671 pelo agente, com o envio das fotos
+- Integração com modelo Biometrus Passfinger 2040
+- Cadastros de colaboradores também nos coletores mais antigos
 
 ## Integração por banco de dados ✨
 
