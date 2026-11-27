@@ -10,9 +10,17 @@ RAIZ=$(git -C "$(dirname "$0")" rev-parse --show-toplevel)
 ATUALIZACOES="$RAIZ/pt-BR/Atualizacoes"
 ORG=simixsistemas
 # repositório:prefixo das imagens (cloud_pr3217_imagem1.png); a ordem também decide qual cópia fica entre imagens iguais
-REPOS="Simix.Ponto.Cloud:cloud Simix.Ponto.Calc:calc Simix.Ponto.Integracoes:integracoes DevShare.RX.Cloud:rx Simix.Ponto.Cloud.Client:client Simix.Ponto.App:app"
+REPOS="Simix.Ponto.Cloud:cloud Simix.Ponto.Calc:calc Simix.Ponto.Integracoes:integracoes DevShare.RX.Cloud:rx Simix.Ponto.Cloud.Client:client Simix.Ponto.App:app Simix.Agente.Cloud:agente Simix.Ponto.Suporte:suporte"
 # só estes liberam pelo main; os outros chegam ao cliente junto com o Cloud e o main deles fica parado
 REPOS_LIBERADOS_PELO_MAIN=" Simix.Ponto.Cloud Simix.Ponto.App "
+# estes liberam pela dev, com um commit "Release vX.Y.Z" a cada versão (Velopack); em_main diz se o PR já saiu numa versão
+REPOS_LIBERADOS_POR_RELEASE=" Simix.Agente.Cloud Simix.Ponto.Suporte "
+
+# último commit "Release vX.Y.Z" da dev: "<sha> <versão> <data>"
+ultima_release() {
+  gh api "repos/$ORG/$1/commits?sha=dev&per_page=100" \
+    --jq '[.[] | select(.commit.message | test("^Release v[0-9]"))][0] | "\(.sha) \(.commit.message | capture("^Release v(?<v>[0-9.]+)").v) \(.commit.committer.date[0:10])"' 2>/dev/null
+}
 
 listar() {
   local desde="$1" pasta="$2" tsv par repo prefixo
@@ -21,6 +29,8 @@ listar() {
   printf '# repo\tprefixo\tpr\tmesclado_em\tbase\tem_main\tnas_notas\ttitulo\n' > "$tsv"
   for par in $REPOS; do
     repo=${par%%:*}; prefixo=${par##*:}
+    local release=""
+    [[ "$REPOS_LIBERADOS_POR_RELEASE" == *" $repo "* ]] && release=$(ultima_release "$repo" | cut -d' ' -f1)
     # os merges de liberação (dev -> main, main -> main-lkg) ficam de fora
     gh pr list --repo "$ORG/$repo" --state merged --search "merged:>=$desde" --limit 300 \
       --json number,mergedAt,baseRefName,mergeCommit,title \
@@ -30,6 +40,12 @@ listar() {
         if [ -n "$oid" ] && [[ "$REPOS_LIBERADOS_PELO_MAIN" == *" $repo "* ]]; then
           em_main="?"
           case "$(gh api "repos/$ORG/$repo/compare/main...$oid" --jq .status 2>/dev/null)" in
+            behind|identical) em_main=sim ;;
+            ahead|diverged) em_main=não ;;
+          esac
+        elif [ -n "$oid" ] && [ -n "$release" ]; then
+          em_main="?"
+          case "$(gh api "repos/$ORG/$repo/compare/$release...$oid" --jq .status 2>/dev/null)" in
             behind|identical) em_main=sim ;;
             ahead|diverged) em_main=não ;;
           esac
@@ -44,6 +60,10 @@ listar() {
   cat "$tsv"
   echo
   echo "Versão do aplicativo no main: ${versao:-?}"
+  local r
+  for r in $REPOS_LIBERADOS_POR_RELEASE; do
+    echo "Última versão publicada de $r: $(ultima_release "$r" | cut -d' ' -f2,3 | sed 's/ / em /')"
+  done
   echo "PRs: $(grep -vc '^#' "$tsv") · já com print nas notas: $(awk -F'\t' '!/^#/ && $7 == "sim"' "$tsv" | wc -l) · fora do main: $(awk -F'\t' '!/^#/ && $6 == "não"' "$tsv" | wc -l)"
   echo "Comente com # as linhas que não entram e rode: despejo.sh gerar $pasta"
 }

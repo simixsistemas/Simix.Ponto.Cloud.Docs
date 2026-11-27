@@ -21,10 +21,14 @@ topo() { awk '/^# [0-9][0-9]\/[0-9][0-9]\/[0-9][0-9][0-9][0-9]/ { n++ } n < 2' "
 nov=$(topo "$AT/Novidades.md")
 app=$(topo "$AT/Aplicativo.md")
 sup=$([ -f "$AT/Suporte-interno.md" ] && topo "$AT/Suporte-interno.md")
+agente=$([ -f "$AT/Agente.md" ] && topo "$AT/Agente.md")
+appsup=$([ -f "$AT/App-Suporte.md" ] && topo "$AT/App-Suporte.md")
 beta=$(cat "$AT/Beta.md")
 novos="$nov
 $app
 $sup
+$agente
+$appsup
 $beta"
 
 echo "== Imagens do despejo"
@@ -42,7 +46,7 @@ echo "imagens conferidas: $total"
 grep '^FALHA' "$PASTA/imagens.log" 2>/dev/null | sed 's/^/aviso: download falhou, imagem sem como entrar: /'
 
 echo "== Imagens coladas na linha de cima"
-for arq in Novidades.md Aplicativo.md Suporte-interno.md Beta.md; do
+for arq in Novidades.md Aplicativo.md Suporte-interno.md Agente.md App-Suporte.md Beta.md; do
   [ -f "$AT/$arq" ] || continue
   awk -v a="$arq" '/^[[:space:]]*!\[[^]]*\]\(/ && prev !~ /^[[:space:]]*$/ { printf "PROBLEMA: %s:%d imagem sem linha em branco antes (fica ao lado do texto)\n", a, NR } { prev = $0 }' "$AT/$arq"
 done | tee /dev/stderr | grep -q PROBLEMA && problemas=$((problemas + 1))
@@ -66,7 +70,7 @@ if [ -f "$TERMOS" ]; then
 fi
 
 echo "== Repetidas entre Novidades, Beta, Aplicativo e Suporte interno"
-cat "$AT/Novidades.md" "$AT/Beta.md" "$AT/Aplicativo.md" "$AT/Suporte-interno.md" 2>/dev/null | grep -oE 'imagens/[^)]+' | sort | uniq -d | sed 's/^/aviso: repetida: /'
+cat "$AT/Novidades.md" "$AT/Beta.md" "$AT/Aplicativo.md" "$AT/Suporte-interno.md" "$AT/Agente.md" "$AT/App-Suporte.md" 2>/dev/null | grep -oE 'imagens/[^)]+' | sort | uniq -d | sed 's/^/aviso: repetida: /'
 
 echo
 if [ "$problemas" -gt 0 ]; then echo "Com problemas: $problemas"; exit 1; fi
