@@ -1,3 +1,1047 @@
+# 27/11/2026
+
+## Resumo
+
+- 🎓 Trilha do conhecimento: trilhas de treinamento com questionário, certificado, turmas presenciais, conquistas e comentários
+- 📅 Página Escala 5x2, com o passo a passo da virada e o assistente que ajusta os horários em massa
+- 🗓️ Escalas: regra de folguista, copiar coberturas entre lojas, turnos por dia da semana e dias sem folga
+- 🧾 Espelho do ponto e exportação da folha de um intervalo de dias
+- 🔍 Conferência da folha: o que foi para o arquivo, colaborador a colaborador
+- 📄 Modelos de documento: advertência, suspensão, comunicado e ocorrências acumuladas
+- 🧩 Manutenção em lote em etapas, com modelos salvos
+- 👁️ Visões, impressão e consultas relacionadas na Consulta diária, nas Inconsistências e na Manutenção
+- 📊 Dashboards: filtro OU e dia da semana, pausas de lanche e entre turnos, domingos e feriados por departamento
+- 🗄️ Integração por banco de dados pelo agente local, e turnover e views na API
+- ⏰ Excedente diário nas faixas de extras e horas previstas fora do feriado na virada do dia
+- 🏦 Desconto em folha do saldo do mês do banco de horas
+- 📟 AFD das marcações do aplicativo e da web
+- 🔔 Testar regras de alerta e notificações em janela
+
+## Trilha do conhecimento ✨
+
+Trilhas de treinamento para aprender o sistema e para os treinamentos da própria empresa, com progresso de cada pessoa, avaliação, certificado e acompanhamento do RH.
+
+- Tela **Minhas trilhas**, com "Continuar de onde parou" e as guias Em andamento, Obrigatórias, Disponíveis e Concluídas. Cada trilha tem etapas e itens — vídeo, documento, demonstração guiada, texto, **questionário**, **pesquisa**, **presencial** e **prática** — e guarda o percentual, o item onde parou e a data de conclusão.
+- A demonstração guiada abre a tela certa e conclui o item sozinha ao terminar; o vídeo conclui com 90% assistido e volta do ponto em que a pessoa parou. O item **Prática** confere se o passo foi feito na empresa (primeiro horário, primeiro colaborador, aplicativo, primeira marcação…) e conclui sozinho.
+- **Questionário** com escolha única, múltipla escolha ou verdadeiro/falso, nota mínima, tentativas, ordem embaralhada e correção depois do envio; pode sortear perguntas de um banco, equilibrando a dificuldade. A **pesquisa de reação** (sem nota) mostra o resultado ao RH sem nomes, a partir de 3 respostas. Ao concluir a trilha, a pessoa avalia com estrelas.
+- **Público e prazos**: quem faz a trilha (lotação e tempo de admissão), como entra (livre, automática ou só atribuída), se é obrigatória, prazo, validade, lembretes e pré-requisitos entre trilhas. Uma tarefa diária inscreve, recicla as vencidas e avisa prazo, atraso e validade.
+- **Certificado** em PDF com código e QR, com o verso no formato da NR-1, que entra nos documentos do colaborador; o código é conferido sem login numa página pública, com o nome abreviado. Treinamento feito fora pode ser convalidado com o certificado do curso.
+- **Turmas presenciais**: data, local, instrutor e vagas, chamada, lista de presença em PDF para assinar e presença registrada pelo QR da turma no celular.
+- **Só dentro da jornada**: os itens obrigatórios só abrem no horário previsto do colaborador, e o tempo de estudo fora da jornada vai para o acompanhamento, para lançar no espelho como afastamento "Treinamento" ou desconsiderar com justificativa.
+- Tela **Acompanhamento**: quem concluiu, quem está atrasado e quem precisa reciclar, por pessoa e por trilha, com troca de prazo, conclusão registrada pelo RH, "lembrar agora", exportação para Excel, a guia **Conformidade** por cargo e o **dossiê de treinamentos** do colaborador em PDF.
+- **Modelos prontos** de prevenção ao assédio e à violência no trabalho, integração de novos colaboradores e LGPD: "Usar modelo" cria a trilha da empresa para completar e publicar. Além das três trilhas da Símix (Primeiros passos, Fechamento do mês e Banco de horas), a empresa monta as próprias em **Módulos › Trilhas** e atribui a colaboradores ou usuários.
+- **Pontos e conquistas**: cada item concluído vale pontos, o nível sobe com a soma, e as conquistas saem sozinhas (primeira trilha, nota máxima, conclusão no prazo…). A empresa cria as suas conquistas e liga ou desliga os pontos e o ranking do mês, do ano e geral, que mostra o nome abreviado e só a própria unidade.
+- **Comentários e dúvidas** em cada item: quem faz a trilha pergunta e a gestão responde, também numa tela própria com todos os itens comentados.
+- No portal do colaborador, o item **Trilhas** com as obrigatórias pendentes e as **Conquistas**; na barra do topo, o andamento dos **Primeiros passos**, com o que falta e o atalho para cada tela.
+
+> Perfis **DP** já existentes nos clientes não recebem sozinhos as permissões de Trilhas: é preciso concedê-las em Permissões, inclusive as novas "Conquistas" e "Gamificação e ranking".
+
+- Minhas trilhas, com as três trilhas iniciais da Símix:
+
+  ![image](imagens/cloud_pr3051_imagem1.png)
+
+- Visão da trilha: etapas, itens e o progresso ao lado:
+
+  ![image](imagens/cloud_pr3051_imagem2.png)
+
+- Item de demonstração guiada concluído pelo fim da demonstração, com o índice da trilha:
+
+  ![image](imagens/cloud_pr3051_imagem3.png)
+
+- Vídeo dentro da trilha, com o percentual assistido:
+
+  ![image](imagens/cloud_pr3051_imagem4.png)
+
+- Faixa "Suas trilhas" na página de Treinamentos:
+
+  ![image](imagens/cloud_pr3051_imagem5.png)
+
+- Catálogo de trilhas da Símix:
+
+  ![image](imagens/cloud_pr3051_imagem6.png)
+
+- Público e prazos no editor, com a opção "Só dentro da jornada":
+
+  ![image](imagens/cloud_pr3398_imagem1.png)
+
+- Questionário aprovado, com a correção das respostas:
+
+  ![image](imagens/cloud_pr3398_imagem2.png)
+
+- Turma presencial: chamada, lista de presença e envio da lista assinada:
+
+  ![image](imagens/cloud_pr3398_imagem3.png)
+
+- O QR do check-in da turma:
+
+  ![image](imagens/cloud_pr3398_imagem4.png)
+
+- Presença registrada pelo QR, com o certificado e a avaliação liberados:
+
+  ![image](imagens/cloud_pr3398_imagem5.png)
+
+- Certificado com código, QR e as linhas de assinatura:
+
+  ![image](imagens/cloud_pr3398_imagem6.png)
+
+- O verso no formato da NR-1:
+
+  ![image](imagens/cloud_pr3398_imagem7.png)
+
+- Validação pública do código, sem login:
+
+  ![image](imagens/cloud_pr3398_imagem8.png)
+
+- Acompanhamento das trilhas:
+
+  ![image](imagens/cloud_pr3398_imagem9.png)
+
+- Fora da jornada: dia lançado no espelho, dia desconsiderado e um pendente:
+
+  ![image](imagens/cloud_pr3398_imagem10.png)
+
+- Item bloqueado fora do horário previsto:
+
+  ![image](imagens/cloud_pr3398_imagem11.png)
+
+- Questionário com perguntas sorteadas do banco:
+
+  ![image](imagens/cloud_pr3398_imagem12.png)
+
+- Pesquisa de reação:
+
+  ![image](imagens/cloud_pr3398_imagem13.png)
+
+- Resultado da pesquisa, fechado enquanto tem menos de 3 respostas:
+
+  ![image](imagens/cloud_pr3398_imagem14.png)
+
+- Pré-requisitos no editor:
+
+  ![image](imagens/cloud_pr3398_imagem15.png)
+
+- Modelos prontos na guia Catálogo Símix:
+
+  ![image](imagens/cloud_pr3398_imagem17.png)
+
+- "Usar modelo" cria o rascunho da empresa:
+
+  ![image](imagens/cloud_pr3398_imagem18.png)
+
+- Primeiros passos na barra do topo, com o que falta e o motivo:
+
+  ![image](imagens/cloud_pr3398_imagem19.png)
+
+- Item Prática, com "Ir para a tela" e "Conferir":
+
+  ![image](imagens/cloud_pr3398_imagem20.png)
+
+- Conquistas no portal do colaborador, com o ranking da unidade:
+
+  ![image](imagens/cloud_pr3398_imagem21.png)
+
+- Trilha concluída com os pontos e a conquista nova:
+
+  ![image](imagens/cloud_pr3398_imagem22.png)
+
+- Cadastro de conquistas da empresa:
+
+  ![image](imagens/cloud_pr3398_imagem23.png)
+
+- Nova conquista: ícone, cor, regra, público e bônus:
+
+  ![image](imagens/cloud_pr3398_imagem24.png)
+
+- Guia Pontos do editor:
+
+  ![image](imagens/cloud_pr3398_imagem26.png)
+
+- Pontos de um item, de 0 a 1.000:
+
+  ![image](imagens/cloud_pr3398_imagem27.png)
+
+- Comentários e dúvidas para a gestão responder:
+
+  ![image](imagens/cloud_pr3398_imagem28.png)
+
+- A resposta no próprio item:
+
+  ![image](imagens/cloud_pr3398_imagem29.png)
+
+## Escala 5x2 ✨
+
+Tudo o que é preciso para passar da escala 6x1 para a 5x2 num lugar só, com um assistente que adequa os horários em massa.
+
+- Novo botão **Escala 5x2** no menu Principal, com atalhos para Horários para a 5x2, Simulador da redução, Regras e coberturas, Planejamento, Transição 6x1 → 5x2 e Trocas/Afastamentos.
+- Página **Escala 5x2** com as datas da virada (16/12/2026 e 16/12/2027, com os dias que faltam) e o limite diário de 8h, o passo a passo no sistema (ajustar os horários, importar a convenção, montar a escala, trocas e domingos), as ferramentas (simulador, acompanhamento da transição e a Calculadora, que abre numa janela com os exemplos da 5x2) e a documentação, com o guia "Escala 5x2 na prática". Cada passo tem o botão da tela, o "Como fazer" e a demonstração guiada.
+- Assistente **Horários para a 5x2**, com prévia antes de gravar: nos horários de uma carga semanal, escolhe o dia do 2º DSR e aumenta ou diminui os minutos dos turnos (fixos ou até a meta de 42h ou 40h), na saída, na entrada, nas duas pontas ou no retorno do intervalo. A prévia mostra a semana antes e depois e avisa dia acima de 8h e descanso menor que 11h.
+- Grava alterando os horários a partir de um mês (os anteriores ficam numa cópia inativa) ou criando horários novos "(5x2)", e troca o quadro de quem está no horário antigo a partir de um mês ou de uma data, com o recálculo na fila e o histórico de cada gravação.
+- A pesquisa global acha a página por 6x1, 5x2, EC 141, 42 horas e redução de jornada.
+
+- Página Escala 5x2: datas, passo a passo e documentação:
+
+  ![image](imagens/cloud_pr3705_imagem1.jpg)
+
+- Botão Escala 5x2 no menu Principal:
+
+  ![image](imagens/cloud_pr3705_imagem2.jpg)
+
+- Horários para a 5x2: prévia do ajuste, com o sábado de 2º DSR e a meta de 42h:
+
+  ![image](imagens/cloud_pr3705_imagem3.jpg)
+
+- Prévia da troca de quadro a partir de 16/12/2026:
+
+  ![image](imagens/cloud_pr3705_imagem4.jpg)
+
+- Histórico das gravações do assistente:
+
+  ![image](imagens/cloud_pr3705_imagem5.jpg)
+
+- Calculadora em janela na página, com os exemplos da 5x2:
+
+  ![image](imagens/cloud_pr3730_imagem1.jpg)
+
+- O assistente de horários no passo 2:
+
+  ![image](imagens/cloud_pr3730_imagem2.jpg)
+
+## Escalas
+
+- Nova regra **Folguista**: o folguista só trabalha no dia em que um dos titulares que ele cobre não trabalha. Como obrigatória, vira pendência que bloqueia; como preferência, só avisa. O gerador distribui as folgas dos titulares em dias diferentes para o folguista ter onde entrar.
+- **Coberturas**: **Copiar de outra loja** no editor do setor e **Copiar para outra loja** com os setores escolhidos.
+- **Turno de referência por dia da semana** (e nos feriados): o turno de domingo reduzido não entra mais nos dias da semana. Na regra de Folgas, os **dias sem folga** (por exemplo, o sábado de maior movimento).
+- O gerador espalha a falta entre os horários e evita horário sem ninguém; quem tem contrato de até 30h por semana ou é aprendiz recebe turno com a jornada do próprio horário; a semana que começa no mês anterior usa o planejamento daquele mês; e o resumo explica a falta nos domingos e avisa aprendiz com vínculo diferente no cadastro.
+- Feriado de folga não conta mais como DSR da semana, e a regra de folgas que começa no meio da semana vale na semana inteira. Nova regra de folga a mais para quem trabalha um mínimo de domingos no período, lida também da convenção.
+- **Importar convenção**: a leitura dos PDFs roda em segundo plano (dá para fechar a janela e voltar pelo aviso da tarefa), gravar uma política com um PDF novo gera as regras das cláusulas, e a política que ficou sem regras tem o botão "Gerar regras pelos PDFs".
+- O relatório de escalas ganhou o filtro **Setor** na barra, e o Assistente abre o relatório do setor no mês pedido.
+- As demonstrações guiadas das escalas foram separadas por tela (Regras e coberturas, Demanda, Planejamento e Trocas/Afastamentos), cada uma no Treinamentos da própria tela, e atualizadas com as opções novas.
+
+- Cadastro da regra Folguista:
+
+  ![image](imagens/cloud_pr3625_imagem1.png)
+
+- A folguista trabalhando com as titulares também trabalhando: cada dia vira pendência:
+
+  ![image](imagens/cloud_pr3625_imagem2.png)
+
+- Com a folga das titulares, os dias da folguista deixam de ter pendência:
+
+  ![image](imagens/cloud_pr3625_imagem3.png)
+
+- Copiar coberturas para outra loja:
+
+  ![image](imagens/cloud_pr3637_imagem1.png)
+
+- Copiar de outra loja no editor do setor:
+
+  ![image](imagens/cloud_pr3637_imagem2.png)
+
+- Faixas copiadas, prontas para salvar:
+
+  ![image](imagens/cloud_pr3637_imagem3.png)
+
+- Domingo gerado sem horário vazio:
+
+  ![image](imagens/cloud_pr3637_imagem4.png)
+
+- Regra de folga por domingos trabalhados:
+
+  ![image](imagens/cloud_pr3637_imagem5.png)
+
+- Aviso de quem completou os domingos do período:
+
+  ![image](imagens/cloud_pr3637_imagem6.png)
+
+- Turno de domingo com os dias marcados:
+
+  ![image](imagens/cloud_pr3679_imagem1.png)
+
+- Lista de turnos com a coluna Dias:
+
+  ![image](imagens/cloud_pr3679_imagem2.png)
+
+- Regra de Folgas com o sábado sem folga:
+
+  ![image](imagens/cloud_pr3679_imagem3.png)
+
+- Resumo da geração sem pendência que bloqueia:
+
+  ![image](imagens/cloud_pr3679_imagem4.png)
+
+- Todos trabalhando nos sábados, com as folgas da semana do Ano Novo em outros dias:
+
+  ![image](imagens/cloud_pr3679_imagem5.png)
+
+- Aviso dos aprendizes com outro vínculo no cadastro:
+
+  ![image](imagens/cloud_pr3679_imagem6.png)
+
+- Os aprendizes com turnos de 4h:
+
+  ![image](imagens/cloud_pr3679_imagem7.png)
+
+- Botões de turno no domingo, com o turno de domingo:
+
+  ![image](imagens/cloud_pr3679_imagem8.png)
+
+- E na segunda, sem ele:
+
+  ![image](imagens/cloud_pr3679_imagem9.png)
+
+- Convenção marcada na importação, com o "Ler e montar regras" liberado:
+
+  ![image](imagens/cloud_pr3649_imagem1.png)
+
+- Conferência da convenção com os municípios e as lojas:
+
+  ![image](imagens/cloud_pr3649_imagem2.png)
+
+- O aviso da tarefa reabre a conferência:
+
+  ![image](imagens/cloud_pr3649_imagem3.png)
+
+- "Gerar regras pelos PDFs" na política:
+
+  ![image](imagens/cloud_pr3649_imagem4.png)
+
+- Relatório de escalas filtrado pelo setor:
+
+  ![image](imagens/cloud_pr3696_imagem1.png)
+
+- Treinamentos de Regras e coberturas, só com a demonstração dela:
+
+  ![image](imagens/cloud_pr3664_imagem1.png)
+
+- Passo do Importar convenção:
+
+  ![image](imagens/cloud_pr3664_imagem2.png)
+
+- Cobertura de um setor, faixa por faixa:
+
+  ![image](imagens/cloud_pr3664_imagem3.png)
+
+- Demanda: a previsão com a curva do dia:
+
+  ![image](imagens/cloud_pr3664_imagem4.png)
+
+- Treinamentos do Planejamento:
+
+  ![image](imagens/cloud_pr3664_imagem5.png)
+
+- Na grade, pelo Ajuda › Treinamentos:
+
+  ![image](imagens/cloud_pr3664_imagem6.png)
+
+- Detalhe do dia com o Editar:
+
+  ![image](imagens/cloud_pr3664_imagem7.png)
+
+- Trocas/Afastamentos: os dias que compensam no Trocar domingos:
+
+  ![image](imagens/cloud_pr3664_imagem8.png)
+
+- Card das Escalas inteligentes abrindo a demonstração do Planejamento:
+
+  ![image](imagens/cloud_pr3664_imagem9.png)
+
+## Espelho e folha de um intervalo de dias ✨
+
+- **Espelho de um intervalo de dias**: na Manutenção, a seta ao lado do Imprimir traz "Intervalo de dias…", e na geração dos espelhos, a opção "Gerar só um intervalo de dias". O intervalo pode ir até 30 dias antes e depois do período; com até 31 dias sai num espelho só, com os mesmos totais da Manutenção para o intervalo. Ele não substitui o espelho do mês nem vai para assinatura.
+- **Exportar para a folha um intervalo de dias**: o seletor de período da exportação ganhou o intervalo de datas, e os arquivos saem só com aqueles dias, com os totais da Manutenção. O intervalo fica no histórico e volta ao carregar uma exportação anterior, que agora traz também o layout e os filtros.
+- Com a grade carregada num intervalo, o Imprimir da Manutenção gera o espelho do intervalo.
+
+- O Intervalo de dias no menu do Imprimir:
+
+  ![image](imagens/cloud_pr3636_imagem1.png)
+
+- O calendário limitado ao período carregado:
+
+  ![image](imagens/cloud_pr3636_imagem2.png)
+
+- Espelho de 01/11 a 09/11, com os totais desses dias:
+
+  ![image](imagens/cloud_pr3636_imagem3.png)
+
+- A opção de intervalo na geração dos espelhos:
+
+  ![image](imagens/cloud_pr3636_imagem4.png)
+
+- Intervalo além do período na Manutenção:
+
+  ![image](imagens/cloud_pr3666_imagem1.png)
+
+- Exportação da folha de um intervalo de dias:
+
+  ![image](imagens/cloud_pr3678_imagem1.png)
+
+## Folha de pagamento
+
+- **Conferência da folha** (Fechamento › Exportar para folha › Conferência da folha): cada exportação fica gravada com mês, layout, filtros, arquivos e quem gerou, e cada item exportado com o colaborador, o evento, o valor e a linha exatamente como saiu no arquivo — inclusive os eventos zerados que não foram para o arquivo. A tela tem totais, filtros e respeita o filtro global, e o dashboard **Exportação da folha** está na loja.
+- Campos novos no layout: **Horas extras intrajornada**, **Horas de sobreaviso**, as extras de sobreaviso e de viagem (úteis/não úteis, diurnas/noturnas, com a faixa do percentual) e **Horas trabalhadas na data do feriado**, que na jornada que passa da meia-noite conta só o trecho dentro do feriado (também nas regras de prêmio).
+- Formato **Dia (Int)** no afastamento: o afastamento em dias sai como hora (1 dia = `0100`), direto pelo código na folha.
+- "Dias de afastamentos" e "Horas de afastamento" com a condição de sigla mandam só os dias daquela sigla.
+- Horas de sobreaviso descontam as extras de sobreaviso mesmo trabalhadas fora da faixa.
+
+- Conferência da exportação, com a linha como saiu no arquivo:
+
+  ![image](imagens/cloud_pr3641_imagem1.jpg)
+
+- Só os eventos não exportados:
+
+  ![image](imagens/cloud_pr3641_imagem2.png)
+
+- Atalho para a conferência na tela de exportação:
+
+  ![image](imagens/cloud_pr3641_imagem3.png)
+
+- Dashboard da exportação da folha:
+
+  ![image](imagens/rx_pr174_imagem1.png)
+
+- Campo Horas extras intrajornada no layout:
+
+  ![image](imagens/cloud_pr3605_imagem1.png)
+
+- Linha configurada com o evento:
+
+  ![image](imagens/cloud_pr3605_imagem2.png)
+
+- Prévia da exportação com as extras intrajornada:
+
+  ![image](imagens/cloud_pr3605_imagem3.png)
+
+- Campos de extras de sobreaviso e viagem no layout:
+
+  ![image](imagens/cloud_pr3682_imagem1.png)
+
+- Horas de sobreaviso já descontadas das extras de sobreaviso:
+
+  ![image](imagens/cloud_pr3682_imagem2.png)
+
+- Campo Horas trabalhadas na data do feriado:
+
+  ![image](imagens/cloud_pr3733_imagem1.png)
+
+- Exportação com o campo novo:
+
+  ![image](imagens/cloud_pr3733_imagem2.png)
+
+- Antes: o dia de atestado saía como inteiro:
+
+  ![image](imagens/cloud_pr3726_imagem1.png)
+
+- Formato na folha Dia (Int):
+
+  ![image](imagens/cloud_pr3726_imagem2.png)
+
+- Depois: 1 dia sai 0100:
+
+  ![image](imagens/cloud_pr3726_imagem3.png)
+
+- O evento do atestado com a condição de sigla, igual ao sistema anterior:
+
+  ![image](imagens/calc_pr591_imagem1.png)
+
+## Horários, cálculo e banco de horas
+
+- **Excedente no dia** (Horários › Extras 1): o que passa das horas configuradas num dia útil é pago no percentual da linha, fora das faixas e do saldo do período — por exemplo, 50% até 35 horas no mês, 75% depois e 100% para o que passar de 2 horas no dia.
+- **Horas previstas fora do feriado na virada do dia** (Extras 2): na jornada que passa da meia-noite com só um dos lados no feriado, as previstas são só as de fora do feriado, e o trabalhado no feriado vira extra não útil. Funciona com Início e Fim do dia.
+- **Desconto em folha do saldo do mês do banco de horas**: na configuração de BH, avisar no início do mês quem passou do limite mínimo (descontar o saldo negativo) ou do máximo (pagar o positivo). O aviso abre a quitação com a nova opção **Saldo do mês**, que lança as horas com o sinal trocado e deixa de fora quem já teve o lançamento.
+- Trocar o horário a partir de uma data de um mês seguinte mantém o mês aberto com o horário anterior.
+- Horário com escala especial volta a abrir na Manutenção e a calcular, e períodos de banco de horas sobrepostos (colaborador duas vezes em BH › Totais) são corrigidos.
+- Layout de totais: guias verticais e, em cada item, **Vale em** (Manutenção e espelho, Só na Manutenção ou Só no espelho), para esconder ou renomear um total só no espelho.
+
+- Seção Excedente no dia no horário:
+
+  ![image](imagens/cloud_pr3581_imagem1.png)
+
+- Opção no cadastro do horário:
+
+  ![image](imagens/cloud_pr3697_imagem1.png)
+
+- Dia de feriado calculado pela opção:
+
+  ![image](imagens/cloud_pr3697_imagem2.png)
+
+- Início do dia no horário:
+
+  ![image](imagens/cloud_pr3697_imagem3.png)
+
+- O mesmo dia calculado com o Início do dia:
+
+  ![image](imagens/cloud_pr3697_imagem4.png)
+
+- Configuração de BH com a opção do saldo negativo:
+
+  ![image](imagens/cloud_pr3506_imagem1.png)
+
+- Quitação pelo saldo do mês:
+
+  ![image](imagens/cloud_pr3506_imagem2.png)
+
+- Resultado da quitação:
+
+  ![image](imagens/cloud_pr3506_imagem3.png)
+
+- Troca de horário a partir de 13/12:
+
+  ![image](imagens/cloud_pr3658_imagem1.png)
+
+- Novembro mantido com o horário anterior:
+
+  ![image](imagens/cloud_pr3658_imagem2.jpg)
+
+- Dezembro com o horário novo:
+
+  ![image](imagens/cloud_pr3658_imagem3.jpg)
+
+- O horário anterior por período até a véspera:
+
+  ![image](imagens/cloud_pr3658_imagem4.png)
+
+- Layout de totais com guias verticais e o Vale em:
+
+  ![image](imagens/cloud_pr3630_imagem3.png)
+
+- Total marcado para valer só no espelho:
+
+  ![image](imagens/cloud_pr3630_imagem4.png)
+
+- Coluna vazia que pode ser excluída:
+
+  ![image](imagens/cloud_pr3630_imagem5.png)
+
+## Documentos e advertências ✨
+
+- **Modelos de documento** (Documentos › Modelos): o texto usa os dados do colaborador como campos e formatação (negrito, títulos, tabelas, linhas de assinatura), com o documento pronto ao lado. Finalidades geral, comunicado, aniversário, advertência e suspensão, cada uma com um texto inicial.
+- **Gerar documento** no menu do colaborador (lista, Manutenção, Inconsistências e Consulta diária): na advertência e na suspensão escolhem-se as inconsistências do período; o PDF vai para os documentos do colaborador, pode pedir assinatura, fica no histórico e pode ir por e-mail. **Documentos › Enviar** faz o mesmo para vários colaboradores.
+- **Ocorrências acumuladas** (Ponto › Inconsistências › Acumuladas): quantidade e horas de cada tipo por colaborador, zerando a cada advertência, com a advertência gerada direto dos marcados.
+- Painel do colaborador aberto pelo cadastro: o documento pendente abre só para ver. O cadastro de categorias tem a categoria restrita, as roles e a finalidade.
+
+- Cadastro do modelo com a pré-visualização:
+
+  ![image](imagens/cloud_pr3729_imagem1.png)
+
+- Gerar advertência escolhendo as inconsistências:
+
+  ![image](imagens/cloud_pr3729_imagem2.png)
+
+- Gerar suspensão com os dias e a data de retorno:
+
+  ![image](imagens/cloud_pr3729_imagem3.png)
+
+- Ocorrências acumuladas:
+
+  ![image](imagens/cloud_pr3729_imagem4.png)
+
+- Advertência gerada a partir dos marcados:
+
+  ![image](imagens/cloud_pr3729_imagem5.png)
+
+- Cadastro da categoria com a restrição, as roles e a finalidade:
+
+  ![image](imagens/cloud_pr3661_imagem1.png)
+
+- Documento aguardando assinatura no painel do colaborador:
+
+  ![image](imagens/cloud_pr3661_imagem2.png)
+
+- Tela de assinatura só para ver:
+
+  ![image](imagens/cloud_pr3661_imagem3.png)
+
+- Janela rápida de categorias:
+
+  ![image](imagens/cloud_pr3661_imagem4.png)
+
+- Barra no lugar do "Authorizing…":
+
+  ![image](imagens/cloud_pr3661_imagem5.png)
+
+## Manutenção em lote em etapas
+
+- A Manutenção em lote passa a ter quatro etapas — **Colaboradores**, **Dias**, **O que alterar** e **Conferir e aplicar** —, com o que foi escolhido no título de cada uma e o Avançar só com a etapa completa.
+- **Modelos**: o lançamento pode ser salvo como modelo (o horário de um departamento, a licença amamentação…) e carregado depois, para todos ou só para quem criou.
+
+- Etapa Colaboradores com os modelos:
+
+  ![image](imagens/cloud_pr3684_imagem1.png)
+
+- Modelo sem período abre na etapa Dias:
+
+  ![image](imagens/cloud_pr3684_imagem2.png)
+
+- O que alterar, preenchido pelo modelo:
+
+  ![image](imagens/cloud_pr3684_imagem3.png)
+
+- Conferir e aplicar com a prévia:
+
+  ![image](imagens/cloud_pr3684_imagem4.png)
+
+- Menu Modelos:
+
+  ![image](imagens/cloud_pr3684_imagem5.png)
+
+- Salvar como modelo:
+
+  ![image](imagens/cloud_pr3684_imagem6.png)
+
+## Consultas, visões e filtros
+
+- **Visões** na Consulta diária, nas Inconsistências e na Manutenção, como nas listas: as do sistema e as personalizadas, que podem guardar o filtro da tela. A impressão sai com as colunas da visão aberta.
+- Botão **Imprimir** na Consulta diária, nas Inconsistências e na lista de Manutenções, com os mesmos filtros e ordem da tela, e **Consultas relacionadas**, com os widgets dos dashboards que usam a mesma consulta. **Criar consulta personalizada** monta um widget com as colunas da tela. A pesquisa global acha dashboards e widgets.
+- Filtros: a lista de usuários mostra o filtro de cada um; a opção **(Meu)** vale a lotação do colaborador ligado ao usuário; o campo **Código na folha** acha quem está sem o código; e a visão da lista pode guardar um filtro.
+- Espelhos com o botão de filtro das outras telas, valendo na lista, nos totais e nas ações.
+- Pendências do ponto: com o controle de justificativa ligado, o motivo é obrigatório ao incluir ou alterar a solicitação.
+- **Campos customizáveis**: o nome não muda mais ao editar, aparece sem o "CC", tem filtro de situação, e o inativo some da guia do colaborador e da edição em lote, que segue o filtro global.
+- **Histórico do colaborador**: botão Imprimir na guia Histórico e o widget na loja de dashboards.
+- **Contatos adicionais** do colaborador: botões por tipo, telefone formatado, atalho para ligar, WhatsApp ou e-mail e o tipo "Contato de emergência". Campos de CPF, PIS, CNPJ e RG aceitam o documento colado de qualquer jeito.
+
+- Seletor de visão da Consulta diária:
+
+  ![image](imagens/cloud_pr3736_imagem1.png)
+
+- Os filtros do dia dentro do botão de filtro:
+
+  ![image](imagens/cloud_pr3736_imagem2.png)
+
+- Nova visão guardando o filtro da tela:
+
+  ![image](imagens/cloud_pr3736_imagem3.png)
+
+- Visão das inconsistências reaberta já filtrada:
+
+  ![image](imagens/cloud_pr3736_imagem4.png)
+
+- Impressão com as colunas da visão:
+
+  ![image](imagens/cloud_pr3736_imagem5.png)
+
+- Visão gravada na Manutenção:
+
+  ![image](imagens/cloud_pr3736_imagem6.png)
+
+- Consultas relacionadas na Consulta diária:
+
+  ![image](imagens/cloud_pr3662_imagem1.png)
+
+- Criar consulta personalizada:
+
+  ![image](imagens/cloud_pr3662_imagem2.png)
+
+- O widget criado no dashboard:
+
+  ![image](imagens/cloud_pr3662_imagem3.png)
+
+- Impressão da Consulta diária:
+
+  ![image](imagens/cloud_pr3662_imagem4.png)
+
+- Fim da impressão, com os totais:
+
+  ![image](imagens/cloud_pr3662_imagem5.png)
+
+- Impressão das Inconsistências:
+
+  ![image](imagens/cloud_pr3662_imagem6.png)
+
+- Impressão da lista de Manutenções:
+
+  ![image](imagens/cloud_pr3662_imagem7.png)
+
+- Pesquisa global encontrando dashboards e widgets:
+
+  ![image](imagens/cloud_pr3662_imagem8.png)
+
+- Coluna Filtro na lista de usuários:
+
+  ![image](imagens/cloud_pr3640_imagem1.png)
+
+- "(Meu)" no filtro de setor:
+
+  ![image](imagens/cloud_pr3640_imagem2.png)
+
+- Filtro por código na folha vazio:
+
+  ![image](imagens/cloud_pr3640_imagem3.png)
+
+- Visão com filtro:
+
+  ![image](imagens/cloud_pr3640_imagem4.png)
+
+- Colaboradores sem código da folha:
+
+  ![image](imagens/cloud_pr3640_imagem5.png)
+
+- Espelhos com o botão de filtro:
+
+  ![image](imagens/cloud_pr3630_imagem1.png)
+
+- Espelhos filtrados por estabelecimento:
+
+  ![image](imagens/cloud_pr3630_imagem2.png)
+
+- Motivo obrigatório ao incluir uma pendência:
+
+  ![image](imagens/cloud_pr3630_imagem6.png)
+
+- Motivo obrigatório no Inserir marcação:
+
+  ![image](imagens/cloud_pr3630_imagem7.png)
+
+- Lista de campos customizáveis:
+
+  ![image](imagens/cloud_pr3686_imagem1.png)
+
+- Edição de campo com o nome travado:
+
+  ![image](imagens/cloud_pr3686_imagem2.png)
+
+- Novo campo:
+
+  ![image](imagens/cloud_pr3686_imagem3.png)
+
+- Filtro de inativos:
+
+  ![image](imagens/cloud_pr3686_imagem4.png)
+
+- Atalhos na guia Customizável do colaborador:
+
+  ![image](imagens/cloud_pr3686_imagem5.png)
+
+- Edição em lote com o filtro global:
+
+  ![image](imagens/cloud_pr3686_imagem6.png)
+
+- Imprimir na guia Histórico do colaborador:
+
+  ![image](imagens/cloud_pr3613_imagem1.png)
+
+- Folha A4 do histórico:
+
+  ![image](imagens/cloud_pr3613_imagem2.png)
+
+- Widget Histórico do Colaborador:
+
+  ![image](imagens/cloud_pr3613_imagem3.png)
+
+## Dashboards
+
+- **Filtro OU** nos widgets (domingo OU feriado, por exemplo) e **dia da semana** nos campos de data, com os filtros avançados em chips e a opção de desligar sem apagar.
+- **Pausas de lanche acima do limite** e **pausas entre turnos** (café registrado como saída e entrada), por pausa e por colaborador, seguindo a regra "Lanche acima de 10min", nova sugestão nas regras de inconsistência.
+- **Domingos e feriados trabalhados** por colaborador e por departamento, com os horários do dia, **Folgas por data de troca** e o dashboard "Domingos, feriados e folgas" na loja.
+- Nos Dashboards Gerenciais, o filtro global em uso aparece ao lado do título, com o botão para trocar. Campos customizáveis inativos não aparecem mais na lista dos widgets, e valores decimais saem com vírgula.
+- O rodapé do espelho usa a observação das Configurações (ou a do horário, ou a dos motoristas), em várias linhas, mantendo a página única.
+
+- Filtro domingo OU feriado:
+
+  ![image](imagens/cloud_pr3740_imagem1.png)
+
+- Os domingos e feriados na tabela:
+
+  ![image](imagens/cloud_pr3740_imagem2.png)
+
+- Filtro desligado:
+
+  ![image](imagens/cloud_pr3740_imagem3.png)
+
+- Dia da semana no filtro da coluna Data:
+
+  ![image](imagens/cloud_pr3740_imagem4.png)
+
+- Sugestão "Lanche acima de 10min":
+
+  ![image](imagens/cloud_pr3654_imagem1.png)
+
+- Pausas de lanche nas inconsistências:
+
+  ![image](imagens/cloud_pr3654_imagem2.png)
+
+- Widget das pausas de lanche:
+
+  ![image](imagens/cloud_pr3654_imagem3.png)
+
+- Pausas de lanche por colaborador:
+
+  ![image](imagens/cloud_pr3654_imagem4.jpg)
+
+- Pausas de lanche por dia:
+
+  ![image](imagens/cloud_pr3654_imagem5.jpg)
+
+- Pausas entre turnos acima do limite:
+
+  ![image](imagens/cloud_pr3742_imagem1.jpg)
+
+- Pausas entre turnos por colaborador:
+
+  ![image](imagens/cloud_pr3742_imagem2.jpg)
+
+- Domingos e feriados trabalhados:
+
+  ![image](imagens/cloud_pr3660_imagem1.png)
+
+- Domingos e feriados por departamento:
+
+  ![image](imagens/cloud_pr3660_imagem2.png)
+
+- Folgas por data de troca:
+
+  ![image](imagens/cloud_pr3660_imagem3.png)
+
+- Widget de domingos e feriados por departamento, com os horários:
+
+  ![image](imagens/cloud_pr3724_imagem1.png)
+
+- Os widgets novos na loja:
+
+  ![image](imagens/rx_pr177_imagem1.png)
+
+- Widget de folgas e o dashboard na loja:
+
+  ![image](imagens/rx_pr177_imagem2.png)
+
+- Dashboard Domingos, feriados e folgas:
+
+  ![image](imagens/rx_pr177_imagem3.png)
+
+- A loja com a capa nova:
+
+  ![image](imagens/rx_pr179_imagem2.png)
+
+- Filtro global ao lado do título no Gerencial:
+
+  ![image](imagens/cloud_pr3655_imagem1.png)
+
+- Campos sem os inativos:
+
+  ![image](imagens/cloud_pr3655_imagem2.png)
+
+- Espelho com a observação das Configurações:
+
+  ![image](imagens/cloud_pr3695_imagem1.png)
+
+- Observação do horário no rodapé:
+
+  ![image](imagens/cloud_pr3695_imagem2.png)
+
+- Espelho dos motoristas com observação longa, em retrato:
+
+  ![image](imagens/cloud_pr3695_imagem3.png)
+
+- E em paisagem:
+
+  ![image](imagens/cloud_pr3695_imagem4.png)
+
+## Integrações e API
+
+- **Integração por banco de dados**: em Integrações › Conexões de banco de dados, o banco de outro sistema (SQL Server, PostgreSQL, MySQL, Firebird ou Oracle) com a consulta que o agente local vai rodar — só leitura, com a senha guardada protegida e o "Testar consulta". O layout de integração pode ler da conexão em vez de um arquivo, e o agente consulta sozinho nos horários escolhidos; resultado igual ao anterior não é gravado de novo.
+- API e MCP: consulta de **turnover e absenteísmo** por estabelecimento ou departamento, e consulta de **qualquer view do banco pelo nome**, com uma permissão para cada na chave de API. Horas a partir de 100 não saem mais cortadas.
+- **AFD do aplicativo e da web** (Arquivos fiscais): o arquivo fiscal das marcações do aplicativo e/ou da web, no layout da Portaria 671, com a assinatura digital.
+
+- Cadastro da conexão:
+
+  ![image](imagens/cloud_pr3627_imagem1.png)
+
+- Testar consulta:
+
+  ![image](imagens/cloud_pr3627_imagem2.png)
+
+- Origem dos dados na importação:
+
+  ![image](imagens/cloud_pr3627_imagem3.png)
+
+- Sugerir campos pelas colunas da consulta:
+
+  ![image](imagens/cloud_pr3627_imagem4.png)
+
+- Teste do layout:
+
+  ![image](imagens/cloud_pr3627_imagem5.png)
+
+- Card do painel com Consultar o banco:
+
+  ![image](imagens/cloud_pr3627_imagem6.png)
+
+- Execução com Consultar de novo:
+
+  ![image](imagens/cloud_pr3627_imagem7.png)
+
+- Integração do agente do tipo Consulta a banco de dados:
+
+  ![image](imagens/cloud_pr3627_imagem8.png)
+
+- Arquivos recebidos da rodada agendada:
+
+  ![image](imagens/cloud_pr3627_imagem9.png)
+
+- No tema escuro:
+
+  ![image](imagens/cloud_pr3627_imagem10.png)
+
+- As permissões novas na chave de API:
+
+  ![image](imagens/cloud_pr3685_imagem1.png)
+
+- Arquivos fiscais com a opção AFD:
+
+  ![image](imagens/cloud_pr3643_imagem1.png)
+
+- AFD gerado:
+
+  ![image](imagens/cloud_pr3643_imagem2.png)
+
+## Coletores
+
+- O **envio de colaboradores** ao coletor mostra cada colaborador (enviado, enviando, falta ou falhou, com o motivo) e o resumo no fim; depois confere os desligados que continuam no equipamento e oferece o **Excluir desligados**.
+- Coletor **Biometrus Passfinger 2040** pelo agente local: marcações, status, relógio e cadastro de colaboradores. O campo Marca mostra se cada marca funciona direto, pelo agente ou pelos dois.
+
+- Envio em andamento, colaborador a colaborador:
+
+  ![image](imagens/cloud_pr3738_imagem1.png)
+
+- Resultado com as falhas e o aviso dos desligados:
+
+  ![image](imagens/cloud_pr3738_imagem2.png)
+
+- Excluir desligados:
+
+  ![image](imagens/cloud_pr3738_imagem3.png)
+
+- Lista de marcas com o suporte de cada uma:
+
+  ![image](imagens/cloud_pr3713_imagem1.jpg)
+
+- Pesquisa por "direto":
+
+  ![image](imagens/cloud_pr3713_imagem2.png)
+
+## Alertas e notificações
+
+- **Testar a regra** no cadastro do alerta: um aviso de exemplo, sem dado real, para um e-mail informado (que recebe também a lista de quem receberia) ou para os perfis da regra. Dá para testar antes de salvar.
+- Notificações podem abrir numa **janela**, que aparece sozinha no próximo acesso; o aviso de feedback concluído também abre em janela.
+
+- Testar a regra pelos perfis:
+
+  ![image](imagens/cloud_pr3647_imagem1.png)
+
+- Teste com e-mail:
+
+  ![image](imagens/cloud_pr3647_imagem2.png)
+
+- A notificação aberta numa janela:
+
+  ![image](imagens/cloud_pr3663_imagem1.png)
+
+- Notificação lida no sino:
+
+  ![image](imagens/cloud_pr3663_imagem2.png)
+
+- Aviso de feedback aberto na janela:
+
+  ![image](imagens/cloud_pr3663_imagem4.png)
+
+## Assistente e calculadora
+
+- O Assistente abre a Manutenção do colaborador para imprimir o espelho, monta a visão do espelho com as colunas pedidas (só o Saldo, sem Extras e Faltas) e mostra quem está sem código na folha. A visão do espelho ganhou as colunas Extras, Faltas e Saldo.
+- Calculadora: exemplo de **adicional noturno**, horas de um dia para outro (`23:00 às 05:00` = 6:00) e hora dividida por hora dando número.
+
+- Cartão do Assistente que abre a Manutenção para imprimir o espelho:
+
+  ![image](imagens/cloud_pr3624_imagem1.png)
+
+- Cartão com o link do relatório de escalas do setor:
+
+  ![image](imagens/cloud_pr3696_imagem2.png)
+
+- Visão do espelho proposta pelo Assistente:
+
+  ![image](imagens/cloud_pr3696_imagem3.png)
+
+- Editor da visão com os campos novos:
+
+  ![image](imagens/cloud_pr3696_imagem4.png)
+
+- Espelho só com o Saldo nos dias:
+
+  ![image](imagens/cloud_pr3696_imagem5.png)
+
+- Assistente com quem está sem código na folha:
+
+  ![image](imagens/cloud_pr3640_imagem6.png)
+
+- Menu Exemplos com o Adicional noturno:
+
+  ![image](imagens/cloud_pr3623_imagem1.png)
+
+- Exemplo do adicional noturno calculado:
+
+  ![image](imagens/cloud_pr3623_imagem2.png)
+
+- Virada do dia na calculadora:
+
+  ![image](imagens/cloud_pr3623_imagem3.png)
+
+## Permissões e segurança
+
+- Nova permissão **Acessar portal do colaborador**: libera o portal para as permissões criadas pelo cliente (como "Líder de setor"). As permissões que já existem recebem a nova permissão na atualização, e dentro do portal quem também usa a gestão tem o botão para voltar a ela.
+
+- Antes: sem o botão do portal:
+
+  ![image](imagens/cloud_pr3744_imagem1.png)
+
+- O modelo Colaborador marcando a permissão:
+
+  ![image](imagens/cloud_pr3744_imagem2.png)
+
+- Depois: o botão do portal na barra do topo:
+
+  ![image](imagens/cloud_pr3744_imagem3.png)
+
+- O portal com o botão de volta para a gestão:
+
+  ![image](imagens/cloud_pr3744_imagem4.png)
+
+## Outras melhorias e correções
+
+- Balão de ajuda legível no tema escuro, e campos cortados ajustados em vários cadastros (layout da folha, horários, justificativa de extras).
+- Pendências: a coluna "Usuário" volta a mostrar quem aprovou ou recusou, médico e CID só nos afastamentos que pedem, e as listas não abrem mais sem as informações dos registros.
+- O chat do suporte carrega só quando é aberto, e o sistema abre mais rápido para quem acessa mais de um cliente no mesmo navegador.
+
+- Balão de ajuda no tema escuro, antes:
+
+  ![image](imagens/cloud_pr3610_imagem1.png)
+
+- E depois:
+
+  ![image](imagens/cloud_pr3610_imagem2.png)
+
+- Campos do layout da folha:
+
+  ![image](imagens/cloud_pr3610_imagem3.png)
+
+- Grade de horários com o Local:
+
+  ![image](imagens/cloud_pr3610_imagem4.png)
+
+- Adicional noturno:
+
+  ![image](imagens/cloud_pr3610_imagem5.png)
+
+- Tolerância por entrada e saída:
+
+  ![image](imagens/cloud_pr3610_imagem6.png)
+
+- Pendências com as colunas dos registros preenchidas:
+
+  ![image](imagens/cloud_pr3741_imagem1.jpg)
+
+- Chat do suporte aberto pelo menu:
+
+  ![image](imagens/cloud_pr3718_imagem1.png)
+
 # 19/11/2026
 
 ## Resumo

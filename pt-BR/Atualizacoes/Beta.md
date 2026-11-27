@@ -13,6 +13,8 @@ Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, 
 - **Portal do colaborador**: tela "Uniformes e EPIs" com os termos a assinar, o que está com ele e quando troca, os pedidos, os tamanhos e o histórico. O colaborador pede a troca pelo portal ou pelo aplicativo (com foto em dano, mau uso e extravio), e a loja aprova ou reprova. Depois do registro de ponto, ele é lembrado das trocas vencidas e dos termos a assinar.
 - **Painel** com trocas vencidas e próximas, CAs a resolver, admitidos sem itens, devoluções pendentes, termos sem assinatura, estoque abaixo do mínimo e pedidos em aberto, além da lista de itens em uso com reposição em lote. Avisos diários de troca, de CA e de estoque mínimo.
 - Configuração do módulo (termo com valor, CA vencido, grades, dias de aviso, formas de assinatura) e carga inicial por planilha dos itens que cada colaborador já usa e do saldo do estoque.
+- O menu acompanha a configuração: **Estoque** só com o controle de estoque ligado, **Separação** e **Devoluções a conferir** só com o pedido à central. Sem o pedido à central, a tela de Pedidos explica que ali ficam os pedidos de troca dos colaboradores.
+- **Nova entrega**: a quantidade volta a aparecer, e o item adicionado à mão já abre com o motivo certo (Admissão para quem não tem nada em uso; Avulsa ou Tempo de uso para os demais).
 
 - Nova entrega com o kit da lotação já montado:
 
@@ -102,42 +104,13 @@ Novo módulo **Uniformes e EPIs**, ligado por cliente, para controlar entregas, 
 
   ![image](imagens/cloud_pr3165_imagem8.png)
 
-## Trilha do conhecimento ✨
+- Pedidos sem a central: o menu sem Estoque e Separação:
 
-Novo módulo para aprender o sistema no seu ritmo, com trilhas que guardam o progresso de cada pessoa.
+  ![image](imagens/cloud_pr3608_imagem1.png)
 
-- Nova tela **Minhas trilhas**, com "Continuar de onde parou" e as guias Em andamento, Obrigatórias, Disponíveis e Concluídas.
-- Cada trilha tem etapas e itens — vídeo, documento, demonstração guiada e texto — e guarda o percentual, o item onde parou e a data de conclusão.
-- A demonstração guiada abre a tela certa e conclui o item sozinha ao terminar; o vídeo conclui com 90% assistido e volta do ponto em que a pessoa parou.
-- Três trilhas prontas da Símix: **Primeiros passos**, **Fechamento do mês** e **Banco de horas**, montadas com as demonstrações guiadas que já existem.
-- A empresa monta as próprias trilhas em **Módulos › Trilhas**: criar, montar as etapas (inclusive com itens do catálogo Símix), publicar, duplicar uma trilha da Símix e atribuir a colaboradores ou usuários. Gravar não muda a trilha para quem está fazendo; só o Publicar muda.
-- O portal do colaborador ganha o item **Trilhas**, com o número de obrigatórias pendentes, e um card no painel. A página de Treinamentos ganha a faixa "Suas trilhas", e o Início mostra o card do próximo passo.
+- Nova entrega com o item adicionado à mão:
 
-> Perfis **DP** já existentes nos clientes não recebem sozinhos as permissões de Trilhas: é preciso concedê-las em Permissões.
-
-- Minhas trilhas, com as três trilhas iniciais da Símix:
-
-  ![image](imagens/cloud_pr3051_imagem1.png)
-
-- Visão da trilha: etapas, itens e o progresso ao lado:
-
-  ![image](imagens/cloud_pr3051_imagem2.png)
-
-- Item de demonstração guiada concluído pelo fim da demonstração, com o índice da trilha:
-
-  ![image](imagens/cloud_pr3051_imagem3.png)
-
-- Vídeo dentro da trilha, com o percentual assistido:
-
-  ![image](imagens/cloud_pr3051_imagem4.png)
-
-- Faixa "Suas trilhas" na página de Treinamentos:
-
-  ![image](imagens/cloud_pr3051_imagem5.png)
-
-- Catálogo de trilhas da Símix:
-
-  ![image](imagens/cloud_pr3051_imagem6.png)
+  ![image](imagens/cloud_pr3608_imagem2.png)
 
 ## Nova tela de processos ✨
 

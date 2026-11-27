@@ -1,3 +1,137 @@
+# 27/11/2026
+
+- **Trilhas**: o resumo das trilhas do catálogo por cliente, os modelos prontos no catálogo da Símix e as conquistas da Símix no admin.
+- **Enviar notificações** no admin: planos, clientes e usuários, com texto formatado, link, a opção de abrir em janela, pré-visualização e histórico. A mudança de status do feedback tem "Abrir em janela", e os avisos do Início podem valer só para alguns planos.
+- **Questionário de implantação**: vários contatos por área, com "Criar usuário" na aprovação (RH no perfil DP, demais em Gestão), a seção Estabelecimentos (à mão ou por planilha), a planilha de colaboradores removível, o envio do link para vários e-mails e a página **Logs de e-mails** no admin. A aprovação volta a cadastrar os colaboradores da planilha.
+- **Implantação**: recusa banco que já existe no servidor, grava a migração no tenant certo, indexa só o cliente novo, aceita o CNPJ colado de qualquer jeito e tem a tela final mais simples. As implantações migradas recebem nome e CNPJ, e as tags **Demonstração** e **Em uso** são aplicadas sozinhas. O envio do backup funciona no modo WebAssembly.
+- **Coletores**: Etiqueta (patrimônio do Movidesk) e Local físico no cadastro, com as colunas e a pesquisa no monitor, o filtro "Estoque/Símix" e o script que importa as etiquetas do Movidesk.
+- Menu do admin com os grupos **Acompanhamento** e **Comercial**, Implantações abaixo de Clientes e a coluna **Comentários** na lista de implantações. Clientes e Implantações têm visões.
+- **Chave única do admin** para testar a exportação da folha em qualquer cliente, com validade obrigatória.
+- Ramo de atividade dos clientes preenchido pelo CNPJ e a consulta dos dashboards mais usados, para montar os packs da loja.
+- Painel do suporte (Chats Assistente) mostra a pergunta e as opções dos cartões do Assistente.
+- Desempenho: cache dos dashboards no Redis, limites no cache em memória, menos memória por sessão desconectada e no máximo três tarefas do suporte ao mesmo tempo no site; o /info mostra a memória e os caches.
+- Consulta com o tipo de compensação do dia criada para um cliente que usava uma view própria.
+
+- Catálogo da Símix com os modelos de trilha:
+
+  ![image](imagens/cloud_pr3398_imagem16.png)
+
+- Conquistas da Símix no admin:
+
+  ![image](imagens/cloud_pr3398_imagem25.png)
+
+- Envio do comunicado de um plano, com o histórico:
+
+  ![image](imagens/cloud_pr3663_imagem3.png)
+
+- "Abrir em janela" ao salvar o status do feedback:
+
+  ![image](imagens/cloud_pr3663_imagem5.png)
+
+- Aviso do Início limitado a um plano:
+
+  ![image](imagens/cloud_pr3663_imagem6.png)
+
+- Contatos do questionário com Criar usuário:
+
+  ![image](imagens/cloud_pr3681_imagem1.jpg)
+
+- Contato marcado sem e-mail:
+
+  ![image](imagens/cloud_pr3681_imagem2.jpg)
+
+- Estabelecimentos importados da planilha:
+
+  ![image](imagens/cloud_pr3681_imagem3.jpg)
+
+- Planilha de colaboradores removida:
+
+  ![image](imagens/cloud_pr3681_imagem4.jpg)
+
+- Prévia da aprovação com os usuários a criar:
+
+  ![image](imagens/cloud_pr3681_imagem5.jpg)
+
+- Resultado da aprovação:
+
+  ![image](imagens/cloud_pr3681_imagem6.jpg)
+
+- Usuários criados no banco novo:
+
+  ![image](imagens/cloud_pr3681_imagem7.jpg)
+
+- Logs de e-mails no admin:
+
+  ![image](imagens/cloud_pr3681_imagem8.jpg)
+
+- CNPJ colado com espaços e barra:
+
+  ![image](imagens/cloud_pr3700_imagem1.png)
+
+- CNPJ formatado ao sair do campo:
+
+  ![image](imagens/cloud_pr3700_imagem2.png)
+
+- CNPJ inválido:
+
+  ![image](imagens/cloud_pr3700_imagem3.png)
+
+- Tela final da implantação:
+
+  ![image](imagens/cloud_pr3700_imagem4.png)
+
+- Cadastro do coletor com a etiqueta e o local físico:
+
+  ![image](imagens/cloud_pr3683_imagem1.jpg)
+
+- Opções do local físico:
+
+  ![image](imagens/cloud_pr3683_imagem2.png)
+
+- Monitor de coletores pesquisando pela etiqueta:
+
+  ![image](imagens/cloud_pr3683_imagem3.png)
+
+- Menu do admin e a lista de implantações com os comentários:
+
+  ![image](imagens/cloud_pr3746_imagem1.png)
+
+- Comentários da implantação abertos pela lista:
+
+  ![image](imagens/cloud_pr3746_imagem2.png)
+
+- Visão gravada em Clientes:
+
+  ![image](imagens/cloud_pr3736_imagem7.png)
+
+- Visões das implantações:
+
+  ![image](imagens/cloud_pr3736_imagem8.png)
+
+- Chave da exportação sem validade recusada:
+
+  ![image](imagens/cloud_pr3638_imagem1.png)
+
+- Chave criada com o exemplo de chamada:
+
+  ![image](imagens/cloud_pr3638_imagem2.png)
+
+- Cartão de opções no painel do suporte:
+
+  ![image](imagens/cloud_pr3624_imagem2.png)
+
+- Painel com os widgets vindos do cache:
+
+  ![image](imagens/cloud_pr3631_imagem1.png)
+
+- Memória e caches no /info:
+
+  ![image](imagens/cloud_pr3631_imagem2.png)
+
+- Tipo de compensação do dia na Manutenção:
+
+  ![image](imagens/cloud_pr3723_imagem1.png)
+
 # 19/11/2026
 
 - **Pesquisas de satisfação** (Painel admin › Pesquisas): NPS, CSAT ou personalizada, com perguntas conforme a nota, público recortado por cliente, edição, perfil e tempo de uso (com a estimativa de alcance), recorrência, amostra e identificada ou anônima. Só usuários de gestão recebem; colaborador, app, e-mail Símix, suporte e "entrar como" ficam de fora. Resultados com índice, taxa de resposta, distribuição, evolução, cortes e temas dos comentários pela IA, exportação para Excel, fila de retorno dos detratores com aviso no Teams e **Virar feedback**. O Atendimento mostra o NPS do cliente, e o painel de Feedbacks, o CSAT médio.
