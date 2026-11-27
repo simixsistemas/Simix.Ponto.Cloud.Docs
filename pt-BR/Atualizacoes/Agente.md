@@ -1,3 +1,27 @@
+# 27/11/2026
+
+Versão **1.0.29** do Símix Agente (Windows). No canal beta, saiu como 1.0.30.
+
+## Resumo
+
+- 🗄️ Consulta a bancos de dados para as integrações
+- 🙂 iDFace e iDClass 671 pelo agente, com o envio das fotos
+- 🖐️ Biometrus Passfinger 2040 pelo agente
+- 👥 Cadastros de colaboradores também nos coletores mais antigos
+
+## Integração por banco de dados ✨
+
+- O agente roda a consulta cadastrada em **Integrações › Conexões de banco de dados** no banco de outro sistema da empresa (SQL Server, PostgreSQL, MySQL, Firebird ou Oracle) e envia o resultado ao Símix Ponto, que importa pelo layout da integração.
+- A consulta roda quando o Símix Ponto pede (Testar consulta, Consultar o banco) e sozinha, nos horários da integração. A senha do banco vem da nuvem e fica só na memória do agente.
+- A tela **Integrações** do agente mostra o tipo Consulta a banco de dados, os horários e o **Executar agora**.
+
+## Coletores
+
+- **iDFace e iDClass 671** pelo agente: envio e exclusão de cadastros, leitura e ajuste do relógio e o **Enviar fotos**, que grava no iDFace a foto de quem ainda não tem, baixando do Símix Ponto só as que faltam.
+- **Biometrus Passfinger 2040**: marcações (AFD), situação do equipamento e relógio pelo agente, com os programas do fabricante já no instalador.
+- Envio, consulta e exclusão de **cadastros nos coletores mais antigos** (Passfinger, ZK, Topdata), com o código do colaborador vindo do Símix Ponto. Quem já está no equipamento mantém o código e a senha.
+- O instalador leva os programas dos fabricantes dos coletores mais antigos e os atualiza a cada versão.
+
 # 17/11/2026
 
 Versão **1.0.27** do Símix Agente (Windows).
